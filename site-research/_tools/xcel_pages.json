@@ -1,0 +1,62 @@
+{
+  "https://xcelcareers.com/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/",
+    "title": "XcelCareers Staffing Solutions \u2013 Top Talent Solutions: Expert Staffing for Systems Engineers, Cloud Engineers, and Software Engineers"
+  },
+  "https://xcelcareers.com/transition-into-tech/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/transition-into-tech/",
+    "title": "Transition Into Tech \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/about-us/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/about-us/",
+    "title": "About Us \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/contact/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/contact/",
+    "title": "Contact \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/pricing/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/pricing/",
+    "title": "Pricing \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/elementor-2611/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/elementor-2611/",
+    "title": "Home-Elementor \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/contact-2-2/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/contact-2-2/",
+    "title": "Contact \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/jobs-2/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/jobs-2/",
+    "title": "Job Postings \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/jobs-3/systems-engineers/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/jobs-3/systems-engineers/",
+    "title": "Systems Engineers \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/jobs-3/cloud-engineers/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/jobs-3/cloud-engineers/",
+    "title": "Cloud Engineers \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/jobs-3/software-engineers/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/jobs-3/software-engineers/",
+    "title": "Software Engineers \u2013 XcelCareers Staffing Solutions"
+  },
+  "https://xcelcareers.com/author/kevthedev00/": {
+    "status": 200,
+    "final": "https://xcelcareers.com/author/kevthedev00/",
+    "title": "Kevin Gay \u2013 XcelCareers Staffing Solutions"
+  }
+}
