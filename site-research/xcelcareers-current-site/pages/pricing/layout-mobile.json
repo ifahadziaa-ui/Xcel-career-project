@@ -1,0 +1,3565 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  6057
+ ],
+ "cls": "wp-singular page-template-default page page-id-1134 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spectra-one",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    390,
+    6057
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "844px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          358,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            350,
+            65,
+            24,
+            24
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              350,
+              65,
+              24,
+              24
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                350,
+                65,
+                24,
+                24
+               ],
+               "cls": "wp-block-navigation__responsive-container-open",
+               "kind": "button",
+               "text": "",
+               "style": {
+                "display": "flex",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "normal",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 24
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      153,
+      390,
+      5313
+     ],
+     "cls": "entry-content alignwide wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "display": "flow-root"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        153,
+        390,
+        400
+       ],
+       "cls": "wp-block-uagb-container uagb-block-cfdb653f alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/07/aminities-bg.jpg\")",
+        "bgSize": "cover",
+        "bgPos": "50% 50%",
+        "bgRepeat": "no-repeat",
+        "padding": "160px 24px 80px 24px",
+        "borderRadius": "0px 0px 40px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          24,
+          313,
+          342,
+          160
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 426px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            24,
+            313,
+            342,
+            160
+           ],
+           "cls": "wp-block-uagb-advanced-heading uagb-block-a74d59e1",
+           "kind": "box",
+           "style": {
+            "position": "relative"
+           },
+           "children": [
+            {
+             "t": "h1",
+             "box": [
+              24,
+              313,
+              342,
+              48
+             ],
+             "cls": "uagb-heading-text",
+             "kind": "text",
+             "text": "Pricing Plans",
+             "style": {
+              "margin": "0px 0px 20px 0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "40px",
+              "fontWeight": "500",
+              "lineHeight": "48px",
+              "color": "rgb(0, 0, 0)",
+              "letterSpacing": "-2px"
+             }
+            },
+            {
+             "t": "p",
+             "box": [
+              24,
+              381,
+              342,
+              77
+             ],
+             "cls": "uagb-desc-text",
+             "kind": "text",
+             "text": "A descriptive paragraph that tells clients how good you are and proves that you are the best choice that they’ve made.",
+             "style": {
+              "margin": "0px 0px 15px 0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        553,
+        390,
+        3154
+       ],
+       "cls": "wp-block-uagb-container uagb-block-4f994b89 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "0px 20px",
+        "padding": "64px 22px 64px 22px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          22,
+          617,
+          346,
+          3026
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "0px 20px",
+          "maxWidth": "min(100%, 426px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            22,
+            617,
+            346,
+            200
+           ],
+           "cls": "wp-block-uagb-info-box uagb-block-53f122fc uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "0px 0px 26px 0px",
+            "zIndex": "1",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              22,
+              617,
+              346,
+              174
+             ],
+             "cls": "uagb-ifb-content",
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "zIndex": "1",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                22,
+                617,
+                346,
+                77
+               ],
+               "cls": "uagb-ifb-title-wrap",
+               "kind": "box",
+               "style": {
+                "zIndex": "1",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "h2",
+                 "box": [
+                  22,
+                  617,
+                  346,
+                  77
+                 ],
+                 "cls": "uagb-ifb-title",
+                 "kind": "text",
+                 "text": "Works Have Never Felt So Good",
+                 "style": {
+                  "margin": "0px 0px 20px 0px",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-1px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "p",
+               "box": [
+                22,
+                714,
+                346,
+                77
+               ],
+               "cls": "uagb-ifb-desc",
+               "kind": "text",
+               "text": "A descriptive paragraph that tells clients how good you are and proves that you are the best choice that they’ve made.",
+               "style": {
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(0, 0, 0)"
+               }
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            22,
+            816,
+            346,
+            931
+           ],
+           "cls": "wp-block-uagb-container uagb-layout-grid uagb-block-00c2e1cb",
+           "kind": "box",
+           "style": {
+            "display": "grid",
+            "position": "relative",
+            "gridCols": "346px",
+            "padding": "0px 0px 40px 0px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "figure",
+             "box": [
+              22,
+              816,
+              346,
+              425
+             ],
+             "cls": "wp-block-uagb-image__figure",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "align": "flex-start",
+              "maxWidth": "100%"
+             },
+             "children": [
+              {
+               "t": "img",
+               "box": [
+                22,
+                816,
+                346,
+                425
+               ],
+               "cls": "uag-image-1425",
+               "kind": "image",
+               "src": "https://xcelcareers.com/wp-content/uploads/2022/06/facilites-edited.jpg",
+               "alt": "",
+               "natural": [
+                283,
+                177
+               ],
+               "objectFit": "cover",
+               "style": {
+                "display": "flex",
+                "maxWidth": "100%",
+                "borderRadius": "8px",
+                "boxShadow": "rgba(223, 181, 115, 0.24) 0px 32px 56px -24px",
+                "overflow": "clip",
+                "transition": "box-shadow 0.2s ease"
+               },
+               "loading": "lazy"
+              }
+             ],
+             "wrapped": [
+              "div.wp-block-uagb-image"
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              22,
+              1241,
+              330,
+              466
+             ],
+             "cls": "wp-block-uagb-container uagb-block-8594e9e3",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "flex-start",
+              "gap": "0px 20px",
+              "padding": "48px 0px 0px 0px",
+              "margin": "0px 16px 0px 0px",
+              "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                22,
+                1289,
+                330,
+                40
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-bf95692d",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 4px 0px"
+               },
+               "children": [
+                {
+                 "t": "h3",
+                 "box": [
+                  22,
+                  1289,
+                  330,
+                  36
+                 ],
+                 "cls": "uagb-heading-text",
+                 "kind": "text",
+                 "text": "Membership",
+                 "style": {
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                1330,
+                330,
+                46
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  1330,
+                  90,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-1026b304",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    1335,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      1335,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    1330,
+                    59,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "$29/mo",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                1375,
+                330,
+                102
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-4d325a3e",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "p",
+                 "box": [
+                  22,
+                  1375,
+                  330,
+                  77
+                 ],
+                 "cls": "uagb-desc-text",
+                 "kind": "text",
+                 "text": "Grab any desk in the common area — 1 day/mo included. Bring your device, pick a seat, and get to work. Also includes:",
+                 "style": {
+                  "margin": "0px 0px 15px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                1477,
+                330,
+                193
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 25px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  1477,
+                  235,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-c42641d8",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    1482,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      1482,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    1477,
+                    204,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "1 hr/mo Conference Rooms",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  1513,
+                  182,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-eb410c46",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    1518,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      1518,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    1513,
+                    151,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "High Speed Internet",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  1548,
+                  271,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-179f9a82",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    1553,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      1553,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    1548,
+                    240,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "Access to Professional Network",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  1584,
+                  330,
+                  51
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-22c3711a",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    1601,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      1601,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    1584,
+                    299,
+                    51
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "24×7 Kitchen and Free Coffee and Beer",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                1670,
+                330,
+                38
+               ],
+               "cls": "uagb-buttons__wrap uagb-buttons-layout-wrap",
+               "kind": "box",
+               "style": {
+                "display": "inline-flex",
+                "justify": "left",
+                "align": "center",
+                "gap": "10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  22,
+                  1670,
+                  126,
+                  38
+                 ],
+                 "cls": "uagb-buttons-repeater wp-block-button__link",
+                 "kind": "link",
+                 "text": "Join Now",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "bg": "rgb(180, 33, 23)",
+                  "padding": "11.338px 20.662px 11.338px 20.662px",
+                  "borderRadius": "5.25px",
+                  "boxShadow": "rgba(0, 0, 0, 0.15) 0px 0px 0px 0px",
+                  "textAlign": "center",
+                  "transition": "box-shadow 0.2s ease",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "14px",
+                  "fontWeight": "500",
+                  "lineHeight": "14px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "https://xcelcareers.com/pricing/#",
+                 "target": "_self",
+                 "icons": [
+                  {
+                   "icon": "svg",
+                   "w": 15
+                  }
+                 ],
+                 "wrapped": [
+                  "div.uagb-button__wrapper",
+                  "div.wp-block-uagb-buttons-child"
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-buttons"
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            22,
+            1788,
+            346,
+            891
+           ],
+           "cls": "wp-block-uagb-container uagb-block-687cc974",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap-reverse",
+            "justify": "center",
+            "align": "center",
+            "margin": "40px 0px 40px 0px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              22,
+              2213,
+              330,
+              466
+             ],
+             "cls": "wp-block-uagb-container uagb-block-8e728ccf",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "flex-start",
+              "gap": "0px 20px",
+              "padding": "48px 0px 0px 0px",
+              "margin": "0px 16px 0px 0px",
+              "maxWidth": "100%",
+              "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                22,
+                2261,
+                330,
+                40
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-3e6e9a10",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 4px 0px"
+               },
+               "children": [
+                {
+                 "t": "h3",
+                 "box": [
+                  22,
+                  2261,
+                  330,
+                  36
+                 ],
+                 "cls": "uagb-heading-text",
+                 "kind": "text",
+                 "text": "Dedicated Desk",
+                 "style": {
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                2301,
+                330,
+                46
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  2301,
+                  90,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-056076e0",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    2306,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      2306,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    2301,
+                    59,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "$89/mo",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                2347,
+                330,
+                102
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-0ef070e9",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "p",
+                 "box": [
+                  22,
+                  2347,
+                  330,
+                  77
+                 ],
+                 "cls": "uagb-desc-text",
+                 "kind": "text",
+                 "text": "Grab any desk in the common area — 1 day/mo included. Bring your device, pick a seat, and get to work. Also includes:",
+                 "style": {
+                  "margin": "0px 0px 15px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                2449,
+                330,
+                193
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 25px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  2449,
+                  235,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-bde76bbb",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    2453,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      2453,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    2449,
+                    204,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "1 hr/mo Conference Rooms",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  2484,
+                  182,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-cee71c1c",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    2489,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      2489,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    2484,
+                    151,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "High Speed Internet",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  2520,
+                  271,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-cda35d0d",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    2524,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      2524,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    2520,
+                    240,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "Access to Professional Network",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  2555,
+                  330,
+                  51
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-27537cd5",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    2573,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      2573,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    2555,
+                    299,
+                    51
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "24×7 Kitchen and Free Coffee and Beer",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                2641,
+                330,
+                38
+               ],
+               "cls": "uagb-buttons__wrap uagb-buttons-layout-wrap",
+               "kind": "box",
+               "style": {
+                "display": "inline-flex",
+                "justify": "left",
+                "align": "center",
+                "gap": "10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  22,
+                  2641,
+                  126,
+                  38
+                 ],
+                 "cls": "uagb-buttons-repeater wp-block-button__link",
+                 "kind": "link",
+                 "text": "Join Now",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "bg": "rgb(180, 33, 23)",
+                  "padding": "11.338px 20.662px 11.338px 20.662px",
+                  "borderRadius": "5.25px",
+                  "boxShadow": "rgba(0, 0, 0, 0.15) 0px 0px 0px 0px",
+                  "textAlign": "center",
+                  "transition": "box-shadow 0.2s ease",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "14px",
+                  "fontWeight": "500",
+                  "lineHeight": "14px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "https://xcelcareers.com/pricing/#",
+                 "target": "_self",
+                 "icons": [
+                  {
+                   "icon": "svg",
+                   "w": 15
+                  }
+                 ],
+                 "wrapped": [
+                  "div.uagb-button__wrapper",
+                  "div.wp-block-uagb-buttons-child"
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-buttons"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "figure",
+             "box": [
+              22,
+              1788,
+              346,
+              425
+             ],
+             "cls": "wp-block-uagb-image__figure",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "align": "flex-start",
+              "maxWidth": "100%"
+             },
+             "children": [
+              {
+               "t": "img",
+               "box": [
+                22,
+                1788,
+                346,
+                425
+               ],
+               "cls": "uag-image-1094",
+               "kind": "image",
+               "src": "https://xcelcareers.com/wp-content/uploads/2020/07/affordable-pricing.jpg",
+               "alt": "",
+               "natural": [
+                615,
+                922
+               ],
+               "objectFit": "cover",
+               "style": {
+                "display": "flex",
+                "maxWidth": "100%",
+                "borderRadius": "8px",
+                "boxShadow": "rgba(0, 0, 0, 0.24) 40px 64px 100px -56px",
+                "overflow": "clip",
+                "transition": "box-shadow 0.2s ease"
+               },
+               "loading": "lazy"
+              }
+             ],
+             "wrapped": [
+              "div.wp-block-uagb-image"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            22,
+            2751,
+            346,
+            891
+           ],
+           "cls": "wp-block-uagb-container uagb-layout-grid uagb-block-b4a2fa39",
+           "kind": "box",
+           "style": {
+            "display": "grid",
+            "position": "relative",
+            "gridCols": "346px",
+            "margin": "32px 0px 0px 0px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "figure",
+             "box": [
+              22,
+              2751,
+              346,
+              425
+             ],
+             "cls": "wp-block-uagb-image__figure",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "align": "flex-start",
+              "maxWidth": "100%"
+             },
+             "children": [
+              {
+               "t": "img",
+               "box": [
+                22,
+                2751,
+                346,
+                425
+               ],
+               "cls": "uag-image-950",
+               "kind": "image",
+               "src": "https://xcelcareers.com/wp-content/uploads/2020/06/people-inside-room.jpg",
+               "alt": "",
+               "natural": [
+                283,
+                425
+               ],
+               "objectFit": "cover",
+               "style": {
+                "display": "flex",
+                "maxWidth": "100%",
+                "borderRadius": "8px",
+                "boxShadow": "rgba(223, 181, 115, 0.24) 0px 32px 56px -24px",
+                "overflow": "clip",
+                "transition": "box-shadow 0.2s ease"
+               },
+               "loading": "lazy"
+              }
+             ],
+             "wrapped": [
+              "div.wp-block-uagb-image"
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              22,
+              3176,
+              330,
+              466
+             ],
+             "cls": "wp-block-uagb-container uagb-block-f112f527",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "flex-start",
+              "gap": "0px 20px",
+              "padding": "48px 0px 0px 0px",
+              "margin": "0px 16px 0px 0px",
+              "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                22,
+                3224,
+                330,
+                40
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-a8a8f18e",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 4px 0px"
+               },
+               "children": [
+                {
+                 "t": "h3",
+                 "box": [
+                  22,
+                  3224,
+                  330,
+                  36
+                 ],
+                 "cls": "uagb-heading-text",
+                 "kind": "text",
+                 "text": "Dedicated Office",
+                 "style": {
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                3265,
+                330,
+                46
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  3265,
+                  100,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-ca07b372",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    3269,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      3269,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    3265,
+                    69,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "$228/mo",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                3310,
+                330,
+                102
+               ],
+               "cls": "wp-block-uagb-advanced-heading uagb-block-6a3a25dd",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "p",
+                 "box": [
+                  22,
+                  3310,
+                  330,
+                  77
+                 ],
+                 "cls": "uagb-desc-text",
+                 "kind": "text",
+                 "text": "Grab any desk in the common area — 1 day/mo included. Bring your device, pick a seat, and get to work. Also includes:",
+                 "style": {
+                  "margin": "0px 0px 15px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                3412,
+                330,
+                193
+               ],
+               "cls": "uagb-icon-list__wrap",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexDirection": "column",
+                "justify": "center",
+                "align": "flex-start",
+                "padding": "0px 0px 25px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  3412,
+                  235,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-2a1090ec",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    3417,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      3417,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    3412,
+                    204,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "1 hr/mo Conference Rooms",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  3447,
+                  182,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-04e97ac4",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    3452,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      3452,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    3447,
+                    151,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "High Speed Internet",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  3483,
+                  271,
+                  26
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-73a991d1",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    3488,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      3488,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    3483,
+                    240,
+                    26
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "Access to Professional Network",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  22,
+                  3519,
+                  330,
+                  51
+                 ],
+                 "cls": "wp-block-uagb-icon-list-child uagb-block-eef68ffc",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "align": "center",
+                  "margin": "0px 0px 10px 0px",
+                  "transition": "all 0.2s ease"
+                 },
+                 "children": [
+                  {
+                   "t": "span",
+                   "box": [
+                    22,
+                    3536,
+                    16,
+                    16
+                   ],
+                   "cls": "uagb-icon-list__source-wrap",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 15px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      22,
+                      3536,
+                      16,
+                      16
+                     ],
+                     "kind": "svg",
+                     "w": 16,
+                     "h": 16,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(58, 58, 58)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ]
+                  },
+                  {
+                   "t": "span",
+                   "box": [
+                    53,
+                    3519,
+                    299,
+                    51
+                   ],
+                   "cls": "uagb-icon-list__label",
+                   "kind": "text",
+                   "text": "24×7 Kitchen and Free Coffee and Beer",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(58, 58, 58)"
+                   }
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-icon-list"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                22,
+                3605,
+                330,
+                38
+               ],
+               "cls": "uagb-buttons__wrap uagb-buttons-layout-wrap",
+               "kind": "box",
+               "style": {
+                "display": "inline-flex",
+                "justify": "left",
+                "align": "center",
+                "gap": "10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  22,
+                  3605,
+                  126,
+                  38
+                 ],
+                 "cls": "uagb-buttons-repeater wp-block-button__link",
+                 "kind": "link",
+                 "text": "Join Now",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "bg": "rgb(180, 33, 23)",
+                  "padding": "11.338px 20.662px 11.338px 20.662px",
+                  "borderRadius": "5.25px",
+                  "boxShadow": "rgba(0, 0, 0, 0.15) 0px 0px 0px 0px",
+                  "textAlign": "center",
+                  "transition": "box-shadow 0.2s ease",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "14px",
+                  "fontWeight": "500",
+                  "lineHeight": "14px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "https://xcelcareers.com/pricing/#",
+                 "target": "_self",
+                 "icons": [
+                  {
+                   "icon": "svg",
+                   "w": 15
+                  }
+                 ],
+                 "wrapped": [
+                  "div.uagb-button__wrapper",
+                  "div.wp-block-uagb-buttons-child"
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-uagb-buttons"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        3787,
+        390,
+        783
+       ],
+       "cls": "wp-block-uagb-container uagb-block-19f0cfed alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px 0px",
+        "margin": "80px 0px 0px 0px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "pseudo": {
+        "::before": {
+         "content": "\"\"",
+         "w": "390px",
+         "h": "783.219px",
+         "bg": null,
+         "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/06/dots.png\")",
+         "position": "absolute",
+         "opacity": null
+        }
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          3787,
+          390,
+          783
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px 0px",
+          "maxWidth": "min(100%, 426px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            120,
+            3787,
+            270,
+            415
+           ],
+           "cls": "wp-block-uagb-container uag-blocks-common-selector uagb-block-be0c876b",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexDirection": "column",
+            "flexWrap": "wrap",
+            "justify": "center",
+            "align": "center",
+            "gap": "20px",
+            "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/07/writing-notepad.jpg\")",
+            "bgSize": "cover",
+            "bgPos": "50% 49%",
+            "bgRepeat": "no-repeat",
+            "margin": "0px 0px -65px 120px",
+            "maxWidth": "100%",
+            "borderRadius": "8px",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "zIndex": "1",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              3717,
+              270,
+              405
+             ],
+             "cls": "wp-block-uagb-image alignleft uagb-block-2b22bccb wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-left",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "margin": "-70px 120px 80px -120px"
+             },
+             "children": [
+              {
+               "t": "figure",
+               "box": [
+                0,
+                3717,
+                270,
+                405
+               ],
+               "cls": "wp-block-uagb-image__figure",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexDirection": "column",
+                "align": "flex-start",
+                "maxWidth": "100%"
+               },
+               "children": [
+                {
+                 "t": "img",
+                 "box": [
+                  0,
+                  3717,
+                  270,
+                  405
+                 ],
+                 "cls": "uag-image-1089",
+                 "kind": "image",
+                 "src": "https://xcelcareers.com/wp-content/uploads/2020/07/furniture.jpg",
+                 "alt": "",
+                 "natural": [
+                  221,
+                  332
+                 ],
+                 "objectFit": "cover",
+                 "style": {
+                  "display": "flex",
+                  "maxWidth": "100%",
+                  "borderRadius": "8px",
+                  "boxShadow": "rgba(0, 0, 0, 0.5) 16px 40px 80px -32px",
+                  "overflow": "clip",
+                  "transition": "box-shadow 0.2s ease"
+                 },
+                 "loading": "lazy"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            0,
+            4157,
+            390,
+            413
+           ],
+           "cls": "wp-block-uagb-container uagb-block-969e8306",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexDirection": "column",
+            "flexWrap": "wrap",
+            "justify": "center",
+            "align": "center",
+            "gap": "132px 20px",
+            "padding": "120px 40px 64px 24px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              24,
+              4277,
+              326,
+              229
+             ],
+             "cls": "wp-block-uagb-info-box uagb-block-79aa06d0 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top wp-block-uagb-info-box--has-ma…",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "zIndex": "1"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                24,
+                4277,
+                326,
+                229
+               ],
+               "cls": "uagb-ifb-content",
+               "kind": "box",
+               "style": {
+                "display": "inline-block",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  24,
+                  4277,
+                  326,
+                  73
+                 ],
+                 "cls": "uagb-ifb-title-wrap",
+                 "kind": "box",
+                 "style": {
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "h3",
+                   "box": [
+                    24,
+                    4277,
+                    326,
+                    73
+                   ],
+                   "cls": "uagb-ifb-title",
+                   "kind": "text",
+                   "text": "Space to make your greatest impact.",
+                   "style": {
+                    "margin": "0px 0px 20px 0px",
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "36.4px",
+                    "color": "rgb(0, 0, 0)",
+                    "letterSpacing": "-0.5px"
+                   }
+                  }
+                 ]
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  24,
+                  4369,
+                  326,
+                  77
+                 ],
+                 "cls": "uagb-ifb-desc",
+                 "kind": "text",
+                 "text": "A descriptive paragraph that tells clients how good you are and proves that you are the best choice that they’ve made.",
+                 "style": {
+                  "margin": "16px 0px 20px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                },
+                {
+                 "t": "a",
+                 "box": [
+                  24,
+                  4466,
+                  166,
+                  40
+                 ],
+                 "cls": "uagb-infobox-cta-link wp-block-button__link",
+                 "kind": "link",
+                 "text": "Get your place",
+                 "style": {
+                  "display": "inline-flex",
+                  "align": "center",
+                  "bg": "rgb(180, 33, 23)",
+                  "padding": "11.338px 20.662px 11.338px 20.662px",
+                  "borderRadius": "8px",
+                  "border": "1px 1px 1px 1px solid rgb(255, 255, 255)",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "14px",
+                  "fontWeight": "500",
+                  "lineHeight": "14px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "https://xcelcareers.com/pricing/#",
+                 "target": "_self",
+                 "icons": [
+                  {
+                   "icon": "svg",
+                   "w": 15
+                  }
+                 ],
+                 "wrapped": [
+                  "div.uagb-ifb-button-wrapper"
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.uagb-infobox-margin-wrapper"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        4570,
+        390,
+        896
+       ],
+       "cls": "wp-block-uagb-container uagb-block-b528a3b2 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "0px 20px",
+        "padding": "64px 24px 64px 24px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          24,
+          4634,
+          342,
+          768
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "0px 20px",
+          "maxWidth": "min(100%, 426px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            24,
+            4634,
+            342,
+            202
+           ],
+           "cls": "wp-block-uagb-advanced-heading uagb-block-c5ff644f",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "0px 0px 13.6719px 0px",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "h2",
+             "box": [
+              24,
+              4634,
+              342,
+              77
+             ],
+             "cls": "uagb-heading-text",
+             "kind": "text",
+             "text": "People Who Love Our Place",
+             "style": {
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "32px",
+              "fontWeight": "500",
+              "lineHeight": "38.4px",
+              "color": "rgb(180, 33, 23)",
+              "letterSpacing": "-1px"
+             }
+            },
+            {
+             "t": "p",
+             "box": [
+              24,
+              4731,
+              342,
+              77
+             ],
+             "cls": "uagb-desc-text",
+             "kind": "text",
+             "text": "A descriptive paragraph that tells clients how good you are and proves that you are the best choice that they’ve made.",
+             "style": {
+              "margin": "0px 0px 15px 0px",
+              "textAlign": "center",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             }
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            24,
+            4836,
+            342,
+            566
+           ],
+           "cls": "wp-block-uagb-container uagb-block-120d120b",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "justify": "center",
+            "padding": "0px 40px 0px 40px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              64,
+              4836,
+              262,
+              128
+             ],
+             "cls": "wp-block-uagb-container uagb-block-fd654d54",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "center",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 24px 80px -24px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                88,
+                4860,
+                214,
+                80
+               ],
+               "cls": "wp-block-uagb-image uagb-block-64b1eab3 wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  124,
+                  4860,
+                  143,
+                  80
+                 ],
+                 "cls": "wp-block-uagb-image__figure",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexDirection": "column",
+                  "maxWidth": "100%"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    124,
+                    4860,
+                    143,
+                    80
+                   ],
+                   "cls": "uag-image-2202",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/uploads/2024/06/logo-4.png",
+                   "alt": "",
+                   "natural": [
+                    26,
+                    14
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "flex",
+                    "maxWidth": "100%",
+                    "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+                    "overflow": "clip",
+                    "transition": "box-shadow 0.2s ease"
+                   },
+                   "loading": "lazy"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              64,
+              4988,
+              262,
+              138
+             ],
+             "cls": "wp-block-uagb-container uagb-block-1bd310c2",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "center",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 24px 80px -24px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                88,
+                5012,
+                214,
+                90
+               ],
+               "cls": "wp-block-uagb-image aligncenter uagb-block-f91e127b wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  120,
+                  5012,
+                  150,
+                  90
+                 ],
+                 "cls": "wp-block-uagb-image__figure",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexDirection": "column",
+                  "align": "center",
+                  "maxWidth": "100%",
+                  "textAlign": "center"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    120,
+                    5012,
+                    150,
+                    90
+                   ],
+                   "cls": "uag-image-2204",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/uploads/2024/06/logo-2.png",
+                   "alt": "",
+                   "natural": [
+                    27,
+                    15
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "flex",
+                    "maxWidth": "100%",
+                    "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+                    "overflow": "clip",
+                    "textAlign": "center",
+                    "transition": "box-shadow 0.2s ease"
+                   },
+                   "loading": "lazy"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              64,
+              5150,
+              262,
+              90
+             ],
+             "cls": "wp-block-uagb-container uagb-block-81cfd5e7",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "center",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.44) 0px 24px 80px -24px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                88,
+                5174,
+                214,
+                42
+               ],
+               "cls": "wp-block-uagb-image aligncenter uagb-block-28bf82bb wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  135,
+                  5174,
+                  120,
+                  42
+                 ],
+                 "cls": "wp-block-uagb-image__figure",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexDirection": "column",
+                  "align": "center",
+                  "maxWidth": "100%",
+                  "textAlign": "center"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    135,
+                    5174,
+                    120,
+                    42
+                   ],
+                   "cls": "uag-image-2203",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/uploads/2024/06/logo-3.png",
+                   "alt": "",
+                   "natural": [
+                    22,
+                    12
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "flex",
+                    "maxWidth": "100%",
+                    "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+                    "overflow": "clip",
+                    "textAlign": "center",
+                    "transition": "box-shadow 0.2s ease"
+                   },
+                   "loading": "lazy"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              64,
+              5264,
+              262,
+              138
+             ],
+             "cls": "wp-block-uagb-container uagb-block-9b5a8150",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "center",
+              "padding": "24px 24px 24px 24px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.44) 0px 24px 80px -24px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                88,
+                5288,
+                214,
+                90
+               ],
+               "cls": "wp-block-uagb-image aligncenter uagb-block-8c98b1bb wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-center",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  120,
+                  5288,
+                  150,
+                  90
+                 ],
+                 "cls": "wp-block-uagb-image__figure",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexDirection": "column",
+                  "align": "center",
+                  "maxWidth": "100%",
+                  "textAlign": "center"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    120,
+                    5288,
+                    150,
+                    90
+                   ],
+                   "cls": "uag-image-2205",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/uploads/2024/06/logo-1-1.png",
+                   "alt": "",
+                   "natural": [
+                    27,
+                    15
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "flex",
+                    "maxWidth": "100%",
+                    "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+                    "overflow": "clip",
+                    "textAlign": "center",
+                    "transition": "box-shadow 0.2s ease"
+                   },
+                   "loading": "lazy"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "div.wp-block-group"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      5466,
+      390,
+      591
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        5530,
+        358,
+        408
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          5530,
+          358,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            5530,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              5530,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              390,
+              165
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            5593,
+            358,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-1 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          16,
+          5783,
+          358,
+          155
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            5783,
+            358,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              5783,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                16,
+                5783,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-2",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                16,
+                5828,
+                163,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-3 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              211,
+              5783,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                211,
+                5783,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-4",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                211,
+                5828,
+                163,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-5 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  211,
+                  5830,
+                  155,
+                  46
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        5986,
+        358,
+        38
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          32,
+          5986,
+          47,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-6 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          87,
+          5988,
+          116,
+          34
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          256,
+          5986,
+          102,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-8 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}

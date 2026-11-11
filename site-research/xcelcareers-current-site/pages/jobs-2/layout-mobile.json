@@ -1,0 +1,1899 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  1905
+ ],
+ "cls": "wp-singular page-template-default page page-id-2973 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spectra-one sjb",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    390,
+    1905
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "844px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          358,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            350,
+            65,
+            24,
+            24
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              350,
+              65,
+              24,
+              24
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                350,
+                65,
+                24,
+                24
+               ],
+               "cls": "wp-block-navigation__responsive-container-open",
+               "kind": "button",
+               "text": "",
+               "style": {
+                "display": "flex",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "normal",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 24
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      153,
+      390,
+      1161
+     ],
+     "cls": "sjb-page",
+     "kind": "box",
+     "style": {
+      "padding": "20px 20px 20px 20px",
+      "maxWidth": "764px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        20,
+        203,
+        350,
+        140
+       ],
+       "cls": "sjb-filters sjb-filters-v1",
+       "kind": "box",
+       "style": {
+        "bg": "rgb(242, 242, 242)",
+        "padding": "30px 30px 15px 30px",
+        "margin": "30px 0px 15px 0px",
+        "overflow": "hidden"
+       },
+       "children": [
+        {
+         "t": "form",
+         "box": [
+          50,
+          233,
+          290,
+          95
+         ],
+         "cls": "filters-form",
+         "kind": "form",
+         "style": {},
+         "action": "https://xcelcareers.com/jobs-2/",
+         "method": "get",
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            35,
+            233,
+            320,
+            95
+           ],
+           "cls": "row",
+           "kind": "box",
+           "style": {
+            "margin": "0px -15px 0px -15px"
+           },
+           "pseudo": {
+            "::after": {
+             "content": "\" \"",
+             "w": "320px",
+             "h": "0px",
+             "bg": null,
+             "bgImage": null,
+             "position": null,
+             "opacity": null
+            }
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              35,
+              233,
+              320,
+              55
+             ],
+             "cls": "sjb-search-keywords col-md-10 col-xs-12",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 15px 0px 15px",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                50,
+                233,
+                290,
+                40
+               ],
+               "cls": "form-group",
+               "kind": "box",
+               "style": {
+                "margin": "0px 0px 15px 0px"
+               },
+               "children": [
+                {
+                 "t": "label",
+                 "box": [
+                  49,
+                  232,
+                  1,
+                  1
+                 ],
+                 "cls": "sr-only",
+                 "kind": "text",
+                 "text": "Keywords",
+                 "style": {
+                  "position": "absolute",
+                  "margin": "-1px -1px -1px -1px",
+                  "maxWidth": "100%",
+                  "overflow": "hidden",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "700",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                },
+                {
+                 "t": "input",
+                 "box": [
+                  50,
+                  233,
+                  290,
+                  40
+                 ],
+                 "id": "keywords",
+                 "cls": "form-control",
+                 "kind": "field",
+                 "type": "text",
+                 "name": "search_keywords",
+                 "placeholder": "Keywords",
+                 "required": null,
+                 "value": null,
+                 "style": {
+                  "bg": "rgb(255, 255, 255)",
+                  "padding": "6px 12px 6px 12px",
+                  "border": "1px 1px 1px 1px solid rgb(225, 225, 225)",
+                  "boxShadow": "rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset",
+                  "overflow": "clip",
+                  "transition": "border-color, box-shadow 0.15s, 0.15s ease-in-out, ease-in-out",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "22.8571px",
+                  "color": "rgb(102, 102, 102)"
+                 }
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              35,
+              288,
+              320,
+              40
+             ],
+             "cls": "sjb-search-button col-md-3 col-xs-12",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 15px 0px 15px",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "input",
+               "box": [
+                50,
+                288,
+                290,
+                40
+               ],
+               "cls": "btn-search btn btn-primary",
+               "kind": "field",
+               "type": "submit",
+               "name": "",
+               "placeholder": null,
+               "required": null,
+               "value": "",
+               "style": {
+                "display": "inline-block",
+                "bg": "rgb(240, 240, 240)",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "overflow": "clip",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "\"Font Awesome 5 Free\"",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "28.5714px",
+                "color": "rgb(0, 0, 0)"
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        20,
+        358,
+        350,
+        936
+       ],
+       "cls": "list-view",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          20,
+          373,
+          350,
+          282
+         ],
+         "cls": "v1 sjb-job-2977",
+         "kind": "box",
+         "style": {
+          "bg": "rgb(255, 255, 255)",
+          "padding": "20px 20px 10px 20px",
+          "margin": "15px 0px 15px 0px",
+          "border": "1px 1px 1px 1px solid rgb(225, 225, 225)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            26,
+            394,
+            338,
+            83
+           ],
+           "cls": "row",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "margin": "0px -15px 0px -15px"
+           },
+           "pseudo": {
+            "::after": {
+             "content": "\" \"",
+             "w": "0px",
+             "h": "0px",
+             "bg": null,
+             "bgImage": null,
+             "position": null,
+             "opacity": null
+            }
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              26,
+              394,
+              338,
+              83
+             ],
+             "cls": "col-md-11 col-sm-12",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 15px 0px 15px",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                26,
+                394,
+                338,
+                83
+               ],
+               "cls": "row sjb-list-row",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexWrap": "wrap",
+                "margin": "0px -15px 0px -15px"
+               },
+               "pseudo": {
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "39.5938px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  394,
+                  253,
+                  41
+                 ],
+                 "cls": "col-md-5 col-sm-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    394,
+                    223,
+                    31
+                   ],
+                   "cls": "job-info",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      41,
+                      395,
+                      223,
+                      29
+                     ],
+                     "kind": "link",
+                     "text": "Software Engineers",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "transition": "all 0.2s ease-in-out",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(0, 0, 0)",
+                      "letterSpacing": "-0.25px"
+                     },
+                     "href": "https://xcelcareers.com/jobs-3/software-engineers/",
+                     "wrapped": [
+                      "h4"
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  437,
+                  338,
+                  40
+                 ],
+                 "cls": "col-md-3 col-sm-4 col-xs-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    441,
+                    308,
+                    26
+                   ],
+                   "cls": "job-date",
+                   "kind": "box",
+                   "style": {
+                    "margin": "4px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "#text",
+                     "kind": "text",
+                     "text": "Posted 2 years ago",
+                     "style": {
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "box": [
+                      41,
+                      441,
+                      308,
+                      26
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "header"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            41,
+            477,
+            308,
+            167
+           ],
+           "cls": "job-description",
+           "kind": "box",
+           "style": {},
+           "children": [
+            {
+             "t": "p",
+             "box": [
+              41,
+              477,
+              308,
+              102
+             ],
+             "kind": "text",
+             "text": "Compensation varies based on experience and qualifications. Please email HRservices@xcelcareers.com for more details.",
+             "style": {
+              "margin": "0px 0px 10px 0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             },
+             "wrapped": [
+              "div"
+             ]
+            },
+            {
+             "t": "p",
+             "box": [
+              41,
+              589,
+              226,
+              45
+             ],
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "margin": "0px 0px 10px 0px"
+             },
+             "children": [
+              {
+               "t": "a",
+               "box": [
+                41,
+                599,
+                112,
+                35
+               ],
+               "id": "quick-apply-btn",
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Quick Apply",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "javascript:void(0)"
+              },
+              {
+               "t": "a",
+               "box": [
+                158,
+                599,
+                104,
+                35
+               ],
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Read More",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "https://xcelcareers.com/jobs-3/software-engineers/"
+              }
+             ],
+             "wrapped": [
+              "div.sjb-apply-now-btn"
+             ]
+            }
+           ]
+          }
+         ],
+         "wrapped": [
+          "div.list-data"
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          20,
+          358,
+          350,
+          312
+         ],
+         "cls": "clearfix",
+         "kind": "box",
+         "style": {},
+         "pseudo": {
+          "::before": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          },
+          "::after": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          }
+         },
+         "empty": true
+        },
+        {
+         "t": "div",
+         "box": [
+          20,
+          685,
+          350,
+          282
+         ],
+         "cls": "v1 sjb-job-2976",
+         "kind": "box",
+         "style": {
+          "bg": "rgb(255, 255, 255)",
+          "padding": "20px 20px 10px 20px",
+          "margin": "15px 0px 15px 0px",
+          "border": "1px 1px 1px 1px solid rgb(225, 225, 225)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            26,
+            706,
+            338,
+            83
+           ],
+           "cls": "row",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "margin": "0px -15px 0px -15px"
+           },
+           "pseudo": {
+            "::after": {
+             "content": "\" \"",
+             "w": "0px",
+             "h": "0px",
+             "bg": null,
+             "bgImage": null,
+             "position": null,
+             "opacity": null
+            }
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              26,
+              706,
+              338,
+              83
+             ],
+             "cls": "col-md-11 col-sm-12",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 15px 0px 15px",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                26,
+                706,
+                338,
+                83
+               ],
+               "cls": "row sjb-list-row",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexWrap": "wrap",
+                "margin": "0px -15px 0px -15px"
+               },
+               "pseudo": {
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "39.5938px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  706,
+                  217,
+                  41
+                 ],
+                 "cls": "col-md-5 col-sm-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    706,
+                    187,
+                    31
+                   ],
+                   "cls": "job-info",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      41,
+                      707,
+                      187,
+                      29
+                     ],
+                     "kind": "link",
+                     "text": "Cloud Engineers",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "transition": "all 0.2s ease-in-out",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(0, 0, 0)",
+                      "letterSpacing": "-0.25px"
+                     },
+                     "href": "https://xcelcareers.com/jobs-3/cloud-engineers/",
+                     "wrapped": [
+                      "h4"
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  749,
+                  338,
+                  40
+                 ],
+                 "cls": "col-md-3 col-sm-4 col-xs-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    753,
+                    308,
+                    26
+                   ],
+                   "cls": "job-date",
+                   "kind": "box",
+                   "style": {
+                    "margin": "4px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "#text",
+                     "kind": "text",
+                     "text": "Posted 2 years ago",
+                     "style": {
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "box": [
+                      41,
+                      753,
+                      308,
+                      26
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "header"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            41,
+            789,
+            308,
+            167
+           ],
+           "cls": "job-description",
+           "kind": "box",
+           "style": {},
+           "children": [
+            {
+             "t": "p",
+             "box": [
+              41,
+              789,
+              308,
+              102
+             ],
+             "kind": "text",
+             "text": "Compensation varies based on experience and qualifications. Please email HRservices@xcelcareers.com for more details.",
+             "style": {
+              "margin": "0px 0px 10px 0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             },
+             "wrapped": [
+              "div"
+             ]
+            },
+            {
+             "t": "p",
+             "box": [
+              41,
+              901,
+              226,
+              45
+             ],
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "margin": "0px 0px 10px 0px"
+             },
+             "children": [
+              {
+               "t": "a",
+               "box": [
+                41,
+                911,
+                112,
+                35
+               ],
+               "id": "quick-apply-btn",
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Quick Apply",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "javascript:void(0)"
+              },
+              {
+               "t": "a",
+               "box": [
+                158,
+                911,
+                104,
+                35
+               ],
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Read More",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "https://xcelcareers.com/jobs-3/cloud-engineers/"
+              }
+             ],
+             "wrapped": [
+              "div.sjb-apply-now-btn"
+             ]
+            }
+           ]
+          }
+         ],
+         "wrapped": [
+          "div.list-data"
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          20,
+          670,
+          350,
+          312
+         ],
+         "cls": "clearfix",
+         "kind": "box",
+         "style": {},
+         "pseudo": {
+          "::before": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          },
+          "::after": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          }
+         },
+         "empty": true
+        },
+        {
+         "t": "div",
+         "box": [
+          20,
+          997,
+          350,
+          282
+         ],
+         "cls": "v1 sjb-job-2971",
+         "kind": "box",
+         "style": {
+          "bg": "rgb(255, 255, 255)",
+          "padding": "20px 20px 10px 20px",
+          "margin": "15px 0px 15px 0px",
+          "border": "1px 1px 1px 1px solid rgb(225, 225, 225)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            26,
+            1018,
+            338,
+            83
+           ],
+           "cls": "row",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "flexWrap": "wrap",
+            "margin": "0px -15px 0px -15px"
+           },
+           "pseudo": {
+            "::after": {
+             "content": "\" \"",
+             "w": "0px",
+             "h": "0px",
+             "bg": null,
+             "bgImage": null,
+             "position": null,
+             "opacity": null
+            }
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              26,
+              1018,
+              338,
+              83
+             ],
+             "cls": "col-md-11 col-sm-12",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 15px 0px 15px",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                26,
+                1018,
+                338,
+                83
+               ],
+               "cls": "row sjb-list-row",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexWrap": "wrap",
+                "margin": "0px -15px 0px -15px"
+               },
+               "pseudo": {
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "39.5938px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  1018,
+                  248,
+                  41
+                 ],
+                 "cls": "col-md-5 col-sm-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    1018,
+                    218,
+                    31
+                   ],
+                   "cls": "job-info",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      41,
+                      1019,
+                      218,
+                      29
+                     ],
+                     "kind": "link",
+                     "text": "Systems Engineers",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "transition": "all 0.2s ease-in-out",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(0, 0, 0)",
+                      "letterSpacing": "-0.25px"
+                     },
+                     "href": "https://xcelcareers.com/jobs-3/systems-engineers/",
+                     "wrapped": [
+                      "h4"
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  26,
+                  1061,
+                  338,
+                  40
+                 ],
+                 "cls": "col-md-3 col-sm-4 col-xs-12",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    41,
+                    1065,
+                    308,
+                    26
+                   ],
+                   "cls": "job-date",
+                   "kind": "box",
+                   "style": {
+                    "margin": "4px 0px 10px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "#text",
+                     "kind": "text",
+                     "text": "Posted 2 years ago",
+                     "style": {
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "box": [
+                      41,
+                      1065,
+                      308,
+                      26
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "header"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            41,
+            1101,
+            308,
+            167
+           ],
+           "cls": "job-description",
+           "kind": "box",
+           "style": {},
+           "children": [
+            {
+             "t": "p",
+             "box": [
+              41,
+              1101,
+              308,
+              102
+             ],
+             "kind": "text",
+             "text": "Compensation varies based on experience and qualifications. Please email HRservices@xcelcareers.com for more details.",
+             "style": {
+              "margin": "0px 0px 10px 0px",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             },
+             "wrapped": [
+              "div"
+             ]
+            },
+            {
+             "t": "p",
+             "box": [
+              41,
+              1213,
+              226,
+              45
+             ],
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "margin": "0px 0px 10px 0px"
+             },
+             "children": [
+              {
+               "t": "a",
+               "box": [
+                41,
+                1223,
+                112,
+                35
+               ],
+               "id": "quick-apply-btn",
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Quick Apply",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "javascript:void(0)"
+              },
+              {
+               "t": "a",
+               "box": [
+                158,
+                1223,
+                104,
+                35
+               ],
+               "cls": "btn btn-primary",
+               "kind": "link",
+               "text": "Read More",
+               "style": {
+                "display": "inline-block",
+                "padding": "5px 10px 5px 10px",
+                "margin": "10px 5px 0px 0px",
+                "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                "textAlign": "center",
+                "transition": "all 0.2s ease-in-out",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "22.8571px",
+                "color": "rgb(0, 0, 0)"
+               },
+               "href": "https://xcelcareers.com/jobs-3/systems-engineers/"
+              }
+             ],
+             "wrapped": [
+              "div.sjb-apply-now-btn"
+             ]
+            }
+           ]
+          }
+         ],
+         "wrapped": [
+          "div.list-data"
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          20,
+          982,
+          350,
+          312
+         ],
+         "cls": "clearfix",
+         "kind": "box",
+         "style": {},
+         "pseudo": {
+          "::before": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          },
+          "::after": {
+           "content": "\" \"",
+           "w": "0px",
+           "h": "0px",
+           "bg": null,
+           "bgImage": null,
+           "position": null,
+           "opacity": null
+          }
+         },
+         "empty": true
+        }
+       ],
+       "wrapped": [
+        "div.sjb-listing"
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        20,
+        1294,
+        350,
+        0
+       ],
+       "cls": "clearfix",
+       "kind": "box",
+       "style": {},
+       "pseudo": {
+        "::before": {
+         "content": "\" \"",
+         "w": "0px",
+         "h": "0px",
+         "bg": null,
+         "bgImage": null,
+         "position": null,
+         "opacity": null
+        },
+        "::after": {
+         "content": "\" \"",
+         "w": "0px",
+         "h": "0px",
+         "bg": null,
+         "bgImage": null,
+         "position": null,
+         "opacity": null
+        }
+       },
+       "empty": true
+      }
+     ],
+     "wrapped": [
+      "div.entry-content",
+      "div.wp-block-group"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      1314,
+      390,
+      591
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        1378,
+        358,
+        408
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          1378,
+          358,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            1378,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              1378,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              390,
+              165
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            1441,
+            358,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-1 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          16,
+          1631,
+          358,
+          155
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            1631,
+            358,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              1631,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                16,
+                1631,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-2",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                16,
+                1676,
+                163,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-3 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              211,
+              1631,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                211,
+                1631,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-4",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                211,
+                1676,
+                163,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-5 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  211,
+                  1678,
+                  155,
+                  46
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        1834,
+        358,
+        38
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          32,
+          1834,
+          47,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-6 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          87,
+          1836,
+          116,
+          34
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          256,
+          1834,
+          102,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-8 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1856 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  4610
+ ],
+ "cls": "wp-singular page-template-default page page-id-2611 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spectra-one",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    390,
+    4610
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "844px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          358,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            350,
+            65,
+            24,
+            24
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              350,
+              65,
+              24,
+              24
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                350,
+                65,
+                24,
+                24
+               ],
+               "cls": "wp-block-navigation__responsive-container-open",
+               "kind": "button",
+               "text": "",
+               "style": {
+                "display": "flex",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "normal",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 24
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      153,
+      390,
+      3866
+     ],
+     "cls": "entry-content alignwide wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "display": "flow-root"
+     },
+     "children": [
+      {
+       "t": "h1",
+       "box": [
+        0,
+        153,
+        390,
+        48
+       ],
+       "kind": "text",
+       "text": "Capability Statement",
+       "style": {
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "40px",
+        "fontWeight": "500",
+        "lineHeight": "48px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-2px"
+       }
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        217,
+        390,
+        154
+       ],
+       "kind": "text",
+       "text": "We transcend the conventional boundaries of recruiters, bringing a pragmatic and expert approach to talent sourcing. We implement proven scalable methodologies that allow us to identify and place candidates 70% faster than industry average.",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "color": "rgb(0, 0, 0)"
+       },
+       "marks": [
+        {
+         "text": "70% faster",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        387,
+        390,
+        691
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          387,
+          1024,
+          683
+         ],
+         "kind": "image",
+         "src": "https://xcelcareers.com/wp-content/uploads/2023/08/3fpxt37x6uq.jpg",
+         "alt": "people standing inside city building",
+         "natural": [
+          1024,
+          682
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "lazy"
+        }
+       ]
+      },
+      {
+       "t": "h2",
+       "box": [
+        0,
+        1093,
+        390,
+        38
+       ],
+       "kind": "text",
+       "text": "About Us",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        1148,
+        390,
+        282
+       ],
+       "kind": "text",
+       "text": "XcelCareers (XC), LLC has sourced and placed over 600+ Cyber Security, Systems Engineers, DevOps, Developers, and multiple Technical and Non Technical positions throughout the DOD, Intelligence Community, and other government agencies. As a minority veteran-owned small business XC prides itself in providing staffing solutions to both government and private entities. With a combined 20+ years of experience, XC has the capabilities, resources, and competencies to deliver high-quality candidates with niche skill sets.",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "color": "rgb(0, 0, 0)"
+       }
+      },
+      {
+       "t": "h2",
+       "box": [
+        0,
+        1445,
+        390,
+        38
+       ],
+       "kind": "text",
+       "text": "Core Competencies",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "ul",
+       "box": [
+        0,
+        1499,
+        390,
+        307
+       ],
+       "kind": "list",
+       "style": {
+        "padding": "0px 0px 0px 40px",
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "listStyle": "disc",
+       "children": [
+        {
+         "t": "li",
+         "box": [
+          40,
+          1499,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Direct Hire/Contract to Hire",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1525,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Contract/Temporary Hire",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1551,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Rapid Task Order, IDIQ, and Proposal Staffing",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1576,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "A.I. Tools for global market data research",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1602,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Candidate Screening Support",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1627,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Advanced Training with Sourcing Tools",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1653,
+          350,
+          51
+         ],
+         "kind": "text",
+         "text": "Staffing Matrix Development and Compliance Support",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1704,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Salary Analysis and Competition Support",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          1730,
+          350,
+          77
+         ],
+         "kind": "text",
+         "text": "Fulfilling of Hard to Recruit Positions (i.e. job postings that have not been filled in 30+ days)",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "h2",
+       "box": [
+        0,
+        1823,
+        390,
+        38
+       ],
+       "kind": "text",
+       "text": "Past Performances",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        1877,
+        390,
+        77
+       ],
+       "kind": "text",
+       "text": "General Dynamics (Huntsville, AL, 2017) Placed MBSE Engineers (Model-Based Systems Engineering) Dallas, West VA",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "color": "rgb(0, 0, 0)"
+       },
+       "marks": [
+        {
+         "text": "General Dynamics (Huntsville, AL, 2017)",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        1970,
+        390,
+        102
+       ],
+       "kind": "text",
+       "text": "Indeed (2022) Provided market data research for 2 A.I. Ethics Data Scientists in San Francisco, 3 Machine Learning Engineers for New York, NY, and 4 Austin, TX",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "color": "rgb(0, 0, 0)"
+       },
+       "marks": [
+        {
+         "text": "Indeed (2022)",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        2088,
+        390,
+        128
+       ],
+       "kind": "text",
+       "text": "Northrop Grumman (Falls Church, Virginia, Current) Support Codex contract submitting Cyber Security engineers with Cloud Software Development experience. Have currently placed 8 with security clearance.",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "25.6px",
+        "color": "rgb(0, 0, 0)"
+       },
+       "marks": [
+        {
+         "text": "Northrop Grumman (",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        },
+        {
+         "text": "Falls Church, Virginia",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        },
+        {
+         "text": ", Current)",
+         "color": null,
+         "weight": "700",
+         "size": null,
+         "bg": null,
+         "family": null
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "box": [
+        0,
+        2232,
+        390,
+        776
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          2232,
+          1024,
+          768
+         ],
+         "kind": "image",
+         "src": "https://xcelcareers.com/wp-content/uploads/2023/08/opbmvst07gy.jpg",
+         "alt": "brown wooden blocks on white surface",
+         "natural": [
+          1024,
+          768
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "lazy"
+        }
+       ]
+      },
+      {
+       "t": "h2",
+       "box": [
+        0,
+        3024,
+        390,
+        38
+       ],
+       "kind": "text",
+       "text": "And Many More…",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3078,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3078,
+          58,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "th (4)",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3120,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3120,
+          58,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "th (3)",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3161,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3161,
+          189,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "th-1-e1544475635932",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3203,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3203,
+          116,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "parsons-logo",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3244,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3244,
+          170,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "gdit-inverse-logo (1)",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3286,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3286,
+          84,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "alionlogo",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3328,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3328,
+          207,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "United_States_Navy_logo",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3369,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3369,
+          151,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "GeorgiaTech_RGB",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3411,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3411,
+          148,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "Amazon_logo.svg",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3452,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3452,
+          113,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "Logo-Boeing",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3494,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3494,
+          322,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "Logo_of_the_United_States_Army.svg (1)",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3536,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3536,
+          349,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "microsoft-logo-8EE94BD68A-seeklogo.com",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3577,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3577,
+          292,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "US_Air_Force_Logo_Solid_Colour.svg",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3619,
+        390,
+        42
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3619,
+          438,
+          42
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "Seal_of_the_United_States_House_of_Representatives.svg",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3676,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3676,
+          257,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "6227175c74a10c92f2ae07a6 (1)",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "box": [
+        0,
+        3718,
+        390,
+        26
+       ],
+       "kind": "box",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "img",
+         "box": [
+          0,
+          3718,
+          201,
+          26
+         ],
+         "kind": "image",
+         "src": "",
+         "alt": "General-Dynamics-Logo",
+         "natural": [
+          0,
+          0
+         ],
+         "objectFit": null,
+         "style": {
+          "display": "inline",
+          "overflow": "clip"
+         },
+         "loading": "auto"
+        }
+       ]
+      },
+      {
+       "t": "h2",
+       "box": [
+        0,
+        3760,
+        390,
+        38
+       ],
+       "kind": "text",
+       "text": "Differentiators",
+       "style": {
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "ul",
+       "box": [
+        0,
+        3814,
+        390,
+        205
+       ],
+       "kind": "list",
+       "style": {
+        "padding": "0px 0px 0px 40px",
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "764px"
+       },
+       "listStyle": "disc",
+       "children": [
+        {
+         "t": "li",
+         "box": [
+          40,
+          3814,
+          350,
+          51
+         ],
+         "kind": "text",
+         "text": "Recognized as the Navy’s top recruiter for the Northeastern Region in 2006",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          3865,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Closed out 400 hired in 2018",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          3891,
+          350,
+          51
+         ],
+         "kind": "text",
+         "text": "Successfully Staffed Tasked Order in 45 days which required 120+ personnel",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          3942,
+          350,
+          51
+         ],
+         "kind": "text",
+         "text": "Supported the top 5 defense contracting companies",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        },
+        {
+         "t": "li",
+         "box": [
+          40,
+          3993,
+          350,
+          26
+         ],
+         "kind": "text",
+         "text": "Internal Database of 300,000+ Candidates",
+         "style": {
+          "display": "list-item",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "25.6px",
+          "color": "rgb(0, 0, 0)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "div.wp-block-group"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      4019,
+      390,
+      591
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        4083,
+        358,
+        408
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          4083,
+          358,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            4083,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              4083,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              390,
+              165
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            4145,
+            358,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-1 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          16,
+          4336,
+          358,
+          155
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            4336,
+            358,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              4336,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                16,
+                4336,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-2",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                16,
+                4381,
+                163,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-3 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              211,
+              4336,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                211,
+                4336,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-4",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                211,
+                4381,
+                163,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-5 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  211,
+                  4383,
+                  155,
+                  46
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        4539,
+        358,
+        38
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          32,
+          4539,
+          47,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-6 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          87,
+          4541,
+          116,
+          34
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          256,
+          4539,
+          102,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-8 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}

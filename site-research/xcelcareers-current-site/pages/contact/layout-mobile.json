@@ -1,0 +1,1963 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  3092
+ ],
+ "cls": "wp-singular page-template-default page page-id-1133 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spectra-one",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    390,
+    3092
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "844px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          358,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            350,
+            65,
+            24,
+            24
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              350,
+              65,
+              24,
+              24
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                350,
+                65,
+                24,
+                24
+               ],
+               "cls": "wp-block-navigation__responsive-container-open",
+               "kind": "button",
+               "text": "",
+               "style": {
+                "display": "flex",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "normal",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 24
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      153,
+      390,
+      2348
+     ],
+     "cls": "entry-content alignwide wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "display": "flow-root"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        153,
+        390,
+        1146
+       ],
+       "cls": "wp-block-uagb-container uagb-block-82324bf1 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/06/blob-grad.svg\")",
+        "bgSize": "cover",
+        "bgPos": "50% 50%",
+        "bgRepeat": "no-repeat",
+        "padding": "64px 24px 32px 24px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          24,
+          217,
+          342,
+          1050
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 426px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            24,
+            217,
+            342,
+            227
+           ],
+           "cls": "wp-block-uagb-advanced-heading uagb-block-d865dda5",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "h2",
+             "box": [
+              24,
+              217,
+              342,
+              38
+             ],
+             "cls": "uagb-heading-text",
+             "kind": "text",
+             "text": "Get In Touch",
+             "style": {
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "32px",
+              "fontWeight": "500",
+              "lineHeight": "38.4px",
+              "color": "rgb(180, 33, 23)",
+              "letterSpacing": "-1px"
+             }
+            },
+            {
+             "t": "p",
+             "box": [
+              24,
+              275,
+              342,
+              154
+             ],
+             "cls": "uagb-desc-text",
+             "kind": "text",
+             "text": "Contact XcelCareers to explore how we can help you navigate the booming tech industry with expert guidance and tailored solutions. Whether advancing your career or seeking top-tier talent, our 20+ years of experience ensure success every step of the way.",
+             "style": {
+              "margin": "0px 0px 15px 0px",
+              "textAlign": "center",
+              "fontFamily": "Inter, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "400",
+              "lineHeight": "25.6px",
+              "color": "rgb(0, 0, 0)"
+             }
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            24,
+            464,
+            342,
+            35
+           ],
+           "cls": "wp-block-uagb-social-share uagb-social-share__outer-wrap uagb-social-share__layout-horizontal uagb-block-3f3f409a",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "justify": "center",
+            "align": "center"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              103,
+              464,
+              35,
+              35
+             ],
+             "cls": "wp-block-uagb-social-share-child uagb-ss-repeater uagb-ss__wrapper uagb-block-80f2aea7",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "margin": "0px 7.5px 0px 0px",
+              "borderRadius": "100px",
+              "textAlign": "center",
+              "transition": "all 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "span",
+               "box": [
+                103,
+                464,
+                35,
+                35
+               ],
+               "cls": "uagb-ss__link",
+               "kind": "text",
+               "text": "",
+               "style": {
+                "display": "table",
+                "padding": "10px 10px 10px 10px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 15
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              153,
+              464,
+              35,
+              35
+             ],
+             "cls": "wp-block-uagb-social-share-child uagb-ss-repeater uagb-ss__wrapper uagb-block-8260014c",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "margin": "0px 7.5px 0px 7.5px",
+              "borderRadius": "100px",
+              "textAlign": "center",
+              "transition": "all 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "span",
+               "box": [
+                153,
+                464,
+                35,
+                35
+               ],
+               "cls": "uagb-ss__link",
+               "kind": "text",
+               "text": "",
+               "style": {
+                "display": "table",
+                "padding": "10px 10px 10px 10px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 15
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              203,
+              464,
+              35,
+              35
+             ],
+             "cls": "wp-block-uagb-social-share-child uagb-ss-repeater uagb-ss__wrapper uagb-block-8ee815c9",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "margin": "0px 7.5px 0px 7.5px",
+              "borderRadius": "100px",
+              "textAlign": "center",
+              "transition": "all 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "span",
+               "box": [
+                203,
+                464,
+                35,
+                35
+               ],
+               "cls": "uagb-ss__link",
+               "kind": "text",
+               "text": "",
+               "style": {
+                "display": "table",
+                "padding": "10px 10px 10px 10px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 15
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              253,
+              464,
+              35,
+              35
+             ],
+             "cls": "wp-block-uagb-social-share-child uagb-ss-repeater uagb-ss__wrapper uagb-block-3a815f79",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "margin": "0px 0px 0px 7.5px",
+              "borderRadius": "100px",
+              "textAlign": "center",
+              "transition": "all 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "span",
+               "box": [
+                253,
+                464,
+                35,
+                35
+               ],
+               "cls": "uagb-ss__link",
+               "kind": "text",
+               "text": "",
+               "style": {
+                "display": "table",
+                "padding": "10px 10px 10px 10px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 15
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            24,
+            519,
+            342,
+            748
+           ],
+           "cls": "wp-block-uagb-container uagb-block-77f6a3a9",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "justify": "center",
+            "padding": "24px 0px 0px 0px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              24,
+              543,
+              342,
+              248
+             ],
+             "cls": "wp-block-uagb-container uagb-block-1bc8d6b0",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "align": "flex-start",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 31px 80px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                48,
+                567,
+                294,
+                200
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-6c561d67 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  48,
+                  567,
+                  294,
+                  200
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    567,
+                    56,
+                    56
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(226, 229, 231)",
+                    "padding": "16px 16px 16px 16px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      64,
+                      583,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(0, 0, 0)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    649,
+                    294,
+                    31
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h4",
+                     "box": [
+                      48,
+                      649,
+                      294,
+                      31
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Our Location​",
+                     "style": {
+                      "margin": "26px 0px 8px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(180, 33, 23)",
+                      "letterSpacing": "-0.25px"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    48,
+                    696,
+                    294,
+                    51
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "text",
+                   "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042",
+                   "style": {
+                    "margin": "16px 0px 20px 0px",
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              24,
+              815,
+              342,
+              202
+             ],
+             "cls": "wp-block-uagb-container uagb-block-10b3d4a6",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "align": "flex-start",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 31px 80px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                48,
+                839,
+                294,
+                154
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-b6e22afe uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  48,
+                  839,
+                  294,
+                  154
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    839,
+                    56,
+                    56
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(226, 229, 231)",
+                    "padding": "16px 16px 16px 16px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      64,
+                      855,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(0, 0, 0)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    920,
+                    294,
+                    31
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h4",
+                     "box": [
+                      48,
+                      920,
+                      294,
+                      31
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Call Us On",
+                     "style": {
+                      "margin": "25px 0px 8px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(180, 33, 23)",
+                      "letterSpacing": "-0.25px"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    48,
+                    968,
+                    294,
+                    26
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "box",
+                   "style": {
+                    "margin": "16px 0px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      48,
+                      970,
+                      131,
+                      20
+                     ],
+                     "kind": "link",
+                     "text": "+ 1 410.865.9558",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "href": "tel:14108659558"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              24,
+              1041,
+              342,
+              202
+             ],
+             "cls": "wp-block-uagb-container uagb-block-15f89f81",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "flexWrap": "wrap",
+              "align": "flex-start",
+              "padding": "24px 24px 24px 24px",
+              "margin": "0px 0px 24px 0px",
+              "maxWidth": "100%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 31px 80px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                48,
+                1065,
+                294,
+                154
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-93d98230 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  48,
+                  1065,
+                  294,
+                  154
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    1065,
+                    56,
+                    56
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(226, 229, 231)",
+                    "padding": "16px 16px 16px 16px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      64,
+                      1081,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(0, 0, 0)",
+                     "color": "rgb(0, 0, 0)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    48,
+                    1146,
+                    294,
+                    31
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h4",
+                     "box": [
+                      48,
+                      1146,
+                      294,
+                      31
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Email Us",
+                     "style": {
+                      "margin": "25px 0px 8px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "600",
+                      "lineHeight": "31.2px",
+                      "color": "rgb(180, 33, 23)",
+                      "letterSpacing": "-0.25px"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    48,
+                    1193,
+                    294,
+                    26
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "box",
+                   "style": {
+                    "margin": "16px 0px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      48,
+                      1195,
+                      224,
+                      20
+                     ],
+                     "kind": "link",
+                     "text": "HRservices@xcelcareers.com",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "href": "mailto:HRservices@xcelcareers.com"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        1299,
+        390,
+        1186
+       ],
+       "cls": "wp-block-uagb-container uagb-block-8e822cc2 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "padding": "10px 10px 10px 10px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          10,
+          1309,
+          370,
+          1166
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "flexWrap": "wrap",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 767px)"
+         },
+         "children": [
+          {
+           "t": "h2",
+           "box": [
+            10,
+            1341,
+            370,
+            38
+           ],
+           "cls": "wp-block-heading has-text-align-center",
+           "kind": "text",
+           "text": "NAICS Codes",
+           "style": {
+            "position": "relative",
+            "margin": "32px 0px 16px 0px",
+            "textAlign": "center",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(180, 33, 23)",
+            "letterSpacing": "-1px"
+           }
+          },
+          {
+           "t": "section",
+           "box": [
+            10,
+            1415,
+            370,
+            1059
+           ],
+           "cls": "wp-block-uagb-columns uagb-columns__wrap uagb-columns__background-none uagb-columns__stack-mobile uagb-columns__valign- uagb-columns__gap-10 align uagb-block-c0…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "20px 20px 20px 20px",
+            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+            "zIndex": "2"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              30,
+              1435,
+              330,
+              1019
+             ],
+             "cls": "uagb-columns__inner-wrap uagb-columns__columns-5",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "zIndex": "2"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                30,
+                1435,
+                330,
+                211
+               ],
+               "cls": "wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-4341f48c",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "10px 10px 10px 10px",
+                "margin": "0px 5px 0px 0px",
+                "zIndex": "2"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  30,
+                  1435,
+                  330,
+                  211
+                 ],
+                 "cls": "uagb-column__overlay",
+                 "kind": "box",
+                 "style": {
+                  "position": "absolute",
+                  "bg": "rgb(40, 40, 40)",
+                  "zIndex": "1"
+                 },
+                 "empty": true
+                },
+                {
+                 "t": "h2",
+                 "box": [
+                  40,
+                  1477,
+                  310,
+                  38
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-heading-color has-text-color has-link-color wp-elements-1",
+                 "kind": "text",
+                 "text": "561311",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "h3",
+                 "box": [
+                  40,
+                  1548,
+                  310,
+                  73
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color wp-elements-2",
+                 "kind": "text",
+                 "text": "Employment Placement Agencies",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                30,
+                1646,
+                330,
+                211
+               ],
+               "cls": "wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-66e60050",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "10px 10px 10px 10px",
+                "margin": "0px 5px 0px 0px",
+                "zIndex": "2"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  30,
+                  1646,
+                  330,
+                  211
+                 ],
+                 "cls": "uagb-column__overlay",
+                 "kind": "box",
+                 "style": {
+                  "position": "absolute",
+                  "bg": "rgb(40, 40, 40)",
+                  "zIndex": "1"
+                 },
+                 "empty": true
+                },
+                {
+                 "t": "h2",
+                 "box": [
+                  40,
+                  1688,
+                  310,
+                  38
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-heading-color has-text-color has-link-color wp-elements-3",
+                 "kind": "text",
+                 "text": "561320",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "h3",
+                 "box": [
+                  40,
+                  1759,
+                  310,
+                  73
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color wp-elements-4",
+                 "kind": "text",
+                 "text": "Temporary Help Services",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                30,
+                1858,
+                330,
+                175
+               ],
+               "cls": "wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-e2a50e1f",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "10px 10px 10px 10px",
+                "margin": "0px 5px 0px 0px",
+                "zIndex": "2"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  30,
+                  1858,
+                  330,
+                  175
+                 ],
+                 "cls": "uagb-column__overlay",
+                 "kind": "box",
+                 "style": {
+                  "position": "absolute",
+                  "bg": "rgb(40, 40, 40)",
+                  "zIndex": "1"
+                 },
+                 "empty": true
+                },
+                {
+                 "t": "h2",
+                 "box": [
+                  40,
+                  1900,
+                  310,
+                  38
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-heading-color has-text-color has-link-color wp-elements-5",
+                 "kind": "text",
+                 "text": "541330",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "h3",
+                 "box": [
+                  40,
+                  1970,
+                  310,
+                  36
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color wp-elements-6",
+                 "kind": "text",
+                 "text": "Engineering Services",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                30,
+                2032,
+                330,
+                211
+               ],
+               "cls": "wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-dfade396",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "10px 10px 10px 10px",
+                "margin": "0px 5px 0px 0px",
+                "zIndex": "2"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  30,
+                  2032,
+                  330,
+                  211
+                 ],
+                 "cls": "uagb-column__overlay",
+                 "kind": "box",
+                 "style": {
+                  "position": "absolute",
+                  "bg": "rgb(40, 40, 40)",
+                  "zIndex": "1"
+                 },
+                 "empty": true
+                },
+                {
+                 "t": "h2",
+                 "box": [
+                  40,
+                  2074,
+                  310,
+                  38
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-heading-color has-text-color has-link-color wp-elements-7",
+                 "kind": "text",
+                 "text": "541511",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "h3",
+                 "box": [
+                  40,
+                  2145,
+                  310,
+                  73
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color wp-elements-8",
+                 "kind": "text",
+                 "text": "Computer Programming Services",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                30,
+                2244,
+                330,
+                211
+               ],
+               "cls": "wp-block-uagb-column uagb-column__wrap uagb-column__background-color uagb-block-621dbc41",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "10px 10px 10px 10px",
+                "margin": "0px 5px 0px 0px",
+                "zIndex": "2"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  30,
+                  2244,
+                  330,
+                  211
+                 ],
+                 "cls": "uagb-column__overlay",
+                 "kind": "box",
+                 "style": {
+                  "position": "absolute",
+                  "bg": "rgb(40, 40, 40)",
+                  "zIndex": "1"
+                 },
+                 "empty": true
+                },
+                {
+                 "t": "h2",
+                 "box": [
+                  40,
+                  2286,
+                  310,
+                  38
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-heading-color has-text-color has-link-color wp-elements-9",
+                 "kind": "text",
+                 "text": "541512",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "h3",
+                 "box": [
+                  40,
+                  2356,
+                  310,
+                  73
+                 ],
+                 "cls": "wp-block-heading has-text-align-center has-secondary-color has-text-color has-link-color wp-elements-10",
+                 "kind": "text",
+                 "text": "Computer Systems Design Services",
+                 "style": {
+                  "position": "relative",
+                  "margin": "32px 0px 16px 0px",
+                  "zIndex": "1",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "500",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-0.5px"
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "div.wp-block-group"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      2501,
+      390,
+      591
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        2565,
+        358,
+        408
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          2565,
+          358,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            2565,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              2565,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              390,
+              165
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            2628,
+            358,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-11 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          16,
+          2818,
+          358,
+          155
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            2818,
+            358,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              2818,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                16,
+                2818,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-12",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                16,
+                2863,
+                163,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-13 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              211,
+              2818,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                211,
+                2818,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-14",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                211,
+                2863,
+                163,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-15 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  211,
+                  2865,
+                  155,
+                  46
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        3021,
+        358,
+        38
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          32,
+          3021,
+          47,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-16 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          87,
+          3023,
+          116,
+          34
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          256,
+          3021,
+          102,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-18 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}

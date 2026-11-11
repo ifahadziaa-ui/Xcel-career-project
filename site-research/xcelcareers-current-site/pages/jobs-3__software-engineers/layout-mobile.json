@@ -1,0 +1,1883 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  1704
+ ],
+ "cls": "wp-singular jobpost-template jobpost-template-job-posting-template single single-jobpost postid-2977 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spe…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -1,
+    1,
+    1
+   ],
+   "id": "wp-skip-link",
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "Inter, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "25.6px",
+    "color": "rgb(0, 0, 0)"
+   },
+   "href": "https://xcelcareers.com/jobs-3/software-engineers/#wp--skip-link--target"
+  },
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    390,
+    1704
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "844px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "flexWrap": "wrap",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          358,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            350,
+            65,
+            24,
+            24
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              350,
+              65,
+              24,
+              24
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                350,
+                65,
+                24,
+                24
+               ],
+               "cls": "wp-block-navigation__responsive-container-open",
+               "kind": "button",
+               "text": "",
+               "style": {
+                "display": "flex",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "400",
+                "lineHeight": "normal",
+                "color": "rgb(255, 255, 255)"
+               },
+               "icons": [
+                {
+                 "icon": "svg",
+                 "w": 24
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "main",
+     "box": [
+      0,
+      169,
+      390,
+      945
+     ],
+     "id": "wp--skip-link--target",
+     "cls": "wp-block-group is-layout-flow wp-block-group-is-layout-flow",
+     "kind": "box",
+     "style": {
+      "margin": "16px 0px 0px 0px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        169,
+        390,
+        945
+       ],
+       "cls": "sjb-page",
+       "kind": "box",
+       "style": {
+        "padding": "20px 20px 20px 20px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          20,
+          219,
+          350,
+          845
+         ],
+         "cls": "sjb-detail",
+         "kind": "box",
+         "style": {
+          "position": "relative",
+          "margin": "30px 0px 30px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            20,
+            219,
+            350,
+            845
+           ],
+           "cls": "list-data",
+           "kind": "box",
+           "style": {},
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              20,
+              219,
+              350,
+              845
+             ],
+             "cls": "v1 sjb-job-popup-2977",
+             "kind": "box",
+             "style": {
+              "bg": "rgb(255, 255, 255)"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                5,
+                219,
+                380,
+                152
+               ],
+               "cls": "row",
+               "kind": "box",
+               "style": {
+                "margin": "0px -15px 0px -15px"
+               },
+               "pseudo": {
+                "::after": {
+                 "content": "\" \"",
+                 "w": "380px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  5,
+                  219,
+                  380,
+                  95
+                 ],
+                 "cls": "col-md-1 col-sm-2",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    20,
+                    219,
+                    350,
+                    95
+                   ],
+                   "cls": "company-logo",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "img",
+                     "box": [
+                      20,
+                      219,
+                      95,
+                      95
+                     ],
+                     "cls": "sjb-img-responsive",
+                     "kind": "image",
+                     "src": "https://xcelcareers.com/wp-content/plugins/simple-job-board/public/images/company.png",
+                     "alt": "",
+                     "natural": [
+                      512,
+                      512
+                     ],
+                     "objectFit": null,
+                     "style": {
+                      "display": "inline",
+                      "maxWidth": "100%",
+                      "border": "1px 1px 1px 1px solid rgb(225, 225, 225)",
+                      "overflow": "clip"
+                     },
+                     "loading": "auto"
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  5,
+                  329,
+                  380,
+                  42
+                 ],
+                 "cls": "col-md-11 col-sm-10 header-margin-top",
+                 "kind": "box",
+                 "style": {
+                  "position": "relative",
+                  "padding": "0px 15px 0px 15px",
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    329,
+                    380,
+                    42
+                   ],
+                   "cls": "row",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px -15px 0px -15px"
+                   },
+                   "pseudo": {
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "380px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      5,
+                      335,
+                      380,
+                      26
+                     ],
+                     "cls": "col-md-3 col-sm-4",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "padding": "0px 15px 0px 15px",
+                      "minHeight": "1px"
+                     },
+                     "children": [
+                      {
+                       "t": "div",
+                       "box": [
+                        20,
+                        335,
+                        350,
+                        26
+                       ],
+                       "cls": "job-date",
+                       "kind": "box",
+                       "style": {
+                        "margin": "4px 0px 10px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "#text",
+                         "kind": "text",
+                         "text": "Posted 2 years ago",
+                         "style": {
+                          "fontFamily": "Inter, sans-serif",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "25.6px",
+                          "color": "rgb(0, 0, 0)"
+                         },
+                         "box": [
+                          20,
+                          335,
+                          350,
+                          26
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "header"
+               ]
+              },
+              {
+               "t": "p",
+               "box": [
+                20,
+                371,
+                350,
+                102
+               ],
+               "cls": "wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "0px 0px 10px 0px"
+               },
+               "children": [
+                {
+                 "t": "#text",
+                 "kind": "text",
+                 "text": "Compensation varies based on experience and qualifications. Please email for more details.",
+                 "style": {
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 },
+                 "box": [
+                  20,
+                  371,
+                  350,
+                  102
+                 ]
+                },
+                {
+                 "t": "a",
+                 "box": [
+                  20,
+                  424,
+                  224,
+                  20
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "transition": "all 0.2s ease-in-out",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ],
+               "wrapped": [
+                "div.job-description"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                20,
+                371,
+                350,
+                112
+               ],
+               "cls": "clearfix",
+               "kind": "box",
+               "style": {},
+               "pseudo": {
+                "::before": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                },
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "empty": true
+              },
+              {
+               "t": "div",
+               "box": [
+                20,
+                483,
+                350,
+                40
+               ],
+               "cls": "clearfix",
+               "kind": "box",
+               "style": {},
+               "pseudo": {
+                "::before": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                },
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "empty": true
+              },
+              {
+               "t": "form",
+               "box": [
+                20,
+                523,
+                350,
+                541
+               ],
+               "id": "sjb-application-form",
+               "cls": "jobpost-form sjb-job-2977",
+               "kind": "form",
+               "style": {
+                "position": "relative"
+               },
+               "action": "ref: <Node>",
+               "method": "get",
+               "children": [
+                {
+                 "t": "h3",
+                 "box": [
+                  20,
+                  540,
+                  350,
+                  36
+                 ],
+                 "kind": "text",
+                 "text": "Apply For This Job",
+                 "style": {
+                  "margin": "17px 0px 17px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "28px",
+                  "fontWeight": "700",
+                  "lineHeight": "36.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-0.5px"
+                 }
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  5,
+                  593,
+                  380,
+                  470
+                 ],
+                 "cls": "row",
+                 "kind": "box",
+                 "style": {
+                  "margin": "0px -15px 0px -15px"
+                 },
+                 "pseudo": {
+                  "::after": {
+                   "content": "\" \"",
+                   "w": "380px",
+                   "h": "0px",
+                   "bg": null,
+                   "bgImage": null,
+                   "position": null,
+                   "opacity": null
+                  }
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    593,
+                    380,
+                    41
+                   ],
+                   "cls": "col-md-3 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      20,
+                      603,
+                      93,
+                      26
+                     ],
+                     "kind": "text",
+                     "text": "First Name*",
+                     "style": {
+                      "display": "inline-block",
+                      "margin": "10px 0px 5px 0px",
+                      "maxWidth": "100%",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "marks": [
+                      {
+                       "text": "*",
+                       "color": "rgb(255, 0, 0)",
+                       "weight": null,
+                       "size": null,
+                       "bg": null,
+                       "family": null
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    634,
+                    380,
+                    61
+                   ],
+                   "cls": "col-md-9 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      20,
+                      634,
+                      350,
+                      46
+                     ],
+                     "cls": "form-group",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 15px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "input",
+                       "box": [
+                        20,
+                        634,
+                        350,
+                        46
+                       ],
+                       "id": "jobapp_first_name",
+                       "cls": "form-control sjb-required",
+                       "kind": "field",
+                       "type": "text",
+                       "name": "jobapp_first_name",
+                       "placeholder": null,
+                       "required": null,
+                       "value": null,
+                       "style": {
+                        "bg": "rgb(255, 255, 255)",
+                        "padding": "6px 12px 6px 12px",
+                        "border": "2px 2px 2px 2px inset rgb(118, 118, 118)",
+                        "boxShadow": "rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset",
+                        "overflow": "clip",
+                        "transition": "all 0.2s ease-in-out",
+                        "fontFamily": "Inter, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "22.8571px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    593,
+                    380,
+                    102
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    695,
+                    380,
+                    41
+                   ],
+                   "cls": "col-md-3 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      20,
+                      705,
+                      92,
+                      26
+                     ],
+                     "kind": "text",
+                     "text": "Last Name*",
+                     "style": {
+                      "display": "inline-block",
+                      "margin": "10px 0px 5px 0px",
+                      "maxWidth": "100%",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "marks": [
+                      {
+                       "text": "*",
+                       "color": "rgb(255, 0, 0)",
+                       "weight": null,
+                       "size": null,
+                       "bg": null,
+                       "family": null
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    736,
+                    380,
+                    61
+                   ],
+                   "cls": "col-md-9 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      20,
+                      736,
+                      350,
+                      46
+                     ],
+                     "cls": "form-group",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 15px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "input",
+                       "box": [
+                        20,
+                        736,
+                        350,
+                        46
+                       ],
+                       "id": "jobapp_last_name",
+                       "cls": "form-control sjb-required",
+                       "kind": "field",
+                       "type": "text",
+                       "name": "jobapp_last_name",
+                       "placeholder": null,
+                       "required": null,
+                       "value": null,
+                       "style": {
+                        "bg": "rgb(255, 255, 255)",
+                        "padding": "6px 12px 6px 12px",
+                        "border": "2px 2px 2px 2px inset rgb(118, 118, 118)",
+                        "boxShadow": "rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset",
+                        "overflow": "clip",
+                        "transition": "all 0.2s ease-in-out",
+                        "fontFamily": "Inter, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "22.8571px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    695,
+                    380,
+                    102
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    797,
+                    380,
+                    41
+                   ],
+                   "cls": "col-md-3 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      20,
+                      807,
+                      121,
+                      26
+                     ],
+                     "kind": "text",
+                     "text": "Email Address*",
+                     "style": {
+                      "display": "inline-block",
+                      "margin": "10px 0px 5px 0px",
+                      "maxWidth": "100%",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "marks": [
+                      {
+                       "text": "*",
+                       "color": "rgb(255, 0, 0)",
+                       "weight": null,
+                       "size": null,
+                       "bg": null,
+                       "family": null
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    837,
+                    380,
+                    61
+                   ],
+                   "cls": "col-md-9 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      20,
+                      837,
+                      350,
+                      46
+                     ],
+                     "cls": "form-group",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 15px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "input",
+                       "box": [
+                        20,
+                        837,
+                        350,
+                        46
+                       ],
+                       "id": "jobapp_email_address",
+                       "cls": "form-control sjb-email-address sjb-required",
+                       "kind": "field",
+                       "type": "email",
+                       "name": "jobapp_email_address",
+                       "placeholder": null,
+                       "required": null,
+                       "value": null,
+                       "style": {
+                        "bg": "rgb(255, 255, 255)",
+                        "padding": "6px 12px 6px 12px",
+                        "border": "2px 2px 2px 2px inset rgb(118, 118, 118)",
+                        "boxShadow": "rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset",
+                        "overflow": "clip",
+                        "transition": "all 0.2s ease-in-out",
+                        "fontFamily": "Inter, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "22.8571px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    797,
+                    380,
+                    102
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    898,
+                    380,
+                    41
+                   ],
+                   "cls": "col-md-3 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      20,
+                      908,
+                      128,
+                      26
+                     ],
+                     "kind": "text",
+                     "text": "Attach Resume*",
+                     "style": {
+                      "display": "inline-block",
+                      "margin": "10px 0px 5px 0px",
+                      "maxWidth": "100%",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "25.6px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "marks": [
+                      {
+                       "text": "*",
+                       "color": "rgb(255, 0, 0)",
+                       "weight": null,
+                       "size": null,
+                       "bg": null,
+                       "family": null
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    939,
+                    380,
+                    61
+                   ],
+                   "cls": "col-md-9 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      20,
+                      939,
+                      350,
+                      46
+                     ],
+                     "cls": "form-group",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 15px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "div",
+                       "box": [
+                        20,
+                        939,
+                        350,
+                        46
+                       ],
+                       "cls": "file",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "bg": "rgb(255, 255, 255)",
+                        "padding": "10px 12px 10px 12px",
+                        "borderRadius": "4px",
+                        "border": "1px 1px 1px 1px solid rgb(225, 225, 225)",
+                        "boxShadow": "rgba(0, 0, 0, 0.075) 0px 1px 1px 0px inset",
+                        "transition": "all 0.2s ease-in-out"
+                       },
+                       "children": [
+                        {
+                         "t": "span",
+                         "box": [
+                          33,
+                          951,
+                          108,
+                          20
+                         ],
+                         "kind": "text",
+                         "text": "No file chosen",
+                         "style": {
+                          "display": "inline",
+                          "width": "auto",
+                          "fontFamily": "Inter, sans-serif",
+                          "fontSize": "16px",
+                          "fontWeight": "400",
+                          "lineHeight": "22.8571px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        },
+                        {
+                         "t": "div",
+                         "box": [
+                          281,
+                          946,
+                          82,
+                          32
+                         ],
+                         "kind": "box",
+                         "style": {
+                          "position": "absolute",
+                          "bg": "rgb(230, 230, 230)",
+                          "padding": "6px 12px 6px 12px",
+                          "borderRadius": "4px",
+                          "border": "1px 1px 1px 1px solid rgb(162, 162, 162)",
+                          "textAlign": "center",
+                          "transition": "all 0.2s ease-in-out"
+                         },
+                         "children": [
+                          {
+                           "t": "#text",
+                           "kind": "text",
+                           "text": "Browse",
+                           "style": {
+                            "fontFamily": "Inter, sans-serif",
+                            "fontSize": "16px",
+                            "fontWeight": "400",
+                            "lineHeight": "22.8571px",
+                            "color": "rgb(0, 0, 0)",
+                            "textAlign": "center"
+                           },
+                           "box": [
+                            281,
+                            946,
+                            82,
+                            32
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    898,
+                    380,
+                    102
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    1000,
+                    380,
+                    0
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    1000,
+                    380,
+                    64
+                   ],
+                   "cls": "col-md-12 col-xs-12",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 15px 0px 15px",
+                    "minHeight": "1px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      20,
+                      1000,
+                      350,
+                      0
+                     ],
+                     "id": "sjb-form-padding-button",
+                     "cls": "form-group",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 15px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "button",
+                       "box": [
+                        255,
+                        1005,
+                        115,
+                        39
+                       ],
+                       "cls": "btn btn-primary app-submit",
+                       "kind": "button",
+                       "text": "Submit",
+                       "style": {
+                        "bg": "rgb(240, 240, 240)",
+                        "padding": "7px 30px 7px 30px",
+                        "margin": "5px 0px 20px 0px",
+                        "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                        "textAlign": "center",
+                        "transition": "all 0.2s ease-in-out",
+                        "fontFamily": "Inter, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "22.8571px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    5,
+                    1000,
+                    380,
+                    64
+                   ],
+                   "cls": "clearfix",
+                   "kind": "box",
+                   "style": {},
+                   "pseudo": {
+                    "::before": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    },
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "empty": true
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                20,
+                523,
+                350,
+                541
+               ],
+               "cls": "clearfix",
+               "kind": "box",
+               "style": {},
+               "pseudo": {
+                "::before": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                },
+                "::after": {
+                 "content": "\" \"",
+                 "w": "0px",
+                 "h": "0px",
+                 "bg": null,
+                 "bgImage": null,
+                 "position": null,
+                 "opacity": null
+                }
+               },
+               "empty": true
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              20,
+              219,
+              350,
+              845
+             ],
+             "cls": "clearfix",
+             "kind": "box",
+             "style": {},
+             "pseudo": {
+              "::before": {
+               "content": "\" \"",
+               "w": "0px",
+               "h": "0px",
+               "bg": null,
+               "bgImage": null,
+               "position": null,
+               "opacity": null
+              },
+              "::after": {
+               "content": "\" \"",
+               "w": "0px",
+               "h": "0px",
+               "bg": null,
+               "bgImage": null,
+               "position": null,
+               "opacity": null
+              }
+             },
+             "empty": true
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.entry-content"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      1114,
+      390,
+      591
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        1178,
+        358,
+        408
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          1178,
+          358,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            1178,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              1178,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              390,
+              165
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            1240,
+            358,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-1 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          16,
+          1431,
+          358,
+          155
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            1431,
+            358,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              1431,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                16,
+                1431,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-2",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                16,
+                1476,
+                163,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-3 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              211,
+              1431,
+              163,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                211,
+                1431,
+                163,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-4",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                211,
+                1476,
+                163,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-5 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  211,
+                  1478,
+                  155,
+                  46
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        1634,
+        358,
+        38
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          32,
+          1634,
+          47,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-6 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          87,
+          1636,
+          116,
+          34
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          256,
+          1634,
+          102,
+          38
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-8 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}

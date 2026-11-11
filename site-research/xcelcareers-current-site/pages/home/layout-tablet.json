@@ -1,0 +1,5727 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  820,
+  4485
+ ],
+ "cls": "home wp-singular page-template-default page page-id-2999 wp-custom-logo wp-embed-responsive wp-theme-spectra-one spectra-one",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)"
+ },
+ "children": [
+  {
+   "t": "div",
+   "box": [
+    0,
+    0,
+    820,
+    4485
+   ],
+   "cls": "wp-site-blocks",
+   "kind": "box",
+   "style": {
+    "display": "flex",
+    "flexDirection": "column",
+    "minHeight": "1180px"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      820,
+      153
+     ],
+     "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-df168b1f wp-block-columns-is-layout-flex",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "gap": "16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        820,
+        153
+       ],
+       "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-b80e7ce5 wp-block-group-is-l…",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "bg": "rgb(0, 0, 0)",
+        "padding": "0px 16px 0px 16px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          0,
+          788,
+          153
+         ],
+         "cls": "wp-block-group alignwide swt-block-row is-content-justification-space-between is-nowrap is-layout-flex wp-container-core-group-is-layout-07a16b5a wp-block-group…",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "justify": "space-between",
+          "align": "center",
+          "gap": "16px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            0,
+            153,
+            153
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              0,
+              153,
+              153
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo.png",
+             "alt": "",
+             "natural": [
+              400,
+              400
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            288,
+            58,
+            516,
+            37
+           ],
+           "cls": "wp-block-group swt-block-row is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-3634d67b wp-block-group-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "justify": "flex-end",
+            "align": "center",
+            "gap": "48px"
+           },
+           "children": [
+            {
+             "t": "nav",
+             "box": [
+              288,
+              65,
+              341,
+              22
+             ],
+             "cls": "has-text-color has-white-color is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigatio…",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "justify": "flex-end",
+              "align": "center",
+              "gap": "32px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                288,
+                65,
+                341,
+                22
+               ],
+               "id": "modal-1-content",
+               "cls": "wp-block-navigation__responsive-container-content",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexWrap": "wrap",
+                "justify": "flex-end",
+                "align": "center",
+                "gap": "32px"
+               },
+               "children": [
+                {
+                 "t": "ul",
+                 "box": [
+                  288,
+                  65,
+                  341,
+                  22
+                 ],
+                 "cls": "wp-block-navigation__container",
+                 "kind": "list",
+                 "style": {
+                  "display": "flex",
+                  "flexWrap": "wrap",
+                  "justify": "flex-end",
+                  "align": "center",
+                  "gap": "32px",
+                  "flexGrow": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "li",
+                   "box": [
+                    288,
+                    65,
+                    38,
+                    22
+                   ],
+                   "cls": "wp-block-navigation-item wp-block-navigation-link",
+                   "kind": "box",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "align": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      288,
+                      65,
+                      38,
+                      22
+                     ],
+                     "cls": "wp-block-navigation-item__content",
+                     "kind": "link",
+                     "text": "Home",
+                     "style": {
+                      "zIndex": "1",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "22.4px",
+                      "color": "rgb(255, 255, 255)",
+                      "letterSpacing": "0.25px"
+                     },
+                     "href": "https://xcelcareers.com/"
+                    }
+                   ]
+                  },
+                  {
+                   "t": "li",
+                   "box": [
+                    358,
+                    65,
+                    126,
+                    22
+                   ],
+                   "cls": "wp-block-navigation-item wp-block-navigation-link",
+                   "kind": "box",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "align": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      358,
+                      65,
+                      126,
+                      22
+                     ],
+                     "cls": "wp-block-navigation-item__content",
+                     "kind": "link",
+                     "text": "Transition Into Tech",
+                     "style": {
+                      "zIndex": "1",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "22.4px",
+                      "color": "rgb(255, 255, 255)",
+                      "letterSpacing": "0.25px"
+                     },
+                     "href": "https://xcelcareers.com/transition-into-tech/"
+                    }
+                   ]
+                  },
+                  {
+                   "t": "li",
+                   "box": [
+                    516,
+                    65,
+                    31,
+                    22
+                   ],
+                   "cls": "wp-block-navigation-item wp-block-navigation-link",
+                   "kind": "box",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "align": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      516,
+                      65,
+                      31,
+                      22
+                     ],
+                     "cls": "wp-block-navigation-item__content",
+                     "kind": "link",
+                     "text": "Jobs",
+                     "style": {
+                      "zIndex": "1",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "22.4px",
+                      "color": "rgb(255, 255, 255)",
+                      "letterSpacing": "0.25px"
+                     },
+                     "href": "https://xcelcareers.com/jobs-2/"
+                    }
+                   ]
+                  },
+                  {
+                   "t": "li",
+                   "box": [
+                    579,
+                    65,
+                    50,
+                    22
+                   ],
+                   "cls": "wp-block-navigation-item wp-block-navigation-link",
+                   "kind": "box",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "align": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      579,
+                      65,
+                      50,
+                      22
+                     ],
+                     "cls": "wp-block-navigation-item__content",
+                     "kind": "link",
+                     "text": "Contact",
+                     "style": {
+                      "zIndex": "1",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "22.4px",
+                      "color": "rgb(255, 255, 255)",
+                      "letterSpacing": "0.25px"
+                     },
+                     "href": "https://xcelcareers.com/contact/"
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-navigation__responsive-dialog",
+                "div.wp-block-navigation__responsive-close",
+                "div.wp-block-navigation__responsive-container"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              677,
+              58,
+              127,
+              37
+             ],
+             "cls": "wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex swt-hide-mobile",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "flexWrap": "wrap",
+              "align": "center",
+              "gap": "16px"
+             },
+             "children": [
+              {
+               "t": "a",
+               "box": [
+                677,
+                58,
+                127,
+                37
+               ],
+               "cls": "wp-block-button__link has-background wp-element-button",
+               "kind": "link",
+               "text": "410.865.9558",
+               "style": {
+                "display": "inline-block",
+                "bg": "rgb(180, 33, 23)",
+                "padding": "11.338px 20.662px 11.338px 20.662px",
+                "borderRadius": "6px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "500",
+                "lineHeight": "14px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "href": "",
+               "wrapped": [
+                "div.wp-block-button"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "wrapped": [
+        "div.wp-block-column"
+       ]
+      }
+     ],
+     "wrapped": [
+      "header.wp-block-template-part"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      153,
+      820,
+      3947
+     ],
+     "cls": "entry-content alignwide wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "display": "flow-root"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        153,
+        820,
+        861
+       ],
+       "cls": "wp-block-uagb-container uagb-block-2a0e2241 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/07/hero-bg-01.jpg\")",
+        "bgSize": "cover",
+        "bgPos": "50% 50%",
+        "bgRepeat": "no-repeat",
+        "padding": "200px 40px 160px 40px",
+        "borderRadius": "0px 0px 80px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "pseudo": {
+        "::before": {
+         "content": "\"\"",
+         "w": "820px",
+         "h": "861.469px",
+         "bg": "rgb(0, 0, 0)",
+         "bgImage": null,
+         "position": "absolute",
+         "opacity": "0.48"
+        }
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          40,
+          353,
+          740,
+          501
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 1024px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            40,
+            353,
+            740,
+            501
+           ],
+           "cls": "wp-block-uagb-info-box uagb-block-74ac5ff1 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "0px 177.594px 0px 0px",
+            "zIndex": "1"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              40,
+              353,
+              562,
+              501
+             ],
+             "cls": "uagb-ifb-content",
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "zIndex": "1"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                40,
+                353,
+                562,
+                325
+               ],
+               "cls": "uagb-ifb-title-wrap",
+               "kind": "box",
+               "style": {
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "h1",
+                 "box": [
+                  40,
+                  353,
+                  502,
+                  325
+                 ],
+                 "cls": "uagb-ifb-title",
+                 "kind": "text",
+                 "text": "Top Talent Solutions: Expert Staffing for Systems Engineers, Cloud Engineers, and Software Engineers",
+                 "style": {
+                  "margin": "0px 60px 20px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "54.12px",
+                  "fontWeight": "500",
+                  "lineHeight": "64.944px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-2px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                40,
+                698,
+                562,
+                77
+               ],
+               "cls": "uagb-ifb-desc",
+               "kind": "box",
+               "style": {
+                "margin": "0px 0px 30px 0px"
+               },
+               "children": [
+                {
+                 "t": "p",
+                 "box": [
+                  40,
+                  698,
+                  562,
+                  77
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "We specialize in connecting businesses with highly skilled Systems Engineers, Cloud Engineers, and Software Engineers, delivering customized staffing solutions to meet your unique hiring needs.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "a",
+               "box": [
+                40,
+                804,
+                227,
+                50
+               ],
+               "cls": "uagb-infobox-cta-link wp-block-button__link",
+               "kind": "link",
+               "text": "Email Us Your Staffing Needs",
+               "style": {
+                "display": "inline-flex",
+                "align": "center",
+                "bg": "rgb(180, 34, 23)",
+                "padding": "18px 22px 18px 22px",
+                "borderRadius": "5px",
+                "textAlign": "center",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "14px",
+                "fontWeight": "500",
+                "lineHeight": "14px",
+                "color": "rgb(255, 255, 255)"
+               },
+               "href": "mailto:HRservices@xcelcareers.com",
+               "target": "_self",
+               "wrapped": [
+                "div.uagb-ifb-button-wrapper"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        1014,
+        820,
+        348
+       ],
+       "cls": "wp-block-uagb-container uagb-block-837de6be alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "padding": "10px 10px 10px 10px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          10,
+          1024,
+          800,
+          328
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 1024px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            10,
+            1094,
+            800,
+            258
+           ],
+           "cls": "wp-block-group has-black-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94e8d610 wp-block-group-is-l…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "bg": "rgb(0, 0, 0)",
+            "padding": "48px 48px 48px 48px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              58,
+              1142,
+              704,
+              162
+             ],
+             "cls": "wp-block-columns alignwide are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-80868740 wp-block-columns-is-layout-flex",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "gap": "16px",
+              "maxWidth": "1164px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                58,
+                1142,
+                344,
+                162
+               ],
+               "cls": "wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow",
+               "kind": "box",
+               "style": {},
+               "children": [
+                {
+                 "t": "h3",
+                 "box": [
+                  58,
+                  1142,
+                  344,
+                  77
+                 ],
+                 "cls": "wp-block-heading has-text-align-left has-heading-color has-text-color",
+                 "kind": "text",
+                 "text": "Ready to find your next opportunity?",
+                 "style": {
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "29.52px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.376px",
+                  "color": "rgb(255, 255, 255)",
+                  "letterSpacing": "-1px"
+                 }
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  58,
+                  1227,
+                  344,
+                  77
+                 ],
+                 "cls": "has-text-align-left has-heading-color has-text-color wp-block-paragraph",
+                 "kind": "text",
+                 "text": "Explore our job listings and submit your resume today to take the first step toward your dream career.",
+                 "style": {
+                  "margin": "8px 0px 0px 0px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                418,
+                1205,
+                344,
+                37
+               ],
+               "cls": "wp-block-buttons swt-responsive-position-left is-content-justification-right is-layout-flex wp-container-core-buttons-is-layout-6ed7f611 wp-block-buttons-is-lay…",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "flexWrap": "wrap",
+                "justify": "flex-end",
+                "align": "center",
+                "gap": "16px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  595,
+                  1205,
+                  167,
+                  37
+                 ],
+                 "cls": "wp-block-button__link has-secondary-color has-primary-background-color has-text-color has-background has-link-color wp-element-button",
+                 "kind": "link",
+                 "text": "Explore Job Listings",
+                 "style": {
+                  "display": "inline-block",
+                  "bg": "rgb(180, 34, 23)",
+                  "padding": "11.338px 20.662px 11.338px 20.662px",
+                  "borderRadius": "5.25px",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "14px",
+                  "fontWeight": "500",
+                  "lineHeight": "14px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "https://xcelcareers.com/jobs-2/",
+                 "wrapped": [
+                  "div.wp-block-button"
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-column"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        1362,
+        820,
+        1089
+       ],
+       "cls": "wp-block-uagb-container uagb-block-4f4e5227 alignfull uagb-is-root-container",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "gap": "20px",
+        "bgImage": "url(\"https://xcelcareers.com/wp-content/uploads/2020/06/blob-grad.svg\")",
+        "bgSize": "cover",
+        "bgPos": "50% 50%",
+        "bgRepeat": "no-repeat",
+        "padding": "80px 40px 80px 40px",
+        "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+        "transition": "box-shadow 0.2s ease"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          40,
+          1442,
+          740,
+          929
+         ],
+         "cls": "uagb-container-inner-blocks-wrap",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexDirection": "column",
+          "justify": "center",
+          "align": "center",
+          "gap": "20px",
+          "maxWidth": "min(100%, 1024px)"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            40,
+            1442,
+            740,
+            261
+           ],
+           "id": "about",
+           "cls": "wp-block-uagb-info-box uagb-block-379292a5 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "0px 0px 20px 0px",
+            "zIndex": "1",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              40,
+              1442,
+              740,
+              241
+             ],
+             "cls": "uagb-ifb-content",
+             "kind": "box",
+             "style": {
+              "display": "inline-block",
+              "zIndex": "1",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                40,
+                1442,
+                740,
+                77
+               ],
+               "cls": "uagb-ifb-title-wrap",
+               "kind": "box",
+               "style": {
+                "zIndex": "1",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "h2",
+                 "box": [
+                  140,
+                  1442,
+                  540,
+                  77
+                 ],
+                 "cls": "uagb-ifb-title",
+                 "kind": "text",
+                 "text": "Your Partner in Building Exceptional Teams",
+                 "style": {
+                  "margin": "0px 100px 14.7969px 100px",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "32px",
+                  "fontWeight": "500",
+                  "lineHeight": "38.4px",
+                  "color": "rgb(180, 33, 23)",
+                  "letterSpacing": "-1px"
+                 }
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                100,
+                1535,
+                620,
+                128
+               ],
+               "cls": "uagb-ifb-desc",
+               "kind": "box",
+               "style": {
+                "margin": "0px 60px 20px 60px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "p",
+                 "box": [
+                  100,
+                  1535,
+                  620,
+                  128
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "With over 20 years of staffing expertise, we understand what it takes to find and place top-tier talent in today’s competitive market. From Systems Engineers to Software Engineers, we source professionals with the skills and experience to drive your business forward. Let us help you build a team that exceeds expectations and delivers results.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "textAlign": "center",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "h2",
+           "box": [
+            40,
+            1755,
+            740,
+            38
+           ],
+           "id": "services",
+           "cls": "wp-block-heading has-text-color has-link-color wp-elements-1",
+           "kind": "text",
+           "text": "Why Choose Us for Your Staffing Needs",
+           "style": {
+            "position": "relative",
+            "margin": "32px 0px 16px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(180, 33, 23)",
+            "letterSpacing": "-1px"
+           }
+          },
+          {
+           "t": "div",
+           "box": [
+            40,
+            1829,
+            740,
+            542
+           ],
+           "cls": "wp-block-uagb-container uagb-block-8fcbfb62",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "justify": "center",
+            "gap": "20px 0px",
+            "padding": "20px 0px 0px 0px",
+            "maxWidth": "100%",
+            "boxShadow": "rgba(0, 0, 0, 0.44) 0px 0px 0px 0px",
+            "transition": "box-shadow 0.2s ease"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              40,
+              1849,
+              169,
+              522
+             ],
+             "cls": "wp-block-uagb-container uagb-block-e16789f9",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "justify": "center",
+              "align": "center",
+              "padding": "0px 24px 24px 24px",
+              "margin": "0px 16px 0px 0px",
+              "maxWidth": "33%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 40px 100px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                64,
+                1875,
+                121,
+                447
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-ffdea6b7 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  64,
+                  1875,
+                  121,
+                  447
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    64,
+                    1875,
+                    48,
+                    48
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "padding": "12px 12px 12px 12px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      76,
+                      1887,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(180, 33, 23)",
+                     "color": "rgb(180, 33, 23)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    64,
+                    1943,
+                    121,
+                    87
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h5",
+                     "box": [
+                      64,
+                      1943,
+                      121,
+                      87
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Tailored Talent Solutions",
+                     "style": {
+                      "margin": "20px 0px 10px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "29px",
+                      "color": "rgb(180, 33, 23)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    64,
+                    2040,
+                    121,
+                    282
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "text",
+                   "text": "We work closely with you to understand your unique business needs and deliver candidates who align with your goals, culture, and technical requirements.",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              225,
+              1849,
+              169,
+              522
+             ],
+             "cls": "wp-block-uagb-container uagb-block-2c8a0f2d",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "justify": "center",
+              "align": "center",
+              "padding": "0px 24px 24px 24px",
+              "margin": "0px 16px 0px 0px",
+              "maxWidth": "33%",
+              "borderRadius": "8px",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 40px 100px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                249,
+                1849,
+                121,
+                498
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-88fc4db9 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  249,
+                  1849,
+                  121,
+                  498
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    249,
+                    1849,
+                    48,
+                    48
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "padding": "12px 12px 12px 12px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      261,
+                      1861,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(180, 33, 23)",
+                     "color": "rgb(180, 33, 23)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    249,
+                    1917,
+                    121,
+                    87
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h5",
+                     "box": [
+                      249,
+                      1917,
+                      121,
+                      87
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Extensive Candidate Network",
+                     "style": {
+                      "margin": "20px 0px 10px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "29px",
+                      "color": "rgb(180, 33, 23)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    249,
+                    2014,
+                    121,
+                    333
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "text",
+                   "text": "Our vast database includes top-tier Systems Engineers, Cloud Engineers, and Software Engineers, ensuring we find the perfect match for every role.",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              410,
+              1849,
+              169,
+              522
+             ],
+             "cls": "wp-block-uagb-container uagb-block-59414679",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "justify": "center",
+              "align": "center",
+              "padding": "0px 24px 24px 24px",
+              "margin": "0px 16px 0px 0px",
+              "maxWidth": "33%",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 40px 100px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                434,
+                1862,
+                121,
+                472
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-43d39cf1 uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  434,
+                  1862,
+                  121,
+                  472
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    434,
+                    1862,
+                    48,
+                    48
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "padding": "12px 12px 12px 12px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      446,
+                      1874,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(180, 33, 23)",
+                     "color": "rgb(180, 33, 23)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    434,
+                    1930,
+                    121,
+                    87
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h5",
+                     "box": [
+                      434,
+                      1930,
+                      121,
+                      87
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Streamlined Hiring Process",
+                     "style": {
+                      "margin": "20px 0px 10px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "29px",
+                      "color": "rgb(180, 33, 23)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    434,
+                    2027,
+                    121,
+                    307
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "text",
+                   "text": "We simplify staffing by handling everything from sourcing and screening to placement, saving you time and effort while delivering exceptional results.",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              595,
+              1849,
+              169,
+              522
+             ],
+             "cls": "wp-block-uagb-container uagb-block-70fb3b0c",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexDirection": "column",
+              "justify": "center",
+              "align": "center",
+              "padding": "0px 24px 24px 24px",
+              "margin": "0px 16px 0px 0px",
+              "maxWidth": "33%",
+              "boxShadow": "rgba(0, 0, 0, 0.24) 0px 40px 100px -40px",
+              "transition": "box-shadow 0.2s ease"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                619,
+                1873,
+                121,
+                450
+               ],
+               "cls": "wp-block-uagb-info-box uagb-block-05b25a8a uagb-infobox__content-wrap uagb-infobox-icon-above-title uagb-infobox-image-valign-top",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "zIndex": "1"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  619,
+                  1873,
+                  121,
+                  450
+                 ],
+                 "cls": "uagb-ifb-content",
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "zIndex": "1"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    619,
+                    1873,
+                    48,
+                    48
+                   ],
+                   "cls": "uagb-iconbox-icon-wrap uagb-infobox-shape-circle",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "padding": "12px 12px 12px 12px",
+                    "borderRadius": "50%"
+                   },
+                   "children": [
+                    {
+                     "t": "svg",
+                     "box": [
+                      631,
+                      1885,
+                      24,
+                      24
+                     ],
+                     "kind": "svg",
+                     "w": 24,
+                     "h": 24,
+                     "fill": "rgb(180, 33, 23)",
+                     "color": "rgb(180, 33, 23)",
+                     "cls": "",
+                     "label": null,
+                     "paths": 1
+                    }
+                   ],
+                   "wrapped": [
+                    "div.uagb-ifb-icon-wrap"
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    619,
+                    1941,
+                    121,
+                    116
+                   ],
+                   "cls": "uagb-ifb-title-wrap",
+                   "kind": "box",
+                   "style": {
+                    "zIndex": "1"
+                   },
+                   "children": [
+                    {
+                     "t": "h5",
+                     "box": [
+                      619,
+                      1941,
+                      121,
+                      116
+                     ],
+                     "cls": "uagb-ifb-title",
+                     "kind": "text",
+                     "text": "Industry Expertise You Can Trust",
+                     "style": {
+                      "margin": "20px 0px 10px 0px",
+                      "fontFamily": "Inter, sans-serif",
+                      "fontSize": "20px",
+                      "fontWeight": "600",
+                      "lineHeight": "29px",
+                      "color": "rgb(180, 33, 23)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    619,
+                    2067,
+                    121,
+                    256
+                   ],
+                   "cls": "uagb-ifb-desc",
+                   "kind": "text",
+                   "text": "With decades of experience in recruitment and staffing, we bring unmatched knowledge and proven strategies to every client partnership.",
+                   "style": {
+                    "fontFamily": "Inter, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "25.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        2583,
+        820,
+        863
+       ],
+       "cls": "wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-15dcb972 wp-block-group-is-layout-constrained",
+       "kind": "box",
+       "style": {
+        "position": "relative",
+        "padding": "64px 16px 64px 16px",
+        "margin": "16px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          2647,
+          788,
+          735
+         ],
+         "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-6ebc741c wp-block-columns-is-layout-flex",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "gap": "96px",
+          "maxWidth": "1164px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            16,
+            2647,
+            346,
+            735
+           ],
+           "cls": "wp-block-column is-vertically-aligned-center is-layout-flow wp-container-core-column-is-layout-3f8ce4cc wp-block-column-is-layout-flow",
+           "kind": "box",
+           "style": {},
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              16,
+              2647,
+              346,
+              302
+             ],
+             "cls": "wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-e6b71fad wp-block-group-is-layout-constrained",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "padding": "0px 16px 0px 16px"
+             },
+             "children": [
+              {
+               "t": "h2",
+               "box": [
+                32,
+                2647,
+                314,
+                115
+               ],
+               "cls": "wp-block-heading",
+               "kind": "text",
+               "text": "Comprehensive Staffing Solutions You Can Trust",
+               "style": {
+                "maxWidth": "764px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "32px",
+                "fontWeight": "500",
+                "lineHeight": "38.4px",
+                "color": "rgb(180, 33, 23)",
+                "letterSpacing": "-1px"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                32,
+                2770,
+                314,
+                179
+               ],
+               "cls": "wp-block-paragraph",
+               "kind": "text",
+               "text": "Our expertise goes beyond filling roles—we provide tailored solutions to meet your hiring challenges and strategic goals. From advanced candidate sourcing to compliance support, we ensure you’re equipped with the talent and insights needed to thrive in a competitive market.",
+               "style": {
+                "margin": "8px 0px 0px 0px",
+                "maxWidth": "764px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(0, 0, 0)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "hr",
+             "box": [
+              16,
+              2997,
+              346,
+              1
+             ],
+             "cls": "wp-block-separator has-alpha-channel-opacity is-style-swt-separator-wide-thin-line",
+             "kind": "box",
+             "style": {
+              "bg": "rgb(56, 42, 81)",
+              "margin": "48px 0px 0px 0px",
+              "maxWidth": "764px",
+              "border": "0px 0px 1px 0px none rgb(56, 42, 81)",
+              "overflow": "hidden"
+             },
+             "empty": true
+            },
+            {
+             "t": "div",
+             "box": [
+              16,
+              3022,
+              346,
+              168
+             ],
+             "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-733dc24f wp-block-columns-is-layout-flex",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "gap": "16px",
+              "padding": "24px 0px 0px 0px",
+              "margin": "24px 0px 0px 0px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                16,
+                3046,
+                165,
+                118
+               ],
+               "cls": "wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 16px 0px 16px"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  32,
+                  3046,
+                  133,
+                  26
+                 ],
+                 "cls": "wp-block-image size-large is-resized swt-duotone-primary wp-duotone-primary",
+                 "kind": "box",
+                 "style": {
+                  "maxWidth": "764px"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    32,
+                    3048,
+                    24,
+                    24
+                   ],
+                   "cls": "wp-image-139",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/themes/spectra-one/assets/image/featured-1.svg",
+                   "alt": "",
+                   "natural": [
+                    32,
+                    32
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline",
+                    "maxWidth": "100%",
+                    "overflow": "clip",
+                    "filter": "url(\"#wp-duotone-primary\")"
+                   },
+                   "loading": "auto"
+                  }
+                 ]
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  32,
+                  3088,
+                  133,
+                  77
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "Leveraging AI tools for smarter hiring decisions.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "maxWidth": "764px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-column"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                197,
+                3046,
+                165,
+                144
+               ],
+               "cls": "wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 16px 0px 16px"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  213,
+                  3046,
+                  133,
+                  26
+                 ],
+                 "cls": "wp-block-image size-large is-resized swt-duotone-primary wp-duotone-primary",
+                 "kind": "box",
+                 "style": {
+                  "maxWidth": "764px"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    213,
+                    3048,
+                    24,
+                    24
+                   ],
+                   "cls": "wp-image-139",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/themes/spectra-one/assets/image/featured-2.svg",
+                   "alt": "",
+                   "natural": [
+                    32,
+                    32
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline",
+                    "maxWidth": "100%",
+                    "overflow": "clip",
+                    "filter": "url(\"#wp-duotone-primary\")"
+                   },
+                   "loading": "auto"
+                  }
+                 ]
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  213,
+                  3088,
+                  133,
+                  102
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "Delivering top-tier candidates with rigorous screening.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "maxWidth": "764px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-column"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              16,
+              3214,
+              346,
+              168
+             ],
+             "cls": "wp-block-columns is-layout-flex wp-container-core-columns-is-layout-733dc24f wp-block-columns-is-layout-flex",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "gap": "16px",
+              "padding": "24px 0px 0px 0px",
+              "margin": "24px 0px 0px 0px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                16,
+                3238,
+                165,
+                118
+               ],
+               "cls": "wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 16px 0px 16px"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  32,
+                  3238,
+                  133,
+                  26
+                 ],
+                 "cls": "wp-block-image size-large is-resized swt-duotone-primary wp-duotone-primary",
+                 "kind": "box",
+                 "style": {
+                  "maxWidth": "764px"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    32,
+                    3240,
+                    24,
+                    24
+                   ],
+                   "cls": "wp-image-139",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/themes/spectra-one/assets/image/featured-1.svg",
+                   "alt": "",
+                   "natural": [
+                    32,
+                    32
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline",
+                    "maxWidth": "100%",
+                    "overflow": "clip",
+                    "filter": "url(\"#wp-duotone-primary\")"
+                   },
+                   "loading": "auto"
+                  }
+                 ]
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  32,
+                  3280,
+                  133,
+                  77
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "Rapidly fulfilling urgent and hard-to-fill positions.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "maxWidth": "764px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-column"
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                197,
+                3238,
+                165,
+                144
+               ],
+               "cls": "wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained",
+               "kind": "box",
+               "style": {
+                "position": "relative",
+                "padding": "0px 16px 0px 16px"
+               },
+               "children": [
+                {
+                 "t": "figure",
+                 "box": [
+                  213,
+                  3238,
+                  133,
+                  26
+                 ],
+                 "cls": "wp-block-image size-large is-resized swt-duotone-primary wp-duotone-primary",
+                 "kind": "box",
+                 "style": {
+                  "maxWidth": "764px"
+                 },
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    213,
+                    3240,
+                    24,
+                    24
+                   ],
+                   "cls": "wp-image-139",
+                   "kind": "image",
+                   "src": "https://xcelcareers.com/wp-content/themes/spectra-one/assets/image/featured-2.svg",
+                   "alt": "",
+                   "natural": [
+                    32,
+                    32
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline",
+                    "maxWidth": "100%",
+                    "overflow": "clip",
+                    "filter": "url(\"#wp-duotone-primary\")"
+                   },
+                   "loading": "auto"
+                  }
+                 ]
+                },
+                {
+                 "t": "p",
+                 "box": [
+                  213,
+                  3280,
+                  133,
+                  102
+                 ],
+                 "cls": "wp-block-paragraph",
+                 "kind": "text",
+                 "text": "Collaborating closely to meet your unique staffing needs.",
+                 "style": {
+                  "margin": "16px 0px 0px 0px",
+                  "maxWidth": "764px",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(0, 0, 0)"
+                 }
+                }
+               ],
+               "wrapped": [
+                "div.wp-block-column"
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "img",
+           "box": [
+            458,
+            2647,
+            346,
+            519
+           ],
+           "cls": "wp-image-3008",
+           "kind": "image",
+           "src": "https://xcelcareers.com/wp-content/uploads/2025/01/zdbou0fayk4.jpg",
+           "alt": "white and red text on black background",
+           "natural": [
+            800,
+            1200
+           ],
+           "objectFit": null,
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "borderRadius": "8px",
+            "overflow": "clip"
+           },
+           "loading": "auto",
+           "wrapped": [
+            "figure.wp-block-image",
+            "div.wp-block-column"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "h2",
+       "box": [
+        28,
+        3578,
+        764,
+        38
+       ],
+       "cls": "wp-block-heading has-text-align-center",
+       "kind": "text",
+       "text": "Companies We Work With",
+       "style": {
+        "margin": "16px 28px 0px 28px",
+        "maxWidth": "764px",
+        "textAlign": "center",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "38.4px",
+        "color": "rgb(180, 33, 23)",
+        "letterSpacing": "-1px"
+       }
+      },
+      {
+       "t": "div",
+       "box": [
+        28,
+        3616,
+        764,
+        354
+       ],
+       "cls": "wp-block-uagb-image-gallery uagb-block-9fb2ddec",
+       "kind": "box",
+       "style": {
+        "margin": "0px 28px 0px 28px",
+        "maxWidth": "764px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          28,
+          3616,
+          764,
+          354
+         ],
+         "cls": "spectra-image-gallery spectra-image-gallery__layout--carousel",
+         "kind": "box",
+         "style": {
+          "margin": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            28,
+            3616,
+            764,
+            354
+           ],
+           "cls": "uagb-slick-carousel uagb-block-9fb2ddec slick-initialized slick-slider slick-dotted",
+           "kind": "box",
+           "style": {
+            "position": "relative"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              20,
+              3616,
+              780,
+              326
+             ],
+             "cls": "slick-list draggable",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "margin": "0px -8px 0px -8px",
+              "overflow": "hidden",
+              "transform": "matrix(1, 0, 0, 1, 0, 0)"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                -3880,
+                3616,
+                9620,
+                326
+               ],
+               "cls": "slick-track",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "align": "center",
+                "transform": "matrix(1, 0, 0, 1, -3900, 0)"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  -3880,
+                  3743,
+                  260,
+                  72
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -3880,
+                    3743,
+                    260,
+                    72
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -3872,
+                      3743,
+                      244,
+                      72
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -3872,
+                        3743,
+                        244,
+                        72
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-1-e1544475635932.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -3620,
+                  3712,
+                  260,
+                  134
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -3620,
+                    3712,
+                    260,
+                    134
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -3612,
+                      3712,
+                      244,
+                      134
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -3612,
+                        3712,
+                        244,
+                        134
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-4-e1544476905311.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -3360,
+                  3755,
+                  260,
+                  48
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -3360,
+                    3755,
+                    260,
+                    48
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -3352,
+                      3755,
+                      244,
+                      48
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -3352,
+                        3755,
+                        244,
+                        48
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-3-e1544476370247.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -3100,
+                  3711,
+                  260,
+                  137
+                 ],
+                 "id": "slick-slide00",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -3100,
+                    3711,
+                    260,
+                    137
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -3092,
+                      3711,
+                      244,
+                      137
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -3092,
+                        3711,
+                        244,
+                        137
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/General-Dynamics-Logo-1024x576.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -2840,
+                  3746,
+                  260,
+                  66
+                 ],
+                 "id": "slick-slide01",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -2840,
+                    3746,
+                    260,
+                    66
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -2832,
+                      3746,
+                      244,
+                      66
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -2832,
+                        3746,
+                        244,
+                        66
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/6227175c74a10c92f2ae07a6-1-1024x279.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -2580,
+                  3657,
+                  260,
+                  244
+                 ],
+                 "id": "slick-slide02",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -2580,
+                    3657,
+                    260,
+                    244
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -2572,
+                      3657,
+                      244,
+                      244
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -2572,
+                        3657,
+                        244,
+                        244
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Seal_of_the_United_States_House_of_Representatives.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -2320,
+                  3684,
+                  260,
+                  190
+                 ],
+                 "id": "slick-slide03",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -2320,
+                    3684,
+                    260,
+                    190
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -2312,
+                      3684,
+                      244,
+                      190
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -2312,
+                        3684,
+                        244,
+                        190
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/US_Air_Force_Logo_Solid_Colour.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -2060,
+                  3713,
+                  260,
+                  133
+                 ],
+                 "id": "slick-slide04",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -2060,
+                    3713,
+                    260,
+                    133
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -2052,
+                      3713,
+                      244,
+                      133
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -2052,
+                        3713,
+                        244,
+                        133
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/png-transparent-microsoft-logo-organization-san-francisco-cloud-computing-partner-company-text-rectangle.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -1800,
+                  3616,
+                  260,
+                  326
+                 ],
+                 "id": "slick-slide05",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -1800,
+                    3616,
+                    260,
+                    326
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -1792,
+                      3616,
+                      244,
+                      326
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -1792,
+                        3616,
+                        244,
+                        326
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Logo_of_the_United_States_Army.svg-1.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -1540,
+                  3703,
+                  260,
+                  153
+                 ],
+                 "id": "slick-slide06",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -1540,
+                    3703,
+                    260,
+                    153
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -1532,
+                      3703,
+                      244,
+                      153
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -1532,
+                        3703,
+                        244,
+                        153
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Logo-Boeing-1024x640.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -1280,
+                  3743,
+                  260,
+                  74
+                 ],
+                 "id": "slick-slide07",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -1280,
+                    3743,
+                    260,
+                    74
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -1272,
+                      3743,
+                      244,
+                      74
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -1272,
+                        3743,
+                        244,
+                        74
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Amazon_logo.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -1020,
+                  3736,
+                  260,
+                  86
+                 ],
+                 "id": "slick-slide08",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -1020,
+                    3736,
+                    260,
+                    86
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -1012,
+                      3736,
+                      244,
+                      86
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -1012,
+                        3736,
+                        244,
+                        86
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/GeorgiaTech_RGB-1024x363.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -760,
+                  3743,
+                  260,
+                  73
+                 ],
+                 "id": "slick-slide09",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -760,
+                    3743,
+                    260,
+                    73
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -752,
+                      3743,
+                      244,
+                      73
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -752,
+                        3743,
+                        244,
+                        73
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Raytheon_Technologies_logo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -500,
+                  3754,
+                  260,
+                  50
+                 ],
+                 "id": "slick-slide010",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -500,
+                    3754,
+                    260,
+                    50
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -492,
+                      3754,
+                      244,
+                      50
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -492,
+                        3754,
+                        244,
+                        50
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/parsons-logo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  -240,
+                  3728,
+                  260,
+                  102
+                 ],
+                 "id": "slick-slide011",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    -240,
+                    3728,
+                    260,
+                    102
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      -232,
+                      3728,
+                      244,
+                      102
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        -232,
+                        3728,
+                        244,
+                        102
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/United_States_Navy_logo-1-1024x427.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  20,
+                  3712,
+                  260,
+                  135
+                 ],
+                 "id": "slick-slide012",
+                 "cls": "slick-slide slick-current slick-active",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    20,
+                    3712,
+                    260,
+                    135
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      28,
+                      3712,
+                      244,
+                      135
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        28,
+                        3712,
+                        244,
+                        135
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/alionlogo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  280,
+                  3745,
+                  260,
+                  68
+                 ],
+                 "id": "slick-slide013",
+                 "cls": "slick-slide slick-active",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    280,
+                    3745,
+                    260,
+                    68
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      288,
+                      3745,
+                      244,
+                      68
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        288,
+                        3745,
+                        244,
+                        68
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-2-e1544475958653.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  540,
+                  3743,
+                  260,
+                  72
+                 ],
+                 "id": "slick-slide014",
+                 "cls": "slick-slide slick-active",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    540,
+                    3743,
+                    260,
+                    72
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      548,
+                      3743,
+                      244,
+                      72
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        548,
+                        3743,
+                        244,
+                        72
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-1-e1544475635932.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  800,
+                  3712,
+                  260,
+                  134
+                 ],
+                 "id": "slick-slide015",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    800,
+                    3712,
+                    260,
+                    134
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      808,
+                      3712,
+                      244,
+                      134
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        808,
+                        3712,
+                        244,
+                        134
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-4-e1544476905311.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  1060,
+                  3755,
+                  260,
+                  48
+                 ],
+                 "id": "slick-slide016",
+                 "cls": "slick-slide",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1060,
+                    3755,
+                    260,
+                    48
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1068,
+                      3755,
+                      244,
+                      48
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        1068,
+                        3755,
+                        244,
+                        48
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-3-e1544476370247.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  1320,
+                  3711,
+                  260,
+                  137
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1320,
+                    3711,
+                    260,
+                    137
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1328,
+                      3711,
+                      244,
+                      137
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        1328,
+                        3711,
+                        244,
+                        137
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/General-Dynamics-Logo-1024x576.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  1580,
+                  3746,
+                  260,
+                  66
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1580,
+                    3746,
+                    260,
+                    66
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1588,
+                      3746,
+                      244,
+                      66
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        1588,
+                        3746,
+                        244,
+                        66
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/6227175c74a10c92f2ae07a6-1-1024x279.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  1840,
+                  3657,
+                  260,
+                  244
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1840,
+                    3657,
+                    260,
+                    244
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1848,
+                      3657,
+                      244,
+                      244
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        1848,
+                        3657,
+                        244,
+                        244
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Seal_of_the_United_States_House_of_Representatives.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  2100,
+                  3684,
+                  260,
+                  190
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    2100,
+                    3684,
+                    260,
+                    190
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      2108,
+                      3684,
+                      244,
+                      190
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        2108,
+                        3684,
+                        244,
+                        190
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/US_Air_Force_Logo_Solid_Colour.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  2360,
+                  3713,
+                  260,
+                  133
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    2360,
+                    3713,
+                    260,
+                    133
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      2368,
+                      3713,
+                      244,
+                      133
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        2368,
+                        3713,
+                        244,
+                        133
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/png-transparent-microsoft-logo-organization-san-francisco-cloud-computing-partner-company-text-rectangle.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  2620,
+                  3616,
+                  260,
+                  326
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    2620,
+                    3616,
+                    260,
+                    326
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      2628,
+                      3616,
+                      244,
+                      326
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        2628,
+                        3616,
+                        244,
+                        326
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Logo_of_the_United_States_Army.svg-1.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  2880,
+                  3703,
+                  260,
+                  153
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    2880,
+                    3703,
+                    260,
+                    153
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      2888,
+                      3703,
+                      244,
+                      153
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        2888,
+                        3703,
+                        244,
+                        153
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Logo-Boeing-1024x640.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  3140,
+                  3743,
+                  260,
+                  74
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    3140,
+                    3743,
+                    260,
+                    74
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      3148,
+                      3743,
+                      244,
+                      74
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        3148,
+                        3743,
+                        244,
+                        74
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Amazon_logo.svg.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  3400,
+                  3736,
+                  260,
+                  86
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    3400,
+                    3736,
+                    260,
+                    86
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      3408,
+                      3736,
+                      244,
+                      86
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        3408,
+                        3736,
+                        244,
+                        86
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/GeorgiaTech_RGB-1024x363.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  3660,
+                  3743,
+                  260,
+                  73
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    3660,
+                    3743,
+                    260,
+                    73
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      3668,
+                      3743,
+                      244,
+                      73
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        3668,
+                        3743,
+                        244,
+                        73
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/Raytheon_Technologies_logo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  3920,
+                  3754,
+                  260,
+                  50
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    3920,
+                    3754,
+                    260,
+                    50
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      3928,
+                      3754,
+                      244,
+                      50
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        3928,
+                        3754,
+                        244,
+                        50
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/parsons-logo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  4180,
+                  3728,
+                  260,
+                  102
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    4180,
+                    3728,
+                    260,
+                    102
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      4188,
+                      3728,
+                      244,
+                      102
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        4188,
+                        3728,
+                        244,
+                        102
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/United_States_Navy_logo-1-1024x427.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  4440,
+                  3712,
+                  260,
+                  135
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    4440,
+                    3712,
+                    260,
+                    135
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      4448,
+                      3712,
+                      244,
+                      135
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        4448,
+                        3712,
+                        244,
+                        135
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2023/08/alionlogo.png",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  4700,
+                  3745,
+                  260,
+                  68
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    4700,
+                    3745,
+                    260,
+                    68
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      4708,
+                      3745,
+                      244,
+                      68
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        4708,
+                        3745,
+                        244,
+                        68
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-2-e1544475958653.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  4960,
+                  3743,
+                  260,
+                  72
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    4960,
+                    3743,
+                    260,
+                    72
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      4968,
+                      3743,
+                      244,
+                      72
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        4968,
+                        3743,
+                        244,
+                        72
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-1-e1544475635932.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  5220,
+                  3712,
+                  260,
+                  134
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    5220,
+                    3712,
+                    260,
+                    134
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      5228,
+                      3712,
+                      244,
+                      134
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        5228,
+                        3712,
+                        244,
+                        134
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-4-e1544476905311.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  5480,
+                  3755,
+                  260,
+                  48
+                 ],
+                 "cls": "slick-slide slick-cloned",
+                 "kind": "box",
+                 "style": {
+                  "minHeight": "1px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    5480,
+                    3755,
+                    260,
+                    48
+                   ],
+                   "cls": "spectra-image-gallery__media-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "padding": "0px 8px 0px 8px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      5488,
+                      3755,
+                      244,
+                      48
+                     ],
+                     "cls": "spectra-image-gallery__media spectra-image-gallery__media--carousel",
+                     "kind": "box",
+                     "style": {
+                      "position": "relative",
+                      "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 0px",
+                      "overflow": "hidden",
+                      "transition": "box-shadow 0.25s ease"
+                     },
+                     "children": [
+                      {
+                       "t": "picture",
+                       "box": [
+                        5488,
+                        3755,
+                        244,
+                        48
+                       ],
+                       "kind": "picture",
+                       "src": "https://xcelcareers.com/wp-content/uploads/2022/03/th-3-e1544476370247.jpg",
+                       "alt": "",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "ul",
+             "box": [
+              28,
+              3978,
+              764,
+              28
+             ],
+             "cls": "slick-dots",
+             "kind": "list",
+             "style": {
+              "position": "relative",
+              "margin": "0px 0px 30px 0px",
+              "transform": "matrix(1, 0, 0, 1, 0, 28)",
+              "textAlign": "center"
+             },
+             "listStyle": "disc",
+             "children": [
+              {
+               "t": "button",
+               "box": [
+                240,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control00",
+               "kind": "button",
+               "text": "1",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                260,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control01",
+               "kind": "button",
+               "text": "2",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                280,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control02",
+               "kind": "button",
+               "text": "3",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                300,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control03",
+               "kind": "button",
+               "text": "4",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                320,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control04",
+               "kind": "button",
+               "text": "5",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                340,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control05",
+               "kind": "button",
+               "text": "6",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                360,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control06",
+               "kind": "button",
+               "text": "7",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                380,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control07",
+               "kind": "button",
+               "text": "8",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                400,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control08",
+               "kind": "button",
+               "text": "9",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                420,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control09",
+               "kind": "button",
+               "text": "10",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                440,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control010",
+               "kind": "button",
+               "text": "11",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                460,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control011",
+               "kind": "button",
+               "text": "12",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                480,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control012",
+               "kind": "button",
+               "text": "13",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li.slick-active"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                500,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control013",
+               "kind": "button",
+               "text": "14",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                520,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control014",
+               "kind": "button",
+               "text": "15",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                540,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control015",
+               "kind": "button",
+               "text": "16",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              },
+              {
+               "t": "button",
+               "box": [
+                560,
+                3986,
+                20,
+                20
+               ],
+               "id": "slick-slide-control016",
+               "kind": "button",
+               "text": "17",
+               "style": {
+                "padding": "5px 5px 5px 5px",
+                "textAlign": "center",
+                "fontFamily": "Arial",
+                "fontSize": "0px",
+                "fontWeight": "400",
+                "lineHeight": "0px",
+                "color": "rgba(0, 0, 0, 0)"
+               },
+               "wrapped": [
+                "li"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "div.wp-block-group"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      4100,
+      820,
+      385
+     ],
+     "cls": "wp-block-group has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-94c80d80 wp-block-group-is-layout-constrained",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(180, 33, 23)",
+      "padding": "64px 16px 32px 16px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        16,
+        4164,
+        788,
+        221
+       ],
+       "cls": "wp-block-columns alignwide is-layout-flex wp-container-core-columns-is-layout-4ed1cb75 wp-block-columns-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "gap": "32px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          16,
+          4164,
+          378,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            16,
+            4164,
+            110,
+            47
+           ],
+           "kind": "box",
+           "style": {
+            "display": "inline-block"
+           },
+           "href": "https://xcelcareers.com/",
+           "children": [
+            {
+             "t": "img",
+             "box": [
+              16,
+              4164,
+              110,
+              47
+             ],
+             "cls": "wp-image-2201",
+             "kind": "image",
+             "src": "https://xcelcareers.com/wp-content/uploads/2018/12/MediumSquareLogo-e1736976275746.png",
+             "alt": "",
+             "natural": [
+              400,
+              170
+             ],
+             "objectFit": null,
+             "style": {
+              "display": "inline",
+              "maxWidth": "100%",
+              "overflow": "clip",
+              "filter": "url(\"#wp-duotone-secondary\")"
+             },
+             "loading": "auto"
+            }
+           ],
+           "wrapped": [
+            "figure.wp-block-image"
+           ]
+          },
+          {
+           "t": "p",
+           "box": [
+            16,
+            4227,
+            378,
+            134
+           ],
+           "cls": "has-heading-color has-text-color has-link-color has-small-font-size wp-elements-2 wp-block-paragraph",
+           "kind": "text",
+           "text": "XcelCareers empowers professionals to thrive in the booming tech industry. With over 20 years of expertise in recruitment and staffing, we provide the tools and guidance to help you land roles like Cybersecurity Specialist, Software Developer, Business Analyst, and more.",
+           "style": {
+            "padding": "0px 32px 0px 0px",
+            "margin": "16px 0px 0px 0px",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "22.4px",
+            "color": "rgb(255, 255, 255)"
+           }
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "box": [
+          426,
+          4164,
+          378,
+          221
+         ],
+         "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+         "kind": "box",
+         "style": {
+          "padding": "0px 0px 8px 0px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            426,
+            4164,
+            378,
+            147
+           ],
+           "cls": "wp-block-columns is-not-stacked-on-mobile is-layout-flex wp-container-core-columns-is-layout-d8e640ad wp-block-columns-is-layout-flex",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "gap": "32px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              426,
+              4164,
+              173,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                426,
+                4164,
+                173,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-3",
+               "kind": "text",
+               "text": "Address:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                426,
+                4209,
+                173,
+                102
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-4 wp-block-paragraph",
+               "kind": "text",
+               "text": "10155 Baltimore National Pike Ste 105 Ellicott City, MD 21042 United States",
+               "style": {
+                "margin": "16px 0px 0px 0px",
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "16px",
+                "fontWeight": "400",
+                "lineHeight": "25.6px",
+                "color": "rgb(255, 255, 255)"
+               }
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              631,
+              4164,
+              173,
+              147
+             ],
+             "cls": "wp-block-column is-layout-flow wp-block-column-is-layout-flow",
+             "kind": "box",
+             "style": {},
+             "children": [
+              {
+               "t": "h5",
+               "box": [
+                631,
+                4164,
+                173,
+                29
+               ],
+               "cls": "wp-block-heading has-heading-color has-text-color has-link-color wp-elements-5",
+               "kind": "text",
+               "text": "Contact:",
+               "style": {
+                "fontFamily": "Inter, sans-serif",
+                "fontSize": "20px",
+                "fontWeight": "600",
+                "lineHeight": "29px",
+                "color": "rgb(255, 255, 255)"
+               }
+              },
+              {
+               "t": "p",
+               "box": [
+                631,
+                4209,
+                173,
+                51
+               ],
+               "cls": "has-heading-color has-text-color has-link-color wp-elements-6 wp-block-paragraph",
+               "kind": "box",
+               "style": {
+                "margin": "16px 0px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  631,
+                  4213,
+                  172,
+                  43
+                 ],
+                 "kind": "link",
+                 "text": "HRservices@xcelcareers.com",
+                 "style": {
+                  "display": "inline",
+                  "width": "auto",
+                  "fontFamily": "Inter, sans-serif",
+                  "fontSize": "16px",
+                  "fontWeight": "400",
+                  "lineHeight": "25.6px",
+                  "color": "rgb(255, 255, 255)"
+                 },
+                 "href": "mailto:HRservices@xcelcareers.com"
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        16,
+        4433,
+        788,
+        20
+       ],
+       "cls": "wp-block-group alignwide is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-81b3be47 wp-block-group-is-layout-flex",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "justify": "center",
+        "align": "center",
+        "gap": "8px",
+        "padding": "0px 16px 0px 16px",
+        "margin": "48px 0px 0px 0px",
+        "maxWidth": "1164px"
+       },
+       "children": [
+        {
+         "t": "p",
+         "box": [
+          242,
+          4433,
+          47,
+          20
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-7 wp-block-paragraph",
+         "kind": "text",
+         "text": "© 2025 ·",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.3px",
+          "fontWeight": "400",
+          "lineHeight": "19.68px",
+          "color": "rgb(255, 255, 255)"
+         }
+        },
+        {
+         "t": "a",
+         "box": [
+          298,
+          4435,
+          167,
+          14
+         ],
+         "kind": "link",
+         "text": "XcelCareers Staffing Solutions",
+         "style": {
+          "display": "inline",
+          "width": "auto",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.3px",
+          "fontWeight": "400",
+          "lineHeight": "19.68px",
+          "color": "rgb(255, 255, 255)"
+         },
+         "href": "https://xcelcareers.com/",
+         "target": "_self",
+         "wrapped": [
+          "h1.has-link-color"
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          472,
+          4433,
+          105,
+          20
+         ],
+         "cls": "has-text-align-center has-heading-color has-text-color has-link-color has-x-small-font-size wp-elements-9 wp-block-paragraph",
+         "kind": "text",
+         "text": "· All rights reserved",
+         "style": {
+          "textAlign": "center",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "12.3px",
+          "fontWeight": "400",
+          "lineHeight": "19.68px",
+          "color": "rgb(255, 255, 255)"
+         }
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "footer.wp-block-template-part"
+     ]
+    }
+   ]
+  }
+ ]
+}
