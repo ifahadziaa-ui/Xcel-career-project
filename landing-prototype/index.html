@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101012">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%224 120.04 89.03 158.95%22%3E%3Cg fill=%22%239a9aa0%22%3E%3Cpolygon points=%2210.93,187.17 62.1,232.65 42.88,166.96%22 fill-opacity=%221%22/%3E%3Cpolygon points=%225,228.45 59.52,237.63 18.23,200.94%22 fill-opacity=%221%22/%3E%3Cpolygon points=%2218.96,260.85 60.12,243.59 16.11,236.38%22 fill-opacity=%221%22/%3E%3Cpolygon points=%2242.1,277.18 62.68,247.62 29.55,261.71%22 fill-opacity=%220.78%22/%3E%3Cpolygon points=%2265,277.99 66.51,249.16 49.94,272.86%22 fill-opacity=%220.78%22/%3E%3Cpolygon points=%2282.49,268.53 71.19,248.77 70.02,271.65%22 fill-opacity=%220.78%22/%3E%3Cpolygon points=%2290.58,255.13 74.3,246.41 83.47,262.43%22 fill-opacity=%220.58%22/%3E%3Cpolygon points=%2290.61,241.74 76.03,243.21 89.02,249.88%22 fill-opacity=%220.58%22/%3E%3Cpolygon points=%2285.32,232.77 75.77,239.88 87.55,238.8%22 fill-opacity=%220.58%22/%3E%3C/g%3E%3Cg fill=%22%23ff2a45%22%3E%3Ccircle cx=%2268.6%22 cy=%22130.91%22 r=%229.87%22/%3E%3Cpolygon points=%2245.15,148.96 92.03,148.96 68.62,230.36%22/%3E%3C/g%3E%3C/svg%3E">
+<title>XcelCareers | Healthcare Staffing &amp; Government Contracting in Maryland</title>
+<meta name="description" content="Minority veteran-owned, Maryland MBE/DBE/SBE certified. Vetted, credentialed healthcare staff and IT, finance and cyber specialists for providers and government. CAGE 89AK6.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,900&family=Geist+Mono:wght@100..900&family=Mona+Sans:wdth,wght@75..125,200..900&family=Sedgwick+Ave+Display&family=Sora:wght@400&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/specimen-placeholder.png">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/hero.css?v=3">
+<link rel="stylesheet" href="css/showreel.css?v=3">
+<link rel="stylesheet" href="css/sections.css?v=3">
+<link rel="stylesheet" href="css/chat.css?v=3">
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.185.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.185.0/examples/jsm/",
+  "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.mjs"
+} }
+</script>
+</head>
+<body>
+
+<!-- shared icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-crown" viewBox="0 0 42 36"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M4 29 L6 8.5 L14.5 18 L21 3.5 L27.5 18 L36 8.5 L38 29 Z"/><path d="M4.5 33.5 H37.5"/></g><g fill="currentColor"><circle cx="6" cy="6.5" r="2.2"/><circle cx="21" cy="2.4" r="2.2"/><circle cx="36" cy="6.5" r="2.2"/></g></symbol>
+  <symbol id="i-scrib" viewBox="0 0 300 20" preserveAspectRatio="none"><path fill="currentColor" d="M3 12 C30 6 60 5 95 7 C130 9 160 4 200 5 C235 6 265 4 297 6 L296 11 C262 10 236 13 200 12 C162 11 132 16 96 14 C62 12 32 13 5 17 Z"/><g fill="currentColor"><circle cx="8" cy="5" r="1.4"/><circle cx="284" cy="2" r="1.2"/><circle cx="150" cy="18.5" r="1"/><circle cx="60" cy="1.8" r="0.9"/></g></symbol>
+  <symbol id="i-arrow" viewBox="0 0 26 16"><path d="M1 8 H23 M16 1.5 L23.5 8 L16 14.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 18 18"><path d="M9 1 V17 M1 9 H17" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-close" viewBox="0 0 18 18"><path d="M2 2 L16 16 M16 2 L2 16" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-burger" viewBox="0 0 30 22"><path d="M1 3 H29 M1 11 H29 M1 19 H20" fill="none" stroke="currentColor" stroke-width="2.6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 L13.9 10.1 L22 12 L13.9 13.9 L12 22 L10.1 13.9 L2 12 L10.1 10.1 Z"/></symbol>
+  <!-- XcelCareers mark, traced from Assets/Logo.png (head, body, nine blades in spiral order around the hub).
+       Recolour per use with --mk-fig (figure), --mk-ray (blades, defaults to currentColor) and --mk-o1..3 (blade tones).
+       js/mark.js reads this symbol, so it is the single source of the mark's geometry. -->
+  <symbol id="i-mark" viewBox="4 120.04 89.03 158.95" data-hub="69.08 242.24"><g style="fill:var(--mk-ray,currentColor)"><polygon class="mk-ray" data-g="1" points="10.93,187.17 62.1,232.65 42.88,166.96" style="fill-opacity:var(--mk-o1,1)"/><polygon class="mk-ray" data-g="1" points="5,228.45 59.52,237.63 18.23,200.94" style="fill-opacity:var(--mk-o1,1)"/><polygon class="mk-ray" data-g="1" points="18.96,260.85 60.12,243.59 16.11,236.38" style="fill-opacity:var(--mk-o1,1)"/><polygon class="mk-ray" data-g="2" points="42.1,277.18 62.68,247.62 29.55,261.71" style="fill-opacity:var(--mk-o2,.74)"/><polygon class="mk-ray" data-g="2" points="65,277.99 66.51,249.16 49.94,272.86" style="fill-opacity:var(--mk-o2,.74)"/><polygon class="mk-ray" data-g="2" points="82.49,268.53 71.19,248.77 70.02,271.65" style="fill-opacity:var(--mk-o2,.74)"/><polygon class="mk-ray" data-g="3" points="90.58,255.13 74.3,246.41 83.47,262.43" style="fill-opacity:var(--mk-o3,.52)"/><polygon class="mk-ray" data-g="3" points="90.61,241.74 76.03,243.21 89.02,249.88" style="fill-opacity:var(--mk-o3,.52)"/><polygon class="mk-ray" data-g="3" points="85.32,232.77 75.77,239.88 87.55,238.8" style="fill-opacity:var(--mk-o3,.52)"/></g><g style="fill:var(--mk-fig,#ff2a45)"><circle class="mk-head" cx="68.6" cy="130.91" r="9.87"/><polygon class="mk-body" points="45.15,148.96 92.03,148.96 68.62,230.36"/></g></symbol>
+</svg>
+
+<!-- ============ 00 PRELOADER: pile + stamp (Prompt 2) ============ -->
+<div data-preloader role="status" aria-label="Loading" class="preloader">
+  <style>html{overflow:hidden}</style>
+  <noscript><style>[data-preloader]{display:none!important}html{overflow:auto!important}</style></noscript>
+  <div aria-hidden="true" class="preloader-grain grain-tex"></div>
+  <p class="type-script preloader-caption">healthcare · government · maryland</p>
+  <div class="preloader-stage"><div class="preloader-box" id="pl-box">
+    <span class="type-display preloader-stamp" id="pl-stamp">Placed</span>
+  </div></div>
+  <div class="preloader-count"><p class="type-display" id="pl-num">000</p><div class="bar"><div class="fill" id="pl-fill"></div></div></div>
+</div>
+
+<!-- ============ fixed header (appears after the hero) ============ -->
+<header class="site-header" id="site-header">
+  <div class="backdrop" id="header-backdrop"></div>
+  <a href="#top" class="brand" aria-label="XcelCareers home">
+    <svg class="brand-mark" aria-hidden="true"><use href="#i-mark"/></svg>
+    <span class="type-display brand-word">XcelCareers</span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li class="spray"><a href="#services">Services</a></li>
+      <li class="spray"><a href="#process">How we staff</a></li>
+      <li class="spray"><a href="#jobs">Jobs</a></li>
+      <li class="spray"><a href="#capability">Capability</a></li>
+      <li class="spray"><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <a class="plate plate--sm" href="#contact" style="--pw:12.5rem" data-drips="sm"><span class="plate-off" aria-hidden="true"></span><span class="plate-face type-display">Request staff<svg><use href="#i-arrow"/></svg></span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg><use href="#i-burger"/></svg></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 01 HERO: the Next.js hero design, unchanged; XcelCareers copy ============ -->
+<section class="hx-hero" aria-labelledby="hero-title" id="top">
+  <div class="hx-stage">
+    <header class="hx-header">
+      <a href="#top" class="hx-logo" aria-label="XcelCareers home"><svg class="hx-mark" aria-hidden="true"><use href="#i-mark"/></svg>XcelCareers<span class="hx-reg" aria-hidden="true">®</span></a>
+      <nav class="hx-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#services">Healthcare</a></li>
+          <li><a href="#capability">Government</a></li>
+          <li><a href="#jobs">Jobs</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="hx-status">Now staffing</p>
+    </header>
+    <div class="hx-metaTop">
+      <p class="hx-meta hx-specIndex">Dayton, MD</p>
+      <p class="hx-meta hx-vitals">MD · DC · VA</p>
+    </div>
+    <div class="hx-centrepiece">
+      <img src="assets/specimen-placeholder.png" alt="A human heart held in a glass case" decoding="async" fetchpriority="high" style="position:absolute;height:100%;width:100%;inset:0;color:transparent;object-fit:fill">
+    </div>
+    <p class="hx-meta hx-sealed">CAGE / 89AK6</p>
+    <div class="hx-titleBlock">
+      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Cert. <span class="hx-red">19-286</span> · Veteran-owned</span></p>
+      <h1 id="hero-title" class="hx-title"><span class="hx-line">People</span><span class="hx-line">Behind</span><span class="hx-line">The <span class="hx-accent">Care</span></span></h1>
+    </div>
+    <dl class="hx-placard">
+      <div class="hx-row"><dt>Focus</dt><dd>Healthcare staffing</dd></div>
+      <div class="hx-row"><dt>Contracts</dt><dd>Local · State · Federal</dd></div>
+      <div class="hx-row"><dt>Specialty</dt><dd>IT · Finance · Cyber</dd></div>
+      <div class="hx-row"><dt>Status</dt><dd class="hx-red">Accepting requests</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="below">
+
+<!-- ============ 02 CERTIFICATIONS + CUSTOMERS (TRECIG layout) ============ -->
+<section class="p2sec certs" id="certifications" aria-labelledby="certs-title">
+  <div class="col">
+    <h2 class="certs-line type-display" id="certs-title" data-m="headline"></h2>
+    <ul class="certs-badges" id="certs-badges"></ul>
+    <p class="certs-sub type-caps" data-m="chip">Past &amp; current customers</p>
+    <ul class="customers" id="customers"></ul>
+    <p class="certs-note" id="certs-note" data-m="copy"></p>
+  </div>
+</section>
+
+<!-- ============ 03 SHOWREEL: Prompt 1 scroll-driven 3D (built by js/showreel.js) ============ -->
+<section class="sr" id="services" aria-label="What we do"></section>
+
+<!-- ============ 04 PROCESS ============ -->
+<section class="p2sec process" id="process" aria-labelledby="process-title">
+  <span class="ghost" aria-hidden="true">process</span>
+  <div class="col">
+    <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">how we staff</p></div>
+    <h2 class="hl type-display" id="process-title">
+      <span class="l l1" data-m="headline" data-i="0">From open role</span>
+      <span class="hl-row">
+        <span class="l" data-m="headline" data-i="1">to</span>
+        <span class="holder holder--md"><span class="mark-box" style="rotate:-5deg"><span class="mark" data-m="mark">day one</span></span></span>
+      </span>
+    </h2>
+    <ol class="steps" id="steps"></ol>
+    <div class="bracket process-split"><span class="b" aria-hidden="true">[</span><p data-m="copy" id="process-split"></p><span class="b" aria-hidden="true">]</span></div>
+  </div>
+</section>
+
+<div class="wire" aria-hidden="true"><div class="wire-box" data-px="10" data-tilt="3"><div class="px" data-wire="strand"></div></div></div>
+
+<!-- ============ 05 OPEN ROLES: card fan ============ -->
+<section class="p2sec jobs" id="jobs" aria-labelledby="jobs-title">
+  <span class="ghost" aria-hidden="true">hiring</span>
+  <div class="col">
+    <div class="jobs-head center">
+      <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">open roles</p></div>
+      <h2 class="hl type-display" id="jobs-title">
+        <span class="hl-row">
+          <span class="l" data-m="headline" data-i="0">Currently</span>
+          <span class="holder holder--xl"><span class="mark-box"><span class="mark" data-m="mark">hiring</span></span><span class="scrib-box"><span style="display:block"><span class="scrib" data-m="scribble"><svg><use href="#i-scrib"/></svg></span></span></span></span>
+        </span>
+      </h2>
+      <div class="bracket"><span class="b" aria-hidden="true">[</span><p data-m="copy" id="jobs-note"></p><span class="b" aria-hidden="true">]</span></div>
+    </div>
+    <div class="fan" id="fan"></div>
+    <p class="plate-stats type-caps" id="fan-stats" data-m="chip"></p>
+    <div class="jobs-cta"><div class="tilt"><a class="plate plate--md" href="#jobs" style="--pw:17.5rem" data-m="button" data-drips="md"><span class="plate-off" aria-hidden="true"></span><span class="plate-face type-display">View all jobs<svg><use href="#i-arrow"/></svg></span></a></div></div>
+  </div>
+</section>
+
+<!-- ============ 06 CAPABILITY STATEMENT: the paper poster (Transition Into Tech on hold) ============ -->
+<section class="p2sec tit" id="capability" aria-labelledby="tit-title">
+  <div class="arcs" id="arcs" aria-hidden="true"></div>
+  <article class="poster">
+    <div class="p-head">
+      <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">contract-ready</p></div>
+      <h2 class="type-display p-title" id="tit-title" data-m="headline" data-i="0">Capability</h2>
+      <span class="holder p-holder"><span class="mark-box"><span class="mark" data-m="mark">statement</span></span><span class="scrib-box"><span style="display:block"><span class="scrib" data-m="scribble"><svg><use href="#i-scrib"/></svg></span></span></span></span>
+    </div>
+    <div class="p-card"><div class="tilt" data-px="-10" data-tilt="-3" style="width:100%;height:100%"><div class="px"><div class="card-rot"><div class="card-reveal" data-m="card" style="width:100%;height:100%"><div class="card-art" id="cap-art"></div></div></div></div></div></div>
+    <ul class="points" id="cap-points"></ul>
+    <div class="p-cta"><a class="plate plate--md" href="#capability" id="cap-pdf" style="--pw:16.5rem" data-m="button" data-drips="md"><span class="plate-off" aria-hidden="true"></span><span class="plate-face type-display">Download PDF<svg><use href="#i-arrow"/></svg></span></a></div>
+    <p class="type-caps p-meta" id="cap-meta"></p>
+  </article>
+</section>
+
+<!-- ============ 07 ON THE RECORD ============ -->
+<section class="p2sec record" id="record" aria-labelledby="record-title">
+  <span class="ghost" aria-hidden="true">record</span>
+  <div class="col">
+    <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">on the record</p></div>
+    <h2 class="hl type-display" id="record-title">
+      <span class="l l1" data-m="headline" data-i="0">Everything is</span>
+      <span class="hl-row">
+        <span class="l" data-m="headline" data-i="1">on the</span>
+        <span class="holder"><span class="mark-box"><span class="mark" data-m="mark">record</span></span><span class="scrib-box"><span style="display:block"><span class="scrib" data-m="scribble"><svg><use href="#i-scrib"/></svg></span></span></span></span>
+      </span>
+    </h2>
+    <div class="stickers" id="stickers"></div>
+    <ul class="ledger" id="ledger"></ul>
+  </div>
+</section>
+
+<!-- ============ 08 FAQ ============ -->
+<section class="p2sec faq-sec" id="faq" aria-labelledby="faq-title">
+  <span class="ghost" aria-hidden="true">ask</span>
+  <div class="col faq">
+    <div class="faq-left">
+      <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">common questions</p></div>
+      <h2 class="hl type-display" id="faq-title">
+        <span class="l l1" data-m="headline" data-i="0">Before</span>
+        <span class="hl-row">
+          <span class="l" data-m="headline" data-i="1">you</span>
+          <span class="holder holder--xs"><span class="mark-box"><span class="mark" data-m="mark">call</span></span><span class="scrib-box"><span style="display:block"><span class="scrib" data-m="scribble"><svg><use href="#i-scrib"/></svg></span></span></span></span>
+        </span>
+      </h2>
+      <div class="bracket"><span class="b" aria-hidden="true">[</span><p data-m="copy" id="faq-note"></p><span class="b" aria-hidden="true">]</span></div>
+    </div>
+    <div class="acc" id="faq-list"></div>
+  </div>
+</section>
+
+<div class="wire" aria-hidden="true"><div class="wire-box" data-px="-8" data-tilt="-2.4"><div class="px" data-wire="strand2"></div></div></div>
+
+<!-- ============ 09 CONTACT + FOOTER ============ -->
+<div class="join-wrap">
+  <section class="p2sec join" id="contact" aria-labelledby="join-title">
+    <span class="ghost" aria-hidden="true">staff</span>
+    <div class="col">
+      <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><p class="eyebrow-label type-script">get in touch</p></div>
+      <h2 class="hl type-display" id="join-title">
+        <span class="l l1" data-m="headline" data-i="0">Tell us who</span>
+        <span class="hl-row">
+          <span class="l" data-m="headline" data-i="1">you</span>
+          <span class="holder"><span class="mark-box"><span class="mark" data-m="mark">need</span></span><span class="scrib-box"><span style="display:block"><span class="scrib" data-m="scribble"><svg><use href="#i-scrib"/></svg></span></span></span></span>
+        </span>
+      </h2>
+      <form class="join-form" action="#" onsubmit="return false">
+        <label for="join-email" class="sr-only">Work email</label>
+        <input id="join-email" type="email" name="email" placeholder="Work email">
+        <a class="plate plate--md" href="#contact" style="--pw:16.3rem" data-m="button" data-drips="md"><span class="plate-off" aria-hidden="true"></span><span class="plate-face type-display">Request staff<svg><use href="#i-arrow"/></svg></span></a>
+      </form>
+      <p class="type-caps join-fine" id="join-fine"></p>
+    </div>
+    <div class="join-crown" aria-hidden="true"><svg class="crown"><use href="#i-crown"/></svg></div>
+    <div class="join-card"><div class="tilt" data-px="-10" data-tilt="-3" style="width:100%;height:100%"><div class="px"><div class="card-rot"><div class="card-reveal" data-m="card" style="width:100%;height:100%"><div class="card-art" id="join-art"></div></div></div></div></div></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-rule"></div>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <p class="type-display"><svg class="footer-mark" aria-hidden="true"><use href="#i-mark"/></svg>XcelCareers</p>
+        <address class="type-caps" id="footer-address"></address>
+      </div>
+      <div class="footer-cols">
+        <nav aria-label="Employers"><p class="type-caps ttl">Employers</p><ul><li class="spray"><a href="#services">Healthcare staffing</a></li><li class="spray"><a href="#services">Government contracting</a></li><li class="spray"><a href="#contact">Request staff</a></li></ul></nav>
+        <nav aria-label="Candidates"><p class="type-caps ttl">Candidates</p><ul><li class="spray"><a href="#jobs">Open jobs</a></li><li class="spray"><a href="#jobs">Upload résumé</a></li><li class="spray"><a href="#process">How it works</a></li></ul></nav>
+        <nav aria-label="Company"><p class="type-caps ttl">Company</p><ul><li class="spray"><a href="#capability">Capability statement</a></li><li class="spray"><a href="#certifications">Certifications</a></li><li class="spray"><a href="#contact">Contact</a></li></ul></nav>
+      </div>
+    </div>
+    <div class="footer-legal type-caps"><p id="footer-legal"></p><p id="footer-ids"></p></div>
+    <p class="type-display footer-word" aria-hidden="true" data-m="wordmark">XcelCareers</p>
+  </footer>
+</div>
+
+<div class="grain grain-tex" aria-hidden="true"></div>
+</div><!-- /.below -->
+</main>
+
+<!-- ============ poster menu (handheld) ============ -->
+<div class="menu" id="menu" aria-hidden="true" inert>
+  <div class="menu-backdrop" id="menu-backdrop"></div>
+  <div class="menu-sheet" id="menu-sheet">
+    <div class="menu-top">
+      <div class="eyebrow"><svg class="crown"><use href="#i-crown"/></svg><span class="eyebrow-label type-script">menu</span></div>
+      <button class="menu-close" id="menu-close" aria-label="Close menu"><svg width="100%" height="100%"><use href="#i-close"/></svg></button>
+    </div>
+    <nav class="menu-nav" aria-label="Menu">
+      <a class="type-display" href="#services" data-trail>Services</a>
+      <a class="type-display" href="#process" data-trail>How we staff</a>
+      <a class="type-display" href="#capability" data-trail>Capability</a>
+      <a class="type-display" href="#jobs" data-trail>Jobs</a>
+      <a class="type-display" href="#contact" data-trail>Contact</a>
+    </nav>
+    <div class="menu-bottom" data-trail>
+      <span class="type-display caps">240.579.0466</span>
+      <a class="plate plate--md" href="#contact" style="--pw:14.5rem" data-drips="md"><span class="plate-off" aria-hidden="true"></span><span class="plate-face type-display">Request staff<svg><use href="#i-arrow"/></svg></span></a>
+    </div>
+    <div class="menu-wire" data-wire="arc"></div>
+  </div>
+</div>
+
+<script type="module" src="js/main.js?v=3"></script>
+</body>
+</html>

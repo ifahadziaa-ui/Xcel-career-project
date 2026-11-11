@@ -1,0 +1,363 @@
+/* =====================================================================
+   SHOWREEL: Prompt 1 ("Superconscious") scroll-driven WebGL sequence,
+   with XcelCareers content, recoloured to the hero palette
+   (graphite, silver spotlight, signal red).
+   Every animated value is set from JS as a pure function of scroll p (0→1).
+   ===================================================================== */
+
+.sr {
+  --sr-ink: #101012;
+  --sr-red: #ff2a45;
+  --pf-card: #161618;
+  --cc-search: #1d1d1e;
+  --paper: #f3f3f5;
+  --cc-dark-ink: #f3f3f5;
+  --cc-light-ink: #131314;
+  --cc-light-muted: #919194;
+  --glass-dark: rgba(39, 39, 40, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-soft: rgba(255, 255, 255, 0.14);
+  --hairline: rgba(255, 255, 255, 0.28);
+  /* the accent card: signal red lit like the hero spotlight */
+  --card-accent: radial-gradient(95% 80% at 50% 28%, #ff8a99 0%, #ff2a45 38%, #b0102a 68%, #3e0610 100%);
+  /* the carousel stage: the hero's silver spotlight, lit from above */
+  --stage: radial-gradient(ellipse 75% 95% at 50% 30%, #d6d6d8 0%, #c6c6c6 30%, #a7a7a7 65%, #8a8a8c 100%);
+  --radius-btn: 8px;
+  --radius-card: 3vmin;
+  --radius-pf: 2.5vmin;
+  --radius-slider: 1.6vmin;
+  --radius-grid: 12px;
+  --radius-target: 30px;
+  /* responsive geometry: desktop defaults; JS swaps per bucket */
+  --sr-track-vh: 2000vh;
+  --sr-card-w: 42vmin;
+  --sr-card-h: 62vmin;
+  --sr-carousel-r: 27vmin;
+  --sr-flyback: 40vmin;
+  --sr-hero-pad: 8vmin;
+  --sr-heading-1: 18vmin;
+  --sr-heading-2: 24vmin;
+  --sr-sphere-body-w: 52vmin;
+  --sr-sphere-body-text: 2.4vmin;
+  --sr-cu: 1vmin;          /* card unit: card width / 42 (JS sets it per bucket) */
+  --sr-slider-h: 62vh;     /* opening card's video slot; shorter on tall screens so the copy clears it */
+
+  position: relative;
+  z-index: 31; /* above the Prompt 2 film grain: the showreel keeps its own shader grain */
+  background: var(--sr-ink);
+  color: var(--paper);
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+
+.sr-track { position: relative; height: var(--sr-track-vh); }
+.sr-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: 4vmin; }
+
+.sr-backdrop { position: absolute; inset: 0; z-index: 0; background: var(--stage); }
+
+/* ---------- marquee ---------- */
+.sr-marquee {
+  position: absolute; left: 0; top: 50%; z-index: 1;
+  width: 100vw; transform: translateY(-50%);
+  pointer-events: none; overflow: hidden;
+}
+.sr-marquee-row { display: flex; width: max-content; animation: sr-marquee 25s linear infinite; }
+.sr-marquee-item {
+  display: flex; align-items: center; flex: none;
+  padding: 0 3vw; font-size: 7vw; letter-spacing: -0.03em; line-height: 1.15;
+  color: var(--sr-ink); white-space: nowrap;
+}
+.sr-ring {
+  flex: none; display: block; width: 1.5vw; height: 1.5vw;
+  transform: translateY(0.8vw); border-radius: 9999px; border: 2px solid var(--sr-red);
+}
+@keyframes sr-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---------- 3D scene ---------- */
+.sr-scene {
+  position: relative; z-index: 2; display: flex; width: 100%; height: 100%;
+  align-items: center; justify-content: center; perspective: 1500px;
+}
+.sr-rig { position: absolute; inset: 0; transform-style: preserve-3d; }
+.sr-carousel {
+  position: relative; display: flex; width: 100%; height: 100%;
+  align-items: center; justify-content: center; transform-style: preserve-3d;
+}
+.sr-card1 { position: absolute; overflow: hidden; border-radius: var(--radius-card); }
+.sr-side { position: absolute; height: var(--sr-card-h); width: var(--sr-card-w); }
+.sr-card4 { display: flex; align-items: center; justify-content: center; overflow: visible; }
+
+/* scroll letters */
+.sl-line { display: inline-block; vertical-align: bottom; }
+.sl { display: inline-block; will-change: transform, filter, opacity; }
+
+/* ---------- HeroCard (slot 1) ---------- */
+.sr-hero { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--sr-ink); }
+/* fixed-size buffer stretched over the card (see makeHeroGradient); fades in once */
+.sr-hero canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
+.sr-hero canvas.is-live { opacity: 1; }
+.sr-hero-head { position: absolute; inset: 0; z-index: 3; display: flex; padding: 40px; pointer-events: none; }
+.sr-hero-head h2 {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #fff;
+}
+.sr-hero-head .dim { opacity: 0.4; }
+.sr-hero-rot { position: absolute; inset: 0; z-index: 7; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.sr-hero-rot h3 {
+  text-align: center; font-size: 3.6vmin; font-weight: 400; color: #fff; line-height: 1.2;
+  transform: rotate(-90deg); filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+.sr-hero-img { position: absolute; inset: 0; z-index: 6; perspective: 1400px; pointer-events: none; }
+.sr-slider {
+  position: absolute; left: 50%; top: 50%; overflow: hidden;
+  border-radius: var(--radius-slider); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+.sr-slide { position: absolute; inset: 0; }
+.sr-slide--b { left: 100%; }
+.sr-slide--b .sr-rotated { position: absolute; inset: 0; transform: rotate(-90deg) scale(1.65); }
+.sr-hero-bottom {
+  position: absolute; bottom: 0; left: 0; z-index: 6; width: 100%;
+  display: flex; flex-direction: column; gap: 24px; padding: 40px;
+  color: #fff; font-weight: 300;
+}
+.sr-hero-bottom .lead { max-width: 26rem; max-width: 416px; opacity: 0.9; font-size: 16px; line-height: 1.625; text-shadow: 0 1px 12px rgb(16 16 18 / 0.7); }
+.sr-btns { display: flex; align-items: center; gap: 16px; }
+.sr-btn {
+  padding: 14px 32px; border-radius: 8px; font-size: 17px; line-height: 1.2; white-space: nowrap;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.25);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: #fff;
+}
+.sr-btn--solid { background: var(--sr-red); color: #fff; font-weight: 500; border-color: var(--sr-red); }
+.sr-divider { width: 100%; height: 1px; background: rgb(255 255 255 / 0.3); margin: 8px 0; }
+.sr-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.sr-avatars {
+  display: flex; align-items: center; gap: 12px; flex: none;
+  padding: 6px 16px 6px 8px; border-radius: 9999px;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.22);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.sr-avatars .faces { display: flex; }
+.sr-avatars .face {
+  width: 32px; height: 32px; border-radius: 9999px; margin-left: -8px;
+  border: 2px solid rgb(255 255 255 / 0.6);
+  display: grid; place-items: center; font: 700 10px/1 "Zen Kaku Gothic New", sans-serif; color: #fff;
+  background: linear-gradient(135deg, #767678, #1d1d1e);
+}
+.sr-avatars .face:first-child { margin-left: 0; background: var(--sr-red); }
+.sr-avatars span.lbl { font-size: 14px; font-weight: 500; opacity: 0.9; white-space: nowrap; }
+/* sits on the bright floor of the gradient, so it gets the same dark glass as the team pill */
+.sr-hero-row .right {
+  max-width: 512px; padding: 9px 16px; border-radius: 14px; text-align: right; font-size: 15px; line-height: 1.5;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.22);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+
+/* ---------- carousel cards 01 · 02 (dark & light) ----------
+   One order on every card: numbered chip → photo → headline → the action.
+   Sizes use --sr-cu, a card unit (1vmin on desktop, larger where the cards are
+   larger), so the cards keep their proportions and stay readable on phones. */
+.sr-cc { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card); }
+.sr-cc--dark { color: var(--cc-dark-ink); }
+.sr-cc--light { color: var(--cc-light-ink); }
+.sr-cc-ui { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; padding: calc(3.2 * var(--sr-cu)); }
+/* scrim under the text, so it stays readable once the real photo is in */
+.sr-cc-ui::before {
+  content: ""; position: absolute; inset: 42% 0 0; z-index: -1; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(to top, rgb(16 16 18 / 0.88) 8%, rgb(16 16 18 / 0.5) 52%, transparent);
+}
+.sr-cc--light .sr-cc-ui::before { background: linear-gradient(to top, rgb(236 236 238 / 0.94) 8%, rgb(236 236 238 / 0.55) 52%, transparent); }
+.sr-cc-top { display: flex; align-items: center; justify-content: space-between; gap: calc(1.2 * var(--sr-cu)); }
+.sr-cc-mark { display: block; flex: none; width: calc(2.1 * var(--sr-cu)); height: calc(3.75 * var(--sr-cu)); overflow: visible; color: #f3f3f5; --mk-fig: var(--sr-red); }
+.sr-cc--light .sr-cc-mark { color: #131314; --mk-fig: #d4142f; }
+
+/* numbered chip: the order of the story, on every card */
+.sr-chip {
+  display: inline-flex; align-items: center; gap: calc(1.1 * var(--sr-cu)); white-space: nowrap;
+  padding: calc(0.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(0.6 * var(--sr-cu)) calc(0.6 * var(--sr-cu)); border-radius: 9999px;
+  border: 1px solid var(--glass-border); background: var(--glass-dark);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  font: 500 max(8.5px, calc(1.3 * var(--sr-cu)))/1 "Geist Mono", ui-monospace, monospace; letter-spacing: 0.14em; text-transform: uppercase; color: #f3f3f5;
+}
+.sr-chip b {
+  display: grid; place-items: center; min-width: 2.2em; height: 2.2em; padding: 0 0.55em; border-radius: 9999px;
+  background: var(--sr-red); color: #fff; font-weight: 600; letter-spacing: 0.04em;
+}
+.sr-cc--light .sr-chip { background: rgb(255 255 255 / 0.6); border-color: rgb(16 16 18 / 0.1); color: #131314; }
+.sr-cc--light .sr-chip b { background: #d4142f; }
+
+.sr-cc-bottom { margin-top: auto; position: relative; }
+.sr-cc-bottom h4 { font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
+.sr-cc-bottom strong { font-weight: 700; color: #fff; }
+.sr-cc--light .sr-cc-bottom strong { color: #0a0a0b; }
+
+.sr-glass-pill {
+  margin-top: calc(2.2 * var(--sr-cu)); display: flex; align-items: center; justify-content: space-between; gap: calc(1.5 * var(--sr-cu));
+  border-radius: calc(4 * var(--sr-cu)); border: 1px solid var(--glass-border); background: var(--glass-dark);
+  padding: calc(1.5 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.5 * var(--sr-cu)) calc(2.2 * var(--sr-cu));
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.sr-glass-pill .k { display: block; font-size: max(8.5px, calc(1.35 * var(--sr-cu))); opacity: 0.62; letter-spacing: 0.02em; }
+.sr-glass-pill .v { display: block; margin-top: calc(0.4 * var(--sr-cu)); font-size: max(11px, calc(2.2 * var(--sr-cu))); }
+.sr-badge {
+  display: grid; place-items: center; flex: none; width: max(16px, calc(3 * var(--sr-cu))); height: max(16px, calc(3 * var(--sr-cu)));
+  border-radius: 9999px; background: var(--glass-border); font-size: max(10px, calc(1.8 * var(--sr-cu)));
+}
+.sr-glass-pill .sr-badge { background: var(--sr-red); color: #fff; }
+.sr-search {
+  margin-top: calc(2.2 * var(--sr-cu)); display: flex; align-items: center; gap: calc(1.4 * var(--sr-cu));
+  border-radius: calc(5 * var(--sr-cu)); background: var(--cc-search);
+  padding: calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.8 * var(--sr-cu)); color: var(--paper);
+}
+.sr-search .sr-badge { background: rgb(255 255 255 / 0.14); }
+.sr-search .sr-badge--go { background: var(--sr-red); color: #fff; font-size: max(8px, calc(1.5 * var(--sr-cu))); }
+.sr-search .q { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: max(10.5px, calc(1.8 * var(--sr-cu))); opacity: 0.85; }
+
+/* photo slots on the cards: a compact label in the upper middle, clear of the text */
+.sr-cc .ph { justify-content: flex-start; padding-top: 23%; gap: 0.6em; }
+.sr-cc .ph .ph-what { font-size: clamp(11px, 5.2cqmin, 28px); max-width: 15ch; opacity: 0.78; }
+.sr-cc .ph .ph-tag { font-size: clamp(8px, 2.9cqmin, 12px); opacity: 0.7; }
+.sr-cc .ph .ph-note { font-size: clamp(8px, 2.6cqmin, 12px); opacity: 0.55; }
+
+/* ---------- card 03: the network ---------- */
+.sr-sphere-card { width: 100%; height: 100%; }
+.sr-face { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-card); background: var(--card-accent); }
+.sr-face-in { display: flex; width: 100%; height: 100%; flex-direction: column; padding: calc(3.2 * var(--sr-cu)); color: var(--paper); }
+.sr-face-top { display: flex; align-items: center; justify-content: space-between; }
+.sr-face .sr-chip { background: rgb(16 16 18 / 0.28); border-color: rgb(255 255 255 / 0.22); }
+.sr-face .sr-chip b { background: #fff; color: #d4142f; }
+.sr-face h4 { margin-top: auto; max-width: 92%; font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
+.sr-face h4 strong { font-weight: 700; }
+
+/* the dark network scene, revealed through the mark's hub (clip-path set per frame) */
+.sr-blackpanel {
+  position: absolute; left: 50%; top: 50%; width: 300vw; height: 300vh; background: var(--sr-ink);
+  clip-path: circle(0px at 50% 50%);
+}
+/* the mark on card 03, drawn at screen resolution: the dive changes its viewBox, never its raster scale */
+.sr-zoom {
+  position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh;
+  overflow: visible; pointer-events: none; visibility: hidden;
+}
+.sr-zoom .zm-ray, .sr-zoom .zm-fig { fill: #f3f3f5; }
+.sr-zoom .zm-ray[data-g="2"] { fill-opacity: 0.74; }
+.sr-zoom .zm-ray[data-g="3"] { fill-opacity: 0.52; }
+.sr-sphere-scene { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh; }
+.sr-sphere-canvas { position: absolute; left: 50%; top: 50%; z-index: 2; width: 100%; height: 100%; }
+.sr-sphere-canvas canvas { width: 100%; height: 100%; }
+/* the mark at the heart of the sphere, in brand colour */
+.sr-core { position: absolute; left: 50%; top: 50%; z-index: 3; width: 7.3vh; height: 13vh; opacity: 0; }
+.sr-core-mark { display: block; width: 100%; height: 100%; overflow: visible; color: #d0d0d2; --mk-fig: var(--sr-red); filter: drop-shadow(0 0 2.2vh rgb(255 42 69 / 0.35)); }
+.sr-h-top {
+  position: absolute; left: 4vmin; top: 4vmin; z-index: 4;
+  font-size: var(--sr-heading-1); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+}
+.sr-h-bottom {
+  position: absolute; right: 4vmin; bottom: 4vmin; z-index: 4;
+  display: flex; flex-direction: column; align-items: flex-end; text-align: right;
+  font-size: var(--sr-heading-2); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+}
+.sr-sphere-body {
+  position: absolute; left: 4vmin; bottom: 5vmin; z-index: 4;
+  display: flex; max-width: var(--sr-sphere-body-w); flex-direction: column; gap: 1.8vmin;
+  font-size: var(--sr-sphere-body-text); font-weight: 300; line-height: 1.45; color: #fff;
+}
+
+/* ---------- parallax grid tiles ---------- */
+.sr-tile { position: absolute; left: 50%; top: 50%; z-index: -1; overflow: hidden; }
+
+/* ---------- target block ---------- */
+.sr-target {
+  position: absolute; left: 50%; top: 50%; z-index: -1;
+  width: 100vw; height: 100vh; overflow: hidden; background: var(--sr-ink);
+}
+.sr-target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sr-frame {
+  position: absolute; inset: -4vmin; z-index: 3; pointer-events: none;
+  border-radius: 11vmin; border: 8vmin solid var(--sr-ink);
+}
+.sr-ctablock {
+  position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column;
+  align-items: flex-start; justify-content: center; gap: 2.5vmin; padding: 9vmin; pointer-events: none;
+}
+.sr-ctablock h2 {
+  max-width: 60vw; display: flex; flex-direction: column; align-items: flex-start;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: var(--paper);
+}
+.sr-ctablock h2 .dim { opacity: 0.4; }
+.sr-ctablock p { max-width: 26vw; font-size: 2.2vmin; line-height: 1.375; color: rgb(243 243 245 / 0.7); }
+.sr-ctarow { margin-top: 1.5vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin 3.2vmin; pointer-events: auto; }
+.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: 2.2vmin 4.6vmin; font-size: 2.5vmin; color: #fff; }
+.sr-ctatel { font-size: max(13px, 2vmin); color: rgb(243 243 245 / 0.62); white-space: nowrap; }
+.sr-ctatel b { font-weight: 500; color: #f3f3f5; }
+.sr-ctatel:hover b, .sr-ctatel:focus-visible b { color: var(--sr-red); }
+
+/* ---------- carousel CTA ---------- */
+.sr-cta {
+  position: absolute; left: 0; right: 0; bottom: 2vmin; z-index: 3;
+  display: flex; justify-content: center; padding: 0 4vmin; pointer-events: none;
+}
+.sr-cta a {
+  pointer-events: auto; border-radius: var(--radius-btn); background: var(--sr-ink);
+  padding: 2vmin 4.2vmin; font-size: 2.1vmin; color: var(--paper);
+}
+
+/* ---------- fixed layers: aurora + portfolio ---------- */
+.sr-aurora { position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden; }
+.sr-aurora canvas { width: 100%; height: 100%; }
+.sr-portfolio {
+  position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
+  overflow: hidden; padding: 9vmin 0 8vmin; transform: translateY(100%); visibility: hidden;
+}
+.sr-pf-track { display: flex; height: 100%; gap: 3vmin; padding-left: 3vmin; }
+.sr-pf {
+  position: relative; display: flex; height: 100%; width: 62vw; flex-shrink: 0;
+  flex-direction: column; justify-content: space-between; overflow: hidden;
+  border-radius: var(--radius-pf); background: var(--pf-card); padding: 3.5vmin; color: #fff;
+}
+.sr-pf > .ph { z-index: 0; justify-content: flex-start; padding-top: 13%; }
+.sr-pf .ph .ph-what { font-size: clamp(13px, 4.4cqmin, 40px); max-width: 24ch; opacity: 0.8; }
+.sr-pf .ph .ph-note { opacity: 0.55; }
+.sr-pf-tags {
+  position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 1.4vmin;
+  font-size: 1.7vmin; opacity: 0.9;
+}
+.sr-pf-tags .sep { opacity: 0.5; }
+.sr-pf h3 {
+  position: relative; z-index: 2; max-width: 85%;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; text-transform: capitalize;
+}
+.sr-pf-foot { position: relative; z-index: 2; }
+.sr-pf-kicker {
+  display: flex; align-items: center; gap: 1.2vmin; margin-bottom: 2vmin;
+  font: 500 max(11px, 1.45vmin)/1 "Geist Mono", ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgb(243 243 245 / 0.82);
+}
+.sr-pf-kicker b {
+  display: grid; place-items: center; min-width: 3.2vmin; height: 3.2vmin; padding: 0 0.8vmin; border-radius: 9999px;
+  background: var(--sr-red); color: #fff; font-weight: 600; letter-spacing: 0.04em;
+}
+.sr-pf-line {
+  margin-top: 2.2vmin; max-width: 46ch;
+  font-size: max(13px, 1.9vmin); line-height: 1.45; font-weight: 300; opacity: 0.88;
+  text-shadow: 0 1px 14px rgb(16 16 18 / 0.75);
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 639px) {
+  .sr-hero-head, .sr-hero-bottom { padding: 20px; }
+  .sr-hero-bottom { gap: 16px; }
+  .sr-hero-bottom .lead { font-size: 14px; }
+  .sr-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+  .sr-btn { padding: 12px 20px; font-size: 15px; text-align: center; }
+  .sr-divider, .sr-hero-row { display: none; }
+  .sr-hero-bottom .lead { opacity: 1; text-shadow: 0 1px 3px rgb(16 16 18 / 0.55), 0 0 18px rgb(16 16 18 / 0.75); }
+  .sr-ctablock h2 { max-width: 88vw; }
+  .sr-ctablock p { max-width: 80vw; font-size: 3.4vmin; }
+  .sr-pf-kicker { font-size: 10px; letter-spacing: 0.08em; gap: 1.8vmin; }
+}
+
+/* portrait screens: in the network scene the big type sits above the chat button
+   and the copy above the big type, so the two never cross */
+@media (max-aspect-ratio: 1/1) {
+  .sr-h-bottom { bottom: 78px; }
+  .sr-sphere-body { bottom: calc(78px + 2 * 0.85 * var(--sr-heading-2) + 5vmin); text-shadow: 0 1px 10px rgb(16 16 18 / 0.9); }
+}
