@@ -1,0 +1,805 @@
+/*
+Theme Name: Hello Elementor Child
+Theme URI: https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash
+Template: hello-elementor
+Author: Elementor Team
+Author URI: https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash
+Description: Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.
+Tags: accessibility-ready,flexible-header,custom-colors,custom-menu,custom-logo,featured-images,rtl-language-support,threaded-comments,translation-ready
+Version: 3.1.1.1723542673
+Updated: 2024-08-13 09:51:13
+
+*/
+
+.header-op {	
+	width: 100%;
+	z-index: 9999;
+	position: fixed !important;
+}
+#site-header, #site-footer {
+    display: none;
+}
+.header-op.sticky {
+	background: rgb(255 255 255 / 90%) !important;
+} 
+.menu-item .sub-menu, .menu-item .sub-menu li, .menu-item .sub-menu li a {
+    min-width: 200px !important;
+    max-width: 200px !important;
+    width: 100% !important;
+}
+.elementor-heading-title b {
+    color: #b22239;
+	font-weight: 800 !important;
+}
+
+
+/* -- button css -- */
+.elementor-button-wrapper {
+    display: inline-grid;
+}
+a.elementor-button {
+    background: transparent !important;
+    border: 1px solid #000;
+    color: #000 !important;
+    display: inline-block;
+    font-weight: 400 !important;
+    padding: 15px 30px;
+    position: relative;
+    text-decoration: none;
+    transition: all .3s ease;
+	border-radius: 30px;
+    text-transform: uppercase;
+	overflow: hidden;
+} 
+.wht a.elementor-button {
+    border: 1px solid #fff;
+    color: #fff !important;
+} 
+.wht a.elementor-button:hover {
+    color: #fff !important;
+	border: 1px solid #b22239 !important;
+} 
+a.elementor-button:after {
+    background: #b22239;
+    content: "";
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: all .3s ease;
+    width: 100%;
+    z-index: 1;
+}
+a.elementor-button:hover:after {
+    bottom: 0;
+    height: 100%;
+    top: auto;
+}
+a.elementor-button:hover {
+    color: #fff !important;
+	border: 1px solid #b22239 !important;
+}
+a.elementor-button span {
+    z-index: 2;
+    position: relative;
+}
+.nobg-btn a.elementor-button {
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    color: #b22239 !important;
+    font-size: 12px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #b22239;
+    padding-bottom: 5px;
+}
+.nobg-btn a.elementor-button:after {
+    display: none;
+}
+.nobg-btn a.elementor-button:hover {
+    color: #fff !important;
+    border-color: #fff;
+}
+/* -- button css -- */
+
+b, strong {
+	font-weight: 600 !important;
+}
+
+/* -- form css -- */
+.wpcf7-form p {
+    margin: 0;
+}
+.wpcf7-form input, .wpcf7-form select, .wpcf7-form textarea {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-bottom: 1px solid #666 !important;
+    border-radius: 0;
+    outline: 0;
+    color: #000;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+.wpcf7-form select option {
+	color: #000;
+}
+.wpcf7-form select {
+	color: #a9afc3;
+}
+.wpcf7-form select option:first-child {
+    display: none;
+}
+.wpcf7-form textarea {
+    height: 100px;
+    padding-top: 15px;
+}
+.wpcf7-form .wpcf7-form-control-wrap {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+.wpcf7-form input::placeholder, .wpcf7-form textarea::placeholder, .wpcf7-form select::placeholder {
+    color: #666;
+}
+.half p {
+    display: flex;
+    gap: 15px;
+}
+.wpcf7-acceptance label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+.wpcf7-acceptance label input {
+    max-width: 15px;
+    height: 15px;
+    border: 0;
+    border-radius: 0;
+}
+.wpcf7-acceptance label span {
+    font-size: 12px;
+    font-family: 'Poppins';
+    color: #000;
+    line-height: 16px;
+}
+.wpcf7-acceptance label span a {
+    color: #000;
+	font-weight: 700;
+}
+.wpcf7-acceptance label span a:hover {
+    color: #b22239;
+}
+.wpcf7-acceptance span.wpcf7-list-item {
+    margin: 0;
+}
+.wpcf7-form .wpcf7-submit {
+    width: auto;
+    padding: 0 50px;
+    border: 1px solid #000 !important;
+    border-radius: 30px;	
+	text-transform: uppercase;
+	background: #000 !important;
+	color: #fff !important;
+}
+.wpcf7-form .wpcf7-submit:hover {
+    background: #b22239 !important;
+	border: 1px solid #b22239 !important;
+}
+.secfr-1 h4 {
+    margin: 20px 0 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+}
+.wpcf7-form .wpcf7-form-control-wrap * {
+    width: 100%;
+}
+.select-hidden {
+  display: none;
+}
+.select {
+  position: relative;
+  width: 200px;
+}
+.select-styled {
+    background: transparent;
+    cursor: pointer;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #666 !important;
+    color: #666;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+.select-styled:after {
+    content: "\ea45";
+    position: absolute;
+    right: 0;
+    top: 15px;
+    font-family: 'WPPageBuilder';
+}
+.select-options {
+    display: none;
+    background: hsl(0deg 0% 100% / 90%);
+    box-shadow: 0 4px 8px 0 hsl(0deg 0% 0% / 10%);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+}
+.select-options li {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Poppins';
+    color: #000;
+    list-style: none;
+}
+.select-options li:hover {
+    background-color: #b22239;	
+	color: #fff;
+}
+.select-options li:first-child {
+    display: none;
+}
+/* -- form css -- */
+
+.world-video video {
+	width: 650px !important;
+	margin: 0 auto !important;
+}
+.footer-op ul.elementor-icon-list-items li {
+    list-style: none;
+}
+.footer-op .thgf .elementor-inline-items {
+    justify-content: center;
+    gap: 30px;
+}
+.footer-op .thgf .elementor-inline-items li:after {
+    right: -22px !important;
+    position: relative;
+    display: inline-block;
+}
+.single-services .elementor-widget-theme-post-content strong {
+    font-weight: 600;
+    font-size: 20px;
+	display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* -- slick slider css -- */
+.slick-dots {
+    bottom: 0 !important;
+    position: relative !important;
+    top: 30px !important;
+}
+.slick-dots li {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 5px !important;
+}
+.slick-dots li button {
+    padding: 0 !important;
+    background: #b22239 !important;
+    width: 15px !important;
+    height: 15px !important;
+    border-radius: 100% !important;
+}
+.slick-dots li button:before {
+    display: none !important;
+}
+.slick-dots li.slick-active button {
+    background: #fff !important;
+}
+.slick-arrow {
+    position: absolute !important;
+    top: -85px !important;
+    right: 10px !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+}
+.slick-arrow:before {
+    font-family: 'eicons' !important;
+    color: #fff !important;
+	font-size: 36px !important;
+    opacity: 1 !important;
+}
+.slick-arrow:hover:before {
+    color: #b22239 !important;
+}
+.slick-prev.slick-arrow {
+    right: 70px !important;
+}
+/* -- slick slider css -- */
+
+input#form-field-email {
+    padding: 0 !important;
+}
+.menu-item a:hover, .menu-item.current-menu-item > a {
+	color: #b22239 !important;
+}
+.menu-item.current-menu-parent .menu-item.current-menu-item > a {
+	color: #fff !important;
+}
+.menu-item .menu-item a:hover {
+	color: #fff !important;
+}
+.side-line h2.elementor-heading-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.side-line h2.elementor-heading-title:before {
+    content: '';
+    background: #fff;
+    width: 100px;
+    height: 1px;
+    display: block;
+}
+.elementor-heading-title {
+    display: inline-block;
+}
+.elementor-heading-title span {
+    color: #b22239;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #b22239;
+}
+.tilt-image .elementor-widget-image:after, .tilt-image .elementor-widget-video:after {
+    content: '';
+    position: absolute;
+    border-bottom: 0px solid transparent;
+    border-top: 600px solid transparent;
+    border-right: 100px solid #fff;
+    top: 0;
+    right: 0;
+}
+.tilt-image .elementor-widget-video iframe, .tilt-sec2 .elementor-widget-video iframe {
+    height: 600px;
+}
+.tilt-image .elementor-widget-video .elementor-wrapper.elementor-open-inline, .tilt-sec2 .elementor-widget-video .elementor-wrapper.elementor-open-inline {
+    height: 600px;
+    width: auto;
+    aspect-ratio: 9/5;
+}
+.elementor-headline-animation-type-typing .elementor-headline-dynamic-wrapper {
+    overflow-wrap: break-word;
+	width: 100% !important;
+}
+.animation-text .elementor-headline-dynamic-wrapper .elementor-headline-dynamic-text {
+    width: 100%;
+}
+.animation-text .elementor-headline {
+    min-height: 110px;
+}
+.animation-text .elementor-headline span {
+    text-align: center !important;
+}
+.blk.tilt-sec2 .elementor-widget-image:after, .blk.tilt-sec2 .elementor-widget-video:after {
+    border-left: 100px solid #fff;
+    border-bottom: 600px solid transparent;
+}
+.tilt-sec2 .elementor-widget-image:after, .tilt-sec2 .elementor-widget-video:after {
+    content: '';
+    position: absolute;
+    border-top: 0px solid transparent;
+    border-bottom: 600px solid transparent;
+    border-left: 100px solid #fff;
+    top: 0;
+    left: 0;
+}
+.tilt-image .elementor-section .elementor-container {
+    margin: 0 auto 0 0;
+}
+.tilt-image .right-inner .elementor-container {
+    margin: 0 0 0 auto;
+} 
+.tilt-image {
+	overflow: hidden;
+}
+.newsletter-op input {
+    padding: 0 !important;
+}
+.newsletter-op button.elementor-button {
+    margin: 0 !important;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.newsletter-op button.elementor-button i {
+    font-size: 24px;
+}
+.icon-filled .elementor-image-box-img {
+    max-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    background: #191c26;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    margin: 0 auto 25px !important;
+}
+.copyright a:hover {
+	color: #b22239 !important;
+}
+.copyright a {
+    color: #000 !important;
+    font-weight: 600;
+}
+.cnt-details .elementor-image-box-content h3.elementor-image-box-title {
+    margin-top: 0;
+}
+.ftr-listing a {
+	color: #A9AFC3;
+}
+.ftr-listing a:hover {
+	color: #b22239 !important;
+}
+.wpcf7-response-output {
+    background: #b22239;
+    border: 0 !important;
+    color: #fff !important;
+    font-size: 12px;
+    font-family: 'Poppins';
+    margin: 15px 0 0 !important;
+    padding: 5px 15px !important;
+    border-radius: 20px;
+}
+.wpcf7-not-valid-tip {
+    font-family: 'Poppins';
+    font-size: 12px;
+    margin-top: 5px;
+}
+.elementor-widget-posts .elementor-post__title a:hover {
+    color: #b22239 !important;
+}
+.single-post .elementor-widget-theme-post-content a {
+    color: #fff;
+    font-weight: 600;
+}
+.single-post .elementor-widget-theme-post-content a:hover {
+    color: #b22239 !important;
+}
+.single-post .elementor-widget-theme-post-content h2 {
+    font-size: 24px;
+}
+.single-post .elementor-widget-theme-post-content strong {
+    font-size: 20px;
+    font-weight: 600;
+}
+.services-gd > .elementor-widget-container {
+    min-height: 550px;
+    display: flex;
+    position: relative;
+    padding: 50px 20px 0;
+    align-items: flex-start;
+}
+.services-gd > .elementor-widget-container > * {
+    position: relative;
+	z-index: 2;
+}
+.services-gd {
+	margin: 0 !important; 
+}
+.services-gd > .elementor-widget-container:after {
+    content: '';
+    background: rgb(0 0 0 / 60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+	z-index: 1;
+}
+.logo-sec .elementor-image-gallery .gallery {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.logo-sec .elementor-image-gallery .gallery .gallery-item {
+    padding: 0 !important;
+}
+.single-services .elementor-widget-theme-post-content h4 {
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+}
+.single-services .elementor-widget-theme-post-content p {
+    margin-bottom: 10px;
+}
+.gd-inner > .elementor-column-gap-default {
+    margin: 0 0 0 auto;
+}
+.color-op a:hover {
+	color: #b22239 !important;
+}
+.color-op a {
+	color: #fff !important;
+}
+.awardslink .elementor-widget-image-box h3 {
+    margin-top: 0;
+}
+.awardslink .elementor-widget-image-box h3 a:hover {
+    color: #b22239;
+}
+.services-gd ul {
+    padding-left: 20px;
+	margin: 0;
+}
+.services-gd ul li {
+    color: #fff;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 14px;
+    text-align: left;
+    list-style: circle;
+    margin-bottom: 10px;
+}
+.policy-data h4 {
+    font-size: 24px;
+    margin: 25px 0 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.policy-data strong {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.services-gd .elementor-image-box-title {
+    color: #fff !important;
+}
+
+.icn-move {
+    z-index: 9;
+    -webkit-animation: caption-start 1.5s ease .2s infinite;
+    -moz-animation: caption-start 1.5s ease .2s infinite;
+    -ms-animation: caption-start 1.5s ease .2s infinite;
+    -o-animation: caption-start 1.5s ease .2s infinite;
+    animation: caption-start 1.5s ease .2s infinite;
+}
+
+
+/* -- Globe css -- */
+.objectify-op .elementor-image-box-content:after {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #FFFFFF);
+    transform-origin: left;
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 83.5%;
+    height: 1px;
+}
+.objectify-op .elementor-image-box-wrapper:after {
+    content: "";
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #3AC1CC;
+    padding: 5px;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 0 8px rgb(6 6 6);
+    display: inline-block;
+    position: absolute;
+}
+.objectify-op .elementor-image-box-content:before {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #FFFFFF);
+    transform-origin: left;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+}
+.objectify-op.object1 .elementor-image-box-content:before {
+    left: 250px;
+    bottom: -20px;
+    transform: rotate(32deg);
+    width: 85%;
+}
+.objectify-op.object2 .elementor-image-box-content:before {
+    left: 250px;
+    bottom: -20px;
+    transform: rotate(-30deg);
+    width: 115%;
+}
+.objectify-op.object3 .elementor-image-box-content:before {
+    left: 0;
+    bottom: -20px;
+    transform: rotate(160deg);
+    width: 85%;
+}
+.objectify-op.object4 .elementor-image-box-content:before {
+    left: 0;
+    bottom: -20px;
+    transform: rotate(199deg);
+    width: 105%;
+}
+.objectify-op.object5 .elementor-image-box-content:before {
+    left: 0;
+    bottom: -20px;
+    transform: rotate(225deg);
+    width: 135%;
+}
+.objectify-op.reverse .elementor-image-box-content:before {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #FFFFFF);
+}
+.object1 .elementor-image-box-wrapper:after {
+    right: -165px;
+    bottom: -160px;
+}
+.object2 .elementor-image-box-wrapper:after {
+	right: -260px;
+    bottom: 135px;
+}
+.object3 .elementor-image-box-wrapper:after {
+    left: -200px;
+    bottom: -100px;
+}
+.object4 .elementor-image-box-wrapper:after {
+    left: -250px;
+    bottom: 50px;
+}
+.object5 .elementor-image-box-wrapper:after {
+    left: -300px;
+    bottom: 250px;
+}
+.objectify-op.reverse .elementor-image-box-content:after {
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #FFFFFF);
+}
+/* -- Globe css -- */
+
+
+@media screen and (max-width:767px) {
+a.elementor-button {
+    padding: 12px 25px;
+    font-size: 14px;
+} 	
+.single-services .elementor-widget-theme-post-content h4 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+.single-services .elementor-widget-theme-post-content p strong {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+}
+.world-video video {
+    width: 100% !important;
+}
+.wpcf7-form input, .wpcf7-form textarea {
+    height: 45px;
+}
+.wpcf7-form textarea {
+    padding-top: 15px;
+	height: 80px;
+}
+.wpcf7-form .wpcf7-form-control-wrap {
+    margin-bottom: 15px;
+}
+.half p {
+    gap: 10px;
+}
+.wpcf7-form  .wpcf7-submit {
+    padding: 0 30px;
+}
+.tilt-sec2 .elementor-widget-image:after, .tilt-image .elementor-widget-image:after, .tilt-image .elementor-widget-video:after, .tilt-sec2 .elementor-widget-video:after {
+    display: none;
+}
+.elementor-heading-title span {
+    height: 5px;
+    width: 5px;
+}
+.logo-sec figure.gallery-item {
+    padding: 0 !important;
+}
+.logo-sec .gallery {
+    margin: 0 !important;
+    display: flex;
+    gap: 5px;
+}
+.tilt-image .elementor-widget-video iframe, .tilt-sec2 .elementor-widget-video iframe {
+    height: 240px;
+}
+.tilt-image .elementor-widget-video .elementor-wrapper.elementor-open-inline, .tilt-sec2 .elementor-widget-video .elementor-wrapper.elementor-open-inline {
+	height: 240px;
+	aspect-ratio: auto;
+	width: 100% !important;
+}
+.animation-text .elementor-headline {
+    min-height: 130px;
+    margin: 0;
+}
+.half p {
+    flex-wrap: wrap;
+    gap: 0;
+}
+.slick-arrow {
+    display: none !important;
+}
+.slick-dots {
+    top: 10px !important;
+}
+.services-gd > .elementor-widget-container {
+    min-height: 410px;
+}
+.objectify-op .elementor-image-box-content:before, .objectify-op .elementor-image-box-wrapper:after, .objectify-op .elementor-image-box-content:after {
+    display: none;
+}
+.objectify-op {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+.logo-sec .elementor-image-gallery .gallery {
+    gap: 15px;
+    flex-wrap: wrap;
+	  justify-content: center;
+}
+.logo-sec .elementor-image-gallery .gallery .gallery-item {
+    width: 21%;
+}	
+.animation-text .elementor-headline-dynamic-wrapper .elementor-headline-dynamic-text {
+    width: 320px;
+}	
+br {
+	display: none;
+}	
+.side-line h2.elementor-heading-title {
+    gap: 10px;
+}
+.side-line h2.elementor-heading-title:before {
+    width: 60px;
+}
+.copyright a {
+    display: block !important;
+}
+}
+
+
+.elementor-widget-posts .elementor-post__title a {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+@keyframes caption-start {
+	0%{ 
+		transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+	}
+	50% { 
+		transform: translate3d(0,10px,0);
+		-ms-transform: translate3d(0,10px,0);
+	}
+	100% { 
+		transform: translate3d(0,0,0);
+		-ms-transform: translate3d(0,0,0);
+	}
+}
