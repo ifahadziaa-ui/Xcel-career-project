@@ -1,0 +1,3643 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  1440,
+  3420
+ ],
+ "cls": "wp-singular post-template-default single single-post postid-723 single-format-standard wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-them…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)",
+  "overflow": "clip visible"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -160001,
+    1,
+    1
+   ],
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)"
+   },
+   "href": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/#content"
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    0,
+    1440,
+    170
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-822c65c header-op elementor-section-boxed elementor-section-height-default",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "bg": "rgb(255, 255, 255)",
+    "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 12px 0px",
+    "zIndex": "9999",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      85,
+      0,
+      1270,
+      170
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        0,
+        1270,
+        170
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcdf656",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          0,
+          1270,
+          170
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            0,
+            1270,
+            170
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "maxWidth": "1270px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              0,
+              127,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-28afa55",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                0,
+                127,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  95,
+                  10,
+                  200,
+                  150
+                 ],
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "textAlign": "center"
+                 },
+                 "href": "https://trecig.com/",
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    95,
+                    10,
+                    200,
+                    150
+                   ],
+                   "cls": "attachment-full size-full wp-image-4268",
+                   "kind": "image",
+                   "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                   "alt": "",
+                   "natural": [
+                    1440,
+                    1080
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline-block",
+                    "maxWidth": "200px",
+                    "overflow": "clip",
+                    "textAlign": "center"
+                   },
+                   "loading": "auto"
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-widget-container",
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              212,
+              0,
+              1143,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-47a739a",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                212,
+                0,
+                1143,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  222,
+                  75,
+                  1123,
+                  20
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "ul",
+                   "box": [
+                    633,
+                    75,
+                    712,
+                    20
+                   ],
+                   "id": "menu-1-7176f17",
+                   "cls": "elementor-nav-menu",
+                   "kind": "list",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "flexWrap": "wrap",
+                    "justify": "flex-end",
+                    "margin": "0px 0px 0px 411.234px",
+                    "zIndex": "2"
+                   },
+                   "pseudo": {
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      633,
+                      75,
+                      40,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "HOME",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 0px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      703,
+                      75,
+                      70,
+                      20
+                     ],
+                     "id": "sm-17940796191925186-1",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "ABOUT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/about/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      803,
+                      75,
+                      195,
+                      20
+                     ],
+                     "id": "sm-17940796191925186-3",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "AWARDS & RECOGNITION",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/awards-recognition/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1028,
+                      75,
+                      90,
+                      20
+                     ],
+                     "id": "sm-17940796191925186-5",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "EXPERTISE",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/expertise/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1148,
+                      75,
+                      100,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "PRESS & MEDIA",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/press-media/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1278,
+                      75,
+                      67,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "CONTACT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 0px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "nav.elementor-nav-menu--main"
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "header.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    0,
+    270,
+    1440,
+    2552
+   ],
+   "cls": "elementor elementor-745 elementor-location-single post-723 post type-post status-publish format-standard has-post-thumbnail hentry category-press",
+   "kind": "box",
+   "style": {},
+   "children": [
+    {
+     "t": "section",
+     "box": [
+      0,
+      270,
+      1440,
+      1874
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-8d220d0 elementor-section-boxed elementor-section-height-default elementor-section-h…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "padding": "50px 0px 50px 0px",
+      "margin": "100px 0px 0px 0px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        320,
+        1270,
+        1774
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "maxWidth": "1270px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          320,
+          1270,
+          1774
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8ff492b",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            320,
+            1270,
+            1774
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              95,
+              330,
+              1250,
+              1754
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                95,
+                330,
+                937,
+                1754
+               ],
+               "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-df4e32f",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  330,
+                  937,
+                  1754
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    340,
+                    917,
+                    16
+                   ],
+                   "cls": "elementor-element elementor-element-edf80ba side-line elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      105,
+                      340,
+                      917,
+                      16
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "BLOG",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "gap": "20px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "16px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    376,
+                    917,
+                    88
+                   ],
+                   "cls": "elementor-element elementor-element-8d84a32 elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h1",
+                     "box": [
+                      105,
+                      376,
+                      917,
+                      88
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "KUOG CORPORATION RANKS NO. 273 ON THE 2021 INC. 5000",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "44px",
+                      "fontWeight": "800",
+                      "lineHeight": "44px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    484,
+                    917,
+                    400
+                   ],
+                   "cls": "elementor-element elementor-element-8474b4e elementor-widget elementor-widget-theme-post-featured-image elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "img",
+                     "box": [
+                      105,
+                      484,
+                      917,
+                      400
+                     ],
+                     "cls": "attachment-full size-full wp-image-675",
+                     "kind": "image",
+                     "src": "https://trecig.com/wp-content/uploads/2021/05/fighter-jet-1013_1920-1536x1018.jpg",
+                     "alt": "",
+                     "natural": [
+                      1439,
+                      954
+                     ],
+                     "objectFit": "cover",
+                     "style": {
+                      "display": "inline-block",
+                      "maxWidth": "100%",
+                      "overflow": "clip",
+                      "textAlign": "center"
+                     },
+                     "loading": "auto",
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    912,
+                    917,
+                    1148
+                   ],
+                   "cls": "elementor-widget-container",
+                   "kind": "box",
+                   "style": {
+                    "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      105,
+                      912,
+                      917,
+                      86
+                     ],
+                     "kind": "text",
+                     "text": "Inc. magazine today revealed that KUOG Corporation is No. 273 on its annual Inc. 5000 list, the most prestigious ranking of the nation’s fastest-growing private companies.",
+                     "style": {
+                      "margin": "8px 0px 16px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "24px",
+                      "fontWeight": "500",
+                      "lineHeight": "28.8px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1014,
+                      917,
+                      72
+                     ],
+                     "kind": "text",
+                     "text": "The list represents a unique look at the most successful companies within the American economy’s most dynamic segment—its independent small businesses. Intuit, Zappos, Under Armour, Microsoft, Patagonia, and many other well-known names gained their first national exposure as honorees on the Inc. 5000.",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1101,
+                      917,
+                      192
+                     ],
+                     "kind": "text",
+                     "text": "“To reach this list during this continued pandemic based on our core values with empathy in leadership certainly means a great deal to us. Our teams, vendors and support partners all played a role in our success. Supporting our Warfighter’s along with playing a role in emergency relief efforts for disasters drives us daily to succeed. Utilizing empathy in all levels our of company ensures we are able to meet the call when others need us most. Succeeding the right way based on a value system is what we will take most away from this and going forward.” Says, Mr. Paul L. Gunn, Jr, Founder and CEO of KUOG Corporation. He is also a USA Today and WSJ Best Selling Author with a new book being released based on these principles of empathy called “Succeed The Right Way: What Every Compassionate Business Person Should Know”",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1307,
+                      917,
+                      96
+                     ],
+                     "kind": "text",
+                     "text": "Not only have the companies on the 2021 Inc. 5000 been very competitive within their markets, but this year’s list also proved especially resilient and flexible given 2020’s unprecedented challenges. Among the 5,000, the average median three-year growth rate soared to 543 percent, and median revenue reached $11.1 million. Together, those companies added more than 610,000 jobs over the past three years.",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1418,
+                      917,
+                      96
+                     ],
+                     "kind": "text",
+                     "text": "“The 2021 Inc. 5000 list feels like one of the most important rosters of companies ever compiled,” says Scott Omelianuk, editor-in-chief of Inc. “Building one of the fastest-growing companies in America in any year is a remarkable achievement. Building one in the crisis we’ve lived through is just plain amazing. This kind of accomplishment comes with hard work, smart pivots, great leadership, and the help of a whole lot of people.”",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1528,
+                      917,
+                      144
+                     ],
+                     "kind": "text",
+                     "text": "KUOG Corporation is a firm specializing in MRO, PPE, logistics and material program management. Empathy is integrated in all we do. Woven in the fabric of our existence are empathetic actions that sustain, deliver and acquire materials to support our mission. We are a supplier of choice to the federal government and private sector when crisis strikes, sustainment is needed, or on-time delivery is a must. Strategically designed to deliver, fast, reliable and quality materials is the center stone of our operations because ultimately someone is else depending on the success of this system working.",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1686,
+                      917,
+                      48
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "#text",
+                       "kind": "text",
+                       "text": "CONTACT: For all media inquiries contact Justine Pogroske via email justine@milliondollarbranders.com Tel: P: M: F:",
+                       "style": {
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "300",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)"
+                       },
+                       "box": [
+                        105,
+                        1686,
+                        917,
+                        48
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        105,
+                        1686,
+                        901,
+                        47
+                       ],
+                       "kind": "link",
+                       "text": "+612 8007 6671",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "24px",
+                        "color": "rgb(255, 255, 255)"
+                       },
+                       "href": "tel:+612 8007 6671"
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        209,
+                        1710,
+                        114,
+                        23
+                       ],
+                       "kind": "link",
+                       "text": "+61 421 150 172",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "24px",
+                        "color": "rgb(255, 255, 255)"
+                       },
+                       "href": "tel:+61 421 150 172"
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        342,
+                        1710,
+                        114,
+                        23
+                       ],
+                       "kind": "link",
+                       "text": "+612 8216 0701",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "24px",
+                        "color": "rgb(255, 255, 255)"
+                       },
+                       "href": "tel:+612 8216 0701"
+                      }
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1749,
+                      917,
+                      54
+                     ],
+                     "kind": "text",
+                     "text": "Connect with Paul L Gunn Jr here: LinkedIn, Twitter, Instagram and Facebook",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "marks": [
+                      {
+                       "text": "Connect with Paul L Gunn Jr here:",
+                       "color": null,
+                       "weight": "600",
+                       "size": "20px",
+                       "bg": null,
+                       "family": null
+                      }
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1817,
+                      917,
+                      78
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "#text",
+                       "kind": "text",
+                       "text": "There was one tie on this year’s Inc. 5000. Companies on the Inc. 500 are featured in Inc.’s September issue. They represent the top tier of the Inc. 5000, which can be found at .",
+                       "style": {
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "300",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)"
+                       },
+                       "box": [
+                        105,
+                        1817,
+                        917,
+                        78
+                       ]
+                      },
+                      {
+                       "t": "strong",
+                       "box": [
+                        105,
+                        1818,
+                        338,
+                        28
+                       ],
+                       "kind": "text",
+                       "text": "More about Inc. and the Inc. 5000",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "20px",
+                        "fontWeight": "600",
+                        "lineHeight": "30px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        587,
+                        1871,
+                        237,
+                        23
+                       ],
+                       "kind": "link",
+                       "text": "http://www.inc.com/inc5000",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "24px",
+                        "color": "rgb(255, 255, 255)"
+                       },
+                       "href": "http://www.inc.com/inc5000"
+                      }
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      1910,
+                      917,
+                      150
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 14.4px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "#text",
+                       "kind": "text",
+                       "text": "The world’s most trusted business-media brand, Inc. offers entrepreneurs the knowledge, tools, connections, and community to build great companies. Its award-winning multiplatform content reaches more than 50 million people each month across a variety of channels including web sites, newsletters, social media, podcasts, and print. Its prestigious Inc. 5000 list, produced every year since 1982, analyzes company data to recognize the fastest-growing privately held businesses in the United States. For more information, visit .",
+                       "style": {
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "300",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)"
+                       },
+                       "box": [
+                        105,
+                        1910,
+                        917,
+                        150
+                       ]
+                      },
+                      {
+                       "t": "strong",
+                       "box": [
+                        105,
+                        1911,
+                        170,
+                        28
+                       ],
+                       "kind": "text",
+                       "text": "About Inc. Media",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "20px",
+                        "fontWeight": "600",
+                        "lineHeight": "30px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        746,
+                        2036,
+                        164,
+                        23
+                       ],
+                       "kind": "link",
+                       "text": "http://www.inc.com",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "600",
+                        "lineHeight": "24px",
+                        "color": "rgb(255, 255, 255)"
+                       },
+                       "href": "http://www.inc.com/"
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1032,
+                330,
+                313,
+                1754
+               ],
+               "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7eaa990",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1032,
+                  330,
+                  313,
+                  1754
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1042,
+                    340,
+                    293,
+                    597
+                   ],
+                   "cls": "elementor-container elementor-column-gap-default",
+                   "kind": "box",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "maxWidth": "450px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1042,
+                      340,
+                      293,
+                      597
+                     ],
+                     "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-b339125",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "minHeight": "1px"
+                     },
+                     "children": [
+                      {
+                       "t": "div",
+                       "box": [
+                        1042,
+                        340,
+                        293,
+                        597
+                       ],
+                       "cls": "elementor-widget-wrap elementor-element-populated",
+                       "kind": "box",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "flexWrap": "wrap",
+                        "padding": "10px 10px 10px 10px"
+                       },
+                       "children": [
+                        {
+                         "t": "div",
+                         "box": [
+                          1052,
+                          350,
+                          273,
+                          36
+                         ],
+                         "cls": "elementor-element elementor-element-1153e5b elementor-widget elementor-widget-text-editor",
+                         "kind": "box",
+                         "style": {
+                          "position": "relative",
+                          "margin": "0px 0px 20px 0px"
+                         },
+                         "children": [
+                          {
+                           "t": "#text",
+                           "kind": "text",
+                           "text": "Recent Post",
+                           "style": {
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "24px",
+                            "fontWeight": "700",
+                            "lineHeight": "36px",
+                            "color": "rgb(0, 0, 0)",
+                            "textTransform": "uppercase"
+                           },
+                           "box": [
+                            1052,
+                            350,
+                            273,
+                            36
+                           ],
+                           "wrapped": [
+                            "div.elementor-widget-container"
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "div",
+                         "box": [
+                          1052,
+                          406,
+                          273,
+                          521
+                         ],
+                         "cls": "elementor-posts-container elementor-posts elementor-posts--skin-classic elementor-grid elementor-has-item-ratio",
+                         "kind": "box",
+                         "style": {
+                          "display": "grid",
+                          "gridCols": "272.5px",
+                          "gap": "25px 20px"
+                         },
+                         "children": [
+                          {
+                           "t": "article",
+                           "box": [
+                            1052,
+                            406,
+                            273,
+                            248
+                           ],
+                           "cls": "elementor-post elementor-grid-item post-735 post type-post status-publish format-standard has-post-thumbnail hentry category-press",
+                           "kind": "box",
+                           "style": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "overflow": "hidden",
+                            "transition": "background, border, box-shadow 0.25s ease"
+                           },
+                           "children": [
+                            {
+                             "t": "a",
+                             "box": [
+                              1052,
+                              406,
+                              273,
+                              180
+                             ],
+                             "cls": "elementor-post__thumbnail__link",
+                             "kind": "box",
+                             "style": {
+                              "position": "relative",
+                              "margin": "0px 0px 20px 0px",
+                              "transition": "none 0s ease"
+                             },
+                             "href": "https://trecig.com/using-an-international-branding-firm-to-boost-your-brand-globally/",
+                             "children": [
+                              {
+                               "t": "div",
+                               "box": [
+                                1052,
+                                406,
+                                273,
+                                180
+                               ],
+                               "cls": "elementor-post__thumbnail",
+                               "kind": "box",
+                               "style": {
+                                "position": "relative",
+                                "padding": "0px 0px 179.844px 0px",
+                                "overflow": "hidden"
+                               },
+                               "children": [
+                                {
+                                 "t": "img",
+                                 "box": [
+                                  1050,
+                                  404,
+                                  275,
+                                  183
+                                 ],
+                                 "cls": "attachment-full size-full wp-image-736",
+                                 "kind": "image",
+                                 "src": "https://trecig.com/wp-content/uploads/2024/08/night_mission.jpg",
+                                 "alt": "",
+                                 "natural": [
+                                  2000,
+                                  1333
+                                 ],
+                                 "objectFit": null,
+                                 "style": {
+                                  "position": "absolute",
+                                  "overflow": "clip",
+                                  "transform": "matrix(1.01, 0, 0, 1.01, -137.613, -91.7127)",
+                                  "transition": "filter 0.3s ease"
+                                 },
+                                 "loading": "auto"
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "t": "a",
+                             "box": [
+                              1052,
+                              606,
+                              273,
+                              48
+                             ],
+                             "kind": "link",
+                             "text": "Using An International Branding Firm To Boost Your Brand Globally",
+                             "style": {
+                              "display": "flow-root",
+                              "overflow": "hidden",
+                              "fontFamily": "Poppins, sans-serif",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "lineHeight": "24px",
+                              "color": "rgb(0, 0, 0)"
+                             },
+                             "href": "https://trecig.com/using-an-international-branding-firm-to-boost-your-brand-globally/",
+                             "wrapped": [
+                              "h3.elementor-post__title",
+                              "div.elementor-post__text"
+                             ]
+                            }
+                           ]
+                          },
+                          {
+                           "t": "article",
+                           "box": [
+                            1052,
+                            679,
+                            273,
+                            248
+                           ],
+                           "cls": "elementor-post elementor-grid-item post-733 post type-post status-publish format-standard has-post-thumbnail hentry category-corporate category-press",
+                           "kind": "box",
+                           "style": {
+                            "display": "flex",
+                            "flexDirection": "column",
+                            "overflow": "hidden",
+                            "transition": "background, border, box-shadow 0.25s ease"
+                           },
+                           "children": [
+                            {
+                             "t": "a",
+                             "box": [
+                              1052,
+                              679,
+                              273,
+                              180
+                             ],
+                             "cls": "elementor-post__thumbnail__link",
+                             "kind": "box",
+                             "style": {
+                              "position": "relative",
+                              "margin": "0px 0px 20px 0px",
+                              "transition": "none 0s ease"
+                             },
+                             "href": "https://trecig.com/be-a-happier-and-healthier-entrepreneur-in-2021/",
+                             "children": [
+                              {
+                               "t": "div",
+                               "box": [
+                                1052,
+                                679,
+                                273,
+                                180
+                               ],
+                               "cls": "elementor-post__thumbnail elementor-fit-height",
+                               "kind": "box",
+                               "style": {
+                                "position": "relative",
+                                "padding": "0px 0px 179.844px 0px",
+                                "overflow": "hidden"
+                               },
+                               "children": [
+                                {
+                                 "t": "img",
+                                 "box": [
+                                  1042,
+                                  678,
+                                  291,
+                                  182
+                                 ],
+                                 "cls": "attachment-full size-full wp-image-104",
+                                 "kind": "image",
+                                 "src": "https://trecig.com/wp-content/uploads/2024/08/1920X1200_2.jpg",
+                                 "alt": "",
+                                 "natural": [
+                                  1920,
+                                  1200
+                                 ],
+                                 "objectFit": null,
+                                 "style": {
+                                  "position": "absolute",
+                                  "overflow": "clip",
+                                  "transform": "matrix(1.01, 0, 0, 1.01, -145.314, -90.8211)",
+                                  "transition": "filter 0.3s ease"
+                                 },
+                                 "loading": "lazy"
+                                }
+                               ]
+                              }
+                             ]
+                            },
+                            {
+                             "t": "a",
+                             "box": [
+                              1052,
+                              879,
+                              273,
+                              48
+                             ],
+                             "kind": "link",
+                             "text": "Be a Happier and Healthier Entrepreneur in 2021",
+                             "style": {
+                              "display": "flow-root",
+                              "overflow": "hidden",
+                              "fontFamily": "Poppins, sans-serif",
+                              "fontSize": "20px",
+                              "fontWeight": "600",
+                              "lineHeight": "24px",
+                              "color": "rgb(0, 0, 0)"
+                             },
+                             "href": "https://trecig.com/be-a-happier-and-healthier-entrepreneur-in-2021/",
+                             "wrapped": [
+                              "h3.elementor-post__title",
+                              "div.elementor-post__text"
+                             ]
+                            }
+                           ]
+                          }
+                         ],
+                         "wrapped": [
+                          "div.elementor-widget-container",
+                          "div.elementor-element"
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "section.elementor-section"
+                   ]
+                  },
+                  {
+                   "t": "section",
+                   "box": [
+                    1042,
+                    967,
+                    293,
+                    136
+                   ],
+                   "cls": "elementor-section elementor-inner-section elementor-element elementor-element-f59434f elementor-section-boxed elementor-section-height-default elementor-section…",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "30px 0px 0px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      1042,
+                      967,
+                      293,
+                      136
+                     ],
+                     "cls": "elementor-container elementor-column-gap-default",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "maxWidth": "450px"
+                     },
+                     "children": [
+                      {
+                       "t": "div",
+                       "box": [
+                        1042,
+                        967,
+                        293,
+                        136
+                       ],
+                       "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-84e904b",
+                       "kind": "box",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "minHeight": "1px"
+                       },
+                       "children": [
+                        {
+                         "t": "div",
+                         "box": [
+                          1042,
+                          967,
+                          293,
+                          136
+                         ],
+                         "cls": "elementor-widget-wrap elementor-element-populated",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "flexWrap": "wrap",
+                          "padding": "10px 10px 10px 10px"
+                         },
+                         "children": [
+                          {
+                           "t": "div",
+                           "box": [
+                            1052,
+                            977,
+                            273,
+                            36
+                           ],
+                           "cls": "elementor-element elementor-element-38b7fc9 elementor-widget elementor-widget-text-editor",
+                           "kind": "box",
+                           "style": {
+                            "position": "relative",
+                            "margin": "0px 0px 20px 0px"
+                           },
+                           "children": [
+                            {
+                             "t": "#text",
+                             "kind": "text",
+                             "text": "Newsletter",
+                             "style": {
+                              "fontFamily": "Poppins, sans-serif",
+                              "fontSize": "24px",
+                              "fontWeight": "700",
+                              "lineHeight": "36px",
+                              "color": "rgb(0, 0, 0)",
+                              "textTransform": "uppercase"
+                             },
+                             "box": [
+                              1052,
+                              977,
+                              273,
+                              36
+                             ],
+                             "wrapped": [
+                              "div.elementor-widget-container"
+                             ]
+                            }
+                           ]
+                          },
+                          {
+                           "t": "form",
+                           "box": [
+                            1052,
+                            1033,
+                            273,
+                            70
+                           ],
+                           "cls": "elementor-form",
+                           "kind": "form",
+                           "style": {},
+                           "action": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/",
+                           "method": "post",
+                           "children": [
+                            {
+                             "t": "div",
+                             "box": [
+                              1047,
+                              1033,
+                              283,
+                              70
+                             ],
+                             "cls": "elementor-form-fields-wrapper elementor-labels-",
+                             "kind": "box",
+                             "style": {
+                              "display": "flex",
+                              "flexWrap": "wrap",
+                              "margin": "0px -5px -10px -5px"
+                             },
+                             "children": [
+                              {
+                               "t": "div",
+                               "box": [
+                                1047,
+                                1033,
+                                198,
+                                60
+                               ],
+                               "cls": "elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-70 elementor-sm-75 elementor-field-required",
+                               "kind": "box",
+                               "style": {
+                                "display": "flex",
+                                "position": "relative",
+                                "flexWrap": "wrap",
+                                "align": "center",
+                                "padding": "0px 5px 0px 5px",
+                                "margin": "0px 0px 10px 0px",
+                                "minHeight": "1px"
+                               },
+                               "children": [
+                                {
+                                 "t": "label",
+                                 "box": [
+                                  1051,
+                                  -158968,
+                                  1,
+                                  1
+                                 ],
+                                 "cls": "elementor-field-label elementor-screen-only",
+                                 "kind": "text",
+                                 "text": "Email",
+                                 "style": {
+                                  "position": "absolute",
+                                  "margin": "-1px -1px -1px -1px",
+                                  "overflow": "hidden",
+                                  "fontFamily": "Poppins, sans-serif",
+                                  "fontSize": "16px",
+                                  "fontWeight": "400",
+                                  "lineHeight": "16px",
+                                  "color": "rgb(0, 0, 0)"
+                                 }
+                                },
+                                {
+                                 "t": "input",
+                                 "box": [
+                                  1052,
+                                  1033,
+                                  188,
+                                  59
+                                 ],
+                                 "id": "form-field-email",
+                                 "cls": "elementor-field elementor-size-lg elementor-field-textual",
+                                 "kind": "field",
+                                 "type": "email",
+                                 "name": "form_fields[email]",
+                                 "placeholder": "Email",
+                                 "required": true,
+                                 "value": null,
+                                 "style": {
+                                  "bg": "rgba(255, 255, 255, 0)",
+                                  "maxWidth": "100%",
+                                  "minHeight": "59px",
+                                  "border": "0px 0px 1px 0px solid rgb(105, 114, 125)",
+                                  "overflow": "clip",
+                                  "transition": "all 0.3s ease",
+                                  "fontFamily": "Poppins, sans-serif",
+                                  "fontSize": "16px",
+                                  "fontWeight": "400",
+                                  "lineHeight": "22.4px",
+                                  "color": "rgb(169, 175, 195)"
+                                 }
+                                }
+                               ]
+                              },
+                              {
+                               "t": "div",
+                               "box": [
+                                1245,
+                                1033,
+                                85,
+                                60
+                               ],
+                               "cls": "elementor-field-group elementor-column elementor-field-type-submit elementor-col-30 e-form__buttons elementor-sm-25",
+                               "kind": "box",
+                               "style": {
+                                "display": "flex",
+                                "position": "relative",
+                                "flexWrap": "wrap",
+                                "align": "flex-end",
+                                "padding": "0px 5px 0px 5px",
+                                "margin": "0px 0px 10px 0px",
+                                "minHeight": "1px"
+                               },
+                               "children": [
+                                {
+                                 "t": "button",
+                                 "box": [
+                                  1250,
+                                  1033,
+                                  60,
+                                  60
+                                 ],
+                                 "cls": "elementor-button elementor-size-lg",
+                                 "kind": "button",
+                                 "text": "Submit",
+                                 "style": {
+                                  "bg": "rgb(178, 34, 57)",
+                                  "minHeight": "59px",
+                                  "borderRadius": "50%",
+                                  "textAlign": "center",
+                                  "transition": "all 0.3s ease",
+                                  "fontFamily": "Poppins, sans-serif",
+                                  "fontSize": "18px",
+                                  "fontWeight": "500",
+                                  "lineHeight": "18px",
+                                  "color": "rgb(255, 255, 255)"
+                                 }
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ],
+                           "wrapped": [
+                            "div.elementor-widget-container",
+                            "div.elementor-element"
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "box": [
+      0,
+      2144,
+      1440,
+      678
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-f0c09bc elementor-section-boxed elementor-section-height-default elementor-section-h…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bg": "rgb(17, 19, 25)",
+      "bgImage": "url(\"https://trecig.com/wp-content/uploads/2024/08/glob-bg-1.png\")",
+      "bgPos": "100% 50%",
+      "bgRepeat": "no-repeat",
+      "padding": "50px 0px 50px 0px",
+      "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        2194,
+        1270,
+        578
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "margin": "0px 85px 0px 85px",
+        "maxWidth": "1270px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          2194,
+          1270,
+          578
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9c7ff89",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            2194,
+            1270,
+            578
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              95,
+              2204,
+              1250,
+              558
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                95,
+                2204,
+                1250,
+                558
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-0383a4c",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  2204,
+                  1250,
+                  558
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    2214,
+                    1230,
+                    44
+                   ],
+                   "cls": "elementor-element elementor-element-b2a48ff elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      105,
+                      2214,
+                      983,
+                      44
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "SOMETHING TO SAY? GET IN TOUCH WITH US",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "44px",
+                      "fontWeight": "800",
+                      "lineHeight": "44px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    105,
+                    2278,
+                    1230,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-98a61cc elementor-widget elementor-widget-text-editor",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "#text",
+                     "kind": "text",
+                     "text": "Just fill out the form below. We love hearing more about how we can serve you.",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "300",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     },
+                     "box": [
+                      105,
+                      2278,
+                      1230,
+                      24
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "form",
+                   "box": [
+                    105,
+                    2322,
+                    1230,
+                    430
+                   ],
+                   "cls": "wpcf7-form init",
+                   "kind": "form",
+                   "style": {},
+                   "action": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/#wpcf7-f291-p723-o1",
+                   "method": "post",
+                   "children": [
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      2322,
+                      1230,
+                      70
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "gap": "15px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        105,
+                        2322,
+                        600,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "input",
+                         "box": [
+                          105,
+                          2322,
+                          600,
+                          50
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-text wpcf7-validates-as-required",
+                         "kind": "field",
+                         "type": "text",
+                         "name": "fullname",
+                         "placeholder": "Full Name *",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "clip",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        735,
+                        2322,
+                        600,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "input",
+                         "box": [
+                          735,
+                          2322,
+                          600,
+                          50
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-text wpcf7-validates-as-required",
+                         "kind": "field",
+                         "type": "text",
+                         "name": "outlet",
+                         "placeholder": "Organization/Media Outlet *",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "clip",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      }
+                     ],
+                     "wrapped": [
+                      "div.half"
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      2392,
+                      1230,
+                      70
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "gap": "15px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        105,
+                        2392,
+                        600,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "input",
+                         "box": [
+                          105,
+                          2392,
+                          600,
+                          50
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email",
+                         "kind": "field",
+                         "type": "email",
+                         "name": "email",
+                         "placeholder": "Email Address *",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "clip",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        735,
+                        2392,
+                        600,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "input",
+                         "box": [
+                          735,
+                          2392,
+                          600,
+                          50
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-tel wpcf7-text wpcf7-validates-as-tel",
+                         "kind": "field",
+                         "type": "tel",
+                         "name": "phone",
+                         "placeholder": "Phone Number",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "clip",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      }
+                     ],
+                     "wrapped": [
+                      "div.half"
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      2462,
+                      1230,
+                      70
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "gap": "15px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        105,
+                        2462,
+                        390,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "div",
+                         "box": [
+                          105,
+                          2462,
+                          390,
+                          50
+                         ],
+                         "cls": "select-styled",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "align": "center",
+                          "border": "0px 0px 1px 0px none rgb(102, 102, 102)"
+                         },
+                         "pseudo": {
+                          "::after": {
+                           "content": "\"\"",
+                           "w": "14px",
+                           "h": "21px",
+                           "bg": null,
+                           "bgImage": null,
+                           "position": "absolute",
+                           "opacity": null
+                          }
+                         },
+                         "children": [
+                          {
+                           "t": "#text",
+                           "kind": "text",
+                           "text": "Preferred Method of Contact",
+                           "style": {
+                            "fontFamily": "Poppins",
+                            "fontSize": "14px",
+                            "fontWeight": "400",
+                            "lineHeight": "21px",
+                            "color": "rgb(102, 102, 102)"
+                           },
+                           "box": [
+                            105,
+                            2462,
+                            390,
+                            50
+                           ]
+                          }
+                         ],
+                         "wrapped": [
+                          "div.select"
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        525,
+                        2462,
+                        390,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "div",
+                         "box": [
+                          525,
+                          2462,
+                          390,
+                          50
+                         ],
+                         "cls": "select-styled",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "align": "center",
+                          "border": "0px 0px 1px 0px none rgb(102, 102, 102)"
+                         },
+                         "pseudo": {
+                          "::after": {
+                           "content": "\"\"",
+                           "w": "14px",
+                           "h": "21px",
+                           "bg": null,
+                           "bgImage": null,
+                           "position": "absolute",
+                           "opacity": null
+                          }
+                         },
+                         "children": [
+                          {
+                           "t": "#text",
+                           "kind": "text",
+                           "text": "Nature of Inquiry",
+                           "style": {
+                            "fontFamily": "Poppins",
+                            "fontSize": "14px",
+                            "fontWeight": "400",
+                            "lineHeight": "21px",
+                            "color": "rgb(102, 102, 102)"
+                           },
+                           "box": [
+                            525,
+                            2462,
+                            390,
+                            50
+                           ]
+                          }
+                         ],
+                         "wrapped": [
+                          "div.select"
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        945,
+                        2462,
+                        390,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "input",
+                         "box": [
+                          945,
+                          2462,
+                          390,
+                          50
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-text wpcf7-validates-as-required walcf7-datepicker",
+                         "kind": "field",
+                         "type": "text",
+                         "name": "date",
+                         "placeholder": "Deadline for Response *",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "clip",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      }
+                     ],
+                     "wrapped": [
+                      "div.half"
+                     ]
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      105,
+                      2532,
+                      1230,
+                      220
+                     ],
+                     "kind": "box",
+                     "style": {},
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        105,
+                        2532,
+                        1230,
+                        106
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "box",
+                       "style": {
+                        "display": "inline-block",
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px"
+                       },
+                       "children": [
+                        {
+                         "t": "textarea",
+                         "box": [
+                          105,
+                          2532,
+                          1230,
+                          100
+                         ],
+                         "cls": "wpcf7-form-control wpcf7-textarea",
+                         "kind": "field",
+                         "type": "textarea",
+                         "name": "message",
+                         "placeholder": "Inquiry Details",
+                         "required": null,
+                         "value": null,
+                         "style": {
+                          "display": "inline-block",
+                          "padding": "15px 0px 0px 0px",
+                          "border": "0px 0px 1px 0px none rgb(0, 0, 0)",
+                          "overflow": "auto",
+                          "transition": "all 0.3s ease",
+                          "fontFamily": "Poppins",
+                          "fontSize": "14px",
+                          "fontWeight": "400",
+                          "lineHeight": "21px",
+                          "color": "rgb(0, 0, 0)"
+                         }
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        105,
+                        2658,
+                        1230,
+                        24
+                       ],
+                       "cls": "wpcf7-form-control-wrap",
+                       "kind": "text",
+                       "text": "By submitting this form, you agree to our Terms and Conditions and understand that we will review all inquiries and respond accordingly.",
+                       "style": {
+                        "display": "inline-block",
+                        "position": "relative",
+                        "margin": "0px 0px 20px 0px",
+                        "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(51, 51, 51)"
+                       },
+                       "marks": [
+                        {
+                         "text": "By submitting this form, you agree to our Terms and Conditio",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": "12px",
+                         "bg": null,
+                         "family": "Poppins"
+                        }
+                       ]
+                      },
+                      {
+                       "t": "input",
+                       "box": [
+                        105,
+                        2702,
+                        151,
+                        50
+                       ],
+                       "cls": "wpcf7-form-control wpcf7-submit has-spinner",
+                       "kind": "field",
+                       "type": "submit",
+                       "name": "",
+                       "placeholder": null,
+                       "required": null,
+                       "value": "Submit",
+                       "style": {
+                        "display": "inline-block",
+                        "bg": "rgb(0, 0, 0)",
+                        "padding": "0px 50px 0px 50px",
+                        "borderRadius": "30px",
+                        "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                        "overflow": "clip",
+                        "textAlign": "center",
+                        "transition": "all 0.3s ease",
+                        "fontFamily": "Poppins",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(255, 255, 255)",
+                        "textTransform": "uppercase"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.wpcf7",
+                    "div.elementor-shortcode",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    2822,
+    1440,
+    598
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-4924328 footer-op elementor-section-boxed elementor-section-height-default elementor…",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      2822,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-video-container elementor-hidden-mobile",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "overflow": "hidden",
+      "zIndex": "0",
+      "transition": "opacity 1s ease"
+     },
+     "children": [
+      {
+       "t": "iframe",
+       "box": [
+        0,
+        2716,
+        1440,
+        810
+       ],
+       "id": "widget2",
+       "cls": "elementor-background-video-embed",
+       "kind": "iframe",
+       "src": "https://www.youtube.com/embed/OzwCnEEadts?controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=1&forigin=https%3A%2F%2Ftrecig.com%2Fkuog-corporation-ranks-no-273-on-the-2021-inc-5000%2F&aoriginsup=1&vf=1",
+       "title": "Triceg   Expertise Slider 1",
+       "style": {
+        "position": "absolute",
+        "overflow": "clip",
+        "transform": "matrix(1, 0, 0, 1, -720, -405)"
+       }
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      2822,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-overlay",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "bg": "rgb(255, 255, 255)",
+      "opacity": "0.7",
+      "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+     },
+     "empty": true
+    },
+    {
+     "t": "div",
+     "box": [
+      85,
+      2822,
+      1270,
+      598
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        2822,
+        1270,
+        598
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-536561f",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          2822,
+          1270,
+          598
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "section",
+           "box": [
+            85,
+            2822,
+            1270,
+            467
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-63046e0 elementor-section-boxed elementor-section-height-default elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "40px 0px 40px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              2862,
+              1270,
+              387
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                2862,
+                324,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-55e7902",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  2862,
+                  324,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    2872,
+                    304,
+                    300
+                   ],
+                   "cls": "elementor-element elementor-element-c1de821 elementor-widget elementor-widget-theme-site-logo elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      2872,
+                      400,
+                      300
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "inline-block"
+                     },
+                     "href": "https://trecig.com/",
+                     "children": [
+                      {
+                       "t": "img",
+                       "box": [
+                        95,
+                        2872,
+                        400,
+                        300
+                       ],
+                       "cls": "attachment-full size-full wp-image-4268",
+                       "kind": "image",
+                       "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                       "alt": "",
+                       "natural": [
+                        1440,
+                        1080
+                       ],
+                       "objectFit": null,
+                       "style": {
+                        "display": "inline-block",
+                        "maxWidth": "400px",
+                        "overflow": "clip"
+                       },
+                       "loading": "auto"
+                      }
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    3192,
+                    134,
+                    47
+                   ],
+                   "cls": "elementor-button-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-grid",
+                    "gridCols": "134.078px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      3192,
+                      134,
+                      47
+                     ],
+                     "cls": "elementor-button elementor-button-link elementor-size-sm",
+                     "kind": "link",
+                     "text": "LET’S TALK",
+                     "style": {
+                      "position": "relative",
+                      "padding": "15px 30px 15px 30px",
+                      "borderRadius": "30px",
+                      "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "15px",
+                      "fontWeight": "400",
+                      "lineHeight": "15px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                409,
+                2862,
+                371,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cc0df83",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  459,
+                  2862,
+                  321,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 0px 0px 50px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    469,
+                    2872,
+                    301,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-5c243c8 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      469,
+                      2875,
+                      98,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "LET'S TALK:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    469,
+                    2916,
+                    301,
+                    52
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      2916,
+                      301,
+                      26
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "padding": "0px 0px 5px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        2916,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "(469)653-9009",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "tel:(254)%20338-6131",
+                       "marks": [
+                        {
+                         "text": "(469)653-9009",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      2947,
+                      301,
+                      21
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "margin": "5px 0px 0px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        2947,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "info@trecig.com",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "mailto:info@trecig.com",
+                       "marks": [
+                        {
+                         "text": "info@trecig.com",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                781,
+                2862,
+                310,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3c5eca3",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  781,
+                  2862,
+                  260,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 50px 0px 0px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    791,
+                    2872,
+                    240,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-ba65889 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      791,
+                      2875,
+                      101,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "TRECIG HQ:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    791,
+                    2916,
+                    240,
+                    42
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      791,
+                      2916,
+                      240,
+                      42
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        791,
+                        2916,
+                        110,
+                        42
+                       ],
+                       "cls": "elementor-icon-list-text",
+                       "kind": "text",
+                       "text": "Rockwall, Texas, United States",
+                       "style": {
+                        "transition": "color 0.3s ease",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1090,
+                2862,
+                264,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b8e2fd",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1090,
+                  2862,
+                  264,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1100,
+                    2872,
+                    244,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-f24dba3 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      1100,
+                      2875,
+                      174,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "CONNECT WITH US:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "a",
+                   "box": [
+                    1100,
+                    2916,
+                    32,
+                    32
+                   ],
+                   "cls": "elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-f3c190e",
+                   "kind": "link",
+                   "text": "Linkedin-in",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(0, 0, 0)",
+                    "borderRadius": "100%",
+                    "textAlign": "center",
+                    "transition": "all 0.3s ease",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "16px",
+                    "color": "rgb(105, 114, 125)"
+                   },
+                   "href": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/#",
+                   "target": "_blank",
+                   "icons": [
+                    {
+                     "icon": "e-font-icon-svg e-fab-linkedin-in",
+                     "w": 16
+                    }
+                   ],
+                   "wrapped": [
+                    "span.elementor-grid-item",
+                    "div.elementor-social-icons-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "section",
+           "box": [
+            85,
+            3289,
+            1270,
+            131
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-d1f66c7 elementor-section-content-middle elementor-section-boxed elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "15px 0px 15px 0px",
+            "border": "1px 0px 0px 0px solid rgba(0, 0, 0, 0.2)"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              3305,
+              1270,
+              100
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                3305,
+                1270,
+                100
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-221bad1",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  3305,
+                  1270,
+                  100
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    3315,
+                    1250,
+                    10
+                   ],
+                   "cls": "elementor-element elementor-element-f8c3a82 elementor-icon-list--layout-inline elementor-align-center thgf elementor-list-item-link-full_width elementor-widget …",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      3315,
+                      1250,
+                      20
+                     ],
+                     "cls": "elementor-widget-container",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px -10px 0px",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                     },
+                     "children": [
+                      {
+                       "t": "ul",
+                       "box": [
+                        87,
+                        3315,
+                        1266,
+                        20
+                       ],
+                       "cls": "elementor-icon-list-items elementor-inline-items",
+                       "kind": "list",
+                       "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justify": "center",
+                        "gap": "30px",
+                        "margin": "0px -8px 0px -8px",
+                        "textAlign": "center"
+                       },
+                       "children": [
+                        {
+                         "t": "li",
+                         "box": [
+                          589,
+                          3315,
+                          89,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            589,
+                            3315,
+                            88,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Privacy Policy",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/privacy-policy/",
+                           "marks": [
+                            {
+                             "text": "Privacy Policy",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "li",
+                         "box": [
+                          724,
+                          3315,
+                          127,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            724,
+                            3315,
+                            127,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Terms & Conditions",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/terms-conditions/",
+                           "marks": [
+                            {
+                             "text": "Terms & Conditions",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    3344,
+                    1250,
+                    36
+                   ],
+                   "kind": "text",
+                   "text": "©2026 TRECIG, LLC",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "lineHeight": "18px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   },
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "footer.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    1348,
+    875,
+    92,
+    38
+   ],
+   "id": "trustedsite-tm-image",
+   "kind": "box",
+   "style": {
+    "position": "fixed",
+    "bg": "rgb(255, 255, 255)",
+    "bgImage": "url(\"https://cdn.ywxi.net/meter/trecig.com/205.svg?ts=1784975038086&l=en\")",
+    "bgSize": "92px 38px",
+    "bgPos": "50% 50%",
+    "bgRepeat": "no-repeat",
+    "borderRadius": "2px 0px 0px",
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 5px 0px",
+    "overflow": "hidden",
+    "zIndex": "1000003",
+    "transition": "all 0.2s ease"
+   },
+   "empty": true
+  }
+ ]
+}

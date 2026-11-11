@@ -1,0 +1,3275 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  1440,
+  2760
+ ],
+ "cls": "wp-singular page-template-default page page-id-240 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elemen…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)",
+  "overflow": "clip visible"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -160001,
+    1,
+    1
+   ],
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)"
+   },
+   "href": "https://trecig.com/press-media/#content"
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    0,
+    1440,
+    170
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-822c65c header-op elementor-section-boxed elementor-section-height-default",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "bg": "rgb(255, 255, 255)",
+    "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 12px 0px",
+    "zIndex": "9999",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      85,
+      0,
+      1270,
+      170
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        0,
+        1270,
+        170
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcdf656",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          0,
+          1270,
+          170
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            0,
+            1270,
+            170
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "maxWidth": "1270px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              0,
+              127,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-28afa55",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                0,
+                127,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  95,
+                  10,
+                  200,
+                  150
+                 ],
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "textAlign": "center"
+                 },
+                 "href": "https://trecig.com/",
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    95,
+                    10,
+                    200,
+                    150
+                   ],
+                   "cls": "attachment-full size-full wp-image-4268",
+                   "kind": "image",
+                   "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                   "alt": "",
+                   "natural": [
+                    1440,
+                    1080
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline-block",
+                    "maxWidth": "200px",
+                    "overflow": "clip",
+                    "textAlign": "center"
+                   },
+                   "loading": "auto"
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-widget-container",
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              212,
+              0,
+              1143,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-47a739a",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                212,
+                0,
+                1143,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  222,
+                  75,
+                  1123,
+                  20
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "ul",
+                   "box": [
+                    633,
+                    75,
+                    712,
+                    20
+                   ],
+                   "id": "menu-1-7176f17",
+                   "cls": "elementor-nav-menu",
+                   "kind": "list",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "flexWrap": "wrap",
+                    "justify": "flex-end",
+                    "margin": "0px 0px 0px 411.234px",
+                    "zIndex": "2"
+                   },
+                   "pseudo": {
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      633,
+                      75,
+                      40,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "HOME",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 0px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      703,
+                      75,
+                      70,
+                      20
+                     ],
+                     "id": "sm-1794079926093902-1",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "ABOUT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/about/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      803,
+                      75,
+                      195,
+                      20
+                     ],
+                     "id": "sm-1794079926093902-3",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "AWARDS & RECOGNITION",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/awards-recognition/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1028,
+                      75,
+                      90,
+                      20
+                     ],
+                     "id": "sm-1794079926093902-5",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "EXPERTISE",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/expertise/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1148,
+                      75,
+                      100,
+                      20
+                     ],
+                     "cls": "elementor-item elementor-item-active",
+                     "kind": "link",
+                     "text": "PRESS & MEDIA",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(178, 34, 57)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/press-media/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1278,
+                      75,
+                      67,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "CONTACT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 0px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "nav.elementor-nav-menu--main"
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "header.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    0,
+    170,
+    1440,
+    1992
+   ],
+   "cls": "elementor elementor-240",
+   "kind": "box",
+   "style": {},
+   "children": [
+    {
+     "t": "section",
+     "box": [
+      0,
+      170,
+      1440,
+      400
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-896418b elementor-section-height-min-height elementor-section-boxed elementor-sectio…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        170,
+        1440,
+        400
+       ],
+       "cls": "elementor-background-video-container elementor-hidden-mobile",
+       "kind": "box",
+       "style": {
+        "position": "absolute",
+        "overflow": "hidden",
+        "zIndex": "0",
+        "transition": "opacity 1s ease"
+       },
+       "children": [
+        {
+         "t": "iframe",
+         "box": [
+          0,
+          -35,
+          1440,
+          810
+         ],
+         "id": "widget2",
+         "cls": "elementor-background-video-embed",
+         "kind": "iframe",
+         "src": "https://www.youtube.com/embed/tfwaCfptyq0?controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=1&forigin=https%3A%2F%2Ftrecig.com%2Fpress-media%2F&aoriginsup=1&vf=6",
+         "title": "Trecig   Press and Media",
+         "style": {
+          "position": "absolute",
+          "overflow": "clip",
+          "transform": "matrix(1, 0, 0, 1, -720, -405)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        170,
+        1440,
+        400
+       ],
+       "cls": "elementor-background-overlay",
+       "kind": "box",
+       "style": {
+        "position": "absolute",
+        "bg": "rgb(0, 0, 0)",
+        "opacity": "0.5",
+        "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+       },
+       "empty": true
+      },
+      {
+       "t": "div",
+       "box": [
+        370,
+        170,
+        700,
+        400
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "align": "center",
+        "margin": "0px 370px 0px 370px",
+        "maxWidth": "700px",
+        "minHeight": "400px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          370,
+          270,
+          700,
+          200
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6fcdda6",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            370,
+            350,
+            700,
+            120
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px",
+            "margin": "80px 0px 0px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              380,
+              360,
+              680,
+              36
+             ],
+             "cls": "elementor-element elementor-element-36dc9fa elementor-widget elementor-widget-heading",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "h2",
+               "box": [
+                584,
+                360,
+                272,
+                36
+               ],
+               "cls": "elementor-heading-title elementor-size-default",
+               "kind": "text",
+               "text": "PRESS & MEDIA",
+               "style": {
+                "display": "inline-block",
+                "textAlign": "center",
+                "fontFamily": "Poppins, sans-serif",
+                "fontSize": "36px",
+                "fontWeight": "800",
+                "lineHeight": "36px",
+                "color": "rgb(255, 255, 255)",
+                "textTransform": "uppercase"
+               },
+               "wrapped": [
+                "div.elementor-widget-container"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              380,
+              416,
+              680,
+              24
+             ],
+             "cls": "elementor-element elementor-element-ce5f6b7 elementor-widget elementor-widget-heading",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "h2",
+               "box": [
+                510,
+                419,
+                420,
+                18
+               ],
+               "cls": "elementor-heading-title elementor-size-default",
+               "kind": "text",
+               "text": "TRECIG IS MORE THAN A NAME—IT’S A PROMISE.",
+               "style": {
+                "display": "inline-block",
+                "textAlign": "center",
+                "fontFamily": "Poppins, sans-serif",
+                "fontSize": "18px",
+                "fontWeight": "600",
+                "lineHeight": "18px",
+                "color": "rgb(255, 255, 255)",
+                "textTransform": "uppercase"
+               },
+               "wrapped": [
+                "div.elementor-widget-container"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "box": [
+      0,
+      570,
+      1440,
+      370
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-35cbe19 logo-sec elementor-section-boxed elementor-section-height-default elementor-…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "padding": "30px 0px 30px 0px",
+      "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        600,
+        1270,
+        310
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "margin": "0px 85px 0px 85px",
+        "maxWidth": "1270px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          600,
+          1270,
+          310
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-28f2982",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            600,
+            1270,
+            310
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              345,
+              610,
+              750,
+              114
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "margin": "0px 250px 0px 250px",
+              "maxWidth": "750px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                345,
+                610,
+                750,
+                114
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-9e52c3d",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  345,
+                  610,
+                  750,
+                  114
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    355,
+                    620,
+                    730,
+                    36
+                   ],
+                   "cls": "elementor-element elementor-element-1d2769b elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      605,
+                      620,
+                      230,
+                      36
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "FEATURED IN",
+                     "style": {
+                      "display": "inline-block",
+                      "textAlign": "center",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "36px",
+                      "fontWeight": "800",
+                      "lineHeight": "36px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    355,
+                    676,
+                    730,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "TRECIG has been proudly featured in some of the world’s leading publications.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "TRECIG",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              470,
+              724,
+              500,
+              175
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "margin": "0px 375px 0px 375px",
+              "maxWidth": "500px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                470,
+                724,
+                275,
+                175
+               ],
+               "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-263450e",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  470,
+                  724,
+                  275,
+                  175
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "a",
+                   "box": [
+                    480,
+                    740,
+                    255,
+                    144
+                   ],
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-block",
+                    "textAlign": "center"
+                   },
+                   "href": "https://www.bbb.org/us/tx/rockwall/profile/information-technology-services/trecig-llc-0875-90934393",
+                   "children": [
+                    {
+                     "t": "img",
+                     "box": [
+                      480,
+                      740,
+                      255,
+                      144
+                     ],
+                     "cls": "attachment-full size-full wp-image-2601",
+                     "kind": "image",
+                     "src": "https://trecig.com/wp-content/uploads/2025/02/BBB_Accredited_Business_A_Rating-300x169-1.png",
+                     "alt": "",
+                     "natural": [
+                      300,
+                      169
+                     ],
+                     "objectFit": null,
+                     "style": {
+                      "display": "inline-block",
+                      "maxWidth": "100%",
+                      "overflow": "clip",
+                      "textAlign": "center"
+                     },
+                     "loading": "auto"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                745,
+                724,
+                224,
+                175
+               ],
+               "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-62ae003",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  745,
+                  724,
+                  224,
+                  175
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "a",
+                   "box": [
+                    755,
+                    734,
+                    204,
+                    155
+                   ],
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-block",
+                    "textAlign": "center"
+                   },
+                   "href": "https://www.alignable.com/rockwall-tx/trecig-llc",
+                   "children": [
+                    {
+                     "t": "img",
+                     "box": [
+                      755,
+                      734,
+                      204,
+                      155
+                     ],
+                     "cls": "attachment-full size-full wp-image-2602",
+                     "kind": "image",
+                     "src": "https://trecig.com/wp-content/uploads/2025/02/highly-recommended-bdcd9d666c33af66db04744d399e5edeaca995aba8c3563aaa1b063c7e8a4e79.png",
+                     "alt": "",
+                     "natural": [
+                      1317,
+                      1000
+                     ],
+                     "objectFit": null,
+                     "style": {
+                      "display": "inline-block",
+                      "maxWidth": "100%",
+                      "overflow": "clip",
+                      "textAlign": "center"
+                     },
+                     "loading": "auto"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      85,
+      940,
+      1270,
+      816
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        940,
+        1270,
+        816
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8a3d502",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          940,
+          1270,
+          816
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap",
+          "padding": "10px 10px 10px 10px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            95,
+            950,
+            1250,
+            29
+           ],
+           "cls": "elementor-element elementor-element-f948d9f elementor-widget elementor-widget-heading",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "margin": "0px 0px 20px 0px",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "h3",
+             "box": [
+              439,
+              950,
+              561,
+              28
+             ],
+             "cls": "elementor-heading-title elementor-size-default",
+             "kind": "text",
+             "text": "TRECIG at AFCEA TechNet Augusta 2026",
+             "style": {
+              "display": "inline-block",
+              "textAlign": "center",
+              "fontFamily": "Poppins, sans-serif",
+              "fontSize": "28px",
+              "fontWeight": "600",
+              "lineHeight": "28px",
+              "color": "rgb(0, 0, 0)"
+             },
+             "wrapped": [
+              "div.elementor-widget-container"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            95,
+            999,
+            1250,
+            24
+           ],
+           "cls": "elementor-element elementor-element-62edab6 elementor-widget elementor-widget-heading",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "margin": "0px 0px 20px 0px",
+            "textAlign": "center"
+           },
+           "children": [
+            {
+             "t": "h6",
+             "box": [
+              463,
+              1004,
+              513,
+              16
+             ],
+             "cls": "elementor-heading-title elementor-size-default",
+             "kind": "text",
+             "text": "August 17–20, 2026 · Augusta Marriott at the Convention Center",
+             "style": {
+              "display": "inline-block",
+              "textAlign": "center",
+              "fontFamily": "Poppins, sans-serif",
+              "fontSize": "16px",
+              "fontWeight": "600",
+              "lineHeight": "16px",
+              "color": "rgb(0, 0, 0)"
+             },
+             "wrapped": [
+              "div.elementor-widget-container"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "box": [
+            95,
+            1043,
+            1250,
+            703
+           ],
+           "cls": "elementor-widget-container",
+           "kind": "box",
+           "style": {
+            "overflow": "hidden",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+           },
+           "children": [
+            {
+             "t": "iframe",
+             "box": [
+              95,
+              1043,
+              1250,
+              703
+             ],
+             "id": "widget6",
+             "cls": "elementor-video",
+             "kind": "iframe",
+             "src": "https://www.youtube.com/embed/FGl_ErplQ0s?controls=1&rel=0&playsinline=0&cc_load_policy=0&autoplay=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=5&forigin=https%3A%2F%2Ftrecig.com%2Fpress-media%2F&aoriginsup=1&vf=1",
+             "title": "TRECIG Video TechNet",
+             "style": {
+              "display": "flex",
+              "bg": "rgb(0, 0, 0)",
+              "maxWidth": "100%",
+              "overflow": "clip"
+             },
+             "wrapped": [
+              "div.elementor-wrapper"
+             ]
+            }
+           ],
+           "wrapped": [
+            "div.elementor-element"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "section.elementor-section"
+     ]
+    },
+    {
+     "t": "section",
+     "box": [
+      0,
+      1777,
+      1440,
+      386
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-73bd7f9 awardslink elementor-section-boxed elementor-section-height-default elemento…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "padding": "40px 0px 50px 0px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        1817,
+        1270,
+        296
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "margin": "0px 85px 0px 85px",
+        "maxWidth": "1270px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          1817,
+          1270,
+          296
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8aab2e8",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            1817,
+            1270,
+            296
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              95,
+              1827,
+              1250,
+              138
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                95,
+                1827,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-5ad6478",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  1827,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    115,
+                    1847,
+                    273,
+                    76
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      115,
+                      1847,
+                      273,
+                      43
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED THE TORCH AWARD OF ETHICS FOR 2022.",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      115,
+                      1905,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "12/08/22",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                408,
+                1827,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-33285fc",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  408,
+                  1827,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    428,
+                    1847,
+                    273,
+                    76
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      428,
+                      1847,
+                      273,
+                      43
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED THE 2022 HIRE VETS PLATINUM AWARD",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      428,
+                      1905,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "11/09/22",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                720,
+                1827,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-e512522",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  720,
+                  1827,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    740,
+                    1847,
+                    273,
+                    98
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      740,
+                      1847,
+                      273,
+                      65
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG CEO ROY RUCKER SPEAKS AT AFCEA TECHNET AGENDA",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      740,
+                      1926,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "08/17/22",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1033,
+                1827,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-82d0d84",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1033,
+                  1827,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1053,
+                    1847,
+                    273,
+                    98
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      1053,
+                      1847,
+                      273,
+                      65
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED THE 2021 US DEPARTMENT OF LABOR, HIRE VETS PLATINUM AWARD",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      1053,
+                      1926,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "10/01/21",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              95,
+              1964,
+              1250,
+              138
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                95,
+                1964,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-f190378",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  1964,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    115,
+                    1984,
+                    273,
+                    98
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      115,
+                      1984,
+                      273,
+                      65
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED THE 2021 ALIGNABLE BUSINESSPERSON OF THE YEAR AWARD",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      115,
+                      2064,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "02/16/21",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                408,
+                1964,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-fd4703e",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  408,
+                  1964,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    428,
+                    1984,
+                    273,
+                    76
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      428,
+                      1984,
+                      273,
+                      43
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED THE 2020 HIRE VETS GOLD AWARD",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      428,
+                      2043,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "10/12/20",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                720,
+                1964,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-18cb90a",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  720,
+                  1964,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    740,
+                    1984,
+                    273,
+                    98
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      740,
+                      1984,
+                      273,
+                      65
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG CEO ROY RUCKER SPEAKS AT AFCEA TECHNET AUGUSTA",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      740,
+                      2064,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "08/21/19",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1033,
+                1964,
+                313,
+                138
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-bd51c21",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1033,
+                  1964,
+                  313,
+                  138
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "bgImage": "linear-gradient(360deg, rgb(242, 242, 242) 0%, rgba(242, 41, 91, 0) 100%)",
+                  "padding": "20px 20px 20px 20px",
+                  "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1053,
+                    1984,
+                    273,
+                    76
+                   ],
+                   "cls": "elementor-image-box-content",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "h3",
+                     "box": [
+                      1053,
+                      1984,
+                      273,
+                      43
+                     ],
+                     "cls": "elementor-image-box-title",
+                     "kind": "text",
+                     "text": "TRECIG RECEIVED 2019 HIRED VETS GOLD AWARD",
+                     "style": {
+                      "margin": "0px 0px 15px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "800",
+                      "lineHeight": "21.6px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "p",
+                     "box": [
+                      1053,
+                      2043,
+                      273,
+                      18
+                     ],
+                     "cls": "elementor-image-box-description",
+                     "kind": "text",
+                     "text": "01/06/19",
+                     "style": {
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12px",
+                      "fontWeight": "400",
+                      "lineHeight": "18px",
+                      "color": "rgb(178, 34, 57)"
+                     }
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-image-box-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "section.elementor-section"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "div.page-content",
+    "main.site-main"
+   ]
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    2162,
+    1440,
+    598
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-4924328 footer-op elementor-section-boxed elementor-section-height-default elementor…",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      2162,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-video-container elementor-hidden-mobile",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "overflow": "hidden",
+      "zIndex": "0",
+      "transition": "opacity 1s ease"
+     },
+     "children": [
+      {
+       "t": "iframe",
+       "box": [
+        0,
+        2056,
+        1440,
+        810
+       ],
+       "id": "widget4",
+       "cls": "elementor-background-video-embed",
+       "kind": "iframe",
+       "src": "https://www.youtube.com/embed/OzwCnEEadts?controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=3&forigin=https%3A%2F%2Ftrecig.com%2Fpress-media%2F&aoriginsup=1&vf=1",
+       "title": "Triceg   Expertise Slider 1",
+       "style": {
+        "position": "absolute",
+        "overflow": "clip",
+        "transform": "matrix(1, 0, 0, 1, -720, -405)"
+       }
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      2162,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-overlay",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "bg": "rgb(255, 255, 255)",
+      "opacity": "0.7",
+      "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+     },
+     "empty": true
+    },
+    {
+     "t": "div",
+     "box": [
+      85,
+      2162,
+      1270,
+      598
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        2162,
+        1270,
+        598
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-536561f",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          2162,
+          1270,
+          598
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "section",
+           "box": [
+            85,
+            2162,
+            1270,
+            467
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-63046e0 elementor-section-boxed elementor-section-height-default elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "40px 0px 40px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              2202,
+              1270,
+              387
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                2202,
+                324,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-55e7902",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  2202,
+                  324,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    2212,
+                    304,
+                    300
+                   ],
+                   "cls": "elementor-element elementor-element-c1de821 elementor-widget elementor-widget-theme-site-logo elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      2212,
+                      400,
+                      300
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "inline-block"
+                     },
+                     "href": "https://trecig.com/",
+                     "children": [
+                      {
+                       "t": "img",
+                       "box": [
+                        95,
+                        2212,
+                        400,
+                        300
+                       ],
+                       "cls": "attachment-full size-full wp-image-4268",
+                       "kind": "image",
+                       "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                       "alt": "",
+                       "natural": [
+                        1440,
+                        1080
+                       ],
+                       "objectFit": null,
+                       "style": {
+                        "display": "inline-block",
+                        "maxWidth": "400px",
+                        "overflow": "clip"
+                       },
+                       "loading": "auto"
+                      }
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    2532,
+                    134,
+                    47
+                   ],
+                   "cls": "elementor-button-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-grid",
+                    "gridCols": "134.078px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      2532,
+                      134,
+                      47
+                     ],
+                     "cls": "elementor-button elementor-button-link elementor-size-sm",
+                     "kind": "link",
+                     "text": "LET’S TALK",
+                     "style": {
+                      "position": "relative",
+                      "padding": "15px 30px 15px 30px",
+                      "borderRadius": "30px",
+                      "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "15px",
+                      "fontWeight": "400",
+                      "lineHeight": "15px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                409,
+                2202,
+                371,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cc0df83",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  459,
+                  2202,
+                  321,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 0px 0px 50px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    469,
+                    2212,
+                    301,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-5c243c8 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      469,
+                      2215,
+                      98,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "LET'S TALK:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    469,
+                    2256,
+                    301,
+                    52
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      2256,
+                      301,
+                      26
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "padding": "0px 0px 5px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        2256,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "(469)653-9009",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "tel:(254)%20338-6131",
+                       "marks": [
+                        {
+                         "text": "(469)653-9009",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      2287,
+                      301,
+                      21
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "margin": "5px 0px 0px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        2287,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "info@trecig.com",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "mailto:info@trecig.com",
+                       "marks": [
+                        {
+                         "text": "info@trecig.com",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                781,
+                2202,
+                310,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3c5eca3",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  781,
+                  2202,
+                  260,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 50px 0px 0px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    791,
+                    2212,
+                    240,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-ba65889 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      791,
+                      2215,
+                      101,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "TRECIG HQ:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    791,
+                    2256,
+                    240,
+                    42
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      791,
+                      2256,
+                      240,
+                      42
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        791,
+                        2256,
+                        110,
+                        42
+                       ],
+                       "cls": "elementor-icon-list-text",
+                       "kind": "text",
+                       "text": "Rockwall, Texas, United States",
+                       "style": {
+                        "transition": "color 0.3s ease",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1090,
+                2202,
+                264,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b8e2fd",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1090,
+                  2202,
+                  264,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1100,
+                    2212,
+                    244,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-f24dba3 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      1100,
+                      2215,
+                      174,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "CONNECT WITH US:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "a",
+                   "box": [
+                    1100,
+                    2256,
+                    32,
+                    32
+                   ],
+                   "cls": "elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-f3c190e",
+                   "kind": "link",
+                   "text": "Linkedin-in",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(0, 0, 0)",
+                    "borderRadius": "100%",
+                    "textAlign": "center",
+                    "transition": "all 0.3s ease",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "16px",
+                    "color": "rgb(105, 114, 125)"
+                   },
+                   "href": "https://trecig.com/press-media/#",
+                   "target": "_blank",
+                   "icons": [
+                    {
+                     "icon": "e-font-icon-svg e-fab-linkedin-in",
+                     "w": 16
+                    }
+                   ],
+                   "wrapped": [
+                    "span.elementor-grid-item",
+                    "div.elementor-social-icons-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "section",
+           "box": [
+            85,
+            2629,
+            1270,
+            131
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-d1f66c7 elementor-section-content-middle elementor-section-boxed elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "15px 0px 15px 0px",
+            "border": "1px 0px 0px 0px solid rgba(0, 0, 0, 0.2)"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              2645,
+              1270,
+              100
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                2645,
+                1270,
+                100
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-221bad1",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  2645,
+                  1270,
+                  100
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    2655,
+                    1250,
+                    10
+                   ],
+                   "cls": "elementor-element elementor-element-f8c3a82 elementor-icon-list--layout-inline elementor-align-center thgf elementor-list-item-link-full_width elementor-widget …",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      2655,
+                      1250,
+                      20
+                     ],
+                     "cls": "elementor-widget-container",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px -10px 0px",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                     },
+                     "children": [
+                      {
+                       "t": "ul",
+                       "box": [
+                        87,
+                        2655,
+                        1266,
+                        20
+                       ],
+                       "cls": "elementor-icon-list-items elementor-inline-items",
+                       "kind": "list",
+                       "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justify": "center",
+                        "gap": "30px",
+                        "margin": "0px -8px 0px -8px",
+                        "textAlign": "center"
+                       },
+                       "children": [
+                        {
+                         "t": "li",
+                         "box": [
+                          589,
+                          2655,
+                          89,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            589,
+                            2655,
+                            88,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Privacy Policy",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/privacy-policy/",
+                           "marks": [
+                            {
+                             "text": "Privacy Policy",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "li",
+                         "box": [
+                          724,
+                          2655,
+                          127,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            724,
+                            2655,
+                            127,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Terms & Conditions",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/terms-conditions/",
+                           "marks": [
+                            {
+                             "text": "Terms & Conditions",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    2685,
+                    1250,
+                    36
+                   ],
+                   "kind": "text",
+                   "text": "©2026 TRECIG, LLC",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "lineHeight": "18px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   },
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "footer.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    1348,
+    875,
+    92,
+    38
+   ],
+   "id": "trustedsite-tm-image",
+   "kind": "box",
+   "style": {
+    "position": "fixed",
+    "bg": "rgb(255, 255, 255)",
+    "bgImage": "url(\"https://cdn.ywxi.net/meter/trecig.com/205.svg?ts=1784975038086&l=en\")",
+    "bgSize": "92px 38px",
+    "bgPos": "50% 50%",
+    "bgRepeat": "no-repeat",
+    "borderRadius": "2px 0px 0px",
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 5px 0px",
+    "overflow": "hidden",
+    "zIndex": "1000003",
+    "transition": "all 0.2s ease"
+   },
+   "empty": true
+  }
+ ]
+}

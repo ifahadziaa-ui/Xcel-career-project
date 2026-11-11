@@ -1,0 +1,4125 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  1440,
+  4410
+ ],
+ "cls": "wp-singular awsm_job_openings-template-default single single-awsm_job_openings postid-4209 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)",
+  "overflow": "clip visible"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -160001,
+    1,
+    1
+   ],
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)"
+   },
+   "href": "https://trecig.com/jobs/cloud-seme-sme-joint-base-lewis-mcchord-jblm-washington/#content"
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    0,
+    1440,
+    170
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-822c65c header-op elementor-section-boxed elementor-section-height-default",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "bg": "rgb(255, 255, 255)",
+    "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 12px 0px",
+    "zIndex": "9999",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      85,
+      0,
+      1270,
+      170
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        0,
+        1270,
+        170
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcdf656",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          0,
+          1270,
+          170
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            0,
+            1270,
+            170
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "maxWidth": "1270px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              0,
+              127,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-28afa55",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                0,
+                127,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  95,
+                  10,
+                  200,
+                  150
+                 ],
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "textAlign": "center"
+                 },
+                 "href": "https://trecig.com/",
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    95,
+                    10,
+                    200,
+                    150
+                   ],
+                   "cls": "attachment-full size-full wp-image-4268",
+                   "kind": "image",
+                   "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                   "alt": "",
+                   "natural": [
+                    1440,
+                    1080
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline-block",
+                    "maxWidth": "200px",
+                    "overflow": "clip",
+                    "textAlign": "center"
+                   },
+                   "loading": "auto"
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-widget-container",
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              212,
+              0,
+              1143,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-47a739a",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                212,
+                0,
+                1143,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  222,
+                  75,
+                  1123,
+                  20
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "ul",
+                   "box": [
+                    633,
+                    75,
+                    712,
+                    20
+                   ],
+                   "id": "menu-1-7176f17",
+                   "cls": "elementor-nav-menu",
+                   "kind": "list",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "flexWrap": "wrap",
+                    "justify": "flex-end",
+                    "margin": "0px 0px 0px 411.234px",
+                    "zIndex": "2"
+                   },
+                   "pseudo": {
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      633,
+                      75,
+                      40,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "HOME",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 0px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      703,
+                      75,
+                      70,
+                      20
+                     ],
+                     "id": "sm-17940804435769827-1",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "ABOUT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/about/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      803,
+                      75,
+                      195,
+                      20
+                     ],
+                     "id": "sm-17940804435769827-3",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "AWARDS & RECOGNITION",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/awards-recognition/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1028,
+                      75,
+                      90,
+                      20
+                     ],
+                     "id": "sm-17940804435769827-5",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "EXPERTISE",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/expertise/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1148,
+                      75,
+                      100,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "PRESS & MEDIA",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/press-media/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      1278,
+                      75,
+                      67,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "CONTACT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 0px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "nav.elementor-nav-menu--main"
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "header.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    0,
+    170,
+    1440,
+    3642
+   ],
+   "cls": "elementor elementor-3497 elementor-location-single post-4209 awsm_job_openings type-awsm_job_openings status-publish hentry job-category-cloud-engineering job-t…",
+   "kind": "box",
+   "style": {},
+   "children": [
+    {
+     "t": "section",
+     "box": [
+      0,
+      170,
+      1440,
+      350
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-11138e5 elementor-section-height-min-height elementor-section-boxed elementor-sectio…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bgImage": "url(\"https://trecig.com/wp-content/uploads/2024/09/PROCESS-scaled.jpg\")",
+      "bgSize": "cover",
+      "bgPos": "50% 0%",
+      "bgRepeat": "no-repeat",
+      "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        170,
+        1440,
+        350
+       ],
+       "cls": "elementor-background-overlay",
+       "kind": "box",
+       "style": {
+        "position": "absolute",
+        "bg": "rgb(0, 0, 0)",
+        "opacity": "0.5",
+        "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+       },
+       "empty": true
+      },
+      {
+       "t": "div",
+       "box": [
+        370,
+        170,
+        700,
+        350
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "align": "center",
+        "margin": "0px 370px 0px 370px",
+        "maxWidth": "700px",
+        "minHeight": "350px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          370,
+          221,
+          700,
+          249
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bc6d419",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            370,
+            301,
+            700,
+            169
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px",
+            "margin": "80px 0px 0px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              380,
+              311,
+              680,
+              108
+             ],
+             "cls": "elementor-element elementor-element-c23f02d elementor-widget elementor-widget-heading",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "h2",
+               "box": [
+                380,
+                311,
+                680,
+                108
+               ],
+               "cls": "elementor-heading-title elementor-size-default",
+               "kind": "text",
+               "text": "CLOUD SEME SME — JOINT BASE LEWIS-MCCHORD (JBLM), WASHINGTON",
+               "style": {
+                "display": "inline-block",
+                "textAlign": "center",
+                "fontFamily": "Poppins, sans-serif",
+                "fontSize": "36px",
+                "fontWeight": "800",
+                "lineHeight": "36px",
+                "color": "rgb(255, 255, 255)",
+                "textTransform": "uppercase"
+               },
+               "wrapped": [
+                "div.elementor-widget-container"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "ul",
+             "box": [
+              378,
+              439,
+              685,
+              21
+             ],
+             "cls": "elementor-icon-list-items elementor-inline-items",
+             "kind": "list",
+             "style": {
+              "display": "flex",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "margin": "0px -2.5px 0px -2.5px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "li",
+               "box": [
+                441,
+                439,
+                34,
+                21
+               ],
+               "cls": "elementor-icon-list-item elementor-inline-item",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "align": "center",
+                "margin": "0px 2.5px 0px 2.5px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  441,
+                  440,
+                  34,
+                  18
+                 ],
+                 "kind": "link",
+                 "text": "HOME",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "textAlign": "center",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "lineHeight": "18px",
+                  "color": "rgb(204, 51, 102)",
+                  "textTransform": "uppercase"
+                 },
+                 "href": "https://trecig.com/",
+                 "marks": [
+                  {
+                   "text": "HOME",
+                   "color": "rgb(255, 255, 255)",
+                   "weight": null,
+                   "size": null,
+                   "bg": null,
+                   "family": null
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "li",
+               "box": [
+                480,
+                439,
+                74,
+                21
+               ],
+               "cls": "elementor-icon-list-item elementor-inline-item",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "align": "center",
+                "margin": "0px 2.5px 0px 2.5px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  480,
+                  439,
+                  74,
+                  21
+                 ],
+                 "kind": "link",
+                 "text": "CAREERS",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "textAlign": "center",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "lineHeight": "18px",
+                  "color": "rgb(204, 51, 102)",
+                  "textTransform": "uppercase"
+                 },
+                 "href": "https://trecig.com/careers/",
+                 "marks": [
+                  {
+                   "text": "CAREERS",
+                   "color": "rgb(255, 255, 255)",
+                   "weight": null,
+                   "size": null,
+                   "bg": null,
+                   "family": null
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "li",
+               "box": [
+                559,
+                439,
+                440,
+                21
+               ],
+               "cls": "elementor-icon-list-item elementor-inline-item",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "align": "center",
+                "margin": "0px 2.5px 0px 2.5px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "span",
+                 "box": [
+                  577,
+                  440,
+                  422,
+                  18
+                 ],
+                 "cls": "elementor-icon-list-text",
+                 "kind": "text",
+                 "text": "CLOUD SEME SME — JOINT BASE LEWIS-MCCHORD (JBLM), WASHINGTON",
+                 "style": {
+                  "padding": "0px 0px 0px 5px",
+                  "textAlign": "center",
+                  "transition": "color 0.3s ease",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "lineHeight": "18px",
+                  "color": "rgb(255, 255, 255)",
+                  "textTransform": "uppercase"
+                 }
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "div.elementor-widget-container",
+              "div.elementor-element"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "box": [
+      0,
+      520,
+      1440,
+      3292
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-5abc1bd elementor-section-boxed elementor-section-height-default elementor-section-h…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "padding": "50px 0px 50px 0px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        570,
+        1270,
+        3192
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "margin": "0px 85px 0px 85px",
+        "maxWidth": "1270px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          570,
+          1270,
+          3192
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e07ca14",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            85,
+            570,
+            1270,
+            3192
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              95,
+              580,
+              1250,
+              3151
+             ],
+             "cls": "awsm-job-single-wrap",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "margin": "0px 0px 20.8px 0px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                95,
+                580,
+                750,
+                3151
+               ],
+               "cls": "awsm-job-content",
+               "kind": "box",
+               "style": {
+                "padding": "0px 50px 0px 0px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  588,
+                  700,
+                  3011
+                 ],
+                 "cls": "awsm-job-entry-content entry-content",
+                 "kind": "box",
+                 "style": {},
+                 "children": [
+                  {
+                   "t": "h3",
+                   "box": [
+                    95,
+                    588,
+                    700,
+                    34
+                   ],
+                   "kind": "text",
+                   "text": "Position Overview",
+                   "style": {
+                    "margin": "8px 0px 16px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "33.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    638,
+                    700,
+                    144
+                   ],
+                   "kind": "text",
+                   "text": "TRECIG, LLC is seeking a highly skilled SOCOM Enterprise Mission Environment (SEME) Cloud Subject Matter Expert (SME) to support the Special Operations Forces (SOF) community in the deployment, integration, and sustainment of cloud-based mission enablement capabilities. This position requires a technically deep, operationally aware professional who understands how cloud infrastructure—particularly Microsoft Azure—intersects with the SOF intelligence and operations mission.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    796,
+                    700,
+                    120
+                   ],
+                   "kind": "text",
+                   "text": "The ideal candidate does not just execute tasks. They think through problems, identify integration gaps before they become operational failures, and deliver innovative solutions in complex, classified environments. You will operate as an embedded Field Service Representative (FSR) alongside SOF units, TSOC commands, and intelligence staff across both CONUS and OCONUS locations.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "h3",
+                   "box": [
+                    95,
+                    930,
+                    700,
+                    34
+                   ],
+                   "kind": "text",
+                   "text": "Key Responsibilities",
+                   "style": {
+                    "margin": "8px 0px 16px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "33.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    980,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Cloud Infrastructure & Azure Operations",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Cloud Infrastructure & Azure Operations",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    1018,
+                    700,
+                    260
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1018,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Design, deploy, and manage Microsoft Azure environments supporting classified SOF mission workloads.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1071,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Administer Azure Active Directory (AAD), Entra ID, role-based access control (RBAC), and conditional access policies.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1124,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Configure and manage Azure Virtual Networks, NSGs, VPNs, and hybrid connectivity for classified enclaves.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1177,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Support Azure Government and IL4/IL5 cloud environments in compliance with DoD security frameworks.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1230,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Build and maintain Azure DevOps pipelines and infrastructure-as-code (IaC) using Terraform or Bicep.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    1283,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Endpoint Management – Intune & MDM",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Endpoint Management – Intune & MDM",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    1322,
+                    700,
+                    260
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1322,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Serve as primary SME for Microsoft Intune and Mobile Device Management (MDM) across the enterprise.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1375,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Design and enforce device compliance policies, configuration profiles, and conditional access for managed endpoints.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1428,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Manage Windows Autopilot enrollment workflows, app deployment packages, and device lifecycle operations.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1481,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Integrate Intune with Microsoft Defender for Endpoint and Azure Sentinel for unified security posture visibility.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1534,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Maintain MDM documentation, SOPs, and troubleshoot escalated device management issues in operational environments.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    1587,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Systems Integration & Mission Enablement",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Systems Integration & Mission Enablement",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    1625,
+                    700,
+                    260
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1625,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Lead integrations between cloud-hosted SEME capabilities and on-premises tactical or classified systems.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1678,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Identify and resolve interoperability gaps between cloud platforms, data pipelines, and end-user exploitation tools.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1731,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Collaborate with software developers, data engineers, and intelligence analysts to ensure mission-aligned deployments.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1784,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Support cross-domain solution (CDS) integration efforts in multi-classification environments.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1837,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Evaluate new tooling and technologies; bring creative, out-of-the-box thinking to unsolved operational problems.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    1890,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Field Service & Customer Support",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Field Service & Customer Support",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    1929,
+                    700,
+                    260
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1929,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Provide Tier 2/3 technical support to SOF operators and intelligence analysts in the field.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      1982,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Deploy OCONUS to TSOC locations to install, configure, and sustain cloud-enabled capabilities.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2035,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Develop and deliver technical training to end-users, including tailored instruction for non-technical operators.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2088,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Produce clear, concise technical documentation: architecture diagrams, runbooks, TTPs, and after-action reports.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2141,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Interface directly with government leads, program managers, and mission partners to translate requirements into solutions.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "h3",
+                   "box": [
+                    95,
+                    2197,
+                    700,
+                    34
+                   ],
+                   "kind": "text",
+                   "text": "Required Qualifications",
+                   "style": {
+                    "margin": "8px 0px 16px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "33.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    2246,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Clearance",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Clearance",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    2285,
+                    700,
+                    77
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2285,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Active TS/SCI security clearance required.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2314,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Must be eligible for access to Special Access Programs (SAP/SAR) as the mission requires.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    2367,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Technical Experience",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Technical Experience",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    2405,
+                    700,
+                    289
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2405,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "5+ years of hands-on experience with Microsoft Azure (AZ-104 or AZ-305 certification strongly preferred).",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2458,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "3+ years of enterprise Intune/MDM administration in a Windows-dominant environment.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2511,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Demonstrated experience with Azure Security Center, Defender for Cloud, and Sentinel SIEM.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2564,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Proficiency in PowerShell scripting for automation of Azure and Intune workflows.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2593,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Working knowledge of networking fundamentals: DNS, DHCP, VPN, TCP/IP, and zero-trust architecture.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2646,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Experience with DoD STIGs, CIS benchmarks, and RMF security controls in cloud environments.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    2699,
+                    700,
+                    24
+                   ],
+                   "kind": "text",
+                   "text": "Operational Background",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "Operational Background",
+                     "color": null,
+                     "weight": "600",
+                     "size": null,
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    2737,
+                    700,
+                    130
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2737,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Prior SOF, SOCOM, or IC mission support experience highly preferred.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2766,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Familiarity with TSOC command structures, OCONUS operating environments, and the SOF operational tempo.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2819,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Understanding of intelligence workflows, exploitation tools, and data handling in classified settings.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "h3",
+                   "box": [
+                    95,
+                    2875,
+                    700,
+                    34
+                   ],
+                   "kind": "text",
+                   "text": "Preferred Qualifications",
+                   "style": {
+                    "margin": "8px 0px 16px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "33.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    2925,
+                    700,
+                    294
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2925,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Microsoft Certified: Azure Solutions Architect Expert (AZ-305).",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2954,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Microsoft 365 Certified: Endpoint Administrator Associate (MD-102).",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      2983,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "CompTIA Security+ CE or CASP+ (DoD 8570/8140 IAT Level II/III baseline).",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3012,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Experience with SEME platform tooling, SOF analytics platforms, or cloud-native mission enablement capabilities.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3065,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Familiarity with cross-domain solutions (CDS), data diodes, or classified cloud enclave architecture.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3118,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Prior experience as a SOCOM Field Service Representative or contractor supporting TSOC J6/J2.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3171,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Experience integrating Power BI, Fabric, or similar analytics platforms into classified environments.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "h3",
+                   "box": [
+                    95,
+                    3227,
+                    700,
+                    34
+                   ],
+                   "kind": "text",
+                   "text": "What Sets the Right Candidate Apart",
+                   "style": {
+                    "margin": "8px 0px 16px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "28px",
+                    "fontWeight": "500",
+                    "lineHeight": "33.6px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    3276,
+                    700,
+                    72
+                   ],
+                   "kind": "text",
+                   "text": "This is not a break/fix role. We are looking for someone who sees the mission before the ticket—a technologist who asks “what does the operator actually need?” before writing a single line of config. The right candidate:",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "24px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    95,
+                    3363,
+                    700,
+                    236
+                   ],
+                   "kind": "list",
+                   "style": {
+                    "padding": "0px 0px 0px 20px"
+                   },
+                   "listStyle": "disc",
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3363,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Thinks in integrations, not just systems—you see how the pieces connect, or should connect.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3416,
+                      680,
+                      24
+                     ],
+                     "kind": "text",
+                     "text": "Is comfortable with ambiguity in a fast-moving operational environment.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3445,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Communicates complex technical concepts clearly to non-technical commanders and analysts.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3498,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Brings initiative—if something is broken or missing, you fix it or escalate it; you don’t wait to be asked.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      115,
+                      3551,
+                      680,
+                      48
+                     ],
+                     "kind": "text",
+                     "text": "Understands the weight of the mission—SOF lives and operations may depend on what you deploy and sustain.",
+                     "style": {
+                      "display": "list-item",
+                      "margin": "0px 0px 5px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "400",
+                      "lineHeight": "24px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "t": "div",
+                 "box": [
+                  95,
+                  3629,
+                  700,
+                  92
+                 ],
+                 "cls": "awsm-job-specifications-container awsm_job_spec_below_content",
+                 "kind": "box",
+                 "style": {
+                  "margin": "30px 0px 0px 0px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    3629,
+                    700,
+                    92
+                   ],
+                   "cls": "awsm-job-specification-wrapper",
+                   "kind": "box",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      3629,
+                      700,
+                      24
+                     ],
+                     "cls": "awsm-job-specification-item awsm-job-specification-job-category",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 10px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        95,
+                        3629,
+                        131,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-label",
+                       "kind": "text",
+                       "text": "JOB CATEGORY:",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "marks": [
+                        {
+                         "text": "JOB CATEGORY:",
+                         "color": null,
+                         "weight": "600",
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        226,
+                        3629,
+                        159,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-term",
+                       "kind": "text",
+                       "text": "CLOUD ENGINEERING",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      3663,
+                      700,
+                      24
+                     ],
+                     "cls": "awsm-job-specification-item awsm-job-specification-job-type",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 10px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        95,
+                        3663,
+                        81,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-label",
+                       "kind": "text",
+                       "text": "JOB TYPE:",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "marks": [
+                        {
+                         "text": "JOB TYPE:",
+                         "color": null,
+                         "weight": "600",
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        176,
+                        3663,
+                        72,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-term",
+                       "kind": "text",
+                       "text": "FULL TIME",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       }
+                      }
+                     ]
+                    },
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      3697,
+                      700,
+                      24
+                     ],
+                     "cls": "awsm-job-specification-item awsm-job-specification-job-location",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px 10px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        95,
+                        3697,
+                        125,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-label",
+                       "kind": "text",
+                       "text": "JOB LOCATION:",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "marks": [
+                        {
+                         "text": "JOB LOCATION:",
+                         "color": null,
+                         "weight": "600",
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      },
+                      {
+                       "t": "span",
+                       "box": [
+                        220,
+                        3697,
+                        273,
+                        23
+                       ],
+                       "cls": "awsm-job-specification-term",
+                       "kind": "text",
+                       "text": "JOINT BASE LEWIS-MCCHORD (WA)",
+                       "style": {
+                        "display": "inline",
+                        "width": "auto",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "16px",
+                        "fontWeight": "400",
+                        "lineHeight": "24px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.awsm-job-specifications-row"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                845,
+                580,
+                500,
+                705
+               ],
+               "cls": "awsm-job-form-inner",
+               "kind": "box",
+               "style": {
+                "bg": "rgb(255, 255, 255)",
+                "padding": "25px 25px 25px 25px",
+                "border": "1px 1px 1px 1px solid rgb(221, 221, 221)"
+               },
+               "children": [
+                {
+                 "t": "h2",
+                 "box": [
+                  871,
+                  606,
+                  448,
+                  29
+                 ],
+                 "kind": "text",
+                 "text": "APPLY FOR THIS POSITION",
+                 "style": {
+                  "margin": "0px 0px 20px 0px",
+                  "textAlign": "center",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "24px",
+                  "fontWeight": "700",
+                  "lineHeight": "28.8px",
+                  "color": "rgb(0, 0, 0)",
+                  "textTransform": "uppercase"
+                 }
+                },
+                {
+                 "t": "form",
+                 "box": [
+                  871,
+                  655,
+                  448,
+                  589
+                 ],
+                 "id": "awsm-application-form",
+                 "cls": "awsm-application-form",
+                 "kind": "form",
+                 "style": {},
+                 "action": "ref: <Node>",
+                 "method": "post",
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    655,
+                    448,
+                    69
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      655,
+                      448,
+                      14
+                     ],
+                     "kind": "text",
+                     "text": "FULL NAME *",
+                     "style": {
+                      "margin": "0px 0px 10px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      679,
+                      448,
+                      45
+                     ],
+                     "id": "awsm-applicant-name",
+                     "cls": "awsm-job-form-field awsm-job-form-control",
+                     "kind": "field",
+                     "type": "text",
+                     "name": "awsm_applicant_name",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "bg": "rgb(255, 255, 255)",
+                      "padding": "8px 16px 8px 16px",
+                      "border": "1px 1px 1px 1px solid rgb(221, 221, 221)",
+                      "overflow": "clip",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    739,
+                    448,
+                    69
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      739,
+                      448,
+                      14
+                     ],
+                     "kind": "text",
+                     "text": "EMAIL *",
+                     "style": {
+                      "margin": "0px 0px 10px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      763,
+                      448,
+                      45
+                     ],
+                     "id": "awsm-applicant-email",
+                     "cls": "awsm-job-form-field awsm-job-form-control",
+                     "kind": "field",
+                     "type": "email",
+                     "name": "awsm_applicant_email",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "bg": "rgb(255, 255, 255)",
+                      "padding": "8px 16px 8px 16px",
+                      "border": "1px 1px 1px 1px solid rgb(221, 221, 221)",
+                      "overflow": "clip",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    823,
+                    448,
+                    69
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      823,
+                      448,
+                      14
+                     ],
+                     "kind": "text",
+                     "text": "PHONE *",
+                     "style": {
+                      "margin": "0px 0px 10px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      847,
+                      448,
+                      45
+                     ],
+                     "id": "awsm-applicant-phone",
+                     "cls": "awsm-job-form-field awsm-job-form-control",
+                     "kind": "field",
+                     "type": "tel",
+                     "name": "awsm_applicant_phone",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "bg": "rgb(255, 255, 255)",
+                      "padding": "8px 16px 8px 16px",
+                      "border": "1px 1px 1px 1px solid rgb(221, 221, 221)",
+                      "overflow": "clip",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    907,
+                    448,
+                    124
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      907,
+                      448,
+                      14
+                     ],
+                     "kind": "text",
+                     "text": "BIO *",
+                     "style": {
+                      "margin": "0px 0px 10px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "textarea",
+                     "box": [
+                      871,
+                      931,
+                      448,
+                      100
+                     ],
+                     "id": "awsm-cover-letter",
+                     "cls": "awsm-job-form-field awsm-job-form-control",
+                     "kind": "field",
+                     "type": "textarea",
+                     "name": "awsm_applicant_letter",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "bg": "rgb(255, 255, 255)",
+                      "padding": "8px 16px 8px 16px",
+                      "border": "1px 1px 1px 1px solid rgb(221, 221, 221)",
+                      "overflow": "auto",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    1046,
+                    448,
+                    75
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      1046,
+                      448,
+                      14
+                     ],
+                     "kind": "text",
+                     "text": "UPLOAD CV/RESUME *",
+                     "style": {
+                      "margin": "0px 0px 10px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    },
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      1070,
+                      448,
+                      27
+                     ],
+                     "id": "awsm-application-file",
+                     "cls": "awsm-job-form-field awsm-resume-file-control awsm-job-form-control awsm-form-file-control",
+                     "kind": "field",
+                     "type": "file",
+                     "name": "awsm_file",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "overflow": "clip",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "small",
+                     "box": [
+                      871,
+                      1101,
+                      206,
+                      17
+                     ],
+                     "kind": "text",
+                     "text": "Allowed Type(s): .pdf, .doc, .docx",
+                     "style": {
+                      "display": "inline",
+                      "width": "auto",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "12.8px",
+                      "fontWeight": "400",
+                      "lineHeight": "19.2px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    1136,
+                    448,
+                    48
+                   ],
+                   "cls": "awsm-job-form-group awsm-job-inline-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      1141,
+                      15,
+                      15
+                     ],
+                     "id": "awsm_form_privacy_policy",
+                     "cls": "awsm-job-form-field",
+                     "kind": "field",
+                     "type": "checkbox",
+                     "name": "awsm_form_privacy_policy",
+                     "placeholder": null,
+                     "required": true,
+                     "value": null,
+                     "style": {
+                      "display": "inline-block",
+                      "position": "relative",
+                      "margin": "0px 10px 0px 0px",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(0, 0, 0)"
+                     }
+                    },
+                    {
+                     "t": "label",
+                     "box": [
+                      871,
+                      1138,
+                      407,
+                      44
+                     ],
+                     "kind": "text",
+                     "text": "BY USING THIS FORM YOU AGREE WITH THE STORAGE AND HANDLING OF YOUR DATA BY THIS WEBSITE. *",
+                     "style": {
+                      "display": "inline",
+                      "margin": "0px 0px 10px 0px",
+                      "width": "auto",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     }
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    871,
+                    1199,
+                    448,
+                    45
+                   ],
+                   "cls": "awsm-job-form-group",
+                   "kind": "box",
+                   "style": {
+                    "margin": "0px 0px 15px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "input",
+                     "box": [
+                      871,
+                      1199,
+                      150,
+                      45
+                     ],
+                     "id": "awsm-application-submit-btn",
+                     "cls": "awsm-application-submit-btn",
+                     "kind": "field",
+                     "type": "submit",
+                     "name": "form_sub",
+                     "placeholder": null,
+                     "required": null,
+                     "value": "Submit",
+                     "style": {
+                      "display": "inline-block",
+                      "bg": "rgb(0, 0, 0)",
+                      "padding": "8px 16px 8px 16px",
+                      "borderRadius": "40px",
+                      "overflow": "clip",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "21px",
+                      "color": "rgb(255, 255, 255)",
+                      "textTransform": "uppercase"
+                     }
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ],
+               "wrapped": [
+                "div.awsm-job-form"
+               ]
+              }
+             ],
+             "wrapped": [
+              "div.elementor-widget-container",
+              "div.elementor-element"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    3812,
+    1440,
+    598
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-4924328 footer-op elementor-section-boxed elementor-section-height-default elementor…",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      3812,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-video-container elementor-hidden-mobile",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "overflow": "hidden",
+      "zIndex": "0",
+      "transition": "opacity 1s ease"
+     },
+     "children": [
+      {
+       "t": "iframe",
+       "box": [
+        0,
+        3706,
+        1440,
+        810
+       ],
+       "id": "widget2",
+       "cls": "elementor-background-video-embed",
+       "kind": "iframe",
+       "src": "https://www.youtube.com/embed/OzwCnEEadts?controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=1&forigin=https%3A%2F%2Ftrecig.com%2Fjobs%2Fcloud-seme-sme-joint-base-lewis-mcchord-jblm-washington%2F&aoriginsup=1&vf=1",
+       "title": "Triceg   Expertise Slider 1",
+       "style": {
+        "position": "absolute",
+        "overflow": "clip",
+        "transform": "matrix(1, 0, 0, 1, -720, -405)"
+       }
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      3812,
+      1440,
+      598
+     ],
+     "cls": "elementor-background-overlay",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "bg": "rgb(255, 255, 255)",
+      "opacity": "0.7",
+      "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+     },
+     "empty": true
+    },
+    {
+     "t": "div",
+     "box": [
+      85,
+      3812,
+      1270,
+      598
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "margin": "0px 85px 0px 85px",
+      "maxWidth": "1270px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        85,
+        3812,
+        1270,
+        598
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-536561f",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          85,
+          3812,
+          1270,
+          598
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "section",
+           "box": [
+            85,
+            3812,
+            1270,
+            467
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-63046e0 elementor-section-boxed elementor-section-height-default elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "40px 0px 40px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              3852,
+              1270,
+              387
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                3852,
+                324,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-55e7902",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  3852,
+                  324,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    3862,
+                    304,
+                    300
+                   ],
+                   "cls": "elementor-element elementor-element-c1de821 elementor-widget elementor-widget-theme-site-logo elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      3862,
+                      400,
+                      300
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "inline-block"
+                     },
+                     "href": "https://trecig.com/",
+                     "children": [
+                      {
+                       "t": "img",
+                       "box": [
+                        95,
+                        3862,
+                        400,
+                        300
+                       ],
+                       "cls": "attachment-full size-full wp-image-4268",
+                       "kind": "image",
+                       "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered.png",
+                       "alt": "",
+                       "natural": [
+                        1440,
+                        1080
+                       ],
+                       "objectFit": null,
+                       "style": {
+                        "display": "inline-block",
+                        "maxWidth": "400px",
+                        "overflow": "clip"
+                       },
+                       "loading": "auto"
+                      }
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    4182,
+                    134,
+                    47
+                   ],
+                   "cls": "elementor-button-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-grid",
+                    "gridCols": "134.078px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      95,
+                      4182,
+                      134,
+                      47
+                     ],
+                     "cls": "elementor-button elementor-button-link elementor-size-sm",
+                     "kind": "link",
+                     "text": "LET’S TALK",
+                     "style": {
+                      "position": "relative",
+                      "padding": "15px 30px 15px 30px",
+                      "borderRadius": "30px",
+                      "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "15px",
+                      "fontWeight": "400",
+                      "lineHeight": "15px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                409,
+                3852,
+                371,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cc0df83",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  459,
+                  3852,
+                  321,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 0px 0px 50px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    469,
+                    3862,
+                    301,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-5c243c8 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      469,
+                      3865,
+                      98,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "LET'S TALK:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    469,
+                    3906,
+                    301,
+                    52
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      3906,
+                      301,
+                      26
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "padding": "0px 0px 5px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        3906,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "(469)653-9009",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "tel:(254)%20338-6131",
+                       "marks": [
+                        {
+                         "text": "(469)653-9009",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      469,
+                      3937,
+                      301,
+                      21
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "margin": "5px 0px 0px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        469,
+                        3937,
+                        301,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "info@trecig.com",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "mailto:info@trecig.com",
+                       "marks": [
+                        {
+                         "text": "info@trecig.com",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                781,
+                3852,
+                310,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3c5eca3",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  781,
+                  3852,
+                  260,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 50px 0px 0px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    791,
+                    3862,
+                    240,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-ba65889 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      791,
+                      3865,
+                      101,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "TRECIG HQ:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    791,
+                    3906,
+                    240,
+                    42
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      791,
+                      3906,
+                      240,
+                      42
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        791,
+                        3906,
+                        110,
+                        42
+                       ],
+                       "cls": "elementor-icon-list-text",
+                       "kind": "text",
+                       "text": "Rockwall, Texas, United States",
+                       "style": {
+                        "transition": "color 0.3s ease",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                1090,
+                3852,
+                264,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b8e2fd",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  1090,
+                  3852,
+                  264,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    1100,
+                    3862,
+                    244,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-f24dba3 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      1100,
+                      3865,
+                      174,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "CONNECT WITH US:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "a",
+                   "box": [
+                    1100,
+                    3906,
+                    32,
+                    32
+                   ],
+                   "cls": "elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-f3c190e",
+                   "kind": "link",
+                   "text": "Linkedin-in",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(0, 0, 0)",
+                    "borderRadius": "100%",
+                    "textAlign": "center",
+                    "transition": "all 0.3s ease",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "16px",
+                    "color": "rgb(105, 114, 125)"
+                   },
+                   "href": "https://trecig.com/jobs/cloud-seme-sme-joint-base-lewis-mcchord-jblm-washington/#",
+                   "target": "_blank",
+                   "icons": [
+                    {
+                     "icon": "e-font-icon-svg e-fab-linkedin-in",
+                     "w": 16
+                    }
+                   ],
+                   "wrapped": [
+                    "span.elementor-grid-item",
+                    "div.elementor-social-icons-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "section",
+           "box": [
+            85,
+            4279,
+            1270,
+            131
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-d1f66c7 elementor-section-content-middle elementor-section-boxed elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "15px 0px 15px 0px",
+            "border": "1px 0px 0px 0px solid rgba(0, 0, 0, 0.2)"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              85,
+              4295,
+              1270,
+              100
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "maxWidth": "1270px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                85,
+                4295,
+                1270,
+                100
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-221bad1",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  85,
+                  4295,
+                  1270,
+                  100
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    95,
+                    4305,
+                    1250,
+                    10
+                   ],
+                   "cls": "elementor-element elementor-element-f8c3a82 elementor-icon-list--layout-inline elementor-align-center thgf elementor-list-item-link-full_width elementor-widget …",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      95,
+                      4305,
+                      1250,
+                      20
+                     ],
+                     "cls": "elementor-widget-container",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px -10px 0px",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                     },
+                     "children": [
+                      {
+                       "t": "ul",
+                       "box": [
+                        87,
+                        4305,
+                        1266,
+                        20
+                       ],
+                       "cls": "elementor-icon-list-items elementor-inline-items",
+                       "kind": "list",
+                       "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justify": "center",
+                        "gap": "30px",
+                        "margin": "0px -8px 0px -8px",
+                        "textAlign": "center"
+                       },
+                       "children": [
+                        {
+                         "t": "li",
+                         "box": [
+                          589,
+                          4305,
+                          89,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            589,
+                            4305,
+                            88,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Privacy Policy",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/privacy-policy/",
+                           "marks": [
+                            {
+                             "text": "Privacy Policy",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "li",
+                         "box": [
+                          724,
+                          4305,
+                          127,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            724,
+                            4305,
+                            127,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Terms & Conditions",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/terms-conditions/",
+                           "marks": [
+                            {
+                             "text": "Terms & Conditions",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    95,
+                    4334,
+                    1250,
+                    36
+                   ],
+                   "kind": "text",
+                   "text": "©2026 TRECIG, LLC",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "lineHeight": "18px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   },
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "footer.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    1348,
+    875,
+    92,
+    38
+   ],
+   "id": "trustedsite-tm-image",
+   "kind": "box",
+   "style": {
+    "position": "fixed",
+    "bg": "rgb(255, 255, 255)",
+    "bgImage": "url(\"https://cdn.ywxi.net/meter/trecig.com/205.svg?ts=1784975038086&l=en\")",
+    "bgSize": "92px 38px",
+    "bgPos": "50% 50%",
+    "bgRepeat": "no-repeat",
+    "borderRadius": "2px 0px 0px",
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 5px 0px",
+    "overflow": "hidden",
+    "zIndex": "1000003",
+    "transition": "bottom 1s linear"
+   },
+   "empty": true
+  }
+ ]
+}

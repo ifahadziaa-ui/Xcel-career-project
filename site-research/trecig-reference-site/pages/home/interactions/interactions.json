@@ -1,0 +1,319 @@
+{
+ "url": "https://trecig.com/",
+ "dropdowns": [
+  {
+   "label": "ABOUT",
+   "items": [
+    "THE MISSION",
+    "THE VALUES",
+    "THE LEGACY",
+    "THE TRECIG TEAM",
+    "CAREERS"
+   ],
+   "visible": true,
+   "box": [
+    703,
+    117,
+    200,
+    200
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "shadow": "none",
+   "border": "0px solid rgb(51, 51, 51)",
+   "radius": "0px",
+   "padding": "0px",
+   "minWidth": "200px",
+   "link": {
+    "font": "Poppins",
+    "size": "13px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "padding": "10px",
+    "transform": "uppercase",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "subHover": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(178, 34, 57)"
+   },
+   "shot": "dropdown-0.png",
+   "openedBy": "click (hover did not open it in automated Chrome)"
+  },
+  {
+   "label": "AWARDS & RECOGNITION",
+   "items": [
+    "PARTNERSHIPS"
+   ],
+   "visible": true,
+   "box": [
+    803,
+    117,
+    200,
+    40
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "shadow": "none",
+   "border": "0px solid rgb(51, 51, 51)",
+   "radius": "0px",
+   "padding": "0px",
+   "minWidth": "200px",
+   "link": {
+    "font": "Poppins",
+    "size": "13px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "padding": "10px",
+    "transform": "uppercase",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "subHover": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(178, 34, 57)"
+   },
+   "shot": "dropdown-1.png",
+   "openedBy": "click (hover did not open it in automated Chrome)"
+  },
+  {
+   "label": "EXPERTISE",
+   "items": [
+    "INDUSTRIES WE SERVE"
+   ],
+   "visible": true,
+   "box": [
+    1028,
+    117,
+    200,
+    40
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "shadow": "none",
+   "border": "0px solid rgb(51, 51, 51)",
+   "radius": "0px",
+   "padding": "0px",
+   "minWidth": "200px",
+   "link": {
+    "font": "Poppins",
+    "size": "13px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)",
+    "padding": "10px",
+    "transform": "uppercase",
+    "bg": "rgba(0, 0, 0, 0)"
+   },
+   "subHover": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgb(178, 34, 57)"
+   },
+   "shot": "dropdown-2.png",
+   "openedBy": "click (hover did not open it in automated Chrome)"
+  }
+ ],
+ "hovers": [
+  {
+   "selector": "a.elementor-button",
+   "text": "CONTACT US",
+   "before": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "1px solid rgb(255, 255, 255)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "after": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "1px solid rgb(178, 34, 57)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "diff": {
+    "border": [
+     "1px solid rgb(255, 255, 255)",
+     "1px solid rgb(178, 34, 57)"
+    ]
+   },
+   "shots": [
+    "hover-00-before.png",
+    "hover-00-after.png"
+   ]
+  },
+  {
+   "selector": "a.elementor-button",
+   "text": "LEARN MORE",
+   "before": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "1px solid rgb(255, 255, 255)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "after": {
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "1px solid rgb(178, 34, 57)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "diff": {
+    "border": [
+     "1px solid rgb(255, 255, 255)",
+     "1px solid rgb(178, 34, 57)"
+    ]
+   },
+   "shots": [
+    "hover-01-before.png",
+    "hover-01-after.png"
+   ]
+  },
+  {
+   "selector": ".elementor-image-box-wrapper",
+   "text": "DEPARTMENT OF LABOR 2019 HIRE VETS GOLD AWARD",
+   "before": {
+    "color": "rgb(51, 51, 51)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(51, 51, 51)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all",
+    "imgTransform": "none",
+    "imgFilter": "none",
+    "imgOpacity": "1"
+   },
+   "after": {
+    "color": "rgb(51, 51, 51)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(51, 51, 51)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all",
+    "imgTransform": "none",
+    "imgFilter": "none",
+    "imgOpacity": "1"
+   },
+   "diff": {},
+   "shots": [
+    "hover-02-before.png",
+    "hover-02-after.png"
+   ]
+  },
+  {
+   "selector": ".elementor-image-box-wrapper",
+   "text": "DEPARTMENT OF LABOR 202O HIRE VETS GOL AWARD",
+   "before": {
+    "color": "rgb(51, 51, 51)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(51, 51, 51)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all",
+    "imgTransform": "none",
+    "imgFilter": "none",
+    "imgOpacity": "1"
+   },
+   "after": {
+    "color": "rgb(51, 51, 51)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(51, 51, 51)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all",
+    "imgTransform": "none",
+    "imgFilter": "none",
+    "imgOpacity": "1"
+   },
+   "diff": {},
+   "shots": [
+    "hover-03-before.png",
+    "hover-03-after.png"
+   ]
+  },
+  {
+   "selector": ".elementor-social-icon",
+   "text": "Linkedin-in",
+   "before": {
+    "color": "rgb(105, 114, 125)",
+    "bg": "rgb(0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(105, 114, 125)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "after": {
+    "color": "rgb(178, 34, 57)",
+    "bg": "rgb(178, 34, 57)",
+    "bgImage": "none",
+    "border": "0px none rgb(178, 34, 57)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "0.3s"
+   },
+   "diff": {
+    "color": [
+     "rgb(105, 114, 125)",
+     "rgb(178, 34, 57)"
+    ],
+    "bg": [
+     "rgb(0, 0, 0)",
+     "rgb(178, 34, 57)"
+    ],
+    "border": [
+     "0px none rgb(105, 114, 125)",
+     "0px none rgb(178, 34, 57)"
+    ]
+   },
+   "shots": [
+    "hover-04-before.png",
+    "hover-04-after.png"
+   ]
+  },
+  {
+   "selector": "footer a[href^=tel]",
+   "text": "(469)653-9009",
+   "before": {
+    "color": "rgb(204, 51, 102)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(204, 51, 102)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all"
+   },
+   "after": {
+    "color": "rgb(178, 34, 57)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgImage": "none",
+    "border": "0px none rgb(178, 34, 57)",
+    "shadow": "none",
+    "transform": "none",
+    "transition": "all"
+   },
+   "diff": {
+    "color": [
+     "rgb(204, 51, 102)",
+     "rgb(178, 34, 57)"
+    ],
+    "border": [
+     "0px none rgb(204, 51, 102)",
+     "0px none rgb(178, 34, 57)"
+    ]
+   },
+   "shots": [
+    "hover-05-before.png",
+    "hover-05-after.png"
+   ]
+  }
+ ]
+}

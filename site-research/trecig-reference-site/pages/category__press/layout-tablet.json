@@ -1,0 +1,2278 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  820,
+  4669
+ ],
+ "cls": "archive category category-press category-6 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-elementor-defa…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)",
+  "overflow": "clip visible"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -160001,
+    1,
+    1
+   ],
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)"
+   },
+   "href": "https://trecig.com/category/press/#content"
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    0,
+    820,
+    170
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-822c65c header-op elementor-section-boxed elementor-section-height-default",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "bg": "rgb(255, 255, 255)",
+    "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 12px 0px",
+    "zIndex": "9999",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      820,
+      170
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "flexWrap": "wrap",
+      "maxWidth": "1024px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        820,
+        170
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcdf656",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          0,
+          820,
+          170
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            0,
+            0,
+            820,
+            170
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "maxWidth": "1024px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              0,
+              82,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-28afa55",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                0,
+                82,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  10,
+                  10,
+                  200,
+                  150
+                 ],
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "textAlign": "center"
+                 },
+                 "href": "https://trecig.com/",
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    10,
+                    10,
+                    200,
+                    150
+                   ],
+                   "cls": "attachment-full size-full wp-image-4268",
+                   "kind": "image",
+                   "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered-1024x768.png",
+                   "alt": "",
+                   "natural": [
+                    820,
+                    615
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline-block",
+                    "maxWidth": "200px",
+                    "overflow": "clip",
+                    "textAlign": "center"
+                   },
+                   "loading": "auto"
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-widget-container",
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              82,
+              0,
+              738,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-47a739a",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                82,
+                0,
+                738,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  92,
+                  75,
+                  718,
+                  20
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "ul",
+                   "box": [
+                    98,
+                    75,
+                    712,
+                    20
+                   ],
+                   "id": "menu-1-7176f17",
+                   "cls": "elementor-nav-menu",
+                   "kind": "list",
+                   "style": {
+                    "display": "flex",
+                    "position": "relative",
+                    "flexWrap": "wrap",
+                    "justify": "flex-end",
+                    "margin": "0px 0px 0px 6.23438px",
+                    "zIndex": "2"
+                   },
+                   "pseudo": {
+                    "::after": {
+                     "content": "\" \"",
+                     "w": "0px",
+                     "h": "0px",
+                     "bg": null,
+                     "bgImage": null,
+                     "position": null,
+                     "opacity": null
+                    }
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      98,
+                      75,
+                      40,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "HOME",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 0px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      168,
+                      75,
+                      70,
+                      20
+                     ],
+                     "id": "sm-1794080732834845-1",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "ABOUT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/about/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      268,
+                      75,
+                      195,
+                      20
+                     ],
+                     "id": "sm-1794080732834845-3",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "AWARDS & RECOGNITION",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/awards-recognition/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      493,
+                      75,
+                      90,
+                      20
+                     ],
+                     "id": "sm-1794080732834845-5",
+                     "cls": "elementor-item has-submenu",
+                     "kind": "link",
+                     "text": "EXPERTISE",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/expertise/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      613,
+                      75,
+                      100,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "PRESS & MEDIA",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 15px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/press-media/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    },
+                    {
+                     "t": "a",
+                     "box": [
+                      743,
+                      75,
+                      67,
+                      20
+                     ],
+                     "cls": "elementor-item",
+                     "kind": "link",
+                     "text": "CONTACT",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "flexGrow": "1",
+                      "margin": "0px 0px 0px 15px",
+                      "transition": "all 0.4s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "20px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/",
+                     "wrapped": [
+                      "li.menu-item"
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "nav.elementor-nav-menu--main"
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "header.elementor"
+   ]
+  },
+  {
+   "t": "main",
+   "box": [
+    110,
+    178,
+    600,
+    3878
+   ],
+   "id": "content",
+   "cls": "site-main",
+   "kind": "box",
+   "style": {
+    "margin": "0px 110px 0px 110px",
+    "maxWidth": "600px"
+   },
+   "children": [
+    {
+     "t": "h1",
+     "box": [
+      110,
+      178,
+      600,
+      48
+     ],
+     "cls": "entry-title",
+     "kind": "text",
+     "text": "Category: Press",
+     "style": {
+      "margin": "8px 0px 16px 0px",
+      "maxWidth": "600px",
+      "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "lineHeight": "48px",
+      "color": "rgb(51, 51, 51)"
+     },
+     "wrapped": [
+      "div.page-header"
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      110,
+      242,
+      600,
+      3814
+     ],
+     "cls": "page-content",
+     "kind": "box",
+     "style": {},
+     "children": [
+      {
+       "t": "article",
+       "box": [
+        110,
+        242,
+        600,
+        594
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          242,
+          600,
+          77
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            239,
+            584,
+            81
+           ],
+           "kind": "link",
+           "text": "Using An International Branding Firm To Boost Your Brand Globally",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/using-an-international-branding-firm-to-boost-your-brand-globally/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          717,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/using-an-international-branding-firm-to-boost-your-brand-globally/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            335,
+            600,
+            400
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2024/08/night_mission-1024x682.jpg",
+           "alt": "",
+           "natural": [
+            800,
+            532
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          740,
+          600,
+          96
+         ],
+         "kind": "text",
+         "text": "Brands are quickly realizing the need to take their products and services online and reach a global marketplace. Having access to a global marketplace and servicing can be a challenging task to take on if, prior to Covid-19, your focus was based on a local or regional clientele. As an entrepreneur, aspiring entrepreneur or a […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "box": [
+        110,
+        851,
+        600,
+        570
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          851,
+          600,
+          77
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            848,
+            590,
+            81
+           ],
+           "kind": "link",
+           "text": "Be a Happier and Healthier Entrepreneur in 2021",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/be-a-happier-and-healthier-entrepreneur-in-2021/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          1302,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/be-a-happier-and-healthier-entrepreneur-in-2021/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            944,
+            600,
+            375
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2024/08/1920X1200_2-1024x640.jpg",
+           "alt": "",
+           "natural": [
+            800,
+            500
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          1325,
+          600,
+          96
+         ],
+         "kind": "text",
+         "text": "As 2021 is about to begin, many will choose to make healthy living part of their lifestyle. Help your team and lead by example. Merriam-Webster dictionary defines an entrepreneur as “a person who starts a business and is willing to risk loss to make money.” This is why entrepreneurs should lead by example and show […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "box": [
+        110,
+        1435,
+        600,
+        595
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          1435,
+          600,
+          77
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            1432,
+            542,
+            81
+           ],
+           "kind": "link",
+           "text": "Does Your Business Have A Strong Advisory Team Behind The Numbers?",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/does-your-business-have-a-strong-advisory-team-behind-the-numbers/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          1911,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/does-your-business-have-a-strong-advisory-team-behind-the-numbers/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            1528,
+            600,
+            400
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2024/08/compass-2779371_960_720.jpg",
+           "alt": "",
+           "natural": [
+            800,
+            533
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          1934,
+          600,
+          96
+         ],
+         "kind": "text",
+         "text": "Does your business have a trusted advisory group around your founders and/or high-level leadership? Do you have someone or a close-knit group of people who will tell you their unbiased views and who have your best interests at heart and no other motive than to see you succeed? You want to have people who will […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "box": [
+        110,
+        2044,
+        600,
+        595
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          2044,
+          600,
+          77
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            2041,
+            561,
+            81
+           ],
+           "kind": "link",
+           "text": "The Importance Of Being Ethical While Building Your Brand",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/the-importance-of-being-ethical-while-building-your-brand/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          2520,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/the-importance-of-being-ethical-while-building-your-brand/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            2137,
+            600,
+            400
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2021/04/shutterstock_1110506087-1.png",
+           "alt": "",
+           "natural": [
+            458,
+            500
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          2543,
+          600,
+          96
+         ],
+         "kind": "text",
+         "text": "Ethics relates to a set of moral principles reaffirming a group. Building a brand based on solid moral principles and then following through via actions — from how you handle a new customer to how you treat the most junior member on your team — should be the foundational stone of everything your business seeks […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "box": [
+        110,
+        2653,
+        600,
+        772
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          2653,
+          600,
+          230
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            2650,
+            577,
+            235
+           ],
+           "kind": "link",
+           "text": "Paul L. Gunn, Jr. to contribute to MindStirring Business Secrets: Top Business Professionals Reveal Their Best Secrets to Wealth & Success, a new anthology book with Shark Tank’s Kevin Harrington",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/paul-l-gunn-jr-to-contribute-to-mindstirring-business-secrets-top-business-professionals-reveal-their-best-secrets-to-wealth-success-a-new-anthology-book-with-shark-tanks-kevin-harring/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          3282,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/paul-l-gunn-jr-to-contribute-to-mindstirring-business-secrets-top-business-professionals-reveal-their-best-secrets-to-wealth-success-a-new-anthology-book-with-shark-tanks-kevin-harring/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            2900,
+            600,
+            400
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2024/08/drone-1024x682.jpg",
+           "alt": "",
+           "natural": [
+            800,
+            532
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          3305,
+          600,
+          120
+         ],
+         "kind": "text",
+         "text": "Paul L. Gunn, Jr. to contribute to MindStirring Business Secrets: Top Business Professionals Reveal Their Best Secrets to Wealth & Success, a new anthology book with Shark Tank’s Kevin Harrington Jul 29, 2021 (AB Digital via COMTEX) — As part of a forthcoming anthology curated by entrepreneur and executive, Shark Tank’s Kevin Harrington, Paul L.Gunn, […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "box": [
+        110,
+        3440,
+        600,
+        617
+       ],
+       "cls": "post",
+       "kind": "box",
+       "style": {},
+       "children": [
+        {
+         "t": "h2",
+         "box": [
+          110,
+          3440,
+          600,
+          77
+         ],
+         "cls": "entry-title",
+         "kind": "box",
+         "style": {
+          "margin": "8px 0px 16px 0px"
+         },
+         "children": [
+          {
+           "t": "a",
+           "box": [
+            110,
+            3437,
+            592,
+            81
+           ],
+           "kind": "link",
+           "text": "KUOG Corporation Ranks No. 273 on the 2021 Inc. 5000",
+           "style": {
+            "display": "inline",
+            "width": "auto",
+            "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "fontSize": "32px",
+            "fontWeight": "500",
+            "lineHeight": "38.4px",
+            "color": "rgb(204, 51, 102)"
+           },
+           "href": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/"
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "box": [
+          110,
+          3913,
+          600,
+          21
+         ],
+         "kind": "box",
+         "style": {
+          "display": "inline",
+          "width": "auto"
+         },
+         "href": "https://trecig.com/kuog-corporation-ranks-no-273-on-the-2021-inc-5000/",
+         "children": [
+          {
+           "t": "img",
+           "box": [
+            110,
+            3532,
+            600,
+            398
+           ],
+           "cls": "attachment-large size-large wp-post-image",
+           "kind": "image",
+           "src": "https://trecig.com/wp-content/uploads/2021/05/fighter-jet-1013_1920-1024x679.jpg",
+           "alt": "",
+           "natural": [
+            800,
+            530
+           ],
+           "objectFit": "cover",
+           "style": {
+            "display": "inline",
+            "maxWidth": "100%",
+            "overflow": "clip"
+           },
+           "loading": "auto"
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "box": [
+          110,
+          3936,
+          600,
+          120
+         ],
+         "kind": "text",
+         "text": "Inc. magazine today revealed that KUOG Corporation is No. 273 on its annual Inc. 5000 list, the most prestigious ranking of the nation’s fastest-growing private companies. The list represents a unique look at the most successful companies within the American economy’s most dynamic segment—its independent small businesses. Intuit, Zappos, Under Armour, Microsoft, Patagonia, and many […]",
+         "style": {
+          "margin": "0px 0px 14.4px 0px",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(51, 51, 51)"
+         }
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    4071,
+    820,
+    598
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-4924328 footer-op elementor-section-boxed elementor-section-height-default elementor…",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      4071,
+      820,
+      598
+     ],
+     "cls": "elementor-background-video-container elementor-hidden-mobile",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "overflow": "hidden",
+      "zIndex": "0",
+      "transition": "opacity 1s ease"
+     },
+     "children": [
+      {
+       "t": "iframe",
+       "box": [
+        -121,
+        4071,
+        1063,
+        598
+       ],
+       "id": "widget2",
+       "cls": "elementor-background-video-embed",
+       "kind": "iframe",
+       "src": "https://www.youtube.com/embed/OzwCnEEadts?controls=0&rel=0&playsinline=1&cc_load_policy=0&enablejsapi=1&origin=https%3A%2F%2Ftrecig.com&widgetid=1&forigin=https%3A%2F%2Ftrecig.com%2Fcategory%2Fpress%2F&aoriginsup=1&vf=1",
+       "title": "Triceg   Expertise Slider 1",
+       "style": {
+        "position": "absolute",
+        "overflow": "clip",
+        "transform": "matrix(1, 0, 0, 1, -531.453, -298.945)"
+       }
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      4071,
+      820,
+      598
+     ],
+     "cls": "elementor-background-overlay",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "bg": "rgb(255, 255, 255)",
+      "opacity": "0.7",
+      "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+     },
+     "empty": true
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      4071,
+      820,
+      598
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "flexWrap": "wrap",
+      "maxWidth": "1024px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        4071,
+        820,
+        598
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-536561f",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          4071,
+          820,
+          598
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "section",
+           "box": [
+            0,
+            4071,
+            820,
+            467
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-63046e0 elementor-section-boxed elementor-section-height-default elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "40px 0px 40px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              4111,
+              820,
+              387
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "maxWidth": "1024px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                4111,
+                210,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-55e7902",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  4111,
+                  210,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    4121,
+                    190,
+                    300
+                   ],
+                   "cls": "elementor-element elementor-element-c1de821 elementor-widget elementor-widget-theme-site-logo elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      10,
+                      4121,
+                      400,
+                      300
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "inline-block"
+                     },
+                     "href": "https://trecig.com/",
+                     "children": [
+                      {
+                       "t": "img",
+                       "box": [
+                        10,
+                        4121,
+                        400,
+                        300
+                       ],
+                       "cls": "attachment-full size-full wp-image-4268",
+                       "kind": "image",
+                       "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered-1024x768.png",
+                       "alt": "",
+                       "natural": [
+                        820,
+                        615
+                       ],
+                       "objectFit": null,
+                       "style": {
+                        "display": "inline-block",
+                        "maxWidth": "400px",
+                        "overflow": "clip"
+                       },
+                       "loading": "auto"
+                      }
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    4441,
+                    134,
+                    47
+                   ],
+                   "cls": "elementor-button-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-grid",
+                    "gridCols": "134.078px"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      10,
+                      4441,
+                      134,
+                      47
+                     ],
+                     "cls": "elementor-button elementor-button-link elementor-size-sm",
+                     "kind": "link",
+                     "text": "LET’S TALK",
+                     "style": {
+                      "position": "relative",
+                      "padding": "15px 30px 15px 30px",
+                      "borderRadius": "30px",
+                      "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "15px",
+                      "fontWeight": "400",
+                      "lineHeight": "15px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                210,
+                4111,
+                240,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cc0df83",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  260,
+                  4111,
+                  190,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 0px 0px 50px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    270,
+                    4121,
+                    170,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-5c243c8 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      270,
+                      4124,
+                      98,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "LET'S TALK:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    270,
+                    4165,
+                    170,
+                    52
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      270,
+                      4165,
+                      170,
+                      26
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "padding": "0px 0px 5px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        270,
+                        4165,
+                        170,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "(469)653-9009",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "tel:(254)%20338-6131",
+                       "marks": [
+                        {
+                         "text": "(469)653-9009",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      270,
+                      4196,
+                      170,
+                      21
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "margin": "5px 0px 0px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        270,
+                        4196,
+                        170,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "info@trecig.com",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "mailto:info@trecig.com",
+                       "marks": [
+                        {
+                         "text": "info@trecig.com",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                449,
+                4111,
+                200,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3c5eca3",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  449,
+                  4111,
+                  150,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px",
+                  "margin": "0px 50px 0px 0px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    459,
+                    4121,
+                    130,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-ba65889 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      459,
+                      4124,
+                      101,
+                      18
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "TRECIG HQ:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    459,
+                    4165,
+                    130,
+                    42
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      459,
+                      4165,
+                      130,
+                      42
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        459,
+                        4165,
+                        110,
+                        42
+                       ],
+                       "cls": "elementor-icon-list-text",
+                       "kind": "text",
+                       "text": "Rockwall, Texas, United States",
+                       "style": {
+                        "transition": "color 0.3s ease",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                649,
+                4111,
+                171,
+                387
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b8e2fd",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  649,
+                  4111,
+                  171,
+                  387
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    659,
+                    4121,
+                    151,
+                    39
+                   ],
+                   "cls": "elementor-element elementor-element-f24dba3 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      659,
+                      4121,
+                      151,
+                      36
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "CONNECT WITH US:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "18px",
+                      "fontWeight": "700",
+                      "lineHeight": "18px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "a",
+                   "box": [
+                    659,
+                    4180,
+                    32,
+                    32
+                   ],
+                   "cls": "elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-f3c190e",
+                   "kind": "link",
+                   "text": "Linkedin-in",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(0, 0, 0)",
+                    "borderRadius": "100%",
+                    "textAlign": "center",
+                    "transition": "all 0.3s ease",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "16px",
+                    "color": "rgb(105, 114, 125)"
+                   },
+                   "href": "https://trecig.com/category/press/#",
+                   "target": "_blank",
+                   "icons": [
+                    {
+                     "icon": "e-font-icon-svg e-fab-linkedin-in",
+                     "w": 16
+                    }
+                   ],
+                   "wrapped": [
+                    "span.elementor-grid-item",
+                    "div.elementor-social-icons-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "section",
+           "box": [
+            0,
+            4538,
+            820,
+            131
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-d1f66c7 elementor-section-content-middle elementor-section-boxed elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "15px 0px 15px 0px",
+            "border": "1px 0px 0px 0px solid rgba(0, 0, 0, 0.2)"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              4554,
+              820,
+              100
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "maxWidth": "1024px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                4554,
+                820,
+                100
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-221bad1",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  4554,
+                  820,
+                  100
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    4564,
+                    800,
+                    10
+                   ],
+                   "cls": "elementor-element elementor-element-f8c3a82 elementor-icon-list--layout-inline elementor-align-center thgf elementor-list-item-link-full_width elementor-widget …",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      10,
+                      4564,
+                      800,
+                      20
+                     ],
+                     "cls": "elementor-widget-container",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px -10px 0px",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                     },
+                     "children": [
+                      {
+                       "t": "ul",
+                       "box": [
+                        2,
+                        4564,
+                        816,
+                        20
+                       ],
+                       "cls": "elementor-icon-list-items elementor-inline-items",
+                       "kind": "list",
+                       "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justify": "center",
+                        "gap": "30px",
+                        "margin": "0px -8px 0px -8px",
+                        "textAlign": "center"
+                       },
+                       "children": [
+                        {
+                         "t": "li",
+                         "box": [
+                          279,
+                          4564,
+                          89,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            279,
+                            4564,
+                            88,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Privacy Policy",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/privacy-policy/",
+                           "marks": [
+                            {
+                             "text": "Privacy Policy",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "li",
+                         "box": [
+                          414,
+                          4564,
+                          127,
+                          20
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 8px 0px 8px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            414,
+                            4564,
+                            127,
+                            20
+                           ],
+                           "kind": "link",
+                           "text": "Terms & Conditions",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "13px",
+                            "fontWeight": "400",
+                            "lineHeight": "19.5px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/terms-conditions/",
+                           "marks": [
+                            {
+                             "text": "Terms & Conditions",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    10,
+                    4593,
+                    800,
+                    36
+                   ],
+                   "kind": "text",
+                   "text": "©2026 TRECIG, LLC",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "12px",
+                    "fontWeight": "400",
+                    "lineHeight": "18px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   },
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "footer.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    728,
+    1155,
+    92,
+    38
+   ],
+   "id": "trustedsite-tm-image",
+   "kind": "box",
+   "style": {
+    "position": "fixed",
+    "bg": "rgb(255, 255, 255)",
+    "bgImage": "url(\"https://cdn.ywxi.net/meter/trecig.com/205.svg?ts=1784975038086&l=en\")",
+    "bgSize": "92px 38px",
+    "bgPos": "50% 50%",
+    "bgRepeat": "no-repeat",
+    "borderRadius": "2px 0px 0px",
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 5px 0px",
+    "overflow": "hidden",
+    "zIndex": "1000003",
+    "transition": "bottom 1s linear"
+   },
+   "empty": true
+  }
+ ]
+}

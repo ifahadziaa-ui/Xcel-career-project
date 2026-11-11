@@ -1,0 +1,72 @@
+Skip to content
+HOME
+ABOUT
+AWARDS & RECOGNITION
+EXPERTISE
+PRESS & MEDIA
+CONTACT
+DEVOPS SUPPORT SME — MACDILL AFB, FL
+HOME
+CAREERS
+DEVOPS SUPPORT SME — MACDILL AFB, FL
+Position Summary
+
+TRECIG, LLC is seeking a DevOps Support Subject Matter Expert to support the Segmented Enterprise Mission Environment (SEME) in service of United States Special Operations Command and its subordinate commands. The SME integrates operations and development activities across supported teams, drives automation that reduces repetitive workload, and sustains the reliability and security of the SEME architecture across its development, test, and production enclaves. This is a hands-on engineering role for a senior practitioner who combines deep operational expertise with a forward-thinking approach to platform modernization in a classified mission environment.
+
+Key Responsibilities
+Integrate operations and development activities across supported government and contractor teams to ensure unified delivery within the SEME architecture.
+Apply expertise on current operating environments and a forward-thinking mindset to recommend technologies that enhance the SEME architecture.
+Deploy software updates, patches, and fixes across development, test, and production enclaves in accordance with change management procedures.
+Reduce repetitive operational and administrative tasks through scripting, pipeline automation, and infrastructure-as-code practices.
+Perform root cause analysis of production errors and resolve technical issues across the supported infrastructure.
+Support containerized platforms using Kubernetes, OpenShift, Docker, or similar technologies, including orchestration, scaling, and lifecycle management.
+Implement and maintain configuration management solutions to enforce consistent, auditable system states.
+Ensure compliance with organizational security policies, accreditation requirements, and applicable government regulations.
+Manage classification, certificates, encryption, and privileged access controls across the supported environment.
+Develop operational documentation, runbooks, and recovery procedures to support sustained operations and continuity.
+Participate in incident response, root cause analysis, and continuous improvement initiatives to strengthen system reliability and security posture.
+Required Qualifications
+Active Top Secret clearance with Sensitive Compartmented Information (TS/SCI) eligibility, maintained throughout the period of performance.
+CompTIA Security+ certification, current and active, satisfying DoD 8570 / 8140 IAT Level II baseline requirements.
+Microsoft Azure cloud certification at the associate level or higher, current and active (e.g., Azure Administrator Associate, Azure DevOps Engineer Expert, or equivalent role-based credential).
+Demonstrated hands-on experience integrating development and operations workflows in a DevOps or DevSecOps capacity.
+Practical experience administering and troubleshooting containerized platforms such as Kubernetes, OpenShift, or Docker in a production environment.
+Working knowledge of configuration management and infrastructure-as-code tooling such as Ansible, Terraform, Puppet, or Chef.
+Experience building and maintaining continuous integration and continuous delivery (CI/CD) pipelines.
+Familiarity with cybersecurity compliance frameworks and accreditation processes such as the Risk Management Framework (RMF) and applicable DoD security guidance.
+Education
+
+Bachelor’s degree in Computer Science, Information Technology, Information Systems, Engineering, or a related technical discipline. Equivalent professional experience and certifications will be considered in lieu of a degree on a case-by-case basis.
+
+Desired Qualifications
+Prior experience supporting USSOCOM, a SOCOM component command, or another DoD special operations or intelligence community customer.
+Experience operating within a Microsoft Azure or Azure Government cloud environment at scale.
+Scripting proficiency in PowerShell, Python, or Bash for automation and tooling.
+Experience with monitoring, logging, and observability tooling such as Prometheus, Grafana, the Elastic Stack, or Splunk.
+Knowledge of public key infrastructure (PKI), certificate lifecycle management, and encryption standards used in classified environments.
+Familiarity with cross-domain solutions and multi-enclave operations.
+JOB CATEGORY: DEVOPS ENGINEERING
+JOB TYPE: FULL TIME
+JOB LOCATION: MACDILL AFB (TAMPA FL)
+APPLY FOR THIS POSITION
+FULL NAME *
+EMAIL *
+PHONE *
+BIO *
+UPLOAD CV/RESUME *
+Allowed Type(s): .pdf, .doc, .docx
+BY USING THIS FORM YOU AGREE WITH THE STORAGE AND HANDLING OF YOUR DATA BY THIS WEBSITE. *
+LET’S TALK
+LET'S TALK:
+(469)653-9009
+info@trecig.com
+TRECIG HQ:
+Rockwall, Texas,
+United States
+CONNECT WITH US:
+Linkedin-in
+Privacy Policy
+Terms & Conditions
+
+©2026 TRECIG, LLC
+

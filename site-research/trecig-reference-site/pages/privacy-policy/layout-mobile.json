@@ -1,0 +1,2487 @@
+{
+ "t": "body",
+ "box": [
+  0,
+  0,
+  390,
+  3858
+ ],
+ "cls": "wp-singular page-template-default page page-id-2566 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-elementor-child hello-eleme…",
+ "kind": "box",
+ "style": {
+  "bg": "rgb(255, 255, 255)",
+  "overflow": "clip visible"
+ },
+ "children": [
+  {
+   "t": "a",
+   "box": [
+    -1,
+    -160001,
+    1,
+    1
+   ],
+   "cls": "skip-link screen-reader-text",
+   "kind": "link",
+   "text": "Skip to content",
+   "style": {
+    "position": "absolute",
+    "margin": "-1px -1px -1px -1px",
+    "overflow": "hidden",
+    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgb(204, 51, 102)"
+   },
+   "href": "https://trecig.com/privacy-policy/#content"
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    0,
+    390,
+    170
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-822c65c header-op elementor-section-boxed elementor-section-height-default",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "bg": "rgb(255, 255, 255)",
+    "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 12px 0px",
+    "zIndex": "9999",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      0,
+      390,
+      170
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "flexWrap": "wrap",
+      "maxWidth": "767px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        0,
+        390,
+        170
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bcdf656",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          0,
+          390,
+          170
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            0,
+            0,
+            390,
+            170
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "maxWidth": "767px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              0,
+              234,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-28afa55",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                0,
+                234,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  17,
+                  10,
+                  200,
+                  150
+                 ],
+                 "kind": "box",
+                 "style": {
+                  "display": "inline-block",
+                  "textAlign": "center"
+                 },
+                 "href": "https://trecig.com/",
+                 "children": [
+                  {
+                   "t": "img",
+                   "box": [
+                    17,
+                    10,
+                    200,
+                    150
+                   ],
+                   "cls": "attachment-full size-full wp-image-4268",
+                   "kind": "image",
+                   "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered-1024x768.png",
+                   "alt": "",
+                   "natural": [
+                    390,
+                    292
+                   ],
+                   "objectFit": null,
+                   "style": {
+                    "display": "inline-block",
+                    "maxWidth": "200px",
+                    "overflow": "clip",
+                    "textAlign": "center"
+                   },
+                   "loading": "auto"
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-widget-container",
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "box": [
+              234,
+              0,
+              156,
+              170
+             ],
+             "cls": "elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-47a739a",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                234,
+                0,
+                156,
+                170
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  244,
+                  70,
+                  136,
+                  30
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "flexDirection": "column",
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "nav",
+                   "box": [
+                    0,
+                    116,
+                    390,
+                    0
+                   ],
+                   "cls": "elementor-nav-menu--dropdown elementor-nav-menu__container",
+                   "kind": "box",
+                   "style": {
+                    "position": "absolute",
+                    "bg": "rgb(255, 255, 255)",
+                    "margin": "16px 0px 0px 0px",
+                    "overflow": "hidden",
+                    "zIndex": "9997",
+                    "transform": "matrix(1, 0, 0, 0, 0, 0)",
+                    "transition": "max-height, transform 0.3s, 0.3s ease, ease"
+                   },
+                   "children": [
+                    {
+                     "t": "ul",
+                     "box": [
+                      0,
+                      116,
+                      390,
+                      0
+                     ],
+                     "id": "menu-2-7176f17",
+                     "cls": "elementor-nav-menu",
+                     "kind": "list",
+                     "style": {
+                      "position": "relative",
+                      "zIndex": "2"
+                     },
+                     "pseudo": {
+                      "::after": {
+                       "content": "\" \"",
+                       "w": "390px",
+                       "h": "0px",
+                       "bg": null,
+                       "bgImage": null,
+                       "position": null,
+                       "opacity": null
+                      }
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "cls": "elementor-item",
+                       "kind": "link",
+                       "text": "HOME",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "id": "sm-17940803219767375-1",
+                       "cls": "elementor-item has-submenu",
+                       "kind": "link",
+                       "text": "ABOUT",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/about/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "id": "sm-17940803219767375-3",
+                       "cls": "elementor-item has-submenu",
+                       "kind": "link",
+                       "text": "AWARDS & RECOGNITION",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/awards-recognition/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "id": "sm-17940803219767375-5",
+                       "cls": "elementor-item has-submenu",
+                       "kind": "link",
+                       "text": "EXPERTISE",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/expertise/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "cls": "elementor-item",
+                       "kind": "link",
+                       "text": "PRESS & MEDIA",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/press-media/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      },
+                      {
+                       "t": "a",
+                       "box": [
+                        0,
+                        116,
+                        390,
+                        0
+                       ],
+                       "cls": "elementor-item",
+                       "kind": "link",
+                       "text": "CONTACT",
+                       "style": {
+                        "display": "flex",
+                        "position": "relative",
+                        "align": "center",
+                        "padding": "10px 20px 10px 20px",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "20px",
+                        "color": "rgb(0, 0, 0)",
+                        "textTransform": "uppercase"
+                       },
+                       "href": "https://trecig.com/contact/",
+                       "wrapped": [
+                        "li.menu-item"
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "header.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    0,
+    170,
+    390,
+    2998
+   ],
+   "cls": "elementor elementor-2566",
+   "kind": "box",
+   "style": {},
+   "children": [
+    {
+     "t": "section",
+     "box": [
+      0,
+      170,
+      390,
+      220
+     ],
+     "cls": "elementor-section elementor-top-section elementor-element elementor-element-72a9ecd elementor-section-height-min-height elementor-section-boxed elementor-sectio…",
+     "kind": "box",
+     "style": {
+      "position": "relative",
+      "bgImage": "url(\"https://trecig.com/wp-content/uploads/2024/09/LEGACY2-scaled.jpg\")",
+      "bgSize": "cover",
+      "bgPos": "50% 0%",
+      "bgRepeat": "no-repeat",
+      "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        170,
+        390,
+        220
+       ],
+       "cls": "elementor-background-overlay",
+       "kind": "box",
+       "style": {
+        "position": "absolute",
+        "bg": "rgb(0, 0, 0)",
+        "opacity": "0.5",
+        "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+       },
+       "empty": true
+      },
+      {
+       "t": "div",
+       "box": [
+        0,
+        170,
+        390,
+        220
+       ],
+       "cls": "elementor-container elementor-column-gap-default",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "flexWrap": "wrap",
+        "align": "center",
+        "maxWidth": "700px",
+        "minHeight": "220px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          215,
+          390,
+          130
+         ],
+         "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bf8d122",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "minHeight": "1px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            0,
+            255,
+            390,
+            90
+           ],
+           "cls": "elementor-widget-wrap elementor-element-populated",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "padding": "10px 10px 10px 10px",
+            "margin": "40px 0px 0px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              10,
+              265,
+              370,
+              29
+             ],
+             "cls": "elementor-element elementor-element-b98cd6e elementor-widget elementor-widget-heading",
+             "kind": "box",
+             "style": {
+              "position": "relative",
+              "margin": "0px 0px 20px 0px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "h2",
+               "box": [
+                77,
+                265,
+                236,
+                28
+               ],
+               "cls": "elementor-heading-title elementor-size-default",
+               "kind": "text",
+               "text": "PRIVACY POLICY",
+               "style": {
+                "display": "inline-block",
+                "textAlign": "center",
+                "fontFamily": "Poppins, sans-serif",
+                "fontSize": "28px",
+                "fontWeight": "800",
+                "lineHeight": "28px",
+                "color": "rgb(255, 255, 255)",
+                "textTransform": "uppercase"
+               },
+               "wrapped": [
+                "div.elementor-widget-container"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "ul",
+             "box": [
+              8,
+              314,
+              375,
+              21
+             ],
+             "cls": "elementor-icon-list-items elementor-inline-items",
+             "kind": "list",
+             "style": {
+              "display": "flex",
+              "flexWrap": "wrap",
+              "justify": "center",
+              "margin": "0px -2.5px 0px -2.5px",
+              "textAlign": "center"
+             },
+             "children": [
+              {
+               "t": "li",
+               "box": [
+                117,
+                314,
+                34,
+                21
+               ],
+               "cls": "elementor-icon-list-item elementor-inline-item",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "align": "center",
+                "margin": "0px 2.5px 0px 2.5px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "a",
+                 "box": [
+                  117,
+                  316,
+                  34,
+                  18
+                 ],
+                 "kind": "link",
+                 "text": "HOME",
+                 "style": {
+                  "display": "flex",
+                  "justify": "center",
+                  "align": "center",
+                  "textAlign": "center",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "lineHeight": "18px",
+                  "color": "rgb(204, 51, 102)",
+                  "textTransform": "uppercase"
+                 },
+                 "href": "https://trecig.com/",
+                 "marks": [
+                  {
+                   "text": "HOME",
+                   "color": "rgb(255, 255, 255)",
+                   "weight": null,
+                   "size": null,
+                   "bg": null,
+                   "family": null
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "li",
+               "box": [
+                157,
+                314,
+                116,
+                21
+               ],
+               "cls": "elementor-icon-list-item elementor-inline-item",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "justify": "center",
+                "align": "center",
+                "margin": "0px 2.5px 0px 2.5px",
+                "textAlign": "center"
+               },
+               "children": [
+                {
+                 "t": "span",
+                 "box": [
+                  174,
+                  316,
+                  99,
+                  18
+                 ],
+                 "cls": "elementor-icon-list-text",
+                 "kind": "text",
+                 "text": "PRIVACY POLICY",
+                 "style": {
+                  "padding": "0px 0px 0px 5px",
+                  "textAlign": "center",
+                  "transition": "color 0.3s ease",
+                  "fontFamily": "Poppins, sans-serif",
+                  "fontSize": "12px",
+                  "fontWeight": "400",
+                  "lineHeight": "18px",
+                  "color": "rgb(255, 255, 255)",
+                  "textTransform": "uppercase"
+                 }
+                }
+               ]
+              }
+             ],
+             "wrapped": [
+              "div.elementor-widget-container",
+              "div.elementor-element"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      390,
+      390,
+      2778
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "flexWrap": "wrap",
+      "maxWidth": "1000px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        390,
+        390,
+        2778
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-08ba09d",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          390,
+          390,
+          2778
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap",
+          "padding": "10px 10px 10px 10px"
+         },
+         "children": [
+          {
+           "t": "div",
+           "box": [
+            10,
+            400,
+            370,
+            2758
+           ],
+           "cls": "elementor-container elementor-column-gap-default",
+           "kind": "box",
+           "style": {
+            "display": "flex",
+            "position": "relative",
+            "flexWrap": "wrap",
+            "maxWidth": "767px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              10,
+              400,
+              370,
+              2758
+             ],
+             "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-74a5497",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "minHeight": "1px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                10,
+                400,
+                370,
+                2758
+               ],
+               "cls": "elementor-widget-wrap elementor-element-populated",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "flexWrap": "wrap",
+                "align": "center",
+                "padding": "10px 10px 10px 10px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  20,
+                  435,
+                  350,
+                  2698
+                 ],
+                 "cls": "elementor-widget-container",
+                 "kind": "box",
+                 "style": {
+                  "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                 },
+                 "children": [
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    435,
+                    350,
+                    29
+                   ],
+                   "kind": "text",
+                   "text": "WHO WE ARE",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    474,
+                    350,
+                    21
+                   ],
+                   "kind": "text",
+                   "text": "Our website address is: https://trecig.com.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    520,
+                    350,
+                    86
+                   ],
+                   "kind": "text",
+                   "text": "WHAT PERSONAL DATA WE COLLECT AND WHY WE COLLECT IT",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    616,
+                    350,
+                    116
+                   ],
+                   "kind": "text",
+                   "text": "COMMENTSWhen visitors leave comments on the site we collect the data shown in the comments form, and also the visitor’s IP address and browser user agent string to help spam detection.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "COMMENTS",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    747,
+                    350,
+                    147
+                   ],
+                   "kind": "text",
+                   "text": "An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    908,
+                    350,
+                    116
+                   ],
+                   "kind": "text",
+                   "text": "MEDIAIf you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "MEDIA",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1038,
+                    350,
+                    32
+                   ],
+                   "kind": "text",
+                   "text": "CONTACT FORMS",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "CONTACT FORMS",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1085,
+                    350,
+                    137
+                   ],
+                   "kind": "text",
+                   "text": "COOKIESIf you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "COOKIES",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1236,
+                    350,
+                    84
+                   ],
+                   "kind": "text",
+                   "text": "If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1335,
+                    350,
+                    147
+                   ],
+                   "kind": "text",
+                   "text": "When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select “Remember Me”, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1496,
+                    350,
+                    105
+                   ],
+                   "kind": "text",
+                   "text": "If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1615,
+                    350,
+                    164
+                   ],
+                   "kind": "text",
+                   "text": "EMBEDDED CONTENT FROM OTHER WEBSITESArticles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "EMBEDDED CONTENT FROM OTHER WEBSITES",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1794,
+                    350,
+                    126
+                   ],
+                   "kind": "text",
+                   "text": "These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    1934,
+                    350,
+                    32
+                   ],
+                   "kind": "text",
+                   "text": "ANALYTICS",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "ANALYTICS",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  },
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    1991,
+                    350,
+                    86
+                   ],
+                   "kind": "text",
+                   "text": "WHO WE SHARE YOUR DATA WITH & HOW LONG WE RETAIN YOUR DATA",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    2087,
+                    350,
+                    105
+                   ],
+                   "kind": "text",
+                   "text": "If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    2207,
+                    350,
+                    147
+                   ],
+                   "kind": "text",
+                   "text": "For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    2379,
+                    350,
+                    58
+                   ],
+                   "kind": "text",
+                   "text": "WHAT RIGHTS YOU HAVE OVER YOUR DATA",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    2446,
+                    350,
+                    168
+                   ],
+                   "kind": "text",
+                   "text": "If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    2629,
+                    350,
+                    63
+                   ],
+                   "kind": "text",
+                   "text": "Where we send your dataVisitor comments may be checked through an automated spam detection service.",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   }
+                  },
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    2717,
+                    350,
+                    58
+                   ],
+                   "kind": "text",
+                   "text": "YOUR CONTACT INFORMATION",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "h4",
+                   "box": [
+                    20,
+                    2799,
+                    350,
+                    29
+                   ],
+                   "kind": "text",
+                   "text": "ADDITIONAL INFORMATION",
+                   "style": {
+                    "margin": "25px 0px 10px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "24px",
+                    "fontWeight": "700",
+                    "lineHeight": "28.8px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   }
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    20,
+                    2838,
+                    350,
+                    295
+                   ],
+                   "kind": "text",
+                   "text": "HOW WE PROTECT YOUR DATAWHAT DATA BREACH PROCEDURES WE HAVE IN PLACEWHAT THIRD PARTIES WE RECEIVE DATA FROMWHAT AUTOMATED DECISION MAKING AND/OR PROFILING WE DO WITH USER DATAINDUSTRY REGULATORY DISCLOSURE REQUIREMENTS",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "14px",
+                    "fontWeight": "300",
+                    "lineHeight": "21px",
+                    "color": "rgb(0, 0, 0)"
+                   },
+                   "marks": [
+                    {
+                     "text": "HOW WE PROTECT YOUR DATA",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    },
+                    {
+                     "text": "WHAT DATA BREACH PROCEDURES WE HAVE IN PLACE",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    },
+                    {
+                     "text": "WHAT THIRD PARTIES WE RECEIVE DATA FROM",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    },
+                    {
+                     "text": "WHAT AUTOMATED DECISION MAKING AND/OR PROFILING WE DO WITH U",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    },
+                    {
+                     "text": "INDUSTRY REGULATORY DISCLOSURE REQUIREMENTS",
+                     "color": null,
+                     "weight": "600",
+                     "size": "18px",
+                     "bg": null,
+                     "family": null
+                    }
+                   ]
+                  }
+                 ],
+                 "wrapped": [
+                  "div.elementor-element"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ],
+           "wrapped": [
+            "section.elementor-section"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "wrapped": [
+      "section.elementor-section"
+     ]
+    }
+   ],
+   "wrapped": [
+    "div.page-content",
+    "main.site-main"
+   ]
+  },
+  {
+   "t": "section",
+   "box": [
+    0,
+    3168,
+    390,
+    690
+   ],
+   "cls": "elementor-section elementor-top-section elementor-element elementor-element-4924328 footer-op elementor-section-boxed elementor-section-height-default elementor…",
+   "kind": "box",
+   "style": {
+    "position": "relative",
+    "transition": "background, border, border-radius, box-shadow 0.3s, 0.3s, 0.3s, 0.3s ease, ease, ease, ease"
+   },
+   "children": [
+    {
+     "t": "div",
+     "box": [
+      0,
+      3168,
+      390,
+      690
+     ],
+     "cls": "elementor-background-overlay",
+     "kind": "box",
+     "style": {
+      "position": "absolute",
+      "bg": "rgb(255, 255, 255)",
+      "opacity": "0.7",
+      "transition": "background, border-radius, opacity 0.3s, 0.3s, 0.3s ease, ease, ease"
+     },
+     "empty": true
+    },
+    {
+     "t": "div",
+     "box": [
+      0,
+      3168,
+      390,
+      690
+     ],
+     "cls": "elementor-container elementor-column-gap-default",
+     "kind": "box",
+     "style": {
+      "display": "flex",
+      "position": "relative",
+      "flexWrap": "wrap",
+      "maxWidth": "767px"
+     },
+     "children": [
+      {
+       "t": "div",
+       "box": [
+        0,
+        3168,
+        390,
+        690
+       ],
+       "cls": "elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-536561f",
+       "kind": "box",
+       "style": {
+        "display": "flex",
+        "position": "relative",
+        "minHeight": "1px"
+       },
+       "children": [
+        {
+         "t": "div",
+         "box": [
+          0,
+          3168,
+          390,
+          690
+         ],
+         "cls": "elementor-widget-wrap elementor-element-populated",
+         "kind": "box",
+         "style": {
+          "display": "flex",
+          "position": "relative",
+          "flexWrap": "wrap"
+         },
+         "children": [
+          {
+           "t": "section",
+           "box": [
+            0,
+            3168,
+            390,
+            612
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-63046e0 elementor-section-boxed elementor-section-height-default elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "padding": "20px 0px 0px 0px"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              3188,
+              390,
+              592
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "maxWidth": "767px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                3188,
+                390,
+                380
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-55e7902",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  3188,
+                  390,
+                  380
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    3198,
+                    370,
+                    300
+                   ],
+                   "cls": "elementor-element elementor-element-c1de821 elementor-widget elementor-widget-theme-site-logo elementor-widget-image",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      10,
+                      3198,
+                      400,
+                      300
+                     ],
+                     "kind": "box",
+                     "style": {
+                      "display": "inline-block",
+                      "textAlign": "center"
+                     },
+                     "href": "https://trecig.com/",
+                     "children": [
+                      {
+                       "t": "img",
+                       "box": [
+                        10,
+                        3198,
+                        400,
+                        300
+                       ],
+                       "cls": "attachment-full size-full wp-image-4268",
+                       "kind": "image",
+                       "src": "https://trecig.com/wp-content/uploads/2026/10/TRECIG_Logo_Registered-1024x768.png",
+                       "alt": "",
+                       "natural": [
+                        390,
+                        292
+                       ],
+                       "objectFit": null,
+                       "style": {
+                        "display": "inline-block",
+                        "maxWidth": "400px",
+                        "overflow": "clip",
+                        "textAlign": "center"
+                       },
+                       "loading": "auto"
+                      }
+                     ],
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "div",
+                   "box": [
+                    135,
+                    3518,
+                    119,
+                    40
+                   ],
+                   "cls": "elementor-button-wrapper",
+                   "kind": "box",
+                   "style": {
+                    "display": "inline-grid",
+                    "gridCols": "119.281px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "a",
+                     "box": [
+                      135,
+                      3518,
+                      119,
+                      40
+                     ],
+                     "cls": "elementor-button elementor-button-link elementor-size-sm",
+                     "kind": "link",
+                     "text": "LET’S TALK",
+                     "style": {
+                      "position": "relative",
+                      "padding": "12px 25px 12px 25px",
+                      "borderRadius": "30px",
+                      "border": "1px 1px 1px 1px solid rgb(0, 0, 0)",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "all 0.3s ease",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "14px",
+                      "fontWeight": "400",
+                      "lineHeight": "14px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "href": "https://trecig.com/contact/"
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                0,
+                3568,
+                195,
+                116
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-cc0df83",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  3568,
+                  195,
+                  116
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    3578,
+                    175,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-5c243c8 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      10,
+                      3583,
+                      87,
+                      16
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "LET'S TALK:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "16px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    10,
+                    3622,
+                    175,
+                    52
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      10,
+                      3622,
+                      175,
+                      26
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "padding": "0px 0px 5px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        10,
+                        3622,
+                        175,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "(469)653-9009",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "tel:(254)%20338-6131",
+                       "marks": [
+                        {
+                         "text": "(469)653-9009",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    },
+                    {
+                     "t": "li",
+                     "box": [
+                      10,
+                      3653,
+                      175,
+                      21
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center",
+                      "margin": "5px 0px 0px 0px"
+                     },
+                     "children": [
+                      {
+                       "t": "a",
+                       "box": [
+                        10,
+                        3653,
+                        175,
+                        21
+                       ],
+                       "kind": "link",
+                       "text": "info@trecig.com",
+                       "style": {
+                        "display": "flex",
+                        "align": "center",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "600",
+                        "lineHeight": "21px",
+                        "color": "rgb(204, 51, 102)"
+                       },
+                       "href": "mailto:info@trecig.com",
+                       "marks": [
+                        {
+                         "text": "info@trecig.com",
+                         "color": "rgb(0, 0, 0)",
+                         "weight": null,
+                         "size": null,
+                         "bg": null,
+                         "family": null
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                195,
+                3568,
+                195,
+                116
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-3c5eca3",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  195,
+                  3568,
+                  195,
+                  116
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    205,
+                    3578,
+                    175,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-ba65889 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      205,
+                      3583,
+                      90,
+                      16
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "TRECIG HQ:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "16px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "ul",
+                   "box": [
+                    205,
+                    3622,
+                    175,
+                    42
+                   ],
+                   "cls": "elementor-icon-list-items",
+                   "kind": "list",
+                   "style": {},
+                   "children": [
+                    {
+                     "t": "li",
+                     "box": [
+                      205,
+                      3622,
+                      175,
+                      42
+                     ],
+                     "cls": "elementor-icon-list-item",
+                     "kind": "box",
+                     "style": {
+                      "display": "flex",
+                      "position": "relative",
+                      "align": "center"
+                     },
+                     "children": [
+                      {
+                       "t": "span",
+                       "box": [
+                        205,
+                        3622,
+                        175,
+                        42
+                       ],
+                       "cls": "elementor-icon-list-text",
+                       "kind": "text",
+                       "text": "Rockwall, Texas, United States",
+                       "style": {
+                        "transition": "color 0.3s ease",
+                        "fontFamily": "Poppins, sans-serif",
+                        "fontSize": "14px",
+                        "fontWeight": "400",
+                        "lineHeight": "21px",
+                        "color": "rgb(0, 0, 0)"
+                       }
+                      }
+                     ]
+                    }
+                   ],
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "div",
+               "box": [
+                0,
+                3684,
+                390,
+                96
+               ],
+               "cls": "elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-2b8e2fd",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  3684,
+                  390,
+                  96
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    3694,
+                    370,
+                    24
+                   ],
+                   "cls": "elementor-element elementor-element-f24dba3 elementor-widget elementor-widget-heading",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px"
+                   },
+                   "children": [
+                    {
+                     "t": "h2",
+                     "box": [
+                      10,
+                      3699,
+                      154,
+                      16
+                     ],
+                     "cls": "elementor-heading-title elementor-size-default",
+                     "kind": "text",
+                     "text": "CONNECT WITH US:",
+                     "style": {
+                      "display": "inline-block",
+                      "fontFamily": "Poppins, sans-serif",
+                      "fontSize": "16px",
+                      "fontWeight": "700",
+                      "lineHeight": "16px",
+                      "color": "rgb(0, 0, 0)",
+                      "textTransform": "uppercase"
+                     },
+                     "wrapped": [
+                      "div.elementor-widget-container"
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "a",
+                   "box": [
+                    10,
+                    3738,
+                    32,
+                    32
+                   ],
+                   "cls": "elementor-icon elementor-social-icon elementor-social-icon-linkedin-in elementor-repeater-item-f3c190e",
+                   "kind": "link",
+                   "text": "Linkedin-in",
+                   "style": {
+                    "display": "inline-flex",
+                    "justify": "center",
+                    "align": "center",
+                    "bg": "rgb(0, 0, 0)",
+                    "borderRadius": "100%",
+                    "textAlign": "center",
+                    "transition": "all 0.3s ease",
+                    "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+                    "fontSize": "16px",
+                    "fontWeight": "400",
+                    "lineHeight": "16px",
+                    "color": "rgb(105, 114, 125)"
+                   },
+                   "href": "https://trecig.com/privacy-policy/#",
+                   "target": "_blank",
+                   "icons": [
+                    {
+                     "icon": "e-font-icon-svg e-fab-linkedin-in",
+                     "w": 16
+                    }
+                   ],
+                   "wrapped": [
+                    "span.elementor-grid-item",
+                    "div.elementor-social-icons-wrapper",
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "section",
+           "box": [
+            0,
+            3780,
+            390,
+            78
+           ],
+           "cls": "elementor-section elementor-inner-section elementor-element elementor-element-d1f66c7 elementor-section-content-middle elementor-section-boxed elementor-section…",
+           "kind": "box",
+           "style": {
+            "position": "relative",
+            "border": "1px 0px 0px 0px solid rgba(0, 0, 0, 0.2)"
+           },
+           "children": [
+            {
+             "t": "div",
+             "box": [
+              0,
+              3781,
+              390,
+              77
+             ],
+             "cls": "elementor-container elementor-column-gap-default",
+             "kind": "box",
+             "style": {
+              "display": "flex",
+              "position": "relative",
+              "flexWrap": "wrap",
+              "maxWidth": "767px"
+             },
+             "children": [
+              {
+               "t": "div",
+               "box": [
+                0,
+                3781,
+                390,
+                77
+               ],
+               "cls": "elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-221bad1",
+               "kind": "box",
+               "style": {
+                "display": "flex",
+                "position": "relative",
+                "minHeight": "1px"
+               },
+               "children": [
+                {
+                 "t": "div",
+                 "box": [
+                  0,
+                  3781,
+                  390,
+                  77
+                 ],
+                 "cls": "elementor-widget-wrap elementor-element-populated",
+                 "kind": "box",
+                 "style": {
+                  "display": "flex",
+                  "position": "relative",
+                  "flexWrap": "wrap",
+                  "align": "center",
+                  "padding": "10px 10px 10px 10px"
+                 },
+                 "children": [
+                  {
+                   "t": "div",
+                   "box": [
+                    10,
+                    3791,
+                    370,
+                    8
+                   ],
+                   "cls": "elementor-element elementor-element-f8c3a82 elementor-icon-list--layout-inline elementor-align-center thgf elementor-list-item-link-full_width elementor-widget …",
+                   "kind": "box",
+                   "style": {
+                    "position": "relative",
+                    "margin": "0px 0px 20px 0px",
+                    "textAlign": "center"
+                   },
+                   "children": [
+                    {
+                     "t": "div",
+                     "box": [
+                      10,
+                      3791,
+                      370,
+                      18
+                     ],
+                     "cls": "elementor-widget-container",
+                     "kind": "box",
+                     "style": {
+                      "margin": "0px 0px -10px 0px",
+                      "overflow": "hidden",
+                      "textAlign": "center",
+                      "transition": "background, border, border-radius, box-shadow, transform 0.3s, 0.3s, 0.3s, 0.3s, 0.4s ease, ease, ease, ease, ease"
+                     },
+                     "children": [
+                      {
+                       "t": "ul",
+                       "box": [
+                        3,
+                        3791,
+                        385,
+                        18
+                       ],
+                       "cls": "elementor-icon-list-items elementor-inline-items",
+                       "kind": "list",
+                       "style": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justify": "center",
+                        "gap": "30px",
+                        "margin": "0px -7.5px 0px -7.5px",
+                        "textAlign": "center"
+                       },
+                       "children": [
+                        {
+                         "t": "li",
+                         "box": [
+                          73,
+                          3791,
+                          82,
+                          18
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 7.5px 0px 7.5px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            73,
+                            3791,
+                            81,
+                            18
+                           ],
+                           "kind": "link",
+                           "text": "Privacy Policy",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "12px",
+                            "fontWeight": "400",
+                            "lineHeight": "18px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/privacy-policy/",
+                           "marks": [
+                            {
+                             "text": "Privacy Policy",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "t": "li",
+                         "box": [
+                          200,
+                          3791,
+                          117,
+                          18
+                         ],
+                         "cls": "elementor-icon-list-item elementor-inline-item",
+                         "kind": "box",
+                         "style": {
+                          "display": "flex",
+                          "position": "relative",
+                          "justify": "center",
+                          "align": "center",
+                          "margin": "0px 7.5px 0px 7.5px",
+                          "textAlign": "center"
+                         },
+                         "children": [
+                          {
+                           "t": "a",
+                           "box": [
+                            200,
+                            3791,
+                            117,
+                            18
+                           ],
+                           "kind": "link",
+                           "text": "Terms & Conditions",
+                           "style": {
+                            "display": "flex",
+                            "justify": "center",
+                            "align": "center",
+                            "textAlign": "center",
+                            "fontFamily": "Poppins, sans-serif",
+                            "fontSize": "12px",
+                            "fontWeight": "400",
+                            "lineHeight": "18px",
+                            "color": "rgb(204, 51, 102)"
+                           },
+                           "href": "https://trecig.com/terms-conditions/",
+                           "marks": [
+                            {
+                             "text": "Terms & Conditions",
+                             "color": "rgb(0, 0, 0)",
+                             "weight": null,
+                             "size": null,
+                             "bg": null,
+                             "family": null
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "t": "p",
+                   "box": [
+                    10,
+                    3819,
+                    370,
+                    15
+                   ],
+                   "kind": "text",
+                   "text": "©2026 TRECIG, LLC",
+                   "style": {
+                    "margin": "0px 0px 14.4px 0px",
+                    "textAlign": "center",
+                    "fontFamily": "Poppins, sans-serif",
+                    "fontSize": "10px",
+                    "fontWeight": "400",
+                    "lineHeight": "15px",
+                    "color": "rgb(0, 0, 0)",
+                    "textTransform": "uppercase"
+                   },
+                   "wrapped": [
+                    "div.elementor-widget-container",
+                    "div.elementor-element"
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "wrapped": [
+    "footer.elementor"
+   ]
+  },
+  {
+   "t": "div",
+   "box": [
+    318,
+    863,
+    92,
+    38
+   ],
+   "id": "trustedsite-tm-image",
+   "kind": "box",
+   "style": {
+    "position": "fixed",
+    "bg": "rgb(255, 255, 255)",
+    "bgImage": "url(\"https://cdn.ywxi.net/meter/trecig.com/205.svg?ts=1784975038086&l=en\")",
+    "bgSize": "92px 38px",
+    "bgPos": "50% 50%",
+    "bgRepeat": "no-repeat",
+    "borderRadius": "2px 0px 0px",
+    "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 5px 0px",
+    "overflow": "hidden",
+    "zIndex": "1000003",
+    "transition": "all 0.2s ease"
+   },
+   "empty": true
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+Skip to content
+HOME
+ABOUT
+AWARDS & RECOGNITION
+EXPERTISE
+PRESS & MEDIA
+CONTACT
+CLOUD SEME SME — FORT CARSON, CO
+HOME
+CAREERS
+CLOUD SEME SME — FORT CARSON, CO
+Position Overview
+
+TRECIG, LLC is seeking a highly skilled SOCOM Enterprise Mission Environment (SEME) Cloud Subject Matter Expert (SME) to support the Special Operations Forces (SOF) community in the deployment, integration, and sustainment of cloud-based mission enablement capabilities. This position requires a technically deep, operationally aware professional who understands how cloud infrastructure—particularly Microsoft Azure—intersects with the SOF intelligence and operations mission.
+
+The ideal candidate does not just execute tasks. They think through problems, identify integration gaps before they become operational failures, and deliver innovative solutions in complex, classified environments. You will operate as an embedded Field Service Representative (FSR) alongside SOF units, TSOC commands, and intelligence staff across both CONUS and OCONUS locations.
+
+Key Responsibilities
+
+Cloud Infrastructure & Azure Operations
+
+Design, deploy, and manage Microsoft Azure environments supporting classified SOF mission workloads.
+Administer Azure Active Directory (AAD), Entra ID, role-based access control (RBAC), and conditional access policies.
+Configure and manage Azure Virtual Networks, NSGs, VPNs, and hybrid connectivity for classified enclaves.
+Support Azure Government and IL4/IL5 cloud environments in compliance with DoD security frameworks.
+Build and maintain Azure DevOps pipelines and infrastructure-as-code (IaC) using Terraform or Bicep.
+
+Endpoint Management – Intune & MDM
+
+Serve as primary SME for Microsoft Intune and Mobile Device Management (MDM) across the enterprise.
+Design and enforce device compliance policies, configuration profiles, and conditional access for managed endpoints.
+Manage Windows Autopilot enrollment workflows, app deployment packages, and device lifecycle operations.
+Integrate Intune with Microsoft Defender for Endpoint and Azure Sentinel for unified security posture visibility.
+Maintain MDM documentation, SOPs, and troubleshoot escalated device management issues in operational environments.
+
+Systems Integration & Mission Enablement
+
+Lead integrations between cloud-hosted SEME capabilities and on-premises tactical or classified systems.
+Identify and resolve interoperability gaps between cloud platforms, data pipelines, and end-user exploitation tools.
+Collaborate with software developers, data engineers, and intelligence analysts to ensure mission-aligned deployments.
+Support cross-domain solution (CDS) integration efforts in multi-classification environments.
+Evaluate new tooling and technologies; bring creative, out-of-the-box thinking to unsolved operational problems.
+
+Field Service & Customer Support
+
+Provide Tier 2/3 technical support to SOF operators and intelligence analysts in the field.
+Deploy OCONUS to TSOC locations to install, configure, and sustain cloud-enabled capabilities.
+Develop and deliver technical training to end-users, including tailored instruction for non-technical operators.
+Produce clear, concise technical documentation: architecture diagrams, runbooks, TTPs, and after-action reports.
+Interface directly with government leads, program managers, and mission partners to translate requirements into solutions.
+Required Qualifications
+
+Clearance
+
+Active TS/SCI security clearance required.
+Must be eligible for access to Special Access Programs (SAP/SAR) as the mission requires.
+
+Technical Experience
+
+5+ years of hands-on experience with Microsoft Azure (AZ-104 or AZ-305 certification strongly preferred).
+3+ years of enterprise Intune/MDM administration in a Windows-dominant environment.
+Demonstrated experience with Azure Security Center, Defender for Cloud, and Sentinel SIEM.
+Proficiency in PowerShell scripting for automation of Azure and Intune workflows.
+Working knowledge of networking fundamentals: DNS, DHCP, VPN, TCP/IP, and zero-trust architecture.
+Experience with DoD STIGs, CIS benchmarks, and RMF security controls in cloud environments.
+
+Operational Background
+
+Prior SOF, SOCOM, or IC mission support experience highly preferred.
+Familiarity with TSOC command structures, OCONUS operating environments, and the SOF operational tempo.
+Understanding of intelligence workflows, exploitation tools, and data handling in classified settings.
+Preferred Qualifications
+Microsoft Certified: Azure Solutions Architect Expert (AZ-305).
+Microsoft 365 Certified: Endpoint Administrator Associate (MD-102).
+CompTIA Security+ CE or CASP+ (DoD 8570/8140 IAT Level II/III baseline).
+Experience with SEME platform tooling, SOF analytics platforms, or cloud-native mission enablement capabilities.
+Familiarity with cross-domain solutions (CDS), data diodes, or classified cloud enclave architecture.
+Prior experience as a SOCOM Field Service Representative or contractor supporting TSOC J6/J2.
+Experience integrating Power BI, Fabric, or similar analytics platforms into classified environments.
+What Sets the Right Candidate Apart
+
+This is not a break/fix role. We are looking for someone who sees the mission before the ticket—a technologist who asks “what does the operator actually need?” before writing a single line of config. The right candidate:
+
+Thinks in integrations, not just systems—you see how the pieces connect, or should connect.
+Is comfortable with ambiguity in a fast-moving operational environment.
+Communicates complex technical concepts clearly to non-technical commanders and analysts.
+Brings initiative—if something is broken or missing, you fix it or escalate it; you don’t wait to be asked.
+Understands the weight of the mission—SOF lives and operations may depend on what you deploy and sustain.
+JOB CATEGORY: CLOUD ENGINEERING
+JOB TYPE: FULL TIME
+JOB LOCATION: FORT CARSON (CO)
+APPLY FOR THIS POSITION
+FULL NAME *
+EMAIL *
+PHONE *
+BIO *
+UPLOAD CV/RESUME *
+Allowed Type(s): .pdf, .doc, .docx
+BY USING THIS FORM YOU AGREE WITH THE STORAGE AND HANDLING OF YOUR DATA BY THIS WEBSITE. *
+LET’S TALK
+LET'S TALK:
+(469)653-9009
+info@trecig.com
+TRECIG HQ:
+Rockwall, Texas,
+United States
+CONNECT WITH US:
+Linkedin-in
+Privacy Policy
+Terms & Conditions
+
+©2026 TRECIG, LLC
+
