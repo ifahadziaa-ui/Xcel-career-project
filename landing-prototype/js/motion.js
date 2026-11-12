@@ -1,8 +1,8 @@
 /* =====================================================================
    MOTION ENGINE: Prompt 2 ("HELD-MINT") written by hand:
    springs (react-spring semantics), one shared ticker, gated reveals,
-   line/letter text reveals, scroll parallax, spray underline, drips,
-   rubber stamps, the "pile + stamp" preloader, header and poster menu.
+   line/letter text reveals, scroll parallax, rubber stamps,
+   the "pile + stamp" preloader and the top bar.
    ===================================================================== */
 
 const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
@@ -101,10 +101,9 @@ export function animateChain(el, from, steps, delay = 0) {
 }
 
 /* ---------- the motion set (verbatim) ---------- */
-const PUNCH = { tension: 420, friction: 22 };
 const SOFT = { tension: 120, friction: 26 };
 const HEAVY = { tension: 60, friction: 30 };
-const DRIP = { tension: 140, friction: 13 };
+const RISE = { tension: 190, friction: 26 }; // shared entrance: quick, no bounce
 const sprayMask = (edge) => `linear-gradient(90deg, rgba(0, 0, 0, 1) ${edge}%, rgba(0, 0, 0, 0) ${edge + 22}%)`;
 const SPRAY_FROM = { filter: "blur(6px)", maskImage: sprayMask(-22) };
 const SPRAY_TO = { filter: "blur(0px)", maskImage: sprayMask(100) };
@@ -115,17 +114,17 @@ const STAMP_TO = [
   { opacity: 1, transform: "translateY(0%) scale(1) rotate(0deg)", filter: "blur(0px)", config: { tension: 400, friction: 18 } },
 ];
 const MOTION = {
-  headline: { type: "inview", from: { opacity: 0, transform: "translateY(18%) scale(1.18)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: PUNCH, stagger: 110 },
+  // One entrance for text and pictures alike: a short rise with a soft settle,
+  // so a headline and the card beside it arrive the same way.
+  headline: { type: "inview", from: { opacity: 0, transform: "translateY(24%) scale(1)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, stagger: 110 },
   mark: { type: "inview", from: SPRAY_FROM, to: SPRAY_TO, config: { tension: 55, friction: 20 }, delay: 300 },
-  scribble: { type: "inview", from: SPRAY_FROM, to: SPRAY_TO, config: { tension: 70, friction: 20 }, delay: 700 },
   copy: { type: "text", layer: "line", config: { tension: 170, friction: 26 }, stagger: 70 },
-  button: { type: "inview", from: { opacity: 0, transform: "translateY(-30%)" }, to: { opacity: 1, transform: "translateY(0%)" }, config: SOFT },
-  drip: { type: "inview", from: { transform: "scaleY(0)" }, to: { transform: "scaleY(1)" }, config: DRIP, delay: 350, stagger: 70, style: { transformOrigin: "50% 0%" } },
+  button: { type: "inview", from: { opacity: 0, transform: "translateY(40%) scale(0.98)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, delay: 160 },
   photo: { type: "inview", from: { transform: "scale(1.16)", filter: "brightness(0.25)" }, to: { transform: "scale(1)", filter: "brightness(1)" }, config: HEAVY },
-  card: { type: "inview", from: { opacity: 0, transform: "scale(1.35) rotate(-8deg)" }, to: { opacity: 1, transform: "scale(1) rotate(0deg)" }, config: PUNCH, stagger: 90 },
-  chip: { type: "inview", from: { opacity: 0, transform: "scale(1.4)" }, to: { opacity: 1, transform: "scale(1)" }, config: PUNCH, stagger: 70 },
-  step: { type: "inview", from: { opacity: 0, transform: "scale(1.12)" }, to: { opacity: 1, transform: "scale(1)" }, config: PUNCH, stagger: 100 },
-  sticker: { type: "inview", from: { opacity: 0, transform: "scale(1.5) rotate(-12deg)" }, to: { opacity: 1, transform: "scale(1) rotate(0deg)" }, config: { tension: 420, friction: 18 }, stagger: 120 },
+  card: { type: "inview", from: { opacity: 0, transform: "translateY(10%) scale(0.94)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, delay: 120, stagger: 90 },
+  chip: { type: "inview", from: { opacity: 0, transform: "translateY(18%) scale(0.96)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, stagger: 60 },
+  step: { type: "inview", from: { opacity: 0, transform: "translateY(10%) scale(0.96)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, delay: 120, stagger: 100 },
+  sticker: { type: "inview", from: { opacity: 0, transform: "translateY(14%) scale(0.95)" }, to: { opacity: 1, transform: "translateY(0%) scale(1)" }, config: RISE, delay: 120, stagger: 100 },
   ledger: { type: "inview", from: { opacity: 0 }, to: { opacity: 1 }, config: SOFT, stagger: 70 },
   stamp: { type: "chain", from: STAMP_FROM, to: STAMP_TO, delay: 200, stagger: 160 },
   faq: { type: "inview", from: { opacity: 0, transform: "translateY(-30%)" }, to: { opacity: 1, transform: "translateY(0%)" }, config: SOFT, repeat: true },
@@ -209,7 +208,9 @@ function play(it) {
   it.played = true;
   const sp = it.spec;
   const delay = (sp.delay ?? 0) + it.index * (sp.stagger ?? 0);
-  if (sp.type === "inview") animate(it.el, sp.from, sp.to, sp.config, delay);
+  // once the spray reveal settles, drop the mask and filter so the word renders as plain text
+  const settle = sp === MOTION.mark ? () => { it.el.style.maskImage = it.el.style.webkitMaskImage = "none"; it.el.style.filter = "none"; } : undefined;
+  if (sp.type === "inview") animate(it.el, sp.from, sp.to, sp.config, delay, settle);
   else if (sp.type === "chain") animateChain(it.el, sp.from, sp.to, delay);
   else if (sp.layer === "line") {
     it.lines.forEach((l, i) => spring({ from: 100, to: 0, ...sp.config, delay: it.index * 120 + i * sp.stagger, onUpdate: (v) => (l.style.transform = `translateY(${v}%)`) }));
@@ -240,8 +241,7 @@ export function registerReveals(root = document) {
     el.__rv = it;
     items.push(it);
     prepare(it);
-    // scribbles and drips start with no visible extent: watch an unscaled wrapper
-    const target = el.dataset.m === "scribble" || el.dataset.m === "drip" ? el.parentElement : el;
+    const target = el;
     if (!byTarget.has(target)) byTarget.set(target, []);
     byTarget.get(target).push(it);
   });
@@ -295,84 +295,6 @@ export function initParallax() {
     }
     return true;
   }, 10);
-}
-
-/* ---------- PlateButton drips ---------- */
-const DRIPS = {
-  md: { left: [0.105, 0.227, 0.367, 0.496, 0.656, 0.809, 0.926], h: [22, 12, 38, 16, 28, 10, 20], w: [7, 5, 8, 5, 7, 5, 8] },
-  sm: { left: [0.12, 0.24, 0.376, 0.51, 0.67, 0.82, 0.94], h: [15, 8, 27, 11, 20, 7, 14], w: [5, 4, 6, 4, 5, 4, 6] },
-};
-export function buildDrips(root = document) {
-  root.querySelectorAll(".plate[data-drips]").forEach((plate) => {
-    if (plate.__drips) return;
-    plate.__drips = true;
-    const d = DRIPS[plate.dataset.drips] || DRIPS.md;
-    const pw = parseFloat(plate.style.getPropertyValue("--pw")) || 16;
-    const revealed = plate.hasAttribute("data-m");
-    d.left.forEach((f, i) => {
-      const s = document.createElement("span");
-      s.className = "plate-drip"; s.setAttribute("aria-hidden", "true");
-      s.style.left = `${(f * pw).toFixed(3)}rem`; s.style.height = `${d.h[i] / 16}rem`; s.style.width = `${d.w[i] / 16}rem`;
-      if (revealed) { s.dataset.m = "drip"; s.dataset.i = i; }
-      plate.insertBefore(s, plate.firstChild);
-    });
-  });
-}
-
-/* ---------- SprayLink underline ---------- */
-const S_LINE = "M8.6 8.1C17.4 4.6 38.1 2.9 67.6 4.1C69.6 4.3 69.6 8.5 67.6 8.9C44 7.7 23.4 10.3 11.6 12.7C9 13.1 7.2 9.3 8.6 8.1Z";
-const S_DRIPS = [
-  "M23.4 8.6C23.4 7.77157 22.7284 7.1 21.9 7.1C21.0716 7.1 20.4 7.77157 20.4 8.6V14.6C20.4 15.4284 21.0716 16.1 21.9 16.1C22.7284 16.1 23.4 15.4284 23.4 14.6V8.6Z",
-  "M43.7 8.4C43.7 7.68203 43.118 7.1 42.4 7.1C41.682 7.1 41.1 7.68203 41.1 8.4V19.8C41.1 20.518 41.682 21.1 42.4 21.1C43.118 21.1 43.7 20.518 43.7 19.8V8.4Z",
-  "M59.2 8.2C59.2 7.59249 58.7075 7.1 58.1 7.1C57.4925 7.1 57 7.59249 57 8.2V13C57 13.6075 57.4925 14.1 58.1 14.1C58.7075 14.1 59.2 13.6075 59.2 13V8.2Z",
-];
-const S_DOTS = [
-  "M3.6 7.1C4.15229 7.1 4.6 6.65228 4.6 6.1C4.6 5.54772 4.15229 5.1 3.6 5.1C3.04772 5.1 2.6 5.54772 2.6 6.1C2.6 6.65228 3.04772 7.1 3.6 7.1Z",
-  "M5.1 14.3C5.4866 14.3 5.8 13.9866 5.8 13.6C5.8 13.2134 5.4866 12.9 5.1 12.9C4.7134 12.9 4.4 13.2134 4.4 13.6C4.4 13.9866 4.7134 14.3 5.1 14.3Z",
-  "M0.6 10.7C0.931371 10.7 1.2 10.4314 1.2 10.1C1.2 9.76863 0.931371 9.5 0.6 9.5C0.26863 9.5 0 9.76863 0 10.1C0 10.4314 0.26863 10.7 0.6 10.7Z",
-  "M71.6 3.5C72.0971 3.5 72.5 3.09706 72.5 2.6C72.5 2.10294 72.0971 1.7 71.6 1.7C71.1029 1.7 70.7 2.10294 70.7 2.6C70.7 3.09706 71.1029 3.5 71.6 3.5Z",
-  "M74.6 8.2C74.9314 8.2 75.2 7.93137 75.2 7.6C75.2 7.26863 74.9314 7 74.6 7C74.2686 7 74 7.26863 74 7.6C74 7.93137 74.2686 8.2 74.6 8.2Z",
-  "M63.6 13.3C63.9866 13.3 64.3 12.9866 64.3 12.6C64.3 12.2134 63.9866 11.9 63.6 11.9C63.2134 11.9 62.9 12.2134 62.9 12.6C62.9 12.9866 63.2134 13.3 63.6 13.3Z",
-  "M33.4 14.7C33.7314 14.7 34 14.4314 34 14.1C34 13.7686 33.7314 13.5 33.4 13.5C33.0686 13.5 32.8 13.7686 32.8 14.1C32.8 14.4314 33.0686 14.7 33.4 14.7Z",
-  "M49.9 1.2C50.2314 1.2 50.5 0.931371 50.5 0.6C50.5 0.268629 50.2314 0 49.9 0C49.5686 0 49.3 0.268629 49.3 0.6C49.3 0.931371 49.5686 1.2 49.9 1.2Z",
-  "M15.7 2.3C16.0866 2.3 16.4 1.9866 16.4 1.6C16.4 1.2134 16.0866 0.9 15.7 0.9C15.3134 0.9 15 1.2134 15 1.6C15 1.9866 15.3134 2.3 15.7 2.3Z",
-];
-export function initSpray() {
-  const NS = "http://www.w3.org/2000/svg";
-  document.querySelectorAll(".spray").forEach((wrap) => {
-    const link = wrap.querySelector("a");
-    const svg = document.createElementNS(NS, "svg");
-    svg.setAttribute("viewBox", "0 0 75.2 21.1"); svg.setAttribute("preserveAspectRatio", "none");
-    svg.setAttribute("overflow", "visible"); svg.setAttribute("fill", "currentColor"); svg.setAttribute("aria-hidden", "true");
-    svg.classList.add("spray-svg");
-    const mk = (d) => { const p = document.createElementNS(NS, "path"); p.setAttribute("d", d); svg.appendChild(p); return p; };
-    const line = mk(S_LINE);
-    const drips = S_DRIPS.map(mk), dots = S_DOTS.map(mk);
-    [...drips, ...dots].forEach((p) => { p.style.transformBox = "fill-box"; });
-    drips.forEach((p) => (p.style.transformOrigin = "50% 0%"));
-    dots.forEach((p) => (p.style.transformOrigin = "50% 50%"));
-    wrap.appendChild(svg);
-    let session = 0;
-    const unspray = () => {
-      line.style.clipPath = "inset(0% 100% 0% 0%)";
-      drips.forEach((p) => (p.style.transform = "scaleY(0)"));
-      dots.forEach((p) => (p.style.transform = "scale(0)"));
-    };
-    unspray();
-    const op = spring({ from: 0, to: 0, tension: 260, friction: 30, onUpdate: (v) => (svg.style.opacity = v) });
-    const on = () => {
-      const id = ++session;
-      op.set(1, { immediate: true });
-      spring({ from: 0, to: 1, tension: 300, friction: 32, onUpdate: (v) => { if (id === session) line.style.clipPath = `inset(0% ${100 - v * 100}% 0% 0%)`; } });
-      drips.forEach((p, i) => spring({ from: 0, to: 1, tension: 110, friction: 9, delay: 160 + i * 70, onUpdate: (v) => { if (id === session) p.style.transform = `scaleY(${v})`; } }));
-      dots.forEach((p, i) => spring({ from: 0, to: 1, tension: 420, friction: 16, delay: (i * 37) % 180, onUpdate: (v) => { if (id === session) p.style.transform = `scale(${v})`; } }));
-    };
-    const off = () => { session++; unspray(); op.set(0); };
-    wrap.addEventListener("pointerenter", on);
-    wrap.addEventListener("pointerleave", off);
-    link?.addEventListener("focus", on);
-    link?.addEventListener("blur", off);
-  });
 }
 
 /* ---------- scroll lock (Lenis stop + html lock) ---------- */
@@ -468,54 +390,20 @@ export function runPreloader({ lenis, cardsHTML, ready, onRelease }) {
   }
 }
 
-/* ---------- header: slides in after the hero, backdrop once scrolled ---------- */
+/* ---------- top bar: the hero's bar, fixed on every section; a backdrop fades in once scrolled ---------- */
 export function initHeader(hero) {
   const header = document.getElementById("site-header");
   const backdrop = document.getElementById("header-backdrop");
-  let shown = false, scrolled = false;
-  const slide = spring({ from: 0, to: 0, tension: 220, friction: 30, onUpdate: (v) => (header.style.transform = `translateY(${-120 + 120 * v}%)`) });
+  // other sections (the showreel) read the bar's height to stay clear of it
+  new ResizeObserver(() => document.documentElement.style.setProperty("--bar-h", `${header.offsetHeight}px`)).observe(header);
+  let scrolled = false;
   const bd = spring({ from: 0, to: 0, tension: 220, friction: 30, onUpdate: (v) => (backdrop.style.opacity = v) });
   const grain = document.querySelector(".below > .grain");
-  const track = document.getElementById("sr-track");
   const check = () => {
-    // hidden over the hero (it has its own nav) and while the showreel is pinned full-screen
-    const tr = track?.getBoundingClientRect();
-    const inReel = tr ? tr.top <= 1 && tr.bottom >= innerHeight - 1 : false;
-    const past = hero.getBoundingClientRect().bottom < 80 && !inReel;
     grain?.classList.toggle("is-on", hero.getBoundingClientRect().bottom <= 0);
-    if (past !== shown) { shown = past; slide.set(past ? 1 : 0); }
     const sc = scrollY > 40;
     if (sc !== scrolled) { scrolled = sc; bd.set(sc ? 1 : 0); }
   };
   addEventListener("scroll", check, { passive: true });
   check();
-}
-
-/* ---------- poster menu (handheld) ---------- */
-export function initMenu(lenis) {
-  const menu = document.getElementById("menu");
-  const sheet = document.getElementById("menu-sheet");
-  const backdrop = document.getElementById("menu-backdrop");
-  const burger = document.getElementById("burger");
-  const close = document.getElementById("menu-close");
-  const rows = [...menu.querySelectorAll("[data-trail]")];
-  let open = false;
-  const sheetS = spring({ from: 0, to: 0, tension: 210, friction: 22, onUpdate: (v) => (sheet.style.transform = `translateY(${-115 + 115 * v}%) rotate(${-7 + 5.5 * v}deg)`) });
-  const bdS = spring({ from: 0, to: 0, tension: 200, friction: 30, onUpdate: (v) => (backdrop.style.opacity = v) });
-  const rowS = rows.map((r) => spring({ from: 0, to: 0, tension: 260, friction: 24, onUpdate: (v) => { r.style.opacity = v; r.style.transform = `translateX(${-12 + 12 * v}%)`; } }));
-  const set = (o) => {
-    open = o;
-    menu.classList.toggle("is-open", o);
-    menu.setAttribute("aria-hidden", String(!o));
-    o ? menu.removeAttribute("inert") : menu.setAttribute("inert", "");
-    burger.setAttribute("aria-expanded", String(o));
-    sheetS.set(o ? 1 : 0); bdS.set(o ? 1 : 0);
-    rowS.forEach((s, i) => s.set(o ? 1 : 0, { delay: o ? 180 + i * 55 : 0 }));
-    o ? lockScroll(lenis) : unlockScroll(lenis);
-  };
-  burger.addEventListener("click", () => set(!open));
-  close.addEventListener("click", () => set(false));
-  backdrop.addEventListener("click", () => set(false));
-  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => set(false)));
-  addEventListener("keydown", (e) => { if (e.key === "Escape" && open) set(false); });
 }

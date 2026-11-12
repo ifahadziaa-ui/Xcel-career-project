@@ -63,9 +63,13 @@ html.lenis, html.lenis body { height: auto; }
   --elevation-card: 0.5rem 0.875rem 1.5rem 0 rgb(0 0 0 / 0.35);
   --elevation-wire: 0.5rem 0.75rem 0.625rem rgb(0 0 0 / 0.4);
 
-  --font-sans: "Sora", sans-serif;
-  --font-display: "Barlow Condensed", sans-serif;
-  --font-script: "Sedgwick Ave Display", cursive;
+  /* One type system for the whole site, taken from the hero:
+     Mona Sans condensed black for headlines, Geist Mono for labels and nav,
+     Mona Sans for running text. */
+  --font-sans: "Zen Kaku Gothic New", sans-serif;
+  --font-display: "Zen Kaku Gothic New", sans-serif;
+  --font-mono: "Zen Kaku Gothic New", sans-serif;
+  --font-bar: "Geist Mono", ui-monospace, monospace; /* the hero's top bar keeps its own mono */
 
   /* type scale (design px / 16), desktop frame 1400 */
   --type-ghost-xl: 23.75rem;
@@ -202,6 +206,53 @@ html.lenis, html.lenis body { height: auto; }
   }
 }
 
+/* Type scale for everything below the hero (the hero and showreel size themselves).
+   One set of tokens, set after the breakpoint blocks above so it wins at every width. */
+:root {
+  --type-display: 4.5rem;
+  --type-display-sm: 3.5rem;
+  --type-step-number: 3.5rem;
+  --type-stat-lg: 3.5rem;
+  --type-stat: 3.5rem;
+  --type-poster-title: 4.25rem;
+  --type-card-title: 1.75rem;
+  --type-wordmark: 13rem;
+  --type-meta: 0.8125rem;
+  --type-nav: 0.8125rem;
+  --type-plate: 0.8125rem;
+  --type-fine: 0.8125rem;
+  --type-column: 0.75rem;
+  --type-legal: 0.75rem;
+  --type-row-date: 0.8125rem;
+  --type-poster-meta: 0.8125rem;
+  --type-button: 0.8125rem;
+  --type-button-sm: 0.75rem;
+  --type-stamp: 0.75rem;
+  --type-eyebrow: 0.8125rem;
+  --type-eyebrow-sm: 0.8125rem;
+  --type-body: 1rem;
+  --type-body-sm: 0.9375rem;
+  --type-caption: 0.9375rem;
+  --type-poster-copy: 0.9375rem;
+}
+@media (width < 1200px) {
+  :root {
+    --type-display: 3.75rem; --type-display-sm: 3rem; --type-step-number: 3rem;
+    --type-stat: 3rem; --type-poster-title: 3.5rem; --type-card-title: 1.625rem; --type-wordmark: 9rem;
+    --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.9375rem;
+  }
+}
+@media (width < 896px) {
+  :root { --type-display: 3.25rem; --type-display-sm: 2.75rem; --type-poster-title: 3rem; --type-stat: 2.75rem; --type-wordmark: 7rem; }
+}
+@media (width < 700px) {
+  :root {
+    --type-display: 2.5rem; --type-display-sm: 2.25rem; --type-step-number: 2.75rem;
+    --type-stat: 2.5rem; --type-poster-title: 2.25rem; --type-card-title: 1.5rem; --type-wordmark: 4rem;
+    --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.875rem;
+  }
+}
+
 /* Root font-size tracks the viewport, so each Prompt 2 frame renders 1:1 at its
    reference width (1400 / 1024 / 768 / 390). The hero and the showreel do not use rem. */
 html { font-size: 1.142857vw; }
@@ -219,9 +270,14 @@ body {
 
 main { position: relative; overflow-x: clip; }
 
-.type-display { font-family: var(--font-display); font-weight: 900; font-style: italic; text-transform: uppercase; white-space: nowrap; line-height: 1; }
-.type-caps    { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; white-space: nowrap; line-height: 1; }
-.type-script  { font-family: var(--font-script); font-weight: 400; white-space: nowrap; line-height: 1; }
+.type-display {
+  font-family: var(--font-display); font-weight: 500;
+  white-space: nowrap; line-height: 0.95; letter-spacing: -0.03em;
+}
+.type-caps {
+  font-family: var(--font-mono); font-weight: 500; text-transform: uppercase;
+  white-space: nowrap; line-height: 1.3; letter-spacing: 0.1em;
+}
 
 /* =====================================================================
    PLACEHOLDERS: every image / video slot the client will supply.
@@ -258,7 +314,7 @@ main { position: relative; overflow-x: clip; }
 }
 .ph > * { position: relative; z-index: 1; }
 .ph .ph-tag {
-  font: 600 clamp(9px, 4.2cqmin, 15px)/1 var(--font-display);
+  font: 400 clamp(8px, 3.6cqmin, 12px)/1 var(--font-mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.45em 0.8em 0.35em;
@@ -267,7 +323,8 @@ main { position: relative; overflow-x: clip; }
   opacity: 0.85;
 }
 .ph .ph-what {
-  font: 900 italic clamp(13px, 9cqmin, 64px)/0.95 var(--font-display);
+  font: 500 clamp(13px, 9cqmin, 64px)/0.95 var(--font-display);
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   max-width: 16ch;

@@ -9,64 +9,15 @@ import {
 import { ph, esc } from "./ph.js?v=3";
 import { initShowreel } from "./showreel.js?v=3";
 import {
-  registerReveals, releaseReveals, initParallax, initSpray, buildDrips, runPreloader, initHeader, initMenu,
+  registerReveals, releaseReveals, initParallax, runPreloader, initHeader,
 } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
 
 const $ = (s) => document.querySelector(s);
-const crown = `<svg class="crown"><use href="#i-crown"/></svg>`;
 
 /* ---------- film grain (generated, no image file) ---------- */
 const GRAIN = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.25 -0.62'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")`;
 document.querySelectorAll(".grain-tex").forEach((g) => (g.style.backgroundImage = GRAIN));
-
-/* ---------- barbed wire, drawn in code ---------- */
-function wireSVG(sample, { w, h, amp = 4.5, twist = 0.085, barbEvery = 64, barbLen = 12, uid }) {
-  // sample(t) → [x, y] along the base curve, t in 0..1
-  const N = 900, pts = [];
-  for (let i = 0; i <= N; i++) pts.push(sample(i / N));
-  const len = [0];
-  for (let i = 1; i <= N; i++) len.push(len[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
-  const nrm = pts.map((p, i) => {
-    const a = pts[Math.max(0, i - 1)], b = pts[Math.min(N, i + 1)];
-    const dx = b[0] - a[0], dy = b[1] - a[1], m = Math.hypot(dx, dy) || 1;
-    return [-dy / m, dx / m, dx / m, dy / m];
-  });
-  const strand = (sign) => pts.map((p, i) => {
-    const o = sign * amp * Math.sin(len[i] * twist);
-    return `${(p[0] + nrm[i][0] * o).toFixed(1)},${(p[1] + nrm[i][1] * o).toFixed(1)}`;
-  }).join(" ");
-  let barbs = "";
-  for (let s = barbEvery * 0.6; s < len[N]; s += barbEvery) {
-    let i = len.findIndex((L) => L >= s); if (i < 0) break;
-    const [x, y] = pts[i], [nx, ny, tx, ty] = nrm[i];
-    for (const ang of [55, -55]) {
-      const r = (ang * Math.PI) / 180, c = Math.cos(r), sn = Math.sin(r);
-      const dx = tx * c - ty * sn, dy = tx * sn + ty * c;
-      barbs += `<path d="M${(x - dx * barbLen).toFixed(1)} ${(y - dy * barbLen).toFixed(1)} L${(x + dx * barbLen).toFixed(1)} ${(y + dy * barbLen).toFixed(1)}"/>`;
-    }
-    barbs += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3.4"/>`;
-  }
-  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
-    <defs><linearGradient id="st${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f3f5"/><stop offset=".55" stop-color="#a7a7a9"/><stop offset="1" stop-color="#4c4c4e"/></linearGradient></defs>
-    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="${strand(1)}" stroke="#232325" stroke-width="5.4"/>
-      <polyline points="${strand(-1)}" stroke="#232325" stroke-width="5.4"/>
-      <polyline points="${strand(1)}" stroke="url(#st${uid})" stroke-width="3.2"/>
-      <polyline points="${strand(-1)}" stroke="url(#st${uid})" stroke-width="3.2"/>
-      <g stroke="#d0d0d2" stroke-width="2.6" fill="#909092">${barbs}</g>
-    </g></svg>`;
-}
-let wireId = 0;
-const strandA = (t) => [-40 + t * 1720, 230 + 120 * Math.sin(t * Math.PI * 1.25 + 0.35) - 60 * t];
-const strandB = (t) => [-40 + t * 1720, 170 + 110 * Math.sin(t * Math.PI * 1.1 + 2.2) + 40 * t];
-const arc = (t) => { const a = ((110 + t * 180) * Math.PI) / 180; return [500 + 440 * Math.cos(a), 500 + 440 * Math.sin(a)]; };
-document.querySelectorAll("[data-wire]").forEach((el) => {
-  const kind = el.dataset.wire;
-  el.innerHTML = kind === "arc"
-    ? wireSVG(arc, { w: 1000, h: 1000, uid: ++wireId })
-    : wireSVG(kind === "strand2" ? strandB : strandA, { w: 1640, h: 400, uid: ++wireId });
-});
 
 /* ---------- 02 certifications + customers ---------- */
 $("#certs-title").innerHTML = `${esc(CERT_LINE.text)}: <span class="hi">${esc(CERT_LINE.id)}</span>`;
@@ -93,7 +44,7 @@ $("#certs-note").textContent = `Certified by the ${C.certifier} · No. ${C.certN
 $("#steps").innerHTML = STEPS.map((s, i) => `
   <li class="step-box">
     <article class="step" data-m="step" data-i="${i}">
-      <div class="step-top"><p class="type-display step-num" aria-hidden="true">0${i + 1}</p>${crown}</div>
+      <div class="step-top"><p class="type-display step-num" aria-hidden="true">0${i + 1}</p></div>
       <h3 class="type-display">${esc(s.title)}</h3>
       <p class="txt">${esc(s.text)}</p>
       <p class="type-caps stats">${s.stats.map(([k, v]) => `${esc(k)} <span class="v">${esc(v)}</span>`).join("   ")}</p>
@@ -136,18 +87,6 @@ $("#cap-art").innerHTML = ph({ kind: "photo", what: CAPABILITY.art, note: "From 
 $("#cap-points").innerHTML = CAPABILITY.points.map((p, i) => `<li><span class="bul" aria-hidden="true"></span><p data-m="copy" data-i="${i}">${esc(p)}</p></li>`).join("");
 $("#cap-meta").innerHTML = `${esc(CAPABILITY.meta[0])}  ·  <span class="v">${esc(CAPABILITY.meta[1])}</span>`;
 $("#cap-pdf").setAttribute("href", CREDENTIALS.pdf);
-// four wire arcs around the poster (section-relative), with parallax
-const ARCS = [
-  { r: 4, top: 2.125, left: 33.375, size: 70.7, px: 8, show: "d" },
-  { r: -176, top: 0.875, left: -16.625, size: 70.7, px: -6, show: "d" },
-  { r: -86, top: -23.125, left: 9, size: 72.06, px: 12, show: "a" },
-  { r: 94, top: 24.875, left: 6.5, size: 72.06, px: -9, show: "a" },
-];
-$("#arcs").innerHTML = ARCS.map((a) => `
-  <div class="arc arc--${a.show}" style="top:${a.top + 2}rem;left:${a.left}rem;width:${a.size}rem;height:${a.size}rem">
-    <div class="tilt" data-px="${a.px}" style="width:100%;height:100%"><div class="px" style="rotate:${a.r}deg" data-wire="arc"></div></div>
-  </div>`).join("");
-document.querySelectorAll("#arcs [data-wire]").forEach((el) => (el.innerHTML = wireSVG(arc, { w: 1000, h: 1000, uid: ++wireId })));
 
 /* ---------- 07 record: stickers + ledger ---------- */
 // positions in cqw of the 1232-wide holder (desktop design coordinates)
@@ -165,8 +104,7 @@ $("#stickers").innerHTML = `
   <div class="stk stk--ring" style="--l:81.98;--t:1.46;--w:20.29;--h:20.29;--r:-9deg">
     <div class="stk-in" data-m="sticker" data-i="3"><span class="ring-outer"></span><span class="ring-inner"></span>
       <span class="stk-val">${esc(STICKERS.ring.value)}</span><span class="stk-lbl">${esc(STICKERS.ring.label)}</span></div>
-  </div>
-  <div class="stk-crown" style="--l:35.5;--t:10.3" aria-hidden="true">${crown}</div>`;
+  </div>`;
 $("#ledger").innerHTML = LEDGER.map((r, i) => `
   <li data-m="ledger" data-i="${i}">
     <span class="type-caps lg-date">${esc(r.date)}</span>
@@ -208,16 +146,14 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("cli
   const target = document.querySelector(id);
   if (!target) return;
   e.preventDefault();
-  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -10 });
+  // land each section just below the fixed top bar
+  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -$("#site-header").offsetHeight });
 }));
 
 /* ---------- motion ---------- */
-buildDrips();
 const fontsReady = document.fonts.ready;
 initParallax();
-initSpray();
 initHeader($(".hx-hero"));
-initMenu(lenis);
 initChat({ lenis });
 
 const pileCards = [
