@@ -75,7 +75,7 @@
 /* ---------- button ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: 0.875rem; width: fit-content;
-  height: 3.25rem; padding: 0 1.5rem 0.4em; border-radius: 3px; /* bottom pad lifts Zen Kaku caps, which sit low in the line box */
+  height: 3.25rem; padding: 0 1.5rem 0.2em; border-radius: 3px; /* flex container: text-box trim does not apply, so lift the Zen Kaku caps by hand */
   background: var(--accent); color: #fff;
   font-family: var(--font-mono); font-size: var(--type-button); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
   transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance);
@@ -182,11 +182,11 @@
   background: radial-gradient(circle at 50% 35%, #2e2e30, #131314 70%); /* hero spotlight in miniature */
   border: 1px solid rgb(255 255 255 / 0.18);
 }
-.badge-seal .code { font-family: var(--font-display); font-weight: 500; font-size: 2.5rem; line-height: 1; color: var(--foreground); }
+.badge-seal .code { text-box: trim-both cap alphabetic; font-family: var(--font-display); font-weight: 500; font-size: 2.5rem; line-height: 1; color: var(--foreground); }
 .badge-seal .art {
   position: absolute; bottom: 1.1rem; left: 50%; translate: -50% 0;
   font-family: var(--font-mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--accent); white-space: nowrap;
+  color: var(--accent); white-space: nowrap; text-box: trim-both cap alphabetic;
 }
 .badge-name { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.12em; line-height: 1.5; color: var(--foreground-muted); }
 .badge--add .badge-seal { background: transparent; border-style: dashed; border-color: rgb(243 243 245 / 0.3); }
@@ -201,7 +201,7 @@
 .cust-logo .ph { --ph-bg: #161618; }
 .cust-logo .ph .ph-what { font-size: clamp(11px, 16cqmin, 28px); }
 .cust-name { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.6875rem; letter-spacing: 0.1em; line-height: 1.5; color: var(--foreground-muted); }
-.cust-tag { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.625rem; letter-spacing: 0.14em; color: var(--accent); border: 1px solid rgb(255 42 69 / 0.6); border-radius: 3px; padding: 0.3em 0.6em 0.25em; }
+.cust-tag { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.625rem; letter-spacing: 0.14em; color: var(--accent); border: 1px solid rgb(255 42 69 / 0.6); border-radius: 3px; padding: 0.6em 0.7em; text-box: trim-both cap alphabetic; }
 .certs-note { margin-top: 2rem; font-size: var(--type-body-sm); color: var(--foreground-subtle); }
 @media (width < 1200px) { .certs-line { font-size: 2.125rem; } .customers { --cols: 4; } }
 @media (width < 896px)  { .customers { --cols: 3; } }
@@ -357,7 +357,7 @@
 .lg-ref { font-size: 0.75rem; color: var(--foreground-subtle); }
 .lg-stamp-box { justify-self: center; rotate: none !important; }
 .lg-stamp {
-  display: block; border-radius: 3px; border: 1px solid rgb(255 42 69 / 0.7); padding: 0.45em 0.8em 0.4em;
+  display: block; border-radius: 3px; border: 1px solid rgb(255 42 69 / 0.7); padding: 0.575em 0.8em; text-box: trim-both cap alphabetic;
   font-family: var(--font-mono); font-weight: 500;
   letter-spacing: 0.14em; font-size: var(--type-stamp); line-height: 1; color: var(--accent);
 }

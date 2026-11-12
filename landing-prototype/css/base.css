@@ -317,7 +317,8 @@ main { position: relative; overflow-x: clip; }
   font: 400 clamp(8px, 3.6cqmin, 12px)/1 var(--font-mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.45em 0.8em 0.35em;
+  text-box: trim-both cap alphabetic;
+  padding: 0.55em 0.9em;
   border: 1px solid currentColor;
   border-radius: 999px;
   opacity: 0.85;
