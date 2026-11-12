@@ -1055,5 +1055,70 @@ export function initShowreel(section) {
     }
   }
   requestAnimationFrame(frame);
-  return { measure };
+
+  /* ---------- horizontal snap ----------
+     Vertical scroll stays continuous. Where the reel moves sideways (the carousel
+     turning through its cards, the "What we staff" strip panning), a sideways input
+     — trackpad swipe, shift + wheel, ← / → keys, a horizontal touch swipe — steps to
+     the next or previous resting position instead, so no one has to time the scroll. */
+  const vToY = (v) => trackTop + (v / VSCROLL_MAX) * Math.max(1, trackH - innerHeight);
+  const yToV = (y) => clamp01((y - trackTop) / Math.max(1, trackH - innerHeight)) * VSCROLL_MAX;
+  const zones = () => {
+    const vmin = Math.min(innerWidth, innerHeight) / 100;
+    // carousel: one stop per card (phase3 = 0, 1/3, 2/3, 1)
+    const car = [0, 1, 2, 3].map((k) => (0.15 + (0.25 * k) / 3) * OLD_MAX);
+    // portfolio: one stop per tile, measured from the track, plus the far end
+    const maxPan = Math.max(1, el.pfTrack.scrollWidth - el.portfolio.clientWidth + 3 * vmin);
+    const tiles = [...el.pfTrack.children];
+    const x0 = tiles[0]?.offsetLeft ?? 0;
+    const slides = [...new Set(tiles.map((t) => Math.min(1, (t.offsetLeft - x0) / maxPan)).concat(1).map((x) => Math.round(x * 1000) / 1000))];
+    const pf = slides.filter((x, i, a) => i === 0 || x - a[i - 1] > 0.02).map((x) => PS + PF_DUR * (0.267 + 0.453 * x));
+    return [
+      { from: 0.1 * OLD_MAX, to: 0.415 * OLD_MAX, stops: car },
+      { from: PS + PF_DUR * 0.2, to: PS + PF_DUR * 0.76, stops: pf },
+    ];
+  };
+  const zoneAt = (y) => { const v = yToV(y); return zones().find((z) => v >= z.from && v <= z.to) || null; };
+  const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  let lenis = null;
+  const step = (dir) => {
+    const base = lenis ? lenis.targetScroll : scrollY;
+    const z = zoneAt(base);
+    if (!z) return false;
+    const ys = z.stops.map(vToY);
+    const to = dir > 0 ? ys.find((y) => y > base + 4) : [...ys].reverse().find((y) => y < base - 4);
+    if (to == null) return true; // at the end of this strip: swallow the input, stay put
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (lenis) lenis.scrollTo(to, { duration: reduce ? 0.01 : 0.9, easing: ease });
+    else scrollTo({ top: to, behavior: reduce ? "auto" : "smooth" });
+    return true;
+  };
+  function attachSnap(l) {
+    lenis = l;
+    // wheel: one step per gesture; trackpad momentum is swallowed until the gesture ends
+    let acc = 0, last = 0, fired = false;
+    addEventListener("wheel", (e) => {
+      const dx = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.shiftKey ? e.deltaY : 0;
+      if (!dx || e.ctrlKey || !zoneAt(lenis.targetScroll)) return;
+      e.preventDefault(); e.stopImmediatePropagation(); // keeps Lenis and the browser's back-swipe out of it
+      const now = performance.now();
+      if (now - last > 220) { acc = 0; fired = false; }
+      last = now;
+      if (fired) return;
+      acc += e.deltaMode === 1 ? dx * 16 : dx;
+      if (Math.abs(acc) > 30) { fired = true; step(Math.sign(acc)); }
+    }, { passive: false, capture: true });
+    addEventListener("keydown", (e) => {
+      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+      if (e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+      if (step(e.key === "ArrowRight" ? 1 : -1)) e.preventDefault();
+    });
+    let tx = 0, ty = 0;
+    addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+    addEventListener("touchend", (e) => {
+      const t = e.changedTouches[0], dx = t.clientX - tx, dy = t.clientY - ty;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
+  return { measure, attachSnap };
 }

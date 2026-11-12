@@ -140,6 +140,7 @@ const lenis = new Lenis({ smoothWheel: true });
 function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 window.__proto = { lenis }; // handy for debugging in the console
+sr.attachSnap(lenis); // sideways input steps the carousel and the staffing strip
 document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {
   const id = a.getAttribute("href");
   if (id.length < 2) return;
