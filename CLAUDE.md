@@ -59,11 +59,14 @@ A complete static one-page website implementation.
 
 Do not use it as a scratchpad, testing area, or place to make temporary changes.
 
-History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Those changes are uncommitted and documented in `PROJECT-BRIEF.md` §5. The protection applies again for any new work. In particular:
+History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Later the same day it also covered a floating dock top bar, button text alignment and a scroll-linked card parallax. All of it is committed on branch `landing-unify-and-new-briefs` (not merged to `main`) and documented in `PROJECT-BRIEF.md` §5. The protection applies again for any new work. In particular:
 
 - The hero and the fixed top bar use Mona Sans and Geist Mono. Everything after the hero uses Zen Kaku Gothic New. Keep that split.
 - The type scale lives in `css/base.css`; do not add per-section font sizes.
 - Reveals share one entrance (`RISE` in `js/motion.js`).
+- The top bar is flat at the top and becomes a floating glass dock once scrolled (`--dock`, set in `initHeader`); keep it that way.
+- Zen Kaku buttons need their text nudged up (`.btn` bottom padding, `.sr-btn`/`.sr-ctabtn` 0.13em); keep Zen Kaku on buttons, not Mona Sans.
+- Card parallax is scroll-linked, not spring-based; do not reintroduce a spring there.
 
 ### `superconscious/`
 
