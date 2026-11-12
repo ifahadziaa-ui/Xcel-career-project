@@ -272,29 +272,30 @@ export function releaseReveals() {
 
 /* ---------- scroll parallax ---------- */
 export function initParallax() {
+  // Scroll-linked, no springs: Lenis already eases the scroll, and a spring on top of it
+  // lagged behind, froze while a layer was off-screen and then crawled up from a stale
+  // value on the way back. Position is now an absolute function of where the box is.
   const layers = [...document.querySelectorAll("[data-px]")].map((box) => {
     const inner = box.querySelector(":scope > .px") || box.firstElementChild;
     const distance = +box.dataset.px;
     const tiltDeg = box.dataset.tilt != null ? +box.dataset.tilt : distance * 0.3;
-    let y = 0, r = 0;
-    const apply = () => (inner.style.transform = `translate3d(0, ${y}rem, 0) rotate(${r}deg)`);
-    const ys = spring({ from: 0, to: 0, tension: 280, friction: 40, onUpdate: (v) => { y = v; apply(); } });
-    const rs = spring({ from: 0, to: 0, tension: 280, friction: 40, onUpdate: (v) => { r = v; apply(); } });
-    return { box, distance, tiltDeg, ys, rs, after: 0 };
+    return { box, inner, distance, tiltDeg, y: NaN, r: NaN, rc: null };
   });
   ticker.add(() => {
-    const vh = innerHeight;
-    for (const L of layers) {
-      const rc = L.box.getBoundingClientRect();
-      const on = rc.bottom > 0 && rc.top < vh;
-      if (on) L.after = 10; else if (L.after > 0) L.after--; else continue;
+    const vh = innerHeight, still = reduced();
+    for (const L of layers) L.rc = L.box.getBoundingClientRect(); // all reads first
+    for (const L of layers) {                                       // then all writes
+      const { rc } = L;
+      if (rc.bottom < -vh * 0.25 || rc.top > vh * 1.25) continue;
       const progress = Math.min(Math.max(0, (vh - rc.top) / (vh + rc.height)), 1);
-      const off = reduced() ? 0 : progress - 0.5;
-      L.ys.set(off * L.distance);
-      L.rs.set(off * L.tiltDeg);
+      const off = still ? 0 : progress - 0.5;
+      const y = Math.round(off * L.distance * 1600) / 1600, r = Math.round(off * L.tiltDeg * 1600) / 1600;
+      if (y === L.y && r === L.r) continue;
+      L.y = y; L.r = r;
+      L.inner.style.transform = `translate3d(0, ${y}rem, 0) rotate(${r}deg)`;
     }
     return true;
-  }, 10);
+  });
 }
 
 /* ---------- scroll lock (Lenis stop + html lock) ---------- */
@@ -397,7 +398,7 @@ export function initHeader(hero) {
   // other sections (the showreel) read the bar's height to stay clear of it
   new ResizeObserver(() => document.documentElement.style.setProperty("--bar-h", `${header.offsetHeight}px`)).observe(header);
   let scrolled = false;
-  const bd = spring({ from: 0, to: 0, tension: 220, friction: 30, onUpdate: (v) => (backdrop.style.opacity = v) });
+  const bd = spring({ from: 0, to: 0, tension: 220, friction: 30, onUpdate: (v) => { backdrop.style.opacity = v; header.style.setProperty("--dock", v); } });
   const grain = document.querySelector(".below > .grain");
   const check = () => {
     grain?.classList.toggle("is-on", hero.getBoundingClientRect().bottom <= 0);

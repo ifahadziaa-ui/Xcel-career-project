@@ -122,7 +122,7 @@
 .sr-hero-bottom .lead { max-width: 26rem; max-width: 416px; opacity: 0.9; font-size: 16px; line-height: 1.625; text-shadow: 0 1px 12px rgb(16 16 18 / 0.7); }
 .sr-btns { display: flex; align-items: center; gap: 16px; }
 .sr-btn {
-  padding: 14px 32px; border-radius: 8px; font-size: 17px; line-height: 1.2; white-space: nowrap;
+  padding: calc(14px - 0.13em) 32px calc(14px + 0.13em); border-radius: 8px; font-size: 17px; line-height: 1.2; white-space: nowrap;
   background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.25);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: #fff;
 }
@@ -285,7 +285,7 @@
 .sr-ctablock h2 .dim { opacity: 0.4; }
 .sr-ctablock p { max-width: 26vw; font-size: 2.2vmin; line-height: 1.375; color: rgb(243 243 245 / 0.7); }
 .sr-ctarow { margin-top: 1.5vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin 3.2vmin; pointer-events: auto; }
-.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: 2.2vmin 4.6vmin; font-size: 2.5vmin; color: #fff; }
+.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: calc(2.2vmin - 0.13em) 4.6vmin calc(2.2vmin + 0.13em); font-size: 2.5vmin; color: #fff; }
 .sr-ctatel { font-size: max(13px, 2vmin); color: rgb(243 243 245 / 0.62); white-space: nowrap; }
 .sr-ctatel b { font-weight: 500; color: #f3f3f5; }
 .sr-ctatel:hover b, .sr-ctatel:focus-visible b { color: var(--sr-red); }
@@ -347,7 +347,7 @@
   .sr-hero-bottom { gap: 16px; }
   .sr-hero-bottom .lead { font-size: 14px; }
   .sr-btns { flex-direction: column; align-items: stretch; gap: 12px; }
-  .sr-btn { padding: 12px 20px; font-size: 15px; text-align: center; }
+  .sr-btn { padding: calc(12px - 0.13em) 20px calc(12px + 0.13em); font-size: 15px; text-align: center; }
   .sr-divider, .sr-hero-row { display: none; }
   .sr-hero-bottom .lead { opacity: 1; text-shadow: 0 1px 3px rgb(16 16 18 / 0.55), 0 0 18px rgb(16 16 18 / 0.75); }
   .sr-ctablock h2 { max-width: 88vw; }

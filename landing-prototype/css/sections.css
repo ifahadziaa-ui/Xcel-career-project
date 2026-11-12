@@ -75,7 +75,7 @@
 /* ---------- button ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: 0.875rem; width: fit-content;
-  height: 3.25rem; padding: 0 1.5rem; border-radius: 3px;
+  height: 3.25rem; padding: 0 1.5rem 0.4em; border-radius: 3px; /* bottom pad lifts Zen Kaku caps, which sit low in the line box */
   background: var(--accent); color: #fff;
   font-family: var(--font-mono); font-size: var(--type-button); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
   transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance);
@@ -96,23 +96,30 @@
 .site-header {
   --ink: #f3f3f5; --red: #ff2a45; --logo: #d0d0d2; --nav: #919194;
   --mono-size: 10.5px; --mono-track: 0.125em; --wide-track: 0.145em;
-  position: fixed; left: 0; right: 0; top: 0; z-index: 100;
+  /* --dock (0..1, set from motion.js) floats the bar off the edges once the page scrolls:
+     at the top it is the hero's flat bar; scrolled, it is an inset, rounded glass dock */
+  --dock: 0; --dock-x: 10px; --dock-y: 10px;
+  position: fixed; z-index: 100;
+  top: calc(var(--dock) * var(--dock-y)); left: calc(var(--dock) * var(--dock-x)); right: calc(var(--dock) * var(--dock-x));
+  border-radius: calc(var(--dock) * 14px);
   padding: max(18px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));
   color: var(--ink);
 }
 .site-header .backdrop {
-  position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0;
-  border-bottom: 1px solid rgb(243 243 245 / 0.08); background: rgb(16 16 18 / 0.82);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; border-radius: inherit;
+  border: 1px solid rgb(243 243 245 / 0.1); background: rgb(22 22 24 / 0.72);
+  box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.04);
+  -webkit-backdrop-filter: blur(14px) saturate(130%); backdrop-filter: blur(14px) saturate(130%);
 }
 @media (min-width: 640px) {
-  .site-header { --mono-size: 11px; padding: 24px max(32px, env(safe-area-inset-right)) 18px max(32px, env(safe-area-inset-left)); }
+  .site-header { --mono-size: 11px; --dock-x: 16px; --dock-y: 12px; padding: 24px max(32px, env(safe-area-inset-right)) 18px max(32px, env(safe-area-inset-left)); }
 }
 @media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
   .site-header {
     --u: min(calc(100vw / 1136), calc(100vh / 692));
-    --pl: calc(var(--u) * 56);
-    --pr: calc(var(--u) * 58);
+    --dock-x: max(24px, calc((100vw - 76rem) / 2)); --dock-y: 14px;
+    --pl: calc(var(--u) * (56 - 30 * var(--dock)));
+    --pr: calc(var(--u) * (58 - 30 * var(--dock)));
     --mono-size: calc(var(--u) * 11);
     --mono-track: calc(var(--u) * 1.38);
     --wide-track: calc(var(--u) * 1.6);
