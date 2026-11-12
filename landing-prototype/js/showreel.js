@@ -156,7 +156,10 @@ const cameraRigTransform = (p) => {
 const targetOpacity = (p) => (flightActive(p) ? 1 : 0);
 const targetTransform = () => "translate(calc(-50% + 250vw), calc(-50% + 100vh)) translateZ(-2250px)";
 const targetRadius = (p) => (flightActive(p) ? 30 * (1 - easeP7(p)) : 30);
-const ctaReveal = (p) => smooth(clamp01((p7(p) - 0.5) / 0.5));
+// closing frame: the mark and the copy share one beat. The mark zooms in as the
+// first line arrives; each later part (line 2, lead, buttons) follows 7% behind.
+const finalBeat = (p, i) => smooth(clamp01((p7(p) - 0.42 - i * 0.07) / 0.36));
+const markReveal = (p) => clamp01((p7(p) - 0.4) / 0.5);
 const finalFrameReveal = (p) => smooth(clamp01((p7(p) - 0.8) / 0.2));
 
 const gridOpacity = (p) => {
@@ -758,6 +761,8 @@ function markObject(M) {
   const depth = 0.1;
   const bevel = { bevelEnabled: true, bevelThickness: 0.022, bevelSize: 0.01, bevelSegments: 4, curveSegments: 1 };
   const group = new THREE.Group();
+  group.userData.mats = [chrome, red];
+  chrome.transparent = red.transparent = true;
   M.rays.forEach((r, i) => {
     const mesh = new THREE.Mesh(new THREE.ExtrudeGeometry(shape(r.pts), { depth, ...bevel }), chrome);
     mesh.position.z = -i * 0.03;
@@ -802,23 +807,31 @@ function makeTargetStar(canvas) {
   // landscape: the mark stands to the right of the text; portrait: smaller, top right
   const place = () => {
     const a = camera.aspect, halfH = 4 * Math.tan((22.5 * Math.PI) / 180), halfW = halfH * a;
-    if (a >= 1) { group.userData.base = [Math.min(1.45, halfW * 0.55), 0.02]; group.scale.setScalar(1.2); }
-    else { group.userData.base = [halfW * 0.42, halfH * 0.52]; group.scale.setScalar(0.62); }
+    if (a >= 1) { group.userData.base = [Math.min(1.45, halfW * 0.55), 0.02]; group.userData.size = 1.2; }
+    else { group.userData.base = [halfW * 0.42, halfH * 0.52]; group.userData.size = 0.62; }
   };
   gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); bgU.u_resolution.value.set(w * gl.dpr, h * gl.dpr); place(); };
   gl.onResize(gl.w, gl.h);
+  let reveal = 0;
+  const easeOutBack = (x) => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2);
   const draw = () => {
     const s = clock;
     const [bx, by] = group.userData.base;
-    group.position.set(bx, by + Math.sin(s * 0.8) * 0.035, 0);
+    // entrance: zooms up from 45% with a soft overshoot and turns into place, fading in over its first half
+    const e = easeOutBack(smooth(reveal));
+    const breathe = 1 + 0.015 * Math.sin(s * 0.9) * reveal;
+    group.scale.setScalar(group.userData.size * (0.45 + 0.55 * e) * breathe);
+    for (const m of group.userData.mats) { m.opacity = smooth(clamp01(reveal * 1.8)); m.transparent = m.opacity < 0.999; }
+    group.position.set(bx, by + Math.sin(s * 0.8) * 0.035 - (1 - e) * 0.25, 0);
     // a slow turn to each side that never shows the mark edge-on, so it always reads
-    group.rotation.set(-0.1 + Math.sin(s * 0.55) * 0.05, -0.32 + Math.sin(s * 0.42) * 0.5, Math.sin(s * 0.3) * 0.025);
+    group.rotation.set(-0.1 + Math.sin(s * 0.55) * 0.05, -0.32 + Math.sin(s * 0.42) * 0.5 - (1 - e) * 1.1, Math.sin(s * 0.3) * 0.025);
     r.render(scene, camera);
   };
   gl.redraw = draw;
   draw(); // warm up: compile the physical materials at load, not when the closing frame arrives
   return {
-    render(t) {
+    render(t, r = 1) {
+      reveal = r;
       const delta = lastT == null ? 0 : Math.min(0.1, (t - lastT) / 1000);
       lastT = t;
       clock += delta;
@@ -844,6 +857,7 @@ export function initShowreel(section) {
     sphereBody: $("sr-sphere-body"), target: $("sr-target"), frame: $("sr-frame"), ctaBlock: $("sr-ctablock"), cta: $("sr-cta"),
     aurora: $("sr-aurora"), portfolio: $("sr-portfolio"), pfTrack: $("sr-pf-track"),
   };
+  const ctaParts = [...el.ctaBlock.querySelectorAll("h2 > span, p, .sr-ctarow")];
   const tiles = [...section.querySelectorAll(".sr-tile")];
 
   // card 03: the mark (one element per blade) and the dive through its hub
@@ -873,7 +887,7 @@ export function initShowreel(section) {
     s.setProperty("--sr-card-h", geo.ch + "vmin");
     s.setProperty("--sr-carousel-r", geo.r + "vmin");
     s.setProperty("--sr-flyback", geo.fly + "vmin");
-    s.setProperty("--sr-hero-pad", geo.pad + "vmin");
+    s.setProperty("--sr-hero-pad", `calc(${geo.pad}vmin + var(--bar-h, 0px))`); // the opening card sits below the fixed top bar
     s.setProperty("--sr-heading-1", geo.h1 + "vmin");
     s.setProperty("--sr-heading-2", geo.h2 + "vmin");
     s.setProperty("--sr-sphere-body-w", geo.bw + "vmin");
@@ -1021,9 +1035,13 @@ export function initShowreel(section) {
       for (const tEl of tiles) tEl.style.opacity = go;
       el.target.style.opacity = targetOpacity(p);
       el.target.style.borderRadius = `${targetRadius(p)}px`;
-      const cta = ctaReveal(p);
-      el.ctaBlock.style.opacity = cta;
-      el.ctaBlock.style.transform = `translateY(${(1 - cta) * 6}vh)`;
+      ctaParts.forEach((part, i) => {
+        const r = finalBeat(p, i);
+        part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
+        part.style.transform = `translateY(${((1 - r) * 3.5).toFixed(3)}vh)`;
+        part.style.filter = r < 0.999 ? `blur(${((1 - r) * 6).toFixed(2)}px)` : "none";
+        part.style.visibility = r > 0.005 ? "visible" : "hidden";
+      });
       el.frame.style.opacity = finalFrameReveal(p);
     }
 
@@ -1033,7 +1051,7 @@ export function initShowreel(section) {
       if (vis.hero) gfx.hero.render(t);
       if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(t);
       if (vis.sphere) gfx.sphere.render(t, sphereDisperse(p));
-      if (vis.target && flightActive(p)) gfx.target.render(t); else gfx.target.pause();
+      if (vis.target && flightActive(p)) gfx.target.render(t, markReveal(p)); else gfx.target.pause();
     }
   }
   requestAnimationFrame(frame);

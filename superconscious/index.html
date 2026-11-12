@@ -1,0 +1,1129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Superconscious — Prompts that think ahead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.185.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.185.0/examples/jsm/"
+}}
+</script>
+<style>
+:root{
+--background:#000000; --foreground:#f5f1ec;
+--ink:#07031a;        /* target-block deep navy-black */
+--pf-card:#14110e;    /* portfolio card surface */
+--cc-search:#161310;  /* catalist light-card search bar */
+--paper:#f5f1ec;      /* off-white card/UI text */
+--paper-alt:#f3f1ec;  /* portfolio section ink */
+--nav-ink:#1a1a1a;    /* nav-pill links */
+--cc-dark-ink:#f5f1ec; --cc-light-ink:#1a1714; --cc-light-muted:#9a948d;
+--nav-surface:#e3e3e3; --nav-item:#ffffff; --nav-logo:#dadada;
+--nav-cta:#0d0d0d; --nav-cta-ink:#f4f4f4;
+--nav-border:rgba(255,255,255,0.6); --nav-shadow:rgba(0,0,0,0.12);
+--glass-dark:rgba(40,36,33,0.55); --glass-border:rgba(255,255,255,0.12);
+--glass-border-soft:rgba(255,255,255,0.14); --hairline:rgba(255,255,255,0.28);
+--watermark:rgba(255,255,255,0.85);
+--card-violet:radial-gradient(95% 80% at 50% 28%, #ddd6fe 0%, #9a73f0 38%, #6d28d9 68%, #34146e 100%);
+--loader-glow:rgba(154,115,240,0.55);
+/* Radii */
+--radius-btn:8px; --radius-card:3vmin; --radius-pf:2.5vmin;
+--radius-slider:1.6vmin; --radius-grid:12px; --radius-target:30px;
+/* Responsive showreel geometry — DESKTOP defaults (also the SSR/no-JS fallback).
+   JS swaps these live on <html> for portrait phones/tablets — see "Responsive
+   geometry" below. The timeline builders + card/sphere sizes read these vars so
+   the values can swap without rebuilding any interpolation. */
+--sr-card-w:42vmin;        /* side-card width  (= hero card HEIGHT) */
+--sr-card-h:62vmin;        /* side-card height (= hero card WIDTH)  */
+--sr-carousel-r:27vmin;    /* carousel radius (card translateZ) */
+--sr-flyback:40vmin;       /* carousel fly-back depth */
+--sr-hero-pad:8vmin;       /* hero full-screen inset (2× stage padding) */
+--sr-heading-1:18vmin;     /* sphere top heading */
+--sr-heading-2:24vmin;     /* sphere bottom heading */
+--sr-sphere-body-w:52vmin; /* sphere supporting-copy max-width */
+--sr-sphere-body-text:2.4vmin; /* sphere supporting-copy text size */
+
+  --sr-track-vh:2000vh;
+}
+html{font-size:16px;scrollbar-width:none}
+@media (max-width:1920px){html{font-size:0.833333vw}}
+@media (max-width:1440px){html{font-size:1.111111vw}}
+@media (max-width:1024px){html{font-size:1.5625vw}}
+@media (max-width:640px){html{font-size:4.444444vw}}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#f5f1ec;overflow-x:hidden;font-family:"Zen Kaku Gothic New",sans-serif;scrollbar-width:none;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:400}
+canvas{display:block}
+.fill{position:absolute;inset:0}
+.ch{display:inline-block;will-change:transform,filter,opacity}
+.ln{display:block}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;background:#000}
+#loader .bloom{position:absolute;width:78vmin;height:78vmin;border-radius:9999px;filter:blur(80px);background:var(--card-violet);opacity:0}
+#loader .star{position:relative;width:132px;height:132px;filter:drop-shadow(0 0 28px var(--loader-glow));opacity:0}
+#loader .star img{width:100%;height:100%;display:block}
+
+/* header */
+#hdr{position:fixed;left:0;top:2vmin;z-index:100;width:100%;display:flex;flex-direction:column;align-items:center;pointer-events:none;opacity:0;transform:translateY(-10px);transition:opacity .7s ease-in-out,transform .7s ease-in-out}
+#hdr.on{opacity:1;transform:none}
+#hdr nav{pointer-events:auto;display:flex;align-items:stretch;gap:1px;border-radius:8px;background:var(--nav-surface);padding:1px}
+#hdr .tile{height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+#hdr .logo{width:40px;background:var(--nav-logo)}
+#hdr .logo img{width:18px;height:18px;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+#hdr .logo:hover img{transform:rotate(90deg)}
+#hdr ul{list-style:none;display:none;align-items:stretch;gap:1px}
+@media(min-width:640px){#hdr ul.links{display:flex}}
+#hdr ul.links li{display:flex}
+#hdr ul.links a{width:88px;background:var(--nav-item);color:var(--nav-ink);font-size:15px}
+#hdr ul.links a span{transition:opacity .25s}
+#hdr ul.links a:hover span{opacity:.55}
+@media(max-width:760px){#hdr ul.links a{width:66px;font-size:13px}}
+#hdr .menu{width:40px;background:var(--nav-item);border:0;cursor:pointer;font-size:16px;color:var(--nav-ink)}
+@media(min-width:640px){#hdr .menu{display:none}}
+#hdr .cta{background:var(--nav-cta);color:var(--nav-cta-ink);padding:0 22px;font-size:15px;font-weight:500}
+@media(max-width:760px){#hdr .cta{padding:0 16px;font-size:13px}}
+#drop{margin-top:1vmin;width:calc(100% - 8vmin);max-width:420px;overflow:hidden;border-radius:8px;background:var(--nav-surface);padding:1px;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .35s,transform .35s}
+#drop.open{opacity:1;transform:none;pointer-events:auto}
+#drop ul{display:flex;flex-direction:column;list-style:none;gap:1px}
+#drop a{display:flex;align-items:center;justify-content:center;height:44px;width:100%;background:var(--nav-item);color:var(--nav-ink);font-size:15px}
+@media(min-width:640px){#drop{display:none}}
+
+#aurora{position:fixed;inset:0;pointer-events:none;z-index:30;opacity:0}
+#aurora canvas{width:100%;height:100%}
+
+#track{position:relative;height:var(--sr-track-vh)}
+#sticky{position:sticky;top:0;height:100vh;overflow:hidden;padding:4vmin}
+#backdrop{position:absolute;inset:0;background:#fff;z-index:0}
+#marquee{position:absolute;left:0;top:50%;width:100vw;transform:translateY(-50%);pointer-events:none;z-index:1;overflow:hidden}
+#marquee .row{display:flex;width:max-content;white-space:nowrap;animation:mq 25s linear infinite}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+#marquee .it{display:flex;align-items:center;padding:0 3vw;font-size:7vw;letter-spacing:-.03em;color:#000}
+#marquee .dot{width:1.5vw;height:1.5vw;transform:translateY(.8vw);border-radius:9999px;border:2px solid #000;flex:none}
+#scene{position:relative;display:flex;width:100%;height:100%;align-items:center;justify-content:center;perspective:1500px;z-index:2}
+#rig{position:absolute;inset:0;transform-style:preserve-3d}
+#carousel{position:relative;display:flex;width:100%;height:100%;align-items:center;justify-content:center;transform-style:preserve-3d}
+.card{position:absolute}
+.side{width:var(--sr-card-w);height:var(--sr-card-h)}
+.gridtile{position:absolute;left:50%;top:50%;z-index:-1;overflow:hidden;background-size:cover;background-position:center}
+#target{position:absolute;left:50%;top:50%;z-index:-1;width:100vw;height:100vh;overflow:hidden;background:var(--ink)}
+#target canvas{position:absolute;inset:0;width:100%;height:100%}
+#frame{position:absolute;inset:-4vmin;z-index:3;border-radius:11vmin;border:8vmin solid #fff;pointer-events:none;opacity:0}
+#cta{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2.5vmin;padding:9vmin;pointer-events:none;opacity:0}
+#cta h2{max-width:60vw;display:flex;flex-direction:column;align-items:flex-start;font-size:7vw;line-height:.95;letter-spacing:-.03em;color:var(--paper)}
+#cta p{max-width:26vw;font-size:2.2vmin;line-height:1.375;color:rgba(245,241,236,.7)}
+#cta a{pointer-events:auto;margin-top:1.5vmin;display:inline-flex;border-radius:8px;background:var(--paper);padding:2.2vmin 4.6vmin;font-size:2.5vmin;color:var(--ink)}
+@media(max-width:640px){#cta h2{max-width:88vw}#cta p{max-width:80vw;font-size:3.4vmin}}
+#carCta{position:absolute;left:0;right:0;bottom:2vmin;z-index:3;display:flex;justify-content:center;padding:0 4vmin;pointer-events:none;opacity:0}
+#carCta a{pointer-events:auto;border-radius:var(--radius-btn);background:var(--ink);padding:2vmin 4.2vmin;font-size:2.1vmin;color:var(--paper)}
+
+.hero{position:relative;width:100%;height:100%;overflow:hidden;border-radius:var(--radius-card);background:#000}
+.hero .head{position:absolute;inset:0;z-index:3;display:flex;padding:40px;pointer-events:none}
+.hero h1{display:flex;flex-direction:column;align-items:flex-start;text-align:left;font-size:7vw;line-height:.95;letter-spacing:-.03em;color:#fff}
+.hero .l2{opacity:.4}
+.hero .tmpl{position:absolute;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.hero .tmpl h2{text-align:center;font-size:3.6vmin;color:#fff;transform:rotate(-90deg);filter:drop-shadow(0 10px 8px rgba(0,0,0,.4))}
+.hero .imgwrap{position:absolute;inset:0;z-index:6;perspective:1400px;pointer-events:none}
+.hero .imgcard{position:absolute;left:50%;top:50%;overflow:hidden;border-radius:var(--radius-slider);box-shadow:0 25px 50px -12px rgba(0,0,0,.5)}
+.hero .imgcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.hero .imgcard img.B{left:100%}
+.hero .bottom{position:absolute;bottom:0;left:0;width:100%;padding:40px;z-index:6;display:flex;flex-direction:column;gap:24px;color:#fff;font-weight:300}
+.hero .bottom p{max-width:28rem;opacity:.9;font-size:16px;line-height:1.625}
+.hero .btns{display:flex;align-items:center;gap:16px}
+.hero .btn{padding:14px 32px;border-radius:8px;font-size:17px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2)}
+.hero .btn.w{background:#fff;color:#000;font-weight:500;border-color:#fff}
+.hero hr{width:100%;height:1px;border:0;background:rgba(255,255,255,.3);margin:8px 0}
+.hero .row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.hero .pill{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:9999px;padding:6px 16px 6px 8px;white-space:nowrap}
+.hero .av{display:flex}.hero .av img{width:32px;height:32px;border-radius:50%;border:2px solid #333;margin-left:-8px;object-fit:cover}
+.hero .av img:first-child{margin-left:0}
+.hero .pill span{font-size:14px;font-weight:500;opacity:.9}
+.hero .row p{max-width:32rem;text-align:right;font-size:15px}
+@media(max-width:640px){.hero .head,.hero .bottom{padding:20px}.hero .bottom{gap:16px}.hero .bottom p{font-size:14px}.hero .btns{flex-direction:column;align-items:stretch;gap:12px}.hero .btn{padding:12px 20px;font-size:15px}.hero hr,.hero .row{display:none}}
+
+.cc{position:relative;width:100%;height:100%;overflow:hidden;border-radius:var(--radius-card)}
+.cc>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cc .ov{position:absolute;inset:0;display:flex;flex-direction:column;padding:3.2vmin}
+.cc .top{display:flex;align-items:center;justify-content:space-between}
+.cc .lg{width:3.4vmin;height:3.4vmin;border-radius:.9vmin;background:#fff;color:var(--ink);display:grid;place-items:center}
+.cc .lg svg{width:2.2vmin;height:2.2vmin}
+.cc .url{font-size:1.5vmin;letter-spacing:.02em;opacity:.85}
+.cc .gl{margin-top:2.6vmin;display:flex;align-items:center;justify-content:space-between;gap:1.5vmin;border-radius:4vmin;border:1px solid var(--glass-border);background:var(--glass-dark);padding:1.8vmin 2vmin;backdrop-filter:blur(10px)}
+.cc .gl small{display:block;font-size:1.4vmin;opacity:.6}.cc .gl span{font-size:2.2vmin}
+.cc .badge{width:3vmin;height:3vmin;border-radius:9999px;background:var(--glass-border);display:grid;place-items:center;font-size:1.8vmin;flex:none}
+.cc .sb{margin:auto 0;display:flex;align-items:center;gap:1.4vmin;border-radius:5vmin;background:var(--cc-search);padding:2vmin 2.2vmin;color:var(--paper)}
+.cc .sb span{flex:1;font-size:1.7vmin;opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc h3{margin-top:auto;font-size:4.6vmin;line-height:1.05}
+.cc p{margin-top:auto;font-size:3.1vmin;line-height:1.2;color:var(--paper)}
+.cc strong{font-weight:700;color:#fff}
+
+.sph{position:absolute;display:flex;align-items:center;justify-content:center;overflow:visible;width:var(--sr-card-w);height:var(--sr-card-h)}
+.sph .face{position:absolute;inset:0;overflow:hidden;border-radius:var(--radius-card);background:var(--card-violet)}
+.sph .face>div{display:flex;width:100%;height:100%;flex-direction:column;padding:3.2vmin;color:var(--paper)}
+.sph .face .tr{display:flex;align-items:center;justify-content:space-between}
+.sph .face .tag{border-radius:9999px;border:1px solid var(--glass-border);background:var(--glass-dark);padding:.8vmin 1.8vmin;font-size:1.4vmin;backdrop-filter:blur(10px)}
+.sph .face .url{font-size:1.5vmin;opacity:.85}
+.sph .face h3{margin-top:auto;max-width:88%;font-size:4.4vmin;line-height:1.05}
+#blk{position:absolute;left:50%;top:50%;height:300vh;width:300vw;background:#000;-webkit-mask-image:url(https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg);mask-image:url(https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
+#blkIn{position:absolute;left:50%;top:50%;height:100vh;width:100vw}
+#sphereWrap{position:absolute;left:50%;top:50%;z-index:2;width:100%;height:100%}
+#sphereWrap canvas{width:100%;height:100%}
+#slogo{position:absolute;left:50%;top:50%;z-index:3;height:12vh;width:12vh;background:#fff;-webkit-mask-image:url(https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg);mask-image:url(https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center}
+#blkIn h2{position:absolute;z-index:4;line-height:.85;color:#fff}
+#h1{left:4vmin;top:4vmin;font-size:var(--sr-heading-1)}
+#h2{bottom:4vmin;right:4vmin;display:flex;flex-direction:column;align-items:flex-end;text-align:right;font-size:var(--sr-heading-2)}
+#sbody{position:absolute;bottom:5vmin;left:4vmin;z-index:4;display:flex;max-width:var(--sr-sphere-body-w);flex-direction:column;gap:1.8vmin;font-size:var(--sr-sphere-body-text);font-weight:300;line-height:1.45;color:#fff}
+
+#pf{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;overflow:hidden;padding:9vmin 0 8vmin;transform:translateY(100%);will-change:transform}
+#pfTrack{display:flex;height:100%;gap:3vmin;padding-left:3vmin;width:max-content}
+.pfc{position:relative;display:flex;height:100%;width:62vw;flex:none;flex-direction:column;justify-content:space-between;overflow:hidden;border-radius:var(--radius-pf);background:var(--pf-card);padding:3.5vmin;color:#fff}
+.pfc video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover}
+.pfc .tags{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:1.4vmin;font-size:1.7vmin;opacity:.9}
+.pfc .tags i{font-style:normal;opacity:.5}
+.pfc h3{position:relative;z-index:2;max-width:85%;font-size:7vw;text-transform:capitalize;line-height:.95;letter-spacing:-.03em}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="bloom"></div>
+  <div class="star"><img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg" alt=""></div>
+</div>
+
+<header id="hdr">
+  <nav>
+    <a class="tile logo" href="#" aria-label="Home"><img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/star.svg" alt=""></a>
+    <ul class="links">
+      <li><a class="tile" href="#wearable"><span>Wearable</span></a></li>
+      <li><a class="tile" href="#neural"><span>Neural</span></a></li>
+      <li><a class="tile" href="#programs"><span>Programs</span></a></li>
+      <li><a class="tile" href="#updates"><span>Updates</span></a></li>
+      <li><a class="tile" href="#search"><span>Search</span></a></li>
+    </ul>
+    <button class="tile menu" id="menuBtn" aria-label="Menu">☰</button>
+    <a class="tile cta" href="#get-started">Get Started</a>
+  </nav>
+  <div id="drop"><ul>
+    <li><a href="#wearable">Wearable</a></li><li><a href="#neural">Neural</a></li><li><a href="#programs">Programs</a></li><li><a href="#updates">Updates</a></li><li><a href="#search">Search</a></li>
+  </ul></div>
+</header>
+
+<div id="aurora"></div>
+
+<div id="track">
+  <div id="sticky">
+    <div id="backdrop"></div>
+    <div id="marquee"><div class="row" id="mqRow"></div></div>
+
+    <div id="scene">
+      <div id="rig">
+        <div id="carousel">
+          <div class="card" id="c1">
+            <div class="hero">
+              <div id="heroGl" class="fill" style="z-index:1"></div>
+              <div class="head" id="heroHead"><h1><span class="ln" id="hl1"></span><span class="ln l2" id="hl2"></span></h1></div>
+              <div class="tmpl"><h2 id="tmplH"></h2></div>
+              <div class="imgwrap"><div class="imgcard" id="imgcard">
+                <img id="imgA" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/stone.jpg" alt="">
+                <img id="imgB" class="B" src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/hero-image-2.png" alt="">
+              </div></div>
+              <div class="bottom" id="heroBottom">
+                <p>Turn engagement into conversions, trends into traffic, and views into revenue. All with a team that knows how to make social media work for you.</p>
+                <div class="btns"><a class="btn" href="#pricing">See Pricing</a><a class="btn w" href="#get-started">Start Journey</a></div>
+                <hr>
+                <div class="row">
+                  <div class="pill"><div class="av"><img src="https://i.pravatar.cc/100?img=1" alt=""><img src="https://i.pravatar.cc/100?img=2" alt=""><img src="https://i.pravatar.cc/100?img=3" alt=""><img src="https://i.pravatar.cc/100?img=4" alt=""><img src="https://i.pravatar.cc/100?img=5" alt=""></div><span>Trusted by 4000+ creatives</span></div>
+                  <p>From crafting scroll-stopping content to engineering algorithms we help your brand break through the noise and go viral.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card side" id="c2">
+            <div class="cc" style="color:var(--cc-dark-ink)">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/card-2.jpg" alt="">
+              <div class="ov">
+                <div class="top"><div class="lg"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 L13.9 10.1 L22 12 L13.9 13.9 L12 22 L10.1 13.9 L2 12 L10.1 10.1 Z"/></svg></div><span class="url">Catalist.co.uk</span></div>
+                <div class="gl"><div><small>Catalist Lendings</small><span>Apply for Loan</span></div><div class="badge">+</div></div>
+                <h3>The Ultimate Engine for <strong>Business Lending</strong></h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="card side" id="c3">
+            <div class="cc" style="color:var(--cc-light-ink)">
+              <img src="https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222/showreel/card-3.jpg" alt="">
+              <div class="ov">
+                <div class="top"><div class="lg"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2 L13.9 10.1 L22 12 L13.9 13.9 L12 22 L10.1 13.9 L2 12 L10.1 10.1 Z"/></svg></div><span class="url">Catalist.co.uk</span></div>
+                <div class="sb"><div class="badge">+</div><span>Analyze impact of lending in Business [Field]</span><div class="badge">➤</div></div>
+                <p>Use AI-based system analyser — <strong>all through one intelligent platform.</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card sph" id="c4">
+            <div class="face"><div>
+              <div class="tr"><span class="tag">Neural Core</span><span class="url">superconscious.ai</span></div>
+              <h3>Intelligence, beyond limits</h3>
+            </div></div>
+            <div id="blk">
+              <div id="blkIn">
+                <div id="sphereWrap"></div>
+                <div id="slogo"></div>
+                <h2 id="h1"></h2>
+                <h2 id="h2"><span class="ln" id="h2a"></span><span class="ln" id="h2b"></span></h2>
+                <div id="sbody">
+                  <p>Superconscious is a neural engine that turns intent into action — anticipating your next move before you make it, across every device you already own.</p>
+                  <p>One model, every surface: wearable, neural, and beyond. No ceilings, no limits — just intelligence that keeps pace with the way you think.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="target">
+          <div id="targetGl" class="fill"></div>
+          <div id="frame"></div>
+          <div id="cta">
+            <h2><span class="ln">Build beyond</span><span class="ln" style="opacity:.4">all limits</span></h2>
+            <p>Templates, prompts, and tools that think ahead — start shipping faster today.</p>
+            <a href="#get-started">Get started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="carCta"><a href="#templates">Explore the collection</a></div>
+  </div>
+</div>
+
+<section id="pf"><div id="pfTrack"></div></section>
+
+<script type="module">
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+
+const BASE = "https://api.getlayers.ai/storage/v1/object/public/public/assets/ai-studio-0b8d365222";
+
+/* ───────── timeline (from the brief, verbatim) ───────── */
+const TRACK_VH = 2000, STICKY_VH = 100;
+const TRAVEL_VH = TRACK_VH - STICKY_VH;     // 1900
+const SCROLL_COMPRESS = 0.4;
+const VSCROLL_MAX = TRAVEL_VH / SCROLL_COMPRESS; // 4750
+const OLD_MAX = 2000;
+const PS = OLD_MAX - 400;        // portfolioStart = 1600
+const PF_DUR = 1500;
+const PF_END = PS + PF_DUR;      // 3100
+const GRID_START = PS + 0.72*PF_DUR; // 2680
+const P6_END = GRID_START + 1000;    // 3680
+const P7_START = P6_END;             // 3680
+const P7_END = P7_START + 900;       // 4580
+const PERSP = 1500;              // scene perspective (px)
+
+const clamp01 = x => x<0?0 : x>1?1 : x;
+const smooth  = t => t*t*(3-2*t);                 // smoothstep
+const vScroll = p => clamp01(p) * VSCROLL_MAX;    // virtual scroll, in "vh"
+const gp      = p => clamp01(vScroll(p) / OLD_MAX); // 0..1 over phases 1–5
+
+// phase progresses (gp-relative)
+const phase1 = p => clamp01(gp(p) / (2/15));      // 0–13.33%
+const phase2 = p => clamp01((gp(p) - 0.1) / 0.05);// 10–15%
+const phase3 = p => clamp01((gp(p) - 0.15)/ 0.25);// 15–40%
+const phase4 = p => clamp01((gp(p) - 0.4) / 0.35);// 40–75%
+
+// ── Card 1 (hero) ── (hero is rotated 90°: its box width = side-card HEIGHT, height = side-card WIDTH)
+const card1Width = p => `calc((100vw - var(--sr-hero-pad)) * ${1-phase1(p)} + var(--sr-card-h) * ${phase1(p)})`;
+const card1Height= p => `calc((100vh - var(--sr-hero-pad)) * ${1-phase1(p)} + var(--sr-card-w) * ${phase1(p)})`;
+const card1Transform = p => `rotateZ(${phase1(p)*90}deg) translateZ(calc(var(--sr-carousel-r) * ${phase2(p)} + 1px))`;
+const card1Opacity = p => (gp(p) >= 0.75 ? 0 : 1);
+const heroSlidePan = p => phase1(p) * -100;                 // %
+const heroTiltFade = p => 1 - phase1(p);
+const heroSliderWidth  = p => `calc(min(90vw, 46vh) * ${1-phase1(p)} + 66vmin * ${phase1(p)})`;
+const heroSliderHeight = p => `calc(62vh * ${1-phase1(p)} + 46vmin * ${phase1(p)})`;
+const heroContentFade  = p => Math.max(0, 1 - phase1(p)*1.9);
+
+// ── Side cards (2/3/4) ──
+const sideCardTransform = (p, baseRotateY) => {
+  const sx = Math.max(phase2(p), 0.0001);
+  return `rotateY(${baseRotateY}deg) translateZ(calc(var(--sr-carousel-r) * ${phase2(p)})) scaleX(${sx})`;
+};
+const card4Opacity = p => 1 - clamp01((vScroll(p) - PS) / 400);
+const cardZIndex = (p, slot) => {
+  const rotY = phase3(p) * -270;
+  return Math.round(Math.cos(((rotY + slot*90) * Math.PI) / 180) * 100) + 1000;
+};
+
+// ── Carousel CTA ──
+const carouselCtaReveal = p => {
+  const appear = smooth(clamp01((phase1(p) - 0.9) / 0.1));
+  const fadeOut = smooth(clamp01((gp(p) - 0.4) / 0.06));
+  return appear * (1 - fadeOut);
+};
+
+// ── Carousel ──
+const carouselTransform = p => {
+  const fly = phase4(p) * phase4(p);
+  return `translateZ(calc(var(--sr-flyback) * ${-fly})) rotateY(${phase3(p) * -270}deg)`;
+};
+
+// ── Sphere card internals ── (geo = active bucket: {flybackVmin, carouselRVmin}; desktop {40,27})
+const starMaskSize = p => `${8 + Math.pow(phase4(p), 4) * 1500}vmin`;
+const flyBackZpx = (p, vmin, geo) => -(phase4(p)*phase4(p)) * geo.flybackVmin * vmin;
+const blackScreenTransform = (p, vmin, geo) => {
+  const scale = (PERSP - flyBackZpx(p, vmin, geo)) / PERSP;
+  const upY = smooth(clamp01((vScroll(p) - PS) / 400)) * 100; // vh
+  return `translate(-50%, calc(-50% - ${upY}vh)) scale(${scale})`;
+};
+const sphereSceneScale = (p, vmin, geo) => {
+  const fly = flyBackZpx(p, vmin, geo); const radius = geo.carouselRVmin * vmin;
+  return (PERSP - fly - radius) / (PERSP - fly);
+};
+const sphereLogoEase = p => smooth(clamp01((phase3(p) - 0.6) / 0.4));
+const sphereBodyReveal = p => smooth(clamp01((gp(p) - 0.64) / 0.1));
+const sphereCollapse = p => smooth(clamp01((gp(p) - 0.52) / 0.2));
+const sphereScale = p => 1 + 0.5 * sphereCollapse(p);
+const sphereLogoTransform = p =>
+  `translate(-50%, -50%) scale(${0.12 + 0.88*sphereLogoEase(p) - 0.55*sphereCollapse(p)})`;
+const sphereLogoOpacity = p => sphereLogoEase(p);
+const sphereDisperse = p => smooth(clamp01((vScroll(p) - (PS - 400)) / 600));
+
+// ── Marquee + backdrop ──
+const marqueeOpacity = p => phase1(p) * (1 - clamp01((gp(p) - 0.58) / 0.12));
+const marqueeBlur = p => (1 - phase1(p)) * 20; // px
+const stageBackdropOpacity = p => clamp01((0.75 - gp(p)) / 0.03);
+
+// ── Aurora ──
+const auroraOpacity = p => {
+  const v = vScroll(p);
+  const fadeIn = clamp01((v - 1200) / 350);
+  const fadeOut = 1 - clamp01((v - 2900) / 350);
+  return Math.min(fadeIn, fadeOut);
+};
+
+// ── Portfolio ──
+const pfProgress = p => clamp01((vScroll(p) - PS) / PF_DUR);
+const pfEnter = p => smooth(clamp01(pfProgress(p) / 0.267));
+const pfSlide = p => clamp01((pfProgress(p) - 0.267) / 0.453);
+const pfExit  = p => smooth(clamp01((pfProgress(p) - 0.72) / 0.28));
+const portfolioActive = p => vScroll(p) > PS;
+const portfolioTransform = p => {
+  if (!portfolioActive(p)) return "translateY(100%)";
+  const ty = (1 - pfEnter(p)) * 100;
+  const sc = 1 - pfExit(p) * 0.62;
+  const tx = -pfExit(p) * 130;
+  return `translate(${tx}vw, ${ty}%) scale(${sc})`;
+};
+const pfTrackTransform = (p, maxPan) => `translateX(${-pfSlide(p) * maxPan}px)`;
+
+// ── Camera-rig flight + target (phases 6–7) ──
+const flightActive = p => vScroll(p) > GRID_START;
+const p6 = p => clamp01((vScroll(p) - GRID_START) / 1000);
+const p7 = p => clamp01((vScroll(p) - P7_START) / (P7_END - P7_START));
+const easeP7 = p => { const t = p7(p); return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; };
+const cameraRigTransform = p => {
+  if (!flightActive(p)) return "translate(0vw, 0vh) translateZ(0px)";
+  const rigX = -250 * Math.sin((p6(p) * Math.PI) / 2);
+  const rigY = -100 * (1 - Math.cos((p6(p) * Math.PI) / 2));
+  const rigZ = 2250 * easeP7(p);
+  return `translate(${rigX}vw, ${rigY}vh) translateZ(${rigZ}px)`;
+};
+const targetOpacity = p => (flightActive(p) ? 1 : 0);
+const targetTransform = () => "translate(calc(-50% + 250vw), calc(-50% + 100vh)) translateZ(-2250px)";
+const targetRadius = p => (flightActive(p) ? 30 * (1 - easeP7(p)) : 30); // px
+const ctaReveal = p => smooth(clamp01((p7(p) - 0.5) / 0.5));
+const finalFrameReveal = p => smooth(clamp01((p7(p) - 0.8) / 0.2));
+
+// ── Parallax grid ──
+const gridOpacity = p => {
+  const v = vScroll(p);
+  if (v <= GRID_START) return 0;
+  const gridFadeIn = clamp01((v - GRID_START) / (PF_END - GRID_START));
+  if (v <= PF_END) return gridFadeIn;
+  const fade = v > P7_START ? easeP7(p) : 0;
+  return 1 - fade;
+};
+
+// ── Per-letter heading choreography ──
+const heroLetterStyle = (p, index, total) => {
+  const reversed = total - 1 - index;
+  const delay = (reversed / total) * 0.4;
+  const e = smooth(clamp01((phase1(p) - delay) / 0.6));
+  return { transform:`translateY(${e*40}%)`, filter:`blur(${e*1.5}vmin)`,
+           opacity: Math.max(0, 1 - e*1.5) };
+};
+const blockLetterStyle = (p, index, total) => {
+  const ap = clamp01((gp(p) - 0.6) / 0.135);
+  const delay = (index / total) * 0.55;
+  const inv = 1 - smooth(clamp01((ap - delay) / 0.45));
+  return { transform:`translateY(${inv*70}%)`, filter:`blur(${inv*2.0}vmin)`,
+           opacity: Math.max(0, 1 - inv*1.3) };
+};
+const templatesLetterStyle = (p, index) => {
+  const t = clamp01((phase1(p) - 0.45 - index*0.005) / 0.45);
+  return { transform:`translateY(${(1-smooth(t))*150}%)`, filter:`blur(${(1-t)*1.5}vmin)`,
+           opacity: t };
+};
+
+
+/* ───────── responsive geometry ───────── */
+const BUCKETS = {
+  desktop:{trackVh:2000,cw:42,ch:62,r:27,fly:40,hp:8,h1:18,h2:24,bw:52,bt:2.4},
+  tablet: {trackVh:1700,cw:54,ch:80,r:35,fly:52,hp:8,h1:13,h2:16,bw:64,bt:3.0},
+  mobile: {trackVh:1300,cw:64,ch:94,r:41,fly:60,hp:8,h1:10,h2:12,bw:82,bt:4.2},
+};
+let geo = { flybackVmin:40, carouselRVmin:27 };
+let vmin = Math.min(innerWidth, innerHeight) / 100;
+function pickBucket() { const w = innerWidth, h = innerHeight; if (w > h) return "desktop"; if (w < 640) return "mobile"; if (w <= 1024) return "tablet"; return "desktop"; }
+function applyGeometry() {
+  const b = BUCKETS[pickBucket()], s = document.documentElement.style;
+  s.setProperty("--sr-card-w", b.cw + "vmin"); s.setProperty("--sr-card-h", b.ch + "vmin");
+  s.setProperty("--sr-carousel-r", b.r + "vmin"); s.setProperty("--sr-flyback", b.fly + "vmin");
+  s.setProperty("--sr-hero-pad", b.hp + "vmin");
+  s.setProperty("--sr-heading-1", b.h1 + "vmin"); s.setProperty("--sr-heading-2", b.h2 + "vmin");
+  s.setProperty("--sr-sphere-body-w", b.bw + "vmin"); s.setProperty("--sr-sphere-body-text", b.bt + "vmin");
+  s.setProperty("--sr-track-vh", b.trackVh + "vh");
+  geo = { flybackVmin: b.fly, carouselRVmin: b.r };
+  vmin = Math.min(innerWidth, innerHeight) / 100;
+}
+applyGeometry();
+
+/* ───────── grid items ───────── */
+const RAW_GRID = [
+  {tx:-85,ty:-60,w:"45vw",h:"70vh"}, {tx:-80,ty:55,w:"40vw",h:"65vh"},
+  {tx:85,ty:-60,w:"40vw",h:"75vh"},  {tx:80,ty:55,w:"45vw",h:"70vh"},
+  {tx:-15,ty:-110,w:"45vw",h:"75vh"},{tx:15,ty:120,w:"50vw",h:"80vh"},
+  {tx:50,ty:120,w:"45vw",h:"70vh"},  {tx:120,ty:-10,w:"40vw",h:"80vh"},
+  {tx:0,ty:160,w:"45vw",h:"75vh"},   {tx:150,ty:0,w:"50vw",h:"80vh"},
+  {tx:200,ty:30,w:"45vw",h:"75vh"},  {tx:300,ty:40,w:"40vw",h:"70vh"},
+  {tx:190,ty:160,w:"45vw",h:"80vh"}, {tx:310,ty:170,w:"50vw",h:"75vh"},
+];
+// 9 source images: grid-images/image 553.png … image 561.png (URL-encode the space as %20)
+const GRID_IMAGES = [
+  `${BASE}/grid-images/image%20553.png`,
+  `${BASE}/grid-images/image%20554.png`,
+  `${BASE}/grid-images/image%20555.png`,
+  `${BASE}/grid-images/image%20556.png`,
+  `${BASE}/grid-images/image%20557.png`,
+  `${BASE}/grid-images/image%20558.png`,
+  `${BASE}/grid-images/image%20559.png`,
+  `${BASE}/grid-images/image%20560.png`,
+  `${BASE}/grid-images/image%20561.png`,
+];
+const GRID_ITEMS = RAW_GRID.map((it, index) => {
+  const pr = Math.abs(Math.sin((index+1)*12.9898) * 43758.5453) % 1;
+  const z = -500 - pr*2500;
+  const scale = 1500 / (1500 - z);                  // PERSP=1500
+  const imgRand = Math.abs(Math.sin((index+1)*78.233) * 12345.678) % 1;
+  const image = GRID_IMAGES[Math.floor(imgRand * GRID_IMAGES.length)];
+  return { ...it, z, scale, image };
+});
+const gridItemTransform = it =>
+  `translate(calc(-50% + ${it.tx}vw), calc(-50% + ${it.ty}vh)) translateZ(${it.z}px) scale(${it.scale})`;
+const gridItemRadius = it => `${12 / it.scale}px`;
+
+
+/* ───────── helpers ───────── */
+const $ = (id) => document.getElementById(id);
+const track = $("track");
+
+function scrollLetters(el, text, styleFn, { indexOffset = 0, totalOverride } = {}) {
+  const letters = [];
+  const parts = text.split("\n");
+  parts.forEach((line, li) => {
+    for (const ch of line) {
+      const s = document.createElement("span");
+      s.className = "ch";
+      if (ch === " ") { s.innerHTML = "&nbsp;"; s.style.display = "inline"; el.appendChild(s); continue; }
+      s.textContent = ch; el.appendChild(s); letters.push(s);
+    }
+    if (li < parts.length - 1) el.appendChild(document.createElement("br"));
+  });
+  const total = totalOverride ?? letters.length;
+  return (p) => letters.forEach((s, i) => { const st = styleFn(p, i + indexOffset, total); s.style.transform = st.transform; s.style.filter = st.filter; s.style.opacity = st.opacity; });
+}
+
+/* static content */
+{
+  const items = ["Templates that work","Design that sells","Speed without compromise","AI prompts on another level"];
+  let html = ""; for (let k = 0; k < 2; k++) for (const t of items) html += `<span class="it">${t}</span><span class="dot"></span>`;
+  $("mqRow").innerHTML = html;
+}
+const PF = [
+  { title:"Archin", client:"logan cee", year:"2023", disc:"Architecture Design · Website", v:"portfolio-1.mp4" },
+  { title:"Zumar",  client:"zumar",     year:"2024", disc:"Web Design & Development",     v:"portfolio-2.mp4" },
+  { title:"Nova",   client:"nova",      year:"2024", disc:"Brand · Motion · Web",         v:"portfolio-3.mp4" },
+];
+const pfTrack = $("pfTrack"), pfVideos = [];
+PF.forEach((it) => {
+  const c = document.createElement("div"); c.className = "pfc";
+  c.innerHTML = `<video muted loop playsinline autoplay preload="none"></video>
+    <div class="tags"><span>${it.client}</span><i>·</i><span>${it.year}</span><i>·</i><span>${it.disc}</span></div>
+    <h3>${it.title}</h3>`;
+  const v = c.querySelector("video"); v.dataset.src = `${BASE}/showreel/${it.v}`; pfVideos.push(v); pfTrack.appendChild(c);
+});
+let pfOn = false;
+function setPfVideos(on) {
+  if (on === pfOn) return; pfOn = on;
+  pfVideos.forEach((v) => { if (on) { v.src = v.dataset.src; v.play().catch(() => {}); } else { v.pause(); v.removeAttribute("src"); v.load(); } });
+}
+let maxPan = 0;
+const measurePan = () => { maxPan = Math.max(0, pfTrack.scrollWidth - innerWidth + 3 * vmin); };
+
+const gridEls = [];
+GRID_ITEMS.forEach((it) => {
+  const d = document.createElement("div");
+  d.className = "gridtile";
+  d.style.width = it.w; d.style.height = it.h; d.style.transform = gridItemTransform(it); d.style.borderRadius = gridItemRadius(it);
+  d.style.backgroundImage = `url("${it.image}")`; d.style.opacity = 0;
+  $("rig").insertBefore(d, $("target")); gridEls.push(d);
+});
+
+const letterFns = [
+  scrollLetters($("hl1"), "Prompts that", heroLetterStyle),
+  scrollLetters($("hl2"), "think ahead", heroLetterStyle),
+  scrollLetters($("tmplH"), "Browse our\ntemplates", templatesLetterStyle),
+  scrollLetters($("h1"), "Beyond", blockLetterStyle, { indexOffset:0, totalOverride:15 }),
+  scrollLetters($("h2a"), "all", blockLetterStyle, { indexOffset:6, totalOverride:15 }),
+  scrollLetters($("h2b"), "limits", blockLetterStyle, { indexOffset:9, totalOverride:15 }),
+];
+
+/* ───────── shaders (from the brief, verbatim) ───────── */
+const CLIP_VERT = `void main() { gl_Position = vec4(position.xy, 0.0, 1.0); }`;
+const HERO_FRAG = `precision mediump float;
+uniform vec2 u_resolution;
+uniform float u_time;
+uniform vec2 u_mouse;
+
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+float snoise(vec2 v) {
+    const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+    vec2 i  = floor(v + dot(v, C.yy));
+    vec2 x0 = v -   i + dot(i, C.xx);
+    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+    vec4 x12 = x0.xyxy + C.xxzz;
+    x12.xy -= i1;
+    i = mod289(i);
+    vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 )) + i.x + vec3(0.0, i1.x, 1.0 ));
+    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+    m = m*m ; m = m*m ;
+    vec3 x = 2.0 * fract(p * C.www) - 1.0;
+    vec3 h = abs(x) - 0.5;
+    vec3 ox = floor(x + 0.5);
+    vec3 a0 = x - ox;
+    m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+    vec3 g;
+    g.x  = a0.x  * x0.x  + h.x  * x0.y;
+    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+    return 130.0 * dot(m, g);
+}
+
+void addBlob(inout vec3 acc, inout float wsum, vec2 uv, vec2 center, float radius, vec3 color) {
+    float d = distance(uv, center);
+    float w = exp(-(d * d) / (radius * radius));
+    acc += color * w;
+    wsum += w;
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    float t = u_time * 0.22;
+
+    vec2 uv = st;
+    uv.x += 0.16 * snoise(st * 1.1 + vec2(0.0, t));
+    uv.y += 0.16 * snoise(st * 1.1 + vec2(7.3, -t * 0.9));
+
+    vec2 mouse = u_mouse / u_resolution.xy;
+    mouse.y = 1.0 - mouse.y;
+    float infl = exp(-distance(st, mouse) * 1.8);
+    uv += (st - mouse) * infl * 0.22;
+
+    vec3 night    = vec3(0.020, 0.015, 0.045);
+    vec3 indigo   = vec3(0.10,  0.08,  0.32);
+    vec3 violet   = vec3(0.34,  0.14,  0.72);
+    vec3 electric = vec3(0.52,  0.24,  0.92);
+    vec3 glow     = vec3(0.82,  0.72,  0.99);
+
+    vec3 acc = vec3(0.0);
+    float wsum = 0.0;
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.05 * sin(t * 0.5), 1.18), 0.58, night);
+    addBlob(acc, wsum, uv, vec2(-0.12, 1.05 + 0.05 * cos(t * 0.6)), 0.36, night);
+    addBlob(acc, wsum, uv, vec2(1.12,  1.05 + 0.05 * sin(t * 0.6)), 0.36, night);
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.05 * sin(t * 0.4), 0.66 + 0.05 * cos(t * 0.5)), 0.40, indigo);
+    addBlob(acc, wsum, uv, vec2(0.16 + 0.05 * cos(t * 0.8), 0.46), 0.26, indigo);
+    addBlob(acc, wsum, uv, vec2(0.84 + 0.05 * sin(t * 0.8), 0.46), 0.26, indigo);
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.07 * sin(t * 0.6), 0.30 + 0.05 * cos(t * 0.6)), 0.42, violet);
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.06 * sin(t * 0.9), 0.12 + 0.04 * cos(t * 0.8)), 0.34, electric);
+
+    addBlob(acc, wsum, uv, vec2(0.44 + 0.05 * sin(t * 1.1), 0.02 + 0.03 * cos(t)), 0.17, glow);
+
+    addBlob(acc, wsum, uv, vec2(-0.10, -0.05), 0.28, night);
+    addBlob(acc, wsum, uv, vec2(1.10,  -0.05), 0.28, night);
+
+    vec3 col = acc / max(wsum, 0.0001);
+
+    vec2 hot = vec2(0.44 + 0.05 * sin(t * 1.1), 0.02 + 0.03 * cos(t));
+    float hotGlow = exp(-distance(uv, hot) * 4.5);
+    col += vec3(0.78, 0.68, 1.0) * hotGlow * 0.7;
+
+    float luma = dot(col, vec3(0.299, 0.587, 0.114));
+    col = mix(vec3(luma), col, 1.4);
+    col = max(col, 0.0);
+    col = clamp(col, 0.0, 1.0);
+    col = pow(col, vec3(0.90));
+
+    float vig = smoothstep(1.20, 0.32, distance(st, vec2(0.5, 0.22)));
+    col *= 0.50 + 0.50 * vig;
+
+    float grain = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233)) + u_time * 0.5) * 43758.5453);
+    col += (grain - 0.5) * 0.05;
+
+    col = clamp(col, 0.0, 1.0);
+    gl_FragColor = vec4(col, 1.0);
+}
+`;
+const TARGET_FRAG = `precision mediump float;
+uniform vec2 u_resolution;
+uniform float u_time;
+
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+float snoise(vec2 v) {
+    const vec4 C = vec4(0.211324865405187, 0.366025403784439, -0.577350269189626, 0.024390243902439);
+    vec2 i  = floor(v + dot(v, C.yy));
+    vec2 x0 = v -   i + dot(i, C.xx);
+    vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+    vec4 x12 = x0.xyxy + C.xxzz;
+    x12.xy -= i1;
+    i = mod289(i);
+    vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 )) + i.x + vec3(0.0, i1.x, 1.0 ));
+    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+    m = m*m ; m = m*m ;
+    vec3 x = 2.0 * fract(p * C.www) - 1.0;
+    vec3 h = abs(x) - 0.5;
+    vec3 ox = floor(x + 0.5);
+    vec3 a0 = x - ox;
+    m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+    vec3 g;
+    g.x  = a0.x  * x0.x  + h.x  * x0.y;
+    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+    return 130.0 * dot(m, g);
+}
+
+void addBlob(inout vec3 acc, inout float wsum, vec2 uv, vec2 center, float radius, vec3 color) {
+    float d = distance(uv, center);
+    float w = exp(-(d * d) / (radius * radius));
+    acc += color * w;
+    wsum += w;
+}
+
+void main() {
+    vec2 st = gl_FragCoord.xy / u_resolution.xy;
+    float t = u_time * 0.22;
+
+    vec2 uv = st;
+    uv.x += 0.16 * snoise(st * 1.1 + vec2(0.0, t));
+    uv.y += 0.16 * snoise(st * 1.1 + vec2(7.3, -t * 0.9));
+
+
+    vec3 night    = vec3(0.020, 0.015, 0.045);
+    vec3 indigo   = vec3(0.10,  0.08,  0.32);
+    vec3 violet   = vec3(0.34,  0.14,  0.72);
+    vec3 electric = vec3(0.52,  0.24,  0.92);
+    vec3 glow     = vec3(0.82,  0.72,  0.99);
+
+    vec3 acc = vec3(0.0);
+    float wsum = 0.0;
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.05 * sin(t * 0.5), 1.18), 0.58, night);
+    addBlob(acc, wsum, uv, vec2(-0.12, 1.05 + 0.05 * cos(t * 0.6)), 0.36, night);
+    addBlob(acc, wsum, uv, vec2(1.12,  1.05 + 0.05 * sin(t * 0.6)), 0.36, night);
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.05 * sin(t * 0.4), 0.66 + 0.05 * cos(t * 0.5)), 0.40, indigo);
+    addBlob(acc, wsum, uv, vec2(0.16 + 0.05 * cos(t * 0.8), 0.46), 0.26, indigo);
+    addBlob(acc, wsum, uv, vec2(0.84 + 0.05 * sin(t * 0.8), 0.46), 0.26, indigo);
+
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.07 * sin(t * 0.6), 0.30 + 0.05 * cos(t * 0.6)), 0.42, violet);
+    addBlob(acc, wsum, uv, vec2(0.5  + 0.06 * sin(t * 0.9), 0.12 + 0.04 * cos(t * 0.8)), 0.34, electric);
+
+    addBlob(acc, wsum, uv, vec2(0.44 + 0.05 * sin(t * 1.1), 0.02 + 0.03 * cos(t)), 0.17, glow);
+
+    addBlob(acc, wsum, uv, vec2(-0.10, -0.05), 0.28, night);
+    addBlob(acc, wsum, uv, vec2(1.10,  -0.05), 0.28, night);
+
+    vec3 col = acc / max(wsum, 0.0001);
+
+    vec2 hot = vec2(0.44 + 0.05 * sin(t * 1.1), 0.02 + 0.03 * cos(t));
+    float hotGlow = exp(-distance(uv, hot) * 4.5);
+    col += vec3(0.78, 0.68, 1.0) * hotGlow * 0.7;
+
+    float luma = dot(col, vec3(0.299, 0.587, 0.114));
+    col = mix(vec3(luma), col, 1.4);
+    col = max(col, 0.0);
+    col = clamp(col, 0.0, 1.0);
+    col = pow(col, vec3(0.90));
+
+    float vig = smoothstep(1.20, 0.32, distance(st, vec2(0.5, 0.22)));
+    col *= 0.50 + 0.50 * vig;
+
+    float grain = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898, 78.233)) + u_time * 0.5) * 43758.5453);
+    col += (grain - 0.5) * 0.05;
+
+    col = clamp(col, 0.0, 1.0);
+    gl_FragColor = vec4(col, 1.0);
+}
+`;
+const AURORA_VERT = `varying vec2 vUv;
+void main() { vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }
+`;
+const AURORA_FRAG = `precision mediump float;
+varying vec2 vUv;
+uniform float u_time;
+const vec3 iAuroraDeep = vec3(0.38, 0.14, 0.88);
+const vec3 iAuroraBright = vec3(0.66, 0.30, 1.00);
+vec3 warp3d(vec3 pos, float t) {
+    float curv = .8, a = 1.9, b = 0.7; pos *= 2.;
+    pos.x += curv * sin(t + a * pos.y) + t * b; pos.y += curv * cos(t + a * pos.x);
+    pos.y += curv * sin(t + a * pos.z) + t * b; pos.z += curv * cos(t + a * pos.y);
+    pos.z += curv * sin(t + a * pos.x) + t * b; pos.x += curv * cos(t + a * pos.z);
+    return 0.5 + 0.5 * cos(pos.xyz + vec3(1, 2, 4));
+}
+void main() {
+    vec2 uv = 2.0 * vUv - 1.0;
+    vec3 w = pow(warp3d(vec3(uv.x, sin(uv.y), uv.y), u_time * 1.5), vec3(1.5));
+    vec3 col = 1.6 * iAuroraDeep * w.x; col *= w.y; col += iAuroraBright * w.z;
+    col *= smoothstep(0.6, 1.0, abs(uv.y));
+    col *= smoothstep(-0.5, 1.0, -uv.y * uv.x); col *= smoothstep(-0.5, 1.0, -uv.y * uv.x);
+    vec3 c = col * 1.15;
+    float a = clamp(max(c.r, max(c.g, c.b)) * 1.6, 0.0, 0.9);
+    gl_FragColor = vec4(c, a);
+}
+`;
+const SNOISE3 = `vec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}
+vec4 mod289(vec4 x){return x - floor(x*(1.0/289.0))*289.0;}
+vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314*r;}
+float snoise(vec3 v){
+    const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+    const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+    vec3 i = floor(v + dot(v, C.yyy));
+    vec3 x0 = v - i + dot(i, C.xxx);
+    vec3 g = step(x0.yzx, x0.xyz);
+    vec3 l = 1.0 - g;
+    vec3 i1 = min(g.xyz, l.zxy);
+    vec3 i2 = max(g.xyz, l.zxy);
+    vec3 x1 = x0 - i1 + C.xxx;
+    vec3 x2 = x0 - i2 + C.yyy;
+    vec3 x3 = x0 - D.yyy;
+    i = mod289(i);
+    vec4 p = permute(permute(permute(
+        i.z + vec4(0.0, i1.z, i2.z, 1.0))
+        + i.y + vec4(0.0, i1.y, i2.y, 1.0))
+        + i.x + vec4(0.0, i1.x, i2.x, 1.0));
+    float n_ = 0.142857142857;
+    vec3 ns = n_ * D.wyz - D.xzx;
+    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
+    vec4 x_ = floor(j * ns.z);
+    vec4 y_ = floor(j - 7.0 * x_);
+    vec4 x = x_ * ns.x + ns.yyyy;
+    vec4 y = y_ * ns.x + ns.yyyy;
+    vec4 h = 1.0 - abs(x) - abs(y);
+    vec4 b0 = vec4(x.xy, y.xy);
+    vec4 b1 = vec4(x.zw, y.zw);
+    vec4 s0 = floor(b0)*2.0 + 1.0;
+    vec4 s1 = floor(b1)*2.0 + 1.0;
+    vec4 sh = -step(h, vec4(0.0));
+    vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy;
+    vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
+    vec3 p0 = vec3(a0.xy, h.x);
+    vec3 p1 = vec3(a0.zw, h.y);
+    vec3 p2 = vec3(a1.xy, h.z);
+    vec3 p3 = vec3(a1.zw, h.w);
+    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
+    p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
+    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+    m = m * m;
+    return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+}
+`;
+const SPHERE_VERT = SNOISE3 + `
+uniform float uTime; uniform float uSize; uniform float uAmp; uniform float uPR;
+uniform float uDisperse;
+attribute float aRand;
+varying float vAlpha; varying float vLit; varying float vVert; varying float vSide;
+void main(){
+    vec3 p = position;
+    float n1 = snoise(p * 1.6 + vec3(0.0, uTime * 0.18, 0.0));
+    float n2 = snoise(p * 3.3 - vec3(uTime * 0.12));
+    float disp = n1 * 0.72 + n2 * 0.28;
+    vec3 pos = p * (1.0 + uAmp * disp);
+
+    vec3 dir = normalize(p + vec3(1e-4));
+    pos += dir * uDisperse * (0.18 + 0.5 * aRand);
+    pos += vec3(n1, n2, n1 * n2) * uDisperse * 0.22;
+
+    float lit = smoothstep(-0.25, 0.5, disp);
+    vLit = lit;
+
+    vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+    gl_Position = projectionMatrix * mv;
+    gl_PointSize = uSize * uPR * (1.0 / max(0.1, -mv.z));
+
+    vVert = mv.y;
+    vSide = abs(mv.x);
+
+    float depth = pos.z * 0.5 + 0.5;
+    float angR = length(mv.xy) / max(0.1, -mv.z);
+    float hole = smoothstep(0.10, 0.20, angR);
+    vAlpha = hole * (0.10 + 0.40 * depth) * (0.15 + 0.95 * lit) * (1.0 - 0.85 * uDisperse);
+}
+`;
+const SPHERE_FRAG = `precision highp float;
+uniform float uDisperse;
+varying float vAlpha; varying float vLit; varying float vVert; varying float vSide;
+void main(){
+    vec2 uv = gl_PointCoord - 0.5;
+    float d = length(uv);
+    if (d > 0.5) discard;
+    float tighten = 1.0 - 0.45 * uDisperse;
+    float bloomK = 1.0 - 0.65 * uDisperse;
+    float soft = smoothstep(0.5 * tighten, 0.0, d);
+    float core = smoothstep(0.16 * tighten, 0.0, d);
+
+    vec3 pink   = vec3(1.00, 0.32, 0.78);
+    vec3 purple = vec3(0.52, 0.12, 1.00);
+    vec3 white  = vec3(0.86, 0.82, 1.00);
+    float vt = clamp(vVert * 0.5 + 0.5, 0.0, 1.0);
+    vec3 col = mix(purple, pink, vt);
+    col = mix(col, white, smoothstep(0.72, 1.15, vSide));
+
+    col *= (0.60 + 0.55 * vLit);
+    col += smoothstep(0.55, 1.0, vLit) * core * vec3(0.75);
+
+    float halo = smoothstep(0.5 * tighten, 0.0, d);
+    col += col * halo * 0.9 * bloomK;
+    float cap = smoothstep(0.55, 1.05, abs(vVert));
+    col += col * cap * 1.7 * bloomK;
+    col *= mix(1.25, 1.05, uDisperse);
+    float capA = 1.0 + 1.0 * cap;
+    gl_FragColor = vec4(col, soft * vAlpha * capA);
+}
+`;
+
+/* ───────── WebGL scenes ───────── */
+function makeRenderer(host, { dpr, alpha = false, antialias = false }) {
+  const r = new THREE.WebGLRenderer({ alpha, antialias, powerPreference: "high-performance" });
+  r.setPixelRatio(dpr); r.setClearColor(0x000000, alpha ? 0 : 1); host.appendChild(r.domElement);
+  return r;
+}
+const clock = new THREE.Clock();
+const quad = () => new THREE.PlaneGeometry(2, 2);
+const orthoCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+const scenes = [];
+
+{ // A. hero gradient
+  const r = makeRenderer($("heroGl"), { dpr: 1 });
+  const mat = new THREE.ShaderMaterial({ vertexShader: CLIP_VERT, fragmentShader: HERO_FRAG, depthTest:false, depthWrite:false,
+    uniforms: { u_resolution:{value:new THREE.Vector2(1,1)}, u_time:{value:0}, u_mouse:{value:new THREE.Vector2(0,0)} } });
+  const scene = new THREE.Scene(); const mesh = new THREE.Mesh(quad(), mat); mesh.frustumCulled = false; scene.add(mesh);
+  const target = new THREE.Vector2(innerWidth/2, innerHeight/2), cur = target.clone();
+  addEventListener("pointermove", (e) => {
+    const b = r.domElement.getBoundingClientRect(); if (!b.width) return;
+    target.set((e.clientX - b.left) / b.width * r.domElement.width, (e.clientY - b.top) / b.height * r.domElement.height);
+  });
+  let last = 0;
+  scenes.push({
+    resize() { r.setSize(Math.round(innerWidth - 8*vmin), Math.round(innerHeight - 8*vmin), false); r.domElement.style.cssText = "position:absolute;inset:0;width:100%;height:100%"; mat.uniforms.u_resolution.value.set(r.domElement.width, r.domElement.height); },
+    key: "hero",
+    render(t) { if (t - last < 1/36) return; last = t; cur.lerp(target, 0.12); mat.uniforms.u_time.value = t; mat.uniforms.u_mouse.value.copy(cur); r.render(scene, orthoCam); },
+  });
+}
+
+{ // B. aurora
+  const host = document.createElement("div"); host.style.cssText = "width:100%;height:100%"; $("aurora").appendChild(host);
+  const r = makeRenderer(host, { dpr: Math.min(2, Math.max(1, devicePixelRatio)), alpha: true });
+  const mat = new THREE.ShaderMaterial({ vertexShader: AURORA_VERT, fragmentShader: AURORA_FRAG, transparent: true, depthTest:false, depthWrite:false, uniforms: { u_time:{value:0} } });
+  const scene = new THREE.Scene(); const mesh = new THREE.Mesh(quad(), mat); mesh.frustumCulled = false; scene.add(mesh);
+  scenes.push({ key: "aurora", resize() { r.setSize(innerWidth, innerHeight, false); r.domElement.style.cssText = "width:100%;height:100%"; }, render(t) { mat.uniforms.u_time.value = t; r.render(scene, orthoCam); } });
+}
+
+{ // C. particle sphere
+  const dpr = Math.min(3, Math.max(2, devicePixelRatio));
+  const r = makeRenderer($("sphereWrap"), { dpr, alpha: true });
+  const N = 34000, pos = new Float32Array(N*3), rnd = new Float32Array(N), ga = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < N; i++) {
+    const y = 1 - (i / (N - 1)) * 2, rad = Math.sqrt(1 - y*y), th = ga * i;
+    pos[i*3] = Math.cos(th) * rad; pos[i*3+1] = y; pos[i*3+2] = Math.sin(th) * rad;
+    rnd[i] = Math.abs(Math.sin((i+1)*12.9898) * 43758.5453) % 1;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("aRand", new THREE.BufferAttribute(rnd, 1));
+  const mat = new THREE.ShaderMaterial({ vertexShader: SPHERE_VERT, fragmentShader: SPHERE_FRAG, transparent:true, depthWrite:false, depthTest:false, blending:THREE.AdditiveBlending,
+    uniforms: { uTime:{value:0}, uSize:{value:24}, uAmp:{value:0.11}, uPR:{value:dpr}, uDisperse:{value:0} } });
+  const pts = new THREE.Points(g, mat); pts.frustumCulled = false;
+  const scene = new THREE.Scene(); scene.add(pts);
+  const cam = new THREE.PerspectiveCamera(50, 1, 0.1, 100); cam.position.set(0, 0, 3.8);
+  scenes.push({
+    key: "sphere",
+    resize() { r.setSize(innerWidth, innerHeight, false); r.domElement.style.cssText = "width:100%;height:100%"; cam.aspect = innerWidth / innerHeight; cam.updateProjectionMatrix(); },
+    render(t, p) { mat.uniforms.uTime.value = t; mat.uniforms.uPR.value = r.getPixelRatio(); mat.uniforms.uDisperse.value = sphereDisperse(p); pts.rotation.y = t * 0.12; pts.rotation.x = Math.sin(t * 0.1) * 0.12; r.render(scene, cam); },
+  });
+}
+
+{ // D. target star
+  const r = makeRenderer($("targetGl"), { dpr: Math.min(2, Math.max(1, devicePixelRatio)), alpha: true, antialias: true });
+  r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 1.1; r.domElement.style.cssText = "position:absolute;inset:0;width:100%;height:100%";
+  const scene = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(45, 1, 0.1, 100); cam.position.set(0, 0, 4);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.25));
+  const d1 = new THREE.DirectionalLight(0xffffff, 2.0); d1.position.set(2.5, 3.0, 4.0); scene.add(d1);
+  const d2 = new THREE.DirectionalLight(0xcfe0ff, 0.9); d2.position.set(-3.0, -1.5, 2.0); scene.add(d2);
+  const bgMat = new THREE.ShaderMaterial({ vertexShader: CLIP_VERT, fragmentShader: TARGET_FRAG, uniforms: { u_resolution:{value:new THREE.Vector2(1,1)}, u_time:{value:0} }, depthTest:false, depthWrite:false });
+  const bg = new THREE.Mesh(quad(), bgMat); bg.renderOrder = -1; bg.frustumCulled = false; scene.add(bg);
+  { // procedural chrome environment
+    const c = document.createElement("canvas"); c.width = 1024; c.height = 512; const x = c.getContext("2d");
+    const lg = x.createLinearGradient(0,0,0,512); lg.addColorStop(0,"#3a4150"); lg.addColorStop(.45,"#10131a"); lg.addColorStop(1,"#020308"); x.fillStyle = lg; x.fillRect(0,0,1024,512);
+    const sh = x.createLinearGradient(0,110,0,215); sh.addColorStop(0,"rgba(255,255,255,0)"); sh.addColorStop(.5,"rgba(255,255,255,.97)"); sh.addColorStop(1,"rgba(255,255,255,0)"); x.fillStyle = sh; x.fillRect(0,110,1024,105);
+    for (const [cx,cy,rr,col] of [[280,150,150,"rgba(255,255,255,.95)"],[740,165,130,"rgba(244,248,255,.9)"],[540,340,150,"rgba(200,214,235,.45)"]]) {
+      const rg = x.createRadialGradient(cx,cy,0,cx,cy,rr); rg.addColorStop(0,col); rg.addColorStop(1,"rgba(255,255,255,0)"); x.fillStyle = rg; x.fillRect(cx-rr,cy-rr,rr*2,rr*2);
+    }
+    const tex = new THREE.CanvasTexture(c); tex.mapping = THREE.EquirectangularReflectionMapping; tex.colorSpace = THREE.SRGBColorSpace;
+    const pm = new THREE.PMREMGenerator(r); scene.environment = pm.fromEquirectangular(tex).texture; pm.dispose();
+  }
+  const group = new THREE.Group(); scene.add(group);
+  // model.glb is Draco-compressed
+  const draco = new DRACOLoader().setDecoderPath("https://unpkg.com/three@0.185.0/examples/jsm/libs/draco/gltf/");
+  const loader = new GLTFLoader().setDRACOLoader(draco);
+  loader.load(`${BASE}/showreel/model.glb`, (gltf) => {
+    const obj = gltf.scene;
+    obj.traverse((o) => { if (o.isMesh) o.material = new THREE.MeshPhysicalMaterial({ color:0xeef2f8, metalness:1.0, roughness:0.025,
+  envMapIntensity:1.35, clearcoat:1.0, clearcoatRoughness:0.03 }); });
+    const box = new THREE.Box3().setFromObject(obj), c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+    const k = 2.4 / Math.max(s.x, s.y, s.z); obj.scale.multiplyScalar(k); obj.position.copy(c).multiplyScalar(-k);
+    const holder = new THREE.Group(); holder.add(obj); group.add(holder);
+  });
+  let spin = 0, lastT = 0; const deg = Math.PI / 180;
+  scenes.push({
+    key: "target",
+    resize() { r.setSize(innerWidth, innerHeight, false); r.domElement.style.cssText = "position:absolute;inset:0;width:100%;height:100%"; cam.aspect = innerWidth / innerHeight; cam.updateProjectionMatrix(); const pr = r.getPixelRatio(); bgMat.uniforms.u_resolution.value.set(innerWidth * pr, innerHeight * pr); },
+    render(t) { const dt = Math.min(0.1, Math.max(0, t - lastT)); lastT = t; spin -= dt * (Math.PI * 2 / 12); bgMat.uniforms.u_time.value = t; group.position.set(1.46, -0.43, -0.33); group.scale.setScalar(1.74); group.rotation.set(-44*deg, -44*deg, spin); r.render(scene, cam); },
+  });
+}
+
+/* ───────── per-frame driver ───────── */
+const sceneVisibility = p => {
+  const g = gp(p), v = vScroll(p);
+  return {
+    hero: g < 0.8,
+    aurora: v > 1000 && v < PF_END + 350,
+    sphere: g > 0.1 && v < GRID_START + 400,
+    target: v > GRID_START - 300,
+    portfolio: v > PS - 600 && v < PF_END + 350,
+  };
+};
+
+const el = {
+  c1:$("c1"), c2:$("c2"), c3:$("c3"), c4:$("c4"), car:$("carousel"), rig:$("rig"), backdrop:$("backdrop"),
+  mq:$("marquee"), carCta:$("carCta"), aurora:$("aurora"), target:$("target"), frame:$("frame"), cta:$("cta"),
+  blk:$("blk"), blkIn:$("blkIn"), sw:$("sphereWrap"), slogo:$("slogo"), sbody:$("sbody"),
+  pf:$("pf"), head:$("heroHead"), bottom:$("heroBottom"), imgcard:$("imgcard"), imgA:$("imgA"), imgB:$("imgB"),
+};
+let rx = 0, ry = 0, trx = 0, tryy = 0;
+addEventListener("pointermove", (e) => { trx = -((e.clientY / innerHeight) * 2 - 1) * 9; tryy = ((e.clientX / innerWidth) * 2 - 1) * 12; });
+
+function apply(p) {
+  el.c1.style.width = card1Width(p); el.c1.style.height = card1Height(p);
+  el.c1.style.transform = card1Transform(p); el.c1.style.zIndex = cardZIndex(p, 0); el.c1.style.opacity = card1Opacity(p);
+  el.c2.style.transform = sideCardTransform(p, 90);  el.c2.style.zIndex = cardZIndex(p, 1); el.c2.style.opacity = card1Opacity(p);
+  el.c3.style.transform = sideCardTransform(p, 180); el.c3.style.zIndex = cardZIndex(p, 2); el.c3.style.opacity = card1Opacity(p);
+  el.c4.style.transform = sideCardTransform(p, 270); el.c4.style.zIndex = cardZIndex(p, 3); el.c4.style.opacity = card4Opacity(p);
+  el.car.style.transform = carouselTransform(p);
+  el.rig.style.transform = cameraRigTransform(p);
+  el.backdrop.style.opacity = stageBackdropOpacity(p);
+  el.mq.style.opacity = marqueeOpacity(p); el.mq.style.filter = `blur(${marqueeBlur(p)}px)`;
+  const cc = carouselCtaReveal(p); el.carCta.style.opacity = cc; el.carCta.style.transform = `translateY(${(1-cc)*2.5}vh)`;
+  el.aurora.style.opacity = auroraOpacity(p);
+
+  const fade = heroContentFade(p); el.head.style.opacity = fade; el.bottom.style.opacity = fade;
+  const f = heroTiltFade(p);
+  rx += (trx - rx) * 0.1; ry += (tryy - ry) * 0.1;
+  el.imgcard.style.width = heroSliderWidth(p); el.imgcard.style.height = heroSliderHeight(p);
+  el.imgcard.style.transform = `translate(-50%,-50%) rotateX(${rx*f}deg) rotateY(${ry*f}deg)`;
+  el.imgA.style.transform = `translateX(${heroSlidePan(p)}%)`;
+  el.imgB.style.transform = `translateX(${heroSlidePan(p)}%) rotate(-90deg) scale(1.65)`;
+
+  el.blk.style.webkitMaskSize = el.blk.style.maskSize = starMaskSize(p);
+  el.blk.style.transform = blackScreenTransform(p, vmin, geo);
+  el.blkIn.style.transform = `translate(-50%,-50%) scale(${sphereSceneScale(p, vmin, geo)})`;
+  el.sw.style.transform = `translate(-50%,-50%) scale(${sphereScale(p)})`;
+  el.slogo.style.transform = sphereLogoTransform(p); el.slogo.style.opacity = sphereLogoOpacity(p);
+  const sb = sphereBodyReveal(p); el.sbody.style.opacity = sb; el.sbody.style.transform = `translateY(${(1-sb)*2.5}vmin)`;
+
+  for (const g of gridEls) g.style.opacity = gridOpacity(p);
+  el.target.style.transform = targetTransform(); el.target.style.borderRadius = `${targetRadius(p)}px`; el.target.style.opacity = targetOpacity(p);
+  el.frame.style.opacity = finalFrameReveal(p);
+  const cr = ctaReveal(p); el.cta.style.opacity = cr; el.cta.style.transform = `translateY(${(1-cr)*6}vh)`;
+
+  el.pf.style.transform = portfolioTransform(p);
+  el.pf.style.visibility = portfolioActive(p) && pfExit(p) < 1 ? "visible" : "hidden";
+  pfTrack.style.transform = pfTrackTransform(p, maxPan);
+  letterFns.forEach((fn) => fn(p));
+}
+
+const progress = () => { const max = track.offsetHeight - innerHeight; return max > 0 ? clamp01(scrollY / max) : 0; };
+function onResize() { applyGeometry(); scenes.forEach((s) => s.resize()); measurePan(); }
+let rzT; const deb = () => { clearTimeout(rzT); rzT = setTimeout(onResize, 120); };
+addEventListener("resize", deb); addEventListener("orientationchange", deb);
+onResize();
+
+(function frame() {
+  const p = progress(), t = clock.getElapsedTime(), vis = sceneVisibility(p);
+  apply(p); setPfVideos(vis.portfolio);
+  for (const s of scenes) if (vis[s.key]) s.render(t, p);
+  requestAnimationFrame(frame);
+})();
+
+/* ───────── header ───────── */
+$("menuBtn").addEventListener("click", () => { const open = $("drop").classList.toggle("open"); $("menuBtn").textContent = open ? "✕" : "☰"; });
+$("drop").addEventListener("click", (e) => { if (e.target.closest("a")) { $("drop").classList.remove("open"); $("menuBtn").textContent = "☰"; } });
+
+/* ───────── loader ───────── */
+{
+  const L = $("loader"), star = L.querySelector(".star"), bloom = L.querySelector(".bloom");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches, MIN = reduce ? 700 : 2600;
+  document.documentElement.style.overflow = "hidden";
+  const t0 = performance.now(); let last = t0, angle = 0, tExit = 0;
+  const ease = (t) => (t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2);
+  (function tick(now) {
+    const dt = now - last; last = now; const el_ = now - t0;
+    const exiting = el_ >= MIN; if (exiting && !tExit) tExit = now;
+    if (!reduce) angle += dt * 360 / (exiting ? 1100 : 4200);
+    const en = 1 - Math.pow(1 - clamp01(el_ / 1100), 3);
+    const e = exiting ? clamp01((now - tExit) / 650) : 0, ee = ease(e);
+    star.style.opacity = en * (1 - ee);
+    star.style.filter = `blur(${22 * (1 - en) + 14 * ee}px) drop-shadow(0 0 28px var(--loader-glow))`;
+    star.style.transform = `translateY(${-4 * ee}vh) scale(${(0.5 + 0.5 * en) * (1 + 0.55 * ee)}) rotate(${angle}deg)`;
+    bloom.style.opacity = 0.85 * en * (1 - ee);
+    L.style.opacity = 1 - ee; L.style.transform = `translateY(${-3 * ee}vh)`;
+    if (e >= 1) { L.remove(); document.documentElement.style.overflow = ""; $("hdr").classList.add("on"); return; }
+    requestAnimationFrame(tick);
+  })(t0);
+}
+</script>
+</body>
+</html>
