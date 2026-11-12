@@ -125,6 +125,26 @@ $("#faq-note").textContent = FAQ_NOTE;
 /* ---------- 09 contact + footer ---------- */
 $("#join-fine").innerHTML = `Call ${esc(CONTACT.phone)}  ·  ${esc(CONTACT.email)}
 ${esc(CONTACT.name)}, ${esc(CONTACT.title)}`;
+/* the email teaser: validates, never sends (no backend yet) */
+const joinForm = $("#join-form"), joinEmail = $("#join-email"), joinMsg = $("#join-msg");
+const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const joinSay = (text, state) => {
+  joinMsg.textContent = text;
+  joinMsg.dataset.state = state;
+  joinMsg.setAttribute("role", state === "error" ? "alert" : "status");
+  joinMsg.hidden = false;
+};
+joinForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const v = joinEmail.value.trim();
+  if (!v) { joinEmail.setAttribute("aria-invalid", "true"); joinSay("Enter your work email so we know where to reach you.", "error"); joinEmail.focus(); return; }
+  if (!EMAIL_OK.test(v)) { joinEmail.setAttribute("aria-invalid", "true"); joinSay("That doesn't look like an email address. Check it and try again.", "error"); joinEmail.focus(); return; }
+  joinEmail.removeAttribute("aria-invalid");
+  joinSay("The request form isn't connected yet, so nothing was sent.", "note");
+});
+joinEmail.addEventListener("input", () => {
+  if (joinEmail.getAttribute("aria-invalid")) { joinEmail.removeAttribute("aria-invalid"); joinMsg.hidden = true; }
+});
 $("#join-art").innerHTML = ph({ kind: "photo", what: "Barry Klasson or the client services team, real photo", note: "Portrait 3:4 · no stock" });
 $("#footer-address").textContent = CONTACT.address;
 $("#footer-legal").textContent = CONTACT.legal;

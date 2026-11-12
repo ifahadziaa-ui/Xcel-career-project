@@ -219,11 +219,12 @@
           <span class="mark" data-m="mark">need</span>
         </span>
       </h2>
-      <form class="join-form" action="#" onsubmit="return false">
+      <form class="join-form" id="join-form" novalidate>
         <label for="join-email" class="sr-only">Work email</label>
-        <input id="join-email" type="email" name="email" placeholder="Work email">
-        <a class="btn" href="#contact" data-m="button">Request staff<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <input id="join-email" type="email" name="email" placeholder="Work email" autocomplete="email" aria-describedby="join-msg">
+        <button class="btn" type="submit" data-m="button">Request staff<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </form>
+      <p class="join-msg" id="join-msg" role="status" aria-live="polite" hidden></p>
       <p class="type-caps join-fine" id="join-fine"></p>
     </div>
     <div class="join-card"><div class="tilt" data-px="-10" data-tilt="-3" style="width:100%;height:100%"><div class="px"><div class="card-rot"><div class="card-reveal" data-m="card" style="width:100%;height:100%"><div class="card-art" id="join-art"></div></div></div></div></div></div>
