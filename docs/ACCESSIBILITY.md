@@ -14,7 +14,7 @@
 | 1.4.11 Non-text contrast | Met | Email field and chat input borders are 3:1 or better; the pause toggle border is stronger. Focus outlines are red on dark. |
 | 1.4.12 Text spacing | Met | With the WCAG spacing overrides applied before load, no text was clipped (decorative placeholder art collapses). |
 | 2.1.1 Keyboard | Met | Tab order: bar → showreel buttons → jobs and poster buttons → FAQ questions → email field and button → footer links → chat launcher. Sideways snap also works with ← / →; ↓ / ↑ step through the showreel's resting beats (hold for free scrolling). |
-| 2.2.2 Pause, stop, hide | Met | The pause toggle in the top bar (`js/pause.js`) stops the marquee, shader animation, the mark's sway, the cursor tilt, looping placeholders and the chat orb's spin and pulse. |
+| 2.2.2 Pause, stop, hide | Met | The pause toggle in the top bar (`js/pause.js`) stops the marquee, shader animation, the mark's sway, the cursor tilt, looping placeholders, the four looping videos (`js/video.js`; the poster shows while paused) and the chat orb's spin and pulse. |
 | 2.4.1 Bypass blocks | Met by landmarks | No skip link. |
 | 2.4.3 Focus order | Met | Follows the visual order. |
 | 2.4.7 Focus visible | Met | 1px outlines on every control. The chat composer shows a 3:1 border and a glow. |

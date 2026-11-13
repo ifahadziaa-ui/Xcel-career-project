@@ -20,7 +20,8 @@ How `landing-prototype/` is built, so a new contributor (or an LLM) can change i
 | `*.html` (about, account, capability, contact, government, healthcare, jobs, login, specialists), `js/pages.js`, `js/site.js`, `js/auth.js`, `js/sprite.js`, `css/pages.css` | The inner pages (from `main`): `pages.js` renders each from `content.js` inside the shared chrome in `site.js` (bar with the pause toggle, footer, Lenis, reveals, chat); `auth.js` is the design-only candidate sign-in (localStorage). |
 | `js/pause.js` | Pause/play state (`html[data-motion]`), the top-bar toggle, `prefers-reduced-motion`. |
 | `js/chat.js` | The XC Concierge chat widget (guided mode from `content.js`, optional live AI). |
-| `js/mark.js`, `js/ph.js` | Reads the mark polygons from the `#i-mark` symbol; the placeholder component (`ph()`) used for every "your asset" slot. |
+| `js/mark.js`, `js/ph.js` | Reads the mark polygons from the `#i-mark` symbol; the placeholder component (`ph()`) used for every "your asset" slot. It also renders a real image (`src`) or looping clip (`video`) in the same slot. |
+| `js/video.js` | `watchVideos()`: plays each `video[data-vid]` only while on screen and not paused; the poster shows otherwise. |
 | `css/base.css` | Tokens (palette, type scale, spacing), reset, placeholder styles. The root `font-size` tracks the viewport. |
 | `css/hero.css` | The hero and the top bar's `.hx-*` layout. |
 | `css/sections.css` | Everything after the hero except the showreel, plus the fixed bar's dock styles and the pause toggle. |
@@ -47,6 +48,7 @@ Cache-busting: the module imports carry `?v=3` (for example `./pause.js?v=3`). U
 - **Boxed text:** Zen Kaku sits low in its line box. Use `text-box: trim-both cap alphabetic` with symmetric padding; flex containers (`.btn`) need a small manual lift instead. Centre rows (`top: 50%`, translate) rather than hard-coding offsets: a fixed offset drifted when the pause toggle made the bar's row taller.
 - **Bar and dock:** the fixed bar is the hero's header markup reused; `--dock` (0 to 1, set in `initHeader`) floats it into a rounded glass pill once scrolled. `--bar-h` is its height and feeds the showreel's top padding, so do not change the bar's height casually.
 - **Motion that moves on its own** must respect `html[data-motion="paused"]` (CSS `animation-play-state`, or `isPaused()` in JS). Scroll-linked motion is exempt by decision.
+- **Real media in a slot:** `ph({ ..., src, alt, pos })` for a photo (files in `assets/img/`), `ph({ ..., video: "name" })` for a clip (`name.webm`, `name.mp4`, `name-poster.webp` in `assets/video/`). Customer logos go in `CUST_LOGO` in `js/main.js` (one line plus the file); keep `assets/img/LOGOS.md` and `assets/video/LICENSES.md` current.
 - **Placeholders:** use `ph({ kind, what, note })`. Placeholder tags are hidden inside the small job-card and customer-logo tiles (they do not fit at the 11px floor).
 
 ## 5. Things that bit us (read before changing the showreel)
@@ -68,3 +70,7 @@ Cache-busting: the module imports carry `?v=3` (for example `./pause.js?v=3`). U
 | Swap a placeholder for a real asset | Replace the `ph()` call (or the `<img>`) and note it in the placeholder register in [../FRONTEND-PROTOTYPE-STATUS.md](../FRONTEND-PROTOTYPE-STATUS.md). |
 | Pause a new animation | Add a selector to the `html[data-motion="paused"]` rule in `css/sections.css`, or check `isPaused()` in JS. |
 | Turn adaptive resolution off | Set `ADAPTIVE = false` in `js/showreel.js`. |
+
+## Body-copy alignment (justified only where it fits)
+
+Body paragraphs are left-aligned with balanced line ends (`text-wrap: pretty`). `js/justify.js` measures each candidate (`.pg-intro`, `.pg-lead`, `.acc .a`) in a hidden copy at its current width and adds `.just-fit` (flush both edges, hyphenated, last line left; `css/base.css`) only when no word gap grows past 1.35x the normal space. It re-checks on resize, font load and FAQ open. Cards, steps, notes and showreel text are never candidates: with two or three lines the gaps stretch 2x to 7x. Measured on 8 pages at 1400, 768 and 390 px, the worst gap actually used is 1.26x, and at 390 px nothing is justified. Do not put `data-m="copy"` on a candidate (the line-splitting reveal breaks justification).

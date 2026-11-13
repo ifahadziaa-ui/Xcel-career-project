@@ -16,6 +16,7 @@ import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
 import { initPauseToggle } from "./pause.js?v=3";
 import { watchVideos } from "./video.js?v=3";
+import { initJustify } from "./justify.js?v=3";
 
 const $ = (s) => document.querySelector(s);
 
@@ -171,6 +172,7 @@ $("#footer-ids").textContent = CONTACT.ids;
 /* ---------- showreel ---------- */
 const sr = initShowreel($("#services"));
 watchVideos();
+initJustify();
 
 /* ---------- smooth scroll ---------- */
 history.scrollRestoration = "manual";

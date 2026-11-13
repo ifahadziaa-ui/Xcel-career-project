@@ -370,26 +370,21 @@ main { position: relative; overflow-x: clip; }
   .ph--video::before { animation: none; }
 }
 
-/* ---------- body copy: one measure, justified ----------
-   Flush on both edges, hyphenated (needs <html lang="en">), last line left.
-   Only paragraphs at least ~36 characters wide are justified; narrow cards, labels,
-   one-liners and centred notes stay as they are. Codes, IDs and phone numbers sit in
-   <span class="nb"> so a hyphen never splits them. Do not put data-m="copy" on these:
-   the line-splitting reveal would break justification and hyphenation. */
+/* ---------- body copy: one measure, justified only where it fits ----------
+   Short paragraphs justify badly: with two or three lines the one full line is stretched
+   (word gaps of 2x to 7x in cards, steps and showreel text). So body copy is left-aligned
+   with balanced line ends, and js/justify.js adds .just-fit to a paragraph only when, at
+   its current width, no gap grows past 1.35x the normal space. Flush on both edges,
+   hyphenated (needs <html lang="en">), last line left. Codes, IDs and phone numbers can sit
+   in <span class="nb"> so a hyphen never splits them. Do not put data-m="copy" on a
+   candidate: the line-splitting reveal would break justification and hyphenation. */
 :root { --measure: 56ch; }
-.justify,
-.pg-intro,
-.pg-lead,
-.acc .a,
-.sr-sphere-body p,
-.sr-cta-lead,
-.sr-pf-line {
+.pg-intro, .pg-lead, .acc .a { text-wrap: pretty; overflow-wrap: break-word; }
+.just-fit {
   text-align: justify;
   text-justify: inter-word;
   text-align-last: left;
   hyphens: auto;
   hyphenate-limit-chars: 6 3 3;
-  text-wrap: pretty;
-  overflow-wrap: break-word;
 }
 .nb { white-space: nowrap; hyphens: none; }
