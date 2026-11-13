@@ -126,6 +126,27 @@
     height: calc(var(--u) * 46); padding: 0;
   }
 }
+/* pause / play toggle for the animations that move on their own (WCAG 2.2.2) */
+.site-header .hx-end { display: flex; align-items: center; gap: 0.9rem; justify-self: end; }
+.mo-toggle {
+  display: grid; place-items: center; flex: none; width: 28px; height: 28px; padding: 0; cursor: pointer;
+  border: 1px solid rgb(243 243 245 / 0.45); border-radius: 3px; color: var(--ink);
+  transition: color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance);
+}
+.mo-toggle svg { width: 12px; height: 12px; fill: currentColor; }
+.mo-toggle .ic-play { display: none; }
+.mo-toggle[aria-pressed="true"] .ic-pause { display: none; }
+.mo-toggle[aria-pressed="true"] .ic-play { display: block; }
+.mo-toggle:hover, .mo-toggle:focus-visible { color: var(--red); border-color: var(--red); }
+.mo-toggle:focus-visible { outline: 1px solid var(--red); outline-offset: 3px; }
+html[data-motion="paused"] .sr-marquee-row,
+html[data-motion="paused"] .ph--video::before,
+html[data-motion="paused"] .xc-orb::before,
+html[data-motion="paused"] .xc-dot--pulse { animation-play-state: paused; }
+
+/* focused items scroll clear of the fixed bar and the chat launcher (WCAG 2.4.11) */
+html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom: 6.5rem; }
+
 /* the hero keeps its own bar in the layout; the fixed one is the one you see */
 .hx-hero .hx-header { visibility: hidden; }
 
@@ -295,7 +316,7 @@
    ===================================================================== */
 .tit { padding-top: 6rem; padding-bottom: 6rem; }
 .poster { position: relative; z-index: 2; margin-inline: auto; background: var(--surface-poster); color: var(--on-poster); overflow: clip; border-radius: 3px; }
-.poster .eyebrow { color: rgb(13 13 14 / 0.55); }
+.poster .eyebrow { color: rgb(13 13 14 / 0.72); }
 .poster .p-title, .poster .p-head .mark { font-size: var(--type-poster-title); }
 .poster .p-title { color: var(--on-poster); }
 .poster .p-head .mark { color: var(--accent); text-shadow: none; }
@@ -407,10 +428,10 @@
 .join-form { display: flex; align-items: center; gap: 0.75rem; margin-top: 2.5rem; }
 .join-form input {
   width: 32.5rem; height: 3.25rem; padding: 0 1.25rem; border-radius: 3px;
-  border: 1px solid rgb(255 255 255 / 0.18); background: rgb(255 255 255 / 0.03);
+  border: 1px solid rgb(255 255 255 / 0.4); background: rgb(255 255 255 / 0.03); /* 3:1 against the page (WCAG 1.4.11) */
   font-family: var(--font-sans); font-size: var(--type-body); color: var(--foreground);
 }
-.join-form input:hover:not(:focus) { border-color: rgb(255 255 255 / 0.32); }
+.join-form input:hover:not(:focus) { border-color: rgb(255 255 255 / 0.65); }
 .join-form input::placeholder { color: var(--foreground-subtle); }
 .join-form input[aria-invalid="true"] { border-color: var(--accent); }
 .join-form button.btn { border: 0; cursor: pointer; }

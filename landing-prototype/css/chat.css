@@ -12,8 +12,8 @@
   --xc-body: #dcdcdf;
   --xc-silver: #d0d0d2;
   --xc-nav: #919194;
-  --xc-label: #7b7b7e;
-  --xc-meta: #6b6b6e;
+  --xc-label: #8a8a8d; /* 4.5:1 or better on the panel (WCAG 1.4.3) */
+  --xc-meta: #8a8a8d;
   --xc-value: #c2c2c5;
   --xc-red: #ff2a45;
   --xc-line: rgb(255 255 255 / 0.1);
@@ -207,7 +207,7 @@
 
 /* welcome: a miniature of the hero (specimen line, giant title, placard) */
 .xc-hello { padding-bottom: 6px; }
-.xc-specimen { display: flex; align-items: center; gap: 9px; line-height: 1.5; color: rgb(255 255 255 / 0.4); }
+.xc-specimen { display: flex; align-items: center; gap: 9px; line-height: 1.5; color: rgb(255 255 255 / 0.62); }
 .xc-title {
   margin: 14px 0 0 -1px;
   font-family: var(--xc-sans);
@@ -512,11 +512,11 @@
   margin: 6px 14px 0;
   padding: 6px 6px 6px 16px;
   border-radius: 24px;
-  border: 1px solid var(--xc-line-2);
+  border: 1px solid rgb(255 255 255 / 0.4); /* 3:1 against the panel (WCAG 1.4.11) */
   background: rgb(255 255 255 / 0.04);
   transition: border-color 250ms, box-shadow 250ms;
 }
-.xc-compose:focus-within { border-color: rgb(255 255 255 / 0.3); box-shadow: 0 0 0 4px rgb(255 42 69 / 0.1); }
+.xc-compose:focus-within { border-color: rgb(255 255 255 / 0.7); box-shadow: 0 0 0 4px rgb(255 42 69 / 0.1); }
 .xc-compose textarea {
   flex: 1;
   min-height: 24px;

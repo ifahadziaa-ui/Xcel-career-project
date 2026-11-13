@@ -10,6 +10,7 @@ import * as THREE from "three";
 import { SHOWREEL as S, FUNCTIONS, FLIGHT, CONTACT } from "./content.js?v=3";
 import { ph, esc } from "./ph.js?v=3";
 import { readMark, markSVG } from "./mark.js?v=3";
+import { isPaused, onPauseChange } from "./pause.js?v=3";
 
 /* ---------- constants (verbatim) ---------- */
 const SCROLL_COMPRESS = 0.4;
@@ -650,6 +651,7 @@ function makeHeroGradient(canvas) {
   addEventListener("resize", size);
   const target = { x: bw * 0.5, y: bh * 0.3 }, cur = { ...target };
   addEventListener("pointermove", (e) => {
+    if (isPaused()) return;
     const r = canvas.getBoundingClientRect();
     if (!r.width) return;
     target.x = ((e.clientX - r.left) / r.width) * bw;
@@ -919,9 +921,14 @@ export function initShowreel(section) {
   // cursor tilt for the hero image card
   const tilt = { tx: 0, ty: 0, rx: 0, ry: 0 };
   addEventListener("pointermove", (e) => {
+    if (isPaused()) return;
     const nx = (e.clientX / innerWidth) * 2 - 1, ny = (e.clientY / innerHeight) * 2 - 1;
     tilt.tx = -ny * 9; tilt.ty = nx * 12;
   }, { passive: true });
+  // a virtual clock for the shaders and the mark's sway: it stands still while animations are paused,
+  // and the scenes are then redrawn only when the scroll position changes
+  let vt = 0, lastFrameT = null, scenesP = -1, scenesDirty = true;
+  onPauseChange(() => { scenesDirty = true; tilt.tx = 0; tilt.ty = 0; });
 
   // WebGL scenes (created lazily so a WebGL failure never breaks the page)
   let gfx = null;
@@ -939,6 +946,9 @@ export function initShowreel(section) {
   let lastP = -1;
   function frame(t) {
     requestAnimationFrame(frame);
+    const dtf = lastFrameT == null ? 0 : Math.min(100, t - lastFrameT);
+    lastFrameT = t;
+    if (!isPaused()) vt += dtf;
     const y = scrollY, vh = innerHeight;
     const near = y + vh > trackTop - 200 && y < trackTop + trackH + 200;
     const pinned = y >= trackTop - 2 && y <= trackTop + trackH - vh + 2;
@@ -1046,12 +1056,13 @@ export function initShowreel(section) {
     }
 
     const onScreen = y + vh > trackTop && y < trackTop + trackH;
-    if (gfx && onScreen) {
+    if (gfx && onScreen && (!isPaused() || p !== scenesP || scenesDirty)) {
+      scenesP = p; scenesDirty = false;
       const vis = sceneVisibility(p);
-      if (vis.hero) gfx.hero.render(t);
-      if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(t);
-      if (vis.sphere) gfx.sphere.render(t, sphereDisperse(p));
-      if (vis.target && flightActive(p)) gfx.target.render(t, markReveal(p)); else gfx.target.pause();
+      if (vis.hero) gfx.hero.render(vt);
+      if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(vt);
+      if (vis.sphere) gfx.sphere.render(vt, sphereDisperse(p));
+      if (vis.target && flightActive(p)) gfx.target.render(vt, markReveal(p)); else gfx.target.pause();
     }
   }
   requestAnimationFrame(frame);
@@ -1120,5 +1131,18 @@ export function initShowreel(section) {
       if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) step(dx < 0 ? 1 : -1);
     }, { passive: true });
   }
+  // keyboard focus must land in view: the stage is pinned (sticky), so the browser's own
+  // scroll-into-view can leave a focused button below the fold; bring the pinned stage up instead
+  section.addEventListener("focusin", (e) => {
+    const target = e.target;
+    // check again once the browser's own scroll has settled and the stage has re-laid out
+    setTimeout(() => {
+      if (document.activeElement !== target) return;
+      const r = target.getBoundingClientRect();
+      if (!r.height || (r.top <= innerHeight - 8 && r.bottom >= 8)) return;
+      if (lenis) lenis.scrollTo(trackTop, { immediate: true, force: true });
+      else scrollTo(0, trackTop);
+    }, 150);
+  });
   return { measure, attachSnap };
 }

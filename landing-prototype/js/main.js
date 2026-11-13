@@ -12,6 +12,7 @@ import {
   registerReveals, releaseReveals, initParallax, runPreloader, initHeader,
 } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
+import { initPauseToggle } from "./pause.js?v=3";
 
 const $ = (s) => document.querySelector(s);
 
@@ -156,7 +157,9 @@ const sr = initShowreel($("#services"));
 /* ---------- smooth scroll ---------- */
 history.scrollRestoration = "manual";
 scrollTo(0, 0);
-const lenis = new Lenis({ smoothWheel: true });
+const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+const lenis = new Lenis({ smoothWheel: !reduceMQ.matches }); // no eased wheel scrolling when the system asks for reduced motion
+reduceMQ.addEventListener("change", () => { lenis.options.smoothWheel = !reduceMQ.matches; });
 function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 window.__proto = { lenis }; // handy for debugging in the console
@@ -168,12 +171,13 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("cli
   if (!target) return;
   e.preventDefault();
   // land each section just below the fixed top bar
-  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -$("#site-header").offsetHeight });
+  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -$("#site-header").offsetHeight, immediate: reduceMQ.matches });
 }));
 
 /* ---------- motion ---------- */
 const fontsReady = document.fonts.ready;
 initParallax();
+initPauseToggle($("#mo-toggle"));
 initHeader($(".hx-hero"));
 initChat({ lenis });
 

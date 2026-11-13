@@ -51,7 +51,7 @@ html.lenis, html.lenis body { height: auto; }
   --foreground-subtle: var(--raw-color-slate-400);
   --surface: var(--raw-color-ink-850);
   --surface-inverse: var(--raw-color-paper-50);
-  --surface-poster: var(--raw-color-paper-200);
+  --surface-poster: var(--raw-color-paper-50); /* lighter paper so the red accent reads better (WCAG) */
   --on-inverse: var(--raw-color-ink-1000);
   --on-poster: var(--raw-color-ink-975);
   --accent: var(--raw-color-red-500);
