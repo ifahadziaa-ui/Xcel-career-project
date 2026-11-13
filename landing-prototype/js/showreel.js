@@ -242,7 +242,7 @@ function build(section) {
   // 3 · numbered carousel cards: chip → photo → headline → action
   const ccDark = `
   <div class="sr-cc sr-cc--dark">
-    ${ph({ kind: "photo", what: "Nurse manager reviewing a short list", note: "Portrait · real staff" })}
+    ${ph({ kind: "photo", what: "Nurse manager reviewing a short list", note: "Portrait · real staff", src: "assets/img/hc-admin.webp", alt: "A clinician in a white coat smiling at the camera", pos: "38% 30%" })}
     <div class="sr-cc-ui">
       <div class="sr-cc-top">${chip(C.employer)}${markIcon("sr-cc-mark")}</div>
       <div class="sr-cc-bottom">
@@ -254,7 +254,7 @@ function build(section) {
 
   const ccLight = `
   <div class="sr-cc sr-cc--light">
-    ${ph({ kind: "photo", what: "Nurse checking open roles on a phone", note: "Portrait · real staff", tone: "light" })}
+    ${ph({ kind: "photo", what: "Nurse checking open roles on a phone", note: "Portrait · real staff", tone: "light", src: "assets/img/hc-clinic.webp", alt: "A clinician in a white coat with a stethoscope, checking a phone", pos: "50% 45%" })}
     <div class="sr-cc-ui">
       <div class="sr-cc-top">${chip(C.seeker)}${markIcon("sr-cc-mark")}</div>
       <div class="sr-cc-bottom">
