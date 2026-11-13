@@ -11,6 +11,7 @@ import { initHeader, reduced } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
 import { initPauseToggle } from "./pause.js?v=3";
+import { initJustify } from "./justify.js?v=3";
 
 const here = location.pathname.split("/").pop() || "index.html";
 
@@ -105,6 +106,7 @@ export function initPage(render) {
   initPauseToggle(document.getElementById("mo-toggle"));
   initHeader(main.firstElementChild || main);
   initReveals();
+  initJustify();
   initChat({ lenis });
   return { lenis, main };
 }

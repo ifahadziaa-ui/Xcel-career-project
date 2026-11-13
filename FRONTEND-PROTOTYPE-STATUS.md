@@ -4,7 +4,7 @@
 >
 > Related: [docs/LANDING-PROTOTYPE-GUIDE.md](docs/LANDING-PROTOTYPE-GUIDE.md), [docs/TESTING.md](docs/TESTING.md), [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md), [docs/BACKEND-HANDOFF.md](docs/BACKEND-HANDOFF.md).
 >
-> **Last updated:** 14 Nov 2026. **Branch:** `landing-prototype-merged` = `main` (second pass: shorter showreel ending, nine inner pages, candidate sign-in) merged with `landing-prototype-completion` (this plan's work). `main`'s functional content wins; the completion decisions below are applied on top of it, including on the inner pages.
+> **Last updated:** 14 Nov 2026 (media pass added: stock photos, looping videos, customer tiles; see §5). **Branch:** `landing-prototype-merged` = `main` (second pass: shorter showreel ending, nine inner pages, candidate sign-in) merged with `landing-prototype-completion` (this plan's work). `main`'s functional content wins; the completion decisions below are applied on top of it, including on the inner pages.
 
 Tags used below: **[C]** confirmed requirement (a document or the user states it) · **[I]** reasonably implied · **[R]** a recommendation made during the work · **[D]** a decision the user made.
 
@@ -70,10 +70,11 @@ Tags used below: **[C]** confirmed requirement (a document or the user states it
 | Team pill | Initials QN, EF, BK | Headshots | Client |
 | MBE / DBE / SBE badges | Letters plus an "Official badge" label | Official badge art | Client |
 | "+ Contract vehicles (to confirm)" badge | Removed on `main` | Real vehicles once confirmed | Client (Q21) |
-| Customer logos (7) | "Official logo" tiles | Logos | Client permission (Q20) |
+| Customer logos (7) | Raytheon, Pearson and Indeed show a logo; the other four (Montgomery County, Prince George's County, Capstone, NGA) show their name as a tile | Approved logo files for all seven (sources in `assets/img/LOGOS.md`) | Client permission (Q20: names confirmed, logo permission still **[CONFIRM]**), user decision on county seals and NGA |
 | NGA | Named as a past customer and in the ledger | Decide; brief §1.9 says do not name until confirmed, the deck lists it with `[CONFIRM]` | Client (Q20), user decision |
-| Showreel media (18 slots) and the three services-panel videos | "Photo or short loop · your asset" / "Video · your asset" | Real photos and clips, healthcare first | Client (Q25) |
-| Jobs fan and `jobs.html` (12 sample listings) | Sample roles | ATS feed, or relabel as sample | ATS (Q11), user decision |
+| Showreel media (18 slots) | Two portrait cards (employer, seeker) and the loader pile use licensed stock photos; the rest still read "Photo or short loop · your asset" | Real photos, healthcare first | Client (Q25) |
+| Main reel and the three services-panel videos | Pixabay stock clips (`assets/video/`, sources in `assets/video/LICENSES.md`): muted loops, play only on screen, stop with the pause toggle | Real clips of staff at work; the brief wants "no stock look" for healthcare. Check model releases for clips 49809, 69952, 215751 | Client (Q25), user |
+| Jobs fan and `jobs.html` (12 sample listings) | Sample roles; five fan cards have a stock photo (`JOB_IMG` in `js/main.js`) | ATS feed, or relabel as sample | ATS (Q11), user decision |
 | Capability poster cover | "Photo · your asset" | First page of the healthcare capability PDF | Client |
 | Contact photo card | "Barry Klasson or the client services team, real photo" | A photo | Client, user decision |
 | "View all jobs", "Download PDF", "Upload résumé" | Scroll to their own section | Real destinations | Production |
