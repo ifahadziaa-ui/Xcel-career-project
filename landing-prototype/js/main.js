@@ -15,6 +15,7 @@ import {
 import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
 import { initPauseToggle } from "./pause.js?v=3";
+import { watchVideos } from "./video.js?v=3";
 
 const $ = (s) => document.querySelector(s);
 
@@ -29,12 +30,18 @@ $("#certs-badges").innerHTML = CERTS.map((c, i) => `
     <span class="badge-seal" role="img" aria-label="${esc(c.name)} badge placeholder"><span class="code">${esc(c.code)}</span><span class="art">official badge</span></span>
     <span class="badge-name">${esc(c.name)}</span>
   </li>`).join(""); // contract vehicles: not shown until the client confirms them
-// only logos the client has approved (Q20) are shown; every other tile stays a placeholder
-const CUST_LOGO = { "Raytheon Technologies": { src: "assets/img/logo-raytheon.png", alt: "Raytheon Technologies logo" } };
+// only logos the client has approved (Q20) are shown; every other customer is shown as a name tile
+const CUST_LOGO = {
+  "Raytheon Technologies": { src: "assets/img/logo-raytheon.png", alt: "Raytheon Technologies logo", plate: true }, // dark artwork: light plate
+  "Pearson": { src: "assets/img/logo-pearson.svg", alt: "Pearson logo" }, // white symbol on the dark tile
+  "Indeed": { src: "assets/img/logo-indeed.svg", alt: "Indeed logo" },
+};
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
   <li class="cust" data-m="chip" data-i="${i % 6}">
-    <div class="cust-logo${CUST_LOGO[c.name] ? " cust-logo--plate" : ""}">${CUST_LOGO[c.name] ? `<img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" loading="lazy" decoding="async" draggable="false">` : ph({ kind: "logo", what: "Official logo" })}</div>
-    <span class="cust-name">${esc(c.name)}</span>
+    ${CUST_LOGO[c.name]
+      ? `<div class="cust-logo ${CUST_LOGO[c.name].plate ? "cust-logo--plate" : "cust-logo--mark"}"><img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" loading="lazy" decoding="async" draggable="false"></div>
+    <span class="cust-name">${esc(c.name)}</span>`
+      : `<div class="cust-logo cust-logo--name"><span>${esc(c.name)}</span></div>`}
     ${c.status ? `<span class="cust-tag">${c.status === "current" ? "Current" : "Past"}</span>` : ""}
   </li>`).join("");
 
@@ -163,6 +170,7 @@ $("#footer-ids").textContent = CONTACT.ids;
 
 /* ---------- showreel ---------- */
 const sr = initShowreel($("#services"));
+watchVideos();
 
 /* ---------- smooth scroll ---------- */
 history.scrollRestoration = "manual";

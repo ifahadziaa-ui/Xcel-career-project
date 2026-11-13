@@ -4,7 +4,13 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&l
 
 const TAGS = { photo: "Photo", video: "▶ Video", logo: "Logo", badge: "Badge art", loop: "Photo or short loop" };
 
-export function ph({ kind = "photo", what = "", note = "", tone = "", top = false, src = "", alt = "", pos = "" } = {}) {
+export function ph({ kind = "photo", what = "", note = "", tone = "", top = false, src = "", alt = "", pos = "", video = "" } = {}) {
+  // a real clip (name in assets/video/, with .webm, .mp4 and -poster.webp) fills a video slot.
+  // It is muted, looping and decorative; js/video.js plays it only while it is on screen.
+  if (video) {
+    const b = `assets/video/${esc(video)}`;
+    return `<div class="ph ph--img ph--vid"><video muted loop playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1" data-vid poster="${b}-poster.webp"><source src="${b}.webm" type="video/webm"><source src="${b}.mp4" type="video/mp4"></video></div>`;
+  }
   // a real image fills the same slot the placeholder would have filled
   if (src) {
     return `<div class="ph ph--img"><img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" decoding="async" draggable="false"${pos ? ` style="object-position:${esc(pos)}"` : ""}></div>`;

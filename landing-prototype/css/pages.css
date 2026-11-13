@@ -26,7 +26,7 @@
 .pg-hero--short { padding-bottom: 2.5rem; }
 .pg-hl { white-space: normal; line-height: 0.98; }
 .pg-hl .l, .pg-hl .mark { display: block; }
-.pg-intro { margin-top: 2rem; max-width: 46rem; font-size: calc(var(--type-body) * 1.2); line-height: 1.55; color: var(--foreground-soft); }
+.pg-intro { margin-top: 2rem; max-width: var(--measure); font-size: calc(var(--type-body) * 1.2); line-height: 1.55; color: var(--foreground-soft); }
 .pg-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2.25rem; }
 .pg-call { font-size: var(--type-caption); color: var(--foreground-subtle); }
 .pg-call b { font-weight: 500; color: var(--foreground); }
@@ -41,7 +41,7 @@
 .pg-head { margin-bottom: 2.25rem; }
 .pg-h2 { margin-top: 0.75rem; font-family: var(--font-display); font-weight: 500; font-size: var(--type-display-sm); line-height: 1; letter-spacing: -0.03em; }
 .pg-h3 { font-family: var(--font-display); font-weight: 500; font-size: var(--type-card-title); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
-.pg-lead { margin-top: 1rem; max-width: 40rem; font-size: var(--type-body); line-height: var(--line-copy); color: var(--foreground-soft); }
+.pg-lead { margin-top: 1rem; max-width: var(--measure); font-size: var(--type-body); line-height: var(--line-copy); color: var(--foreground-soft); }
 .pg-small { font-size: var(--type-caption); line-height: var(--line-copy); color: var(--foreground-subtle); }
 .pg-small a:hover, .pg-lead a:hover, .jb-empty a:hover { color: var(--accent); }
 .footer-logo:hover { opacity: 0.8; }

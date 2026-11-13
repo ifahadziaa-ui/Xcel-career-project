@@ -12,6 +12,9 @@ import { ph, esc } from "./ph.js?v=3";
 import { readMark, markSVG } from "./mark.js?v=3";
 import { isPaused, onPauseChange } from "./pause.js?v=3";
 
+// clip file names (assets/video/) for the three service panels, by panel number
+const PANEL_VIDEO = { "01": "panel-healthcare", "02": "panel-government", "03": "panel-specialists" };
+
 /* ---------- constants (verbatim) ---------- */
 const SCROLL_COMPRESS = 0.4;
 const OLD_MAX = 2000;
@@ -228,7 +231,7 @@ function build(section) {
     <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
-      <div class="sr-slide" id="sr-slide-a">${ph({ kind: "video", what: "Healthcare montage: nurses, care staff, county teams at work", note: "Main reel · 10–20 s loop · muted · real people" })}</div>
+      <div class="sr-slide" id="sr-slide-a">${ph({ kind: "video", what: "Healthcare montage: nurses, care staff, county teams at work", video: "reel-main" })}</div>
       <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${ph({ kind: "photo", what: "Recruiter with a candidate", tone: "steel" })}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
@@ -286,7 +289,7 @@ function build(section) {
   // 5 · the three lines of business, numbered in the client's order of priority
   const pf = FUNCTIONS.map((f) => `
     <article class="sr-pf">
-      ${ph({ kind: "video", what: f.video, note: f.note })}
+      ${ph({ kind: "video", what: f.video, note: f.note, video: PANEL_VIDEO[f.n] })}
       <div class="sr-pf-tags">${f.tags.map((t) => `<span>${esc(t)}</span>`).join('<span class="sep">·</span>')}</div>
       <div class="sr-pf-foot"><p class="sr-pf-kicker"><b>${esc(f.n)}</b>${esc(f.kicker)}</p><h3>${esc(f.title)}</h3><p class="sr-pf-line">${esc(f.line)}</p></div>
     </article>`).join("");

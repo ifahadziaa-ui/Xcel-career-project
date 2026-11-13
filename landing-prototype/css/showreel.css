@@ -332,6 +332,11 @@
 .sr-pf > .ph { z-index: 0; justify-content: flex-start; padding-top: 13%; }
 .sr-pf .ph .ph-what { font-size: clamp(13px, 4.4cqmin, 40px); max-width: 24ch; opacity: 0.8; }
 .sr-pf .ph .ph-note { opacity: 0.55; }
+/* a real clip behind the panel text: a dark gradient keeps the white copy readable over bright footage */
+.sr-pf .ph--vid::after {
+  display: block; content: ""; position: absolute; inset: 0; border: 0; border-radius: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgb(10 10 12 / 0.88) 0%, rgb(10 10 12 / 0.55) 38%, rgb(10 10 12 / 0.12) 68%, rgb(10 10 12 / 0.4) 100%);
+}
 .sr-pf-tags {
   position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 1.4vmin;
   font-size: max(var(--type-min), 1.7vmin); opacity: 0.9;

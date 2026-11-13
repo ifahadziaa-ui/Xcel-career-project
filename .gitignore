@@ -6,3 +6,7 @@ __pycache__/
 .env.*
 .DS_Store
 Thumbs.db
+
+# raw stock downloads (unvetted; chosen images live in landing-prototype/assets/img)
+images_web/
+videos-web/
