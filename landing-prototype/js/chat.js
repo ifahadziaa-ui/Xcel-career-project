@@ -261,7 +261,7 @@ function renderPart(p) {
           <div class="xc-job-top"><span class="fn xc-mono">${esc(j.fn)}</span>${ICON.mark.replace('class="xc-mark"', 'class="xc-mark mk"')}</div>
           <h4>${esc(j.title)}</h4>
           ${placard([["Location", esc(j.where)], [j.need[0], esc(j.need[1]), j.need[0] === "Clearance" ? "xc-red" : ""], ["Type", esc(j.type)]])}
-          <a class="go xc-mono" href="#jobs">View role ${ICON.arrow}</a>
+          <a class="go xc-mono" href="jobs.html#job-${j.id}">View role ${ICON.arrow}</a>
         </article>`).join("")}</div>`;
     case "certs":
       return `<div class="xc-seals xc-in">${CERTS.map((c) => `<div class="xc-seal"><span class="ring">${esc(c.code)}</span><small class="xc-mono">${esc(c.name)}</small></div>`).join("")}</div>
@@ -659,8 +659,9 @@ export function initChat({ lenis } = {}) {
     if (chip) { if (!busy) handleUser(chip.dataset.say, chip.dataset.act || undefined); return; }
     const a = e.target.closest('a[href^="#"]');
     if (a) {
-      e.preventDefault();
       const target = a.getAttribute("href");
+      if (!document.querySelector(target)) return; // a section of the home page: let the link navigate
+      e.preventDefault();
       if (isPhone()) setOpen(false);
       if (lenis) lenis.scrollTo(target, { offset: -40 }); else document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
     }

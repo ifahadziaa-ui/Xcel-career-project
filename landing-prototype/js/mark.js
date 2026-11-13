@@ -1,6 +1,6 @@
 /* =====================================================================
    THE XCELCAREERS MARK
-   Read from the #i-mark symbol in index.html, the single source of the
+   Read from the #i-mark symbol injected by js/sprite.js, the single source of the
    geometry (traced from Assets/Logo.png; units are pixels of that 400 px file).
    - hub:  the empty centre the nine blades and the body all point at
    - hole: radius of that empty hub (the nearest blade tip)

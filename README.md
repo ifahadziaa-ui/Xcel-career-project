@@ -9,7 +9,7 @@ Redesign of the XcelCareers marketing site (healthcare staffing first, governmen
 | Path | What it is | State |
 |---|---|---|
 | [xcel-website/](xcel-website/) | Next.js 16 production app (React 19, Tailwind 4). | Hero only; still carries placeholder VESSEL copy |
-| [landing-prototype/](landing-prototype/) | Static one-page XcelCareers site: hero, showreel, credentials, process, jobs, capability, record, FAQ, contact, chatbot. Copy lives in `js/content.js`. | Most complete; reference implementation |
+| [landing-prototype/](landing-prototype/) | Static XcelCareers site: the home page (hero, credentials, showreel, process, jobs, capability, record, FAQ, contact, chatbot) plus Healthcare, Government, IT · Finance · Cyber, Jobs, Capability, About, Contact, Sign in and My account pages. Copy lives in `js/content.js`. Forms and sign-in are design only. | Most complete; reference implementation |
 | [superconscious/](superconscious/README.md) | Scroll-driven WebGL showreel. `index.html` is vanilla Superconscious; `xcelcareers.html` is the XcelCareers variant. | Working; checked in headless Firefox |
 | [held-mint/](held-mint/README.md) | Vanilla HELD-MINT landing build. | Hero and earlier only (its brief is truncated) |
 | [site-research/](site-research/README.md) | Captures of the old site and a reference site, capture scripts, and [WEBSITE-CONTENT.md](site-research/WEBSITE-CONTENT.md) (the approved copy deck). | Reference data |

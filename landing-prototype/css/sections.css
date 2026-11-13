@@ -126,6 +126,12 @@
     height: calc(var(--u) * 46); padding: 0;
   }
 }
+/* right end of the bar: the candidate sign-in link beside the red status */
+.hx-status { display: flex; align-items: baseline; gap: 1.6em; }
+.hx-account { color: var(--nav, #919194); letter-spacing: var(--mono-track); }
+.hx-account:hover, .hx-account:focus-visible { color: #fff; }
+.hx-nav a[aria-current="page"] { color: #fff; }
+@media (width < 640px) { .hx-live { display: none; } }
 /* the hero keeps its own bar in the layout; the fixed one is the one you see */
 .hx-hero .hx-header { visibility: hidden; }
 
@@ -409,6 +415,9 @@
   border: 1px solid rgb(255 255 255 / 0.18); background: rgb(255 255 255 / 0.03);
   font-family: var(--font-sans); font-size: var(--type-body); color: var(--foreground);
 }
+.join-form--req { display: grid; grid-template-columns: 1fr 1fr; max-width: 46rem; }
+.join-form--req input { width: 100%; }
+@media (width < 700px) { .join-form--req { grid-template-columns: 1fr; } }
 .join-form input::placeholder { color: var(--foreground-subtle); }
 .join-form input:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
 .join-fine { margin-top: 1.5rem; font-size: var(--type-fine); color: var(--foreground-subtle); white-space: pre-wrap; line-height: 1.7; }
@@ -454,5 +463,6 @@
   .footer { padding: 0 1.25rem 4rem; }
   .footer-cols { gap: 1.75rem; flex-wrap: wrap; }
   .footer-legal { flex-direction: column; gap: 0.625rem; }
+  .footer-legal p { white-space: normal; }
   .footer-word { left: 0.7rem; bottom: -1rem; }
 }

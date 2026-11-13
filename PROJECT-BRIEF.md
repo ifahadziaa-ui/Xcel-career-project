@@ -181,7 +181,7 @@ The client ticked seven features and ranked the top three (Q9, Q10).
 | Chatbot that answers questions | Wanted | not ranked | Scope in §2.3 |
 | Customer testimonials | Wanted | not ranked | None supplied yet (Q21) |
 | News or blog | **Not wanted** | | Do not build |
-| Candidate or client login area | **Not wanted** | | Do not build |
+| Candidate or client login area | **Not wanted** | | **Overridden by the user on 13 Nov 2026:** a candidate-only sign-in was asked for and built in the prototype as a **design only** (no real accounts, Google sign-in not connected). Employers get no account. Confirm with the client before any real build |
 | Newsletter sign-up | **Not wanted** | | Do not build |
 
 ### 2.2 Jobs (Q11, Q12)
@@ -212,17 +212,18 @@ Leads go to **Barry Klasson** (Director of Business Development and Client Servi
 
 | Requirement | State |
 |---|---|
-| Staffing request form | CTAs exist in the prototype but are **not wired** to a form or lead endpoint (§11). No form exists in the Next app |
-| Job board | The prototype has a jobs section with no live feed. ATS unknown |
-| Résumé upload and applications | Not built |
-| Capability statement | The prototype has a capability section; the PDF has not been supplied |
-| Call booking | Nothing built; tool undecided |
+| Staffing request form | Built in the prototype (`contact.html`, fields from the intake call; a short version on the home page that carries over). **Not wired**: submissions show a prototype notice and go nowhere. No form in the Next app |
+| Job board | Built in the prototype (`jobs.html`): search, field chips, location and type filters, a detail dialog with an application form. **12 sample listings**, clearly labelled; no ATS feed (ATS unknown) |
+| Résumé upload and applications | Built in the prototype as forms (job application in the dialog, general résumé upload on `jobs.html#resume`). Not wired; where submissions go is undecided (§4) |
+| Candidate sign-in | Prototype only (`login.html`, `account.html`, `js/auth.js`): accounts, saved roles and applications live in the browser's localStorage. See §2.1 |
+| Capability statement | The prototype has a home section and a full page (`capability.html`); the PDF has not been supplied, so the download button says so |
+| Call booking | A "Book a call" request form on `contact.html` (not wired); booking tool undecided |
 | Chatbot | Built in the prototype (guided mode from `content.js`, optional live Claude mode). Lead routing to Barry is not wired |
 | Testimonials | Nothing to show yet |
 
 ### 2.6 Sitemap
 
-Home, Healthcare Staffing, Government Contracting, IT · Finance · Cyber, Jobs, Capability, About, Contact (from `WEBSITE-CONTENT.md`). The old site has four navigation items (§3).
+Home, Healthcare Staffing, Government Contracting, IT · Finance · Cyber, Jobs, Capability, About, Contact (from `WEBSITE-CONTENT.md`), plus Sign in and My account for candidates. **All of these exist in the prototype since 13 Nov 2026** (`index.html`, `healthcare.html`, `government.html`, `specialists.html`, `jobs.html`, `capability.html`, `about.html`, `contact.html`, `login.html`, `account.html`). The old site has four navigation items (§3).
 
 ---
 
@@ -345,6 +346,12 @@ A complete one-page XcelCareers site, no build step. Sections in order: top bar,
   4. **Motion.** One shared entrance (`RISE`, a short rise with no bounce) for headlines, cards, steps, stat boxes and buttons. The "One nurse" closing frame now reveals the 3D mark (zoom from 45% with a soft overshoot, a turn and a fade) on the same scroll beat as the copy, which follows line by line.
   5. **Buttons.** Zen Kaku Gothic New sits low in its line box, so button text is nudged up to look centred: `.btn` has a bottom padding of 0.4em (`css/sections.css`), and the hero and closing-frame buttons (`.sr-btn`, `.sr-ctabtn`) shift their padding by 0.13em (`css/showreel.css`). Mona Sans on buttons was tried and rejected as too plain.
   6. **Card parallax.** `initParallax` in `js/motion.js` is scroll-linked: a card's offset and tilt are computed from where its box is on screen every frame (reads first, then writes), with no spring. The old spring lagged behind Lenis, froze off-screen and crawled up on return.
+- **Changes made at the user's request (13 Nov 2026)**, authorized for that task:
+  1. **Showreel ending.** The prompt's camera flight through 14 placeholder tiles into a box that zoomed up (1900 scroll units) is gone. The closing frame now opens through a wide, feathered radial mask (no hard edge) as the "What we staff" strip leaves; the 3D mark assembles with scroll (blades grow out of the hub, smallest first, then the figure settles; the head is a flat disc like the logo); the copy rises a step behind. The showreel track is about 1360vh on desktop instead of 2000vh (`CLOSE_START`, `CLOSE_END`, `VH_PER_UNIT` in `js/showreel.js`). `FLIGHT` is no longer used by the prototype but stays in `content.js` because `superconscious/xcelcareers.html` imports it.
+  2. **Closing copy.** Eyebrow "Staffing request", "One nurse. / Or 120+ staff.", the intake fields in the lead, two buttons (Request staff, Capability statement) and a trust line (MBE · DBE · SBE No. 19-286 · CAGE 89AK6 · phone).
+  3. **Home page.** Nav is Healthcare · Government · Jobs · About · Contact, plus "Sign in" (becomes "My account"). The unconfirmed "Contract vehicles (to confirm)" badge is gone. The contact block is a short staffing request (organization, role, work email) that opens `contact.html` prefilled. "View all jobs" and the capability button go to their pages. The Indeed ledger line no longer carries a project description that was not in the questionnaire.
+  4. **Inner pages.** Nine static pages rendered by `js/pages.js` from new `content.js` exports (`NAV`, `SERVICE_PAGES`, `ABOUT`, `REQUEST_FORM`, and `JOBS` grown to 12 sample listings with `id`, `desc`, `reqs`), inside shared chrome (`js/site.js`: top bar, footer, Lenis, reveals, chatbot), styled by `css/pages.css` with the existing type tokens only. Icons and the mark now live in `js/sprite.js`, injected on every page.
+  5. **Candidate accounts, design only** (`js/auth.js`): sign in, create account, "Continue with Google" (creates a demo account; Google is not contacted), saved roles, applications, profile and résumé name. All in localStorage. Every form shows a "Prototype: not sent" notice.
   - Known and open: the hero headline sits behind the video card by design (headline z-index 3, image 6, as the Superconscious brief says). A stray flat white line seen during the hero transition on a GPU browser could not be reproduced in headless Firefox.
 - Optional chatbot live mode: `pip install anthropic`, set `ANTHROPIC_API_KEY`, default model `claude-opus-5-5` (`XC_CHAT_MODEL`), port `XC_PORT` (3200). Without them it runs in "guided" mode from `content.js`.
 

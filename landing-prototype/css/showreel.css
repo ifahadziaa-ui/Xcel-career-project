@@ -261,18 +261,18 @@
   font-size: var(--sr-sphere-body-text); font-weight: 300; line-height: 1.45; color: #fff;
 }
 
-/* ---------- parallax grid tiles ---------- */
-.sr-tile { position: absolute; left: 50%; top: 50%; z-index: -1; overflow: hidden; }
-
-/* ---------- target block ---------- */
+/* ---------- closing scene ----------
+   Opens through a feathered radial mask (set per frame), so it never shows a hard
+   edge; a soft vignette blends its borders into the dark stage. */
 .sr-target {
-  position: absolute; left: 50%; top: 50%; z-index: -1;
+  position: absolute; left: 50%; top: 50%; z-index: -1; visibility: hidden;
   width: 100vw; height: 100vh; overflow: hidden; background: var(--sr-ink);
+  transform: translate(-50%, -50%);
 }
 .sr-target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.sr-frame {
-  position: absolute; inset: -4vmin; z-index: 3; pointer-events: none;
-  border-radius: 11vmin; border: 8vmin solid var(--sr-ink);
+.sr-vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(130% 110% at 50% 45%, transparent 55%, rgb(16 16 18 / 0.55) 82%, var(--sr-ink) 100%);
 }
 .sr-ctablock {
   position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column;
@@ -283,10 +283,15 @@
   font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: var(--paper);
 }
 .sr-ctablock h2 .dim { opacity: 0.4; }
-.sr-ctablock p { max-width: 26vw; font-size: 2.2vmin; line-height: 1.375; color: rgb(243 243 245 / 0.7); }
-.sr-ctarow { margin-top: 1.5vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin 3.2vmin; pointer-events: auto; }
-.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: 2.5vmin; color: #fff; }
-.sr-ctatel { font-size: max(13px, 2vmin); color: rgb(243 243 245 / 0.62); white-space: nowrap; }
+.sr-cta-eyebrow { display: flex; align-items: center; gap: 1.2vmin; font: 500 max(11px, 1.45vmin)/1 "Geist Mono", ui-monospace, monospace; letter-spacing: 0.16em; text-transform: uppercase; color: rgb(243 243 245 / 0.62); }
+.sr-cta-lead { max-width: 30vw; font-size: 2.2vmin; line-height: 1.45; color: rgb(243 243 245 / 0.74); }
+.sr-ctarow { margin-top: 1vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin; pointer-events: auto; }
+.sr-ctabtn, .sr-ctaghost { display: inline-flex; border-radius: 8px; padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: 2.5vmin; }
+.sr-ctabtn { background: var(--sr-red); color: #fff; }
+.sr-ctaghost { color: #f3f3f5; border: 1px solid rgb(255 255 255 / 0.28); background: rgb(16 16 18 / 0.35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.sr-ctabtn:hover, .sr-ctabtn:focus-visible, .sr-ctaghost:hover, .sr-ctaghost:focus-visible { background: #f3f3f5; color: #101012; }
+.sr-ctatrust { pointer-events: auto; font: 500 max(10.5px, 1.35vmin)/1.5 "Geist Mono", ui-monospace, monospace; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(243 243 245 / 0.5); }
+.sr-ctatel { color: inherit; white-space: nowrap; }
 .sr-ctatel b { font-weight: 500; color: #f3f3f5; }
 .sr-ctatel:hover b, .sr-ctatel:focus-visible b { color: var(--sr-red); }
 
@@ -351,7 +356,9 @@
   .sr-divider, .sr-hero-row { display: none; }
   .sr-hero-bottom .lead { opacity: 1; text-shadow: 0 1px 3px rgb(16 16 18 / 0.55), 0 0 18px rgb(16 16 18 / 0.75); }
   .sr-ctablock h2 { max-width: 88vw; }
-  .sr-ctablock p { max-width: 80vw; font-size: 3.4vmin; }
+  .sr-cta-lead { max-width: 84vw; font-size: 3.6vmin; }
+  .sr-ctabtn, .sr-ctaghost { font-size: 3.6vmin; padding: 4.2vmin 5vmin; }
+  .sr-ctatrust { max-width: 84vw; }
   .sr-pf-kicker { font-size: 10px; letter-spacing: 0.08em; gap: 1.8vmin; }
 }
 

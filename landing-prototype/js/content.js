@@ -96,9 +96,12 @@ export const SHOWREEL = {
   ],
 
   // 6 · the ask (the phone number comes from CONTACT)
+  finalEyebrow: "Staffing request",
   finalLines: ["One nurse.", "Or 120+ staff."],
-  finalLead: "Tell us the role, the shifts and the credentials it needs. We'll send a short list of vetted candidates.",
+  finalLead: "Tell us the role, the shifts, the pay range and the license, certification or clearance it needs. We screen, verify and send you a short list of vetted candidates.",
   finalButton: "Request staff",
+  finalSecondary: "Capability statement",
+  finalTrust: "Maryland MBE · DBE · SBE No. 19-286 · CAGE 89AK6",
   finalAlt: "or call",
 };
 
@@ -131,7 +134,8 @@ export const FUNCTIONS = [
   },
 ];
 
-/* 9 assets for the 14 tiles the camera flies through (healthcare first) */
+/* Flight tiles: no longer used by the prototype (its tile flight was removed on 13 Nov 2026),
+   kept because superconscious/xcelcareers.html still imports it. */
 export const FLIGHT = [
   { kind: "photo", what: "Registered nurse at the bedside, candid" },
   { kind: "video", what: "Case manager with a resident (short loop)" },
@@ -170,14 +174,35 @@ export const STEPS = [
 export const PROCESS_SPLIT =
   "You handle the final interview, the hiring decision, the work site and day-to-day supervision. We handle the rest.";
 
-/* ---------- 05 Open roles: card fan (SAMPLE until the ATS feed is connected) ---------- */
-// need: the one requirement that matters most for the role [label, value]
+/* ---------- 05 Open roles (SAMPLE until the ATS feed is connected [CONFIRM which ATS]) ----------
+   The landing page shows the first five as a card fan; jobs.html lists them all.
+   need: the one requirement that matters most for the role [label, value].
+   Descriptions describe the role only: no pay, no client names, nothing invented. */
 export const JOBS = [
-  { fn: "Healthcare", title: "Case Manager · Health & Human Services", where: "Maryland", need: ["Setting", "County HHS"], type: "Contract", art: "Case manager with a resident" },
-  { fn: "IT", title: "EHR Systems Administrator", where: "Washington, DC", need: ["Setting", "Hospital system"], type: "Contract-to-hire", art: "EHR administrator at work" },
-  { fn: "Healthcare", title: "Registered Nurse · Behavioral Health", where: "Maryland", need: ["License", "Active RN"], type: "Contract", art: "RN with a patient" },
-  { fn: "Finance", title: "Revenue Cycle Specialist", where: "Remote", need: ["Setting", "Health system"], type: "Direct hire", art: "Billing team at work" },
-  { fn: "Cyber", title: "Cybersecurity Engineer", where: "Virginia", need: ["Clearance", "TS/SCI + FSP"], type: "Contract", art: "Security operations floor" },
+  { id: "case-manager-hhs", fn: "Healthcare", title: "Case Manager · Health & Human Services", where: "Maryland", need: ["Setting", "County HHS"], type: "Contract", art: "Case manager with a resident",
+    desc: "Coordinate services for residents in a county health and human services program: assessments, care plans, referrals and follow-up.", reqs: ["Case management experience in health or human services", "Background check and references"] },
+  { id: "ehr-admin", fn: "IT", title: "EHR Systems Administrator", where: "Washington, DC", need: ["Setting", "Hospital system"], type: "Contract-to-hire", art: "EHR administrator at work",
+    desc: "Administer and support the electronic health record platform for clinical and business users: access, configuration, upgrades and issue resolution.", reqs: ["EHR administration experience", "Background check and references"] },
+  { id: "rn-behavioral", fn: "Healthcare", title: "Registered Nurse · Behavioral Health", where: "Maryland", need: ["License", "Active RN"], type: "Contract", art: "RN with a patient",
+    desc: "Provide nursing care in a behavioral health setting. Shifts and pay range are confirmed on the first call.", reqs: ["Active RN license valid in Maryland", "Health screening, background check and references"] },
+  { id: "revenue-cycle", fn: "Finance", title: "Revenue Cycle Specialist", where: "Remote", need: ["Setting", "Health system"], type: "Direct hire", art: "Billing team at work",
+    desc: "Work claims from charge to payment for a health system: billing, follow-up, denials and reporting.", reqs: ["Healthcare revenue cycle or billing experience"] },
+  { id: "cyber-engineer", fn: "Cyber", title: "Cybersecurity Engineer", where: "Virginia", need: ["Clearance", "TS/SCI + FSP"], type: "Contract", art: "Security operations floor",
+    desc: "Engineer and monitor security controls for a cleared government program.", reqs: ["Active TS/SCI with Full Scope Poly", "Cybersecurity engineering experience"] },
+  { id: "lpn-ltc", fn: "Healthcare", title: "Licensed Practical Nurse · Long-Term Care", where: "Maryland", need: ["License", "Active LPN"], type: "Contract", art: "LPN in long-term care",
+    desc: "Provide nursing care to long-term care residents under the direction of the RN team.", reqs: ["Active LPN license valid in Maryland", "Health screening, background check and references"] },
+  { id: "cna", fn: "Healthcare", title: "Certified Nursing Assistant", where: "Maryland", need: ["Certification", "Active CNA"], type: "Contract", art: "CNA with a resident",
+    desc: "Support residents and patients with daily care, mobility and observation, reporting to the nursing team.", reqs: ["Active CNA certification", "Health screening, background check and references"] },
+  { id: "medical-assistant", fn: "Healthcare", title: "Medical Assistant · Outpatient Clinic", where: "Washington, DC", need: ["Setting", "Clinic"], type: "Contract-to-hire", art: "Medical assistant in a clinic",
+    desc: "Room patients, take vitals, update records and support providers in an outpatient clinic.", reqs: ["Medical assistant certification or equivalent experience", "Background check and references"] },
+  { id: "billing-coding", fn: "Finance", title: "Medical Billing & Coding Specialist", where: "Remote", need: ["Certification", "Coding credential"], type: "Contract", art: "Billing and coding team",
+    desc: "Code encounters and prepare clean claims for a healthcare provider.", reqs: ["Medical coding credential", "Billing experience"] },
+  { id: "budget-analyst", fn: "Finance", title: "Budget Analyst · County Government", where: "Maryland", need: ["Setting", "County agency"], type: "Contract", art: "Budget analyst in a county office",
+    desc: "Prepare, track and report on program budgets for a county agency.", reqs: ["Public-sector budget or financial analysis experience", "Background check"] },
+  { id: "network-admin", fn: "IT", title: "Network Administrator", where: "Maryland", need: ["Setting", "County IT"], type: "Contract", art: "Network administrator at work",
+    desc: "Maintain and secure network infrastructure for a public-sector IT department.", reqs: ["Network administration experience", "Background check"] },
+  { id: "business-analyst", fn: "IT", title: "Business Analyst · Health and Human Services", where: "Remote", need: ["Setting", "Government program"], type: "Contract", art: "Business analyst in a workshop",
+    desc: "Gather requirements, map processes and support delivery for a government health and human services program.", reqs: ["Business analysis experience on public-sector programs"] },
 ];
 /* which job the stats plate under the fan describes (the centre card) */
 export const FEATURED_JOB = 2;
@@ -207,7 +232,7 @@ export const LEDGER = [
   { date: "Current", title: "Prince George's County Government: Office of Information Technology", ref: "Prince George's County, MD", stamp: "Active", rot: -4 },
   { date: "45 days", title: "120+ personnel staffed for a single task order", ref: "Task order", stamp: "Staffed", rot: 4 },
   { date: "Through 2024", title: "Raytheon Technologies: Codex", ref: "Defense", stamp: "Delivered", rot: -6 },
-  { date: "2022", title: "Indeed: market research for AI-ethics data scientists and ML engineers", ref: "Technology", stamp: "Delivered", rot: 3 },
+  { date: "2022", title: "Indeed", ref: "Technology", stamp: "Delivered", rot: 3 },
   { date: "2021–2023", title: "Pearson", ref: "Education", stamp: "Delivered", rot: -3 },
   { date: "2019–2021", title: "Capstone Corporation", ref: "Contract", stamp: "Delivered", rot: 5 },
   { date: "2018", title: "400 hires closed in one year", ref: "Record year", stamp: "Closed", rot: -5 },
@@ -243,3 +268,116 @@ export const LEADERSHIP = [
   { name: "Erika Finley", role: "Director of Operations and Contracts" },
   { name: "Barry Klasson", role: "Director of Business Development and Director of Client Services" },
 ];
+
+/* =====================================================================
+   OTHER PAGES (jobs, healthcare, government, specialists, capability,
+   about, contact, login, account). Same rules as above: questionnaire
+   facts only; [CONFIRM] waits on the client.
+   ===================================================================== */
+export const NAV = [
+  { href: "healthcare.html", label: "Healthcare" },
+  { href: "government.html", label: "Government" },
+  { href: "jobs.html", label: "Jobs" },
+  { href: "about.html", label: "About" },
+  { href: "contact.html", label: "Contact" },
+];
+
+/* the three service pages share one layout: hero, intro, blocks, list, checks, terms, proof, ask */
+export const SERVICE_PAGES = {
+  healthcare: {
+    eyebrow: "Healthcare staffing · our main focus",
+    title: ["Credentialed people", "for every level of", "care"],
+    intro: "We place clinical and non-clinical staff with hospitals, health systems, clinics, long-term care, behavioral health providers, and county and state health and human services departments. We handle the search, the screening, the credential checks and the compliance, so your teams stay focused on patients.",
+    blocksTitle: "Who we staff for",
+    blocks: [
+      { t: "Hospitals & health systems", d: "Clinical and non-clinical staff, plus the EHR, revenue cycle and security specialists behind them." },
+      { t: "Clinics", d: "Nurses, medical assistants and the support staff behind outpatient care." },
+      { t: "Long-term care", d: "LPNs, CNAs and care staff for residents who need continuity." },
+      { t: "Behavioral health", d: "Nurses, behavioral health and social services staff, and case managers." },
+      { t: "County & state HHS", d: "Staff augmentation and contract staffing for health and human services programs." },
+    ],
+    listTitle: "Roles we fill", // [CONFIRM] the healthcare roles list with the client
+    list: ["Registered nurses (RN)", "Licensed practical nurses (LPN)", "Certified nursing assistants (CNA)", "Medical assistants", "Behavioral health & social services staff", "Case managers", "Medical billing & coding", "EHR & systems administrators"],
+    checksTitle: "Verified before you see a name",
+    checks: ["Interview", "License", "Certification", "Health screening", "References", "Background check"],
+    checksNote: "Every candidate we submit has been interviewed and checked. You interview the short list and make the hiring decision.",
+    terms: [
+      { t: "Contract", d: "We employ the worker: timesheets, payroll, license and certification renewals, and check-ins through the assignment." },
+      { t: "Contract-to-hire", d: "Start on contract, then hire the person directly when you are ready." },
+      { t: "Direct hire", d: "We find, screen and present the short list; you hire." },
+      { t: "Staff augmentation", d: "From one nurse to a full team on a county or state program." },
+    ],
+    proof: [["120+", "personnel staffed for one task order in 45 days"], ["300K+", "candidate profiles on file"], ["125+", "years of combined experience"]],
+    ask: { title: ["One nurse.", "Or a full team."], lead: "Tell us the role, the shifts, the pay range and the license or certification it needs. We send a short list of vetted candidates.", cta: "Request staff", href: "contact.html" },
+  },
+  government: {
+    eyebrow: "Government contracting · local, state and federal",
+    title: ["A certified", "small-business partner,", "ready to prime or sub"],
+    intro: "XcelCareers supports local, state and federal government, and the prime contractors who serve them, with staff augmentation, contract staffing, task orders and consulting. Most of our work today is staff augmentation for county government, including health and human services, and hard-to-fill IT, finance and cleared roles.",
+    blocksTitle: "What we deliver",
+    blocks: [
+      { t: "Staff augmentation", d: "Vetted people added to your team, from one specialist to 120+ personnel." },
+      { t: "Contract staffing", d: "We employ the staff: timesheets, payroll, renewals and check-ins. You direct the work." },
+      { t: "Task orders / IDIQ", d: "Prime or subcontractor on task orders and IDIQ vehicles." },
+      { t: "Consulting", d: "Business analysis, project and program management, and talent management." },
+    ],
+    listTitle: "For prime contractors",
+    list: ["A certified Maryland MBE, DBE and SBE partner", "A minority veteran-owned small business", "Cleared talent up to TS/SCI with Full Scope Poly", "Healthcare, IT, finance and cyber in one partner"],
+    checksTitle: "Registered and certified",
+    checks: ["MBE", "DBE", "SBE", "CAGE 89AK6", "UEI KQGDQLETUZ43"],
+    checksNote: "Certified by the Maryland Department of Social and Economic Mobility, No. 19-286, since May 2019. Current certifications effective 9/4/2025.",
+    terms: null,
+    proof: [["120+", "personnel for one task order in 45 days"], ["600+", "placements for DoD and Intelligence Community clients"], ["400", "hires closed in 2018"]],
+    ask: { title: ["Certifications, codes", "and past performance"], lead: "All on one page in the capability statement. Or request staff for a current requirement.", cta: "Capability statement", href: "capability.html" },
+  },
+  specialists: {
+    eyebrow: "IT · Finance · Cyber · across healthcare and government",
+    title: ["The specialists", "behind care and", "government"],
+    intro: "Hospitals and agencies run on systems, budgets and security as much as on the people at the front line. We place the specialists who keep them running, including cleared talent for federal programs.",
+    blocksTitle: "What we place",
+    blocks: [
+      { t: "Healthcare & government IT", d: "EHR and systems administrators, network administrators, service desk and cloud engineers." },
+      { t: "Finance", d: "Financial, budget and cost analysts; revenue cycle and billing specialists." },
+      { t: "Cybersecurity", d: "Cybersecurity and cloud engineers, cleared up to TS/SCI with Full Scope Poly." },
+      { t: "Delivery", d: "Business analysts and project managers for health and government programs." },
+    ],
+    listTitle: "Where",
+    list: ["Maryland", "Washington, DC", "Virginia", "Remote"],
+    checksTitle: "Cleared and verified",
+    checks: ["Interview", "Clearance", "Certifications", "References", "Background check"],
+    checksNote: "Cleared roles up to TS/SCI with Full Scope Poly. 600+ placements for DoD and Intelligence Community clients.",
+    terms: null,
+    proof: [["600+", "DoD and IC placements"], ["TS/SCI", "with Full Scope Poly"], ["300K+", "candidate profiles on file"]],
+    ask: { title: ["The specialist", "you need"], lead: "Tell us the role, the systems, and the clearance or certification it needs.", cta: "Request staff", href: "contact.html" },
+  },
+};
+
+export const ABOUT = {
+  eyebrow: "About XcelCareers",
+  title: ["The people", "behind the", "care"],
+  // the client's own description (questionnaire Q1)
+  intro: "XcelCareers is a healthcare staffing and government contracting company. We find and place skilled people with hospitals, clinics and health agencies, and we support local, state and federal government through staffing, staff augmentation and contract work, with specialist expertise in IT, finance and cybersecurity. We handle the search, screening, credential checks and compliance so our clients can focus on their mission.",
+  // the client's one sentence (Q15), split into four reasons
+  why: [
+    { t: "Certified", d: "A minority veteran-owned small business, Maryland MBE, DBE and SBE certified (No. 19-286)." },
+    { t: "Contract-ready", d: "Ready to contract at the local, state and federal level, as prime or subcontractor. CAGE 89AK6." },
+    { t: "Both sides of care", d: "We understand patient care and the IT, finance and security behind it." },
+    { t: "Vetted and fast", d: "Credentialed, compliant people, from one nurse to a 120+ person staff augmentation." },
+  ],
+  candidates: [
+    "We match you to open healthcare roles, and to IT, finance and cyber roles in healthcare and government.",
+    "We prepare you for interviews.",
+    "We guide you through credentialing, licensing or clearance steps.",
+    "We stay in contact after you are placed.",
+    "It is always free for you.",
+  ],
+  // [CONFIRM] founding story, founder, year and veteran background: not shown until supplied
+};
+
+/* staffing request form: mirrors the intake call (Q5). Goes to Barry (not wired yet). */
+export const REQUEST_FORM = {
+  types: ["Nursing & clinical", "Behavioral health & social services", "Healthcare admin & billing", "IT", "Finance", "Cybersecurity", "Other"],
+  locations: ["Maryland", "Washington, DC", "Virginia", "Remote"],
+  contracts: ["Contract", "Contract-to-hire", "Direct hire", "Staff augmentation / task order"],
+  headcount: ["1", "2–5", "6–20", "20+"],
+};

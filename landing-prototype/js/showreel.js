@@ -7,7 +7,7 @@
    card 03 builds the mark, then the camera dives through its hub.
    ===================================================================== */
 import * as THREE from "three";
-import { SHOWREEL as S, FUNCTIONS, FLIGHT, CONTACT } from "./content.js?v=3";
+import { SHOWREEL as S, FUNCTIONS, CONTACT } from "./content.js?v=3";
 import { ph, esc } from "./ph.js?v=3";
 import { readMark, markSVG } from "./mark.js?v=3";
 
@@ -17,12 +17,17 @@ const OLD_MAX = 2000;
 const PS = OLD_MAX - 400;              // portfolioStart = 1600
 const PF_DUR = 1500;
 const PF_END = PS + PF_DUR;            // 3100
-const GRID_START = PS + 0.72 * PF_DUR; // 2680
-const P6_END = GRID_START + 1000;      // 3680
-const P7_START = P6_END;               // 3680
-const P7_END = P7_START + 900;         // 4580
+/* The prompt's ending (a camera flight through 14 placeholder tiles into a box that
+   zooms up, 1900 units long) is replaced by one short closing beat: as the "What we
+   staff" strip leaves, the closing scene opens through a wide, feathered circle, the
+   3D mark assembles and the copy rises. 750 units, overlapping the strip's exit. */
+const CLOSE_START = PS + 0.8 * PF_DUR; // 2800
+const CLOSE_END = CLOSE_START + 750;   // 3550
 const PERSP = 1500;
-const VSCROLL_MAX = (2000 - 100) / SCROLL_COMPRESS; // 4750, constant across layouts
+const VSCROLL_MAX = CLOSE_END + 150;   // 3700: a short hold on the finished frame
+/* scroll length per unit of vScroll (vh); the prompt used 0.4, a little faster here */
+const VH_PER_UNIT = 0.34;
+const trackVh = (density) => Math.round(100 + VSCROLL_MAX * density);
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smooth = (t) => t * t * (3 - 2 * t);
@@ -37,9 +42,9 @@ const phase4 = (p) => clamp01((gp(p) - 0.4) / 0.35);
    sh: height of the opening card's video slot (vh); shorter on portrait screens
    so the lead and buttons below it never run over the video. */
 const GEO = {
-  desktop: { track: 2000, cw: 42, ch: 62, r: 27, fly: 40, pad: 8, h1: 18, h2: 24, bw: 52, bt: 2.4, sh: 62 },
-  tablet:  { track: 1700, cw: 54, ch: 80, r: 35, fly: 52, pad: 8, h1: 13, h2: 16, bw: 64, bt: 3.0, sh: 40 },
-  mobile:  { track: 1300, cw: 64, ch: 94, r: 41, fly: 60, pad: 8, h1: 10, h2: 12, bw: 82, bt: 4.2, sh: 42 },
+  desktop: { track: trackVh(VH_PER_UNIT), cw: 42, ch: 62, r: 27, fly: 40, pad: 8, h1: 18, h2: 24, bw: 52, bt: 2.4, sh: 62 },
+  tablet:  { track: trackVh(VH_PER_UNIT * 0.84), cw: 54, ch: 80, r: 35, fly: 52, pad: 8, h1: 13, h2: 16, bw: 64, bt: 3.0, sh: 40 },
+  mobile:  { track: trackVh(VH_PER_UNIT * 0.63), cw: 64, ch: 94, r: 41, fly: 60, pad: 8, h1: 10, h2: 12, bw: 82, bt: 4.2, sh: 42 },
 };
 function pickBucket() {
   const w = innerWidth, h = innerHeight;
@@ -142,34 +147,21 @@ const portfolioTransform = (p) => {
 };
 const pfTrackTransform = (p, maxPan) => `translateX(${-pfSlide(p) * maxPan}px)`;
 
-const flightActive = (p) => vScroll(p) > GRID_START;
-const p6 = (p) => clamp01((vScroll(p) - GRID_START) / 1000);
-const p7 = (p) => clamp01((vScroll(p) - P7_START) / (P7_END - P7_START));
-const easeP7 = (p) => { const t = p7(p); return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
-const cameraRigTransform = (p) => {
-  if (!flightActive(p)) return "translate(0vw, 0vh) translateZ(0px)";
-  const rigX = -250 * Math.sin((p6(p) * Math.PI) / 2);
-  const rigY = -100 * (1 - Math.cos((p6(p) * Math.PI) / 2));
-  const rigZ = 2250 * easeP7(p);
-  return `translate(${rigX}vw, ${rigY}vh) translateZ(${rigZ}px)`;
+/* ---------- the closing beat ---------- */
+const closeP = (p) => clamp01((vScroll(p) - CLOSE_START) / (CLOSE_END - CLOSE_START));
+const closeActive = (p) => vScroll(p) > CLOSE_START - 1;
+// the scene opens through a circle whose edge is feathered over ~30% of the screen,
+// so there is never a hard boundary on screen
+const closeMask = (p) => {
+  const t = smooth(clamp01(closeP(p) / 0.55));
+  if (t >= 0.999) return "none";
+  const r = 8 + t * 125, f = 18 + t * 22; // radius and feather, % of the larger screen side
+  return `radial-gradient(circle at 50% 52%, #000 ${(r - f).toFixed(2)}vmax, rgb(0 0 0 / 0.55) ${(r - f * 0.45).toFixed(2)}vmax, transparent ${r.toFixed(2)}vmax)`;
 };
-const targetOpacity = (p) => (flightActive(p) ? 1 : 0);
-const targetTransform = () => "translate(calc(-50% + 250vw), calc(-50% + 100vh)) translateZ(-2250px)";
-const targetRadius = (p) => (flightActive(p) ? 30 * (1 - easeP7(p)) : 30);
-// closing frame: the mark and the copy share one beat. The mark zooms in as the
-// first line arrives; each later part (line 2, lead, buttons) follows 7% behind.
-const finalBeat = (p, i) => smooth(clamp01((p7(p) - 0.42 - i * 0.07) / 0.36));
-const markReveal = (p) => clamp01((p7(p) - 0.4) / 0.5);
-const finalFrameReveal = (p) => smooth(clamp01((p7(p) - 0.8) / 0.2));
-
-const gridOpacity = (p) => {
-  const v = vScroll(p);
-  if (v <= GRID_START) return 0;
-  const gridFadeIn = clamp01((v - GRID_START) / (PF_END - GRID_START));
-  if (v <= PF_END) return gridFadeIn;
-  const fade = v > P7_START ? easeP7(p) : 0;
-  return 1 - fade;
-};
+const closeScale = (p) => 1.08 - 0.08 * smooth(clamp01(closeP(p) / 0.7));
+// the mark assembles over the middle of the beat; each piece of copy follows a step behind
+const markReveal = (p) => clamp01((closeP(p) - 0.12) / 0.6);
+const finalBeat = (p, i) => smooth(clamp01((closeP(p) - 0.3 - i * 0.08) / 0.34));
 
 const heroLetterStyle = (p, index, total) => {
   const reversed = total - 1 - index;
@@ -193,32 +185,11 @@ const sceneVisibility = (p) => {
   return {
     hero: g < 0.8,
     aurora: v > 1000 && v < PF_END + 350,
-    sphere: g > 0.395 && v < GRID_START + 400,
-    target: v > GRID_START - 300,
+    sphere: g > 0.395 && v < PF_END,
+    target: v > CLOSE_START - 200,
     portfolio: v > PS - 600 && v < PF_END + 350,
   };
 };
-
-/* ---------- parallax grid items (deterministic, verbatim) ---------- */
-const RAW_GRID = [
-  { tx: -85, ty: -60, w: "45vw", h: "70vh" }, { tx: -80, ty: 55, w: "40vw", h: "65vh" },
-  { tx: 85, ty: -60, w: "40vw", h: "75vh" }, { tx: 80, ty: 55, w: "45vw", h: "70vh" },
-  { tx: -15, ty: -110, w: "45vw", h: "75vh" }, { tx: 15, ty: 120, w: "50vw", h: "80vh" },
-  { tx: 50, ty: 120, w: "45vw", h: "70vh" }, { tx: 120, ty: -10, w: "40vw", h: "80vh" },
-  { tx: 0, ty: 160, w: "45vw", h: "75vh" }, { tx: 150, ty: 0, w: "50vw", h: "80vh" },
-  { tx: 200, ty: 30, w: "45vw", h: "75vh" }, { tx: 300, ty: 40, w: "40vw", h: "70vh" },
-  { tx: 190, ty: 160, w: "45vw", h: "80vh" }, { tx: 310, ty: 170, w: "50vw", h: "75vh" },
-];
-const GRID_ITEMS = RAW_GRID.map((it, index) => {
-  const pr = Math.abs(Math.sin((index + 1) * 12.9898) * 43758.5453) % 1;
-  const z = -500 - pr * 2500;
-  const scale = 1500 / (1500 - z);
-  const imgRand = Math.abs(Math.sin((index + 1) * 78.233) * 12345.678) % 1;
-  const asset = FLIGHT[Math.floor(imgRand * FLIGHT.length)];
-  return { ...it, z, scale, asset };
-});
-const gridItemTransform = (it) => `translate(calc(-50% + ${it.tx}vw), calc(-50% + ${it.ty}vh)) translateZ(${it.z}px) scale(${it.scale})`;
-const gridItemRadius = (it) => `${12 / it.scale}px`;
 
 /* ---------- ScrollLetters ---------- */
 function letters(str) {
@@ -311,10 +282,6 @@ function build(section) {
     ${markSVG(M, { id: "sr-zoom", cls: "sr-zoom" })}
   </div>`;
 
-  const tiles = GRID_ITEMS.map((it) =>
-    `<div class="sr-tile" style="width:${it.w};height:${it.h};transform:${gridItemTransform(it)};border-radius:${gridItemRadius(it)}">${ph({ kind: it.asset.kind === "video" ? "video" : "loop", what: it.asset.what, tone: "steel" })}</div>`
-  ).join("");
-
   // 5 · the three lines of business, numbered in the client's order of priority
   const pf = FUNCTIONS.map((f) => `
     <article class="sr-pf">
@@ -337,14 +304,15 @@ function build(section) {
           <div class="sr-side" id="sr-card3">${ccLight}</div>
           <div class="sr-side sr-card4" id="sr-card4">${sphereCard}</div>
         </div>
-        ${tiles}
-        <div class="sr-target" id="sr-target" style="transform:${targetTransform()}">
+        <div class="sr-target" id="sr-target">
           <canvas id="sr-target-canvas"></canvas>
-          <div class="sr-frame" id="sr-frame"></div>
+          <div class="sr-vignette" aria-hidden="true"></div>
           <div class="sr-ctablock" id="sr-ctablock">
+            <p class="sr-cta-eyebrow"><span class="dot" aria-hidden="true"></span>${esc(S.finalEyebrow)}</p>
             <h2><span>${esc(S.finalLines[0])}</span><span class="dim">${esc(S.finalLines[1])}</span></h2>
-            <p>${esc(S.finalLead)}</p>
-            <div class="sr-ctarow"><a class="sr-ctabtn" href="#contact">${esc(S.finalButton)}</a><a class="sr-ctatel" href="${tel}">${esc(S.finalAlt)} <b>${esc(CONTACT.phone)}</b></a></div>
+            <p class="sr-cta-lead">${esc(S.finalLead)}</p>
+            <div class="sr-ctarow"><a class="sr-ctabtn" href="contact.html">${esc(S.finalButton)}</a><a class="sr-ctaghost" href="capability.html">${esc(S.finalSecondary)}</a></div>
+            <p class="sr-ctatrust">${esc(S.finalTrust)} · <a class="sr-ctatel" href="${tel}">${esc(S.finalAlt)} <b>${esc(CONTACT.phone)}</b></a></p>
           </div>
         </div>
       </div></div>
@@ -757,29 +725,59 @@ function markObject(M) {
   const shape = (pts) => new THREE.Shape(pts.map(P));
   // satin silver: flat chrome faces would only mirror the dark room
   const chrome = new THREE.MeshPhysicalMaterial({ color: 0xdedee2, metalness: 0.82, roughness: 0.24, envMapIntensity: 1.6, clearcoat: 1.0, clearcoatRoughness: 0.08 });
-  const red = new THREE.MeshPhysicalMaterial({ color: 0xff2a45, metalness: 0.45, roughness: 0.2, envMapIntensity: 1.05, clearcoat: 1.0, clearcoatRoughness: 0.05 });
+  const red = new THREE.MeshPhysicalMaterial({ color: 0xff2a45, metalness: 0.4, roughness: 0.26, envMapIntensity: 1.0, clearcoat: 1.0, clearcoatRoughness: 0.06 });
   const depth = 0.1;
   const bevel = { bevelEnabled: true, bevelThickness: 0.022, bevelSize: 0.01, bevelSegments: 4, curveSegments: 1 };
   const group = new THREE.Group();
-  group.userData.mats = [chrome, red];
-  chrome.transparent = red.transparent = true;
+  const hub = P(M.hub);
+  // every piece remembers where it rests, so the entrance can move it in from elsewhere
+  const add = (mesh, kind, i) => { mesh.userData = { kind, i, rest: mesh.position.clone() }; group.add(mesh); };
   M.rays.forEach((r, i) => {
     const mesh = new THREE.Mesh(new THREE.ExtrudeGeometry(shape(r.pts), { depth, ...bevel }), chrome);
     mesh.position.z = -i * 0.03;
-    group.add(mesh);
+    add(mesh, "ray", i);
   });
   const body = new THREE.Mesh(new THREE.ExtrudeGeometry(shape(M.body), { depth: depth * 1.25, ...bevel }), red);
   body.position.z = 0.03;
-  group.add(body);
-  const head = new THREE.Mesh(new THREE.SphereGeometry(M.head.r * s, 48, 32), red);
+  add(body, "fig", 0);
+  const bc = M.body.reduce((a, q) => [a[0] + q[0] / 3, a[1] + q[1] / 3], [0, 0]);
+  body.userData.pivot = P(bc); // the body scales about its own centre
+  // the head is a flat disc like the logo's, not a ball
   const hp = P([M.head.cx, M.head.cy]);
-  head.position.set(hp.x, hp.y, 0.03 + depth * 0.62);
-  head.scale.z = 0.6;
-  group.add(head);
+  const disc = new THREE.Shape(); disc.absarc(0, 0, M.head.r * s, 0, Math.PI * 2, false);
+  const head = new THREE.Mesh(new THREE.ExtrudeGeometry(disc, { depth: depth * 1.25, ...bevel, curveSegments: 48 }), red);
+  head.position.set(hp.x, hp.y, 0.03);
+  add(head, "fig", 1);
   // centre the stack in depth so it turns about its middle
   const box = new THREE.Box3().setFromObject(group);
-  group.children.forEach((c) => (c.position.z -= (box.min.z + box.max.z) / 2));
+  const dz = (box.min.z + box.max.z) / 2;
+  group.children.forEach((c) => { c.position.z -= dz; c.userData.rest.z -= dz; });
+  group.userData.hub = hub;
+  group.userData.rays = M.rays.length;
   return group;
+}
+
+/* Scroll-driven assembly, r = 0..1. Blades grow out of the hub one by one, smallest
+   first (the order the card in the dive builds them), then the figure settles from
+   above. Pieces scale about the hub, so nothing pops or slides in from off screen. */
+function assembleMark(group, r) {
+  const hub = group.userData.hub, n = group.userData.rays;
+  for (const m of group.children) {
+    const { kind, i, rest } = m.userData;
+    let t;
+    if (kind === "ray") t = smooth(clamp01((r - (n - 1 - i) * 0.055) / 0.42));
+    else t = smooth(clamp01((r - 0.5 - i * 0.06) / 0.38));
+    const sc = Math.max(0.001, kind === "ray" ? t : 0.6 + 0.4 * t);
+    m.scale.set(sc, sc, 1);
+    m.visible = t > 0.001;
+    if (kind === "ray") m.position.set(hub.x * (1 - sc), hub.y * (1 - sc), rest.z - (1 - t) * 0.6);
+    else {
+      // body: geometry sits in mark space, so pivot about its centre; head: its own origin
+      const pv = m.userData.pivot;
+      const x = pv ? pv.x * (1 - sc) : rest.x, y = pv ? pv.y * (1 - sc) : rest.y;
+      m.position.set(x, y + (1 - t) * 0.55, rest.z);
+    }
+  }
 }
 
 function makeTargetStar(canvas) {
@@ -813,18 +811,15 @@ function makeTargetStar(canvas) {
   gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); bgU.u_resolution.value.set(w * gl.dpr, h * gl.dpr); place(); };
   gl.onResize(gl.w, gl.h);
   let reveal = 0;
-  const easeOutBack = (x) => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2);
   const draw = () => {
-    const s = clock;
+    const sc = clock;
     const [bx, by] = group.userData.base;
-    // entrance: zooms up from 45% with a soft overshoot and turns into place, fading in over its first half
-    const e = easeOutBack(smooth(reveal));
-    const breathe = 1 + 0.015 * Math.sin(s * 0.9) * reveal;
-    group.scale.setScalar(group.userData.size * (0.45 + 0.55 * e) * breathe);
-    for (const m of group.userData.mats) { m.opacity = smooth(clamp01(reveal * 1.8)); m.transparent = m.opacity < 0.999; }
-    group.position.set(bx, by + Math.sin(s * 0.8) * 0.035 - (1 - e) * 0.25, 0);
-    // a slow turn to each side that never shows the mark edge-on, so it always reads
-    group.rotation.set(-0.1 + Math.sin(s * 0.55) * 0.05, -0.32 + Math.sin(s * 0.42) * 0.5 - (1 - e) * 1.1, Math.sin(s * 0.3) * 0.025);
+    const e = smooth(reveal);
+    assembleMark(group, reveal);
+    group.scale.setScalar(group.userData.size * (0.88 + 0.12 * e) * (1 + 0.012 * Math.sin(sc * 0.9) * e));
+    group.position.set(bx, by + Math.sin(sc * 0.8) * 0.03 * e, 0);
+    // turns into place as it assembles, then a slow sway that never shows it edge-on
+    group.rotation.set(-0.08 + Math.sin(sc * 0.55) * 0.04 * e, -0.3 + Math.sin(sc * 0.42) * 0.4 * e - (1 - e) * 0.9, Math.sin(sc * 0.3) * 0.02 * e);
     r.render(scene, camera);
   };
   gl.redraw = draw;
@@ -854,11 +849,10 @@ export function initShowreel(section) {
     heroHead: $("sr-hero-head"), slider: $("sr-slider"), slideA: $("sr-slide-a"), slideB: $("sr-slide-b"), heroBottom: $("sr-hero-bottom"),
     panel: $("sr-blackpanel"), sphereScene: $("sr-sphere-scene"), sphereWrap: $("sr-sphere-wrap"), core: $("sr-core"),
     faceIn: $("sr-face-in"), face: section.querySelector(".sr-face"), zoom: $("sr-zoom"),
-    sphereBody: $("sr-sphere-body"), target: $("sr-target"), frame: $("sr-frame"), ctaBlock: $("sr-ctablock"), cta: $("sr-cta"),
+    sphereBody: $("sr-sphere-body"), target: $("sr-target"), ctaBlock: $("sr-ctablock"), cta: $("sr-cta"),
     aurora: $("sr-aurora"), portfolio: $("sr-portfolio"), pfTrack: $("sr-pf-track"),
   };
-  const ctaParts = [...el.ctaBlock.querySelectorAll("h2 > span, p, .sr-ctarow")];
-  const tiles = [...section.querySelectorAll(".sr-tile")];
+  const ctaParts = [...el.ctaBlock.querySelectorAll(".sr-cta-eyebrow, h2 > span, .sr-cta-lead, .sr-ctarow, .sr-ctatrust")];
 
   // card 03: the mark (one element per blade) and the dive through its hub
   const M = readMark();
@@ -960,7 +954,6 @@ export function initShowreel(section) {
       el.marquee.style.opacity = marqueeOpacity(p);
       el.marquee.style.filter = `blur(${marqueeBlur(p)}px)`;
       // camera rig + carousel
-      el.rig.style.transform = cameraRigTransform(p);
       el.carousel.style.transform = carouselTransform(p);
       // card 1 (hero)
       const c1 = el.card1.style;
@@ -1031,18 +1024,21 @@ export function initShowreel(section) {
       const maxPan = Math.max(0, el.pfTrack.scrollWidth - el.portfolio.clientWidth + 3 * vmin);
       el.pfTrack.style.transform = pfTrackTransform(p, maxPan);
       // flight grid + target
-      const go = gridOpacity(p);
-      for (const tEl of tiles) tEl.style.opacity = go;
-      el.target.style.opacity = targetOpacity(p);
-      el.target.style.borderRadius = `${targetRadius(p)}px`;
+      // closing scene: opens through a feathered circle, settles from a slight zoom
+      const ca = closeActive(p);
+      el.target.style.visibility = ca ? "visible" : "hidden";
+      if (ca) {
+        const m = closeMask(p);
+        el.target.style.maskImage = m; el.target.style.webkitMaskImage = m;
+        el.target.style.transform = `translate(-50%, -50%) scale(${closeScale(p).toFixed(4)})`;
+      }
       ctaParts.forEach((part, i) => {
         const r = finalBeat(p, i);
         part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
-        part.style.transform = `translateY(${((1 - r) * 3.5).toFixed(3)}vh)`;
-        part.style.filter = r < 0.999 ? `blur(${((1 - r) * 6).toFixed(2)}px)` : "none";
+        part.style.transform = `translateY(${((1 - r) * 2.6).toFixed(3)}vh)`;
+        part.style.filter = r < 0.999 ? `blur(${((1 - r) * 8).toFixed(2)}px)` : "none";
         part.style.visibility = r > 0.005 ? "visible" : "hidden";
       });
-      el.frame.style.opacity = finalFrameReveal(p);
     }
 
     const onScreen = y + vh > trackTop && y < trackTop + trackH;
@@ -1051,7 +1047,7 @@ export function initShowreel(section) {
       if (vis.hero) gfx.hero.render(t);
       if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(t);
       if (vis.sphere) gfx.sphere.render(t, sphereDisperse(p));
-      if (vis.target && flightActive(p)) gfx.target.render(t, markReveal(p)); else gfx.target.pause();
+      if (vis.target && closeActive(p)) gfx.target.render(t, markReveal(p)); else gfx.target.pause();
     }
   }
   requestAnimationFrame(frame);

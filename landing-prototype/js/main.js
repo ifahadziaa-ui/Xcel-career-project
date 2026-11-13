@@ -1,6 +1,7 @@
 /* =====================================================================
    ENTRY: render content → build showreel → start motion → preloader.
    ===================================================================== */
+import "./sprite.js?v=3"; // icons and the mark, before anything renders
 import Lenis from "lenis";
 import {
   CERT_LINE, CERTS, CREDENTIALS, CUSTOMERS, STEPS, PROCESS_SPLIT, JOBS, FEATURED_JOB, JOBS_NOTE,
@@ -12,6 +13,7 @@ import {
   registerReveals, releaseReveals, initParallax, runPreloader, initHeader,
 } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
+import { currentUser } from "./auth.js?v=3";
 
 const $ = (s) => document.querySelector(s);
 
@@ -25,11 +27,7 @@ $("#certs-badges").innerHTML = CERTS.map((c, i) => `
   <li class="badge" data-m="sticker" data-i="${i}">
     <span class="badge-seal" role="img" aria-label="${esc(c.name)} badge placeholder"><span class="code">${esc(c.code)}</span><span class="art">official badge</span></span>
     <span class="badge-name">${esc(c.name)}</span>
-  </li>`).join("") + `
-  <li class="badge badge--add" data-m="sticker" data-i="${CERTS.length}">
-    <span class="badge-seal"><span class="code">+</span></span>
-    <span class="badge-name">Contract vehicles (to confirm)</span>
-  </li>`;
+  </li>`).join(""); // contract vehicles: not shown until the client confirms them
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
   <li class="cust" data-m="chip" data-i="${i % 6}">
     <div class="cust-logo">${ph({ kind: "logo", what: "Official logo" })}</div>
@@ -155,6 +153,8 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("cli
 const fontsReady = document.fonts.ready;
 initParallax();
 initHeader($(".hx-hero"));
+// "Sign in" becomes "My account" once a (prototype) candidate account exists in this browser
+if (currentUser()) document.querySelectorAll("[data-account]").forEach((a) => { a.textContent = "My account"; a.href = "account.html"; });
 initChat({ lenis });
 
 const pileCards = [

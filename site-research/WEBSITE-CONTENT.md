@@ -70,6 +70,9 @@ Retired from the old site, so don't use: Ellicott City address, 410.865.9558, HR
 | **Capability** | Certifications, CAGE, UEI, NAICS and past performance on one page, plus the PDF | Download PDF |
 | **About** | Story, leadership, 125+ years combined | Book a call |
 | **Contact** | Staffing request form, book a call, direct line | Submit request |
+| **Sign in / My account** | Candidates only: apply faster, save roles, track applications | Create account |
+
+All of these pages exist in the prototype (13 Nov 2026). Sign in was **not wanted in the questionnaire (Q9)**; the user asked for it, so it is built as a **design only** (no real accounts, Google not connected) until the client confirms.
 
 ---
 
@@ -128,10 +131,12 @@ One story in six beats. Each beat answers one question, in this order: what do y
    - **01 · Main focus: Healthcare.** Tags: Hospitals · Clinics · Long-term care · Behavioral health · County & state HHS. "Clinical and non-clinical staff for hospitals, health systems, clinics, long-term care, behavioral health, and county and state health and human services departments."
    - **02 · Local · State · Federal: Government.** Tags: Staff augmentation · Contract staffing · Task orders / IDIQ · Consulting. "Prime or subcontractor for staff augmentation, contract staffing, task orders and consulting in business analysis, project and program management, and talent management."
    - **03 · Across both: IT · Finance · Cyber.** Tags: EHR & systems · Revenue cycle · Budget analysis · Cleared to TS/SCI. "EHR, systems and network administrators, revenue cycle and budget analysts, cybersecurity and cloud engineers, cleared up to TS/SCI with Full Scope Poly."
-6. **Closing call to action: the ask** (the 3D mark turns beside it)
+6. **Closing call to action: the ask.** The frame opens through a soft circle as the panels leave (no camera flight, no tiles); the 3D mark assembles beside the copy.
+   - Eyebrow: Staffing request
    - Headline: **One nurse. / Or 120+ staff.**
-   - Text: "Tell us the role, the shifts and the credentials it needs. We'll send a short list of vetted candidates."
-   - Button: **Request staff** · or call **240.579.0466**
+   - Text: "Tell us the role, the shifts, the pay range and the license, certification or clearance it needs. We screen, verify and send you a short list of vetted candidates."
+   - Buttons: **Request staff** · **Capability statement**
+   - Trust line: Maryland MBE · DBE · SBE No. 19-286 · CAGE 89AK6 · or call **240.579.0466**
 
 ### 04 · How we staff
 - **Headline:** FROM OPEN ROLE / TO *day one*
@@ -203,15 +208,15 @@ One story in six beats. Each beat answers one question, in this order: what do y
 
 ### 09 · Contact
 - **Headline:** TELL US WHO / YOU *need*
-- **Form:** work email → **Request staff**
+- **Form (short staffing request):** Organization · Role you need · Work email → **Request staff** (opens the full form on the Contact page, prefilled)
 - **Below the form:** "Call 240.579.0466 · bklasson@xcelcareers.com. Barry Klasson, Director of Business Development and Client Services."
 
 ### Footer
 - **Address:** 6013 Bricker Rd, Dayton, MD 21036
 - **Link columns**
-  - Employers: Healthcare staffing · Government contracting · Request staff
-  - Candidates: Open jobs · Upload résumé · How it works
-  - Company: Capability statement · Certifications · Contact
+  - Employers: Healthcare staffing · Government contracting · IT · Finance · Cyber · Request staff
+  - Candidates: Open jobs · Upload résumé · Sign in
+  - Company: About · Capability statement · Contact
 - **Legal:** © 2026 XcelCareers (XC), LLC
 - **Codes line:** CAGE 89AK6 · UEI KQGDQLETUZ43 · MD MBE/DBE/SBE No. 19-286
 
@@ -221,25 +226,34 @@ One story in six beats. Each beat answers one question, in this order: what do y
 
 ---
 
-## 4. Other pages: outlines
+## 4. Other pages (built in the prototype, 13 Nov 2026)
 
-- **Healthcare Staffing**
-  - H1: *Credentialed people for every level of care.*
-  - Sections: who we staff for (hospitals, clinics, long-term care, behavioral health, county and state HHS) · roles · how we verify (license, certification, health screening, references, background) · contract staff (we're the employer of record) · request form.
-- **Government Contracting**
-  - H1: *A certified small-business partner, ready to prime or sub.*
-  - Sections: staff augmentation · contract staffing · task orders / IDIQ · consulting (business analysis, project and program management, talent management) · certifications and codes · past performance · capability PDF.
-- **IT · Finance · Cyber**
-  - H1: *The specialists behind care and government.*
-  - Sections: healthcare and government IT (EHR, systems, network, service desk) · finance (financial, budget and cost analysts, revenue cycle, billing) · cybersecurity and cloud (cleared up to TS/SCI with Full Scope Poly) · MD, DC, VA and remote.
-- **Jobs**
-  - Live from the ATS, with filters for function, location, type and clearance or license, plus apply and résumé upload. Banner: "Free for candidates. Always."
-- **Capability**
-  - The proof-bank table and the past-performance ledger on one page, plus the PDF.
-- **About**
-  - Story **[CONFIRM]** · leadership (Quan Nguyen, Erika Finley, Barry Klasson) · 125+ years combined · recruiting roots: "the U.S. Navy's top recruiter, Northeast Region, 2006" **[CONFIRM whose and how to phrase]**
-  - Vision: "A leading certified small-business partner in Maryland and the region for healthcare staffing and government contracting, holding our own prime contracts, with a recognized specialty in IT, finance and cybersecurity talent."
-- **Contact:** the staffing request form below, book a call, the direct line and the address.
+The copy lives in `landing-prototype/js/content.js` (`SERVICE_PAGES`, `ABOUT`, `REQUEST_FORM`, `JOBS`). Every page ends with one ask and the phone number.
+
+- **Healthcare Staffing** (`healthcare.html`)
+  - Eyebrow: Healthcare staffing · our main focus. H1: **Credentialed people for every level of *care***.
+  - Intro: "We place clinical and non-clinical staff with hospitals, health systems, clinics, long-term care, behavioral health providers, and county and state health and human services departments. We handle the search, the screening, the credential checks and the compliance, so your teams stay focused on patients."
+  - Who we staff for (5): Hospitals & health systems · Clinics · Long-term care · Behavioral health · County & state HHS, one line each.
+  - Roles we fill: RN · LPN · CNA · medical assistants · behavioral health & social services staff · case managers · medical billing & coding · EHR & systems administrators **[CONFIRM list]**.
+  - Verified before you see a name: Interview · License · Certification · Health screening · References · Background check.
+  - Four ways to work with us: Contract (we are the employer of record) · Contract-to-hire · Direct hire · Staff augmentation; then "You keep the final interview, the hiring decision, the work site and day-to-day supervision. We handle the rest."
+  - Proof: 120+ in 45 days · 300K+ profiles · 125+ years. Ask: **One nurse. / Or a full team.**
+- **Government Contracting** (`government.html`)
+  - H1: **A certified small-business partner, *ready to prime or sub***. Intro names today's work honestly: staff augmentation for county government (incl. HHS) and hard-to-fill IT, finance and cleared roles.
+  - What we deliver: Staff augmentation · Contract staffing · Task orders / IDIQ · Consulting (business analysis, project and program management, talent management).
+  - For prime contractors (4 points) · Registered and certified (MBE, DBE, SBE, CAGE, UEI, certifier and dates) · NAICS table · past performance ledger · proof: 120+ in 45 days, 600+ DoD and IC, 400 hires in 2018. Ask: capability statement.
+- **IT · Finance · Cyber** (`specialists.html`)
+  - H1: **The specialists behind care and *government***. Healthcare & government IT · Finance · Cybersecurity (cleared up to TS/SCI with FSP) · Delivery (BAs, PMs). Where: MD, DC, VA, remote.
+- **Jobs** (`jobs.html`)
+  - H1: **Find your *next role***. Search, field chips, location and type filters, 12 **sample** listings labelled as such, a detail dialog with an application form (name, email, phone, résumé), Save (needs sign-in), and "Send us your résumé" (`#resume`). The live list must come from the ATS **[CONFIRM which]**.
+- **Capability** (`capability.html`)
+  - At a glance table (company, status, certifications, CAGE, UEI, contracting, cleared talent, where, point of contact) · core capabilities · NAICS · current and past customers · the record and ledger. The PDF button says the file has not been supplied.
+- **About** (`about.html`)
+  - H1: **The people behind the *care***, with the client's own Q1 description. Four reasons (from Q15): Certified · Contract-ready · Both sides of care · Vetted and fast. Leadership (headshots to come). How we hire (4 steps) and what we do for candidates (Q6). The founding story and the Navy credential stay off until confirmed **[CONFIRM]**; the three-year vision (Q22) is direction, not copy, so it is not shown.
+- **Contact** (`contact.html`)
+  - Tabs: Request staff (the full intake form below) · Book a call (name, email, phone, best time, topic) · I'm looking for work (links to jobs and résumé). Side card: Barry Klasson, phone, email, address, codes. No reply-time promise is made (none was given).
+- **Sign in / My account** (`login.html`, `account.html`), candidates only, design only
+  - "Your next role, one place": apply with a saved résumé, save roles, keep license / certification / clearance details on file. Continue with Google + email and password. Employers are pointed to the staffing request instead. My account: profile, résumé, applications, saved roles, sign out.
 
 **Staffing request form fields** (mirrors their intake call)
 - Organization
