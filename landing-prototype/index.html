@@ -54,7 +54,13 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <p class="hx-status"><a class="hx-account" href="login.html" data-account>Sign in</a><span class="hx-live">Now staffing</span></p>
+    <div class="hx-end">
+      <button type="button" class="mo-toggle" id="mo-toggle" aria-pressed="false" aria-label="Pause animations">
+        <svg class="ic-pause" aria-hidden="true" viewBox="0 0 12 12"><rect x="2" y="1.5" width="2.8" height="9" rx="0.6"/><rect x="7.2" y="1.5" width="2.8" height="9" rx="0.6"/></svg>
+        <svg class="ic-play" aria-hidden="true" viewBox="0 0 12 12"><path d="M3 1.6v8.8L10.4 6z"/></svg>
+      </button>
+      <p class="hx-status"><a class="hx-account" href="login.html" data-account>Sign in</a><span class="hx-live">Now staffing</span></p>
+    </div>
   </div>
 </header>
 
@@ -211,15 +217,16 @@
           <span class="mark" data-m="mark">need</span>
         </span>
       </h2>
-      <form class="join-form join-form--req" action="contact.html" method="get">
+      <form class="join-form join-form--req" id="join-form" action="contact.html" method="get" novalidate>
         <label for="join-org" class="sr-only">Organization</label>
-        <input id="join-org" name="org" placeholder="Organization" autocomplete="organization" required>
+        <input id="join-org" name="org" placeholder="Organization" autocomplete="organization" required aria-describedby="join-msg">
         <label for="join-role" class="sr-only">Role you need</label>
-        <input id="join-role" name="role" placeholder="Role you need, e.g. RN, behavioral health" required>
+        <input id="join-role" name="role" placeholder="Role you need, e.g. RN, behavioral health" required aria-describedby="join-msg">
         <label for="join-email" class="sr-only">Work email</label>
-        <input id="join-email" type="email" name="email" placeholder="Work email" autocomplete="email" required>
+        <input id="join-email" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="join-msg">
         <button class="btn" type="submit" data-m="button">Request staff<svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </form>
+      <p class="join-msg" id="join-msg" role="status" aria-live="polite" hidden></p>
       <p class="type-caps join-fine" id="join-fine"></p>
     </div>
     <div class="join-card"><div class="tilt" data-px="-10" data-tilt="-3" style="width:100%;height:100%"><div class="px"><div class="card-rot"><div class="card-reveal" data-m="card" style="width:100%;height:100%"><div class="card-art" id="join-art"></div></div></div></div></div></div>

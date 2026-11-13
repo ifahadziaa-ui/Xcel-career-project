@@ -4,6 +4,8 @@
 >
 > First written 12 Nov 2026; **revised 12 Nov 2026** to add the client's completed questionnaire (received 9 Nov 2026) and an audit of the live old site at https://xcelcareers.com/. Question numbers such as **Q5** refer to that questionnaire.
 >
+> **Updated 13 Nov 2026:** the frontend work is now scoped to the **homepage prototype first** (the other seven pages come after its review). The decisions, the Definition of Done and the open issues are in [FRONTEND-PROTOTYPE-STATUS.md](FRONTEND-PROTOTYPE-STATUS.md); §5 below lists every design change made to `landing-prototype/`.
+>
 > **Order of authority for facts and wording:** (1) the client questionnaire, (2) `landing-prototype/js/content.js` and `site-research/WEBSITE-CONTENT.md`, (3) this file. The live old site is **not** an authority: it is out of date and still carries retired facts (§3). Where this file and the code disagree, the code is the truth for *behaviour*.
 
 ---
@@ -22,13 +24,13 @@
 | Client questionnaire | `XcelCareers - Client Questions.docx` (and the COMPLETED version in `site-research/`) | The client's answers (received 9 Nov 2026), now folded into §1 to §4 | Done; the open **[CONFIRM]** items are listed in §4 |
 | Live old site | https://xcelcareers.com/ (captured in `site-research/xcelcareers-current-site/`) | The WordPress site this project replaces; audited in §3 | Still live, tech-only, **out of date**; never copy its facts |
 | Design inputs | `Assets/Logo.png`, `Hero page design/`, `Animation videos/`, `Landing page prompts/` | Logo, the hero mock-up, two reference animations, the two long design prompts | Inputs only |
-| **Static prototype** | `landing-prototype/` | The full one-page site: hero, credentials, a scroll showreel, process, jobs, capability, record, FAQ, contact, chatbot | Most complete; the reference implementation; **frozen, do not edit** |
+| **Static prototype** | `landing-prototype/` | The full one-page site: hero, credentials, a scroll showreel, process, jobs, capability, record, FAQ, contact, chatbot | Most complete; the reference implementation; **protected: edit only with the user's authorization for a stated task**. The homepage prototype is the current focus |
 | **Next.js app** | `xcel-website/` | The intended production site | **Only the hero exists** (and it still carries the reference design's placeholder copy, see §5) |
 | **Superconscious showreel** | `superconscious/` | A standalone single-file scroll experience derived from the prototype | Working; two single-file pages (vanilla `index.html`, XcelCareers `xcelcareers.html`); checked in headless Firefox at desktop and phone widths; not fused |
 
 **How the pieces relate.** Content flows one way: `site-research/WEBSITE-CONTENT.md` (human deck) becomes `landing-prototype/js/content.js` (machine-readable, also feeds the chatbot), which `superconscious/index.html` imports at runtime. The Next app does not yet read any of it. The long-term plan is for `xcel-website/` to become the production site, with the prototype as the visual and behavioural reference.
 
-**History in git** (5 commits on `main`, oldest first): XcelCareers prototype, Next hero app, assets and prompts → research notes, copy deck and capture tools → capture of the current XcelCareers site → capture of the reference site pages → reference site assets. Everything from the Superconscious work onward is **uncommitted**.
+**History in git:** `main` holds the research, the prototype and the sideways-snap commit (`e171a85`). All later homepage work (phases 0 to 5 of the completion plan) is on the branch `landing-prototype-completion`, pushed to GitHub and **not merged into `main`**. `superconscious/` and `held-mint/` are on `main`.
 
 ---
 
@@ -315,7 +317,7 @@ Repo root: `/home/abdullah/Documents/xcel_career/Xcel-career-project` (git, bran
 ```
 Xcel-career-project/
 ├── xcel-website/          Next.js app (the "real" site). ONLY the hero is built.
-├── landing-prototype/     Static HTML/CSS/JS prototype: the full one-page site. UNCHANGED, git-clean.
+├── landing-prototype/     Static HTML/CSS/JS prototype: the full one-page site (homepage prototype, see §5 for every change made to it).
 ├── PROJECT-BRIEF.md       THIS FILE: the whole-project briefing.
 ├── superconscious/        Standalone scroll showreel derived from the prototype.
 │   ├── index.html         the whole page (HTML + CSS + JS in one file)
@@ -344,7 +346,7 @@ A complete one-page XcelCareers site, no build step. Sections in order: top bar,
   2. **Fonts.** The hero and the top bar keep Mona Sans (condensed black headline) and Geist Mono. Everything after the hero uses **Zen Kaku Gothic New**, the font of the Superconscious page: sentence-case headlines in a regular weight with tight spacing, uppercase labels in a medium weight. Barlow Condensed, Sedgwick Ave Display and Sora are no longer loaded.
   3. **Type scale.** One token set in `css/base.css` for everything below the hero (display about 72 px on desktop, stepping down at 1200 / 896 / 700 px), with tighter section padding in `css/sections.css`.
   4. **Motion.** One shared entrance (`RISE`, a short rise with no bounce) for headlines, cards, steps, stat boxes and buttons. The "One nurse" closing frame now reveals the 3D mark (zoom from 45% with a soft overshoot, a turn and a fade) on the same scroll beat as the copy, which follows line by line.
-  5. **Buttons.** Zen Kaku Gothic New sits low in its line box, so button text is nudged up to look centred: `.btn` has a bottom padding of 0.4em (`css/sections.css`), and the hero and closing-frame buttons (`.sr-btn`, `.sr-ctabtn`) shift their padding by 0.13em (`css/showreel.css`). Mona Sans on buttons was tried and rejected as too plain.
+  5. **Text centring.** Zen Kaku Gothic New sits low in its line box. Tags, badge seals, stamps, placeholder pills and the hero and closing-frame buttons use `text-box: trim-both cap alphabetic` with symmetric padding (`css/base.css`, `css/sections.css`, `css/showreel.css`); the flex `.btn` buttons keep a small bottom padding (0.2em) because `text-box` does not apply to flex containers. The top bar's row is centred in the bar rather than offset by a fixed number. Mona Sans on buttons was tried and rejected as too plain.
   6. **Card parallax.** `initParallax` in `js/motion.js` is scroll-linked: a card's offset and tilt are computed from where its box is on screen every frame (reads first, then writes), with no spring. The old spring lagged behind Lenis, froze off-screen and crawled up on return.
 - **Changes made at the user's request (13 Nov 2026)**, authorized for that task:
   1. **Showreel ending.** The prompt's camera flight through 14 placeholder tiles into a box that zoomed up (1900 scroll units) is gone. The closing frame now opens through a wide, feathered radial mask (no hard edge) as the "What we staff" strip leaves; the 3D mark assembles with scroll (blades grow out of the hub, smallest first, then the figure settles; the head is a flat disc like the logo); the copy rises a step behind. The showreel track is about 1360vh on desktop instead of 2000vh (`CLOSE_START`, `CLOSE_END`, `VH_PER_UNIT` in `js/showreel.js`). `FLIGHT` is no longer used by the prototype but stays in `content.js` because `superconscious/xcelcareers.html` imports it.
@@ -353,6 +355,17 @@ A complete one-page XcelCareers site, no build step. Sections in order: top bar,
   4. **Inner pages.** Nine static pages rendered by `js/pages.js` from new `content.js` exports (`NAV`, `SERVICE_PAGES`, `ABOUT`, `REQUEST_FORM`, and `JOBS` grown to 12 sample listings with `id`, `desc`, `reqs`), inside shared chrome (`js/site.js`: top bar, footer, Lenis, reveals, chatbot), styled by `css/pages.css` with the existing type tokens only. Icons and the mark now live in `js/sprite.js`, injected on every page.
   5. **Candidate accounts, design only** (`js/auth.js`): sign in, create account, "Continue with Google" (creates a demo account; Google is not contacted), saved roles, applications, profile and résumé name. All in localStorage. Every form shows a "Prototype: not sent" notice.
   - Known and open: the hero headline sits behind the video card by design (headline z-index 3, image 6, as the Superconscious brief says). A stray flat white line seen during the hero transition on a GPU browser could not be reproduced in headless Firefox.
+- **Prototype completion pass (13 to 14 Nov 2026, merged with the changes above on `landing-prototype-merged`):**
+  1. **Type scale and text floor.** Everything below the hero takes its size from the tokens in `css/base.css`. `--type-min: 11px` is the floor (`--type-micro`, `--type-label` and the small tokens are floored with `max()`); text inside scaled cards keeps container-relative sizing but cannot go under the floor. The hero and the top bar are exempt (the bar's "NOW STAFFING" is 10.5px on phones).
+  2. **One red.** `#ff2a45` everywhere. The deeper red (`#d4142f`, `--accent-strong`) was removed. Text on red fills is graphite (5.1:1; white was 3.7:1). The capability poster uses lighter paper (`--surface-poster`, paper-50) and its small caption line is dark, not red.
+  3. **Accessibility target: WCAG 2.1 AA plus 2.4.11 Focus Not Obscured and 2.5.8 Target Size (2.2).** Done: scroll padding so focus clears the fixed bar and the chat launcher; keyboard focus in the pinned showreel brings the stage into view; 3:1 borders on the email field and the chat input; chat label colours raised to 4.5:1; hover and keyboard-focus states on the stage buttons, FAQ questions and the email field. Target size passes by the spacing exception (nav and footer links are 22px or less tall).
+  4. **Pause animations (2.2.2) and reduced motion.** `js/pause.js` keeps `html[data-motion]`; the toggle in the top bar pauses or resumes. It starts paused under `prefers-reduced-motion` and the choice is remembered. It stops the marquee, the shader animation, the mark's sway, the cursor tilt and the looping placeholders. Reduced motion also turns off eased wheel scrolling and smooth anchors. Scroll-linked motion is deliberately not changed. The toggle overlaps the bar's padding (negative margin) so the bar's height does not change.
+  5. **Contact form checks.** The three-field request form (organization, role, work email) validates on submit: an empty or malformed field shows an inline error and focus returns to it; a complete form opens `contact.html` prefilled, as before. Nothing is sent from the home page. The chat launcher hides while the page scrolls and returns after one second of stillness (never while the chat is open or the launcher has keyboard focus).
+  6. **Sideways snap.** A sideways swipe, shift + wheel or ← / → steps the carousel and the "What we staff" strip to the next or previous card (`attachSnap` in `js/showreel.js`). No on-screen hint, by decision.
+  7. **Performance and Chrome.** `ADAPTIVE` in `js/showreel.js` lowers the pixel ratio of the sphere and aurora canvases when frames stay slow (28 ms) and restores it after 8 s of headroom. The closing scene's gradient has its own canvas (the hero's gradient code path) plus a CSS fallback. (The earlier flat-2D-at-arrival fix for Chrome hit-testing was dropped in the merge: the redesigned closing beat has no 3D camera flight.) Cards that have faded become `visibility: hidden`.
+  8. **Vertical snap.** A tap on ↓ / ↑ inside the pinned reel steps to the next or previous resting beat (`vstops()` in `js/showreel.js`); holding the key scrolls freely. Quick taps chain. The wheel is untouched.
+  - Layout fixes: the FAQ no longer overflows at phone widths (`minmax(0, 1fr)` tracks); the contact lines stay clear of the photo card; the certifications headline is balanced and the four badges stay on one row at tablet width.
+  - Known and open: **The closing frame ("One nurse") background shows flat black in the user's Chrome, from the first frame.** It is not reproducible in headless Firefox or headless Chromium (software GL); it was already present before the completion work, and the merged closing scene has not been re-checked on a real GPU. Likely GPU- or extension-specific; undiagnosed. The white line seen earlier during the hero transition was judged to come from the user's setup and dropped.
 - Optional chatbot live mode: `pip install anthropic`, set `ANTHROPIC_API_KEY`, default model `claude-opus-5-5` (`XC_CHAT_MODEL`), port `XC_PORT` (3200). Without them it runs in "guided" mode from `content.js`.
 
 ### `site-research/`
@@ -452,7 +465,8 @@ Two long briefs were pasted in this work. **Both were truncated** by the chat's 
 - [x] `superconscious/index.html` is the vanilla Superconscious page; `superconscious/xcelcareers.html` is the XcelCareers variant. `held-mint/index.html` is a vanilla HELD-MINT build up to the end of the hero (its brief is truncated). All three were rendered and checked in headless Firefox (Marionette, software WebGL) at desktop and phone widths, and several bugs found that way were fixed. Not yet checked: 1024 and 768 px, hover and keyboard states.
 - [x] `superconscious/README.md`, `superconscious/assets/showreel/README.md` and this file (`PROJECT-BRIEF.md`, repo root) written.
 - [x] Completed client questionnaire and the live old site read and folded into this brief (§1 to §4).
-- [ ] **Nothing from this work is committed.** `superconscious/` is untracked. Commit messages in this repo end with the attribution line `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`; the user commits, so only commit when asked.
+- [x] The homepage prototype work is committed on `landing-prototype-completion` (latest `3fb8852`, pushed). It is not merged into `main`. Commit messages in this repo end with a `Co-Authored-By: Claude … <noreply@anthropic.com>` line naming the model in use; commit only when the user asks.
+- [x] Phases 0 to 5 of the homepage completion plan are done (baseline, layout fixes, form and launcher, type scale and one red, accessibility, performance). Phases 6 to 8 (placeholders and `[CONFIRM]` items, documentation, final check) remain: see [FRONTEND-PROTOTYPE-STATUS.md](FRONTEND-PROTOTYPE-STATUS.md).
 
 ### Running processes (may need stopping or restarting)
 - Next dev server: `npm run dev` in `xcel-website`, port 3000.
@@ -466,7 +480,7 @@ Two long briefs were pasted in this work. **Both were truncated** by the chat's 
 ## 11. What is still required
 
 **Blocking nothing, but needed for a finished product**
-1. **Visual verification is partial.** Pages were inspected in headless Firefox at desktop (1400) and phone (420) widths only. Still to check: 1024 and 768 px, hover and keyboard states, reduced motion. Original note, for reference: first checks: the loader, the carousel flip, the mark-shaped reveal and its off-centre start, the aurora, the services panels, the flight tiles, the chrome mark, mobile and tablet buckets. Use a separate browser profile or a Playwright/Chromium install in a throwaway venv.
+1. **Verification is partial.** Checked in headless Firefox (1400, 1024, 820, 768 and, through a same-origin iframe, 390, 360 and 320 px) and in headless Chromium 158 (software GL, driven over the DevTools protocol). Not checked: a real GPU, a real trackpad or touch screen, Safari, screen readers, and the showreel's own text over its gradients (contrast cannot be computed reliably there).
 2. **Media**, in `superconscious/assets/showreel/` (names and specs in that folder's README): `recruiter.jpg`, `candidate.jpg`, `employer.jpg`, `seeker.jpg`, `flight-1..9.jpg`, `function-1..3.mp4`. Real people, healthcare first, no stock look.
 3. **Client confirmations.** The full list of open questionnaire items is in §4. The asset-type ones are: the original vector logo (the mark is currently a trace), logo permission for customer names and whether NGA may be named, headshots for the team pill, the capability-statement PDF, the healthcare role list, the ATS feed for live jobs, the MBE/DBE/SBE badge art.
 
@@ -529,4 +543,4 @@ E
 node --check /tmp/chk.mjs
 ```
 
-Key files: `PROJECT-BRIEF.md` (this) · `superconscious/index.html` · `superconscious/README.md` · `superconscious/assets/showreel/README.md` · `landing-prototype/js/content.js` · `site-research/WEBSITE-CONTENT.md` · `xcel-website/src/components/hero/Hero.tsx`.
+Key files: `FRONTEND-PROTOTYPE-STATUS.md` (homepage scope, decisions, Definition of Done) · `docs/` (prototype guide, testing, accessibility, backend handoff) · `PROJECT-BRIEF.md` (this) · `superconscious/index.html` · `superconscious/README.md` · `superconscious/assets/showreel/README.md` · `landing-prototype/js/content.js` · `site-research/WEBSITE-CONTENT.md` · `xcel-website/src/components/hero/Hero.tsx`.

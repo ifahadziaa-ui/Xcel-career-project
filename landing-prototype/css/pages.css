@@ -171,7 +171,7 @@
 .jb-search input:focus-visible, .jb-sel select:focus-visible { outline: none; border-color: var(--accent); }
 .jb-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .chip { height: 3rem; padding: 0 1.1rem; border-radius: 999px; border: 1px solid rgb(243 243 245 / 0.16); font-size: var(--type-caption); color: var(--foreground-soft); }
-.chip.is-on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--background); }
 .jb-count { margin: 1.75rem 0 0.75rem; font-family: var(--font-bar); font-size: var(--type-legal); letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground-subtle); }
 .jb-list { border-top: 1px solid rgb(243 243 245 / 0.1); }
 .jb-row { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid rgb(243 243 245 / 0.1); }

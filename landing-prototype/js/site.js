@@ -10,6 +10,7 @@ import { esc } from "./ph.js?v=3";
 import { initHeader, reduced } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
+import { initPauseToggle } from "./pause.js?v=3";
 
 const here = location.pathname.split("/").pop() || "index.html";
 
@@ -23,7 +24,13 @@ export function navHTML({ hidden = false } = {}) {
   return `
     <a${ti} href="index.html" class="hx-logo" aria-label="XcelCareers home">${mark("hx-mark")}XcelCareers<span class="hx-reg" aria-hidden="true">®</span></a>
     <nav class="hx-nav" aria-label="Primary"><ul>${NAV.map((n) => `<li><a${ti} href="${n.href}"${n.href === here ? ' aria-current="page"' : ""}>${esc(n.label)}</a></li>`).join("")}</ul></nav>
-    <p class="hx-status"><a${ti} class="hx-account" href="login.html" data-account>Sign in</a><span class="hx-live">Now staffing</span></p>`;
+    <div class="hx-end">
+      <button${ti} type="button" class="mo-toggle" id="mo-toggle" aria-pressed="false" aria-label="Pause animations">
+        <svg class="ic-pause" aria-hidden="true" viewBox="0 0 12 12"><rect x="2" y="1.5" width="2.8" height="9" rx="0.6"/><rect x="7.2" y="1.5" width="2.8" height="9" rx="0.6"/></svg>
+        <svg class="ic-play" aria-hidden="true" viewBox="0 0 12 12"><path d="M3 1.6v8.8L10.4 6z"/></svg>
+      </button>
+      <p class="hx-status"><a${ti} class="hx-account" href="login.html" data-account>Sign in</a><span class="hx-live">Now staffing</span></p>
+    </div>`;
 }
 
 export function footerHTML() {
@@ -78,7 +85,9 @@ export function initPage(render) {
   syncAccountLinks();
 
   history.scrollRestoration = "manual";
-  const lenis = new Lenis({ smoothWheel: true });
+  const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+  const lenis = new Lenis({ smoothWheel: !reduceMQ.matches });
+  reduceMQ.addEventListener("change", () => { lenis.options.smoothWheel = !reduceMQ.matches; });
   const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
   requestAnimationFrame(raf);
   window.__proto = { lenis };
@@ -89,10 +98,11 @@ export function initPage(render) {
     const t = document.querySelector(a.getAttribute("href"));
     if (!t) return;
     e.preventDefault();
-    lenis.scrollTo(t, { offset: -header.offsetHeight - 16 });
+    lenis.scrollTo(t, { offset: -header.offsetHeight - 16, immediate: reduceMQ.matches });
   });
   if (location.hash) setTimeout(() => { const t = document.querySelector(location.hash); if (t) lenis.scrollTo(t, { offset: -header.offsetHeight - 16, immediate: true }); }, 60);
 
+  initPauseToggle(document.getElementById("mo-toggle"));
   initHeader(main.firstElementChild || main);
   initReveals();
   initChat({ lenis });

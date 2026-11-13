@@ -425,17 +425,28 @@ export function initChat({ lenis } = {}) {
   const showS = spring({ from: 0, to: 0, tension: 240, friction: 26, onUpdate: (v) => { shownV = v; apply(); } });
   const openS = spring({ from: 0, to: 0, tension: 300, friction: 28, onUpdate: (v) => { openV = Math.max(0, v); apply(); } });
 
+  // hides while the page is scrolling and returns once it has been still for a moment;
+  // never hidden while the chat is open or the launcher itself has keyboard focus
+  let scrolling = false, idleT = 0;
+  const IDLE_MS = 1000;
   const check = () => {
     // hidden over the hero (its placard owns that corner); just the orb while the showreel plays
     const heroGone = hero ? hero.getBoundingClientRect().bottom < innerHeight * 0.4 : true;
     const tr = track?.getBoundingClientRect();
     const inReel = tr ? tr.top <= 1 && tr.bottom >= innerHeight - 1 : false;
     root.classList.toggle("is-compact", inReel && !open);
-    const s = heroGone || open;
+    const s = open || launch.matches(":focus-visible") || (heroGone && !scrolling);
     if (s !== shown) { shown = s; showS.set(s ? 1 : 0); }
   };
-  addEventListener("scroll", check, { passive: true });
+  addEventListener("scroll", () => {
+    scrolling = true;
+    clearTimeout(idleT);
+    idleT = setTimeout(() => { scrolling = false; check(); }, IDLE_MS);
+    check();
+  }, { passive: true });
   addEventListener("resize", check);
+  launch.addEventListener("focus", check);
+  launch.addEventListener("blur", check);
   check();
 
   function setOpen(o) {

@@ -59,13 +59,17 @@ A complete static one-page website implementation.
 
 Do not use it as a scratchpad, testing area, or place to make temporary changes.
 
-History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Later the same day it also covered a floating dock top bar, button text alignment and a scroll-linked card parallax. All of it is committed on branch `landing-unify-and-new-briefs` (since merged to `main`) and documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user authorized a second pass: the showreel's closing beat (the tile flight removed, a feathered reveal and a scroll-assembled 3D mark), home page content and links, nine inner pages (`*.html` + `js/pages.js`, `js/site.js`, `js/auth.js`, `js/sprite.js`, `css/pages.css`) and a design-only candidate sign-in. Also documented in `PROJECT-BRIEF.md` §5. The protection applies again for any new work. In particular:
+History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Later the same day it also covered a floating dock top bar, button text alignment and a scroll-linked card parallax. All of it is committed on branch `landing-unify-and-new-briefs` (since merged to `main`) and documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user authorized a second pass: the showreel's closing beat (the tile flight removed, a feathered reveal and a scroll-assembled 3D mark), home page content and links, nine inner pages (`*.html` + `js/pages.js`, `js/site.js`, `js/auth.js`, `js/sprite.js`, `css/pages.css`) and a design-only candidate sign-in. Also documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user also authorized phases 0 to 5 of the homepage prototype completion plan (layout fixes, the contact form checks and chat launcher, type scale and one red, WCAG 2.1 AA work with a pause toggle, adaptive resolution, arrow-key vertical snap); that work was merged with the second pass on branch `landing-prototype-merged`. Documented in `FRONTEND-PROTOTYPE-STATUS.md` and `PROJECT-BRIEF.md` §5. The protection applies again for any new work. In particular:
 
 - The hero and the fixed top bar use Mona Sans and Geist Mono. Everything after the hero uses Zen Kaku Gothic New. Keep that split.
 - The type scale lives in `css/base.css`; do not add per-section font sizes.
 - Reveals share one entrance (`RISE` in `js/motion.js`).
 - The top bar is flat at the top and becomes a floating glass dock once scrolled (`--dock`, set in `initHeader`); keep it that way.
-- Zen Kaku buttons need their text nudged up (`.btn` bottom padding, `.sr-btn`/`.sr-ctabtn` 0.13em); keep Zen Kaku on buttons, not Mona Sans.
+- Zen Kaku sits low in its line box. Boxed labels, tags, badges, stamps and the stage buttons use `text-box: trim-both cap alphabetic`; the flex `.btn` keeps a small bottom padding. Keep Zen Kaku on buttons, not Mona Sans. Centre rows instead of using fixed top offsets.
+- Minimum text size is `--type-min` (11px) in `css/base.css`; new sizes come from the tokens, floored with `max()`.
+- There is one red, `#ff2a45`. Text on red fills is graphite, not white.
+- Accessibility target is WCAG 2.1 AA plus 2.4.11 and 2.5.8. Anything that moves on its own must respect `html[data-motion="paused"]` (`js/pause.js`, the toggle in the top bar); scroll-linked motion is not covered by it.
+- Keep the closing scene free of opposing 3D offsets (a `translateZ` pair made Chrome hit-test the wrong layer); it is flat 2D with a mask, and hidden (`visibility`) until it opens.
 - Card parallax is scroll-linked, not spring-based; do not reintroduce a spring there.
 
 ### `superconscious/`
@@ -288,7 +292,7 @@ For code changes, run the relevant checks where applicable.
 
 For the Next.js application, existing project scripts and dependencies should be inspected before deciding which commands to run.
 
-For visual changes, inspect the actual rendered result when the necessary environment is available. Headless Firefox works for this: start `firefox --headless --marionette --no-remote --profile <fresh dir>` and drive it over Marionette (port 2828); never target the user's own Firefox profile. Chromium/Playwright is not installed. Background servers (3000, 3200, 3300) stop when a session ends, so check them before testing. A successful build does not prove that the interface looks or behaves correctly.
+For visual changes, inspect the actual rendered result when the necessary environment is available. Headless Firefox works for this: start `firefox --headless --marionette --no-remote --profile <fresh dir>` and drive it over Marionette (port 2828); never target the user's own Firefox profile. A real Chromium is in `~/.cache/ms-playwright/` (no Playwright library): launch it headless with `--remote-debugging-port` and a fresh `--user-data-dir`, and drive it over the DevTools protocol (Python `websockets` works). Use it for Chrome-only behaviour such as 3D hit-testing; it renders with software GL, so it says nothing about a real GPU. Background servers (3000, 3200, 3300) stop when a session ends, so check them before testing. A successful build does not prove that the interface looks or behaves correctly.
 
 If a check cannot be performed, state that explicitly.
 

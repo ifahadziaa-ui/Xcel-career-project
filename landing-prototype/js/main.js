@@ -14,6 +14,7 @@ import {
 } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
+import { initPauseToggle } from "./pause.js?v=3";
 
 const $ = (s) => document.querySelector(s);
 
@@ -123,6 +124,28 @@ $("#faq-note").textContent = FAQ_NOTE;
 /* ---------- 09 contact + footer ---------- */
 $("#join-fine").innerHTML = `Call ${esc(CONTACT.phone)}  ·  ${esc(CONTACT.email)}
 ${esc(CONTACT.name)}, ${esc(CONTACT.title)}`;
+/* the home request form hands off to contact.html (org, role and email arrive prefilled); it only checks the fields first */
+const joinForm = $("#join-form"), joinMsg = $("#join-msg");
+const EMAIL_OK = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const joinFields = [
+  [$("#join-org"), () => "Enter your organization so we know who is asking."],
+  [$("#join-role"), () => "Tell us the role you need, for example RN or behavioral health."],
+  [$("#join-email"), (v) => (v ? "That doesn't look like an email address. Check it and try again." : "Enter your work email so we know where to reach you.")],
+];
+const joinClear = () => { joinFields.forEach(([el]) => el.removeAttribute("aria-invalid")); joinMsg.hidden = true; };
+joinForm.addEventListener("submit", (e) => {
+  for (const [el, msg] of joinFields) {
+    const v = el.value.trim();
+    if (v && (el.type !== "email" || EMAIL_OK.test(v))) continue;
+    e.preventDefault();
+    joinClear();
+    el.setAttribute("aria-invalid", "true");
+    joinMsg.textContent = msg(v); joinMsg.dataset.state = "error"; joinMsg.setAttribute("role", "alert"); joinMsg.hidden = false;
+    el.focus();
+    return;
+  } // all three filled: the form goes on to contact.html
+});
+joinFields.forEach(([el]) => el.addEventListener("input", () => { if (el.getAttribute("aria-invalid")) joinClear(); }));
 $("#join-art").innerHTML = ph({ kind: "photo", what: "Barry Klasson or the client services team, real photo", note: "Portrait 3:4 · no stock" });
 $("#footer-address").textContent = CONTACT.address;
 $("#footer-legal").textContent = CONTACT.legal;
@@ -134,7 +157,9 @@ const sr = initShowreel($("#services"));
 /* ---------- smooth scroll ---------- */
 history.scrollRestoration = "manual";
 scrollTo(0, 0);
-const lenis = new Lenis({ smoothWheel: true });
+const reduceMQ = matchMedia("(prefers-reduced-motion: reduce)");
+const lenis = new Lenis({ smoothWheel: !reduceMQ.matches }); // no eased wheel scrolling when the system asks for reduced motion
+reduceMQ.addEventListener("change", () => { lenis.options.smoothWheel = !reduceMQ.matches; });
 function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
 requestAnimationFrame(raf);
 window.__proto = { lenis }; // handy for debugging in the console
@@ -146,12 +171,13 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("cli
   if (!target) return;
   e.preventDefault();
   // land each section just below the fixed top bar
-  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -$("#site-header").offsetHeight });
+  lenis.scrollTo(target, { offset: id === "#top" ? 0 : -$("#site-header").offsetHeight, immediate: reduceMQ.matches });
 }));
 
 /* ---------- motion ---------- */
 const fontsReady = document.fonts.ready;
 initParallax();
+initPauseToggle($("#mo-toggle"));
 initHeader($(".hx-hero"));
 // "Sign in" becomes "My account" once a (prototype) candidate account exists in this browser
 if (currentUser()) document.querySelectorAll("[data-account]").forEach((a) => { a.textContent = "My account"; a.href = "account.html"; });
