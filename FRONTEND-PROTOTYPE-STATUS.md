@@ -38,7 +38,7 @@ Tags used below: **[C]** confirmed requirement (a document or the user states it
 | CDN files (three.js, Lenis, fonts) | Left for production. |
 | White line during the hero transition | Dropped (judged to come from the user's setup). |
 | Black closing-frame background in the user's Chrome | Left alone for now (see §4). The closing scene was redesigned on `main` (no 3D flight); its gradient keeps its own canvas and a CSS fallback. Needs a re-check on a real GPU. |
-| Merge (14 Nov 2026) | Pause toggle, reduced motion, 11 px floor, one red, graphite on red, scroll padding and arrow-key vertical snap also apply to the inner pages' shared bar (`js/site.js`) and the new closing scene. The "Now staffing" status hides below 896 px to make room for the toggle and Sign in. |
+| Merge (14 Nov 2026) | Pause toggle, reduced motion, 11 px floor, one red, graphite on red, scroll padding and arrow-key vertical snap also apply to the inner pages' shared bar (`js/site.js`) and the new closing scene. The "Now staffing" status hides below 896 px to make room for the toggle and Sign in. Inner-page forms got 3:1 field borders, hover and a visible focus ring (also on the date field), the "optional" label reaches 4.5:1, and the job chips, save buttons, links and login tabs got hover states. Checked: no overflow or sub-11 px text on all ten pages at 1400, 768 and 390 px; contrast clean apart from the footer logotype; keyboard walk finds no focus hidden under the bar or launcher on jobs, contact and healthcare. |
 
 ## 3. Plan and progress
 
