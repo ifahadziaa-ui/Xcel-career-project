@@ -398,7 +398,8 @@
   justify-content: space-between;
 }
 
-.hx-status {
+.hx-status,
+.hx-end {
   grid-column: 2;
   grid-row: 1;
 }
@@ -471,7 +472,8 @@
     gap: 22px;
   }
 
-  .hx-status {
+  .hx-status,
+  .hx-end {
     grid-column: 3;
   }
 
@@ -547,7 +549,8 @@
   }
 
   .hx-nav,
-  .hx-status {
+  .hx-status,
+  .hx-end {
     grid-column: auto;
     grid-row: auto;
     justify-self: auto;

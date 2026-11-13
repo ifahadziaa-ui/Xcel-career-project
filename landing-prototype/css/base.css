@@ -42,7 +42,6 @@ html.lenis, html.lenis body { height: auto; }
   --raw-color-slate-250: #b7b7b9;
   --raw-color-slate-400: #919194; /* hero nav */
   --raw-color-red-500: #ff2a45;   /* hero signal red */
-  --raw-color-red-600: #d4142f;   /* deeper red for light surfaces */
   --raw-color-white: #ffffff;
 
   --background: var(--raw-color-ink-950);
@@ -52,11 +51,10 @@ html.lenis, html.lenis body { height: auto; }
   --foreground-subtle: var(--raw-color-slate-400);
   --surface: var(--raw-color-ink-850);
   --surface-inverse: var(--raw-color-paper-50);
-  --surface-poster: var(--raw-color-paper-200);
+  --surface-poster: var(--raw-color-paper-50); /* lighter paper so the red accent reads better (WCAG) */
   --on-inverse: var(--raw-color-ink-1000);
   --on-poster: var(--raw-color-ink-975);
   --accent: var(--raw-color-red-500);
-  --accent-strong: var(--raw-color-red-600);
   --border-strong: var(--raw-color-white);
 
   --header-scrim: radial-gradient(110.46% 100% at 50% 0%, rgb(16 16 18 / 1) 0%, rgb(16 16 18 / 0) 100%);
@@ -217,26 +215,34 @@ html.lenis, html.lenis body { height: auto; }
   --type-poster-title: 4.25rem;
   --type-card-title: 1.75rem;
   --type-wordmark: 13rem;
-  --type-meta: 0.8125rem;
-  --type-nav: 0.8125rem;
-  --type-plate: 0.8125rem;
-  --type-fine: 0.8125rem;
-  --type-column: 0.75rem;
-  --type-legal: 0.75rem;
-  --type-row-date: 0.8125rem;
-  --type-poster-meta: 0.8125rem;
-  --type-button: 0.8125rem;
-  --type-button-sm: 0.75rem;
-  --type-stamp: 0.75rem;
-  --type-eyebrow: 0.8125rem;
-  --type-eyebrow-sm: 0.8125rem;
+  --type-meta: max(0.8125rem, var(--type-min));
+  --type-nav: max(0.8125rem, var(--type-min));
+  --type-plate: max(0.8125rem, var(--type-min));
+  --type-fine: max(0.8125rem, var(--type-min));
+  --type-column: max(0.75rem, var(--type-min));
+  --type-legal: max(0.75rem, var(--type-min));
+  --type-row-date: max(0.8125rem, var(--type-min));
+  --type-poster-meta: max(0.8125rem, var(--type-min));
+  --type-button: max(0.8125rem, var(--type-min));
+  --type-button-sm: max(0.75rem, var(--type-min));
+  --type-stamp: max(0.75rem, var(--type-min));
+  --type-eyebrow: max(0.8125rem, var(--type-min));
+  --type-eyebrow-sm: max(0.8125rem, var(--type-min));
   --type-body: 1rem;
   --type-body-sm: 0.9375rem;
   --type-caption: 0.9375rem;
   --type-poster-copy: 0.9375rem;
+  /* text floor: nothing below the hero is set smaller than this, at any viewport
+     (rem tracks the viewport width, so a bare rem value can fall below it on small phones) */
+  --type-min: 11px;
+  --type-micro: max(0.6875rem, var(--type-min));
+  --type-label: max(0.75rem, var(--type-min));
+  --type-heading: 2.5rem;
+  --type-badge: 2.5rem;
 }
 @media (width < 1200px) {
   :root {
+    --type-heading: 2.125rem;
     --type-display: 3.75rem; --type-display-sm: 3rem; --type-step-number: 3rem;
     --type-stat: 3rem; --type-poster-title: 3.5rem; --type-card-title: 1.625rem; --type-wordmark: 9rem;
     --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.9375rem;
@@ -247,6 +253,7 @@ html.lenis, html.lenis body { height: auto; }
 }
 @media (width < 700px) {
   :root {
+    --type-heading: 1.625rem;
     --type-display: 2.5rem; --type-display-sm: 2.25rem; --type-step-number: 2.75rem;
     --type-stat: 2.5rem; --type-poster-title: 2.25rem; --type-card-title: 1.5rem; --type-wordmark: 4rem;
     --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.875rem;
@@ -314,7 +321,7 @@ main { position: relative; overflow-x: clip; }
 }
 .ph > * { position: relative; z-index: 1; }
 .ph .ph-tag {
-  font: 400 clamp(8px, 3.6cqmin, 12px)/1 var(--font-mono);
+  font: 400 clamp(var(--type-min), 3.6cqmin, 12px)/1 var(--font-mono);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-box: trim-both cap alphabetic;
@@ -332,7 +339,7 @@ main { position: relative; overflow-x: clip; }
   text-wrap: balance;
 }
 .ph .ph-note {
-  font: 400 clamp(9px, 3.6cqmin, 14px)/1.35 var(--font-sans);
+  font: 400 clamp(var(--type-min), 3.6cqmin, 14px)/1.35 var(--font-sans);
   opacity: 0.7;
   max-width: 30ch;
 }

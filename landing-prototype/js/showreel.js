@@ -10,6 +10,7 @@ import * as THREE from "three";
 import { SHOWREEL as S, FUNCTIONS, CONTACT } from "./content.js?v=3";
 import { ph, esc } from "./ph.js?v=3";
 import { readMark, markSVG } from "./mark.js?v=3";
+import { isPaused, onPauseChange } from "./pause.js?v=3";
 
 /* ---------- constants (verbatim) ---------- */
 const SCROLL_COMPRESS = 0.4;
@@ -305,6 +306,7 @@ function build(section) {
           <div class="sr-side sr-card4" id="sr-card4">${sphereCard}</div>
         </div>
         <div class="sr-target" id="sr-target">
+          <canvas id="sr-target-bg"></canvas>
           <canvas id="sr-target-canvas"></canvas>
           <div class="sr-vignette" aria-hidden="true"></div>
           <div class="sr-ctablock" id="sr-ctablock">
@@ -572,7 +574,17 @@ void main(){
 function glCanvas(canvas, { dpr = 1, alpha = false, antialias = false } = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha, antialias, premultipliedAlpha: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(dpr);
-  const state = { renderer, w: 1, h: 1, dpr, onResize: null, redraw: null };
+  const state = { renderer, w: 1, h: 1, dpr, baseDpr: dpr, onResize: null, redraw: null };
+  // adaptive resolution: render at a fraction of the base pixel ratio (never below 0.6)
+  state.setQuality = (q) => {
+    const d = Math.max(0.6, state.baseDpr * q);
+    if (Math.abs(d - state.dpr) < 0.01) return;
+    state.dpr = d;
+    renderer.setPixelRatio(d);
+    renderer.setSize(state.w, state.h, false);
+    state.onResize?.(state.w, state.h);
+    state.redraw?.(); // resizing clears the buffer: redraw at once
+  };
   const measure = () => {
     const w = Math.max(1, canvas.clientWidth), h = Math.max(1, canvas.clientHeight);
     if (w === state.w && h === state.h) return;
@@ -597,7 +609,7 @@ function clipPlane(material) {
    was the black/gradient flicker. So the buffer here is sized from the viewport
    (it changes only when the window does, and is redrawn at once) and CSS stretches
    it over the card. A soft gradient loses nothing when stretched. */
-function makeHeroGradient(canvas) {
+function makeHeroGradient(canvas, { follow = true } = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: false, powerPreference: "high-performance" });
   renderer.setPixelRatio(1);
   const scene = new THREE.Scene();
@@ -616,8 +628,10 @@ function makeHeroGradient(canvas) {
   };
   size();
   addEventListener("resize", size);
-  const target = { x: bw * 0.5, y: bh * 0.3 }, cur = { ...target };
-  addEventListener("pointermove", (e) => {
+  // follow = false parks the "cursor" far outside the canvas, where its pull on the gradient is zero
+  const target = follow ? { x: bw * 0.5, y: bh * 0.3 } : { x: -1e5, y: -1e5 }, cur = { ...target };
+  if (follow) addEventListener("pointermove", (e) => {
+    if (isPaused()) return;
     const r = canvas.getBoundingClientRect();
     if (!r.width) return;
     target.x = ((e.clientX - r.left) / r.width) * bw;
@@ -648,7 +662,7 @@ function makeAurora(canvas) {
   scene.add(clipPlane(new THREE.ShaderMaterial({ vertexShader: AURORA_VERT, fragmentShader: AURORA_FRAG, uniforms, transparent: true, depthTest: false, depthWrite: false })));
   gl.redraw = () => gl.renderer.render(scene, camera);
   gl.redraw(); // warm up: compile the shader now, not mid-scroll
-  return { render(t) { uniforms.u_time.value = t / 1000; gl.renderer.render(scene, camera); } };
+  return { render(t) { uniforms.u_time.value = t / 1000; gl.renderer.render(scene, camera); }, setQuality: gl.setQuality };
 }
 
 function makeSphere(canvas) {
@@ -689,6 +703,7 @@ function makeSphere(canvas) {
       points.rotation.y = s * 0.12; points.rotation.x = Math.sin(s * 0.1) * 0.12;
       gl.renderer.render(scene, camera);
     },
+    setQuality: gl.setQuality,
   };
 }
 
@@ -793,10 +808,8 @@ function makeTargetStar(canvas) {
   const d2 = new THREE.DirectionalLight(0xff2a45, 0.9); /* signal-red rim light */ d2.position.set(-3.0, -1.5, 2.0); scene.add(d2);
   scene.environment = chromeEnvironment(r);
 
-  const bgU = { u_resolution: { value: new THREE.Vector2(1, 1) }, u_time: { value: 0 } };
-  const bg = clipPlane(new THREE.ShaderMaterial({ vertexShader: CLIP_VERT, fragmentShader: GRADIENT_FRAG(false), uniforms: bgU, depthTest: false, depthWrite: false }));
-  bg.renderOrder = -1;
-  scene.add(bg);
+  // the gradient behind the mark is its own canvas (makeHeroGradient, the path that works everywhere);
+  // this canvas only draws the mark and stays transparent
 
   const group = markObject(readMark());
   scene.add(group);
@@ -808,7 +821,7 @@ function makeTargetStar(canvas) {
     if (a >= 1) { group.userData.base = [Math.min(1.45, halfW * 0.55), 0.02]; group.userData.size = 1.2; }
     else { group.userData.base = [halfW * 0.42, halfH * 0.52]; group.userData.size = 0.62; }
   };
-  gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); bgU.u_resolution.value.set(w * gl.dpr, h * gl.dpr); place(); };
+  gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); place(); };
   gl.onResize(gl.w, gl.h);
   let reveal = 0;
   const draw = () => {
@@ -830,10 +843,10 @@ function makeTargetStar(canvas) {
       const delta = lastT == null ? 0 : Math.min(0.1, (t - lastT) / 1000);
       lastT = t;
       clock += delta;
-      bgU.u_time.value = t / 1000;
       draw();
     },
     pause() { lastT = null; },
+    setQuality: gl.setQuality,
   };
 }
 
@@ -913,9 +926,42 @@ export function initShowreel(section) {
   // cursor tilt for the hero image card
   const tilt = { tx: 0, ty: 0, rx: 0, ry: 0 };
   addEventListener("pointermove", (e) => {
+    if (isPaused()) return;
     const nx = (e.clientX / innerWidth) * 2 - 1, ny = (e.clientY / innerHeight) * 2 - 1;
     tilt.tx = -ny * 9; tilt.ty = nx * 12;
   }, { passive: true });
+  // a virtual clock for the shaders and the mark's sway: it stands still while animations are paused,
+  // and the scenes are then redrawn only when the scroll position changes
+  let vt = 0, lastFrameT = null, scenesP = -1, scenesDirty = true;
+  onPauseChange(() => { scenesDirty = true; tilt.tx = 0; tilt.ty = 0; });
+
+  /* adaptive resolution: when frames stay slow while the scenes play, the big WebGL canvases step down
+     to a lower pixel ratio (1 → 0.75 → 0.6 → 0.5 of their base); they step back up only after a long
+     stretch of headroom, and stay down if going back up made it slow again */
+  const QUALITY = [1, 0.75, 0.6, 0.5];
+  const SLOW_MS = 28, FAST_MS = 14;
+  const ADAPTIVE = true; // set to false to switch adaptive resolution off (used while investigating the closing-frame background)
+  let qLevel = 0, qEma = 16.7, qSince = 0, qCheck = 0, qUp = -1e9, qBlockedUp = false;
+  const setQuality = (level, now) => {
+    qLevel = level; qSince = now; qEma = 16.7;
+    // the closing frame's canvas (gradient + chrome mark) is left alone: resizing it showed a black gradient in Chrome
+    if (gfx) for (const k of ["aurora", "sphere"]) gfx[k].setQuality?.(QUALITY[level]);
+    section.dataset.quality = String(level);
+  };
+  const govern = (dt, now) => {
+    if (!ADAPTIVE) return;
+    if (dt <= 0 || dt > 200) return; // a hidden tab or a stall, not a measurement
+    qEma += (dt - qEma) * 0.08;
+    if (now - qCheck < 500) return;
+    qCheck = now;
+    if (qEma > SLOW_MS && qLevel < QUALITY.length - 1 && now - qSince > 1500) {
+      if (now - qUp < 10000) qBlockedUp = true; // it was fine one level down: do not oscillate
+      setQuality(qLevel + 1, now);
+    } else if (qEma < FAST_MS && qLevel > 0 && !qBlockedUp && now - qSince > 8000) {
+      qUp = now;
+      setQuality(qLevel - 1, now);
+    }
+  };
 
   // WebGL scenes (created lazily so a WebGL failure never breaks the page)
   let gfx = null;
@@ -924,6 +970,7 @@ export function initShowreel(section) {
       hero: makeHeroGradient(section.querySelector("#sr-hero-canvas")),
       aurora: makeAurora(section.querySelector("#sr-aurora-canvas")),
       sphere: makeSphere(section.querySelector("#sr-sphere-canvas")),
+      targetBg: makeHeroGradient(section.querySelector("#sr-target-bg"), { follow: false }),
       target: makeTargetStar(section.querySelector("#sr-target-canvas")),
     };
   } catch (err) {
@@ -933,6 +980,9 @@ export function initShowreel(section) {
   let lastP = -1;
   function frame(t) {
     requestAnimationFrame(frame);
+    const dtf = lastFrameT == null ? 0 : Math.min(100, t - lastFrameT);
+    lastFrameT = t;
+    if (!isPaused()) vt += dtf;
     const y = scrollY, vh = innerHeight;
     const near = y + vh > trackTop - 200 && y < trackTop + trackH + 200;
     const pinned = y >= trackTop - 2 && y <= trackTop + trackH - vh + 2;
@@ -972,6 +1022,8 @@ export function initShowreel(section) {
       el.card2.style.transform = sideCardTransform(p, 90); el.card2.style.zIndex = cardZIndex(p, 1); el.card2.style.opacity = card1Opacity(p) * sf;
       el.card3.style.transform = sideCardTransform(p, 180); el.card3.style.zIndex = cardZIndex(p, 2); el.card3.style.opacity = card1Opacity(p) * sf;
       el.card4.style.transform = sideCardTransform(p, 270); el.card4.style.zIndex = cardZIndex(p, 3); el.card4.style.opacity = card4Opacity(p);
+      // an invisible card must also stop catching clicks and hover: Chrome still hit-tests 3D layers at opacity 0
+      for (const cd of [el.card1, el.card2, el.card3, el.card4]) cd.style.visibility = +cd.style.opacity <= 0.001 ? "hidden" : "visible";
       // carousel CTA
       const cr = carouselCtaReveal(p);
       el.cta.style.opacity = cr;
@@ -1042,12 +1094,14 @@ export function initShowreel(section) {
     }
 
     const onScreen = y + vh > trackTop && y < trackTop + trackH;
-    if (gfx && onScreen) {
+    if (gfx && onScreen && (!isPaused() || p !== scenesP || scenesDirty)) {
+      scenesP = p; scenesDirty = false;
       const vis = sceneVisibility(p);
-      if (vis.hero) gfx.hero.render(t);
-      if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(t);
-      if (vis.sphere) gfx.sphere.render(t, sphereDisperse(p));
-      if (vis.target && closeActive(p)) gfx.target.render(t, markReveal(p)); else gfx.target.pause();
+      if (vis.hero) gfx.hero.render(vt);
+      if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(vt);
+      if (vis.sphere) gfx.sphere.render(vt, sphereDisperse(p));
+      if (vis.target && closeActive(p)) { gfx.targetBg.render(vt); gfx.target.render(vt, markReveal(p)); } else gfx.target.pause();
+      if (!isPaused()) govern(dtf, t);
     }
   }
   requestAnimationFrame(frame);
@@ -1089,6 +1143,52 @@ export function initShowreel(section) {
     else scrollTo({ top: to, behavior: reduce ? "auto" : "smooth" });
     return true;
   };
+  /* ---------- vertical snap ----------
+     Inside the pinned reel a tap on ↓ / ↑ steps to the next or previous resting beat:
+     the opening card, the four carousel cards, the sphere once its text has settled, the
+     three "What we staff" panels, and the closing frame. Holding the key past the
+     keyboard's repeat delay scrolls freely and smoothly instead, and the wheel is untouched.
+     Outside the reel the arrow keys keep the browser's own behaviour. */
+  const SPHERE_REST = 0.735 * OLD_MAX; // the sphere's "profiles on file" text has finished arriving
+  const vstops = () => {
+    const [car, pf] = zones();
+    const v = [0, ...car.stops, SPHERE_REST, ...pf.stops, VSCROLL_MAX].sort((a, b) => a - b);
+    return v.filter((x, i) => i === 0 || x - v[i - 1] > 10).map((x) => ({ v: x, y: vToY(x) }));
+  };
+  const inTrack = (y) => y >= trackTop - 4 && y <= trackTop + trackH - innerHeight + 4;
+  let pressSnapped = false, snapY = 0, snapUntil = 0;
+  const vstep = (dir) => {
+    if (!lenis || lenis.isStopped) return false;
+    // taps in quick succession chain: measure from where the last one is heading, not from where it is now
+    const base = performance.now() < snapUntil ? snapY : lenis.targetScroll;
+    if (!inTrack(base)) return false;
+    const s = vstops();
+    const to = dir > 0 ? s.find((x) => x.y > base + 4) : [...s].reverse().find((x) => x.y < base - 4);
+    if (!to) return false; // first or last beat: leave the key to the browser, so the page carries on
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dist = Math.abs(to.y - base) / Math.max(1, (trackH - innerHeight) / VSCROLL_MAX); // in timeline units
+    const dur = reduce ? 0.01 : Math.min(2.4, Math.max(0.9, 0.5 + dist / 1400));
+    snapY = to.y; snapUntil = performance.now() + dur * 1000;
+    lenis.scrollTo(to.y, { duration: dur, easing: ease });
+    return true;
+  };
+  // hold: speed eases in and out, so starting and stopping feel like the wheel, not like a jump
+  let holdDir = 0, holdVel = 0, holdRaf = 0, holdT = 0;
+  const holdTick = (t) => {
+    const dt = Math.min(0.05, (t - holdT) / 1000); holdT = t;
+    holdVel += (holdDir * 2.2 * innerHeight - holdVel) * (1 - Math.exp(-dt / 0.12));
+    const y = lenis.animatedScroll + holdVel * dt;
+    if (holdDir && !inTrack(y)) { holdDir = 0; pressSnapped = false; } // left the reel: browser scrolling takes over
+    if (!holdDir && Math.abs(holdVel) < 8) { holdVel = 0; holdRaf = 0; return; }
+    lenis.scrollTo(y, { immediate: true, force: true });
+    holdRaf = requestAnimationFrame(holdTick);
+  };
+  const holdStart = (dir) => {
+    holdDir = dir; holdVel = 0; snapUntil = 0;
+    lenis.scrollTo(lenis.animatedScroll, { immediate: true, force: true }); // cancel the tap's snap
+    if (!holdRaf) { holdT = performance.now(); holdRaf = requestAnimationFrame(holdTick); }
+  };
+  const holdStop = () => { holdDir = 0; };
   function attachSnap(l) {
     lenis = l;
     // wheel: one step per gesture; trackpad momentum is swallowed until the gesture ends
@@ -1105,10 +1205,19 @@ export function initShowreel(section) {
       if (Math.abs(acc) > 30) { fired = true; step(Math.sign(acc)); }
     }, { passive: false, capture: true });
     addEventListener("keydown", (e) => {
-      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-      if (e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
-      if (step(e.key === "ArrowRight" ? 1 : -1)) e.preventDefault();
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") { if (step(e.key === "ArrowRight" ? 1 : -1)) e.preventDefault(); return; }
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      if (e.target.closest?.(".xc-panel")) return; // the chat has its own scrolling
+      const dir = e.key === "ArrowDown" ? 1 : -1;
+      if (!e.repeat) { // a tap: step to the next resting position
+        holdStop(); pressSnapped = vstep(dir);
+        if (pressSnapped) e.preventDefault();
+      } else if (holdDir) { e.preventDefault(); } // already holding: swallow the browser's repeats
+      else if (pressSnapped) { holdStart(dir); e.preventDefault(); } // held past the key-repeat delay: scroll freely
     });
+    addEventListener("keyup", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { pressSnapped = false; holdStop(); } });
+    addEventListener("blur", () => { pressSnapped = false; holdStop(); });
     let tx = 0, ty = 0;
     addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
     addEventListener("touchend", (e) => {
@@ -1116,5 +1225,19 @@ export function initShowreel(section) {
       if (Math.abs(dx) > 50 && Math.abs(dx) > 1.5 * Math.abs(dy)) step(dx < 0 ? 1 : -1);
     }, { passive: true });
   }
+  // keyboard focus must land in view: the stage is pinned (sticky), so the browser's own
+  // scroll-into-view can leave a focused button below the fold; bring the pinned stage up instead
+  section.addEventListener("focusin", (e) => {
+    const target = e.target;
+    // check again once the browser's own scroll has settled and the stage has re-laid out
+    setTimeout(() => {
+      // keyboard focus only: a mouse click on a link also focuses it, and must not fight the scroll it starts
+      if (document.activeElement !== target || !target.matches(":focus-visible")) return;
+      const r = target.getBoundingClientRect();
+      if (!r.height || (r.top <= innerHeight - 8 && r.bottom >= 8)) return;
+      if (lenis) lenis.scrollTo(trackTop, { immediate: true, force: true });
+      else scrollTo(0, trackTop);
+    }, 150);
+  });
   return { measure, attachSnap };
 }
