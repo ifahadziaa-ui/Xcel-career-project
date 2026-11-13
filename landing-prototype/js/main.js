@@ -29,9 +29,11 @@ $("#certs-badges").innerHTML = CERTS.map((c, i) => `
     <span class="badge-seal" role="img" aria-label="${esc(c.name)} badge placeholder"><span class="code">${esc(c.code)}</span><span class="art">official badge</span></span>
     <span class="badge-name">${esc(c.name)}</span>
   </li>`).join(""); // contract vehicles: not shown until the client confirms them
+// only logos the client has approved (Q20) are shown; every other tile stays a placeholder
+const CUST_LOGO = { "Raytheon Technologies": { src: "assets/img/logo-raytheon.png", alt: "Raytheon Technologies logo" } };
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
   <li class="cust" data-m="chip" data-i="${i % 6}">
-    <div class="cust-logo">${ph({ kind: "logo", what: "Official logo" })}</div>
+    <div class="cust-logo${CUST_LOGO[c.name] ? " cust-logo--plate" : ""}">${CUST_LOGO[c.name] ? `<img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" loading="lazy" decoding="async" draggable="false">` : ph({ kind: "logo", what: "Official logo" })}</div>
     <span class="cust-name">${esc(c.name)}</span>
     ${c.status ? `<span class="cust-tag">${c.status === "current" ? "Current" : "Past"}</span>` : ""}
   </li>`).join("");
@@ -63,10 +65,18 @@ const FAN = [
   { cls: "centre", l: 37.62, t: 0, w: 24.84, r: 1.5, px: -12, tilt: 1, ml: 31.7, mt: 2.1, mw: 36.6 },
 ];
 const FAN_JOB = [0, 4, 1, 3, FEATURED_JOB]; // which job sits in which slot; centre = featured
+// real photos for the jobs that have one; the rest keep their placeholder
+const JOB_IMG = {
+  "case-manager-hhs": { src: "assets/img/hc-long-term.webp", alt: "A nurse caring for an older patient", pos: "50% 40%" },
+  "ehr-admin": { src: "assets/img/spec-it.webp", alt: "Two IT colleagues working through a problem on a laptop", pos: "78% 40%" },
+  "rn-behavioral": { src: "assets/img/hc-nurse-care.webp", alt: "A clinician in gloves giving an injection", pos: "50% 40%" },
+  "revenue-cycle": { src: "assets/img/spec-analytics.webp", alt: "An analytics dashboard on a laptop screen", pos: "40% 50%" },
+  "cyber-engineer": { src: "assets/img/spec-cyber.webp", alt: "Racks of network and server equipment", pos: "50% 50%" },
+};
 const jobCard = (j) => `
   <div class="jobcard"><div class="jc-in">
     <div class="jc-top"><span class="jc-fn">${esc(j.fn)}</span><svg class="jc-x" aria-hidden="true"><use href="#i-mark"/></svg></div>
-    <div class="jc-art">${ph({ kind: "loop", what: j.art })}</div>
+    <div class="jc-art">${ph({ kind: "loop", what: j.art, ...(JOB_IMG[j.id] || {}) })}</div>
     <h3 class="jc-title">${esc(j.title)}</h3>
     <p class="jc-meta">${esc(j.where)}</p>
     <p class="jc-stats"><span>${esc(j.need[0])} <b>${esc(j.need[1])}</b></span><span><b>${esc(j.type)}</b></span></p>
@@ -184,10 +194,10 @@ if (currentUser()) document.querySelectorAll("[data-account]").forEach((a) => { 
 initChat({ lenis });
 
 const pileCards = [
-  ph({ kind: "photo", what: "Nurse portrait" }),
-  ph({ kind: "photo", what: "Case manager" }),
-  ph({ kind: "photo", what: "EHR administrator" }),
-  ph({ kind: "photo", what: "Budget analyst" }),
+  ph({ kind: "photo", what: "Nurse portrait", src: "assets/img/hc-admin.webp", alt: "A clinician in a white coat smiling", pos: "40% 35%" }),
+  ph({ kind: "photo", what: "Case manager", src: "assets/img/hc-long-term.webp", alt: "A nurse caring for an older patient", pos: "50% 40%" }),
+  ph({ kind: "photo", what: "EHR administrator", src: "assets/img/spec-it.webp", alt: "Two IT colleagues at a laptop", pos: "78% 40%" }),
+  ph({ kind: "photo", what: "Budget analyst", src: "assets/img/spec-analytics.webp", alt: "An analytics dashboard", pos: "40% 50%" }),
 ];
 
 fontsReady.then(() => registerReveals());
