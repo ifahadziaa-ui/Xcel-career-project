@@ -451,7 +451,7 @@
   transition: background-color 200ms, border-color 200ms;
 }
 .xc-btn:hover { border-color: rgb(255 255 255 / 0.35); background: rgb(255 255 255 / 0.05); }
-.xc-btn--red { background: var(--xc-red); border-color: var(--xc-red); color: #fff; }
+.xc-btn--red { background: var(--xc-red); border-color: var(--xc-red); color: #101012; }
 .xc-btn--red:hover { background: #ff4a61; border-color: #ff4a61; }
 .xc-btn svg { width: 13px; height: 13px; }
 

@@ -126,12 +126,12 @@
   background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.25);
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: #fff;
 }
-.sr-btn--solid { background: var(--sr-red); color: #fff; font-weight: 500; border-color: var(--sr-red); }
+.sr-btn--solid { background: var(--sr-red); color: var(--sr-ink); font-weight: 500; border-color: var(--sr-red); }
 /* hover and keyboard focus for the stage buttons (same invert as .btn) */
 .sr-btn, .sr-ctabtn, .sr-cta a { transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance); }
 .sr-btn:hover, .sr-btn:focus-visible { background: rgb(255 255 255 / 0.18); border-color: rgb(255 255 255 / 0.5); }
 .sr-btn--solid:hover, .sr-btn--solid:focus-visible, .sr-ctabtn:hover, .sr-ctabtn:focus-visible { background: var(--foreground); color: var(--background); border-color: var(--foreground); }
-.sr-cta a:hover, .sr-cta a:focus-visible { background: var(--sr-red); color: #fff; }
+.sr-cta a:hover, .sr-cta a:focus-visible { background: var(--sr-red); color: var(--sr-ink); }
 .sr-divider { width: 100%; height: 1px; background: rgb(255 255 255 / 0.3); margin: 8px 0; }
 .sr-hero-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .sr-avatars {
@@ -147,7 +147,7 @@
   display: grid; place-items: center; font: 500 var(--type-min)/1 var(--font-mono); letter-spacing: 0.06em; color: #fff; text-box: trim-both cap alphabetic;
   background: linear-gradient(135deg, #767678, #1d1d1e);
 }
-.sr-avatars .face:first-child { margin-left: 0; background: var(--sr-red); }
+.sr-avatars .face:first-child { margin-left: 0; background: var(--sr-red); color: var(--sr-ink); }
 .sr-avatars span.lbl { font-size: 14px; font-weight: 500; opacity: 0.9; white-space: nowrap; }
 /* sits on the bright floor of the gradient, so it gets the same dark glass as the team pill */
 .sr-hero-row .right {
@@ -184,7 +184,7 @@
 }
 .sr-chip b {
   display: grid; place-items: center; min-width: 2.2em; height: 2.2em; padding: 0 0.55em; border-radius: 9999px;
-  background: var(--sr-red); color: #fff; font-weight: 600; letter-spacing: 0.04em;
+  background: var(--sr-red); color: var(--sr-ink); font-weight: 600; letter-spacing: 0.04em;
 }
 .sr-cc--light .sr-chip { background: rgb(255 255 255 / 0.6); border-color: rgb(16 16 18 / 0.1); color: #131314; }
 .sr-cc--light .sr-chip b { background: var(--sr-red); }
@@ -206,14 +206,14 @@
   display: grid; place-items: center; flex: none; width: max(16px, calc(3 * var(--sr-cu))); height: max(16px, calc(3 * var(--sr-cu)));
   border-radius: 9999px; background: var(--glass-border); font-size: max(var(--type-min), calc(1.8 * var(--sr-cu)));
 }
-.sr-glass-pill .sr-badge { background: var(--sr-red); color: #fff; }
+.sr-glass-pill .sr-badge { background: var(--sr-red); color: var(--sr-ink); }
 .sr-search {
   margin-top: calc(2.2 * var(--sr-cu)); display: flex; align-items: center; gap: calc(1.4 * var(--sr-cu));
   border-radius: calc(5 * var(--sr-cu)); background: var(--cc-search);
   padding: calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.8 * var(--sr-cu)); color: var(--paper);
 }
 .sr-search .sr-badge { background: rgb(255 255 255 / 0.14); }
-.sr-search .sr-badge--go { background: var(--sr-red); color: #fff; font-size: max(var(--type-min), calc(1.5 * var(--sr-cu))); }
+.sr-search .sr-badge--go { background: var(--sr-red); color: var(--sr-ink); font-size: max(var(--type-min), calc(1.5 * var(--sr-cu))); }
 .sr-search .q { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: max(var(--type-min), calc(1.8 * var(--sr-cu))); opacity: 0.85; }
 
 /* photo slots on the cards: a compact label in the upper middle, clear of the text */
@@ -228,7 +228,7 @@
 .sr-face-in { display: flex; width: 100%; height: 100%; flex-direction: column; padding: calc(3.2 * var(--sr-cu)); color: var(--paper); }
 .sr-face-top { display: flex; align-items: center; justify-content: space-between; }
 .sr-face .sr-chip { background: rgb(16 16 18 / 0.28); border-color: rgb(255 255 255 / 0.22); }
-.sr-face .sr-chip b { background: #fff; color: var(--sr-red); }
+.sr-face .sr-chip b { background: #fff; color: var(--sr-ink); }
 .sr-face h4 { margin-top: auto; max-width: 92%; font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
 .sr-face h4 strong { font-weight: 700; }
 
@@ -272,7 +272,13 @@
 /* ---------- target block ---------- */
 .sr-target {
   position: absolute; left: 50%; top: 50%; z-index: -1;
-  width: 100vw; height: 100vh; overflow: hidden; background: var(--sr-ink);
+  width: 100vw; height: 100vh; overflow: hidden;
+  /* only visible if WebGL cannot draw the gradient: a still version of the same palette instead of flat black */
+  background:
+    radial-gradient(70% 55% at 44% 102%, #d2d2d5 0%, #5c5c5f 28%, transparent 70%),
+    radial-gradient(45% 45% at 14% 46%, #4b101c 0%, transparent 72%),
+    radial-gradient(45% 45% at 86% 46%, #4b101c 0%, transparent 72%),
+    var(--sr-ink);
 }
 .sr-target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .sr-frame {
@@ -290,7 +296,7 @@
 .sr-ctablock h2 .dim { opacity: 0.4; }
 .sr-ctablock p { max-width: 26vw; font-size: max(var(--type-min), 2.2vmin); line-height: 1.375; color: rgb(243 243 245 / 0.7); }
 .sr-ctarow { margin-top: 1.5vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin 3.2vmin; pointer-events: auto; }
-.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: max(var(--type-min), 2.5vmin); color: #fff; }
+.sr-ctabtn { display: inline-flex; border-radius: 8px; background: var(--sr-red); padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: max(var(--type-min), 2.5vmin); color: var(--sr-ink); }
 .sr-ctatel { display: inline-flex; align-items: center; min-height: 24px; font-size: max(13px, 2vmin); color: rgb(243 243 245 / 0.62); white-space: nowrap; }
 .sr-ctatel b { font-weight: 500; color: #f3f3f5; }
 .sr-ctatel:hover b, .sr-ctatel:focus-visible b { color: var(--sr-red); }
@@ -338,7 +344,7 @@
 }
 .sr-pf-kicker b {
   display: grid; place-items: center; min-width: 3.2vmin; height: 3.2vmin; padding: 0 0.8vmin; border-radius: 9999px;
-  background: var(--sr-red); color: #fff; font-weight: 600; letter-spacing: 0.04em;
+  background: var(--sr-red); color: var(--sr-ink); font-weight: 600; letter-spacing: 0.04em;
 }
 .sr-pf-line {
   margin-top: 2.2vmin; max-width: 46ch;

@@ -76,7 +76,7 @@
 .btn {
   display: inline-flex; align-items: center; gap: 0.875rem; width: fit-content;
   height: 3.25rem; padding: 0 1.5rem 0.2em; border-radius: 3px; /* flex container: text-box trim does not apply, so lift the Zen Kaku caps by hand */
-  background: var(--accent); color: #fff;
+  background: var(--accent); color: var(--background); /* graphite on red: 5.1:1 (white was 3.7:1) */
   font-family: var(--font-mono); font-size: var(--type-button); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
   transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance);
 }
@@ -330,7 +330,7 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 .poster .points .bul { flex: none; width: 6px; height: 6px; margin-top: 0.5rem; border-radius: 50%; background: var(--accent); }
 .poster .points p { font-size: var(--type-poster-copy); line-height: var(--line-poster); color: rgb(13 13 14 / 0.85); }
 .poster .p-meta { font-size: var(--type-poster-meta); color: rgb(13 13 14 / 0.7); white-space: pre; }
-.poster .p-meta .v { color: var(--accent); }
+.poster .p-meta .v { color: var(--on-poster); } /* dark, not red: small red text cannot reach 4.5:1 on a light surface */
 
 /* desktop: absolute composition on the 860-wide poster */
 @media (width >= 1200px) {
