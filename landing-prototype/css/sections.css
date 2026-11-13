@@ -125,11 +125,14 @@
     --wide-track: calc(var(--u) * 1.6);
     height: calc(var(--u) * 46); padding: 0;
   }
+  /* centre the row in the bar: a fixed top offset drifts as soon as the row's height changes (the toggle made it taller) */
+  .site-header .hx-header { top: 50%; translate: 0 -50%; align-items: center; }
 }
 /* pause / play toggle for the animations that move on their own (WCAG 2.2.2) */
 .site-header .hx-end { display: flex; align-items: center; gap: 0.9rem; justify-self: end; }
 .mo-toggle {
   display: grid; place-items: center; flex: none; width: 28px; height: 28px; padding: 0; cursor: pointer;
+  margin-block: -8px; /* the 28px target overlaps the bar's padding instead of making the row (and the bar) taller */
   border: 1px solid rgb(243 243 245 / 0.45); border-radius: 3px; color: var(--ink);
   transition: color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance);
 }
