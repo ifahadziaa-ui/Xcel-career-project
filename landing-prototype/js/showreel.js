@@ -1154,6 +1154,52 @@ export function initShowreel(section) {
     else scrollTo({ top: to, behavior: reduce ? "auto" : "smooth" });
     return true;
   };
+  /* ---------- vertical snap ----------
+     Inside the pinned reel a tap on ↓ / ↑ steps to the next or previous resting beat:
+     the opening card, the four carousel cards, the sphere once its text has settled, the
+     three "What we staff" panels, and the closing frame. Holding the key past the
+     keyboard's repeat delay scrolls freely and smoothly instead, and the wheel is untouched.
+     Outside the reel the arrow keys keep the browser's own behaviour. */
+  const SPHERE_REST = 0.735 * OLD_MAX; // the sphere's "profiles on file" text has finished arriving
+  const vstops = () => {
+    const [car, pf] = zones();
+    const v = [0, ...car.stops, SPHERE_REST, ...pf.stops, VSCROLL_MAX].sort((a, b) => a - b);
+    return v.filter((x, i) => i === 0 || x - v[i - 1] > 10).map((x) => ({ v: x, y: vToY(x) }));
+  };
+  const inTrack = (y) => y >= trackTop - 4 && y <= trackTop + trackH - innerHeight + 4;
+  let pressSnapped = false, snapY = 0, snapUntil = 0;
+  const vstep = (dir) => {
+    if (!lenis || lenis.isStopped) return false;
+    // taps in quick succession chain: measure from where the last one is heading, not from where it is now
+    const base = performance.now() < snapUntil ? snapY : lenis.targetScroll;
+    if (!inTrack(base)) return false;
+    const s = vstops();
+    const to = dir > 0 ? s.find((x) => x.y > base + 4) : [...s].reverse().find((x) => x.y < base - 4);
+    if (!to) return false; // first or last beat: leave the key to the browser, so the page carries on
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const dist = Math.abs(to.y - base) / Math.max(1, (trackH - innerHeight) / VSCROLL_MAX); // in timeline units
+    const dur = reduce ? 0.01 : Math.min(2.4, Math.max(0.9, 0.5 + dist / 1400));
+    snapY = to.y; snapUntil = performance.now() + dur * 1000;
+    lenis.scrollTo(to.y, { duration: dur, easing: ease });
+    return true;
+  };
+  // hold: speed eases in and out, so starting and stopping feel like the wheel, not like a jump
+  let holdDir = 0, holdVel = 0, holdRaf = 0, holdT = 0;
+  const holdTick = (t) => {
+    const dt = Math.min(0.05, (t - holdT) / 1000); holdT = t;
+    holdVel += (holdDir * 2.2 * innerHeight - holdVel) * (1 - Math.exp(-dt / 0.12));
+    const y = lenis.animatedScroll + holdVel * dt;
+    if (holdDir && !inTrack(y)) { holdDir = 0; pressSnapped = false; } // left the reel: browser scrolling takes over
+    if (!holdDir && Math.abs(holdVel) < 8) { holdVel = 0; holdRaf = 0; return; }
+    lenis.scrollTo(y, { immediate: true, force: true });
+    holdRaf = requestAnimationFrame(holdTick);
+  };
+  const holdStart = (dir) => {
+    holdDir = dir; holdVel = 0; snapUntil = 0;
+    lenis.scrollTo(lenis.animatedScroll, { immediate: true, force: true }); // cancel the tap's snap
+    if (!holdRaf) { holdT = performance.now(); holdRaf = requestAnimationFrame(holdTick); }
+  };
+  const holdStop = () => { holdDir = 0; };
   function attachSnap(l) {
     lenis = l;
     // wheel: one step per gesture; trackpad momentum is swallowed until the gesture ends
@@ -1170,10 +1216,19 @@ export function initShowreel(section) {
       if (Math.abs(acc) > 30) { fired = true; step(Math.sign(acc)); }
     }, { passive: false, capture: true });
     addEventListener("keydown", (e) => {
-      if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-      if (e.altKey || e.ctrlKey || e.metaKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
-      if (step(e.key === "ArrowRight" ? 1 : -1)) e.preventDefault();
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") { if (step(e.key === "ArrowRight" ? 1 : -1)) e.preventDefault(); return; }
+      if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+      if (e.target.closest?.(".xc-panel")) return; // the chat has its own scrolling
+      const dir = e.key === "ArrowDown" ? 1 : -1;
+      if (!e.repeat) { // a tap: step to the next resting position
+        holdStop(); pressSnapped = vstep(dir);
+        if (pressSnapped) e.preventDefault();
+      } else if (holdDir) { e.preventDefault(); } // already holding: swallow the browser's repeats
+      else if (pressSnapped) { holdStart(dir); e.preventDefault(); } // held past the key-repeat delay: scroll freely
     });
+    addEventListener("keyup", (e) => { if (e.key === "ArrowDown" || e.key === "ArrowUp") { pressSnapped = false; holdStop(); } });
+    addEventListener("blur", () => { pressSnapped = false; holdStop(); });
     let tx = 0, ty = 0;
     addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
     addEventListener("touchend", (e) => {

@@ -12,6 +12,7 @@ Redesign of the XcelCareers marketing site (healthcare staffing first, governmen
 | [landing-prototype/](landing-prototype/) | Static one-page XcelCareers site: hero, showreel, credentials, process, jobs, capability, record, FAQ, contact, chatbot. Copy lives in `js/content.js`. | Most complete; reference implementation |
 | [superconscious/](superconscious/README.md) | Scroll-driven WebGL showreel. `index.html` is vanilla Superconscious; `xcelcareers.html` is the XcelCareers variant. | Working; checked in headless Firefox |
 | [held-mint/](held-mint/README.md) | Vanilla HELD-MINT landing build. | Hero and earlier only (its brief is truncated) |
+| [docs/](docs/) | Developer docs for the landing prototype: [LANDING-PROTOTYPE-GUIDE.md](docs/LANDING-PROTOTYPE-GUIDE.md) (architecture and conventions), [TESTING.md](docs/TESTING.md) (headless Firefox and Chromium recipes), [ACCESSIBILITY.md](docs/ACCESSIBILITY.md) (WCAG status), [BACKEND-HANDOFF.md](docs/BACKEND-HANDOFF.md) (production integration points). Status and Definition of Done: [FRONTEND-PROTOTYPE-STATUS.md](FRONTEND-PROTOTYPE-STATUS.md). | Current |
 | [site-research/](site-research/README.md) | Captures of the old site and a reference site, capture scripts, and [WEBSITE-CONTENT.md](site-research/WEBSITE-CONTENT.md) (the approved copy deck). | Reference data |
 | `superconscious_prompt.md`, `held-mint_prompt.md` | The two design briefs the showreel and HELD-MINT builds follow. The HELD-MINT one ends mid-hero. | Inputs |
 | `Assets/`, `Hero page design/`, `Animation videos/`, `Landing page prompts/`, `XcelCareers - Client Questions.docx` | Logo, design inputs, the client questionnaire. | Inputs |
@@ -42,4 +43,4 @@ The old live site is outdated and not authoritative. Items marked **[CONFIRM]** 
 
 ## Status
 
-Nothing from the recent work is committed. The prototype, Superconscious and HELD-MINT pages were checked in headless Firefox at desktop and phone widths; tablet widths and hover or keyboard states are not yet checked. Details, open decisions and known gaps are in [PROJECT-BRIEF.md](PROJECT-BRIEF.md) §10 and §11.
+The homepage prototype is the current focus (the other seven pages follow after its review). Its completion plan, decisions, Definition of Done and open issues are in [FRONTEND-PROTOTYPE-STATUS.md](FRONTEND-PROTOTYPE-STATUS.md). The work of phases 0 to 5 is on the branch `landing-prototype-completion`; `main` holds the earlier prototype work. The pages were checked in headless Firefox and headless Chromium (software rendering); a real GPU, touch, Safari and screen readers are not yet checked. Details, open decisions and known gaps are in [PROJECT-BRIEF.md](PROJECT-BRIEF.md) §10 and §11.
