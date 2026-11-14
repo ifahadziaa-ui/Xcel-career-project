@@ -1,0 +1,7 @@
+/* TEMPORARY: the stand-in for pages that are built in later stages. Delete with the placeholders. */
+.page { min-height: 100svh; display: grid; align-content: center; justify-items: start; gap: 1.25rem; padding: calc(var(--bar-h, 5rem) + 3rem) 5.25rem 6rem; }
+.title { font-size: var(--type-display); color: var(--foreground); }
+.note { max-width: 36rem; font-size: var(--type-body); color: var(--foreground-muted); line-height: var(--line-copy); }
+.tag { color: var(--accent); font-size: var(--type-eyebrow); }
+@media (width < 896px) { .page { padding-inline: 2.5rem; } }
+@media (width < 700px) { .page { padding-inline: 1.25rem; } }

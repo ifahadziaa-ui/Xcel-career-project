@@ -1,7 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Mona_Sans, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Geist_Mono, Mona_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import IconSprite from "@/components/shared/IconSprite";
 import MotionSync from "@/components/shared/MotionSync";
+import LenisController from "@/components/shell/LenisController";
+import SiteHeader from "@/components/shell/SiteHeader";
+import SiteFooter from "@/components/shell/SiteFooter";
+import Chat from "@/components/chat/Chat";
 import { MOTION_INIT_SCRIPT } from "@/lib/motion/script";
 import "./globals.css";
 
@@ -23,17 +28,22 @@ const geistMono = Geist_Mono({
 });
 
 // The site's running face: --font-sans, --font-display and --font-mono all resolve to it
-// (src/styles/tokens.css). Not a variable font on Google Fonts, so the weights are listed.
-// preload is off on purpose: Google's CSS for this family is split into ~80 numbered
-// Japanese slices per weight that next/font cannot map to the "latin" subset, so with
-// preload on it emitted 312 <link rel="preload"> tags. Without it the browser fetches only
-// the slices whose unicode-range matches the characters on the page (see docs/FOUNDATIONS.md).
-const zenKaku = Zen_Kaku_Gothic_New({
+// (src/styles/tokens.css). Self-hosted: four Latin-only WOFF2 files (about 10 KB each), the
+// same files Google Fonts serves for the Latin range, under the SIL OFL (licence and notes in
+// src/fonts/zen-kaku-gothic-new/). next/font/google shipped ~485 @font-face rules and ~490
+// font files for this family (it is split into Japanese slices), hence the local files.
+// preload is off: nothing in the hero uses it. Turn it on when below-the-fold text lands if
+// the swap from the metric-adjusted fallback is noticeable.
+const zenKaku = localFont({
   variable: "--font-zen-kaku",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
   display: "swap",
   preload: false,
+  src: [
+    { path: "../fonts/zen-kaku-gothic-new/ZenKakuGothicNew-300-latin.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/zen-kaku-gothic-new/ZenKakuGothicNew-400-latin.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/zen-kaku-gothic-new/ZenKakuGothicNew-500-latin.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/zen-kaku-gothic-new/ZenKakuGothicNew-700-latin.woff2", weight: "700", style: "normal" },
+  ],
 });
 
 // Wording from the cleaned prototype (landing-prototype-clean/index.html), claims checked
@@ -69,7 +79,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <IconSprite />
         <MotionSync />
+        <LenisController />
+        <SiteHeader />
         {children}
+        <SiteFooter />
+        <Chat />
       </body>
     </html>
   );

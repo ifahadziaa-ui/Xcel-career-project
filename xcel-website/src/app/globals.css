@@ -14,6 +14,28 @@
    so they win over Tailwind's defaults). The prototype's mono and display are Zen Kaku Gothic
    New too; Geist Mono is --font-bar. */
 
+/* Lenis (smooth scroll): the classes it puts on <html>. Same rules as the prototype. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Focused items and in-page anchors scroll clear of the fixed bar and the chat launcher (WCAG 2.4.11).
+   --bar-h is written by SiteHeader. */
+html {
+  scroll-padding-top: calc(var(--bar-h, 0px) + 32px);
+  scroll-padding-bottom: 6.5rem;
+}
+
 @layer base {
   /* Tailwind 4 preflight sets buttons to cursor: default; the prototype kept the pointer. */
   button,

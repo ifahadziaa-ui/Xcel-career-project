@@ -1,0 +1,50 @@
+/* =====================================================================
+   FOOTER: ported from landing-prototype-clean/css/sections.css (.footer*).
+   rem values follow the viewport-scaled root (see src/styles/tokens.css).
+   ===================================================================== */
+.footer { position: relative; padding: 0 5.25rem; height: 26rem; background: var(--background); } /* the extra 5rem keeps the legal row clear of the chat launcher at the end of the page */
+.rule { height: 1px; background: rgb(243 243 245 / 0.12); }
+.main { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 1.5rem; }
+/* the hero's logo: mono wordmark, red ® */
+.logo {
+  display: flex; align-items: center; gap: 0.75em; width: fit-content;
+  font-family: var(--font-bar); font-weight: 500; text-transform: uppercase; letter-spacing: 0.145em;
+  font-size: var(--type-body-sm); color: #d0d0d2;
+}
+.reg { color: var(--accent); opacity: 0.7; letter-spacing: 0; margin-left: -0.6em; }
+.mark { display: block; flex: none; width: 1.1em; height: 1.95em; color: currentColor; --mk-fig: var(--accent); overflow: visible; }
+.brand address { margin-top: 1rem; font-style: normal; font-size: var(--type-fine); color: var(--foreground-subtle); white-space: normal; line-height: 1.7; max-width: 22rem; }
+.brand address a { color: inherit; }
+.brand address a:hover, .brand address a:focus-visible { color: var(--accent); }
+.cols { display: flex; gap: 6rem; }
+.ttl { font-size: var(--type-column); color: var(--accent); }
+.cols ul { display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1rem; }
+.cols li { width: fit-content; }
+.cols a, .cols button {
+  display: block; font-family: var(--font-sans); font-weight: 500; white-space: nowrap; font-size: var(--type-body);
+  color: var(--foreground); line-height: 1.4; text-align: left;
+  transition: color var(--duration-hover) var(--ease-entrance);
+}
+.cols a:hover, .cols a:focus-visible { color: var(--accent); }
+/* design-only entry (no sign-in page yet): a disabled button that looks like its neighbours */
+.cols button { cursor: default; }
+.cols button:focus-visible { color: var(--accent); }
+.legal { display: flex; justify-content: space-between; margin-top: 1.75rem; font-size: var(--type-legal); color: var(--foreground-subtle); }
+.word {
+  position: absolute; left: 2.5rem; top: 10.5rem; pointer-events: none;
+  font-size: var(--type-wordmark); color: transparent; opacity: 0.5;
+  -webkit-text-stroke: 1px var(--foreground);
+}
+@media (width < 1200px) {
+  .footer { padding: 0 2rem; height: auto; padding-bottom: 8rem; }
+  .cols { gap: 3rem; }
+  .word { left: 1.9rem; top: auto; bottom: -1.5rem; }
+}
+@media (width < 896px) { .footer { padding: 0 2.5rem 6rem; } .main { flex-direction: column; gap: 2rem; } }
+@media (width < 700px) {
+  .footer { padding: 0 1.25rem 4rem; }
+  .cols { gap: 1.75rem; flex-wrap: wrap; }
+  .legal { flex-direction: column; gap: 0.625rem; }
+  .legal p { white-space: normal; }
+  .word { left: 0.7rem; bottom: -1rem; }
+}

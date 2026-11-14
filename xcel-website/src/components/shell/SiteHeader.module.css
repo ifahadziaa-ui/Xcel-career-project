@@ -1,0 +1,104 @@
+/* =====================================================================
+   TOP BAR: fixed over every page. Ported from landing-prototype-clean:
+   the hero's .hx-header rules (css/hero.css) and the .site-header dock (css/sections.css),
+   merged into one module. Values and breakpoints are the prototype's.
+
+   --dock (0..1, written by SiteHeader through a spring) floats the bar off the edges once the
+   page scrolls: at the top it is the flat bar, scrolled it is an inset, rounded glass dock.
+   ===================================================================== */
+.siteHeader {
+  --ink: #f3f3f5; --red: #ff2a45; --logo: #d0d0d2; --nav: #919194;
+  --mono-size: 10.5px; --mono-track: 0.125em; --wide-track: 0.145em;
+  --dock: 0; --dock-x: 10px; --dock-y: 10px;
+  position: fixed; z-index: 100;
+  top: calc(var(--dock) * var(--dock-y)); left: calc(var(--dock) * var(--dock-x)); right: calc(var(--dock) * var(--dock-x));
+  border-radius: calc(var(--dock) * 14px);
+  padding: max(18px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));
+  color: var(--ink);
+}
+.backdrop {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; border-radius: inherit;
+  border: 1px solid rgb(243 243 245 / 0.1); background: rgb(22 22 24 / 0.72);
+  box-shadow: 0 12px 32px -12px rgb(0 0 0 / 0.6), inset 0 1px 0 rgb(255 255 255 / 0.04);
+  -webkit-backdrop-filter: blur(14px) saturate(130%); backdrop-filter: blur(14px) saturate(130%);
+}
+
+/* ---------- shared type (hero.css) ---------- */
+.hxHeader {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr auto; align-items: center; row-gap: 16px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-weight: 400; line-height: 1;
+  font-size: var(--mono-size); letter-spacing: var(--mono-track); text-transform: uppercase;
+}
+.hxHeader p { margin: 0; }
+.hxLogo {
+  position: relative; padding-left: calc(var(--mono-size) * 1.9);
+  color: var(--logo); font-weight: 500; letter-spacing: var(--wide-track);
+  text-decoration: none; white-space: nowrap;
+}
+.hxReg { color: var(--red); opacity: 0.7; font-size: 0.9em; letter-spacing: 0; }
+/* XcelCareers mark beside the wordmark: absolutely placed, so it never changes the baseline. */
+.hxMark {
+  position: absolute; left: 0; top: 50%;
+  width: calc(var(--mono-size) * 1.29); height: calc(var(--mono-size) * 2.3);
+  transform: translateY(-56%); overflow: visible; --mk-fig: var(--red);
+}
+.hxNav { grid-column: 1 / -1; grid-row: 2; }
+.hxNav ul { display: flex; margin: 0; padding: 0; list-style: none; justify-content: space-between; }
+.hxNav a { color: var(--nav); text-decoration: none; white-space: nowrap; }
+.hxNav a[aria-current="page"] { color: #fff; }
+.hxNav a:hover, .hxNav a:focus-visible, .hxLogo:hover, .hxLogo:focus-visible { color: #fff; }
+.hxNav a:focus-visible, .hxLogo:focus-visible { outline: 1px solid var(--red); outline-offset: 4px; }
+
+/* right end of the bar: the sign-in link beside the red status, and the pause toggle */
+.hxEnd { grid-column: 2; grid-row: 1; display: flex; align-items: center; gap: 0.9rem; justify-self: end; }
+.hxStatus { display: flex; align-items: baseline; gap: 1.6em; color: var(--red); letter-spacing: var(--wide-track); white-space: nowrap; }
+/* design-only: a disabled button, not a link (there is no sign-in page yet) */
+.hxAccount { color: var(--nav); letter-spacing: var(--mono-track); text-transform: inherit; cursor: default; }
+.hxAccount:focus-visible { outline: 1px solid var(--red); outline-offset: 4px; color: #fff; }
+
+.moToggle {
+  display: grid; place-items: center; flex: none; width: 28px; height: 28px; padding: 0; cursor: pointer;
+  margin-block: -8px; /* the 28px target overlaps the bar's padding instead of making the row (and the bar) taller */
+  border: 1px solid rgb(243 243 245 / 0.45); border-radius: 3px; color: var(--ink);
+  transition: color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance);
+}
+.moToggle svg { width: 12px; height: 12px; fill: currentColor; }
+.icPlay { display: none; }
+/* icons follow html[data-motion], which the inline script sets before first paint */
+:global(html[data-motion="paused"]) .moToggle .icPause { display: none; }
+:global(html[data-motion="paused"]) .moToggle .icPlay { display: block; }
+.moToggle:hover, .moToggle:focus-visible { color: var(--red); border-color: var(--red); }
+.moToggle:focus-visible { outline: 1px solid var(--red); outline-offset: 3px; }
+
+@media (min-width: 640px) {
+  .siteHeader { --mono-size: 11px; --dock-x: 16px; --dock-y: 12px; padding: 24px max(32px, env(safe-area-inset-right)) 18px max(32px, env(safe-area-inset-left)); }
+  .hxHeader { grid-template-columns: auto 1fr auto; }
+  .hxNav { grid-column: 2; grid-row: 1; justify-self: center; }
+  .hxNav ul { gap: 22px; }
+  .hxEnd { grid-column: 3; }
+}
+@media (width < 896px) { .hxLive { display: none; } } /* the tablet bar is full: logo, five links, toggle and sign-in */
+
+@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
+  .siteHeader {
+    --u: min(calc(100vw / 1136), calc(100vh / 692));
+    --dock-x: max(24px, calc((100vw - 76rem) / 2)); --dock-y: 14px;
+    --pl: calc(var(--u) * (56 - 30 * var(--dock)));
+    --pr: calc(var(--u) * (58 - 30 * var(--dock)));
+    --mono-size: calc(var(--u) * 11);
+    --mono-track: calc(var(--u) * 1.38);
+    --wide-track: calc(var(--u) * 1.6);
+    height: calc(var(--u) * 46); padding: 0;
+  }
+  /* centre the row in the bar: a fixed top offset drifts as soon as the row's height changes */
+  .siteHeader .hxHeader {
+    position: absolute; top: 50%; translate: 0 -50%;
+    left: var(--pl); right: var(--pr);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .hxNav { grid-column: auto; grid-row: auto; justify-self: auto; margin-left: calc(var(--u) * 2); }
+  .hxNav ul { justify-content: flex-start; gap: calc(var(--u) * 22); }
+  .hxEnd { grid-column: auto; grid-row: auto; }
+}

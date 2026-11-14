@@ -27,11 +27,13 @@ Loaded with `next/font/google` in the root layout and exposed as CSS variables o
 |---|---|---|
 | `--font-mona-sans` | Mona Sans, `wdth` axis (75 to 125), weight 200 to 900 | The hero headline (width 75, weight 900); the chat panel's text (`--xc-sans` in the prototype) |
 | `--font-geist-mono` | Geist Mono, weight 100 to 900 | The hero's header, meta, specimen and placard; the chat's mono (`--xc-mono`); `--font-bar` |
-| `--font-zen-kaku` | Zen Kaku Gothic New, 300, 400, 500, 700 | `--font-sans`, `--font-display` and `--font-mono`: all running text, headings and labels below the hero, and the inner pages |
+| `--font-zen-kaku` | Zen Kaku Gothic New, 300, 400, 500, 700 (self-hosted, `next/font/local`) | `--font-sans`, `--font-display` and `--font-mono`: all running text, headings and labels below the hero, and the inner pages |
 
 Tokens built on them (in `tokens.css`): `--font-sans`, `--font-display`, `--font-mono` (all Zen Kaku, as in the prototype, where "mono" is not a monospace face) and `--font-bar` (Geist Mono: top bar, ledger dates, tables, credentials, job meta). There is no `@theme` font key on purpose; Tailwind's `font-sans`/`font-mono` read these tokens.
 
-**Zen Kaku preload is off.** Google's CSS for Zen Kaku is split into about 80 numbered Japanese slices per weight that `next/font` cannot map to the `latin` subset; with preload on it emitted 312 preload tags. With it off, the browser downloads only the slices whose `unicode-range` matches the characters used (four Latin files of about 10 KB each for the four weights in the test page). The cost that remains is that all `@font-face` rules ship in the CSS (about 365 KB raw, 128 KB gzip, render-blocking) and about 490 unused font files sit in `.next/static/media`. If that CSS weight matters, the alternative is `next/font/local` with the four Latin-subset files (needs the files added to the repo). Open decision.
+**Zen Kaku is self-hosted.** Four Latin-only WOFF2 files (about 9.6 KB each, 38.6 KB in total) in `src/fonts/zen-kaku-gothic-new/`, loaded with `next/font/local` in the root layout, with the SIL OFL 1.1 licence and a README (source, coverage, sizes) beside them. They are byte-identical to the Latin slice Google Fonts serves, so rendering matches the prototype. This replaced `next/font/google`, which shipped about 485 `@font-face` rules (365 KB of render-blocking CSS) and about 490 font files for this family because Google splits it into numbered Japanese slices.
+
+Coverage: Basic Latin, Latin-1, general punctuation (dashes, curly quotes, ellipsis), euro, minus. **Not covered:** Japanese, the arrows U+2190 and U+2192, U+25B6 and U+27A4. Text in those characters falls back to the system font (the prototype's only live case, the showreel's go badge U+27A4, falls back there too because no Zen slice contains it). Preload is off (the hero does not use the font); turn it on when text below the fold arrives if the swap from the metric-adjusted fallback shows.
 
 ## Reset and global CSS
 
