@@ -228,3 +228,17 @@
 
 /* footer on inner pages sits after the content, not under the contact block */
 .pg-body .footer { margin-top: 2rem; }
+
+/* ---------- centred page headers: the hero and the section heads ---------- */
+.pg-hero .pg-wrap, .pg-head { text-align: center; }
+.pg-hero .eyebrow, .pg-head .eyebrow { justify-content: center; }
+.pg-hero .hl { align-items: center; }
+.pg-intro, .pg-lead { margin-inline: auto; }
+.pg-hero .pg-actions, .pg-hero .jb-meta { justify-content: center; }
+/* beside a list or a form the heading stays with its column; the sign-in hero keeps its two columns */
+.pg-split .pg-head { text-align: left; }
+.pg-split .pg-head .eyebrow { justify-content: flex-start; }
+.pg-split .pg-lead { margin-inline: 0; }
+.pg-auth .pg-wrap { text-align: left; }
+.pg-auth .eyebrow { justify-content: flex-start; }
+.pg-auth .hl { align-items: flex-start; }

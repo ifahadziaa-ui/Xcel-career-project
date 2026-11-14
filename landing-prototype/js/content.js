@@ -63,42 +63,47 @@ export const CUSTOMERS = [
 export const SHOWREEL = {
   // 1 · opening card: the promise and the two doors. Line 2 stays short: it runs
   // beside the video slot, so a longer word would slide behind it.
-  heroLines: ["Vetted. Credentialed.", "Ready."],
+  heroLines: ["Nurses, care staff,", "specialists."],
   heroLead:
-    "We handle the search, screening, credentials and compliance, so you can focus on patients.",
+    "XcelCareers is a Maryland staffing company. Tell us the role, the shifts and the credential it needs; we search our database, interview the best matches, verify every license, reference and background check, and send you a short list. For contract staff we are the employer of record.",
+  // the two faces of the opening card: plain gradient cards, no photo or video
+  openCards: [
+    { k: "What we do", t: "Nurses, care staff and the people behind them", d: "Registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff, plus the IT, billing and cybersecurity specialists who keep care running." },
+    { k: "For job seekers", t: "Open roles, never a fee", d: "Healthcare roles first, then IT, finance and cybersecurity roles with hospitals, clinics and government programs. We prepare you for the interview and never charge candidates." },
+  ],
   heroButtons: [
     { label: "Request staff", href: "#contact", primary: true }, // audience #1 gets the primary button
     { label: "Find a job", href: "#jobs" },
   ],
   team: ["QN", "EF", "BK"], // leadership initials until headshots arrive: Quan Nguyen, Erika Finley, Barry Klasson
   avatarsLabel: "125+ years of combined experience",
-  heroRight: "Maryland MBE · DBE · SBE certified. Prime or sub, local to federal.",
+  heroRight: "Maryland MBE, DBE and SBE certified. We prime or subcontract on local, state and federal contracts.",
   // the opening card becomes the first carousel card (photo: a recruiter with a candidate)
-  heroRotated: "Both sides\nof every hire",
+  heroRotated: "We staff the bedside\nand everything behind it",
 
   // 2 · marquee behind the carousel: the people we place
-  marquee: ["Nurses", "Care staff", "Human services", "Healthcare IT", "Revenue cycle", "Cybersecurity"],
+  marquee: ["Registered nurses", "LPNs & CNAs", "Case managers", "Behavioral health", "EHR & billing", "Cybersecurity"],
   cta: "See how we staff",
 
   // 3 · carousel cards, numbered so they read in order: chip → headline → action
   cards: {
-    employer: { n: "01", label: "For employers", title: "Your short list,", strong: "already vetted.", pillK: "Hospitals · clinics · counties", pillV: "Request staff", href: "#contact" },
-    seeker: { n: "02", label: "For candidates", title: "Your next role,", strong: "never a fee.", q: "Registered Nurse · Maryland", href: "#jobs" },
-    network: { n: "03", label: "Our network", title: "Every placement", strong: "starts here." },
+    employer: { n: "01", label: "For employers", title: "Send us the role.", strong: "We send a checked short list.", pillK: "Hospitals · clinics · county agencies", pillV: "Request staff", href: "#contact" },
+    seeker: { n: "02", label: "For job seekers", title: "Apply for free.", strong: "We prepare you for the interview.", q: "Registered Nurse · Maryland", href: "#jobs" },
+    network: { n: "03", label: "Our database", title: "300,000+ candidates,", strong: "checked one at a time." },
   },
 
   // 4 · inside the network, reached by diving through the hub of the XcelCareers mark
   sphereTop: "300,000+",
   sphereBottom: ["profiles", "on file"],
   sphereBody: [
-    "Nurses, care staff, human services, and IT, finance and cyber specialists, cleared up to TS/SCI.",
-    "Every request searches it. Then we interview and verify licenses, credentials, references and backgrounds.",
+    "Our database holds more than 300,000 healthcare, human services, IT, finance and cybersecurity professionals, including people cleared up to TS/SCI.",
+    "Every staffing request starts with a search of it. We interview the best matches, then verify each license, certification, reference and background check before you see a résumé.",
   ],
 
   // 6 · the ask (the phone number comes from CONTACT)
-  finalEyebrow: "Staffing request",
+  finalEyebrow: "Request staff",
   finalLines: ["One nurse.", "Or 120+ staff."],
-  finalLead: "Tell us the role, the shifts and the credential. We send a short list of vetted candidates.",
+  finalLead: "Tell us the role, the shifts, the pay range and the license or clearance it needs. We search, interview and verify, then send a short list of people ready to start. One role or a whole contract team: we staffed 120+ people for a single task order in 45 days.",
   finalButton: "Request staff",
   finalSecondary: "Capability statement",
   finalTrust: "Maryland MBE · DBE · SBE No. 19-286 · CAGE 89AK6",
@@ -112,7 +117,7 @@ export const FUNCTIONS = [
     n: "01", kicker: "Main focus",
     title: "Healthcare",
     tags: ["Hospitals", "Clinics", "Long-term care", "Behavioral health", "County & state HHS"],
-    line: "Clinical and non-clinical staff for hospitals, clinics, long-term care and county health departments.",
+    line: "We place registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff with hospitals, clinics, long-term care and county and state health departments, on contract, contract-to-hire or direct hire.",
     video: "Nurses and care staff at work: a hospital ward, a clinic, a home visit",
     note: "Your clip · 10–15 s loop · muted · 16:9 · real staff, no stock look",
   },
@@ -120,7 +125,7 @@ export const FUNCTIONS = [
     n: "02", kicker: "Local · State · Federal",
     title: "Government",
     tags: ["Staff augmentation", "Contract staffing", "Task orders / IDIQ", "Consulting"],
-    line: "Prime or subcontractor for staff augmentation, contract staffing, task orders and consulting.",
+    line: "A Maryland MBE, DBE and SBE certified small business. We prime or subcontract on local, state and federal work: staff augmentation, contract staffing, task orders and IDIQ, plus business analysis and program management consulting.",
     video: "County health and human services staff with residents; a public-sector team at work",
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },
@@ -128,7 +133,7 @@ export const FUNCTIONS = [
     n: "03", kicker: "Across both",
     title: "IT · Finance · Cyber",
     tags: ["EHR & systems", "Revenue cycle", "Budget analysis", "Cleared to TS/SCI"],
-    line: "EHR, systems, revenue cycle, budget and cybersecurity specialists, cleared up to TS/SCI.",
+    line: "The people behind the systems: EHR and network administrators, service desk staff, revenue cycle and budget analysts, and cybersecurity engineers cleared up to TS/SCI with Full Scope Poly, for healthcare providers and government programs.",
     video: "Specialists at work: EHR systems, a billing team, a security operations floor",
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },
@@ -152,27 +157,27 @@ export const FLIGHT = [
 export const STEPS = [
   {
     title: "Intake",
-    text: "One call: shifts, pay range and required credentials.",
+    text: "One call to confirm the role, the shifts, the pay range and the licenses, certifications or clearance it needs.",
     stats: [["Defines", "shifts · pay · credentials"]],
   },
   {
     title: "Source & verify",
-    text: "We search, then verify licenses, references and backgrounds.",
+    text: "We search our 300,000+ candidate database, interview the best matches and verify each license, reference and background check.",
     stats: [["Database", "300K+"]],
   },
   {
     title: "Shortlist",
-    text: "You get a vetted short list and make the hire.",
+    text: "You receive a short list of checked candidates, interview the ones you like and make the decision.",
     stats: [["Decision", "yours"]],
   },
   {
     title: "Onboard",
-    text: "We handle the offer, onboarding and compliance.",
+    text: "We make the offer and handle onboarding, payroll, timesheets and credential renewals for contract staff.",
     stats: [["Record", "120+ in 45 days"]],
   },
 ];
 export const PROCESS_SPLIT =
-  "You interview and decide. We handle the rest.";
+  "You keep the final interview, the hiring decision and day-to-day supervision. We handle the search, the checks, the paperwork and, for contract staff, the employment itself.";
 
 /* ---------- 05 Open roles (SAMPLE until the ATS feed is connected [CONFIRM which ATS]) ----------
    The landing page shows the first five as a card fan; jobs.html lists them all.

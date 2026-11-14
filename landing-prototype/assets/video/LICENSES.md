@@ -23,5 +23,8 @@ Raw sources are in `video-sources/` (outside the web project). Footage was trimm
 
 Model releases: Pixabay does not guarantee model releases for identifiable people. Review before using clips with clear faces (49809, 69952, 215751, 32767 is code only).
 
-## vesper-sequence (generated)
+## brain-mesh.bin (used live on card 03, 14 Nov 2026)
+`assets/models/brain-mesh.bin` (43 KB) is the baked brain mesh from the Vesper template (api.getlayers.ai asset), area-sampled into a point cloud in `js/showreel.js`. **Rights not confirmed: check before launch.** The unused `reel-main.mp4` came from the same template.
+
+## vesper-sequence (generated; no longer used on the page)
 `vesper-sequence.mp4` (36 s loop: orb -> galaxy -> brain -> burst -> orb) is rendered from the shader spec in `vesper_prompt.md` by `vesper-render/full.py`. The brain point cloud is sampled from the template's `brain-mesh.bin` (api.getlayers.ai asset); no stock footage.

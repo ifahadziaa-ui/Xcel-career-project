@@ -625,3 +625,17 @@
       calc(var(--u) * 17.5);
   }
 }
+
+/* one plain sentence under the headline: what the company does (user, 15 Nov 2026) */
+.hx-lead {
+  margin: 14px 0 0;
+  max-width: 31ch;
+  font-family: var(--font-mona-sans), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(243 243 245 / 0.78);
+  text-wrap: pretty;
+}
+@media (min-width: 1024px) {
+  .hx-lead { margin-top: calc(var(--u) * 14); font-size: calc(var(--u) * 13.5); max-width: 30ch; }
+}

@@ -337,37 +337,21 @@ const START = [
 
 const WELCOME = `
   <div class="xc-hello">
-    <p class="xc-specimen xc-mono"><span class="xc-dot"></span>Concierge · Healthcare &amp; government staffing</p>
-    <h2 class="xc-title"><span>Ask us</span><span class="xc-accent">anything.</span></h2>
-    <p class="xc-lede">Staffing requests, open roles, licensing questions, or our certifications and CAGE code.</p>
-    ${placard([
-      ["Focus", "Healthcare staffing"],
-      ["Contracts", "Local · State · Federal"],
-      ["Database", "300,000+ candidates"],
-      ["Status", "Online now", "xc-red"],
-    ])}
-    <div class="xc-starts">${START.map((x, i) => `
-      <button type="button" class="xc-start" data-act="${x.act}" data-say="${esc(x.say)}">
-        <span class="n xc-mono">${String(i + 1).padStart(2, "0")}</span><b>${esc(x.b)}</b><small class="xc-mono">${esc(x.s)}</small>${ICON.arrow}
-      </button>`).join("")}</div>
+    <p class="xc-lede">Hi, I'm the XcelCareers assistant. Ask about staffing, open roles, licensing or our certifications.</p>
+    <div class="xc-starts">${START.map((x) => `<button type="button" class="xc-start" data-act="${x.act}" data-say="${esc(x.say)}">${esc(x.b)}</button>`).join("")}</div>
   </div>`;
 
 const TEMPLATE = `
   <button class="xc-launch" type="button" aria-expanded="false" aria-controls="xc-panel" aria-label="Open chat with XcelCareers">
-    <span class="xc-launch-copy" aria-hidden="true">
-      <span class="xc-launch-top xc-mono"><span class="xc-dot xc-dot--pulse"></span>Ask XcelCareers</span>
-      <span class="xc-launch-sub xc-mono">Staffing · jobs · certifications</span>
-    </span>
+    <span class="xc-launch-copy" aria-hidden="true">Chat with us</span>
     <span class="xc-orb">${ICON.mark}</span>
   </button>
   <section class="xc-panel" id="xc-panel" role="dialog" aria-label="Chat with XcelCareers" data-lenis-prevent>
     <header class="xc-head">
-      <p class="xc-brand xc-mono"><span>XcelCareers<span class="xc-reg">®</span></span><span class="xc-slash">/</span><span id="xc-title">Concierge</span></p>
-      <span class="xc-status xc-mono"><span class="xc-dot xc-dot--pulse"></span>Online</span>
+      <p class="xc-brand">XcelCareers</p>
       <button class="xc-icon" type="button" data-x="reset" aria-label="Start over" title="Start over">${ICON.reset}</button>
       <button class="xc-icon" type="button" data-x="close" aria-label="Close chat" title="Close">${ICON.close}</button>
     </header>
-    <div class="xc-meta-row xc-mono"><span>Client services · Dayton, MD</span><span class="xc-mode">Guided</span></div>
     <div class="xc-log" aria-live="polite"></div>
     <form class="xc-compose" autocomplete="off">
       <label class="sr-only" for="xc-input">Message</label>
@@ -386,7 +370,7 @@ export function initChat({ lenis } = {}) {
   const $ = (s) => root.querySelector(s);
   const launch = $(".xc-launch"), panel = $(".xc-panel"), log = $(".xc-log");
   const form = $(".xc-compose"), input = $("#xc-input"), sendBtn = $(".xc-send");
-  const modeEl = $(".xc-mode"), fine = $(".xc-fine");
+  const fine = $(".xc-fine");
   const hero = document.querySelector(".hx-hero"), track = document.getElementById("sr-track");
 
   let mode = "guided", open = false, busy = false, flow = null, locked = false;
@@ -395,8 +379,6 @@ export function initChat({ lenis } = {}) {
   /* ---------- mode ---------- */
   const setMode = (m) => {
     mode = m;
-    modeEl.textContent = m === "ai" ? "AI · Live" : "Guided";
-    modeEl.classList.toggle("is-ai", m === "ai");
     fine.innerHTML = m === "ai"
       ? `AI answers can be wrong · Confirm on <a href="tel:${TEL}">${esc(CONTACT.phone)}</a>`
       : `Guided answers from xcelcareers.com · <a href="tel:${TEL}">${esc(CONTACT.phone)}</a>`;

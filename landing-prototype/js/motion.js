@@ -323,7 +323,7 @@ export function runPreloader({ lenis, cardsHTML, ready, onRelease }) {
   const num = root.querySelector("#pl-num");
   const fill = root.querySelector("#pl-fill");
   const stamp = root.querySelector("#pl-stamp");
-  const MIN_MS = 1500, EXIT_MS = 750, LIFT_DELAY = 350, SETTLE = 175;
+  const MIN_MS = 900, EXIT_MS = 560, LIFT_DELAY = 200, SETTLE = 100;
   const STOPS = [0.05, 0.3, 0.55, 0.78];
 
   const tallMQ = matchMedia("(max-aspect-ratio: 5/8)"), portraitMQ = matchMedia("(orientation: portrait)");

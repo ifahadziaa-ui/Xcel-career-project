@@ -1,22 +1,7 @@
-@import "tailwindcss";
-
-@theme inline {
-  --font-sans: var(--font-mona-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --page-bg: #0c0c0d;
-  --page-fg: #f0f0f2;
-}
-
-html,
-body {
-  background: var(--page-bg);
-  color: var(--page-fg);
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-}
+/* The site's styles are the prototype's, split the same way:
+   base (tokens, type scale), hero (the top bar), sections (footer, header dock), pages (inner pages).
+   Tailwind is not used by the site, so it is not imported (its reset would fight these). */
+@import "../styles/base.css";
+@import "../styles/hero.css";
+@import "../styles/sections.css";
+@import "../styles/pages.css";

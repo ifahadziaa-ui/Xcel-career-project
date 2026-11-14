@@ -18,19 +18,23 @@ const PANEL_VIDEO = { "01": "panel-healthcare", "02": "panel-government", "03": 
 /* ---------- constants (verbatim) ---------- */
 const SCROLL_COMPRESS = 0.4;
 const OLD_MAX = 2000;
-const PS = OLD_MAX - 400;              // portfolioStart = 1600
-const PF_DUR = 1500;
-const PF_END = PS + PF_DUR;            // 3100
+const PS = 1300;                       // the hub dive (gp 0.405 to 0.65) opens straight onto the "What we staff" strip; it pans from here
+const PF_DUR = 1300;
+const PF_END = PS + PF_DUR;            // 2800
+/* the network scene (the brain, "300,000+ profiles on file") now comes AFTER the strip: it is revealed
+   as the strip leaves, and holds until the closing beat opens over it (user, 15 Nov 2026) */
+const NET = 3500;                      // the brain is the last beat: it shows once the closing frame has lifted away
 /* The prompt's ending (a camera flight through 14 placeholder tiles into a box that
    zooms up, 1900 units long) is replaced by one short closing beat: as the "What we
    staff" strip leaves, the closing scene opens through a wide, feathered circle, the
    3D mark assembles and the copy rises. 750 units, overlapping the strip's exit. */
-const CLOSE_START = PS + 0.8 * PF_DUR; // 2800
-const CLOSE_END = CLOSE_START + 750;   // 3550
+const CLOSE_START = PS + PF_DUR * 0.8; // 2340: opens as the strip leaves
+const CLOSE_END = CLOSE_START + 750;   // 3090
+const LIFT = 3400;                     // the closing frame lifts away over 400 units, revealing the network scene
 const PERSP = 1500;
-const VSCROLL_MAX = CLOSE_END + 150;   // 3700: a short hold on the finished frame
+const VSCROLL_MAX = NET + 800;         // 4300: the brain holds, then the page scrolls on
 /* scroll length per unit of vScroll (vh); the prompt used 0.4, a little faster here */
-const VH_PER_UNIT = 0.34;
+const VH_PER_UNIT = 0.22;
 const trackVh = (density) => Math.round(100 + VSCROLL_MAX * density);
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
@@ -73,7 +77,9 @@ const sideCardTransform = (p, baseRotateY) => {
   const sx = Math.max(phase2(p), 0.0001);
   return `rotateY(${baseRotateY}deg) translateZ(calc(var(--sr-carousel-r) * ${phase2(p)})) scaleX(${sx})`;
 };
-const card4Opacity = (p) => 1 - clamp01((vScroll(p) - PS) / 400);
+const card4Opacity = () => 1; // card 03 holds the network scene (its dark panel is shown only at the end, see panelOn)
+const panelOn = (p) => vScroll(p) > LIFT - 60; // the dark network panel exists only once the closing frame starts to lift
+const liftP = (p) => smooth(clamp01((vScroll(p) - LIFT) / 400));
 const cardZIndex = (p, slot) => {
   const rotY = phase3(p) * -270;
   return Math.round(Math.cos(((rotY + slot * 90) * Math.PI) / 180) * 100) + 1000;
@@ -90,18 +96,17 @@ const carouselTransform = (p) => {
 const flyBackZpx = (p, vmin, geo) => -(phase4(p) * phase4(p)) * geo.fly * vmin;
 const blackScreenTransform = (p, vmin, geo) => {
   const scale = (PERSP - flyBackZpx(p, vmin, geo)) / PERSP;
-  const upY = smooth(clamp01((vScroll(p) - PS) / 400)) * 100;
-  return `translate(-50%, calc(-50% - ${upY}vh)) scale(${scale})`;
+  return `translate(-50%, -50%) scale(${scale})`; // the dark panel stays put: the strip slides over it and then away
 };
 const sphereSceneScale = (p, vmin, geo) => {
   const fly = flyBackZpx(p, vmin, geo);
   const radius = geo.r * vmin;
   return (PERSP - fly - radius) / (PERSP - fly);
 };
-const sphereBodyReveal = (p) => smooth(clamp01((gp(p) - 0.64) / 0.1));
-const sphereCollapse = (p) => smooth(clamp01((gp(p) - 0.52) / 0.2));
-const sphereScale = (p) => 1 + 0.5 * sphereCollapse(p);
-const sphereDisperse = (p) => smooth(clamp01((vScroll(p) - (PS - 400)) / 600));
+const sphereBodyReveal = (p) => smooth(clamp01((vScroll(p) - (NET + 80)) / 200));
+const sphereCollapse = (p) => smooth(clamp01((vScroll(p) - (NET - 160)) / 400));
+const sphereScale = (p) => 1 + 0.1 * sphereCollapse(p);
+const brainExit = () => 0; // the reel ends on the brain: it never bursts
 
 /* ---------- card 03: the mark builds, then the camera dives through its hub ----------
    gp 0.325→0.400  the blades arrive one by one (smallest first), then the figure
@@ -123,7 +128,6 @@ const hubDrift = (z) => 1 - smooth(clamp01(z / 0.55));                // hub gli
 const faceFade = (p) => 1 - smooth(clamp01((gp(p) - 0.405) / 0.035)); // card text clears first
 const cardFade = (p) => 1 - smooth(clamp01((gp(p) - 0.47) / 0.08));  // then the red card dissolves
 const sideFade = (p) => 1 - smooth(clamp01((gp(p) - 0.405) / 0.045)); // the other cards leave the stage
-const coreMarkIn = (p) => smooth(clamp01((gp(p) - 0.58) / 0.1));    // the mark at the heart of the sphere
 
 const marqueeOpacity = (p) => phase1(p) * (1 - smooth(clamp01((gp(p) - 0.4) / 0.07)));
 const marqueeBlur = (p) => (1 - phase1(p)) * 20;
@@ -132,19 +136,19 @@ const stageBackdropOpacity = (p) => 1 - smooth(clamp01((gp(p) - 0.405) / 0.08));
 
 const auroraOpacity = (p) => {
   const v = vScroll(p);
-  const fadeIn = clamp01((v - 1200) / 350);
-  const fadeOut = 1 - clamp01((v - 2900) / 350);
+  const fadeIn = clamp01((v - (NET - 50)) / 350);
+  const fadeOut = 1;
   return Math.min(fadeIn, fadeOut);
 };
 
 const pfProgress = (p) => clamp01((vScroll(p) - PS) / PF_DUR);
-const pfEnter = (p) => smooth(clamp01(pfProgress(p) / 0.267));
-const pfSlide = (p) => clamp01((pfProgress(p) - 0.267) / 0.453);
+// the strip is in place before the dive (revealed through the hub, see the frame loop), so there is no rise
+const pfSlide = (p) => clamp01(pfProgress(p) / 0.62);
 const pfExit = (p) => smooth(clamp01((pfProgress(p) - 0.72) / 0.28));
-const portfolioActive = (p) => vScroll(p) > PS;
+const portfolioActive = (p) => vScroll(p) > 700;
 const portfolioTransform = (p) => {
   if (!portfolioActive(p)) return "translateY(100%)";
-  const ty = (1 - pfEnter(p)) * 100;
+  const ty = 0;
   const sc = 1 - pfExit(p) * 0.62;
   const tx = -pfExit(p) * 130;
   return `translate(${tx}vw, ${ty}%) scale(${sc})`;
@@ -157,15 +161,14 @@ const closeActive = (p) => vScroll(p) > CLOSE_START - 1;
 // the scene opens through a circle whose edge is feathered over ~30% of the screen,
 // so there is never a hard boundary on screen
 const closeMask = (p) => {
-  const t = smooth(clamp01(closeP(p) / 0.55));
+  const t = smooth(clamp01(closeP(p) / 0.38));
   if (t >= 0.999) return "none";
   const r = 8 + t * 125, f = 18 + t * 22; // radius and feather, % of the larger screen side
   return `radial-gradient(circle at 50% 52%, #000 ${(r - f).toFixed(2)}vmax, rgb(0 0 0 / 0.55) ${(r - f * 0.45).toFixed(2)}vmax, transparent ${r.toFixed(2)}vmax)`;
 };
 const closeScale = (p) => 1.08 - 0.08 * smooth(clamp01(closeP(p) / 0.7));
-// the mark assembles over the middle of the beat; each piece of copy follows a step behind
-const markReveal = (p) => clamp01((closeP(p) - 0.12) / 0.6);
-const finalBeat = (p, i) => smooth(clamp01((closeP(p) - 0.3 - i * 0.08) / 0.34));
+// the 3D mark and the copy start together once the scene is mostly open (closeP > CLOSE_ON), each on a clock
+const CLOSE_ON = 0.14, CLOSE_OFF = 0.1;
 
 const heroLetterStyle = (p, index, total) => {
   const reversed = total - 1 - index;
@@ -174,7 +177,7 @@ const heroLetterStyle = (p, index, total) => {
   return { transform: `translateY(${e * 40}%)`, filter: `blur(${e * 1.5}vmin)`, opacity: Math.max(0, 1 - e * 1.5) };
 };
 const blockLetterStyle = (p, index, total) => {
-  const ap = clamp01((gp(p) - 0.6) / 0.135);
+  const ap = clamp01((vScroll(p) - NET) / 270);
   const delay = (index / total) * 0.55;
   const inv = 1 - smooth(clamp01((ap - delay) / 0.45));
   return { transform: `translateY(${inv * 70}%)`, filter: `blur(${inv * 2.0}vmin)`, opacity: Math.max(0, 1 - inv * 1.3) };
@@ -188,10 +191,10 @@ const sceneVisibility = (p) => {
   const g = gp(p), v = vScroll(p);
   return {
     hero: g < 0.8,
-    aurora: v > 1000 && v < PF_END + 350,
-    sphere: g > 0.395 && v < PF_END,
-    target: v > CLOSE_START - 200,
-    portfolio: v > PS - 600 && v < PF_END + 350,
+    aurora: v > NET - 100,
+    sphere: v > LIFT - 60,
+    target: v > CLOSE_START - 200 && v < LIFT + 450,
+    portfolio: v > 600 && v < PF_END + 350,
   };
 };
 
@@ -217,6 +220,9 @@ function applyLetter(el, s) {
 const chip = (c) => `<span class="sr-chip"><b>${esc(c.n)}</b>${esc(c.label)}</span>`;
 const markIcon = (cls) => `<svg class="${cls}" aria-hidden="true" focusable="false"><use href="#i-mark"/></svg>`;
 
+/* a plain gradient card with centred text (the opening card's two faces) */
+const gradCard = (c) => `<div class="sr-gcard"><p class="k">${esc(c.k)}</p><h3>${esc(c.t)}</h3><p class="d">${esc(c.d)}</p></div>`;
+
 function build(section) {
   const M = readMark();
   const C = S.cards;
@@ -231,8 +237,8 @@ function build(section) {
     <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
-      <div class="sr-slide" id="sr-slide-a">${ph({ kind: "video", what: "Healthcare montage: nurses, care staff, county teams at work", video: "reel-main", webm: false })}</div>
-      <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${ph({ kind: "photo", what: "Recruiter with a candidate", tone: "steel" })}</div></div>
+      <div class="sr-slide" id="sr-slide-a">${gradCard(S.openCards[0])}</div>
+      <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${gradCard(S.openCards[1])}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
       <p class="lead">${esc(S.heroLead)}</p>
@@ -277,7 +283,6 @@ function build(section) {
     <div class="sr-blackpanel" id="sr-blackpanel">
       <div class="sr-sphere-scene" id="sr-sphere-scene">
         <div class="sr-sphere-canvas" id="sr-sphere-wrap"><canvas id="sr-sphere-canvas"></canvas></div>
-        <div class="sr-core" id="sr-core">${markIcon("sr-core-mark")}</div>
         <h2 class="sr-h-top" id="sr-h-top"><span class="sl-line">${letters(S.sphereTop)}</span></h2>
         <h2 class="sr-h-bottom" id="sr-h-bottom">${S.sphereBottom.map((l) => `<span class="sl-line">${letters(l)}</span>`).join("")}</h2>
         <div class="sr-sphere-body" id="sr-sphere-body">${S.sphereBody.map((t) => `<p>${esc(t)}</p>`).join("")}</div>
@@ -459,115 +464,64 @@ void main() {
     gl_FragColor = vec4(c, a);
 }`;
 
-const SIMPLEX3 = `
-vec3 mod289(vec3 x){return x - floor(x*(1.0/289.0))*289.0;}
-vec4 mod289(vec4 x){return x - floor(x*(1.0/289.0))*289.0;}
-vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
-vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314*r;}
-float snoise(vec3 v){
-    const vec2 C = vec2(1.0/6.0, 1.0/3.0);
-    const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
-    vec3 i = floor(v + dot(v, C.yyy));
-    vec3 x0 = v - i + dot(i, C.xxx);
-    vec3 g = step(x0.yzx, x0.xyz);
-    vec3 l = 1.0 - g;
-    vec3 i1 = min(g.xyz, l.zxy);
-    vec3 i2 = max(g.xyz, l.zxy);
-    vec3 x1 = x0 - i1 + C.xxx;
-    vec3 x2 = x0 - i2 + C.yyy;
-    vec3 x3 = x0 - D.yyy;
-    i = mod289(i);
-    vec4 p = permute(permute(permute(
-        i.z + vec4(0.0, i1.z, i2.z, 1.0))
-        + i.y + vec4(0.0, i1.y, i2.y, 1.0))
-        + i.x + vec4(0.0, i1.x, i2.x, 1.0));
-    float n_ = 0.142857142857;
-    vec3 ns = n_ * D.wyz - D.xzx;
-    vec4 j = p - 49.0 * floor(p * ns.z * ns.z);
-    vec4 x_ = floor(j * ns.z);
-    vec4 y_ = floor(j - 7.0 * x_);
-    vec4 x = x_ * ns.x + ns.yyyy;
-    vec4 y = y_ * ns.x + ns.yyyy;
-    vec4 h = 1.0 - abs(x) - abs(y);
-    vec4 b0 = vec4(x.xy, y.xy);
-    vec4 b1 = vec4(x.zw, y.zw);
-    vec4 s0 = floor(b0)*2.0 + 1.0;
-    vec4 s1 = floor(b1)*2.0 + 1.0;
-    vec4 sh = -step(h, vec4(0.0));
-    vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy;
-    vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
-    vec3 p0 = vec3(a0.xy, h.x);
-    vec3 p1 = vec3(a0.zw, h.y);
-    vec3 p2 = vec3(a1.xy, h.z);
-    vec3 p3 = vec3(a1.zw, h.w);
-    vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2,p2), dot(p3,p3)));
-    p0 *= norm.x; p1 *= norm.y; p2 *= norm.z; p3 *= norm.w;
-    vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
-    m = m * m;
-    return 42.0 * dot(m*m, vec4(dot(p0,x0), dot(p1,x1), dot(p2,x2), dot(p3,x3)));
+/* The network scene's point-cloud brain (brain prompt: baked mesh, area-sampled points,
+   tangential flow, synapse flashes, dark centre). Palette: silver top, signal-red underside. */
+const BRAIN_VERT = `
+attribute float aSeed; attribute vec3 aNormal;
+uniform float iTime; uniform float iResolutionY; uniform float uSize; uniform float uSynapseRate;
+uniform float uCenterRadius; uniform float uFlowSpeed; uniform float uFlowAmount;
+uniform float uExplode; uniform float uExplodeDist;
+varying float vSeed; varying float vSynapse; varying float vDepth; varying float vFrontness;
+varying float vCenterness; varying float vY;
+void main() {
+  vSeed = aSeed;
+  vec3 p = position; vY = p.y;
+  vec3 rad = normalize(p + vec3(1e-5));
+  p += rad * sin(iTime * 1.6 + aSeed * 6.0) * 0.012;
+  vec3 nrm = normalize(aNormal + vec3(1e-5));
+  vec3 ref = abs(nrm.y) < 0.95 ? vec3(0.0, 1.0, 0.0) : vec3(1.0, 0.0, 0.0);
+  vec3 tA = normalize(cross(nrm, ref));
+  vec3 tB = cross(nrm, tA);
+  float ph = iTime * uFlowSpeed + aSeed * 6.2831;
+  p += (tA * cos(ph) + tB * sin(ph)) * uFlowAmount;
+  vec3 exDir = normalize(rad + vec3(sin(aSeed * 41.0), cos(aSeed * 57.0), sin(aSeed * 73.0)) * 0.45);
+  p += exDir * uExplode * uExplodeDist;
+  float period = mix(3.0, 9.0, aSeed);
+  float ft = mod(iTime + aSeed * period, period);
+  float fire = pow(clamp(1.0 - ft / 0.4, 0.0, 1.0), 2.5);
+  if (aSeed > uSynapseRate) fire = 0.0;
+  vSynapse = fire;
+  vec4 mv = modelViewMatrix * vec4(p, 1.0);
+  vec4 centerMv = modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0);
+  vFrontness = clamp((centerMv.z - mv.z) * 0.6 + 0.5, 0.0, 1.0);
+  gl_Position = projectionMatrix * mv;
+  vec4 centerClip = projectionMatrix * centerMv;
+  float screenDist = length(gl_Position.xy / max(0.0001, gl_Position.w) - centerClip.xy / max(0.0001, centerClip.w));
+  vCenterness = 1.0 - clamp(screenDist / max(0.05, uCenterRadius), 0.0, 1.0);
+  gl_PointSize = uSize * (iResolutionY / 720.0) * (200.0 / -mv.z) * (1.0 + fire * 0.8);
+  vDepth = -mv.z;
 }`;
-const SPHERE_VERT = SIMPLEX3 + `
-uniform float uTime; uniform float uSize; uniform float uAmp; uniform float uPR;
-uniform float uDisperse;
-attribute float aRand;
-varying float vAlpha; varying float vLit; varying float vVert; varying float vSide;
-void main(){
-    vec3 p = position;
-    float n1 = snoise(p * 1.6 + vec3(0.0, uTime * 0.18, 0.0));
-    float n2 = snoise(p * 3.3 - vec3(uTime * 0.12));
-    float disp = n1 * 0.72 + n2 * 0.28;
-    vec3 pos = p * (1.0 + uAmp * disp);
-
-    vec3 dir = normalize(p + vec3(1e-4));
-    pos += dir * uDisperse * (0.18 + 0.5 * aRand);
-    pos += vec3(n1, n2, n1 * n2) * uDisperse * 0.22;
-
-    float lit = smoothstep(-0.25, 0.5, disp);
-    vLit = lit;
-
-    vec4 mv = modelViewMatrix * vec4(pos, 1.0);
-    gl_Position = projectionMatrix * mv;
-    gl_PointSize = uSize * uPR * (1.0 / max(0.1, -mv.z));
-
-    vVert = mv.y;
-    vSide = abs(mv.x);
-
-    float depth = pos.z * 0.5 + 0.5;
-    float angR = length(mv.xy) / max(0.1, -mv.z);
-    float hole = smoothstep(0.05, 0.115, angR); /* room for the mark at the centre; small, so the hub shows the network early */
-    vAlpha = hole * (0.10 + 0.40 * depth) * (0.15 + 0.95 * lit) * (1.0 - 0.85 * uDisperse);
-}`;
-const SPHERE_FRAG = `
+const BRAIN_FRAG = `
 precision highp float;
-uniform float uDisperse;
-varying float vAlpha; varying float vLit; varying float vVert; varying float vSide;
-void main(){
-    vec2 uv = gl_PointCoord - 0.5;
-    float d = length(uv);
-    if (d > 0.5) discard;
-    float tighten = 1.0 - 0.45 * uDisperse;
-    float bloomK = 1.0 - 0.65 * uDisperse;
-    float soft = smoothstep(0.5 * tighten, 0.0, d);
-    float core = smoothstep(0.16 * tighten, 0.0, d);
-
-    // silver globe, signal-red underside, near-white rim (hero palette)
-    vec3 silver = vec3(0.62, 0.62, 0.64);
-    vec3 red    = vec3(0.85, 0.045, 0.07); /* blooms to ~#ff2a45, not magenta */
-    vec3 white  = vec3(0.90, 0.90, 0.92);
-    float vt = clamp(vVert * 0.5 + 0.5, 0.0, 1.0);
-    vec3 col = mix(red, silver, smoothstep(0.18, 0.62, vt));
-    col = mix(col, white, smoothstep(0.72, 1.15, vSide));
-
-    col *= (0.60 + 0.55 * vLit);
-    col += smoothstep(0.55, 1.0, vLit) * core * vec3(0.75);
-
-    float halo = smoothstep(0.5 * tighten, 0.0, d);
-    col += col * halo * 0.9 * bloomK;
-    float cap = smoothstep(0.55, 1.05, abs(vVert));
-    col += col * cap * 1.7 * bloomK;
-    col *= mix(1.25, 1.05, uDisperse);
-    float capA = 1.0 + 1.0 * cap;
-    gl_FragColor = vec4(col, soft * vAlpha * capA);
+uniform vec3 uCool; uniform vec3 uWarm; uniform vec3 uEdgeColor; uniform vec3 uCenterColor;
+uniform float uCenterFalloff; uniform vec3 uSynapse; uniform float iAlpha; uniform float uGlow;
+uniform float uDepthDarkness; uniform float uExplode;
+varying float vSeed; varying float vSynapse; varying float vDepth; varying float vFrontness;
+varying float vCenterness; varying float vY;
+void main() {
+  vec2 p = gl_PointCoord - 0.5;
+  float r = length(p);
+  if (r > 0.5) discard;
+  float core = pow(smoothstep(0.5, 0.0, r), 2.2);
+  float t = pow(vCenterness, max(0.05, uCenterFalloff));
+  float vt = clamp(smoothstep(-0.7, 0.9, vY) + vSeed * 0.12, 0.0, 1.0);
+  vec3 base = mix(mix(uCool, uWarm, vt), uCenterColor, t);
+  base = mix(base, uEdgeColor, (1.0 - t) * 0.18);
+  vec3 col = base + uSynapse * vSynapse * 2.0;
+  col *= mix(1.0 - uDepthDarkness, 1.0, vFrontness);
+  float alphaOut = core * iAlpha * mix(1.0 - uDepthDarkness * 0.7, 1.0, vFrontness);
+  alphaOut *= 1.0 - smoothstep(0.0, 1.0, uExplode) * 0.8;
+  gl_FragColor = vec4(col * uGlow, alphaOut);
 }`;
 
 /* A canvas that sizes its drawing buffer from its layout box (never from a
@@ -668,42 +622,116 @@ function makeAurora(canvas) {
   return { render(t) { uniforms.u_time.value = t / 1000; gl.renderer.render(scene, camera); }, setQuality: gl.setQuality };
 }
 
+/* Point counts by screen width (the brain prompt's adaptive tiers); the render loop's
+   own quality governor lowers the pixel ratio further if frames run long. */
+const brainCount = () => { const w = innerWidth; return w <= 640 ? 26000 : w <= 1024 ? 50000 : w <= 1440 ? 90000 : 130000; };
+
+/* brain-mesh.bin, VBRN container (little endian): u32 magic, u32 version, u32 vertexCount,
+   u32 indexCount, Int16 xyz (/32767 of a unit radius), Uint16 indices. */
+async function loadBrainMesh() {
+  const res = await fetch(new URL("../assets/models/brain-mesh.bin", import.meta.url));
+  if (!res.ok) throw new Error("brain mesh: HTTP " + res.status);
+  const buf = await res.arrayBuffer(), view = new DataView(buf);
+  if (view.getUint32(0, true) !== 0x4e524256) throw new Error("brain mesh: bad magic");
+  const vc = view.getUint32(8, true), ic = view.getUint32(12, true);
+  const q = new Int16Array(buf, 16, vc * 3), positions = new Float32Array(vc * 3);
+  for (let i = 0; i < positions.length; i++) positions[i] = q[i] / 32767;
+  const base = 16 + vc * 6;
+  return { positions, indices: new Uint16Array(buf.slice(base, base + ic * 2)) };
+}
+
+/* Area-weighted surface sampling: a triangle is picked in proportion to its area (so dense
+   clusters of tiny triangles do not clump), then a uniform barycentric point on it. */
+function sampleBrain({ positions: v, indices: ix }, n, radius = 1.15) {
+  const tris = ix.length / 3, cdf = new Float64Array(tris);
+  let total = 0;
+  const vert = (i, k) => v[ix[i] * 3 + k];
+  for (let t = 0; t < tris; t++) {
+    const i = t * 3;
+    const ax = vert(i + 1, 0) - vert(i, 0), ay = vert(i + 1, 1) - vert(i, 1), az = vert(i + 1, 2) - vert(i, 2);
+    const bx = vert(i + 2, 0) - vert(i, 0), by = vert(i + 2, 1) - vert(i, 1), bz = vert(i + 2, 2) - vert(i, 2);
+    total += 0.5 * Math.hypot(ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx);
+    cdf[t] = total;
+  }
+  const pos = new Float32Array(n * 3), nor = new Float32Array(n * 3), seed = new Float32Array(n);
+  for (let k = 0; k < n; k++) {
+    const target = Math.random() * total;
+    let lo = 0, hi = tris - 1;
+    while (lo < hi) { const mid = (lo + hi) >> 1; if (cdf[mid] < target) lo = mid + 1; else hi = mid; }
+    const i = lo * 3;
+    let u = Math.random(), w = Math.random();
+    if (u + w > 1) { u = 1 - u; w = 1 - w; }
+    const o = 1 - u - w;
+    const ax = vert(i, 0), ay = vert(i, 1), az = vert(i, 2);
+    const bx = vert(i + 1, 0), by = vert(i + 1, 1), bz = vert(i + 1, 2);
+    const cx = vert(i + 2, 0), cy = vert(i + 2, 1), cz = vert(i + 2, 2);
+    pos[k * 3] = (ax * o + bx * u + cx * w) * radius;
+    pos[k * 3 + 1] = (ay * o + by * u + cy * w) * radius;
+    pos[k * 3 + 2] = (az * o + bz * u + cz * w) * radius;
+    const e1x = bx - ax, e1y = by - ay, e1z = bz - az, e2x = cx - ax, e2y = cy - ay, e2z = cz - az;
+    let nx = e1y * e2z - e1z * e2y, ny = e1z * e2x - e1x * e2z, nz = e1x * e2y - e1y * e2x;
+    const m = Math.hypot(nx, ny, nz) || 1;
+    nor[k * 3] = nx / m; nor[k * 3 + 1] = ny / m; nor[k * 3 + 2] = nz / m;
+    seed[k] = Math.random();
+  }
+  return { pos, nor, seed };
+}
+
 function makeSphere(canvas) {
   const dpr = Math.min(Math.max(devicePixelRatio || 1, 2), 3);
   const gl = glCanvas(canvas, { dpr, alpha: true });
   gl.renderer.setClearColor(0x000000, 0);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-  camera.position.set(0, 0, 3.8);
-  gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); };
+  // the brain is wider than tall: on a portrait screen the camera backs off until its width fits
+  gl.onResize = (w, h) => { camera.aspect = w / h; camera.position.z = camera.aspect < 1 ? Math.max(5.4, 3.0 / camera.aspect) : 4.5; camera.updateProjectionMatrix(); };
   gl.onResize(gl.w, gl.h);
-  const N = 34000;
-  const pos = new Float32Array(N * 3), rnd = new Float32Array(N);
-  const golden = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < N; i++) {
-    const y = 1 - (i / (N - 1)) * 2;
-    const r = Math.sqrt(1 - y * y);
-    const th = golden * i;
-    pos[i * 3] = Math.cos(th) * r; pos[i * 3 + 1] = y; pos[i * 3 + 2] = Math.sin(th) * r;
-    rnd[i] = Math.abs(Math.sin((i + 1) * 12.9898) * 43758.5453) % 1;
-  }
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-  geo.setAttribute("aRand", new THREE.BufferAttribute(rnd, 1));
-  const uniforms = { uTime: { value: 0 }, uSize: { value: 24.0 }, uAmp: { value: 0.11 }, uPR: { value: dpr }, uDisperse: { value: 0 } };
-  const points = new THREE.Points(geo, new THREE.ShaderMaterial({
-    vertexShader: SPHERE_VERT, fragmentShader: SPHERE_FRAG, uniforms,
+  const v3 = (r, g, b) => ({ value: new THREE.Vector3(r, g, b) });
+  const uniforms = {
+    iTime: { value: 0 }, iResolutionY: { value: gl.h * gl.dpr }, iAlpha: { value: 0 }, uExplode: { value: 1 },
+    uSize: { value: 0.067 * 1.5 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
+    uFlowSpeed: { value: 2.3 }, uFlowAmount: { value: 0.025 }, uGlow: { value: 1.1 }, uDepthDarkness: { value: 1 }, uExplodeDist: { value: 5 },
+    // hero palette: silver on top, signal red underneath, a graphite heart, white synapse flashes
+    uWarm: v3(0.84, 0.84, 0.87), uCool: v3(1.0, 0.16, 0.27), uEdgeColor: v3(1.0, 0.16, 0.27),
+    uCenterColor: v3(0.05, 0.05, 0.06), uSynapse: v3(0.96, 0.96, 1.0),
+  };
+  const material = new THREE.ShaderMaterial({
+    vertexShader: BRAIN_VERT, fragmentShader: BRAIN_FRAG, uniforms,
     transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
-  }));
-  points.frustumCulled = false;
-  scene.add(points);
+  });
+  const group = new THREE.Group();
+  scene.add(group);
+  let born = null;
   gl.redraw = () => gl.renderer.render(scene, camera);
-  gl.redraw(); // warm up: compile the shader and upload the 34k points at load, not at the start of the dive
+  // fetched at load, never blocking: the scene is dark until the third card, so it has time
+  loadBrainMesh().then((mesh) => {
+    const { pos, nor, seed } = sampleBrain(mesh, brainCount());
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute("aNormal", new THREE.BufferAttribute(nor, 3));
+    geo.setAttribute("aSeed", new THREE.BufferAttribute(seed, 1));
+    const points = new THREE.Points(geo, material);
+    points.frustumCulled = false;
+    group.add(points);
+    gl.redraw(); // warm up: compile the shader and upload the points now, not at the start of the dive
+  }).catch((e) => console.warn("[showreel] brain scene not loaded:", e));
   return {
-    render(t, disperse) {
+    render(t, disperse, g) {
       const s = t / 1000;
-      uniforms.uTime.value = s; uniforms.uPR.value = gl.renderer.getPixelRatio(); uniforms.uDisperse.value = disperse;
-      points.rotation.y = s * 0.12; points.rotation.x = Math.sin(s * 0.1) * 0.12;
+      // it starts when the portal opens, then plays on its own clock: scrolling does not fold or unfold it.
+      // Only scrolling back above the scene resets it, so it can start again.
+      if (g > NET + 20 && born == null) born = s;   // once the strip is leaving and the scene shows
+      else if (g < NET - 150) born = null;
+      const age = born == null ? 0 : s - born;
+      const gather = born == null ? 0 : smooth(clamp01(age / 1.2));
+      uniforms.iTime.value = s;
+      uniforms.iResolutionY.value = gl.h * gl.renderer.getPixelRatio();
+      uniforms.iAlpha.value = gather * (1 - 0.9 * disperse);
+      uniforms.uExplode.value = Math.max(1 - gather, disperse * 0.5); // 1 -> 0 gathering; a gentle spread as the scene leaves
+      group.position.set(0, 0.15, disperse * 1.2);              // raised a little to clear the copy; it drifts toward the camera on the way out
+      // a full 360 turn about 5.5 s, starting from the side profile and never stopping
+      group.rotation.y = -2.05 + age * 1.15;
+      group.rotation.x = Math.sin(s * 0.5) * 0.08;
       gl.renderer.render(scene, camera);
     },
     setQuality: gl.setQuality,
@@ -826,7 +854,7 @@ function makeTargetStar(canvas) {
   };
   gl.onResize = (w, h) => { camera.aspect = w / h; camera.updateProjectionMatrix(); place(); };
   gl.onResize(gl.w, gl.h);
-  let reveal = 0;
+  let reveal = 0, born = null;
   const draw = () => {
     const sc = clock;
     const [bx, by] = group.userData.base;
@@ -841,11 +869,15 @@ function makeTargetStar(canvas) {
   gl.redraw = draw;
   draw(); // warm up: compile the physical materials at load, not when the closing frame arrives
   return {
+    // r is the scroll position of the closing beat (0..1). The mark starts assembling once the beat
+    // begins and then finishes on its own clock; scrolling up and down no longer folds it back.
     render(t, r = 1) {
-      reveal = r;
       const delta = lastT == null ? 0 : Math.min(0.1, (t - lastT) / 1000);
       lastT = t;
       clock += delta;
+      if (r > CLOSE_ON && born == null) born = clock;
+      else if (r <= CLOSE_OFF) born = null;
+      reveal = born == null ? 0 : clamp01((clock - born) / 0.9);
       draw();
     },
     pause() { lastT = null; },
@@ -863,7 +895,7 @@ export function initShowreel(section) {
     track: $("sr-track"), backdrop: $("sr-backdrop"), marquee: $("sr-marquee"), rig: $("sr-rig"), carousel: $("sr-carousel"),
     card1: $("sr-card1"), card2: $("sr-card2"), card3: $("sr-card3"), card4: $("sr-card4"),
     heroHead: $("sr-hero-head"), slider: $("sr-slider"), slideA: $("sr-slide-a"), slideB: $("sr-slide-b"), heroBottom: $("sr-hero-bottom"),
-    panel: $("sr-blackpanel"), sphereScene: $("sr-sphere-scene"), sphereWrap: $("sr-sphere-wrap"), core: $("sr-core"),
+    panel: $("sr-blackpanel"), sphereScene: $("sr-sphere-scene"), sphereWrap: $("sr-sphere-wrap"),
     faceIn: $("sr-face-in"), face: section.querySelector(".sr-face"), zoom: $("sr-zoom"),
     sphereBody: $("sr-sphere-body"), target: $("sr-target"), ctaBlock: $("sr-ctablock"), cta: $("sr-cta"),
     aurora: $("sr-aurora"), portfolio: $("sr-portfolio"), pfTrack: $("sr-pf-track"),
@@ -980,7 +1012,7 @@ export function initShowreel(section) {
     console.warn("WebGL unavailable, showreel runs without shaders", err);
   }
 
-  let lastP = -1;
+  let lastP = -1, ctaBorn = null;
   function frame(t) {
     requestAnimationFrame(frame);
     const dtf = lastFrameT == null ? 0 : Math.min(100, t - lastFrameT);
@@ -1058,15 +1090,19 @@ export function initShowreel(section) {
       el.face.style.opacity = cardFade(p);
       // the portal: the dark network scene, seen through the hub and widening until it fills the view
       const R = M.hole * dive.S * k * portalOpen(z) * portalWiden(z);
-      el.panel.style.clipPath = z >= 1 ? "none" : `circle(${R.toFixed(3)}vmin at calc(50% + ${hx.toFixed(3)}vmin) calc(50% + ${hy.toFixed(3)}vmin))`;
+      // a soft edge: solid inside, fading over the outer 55% of the radius (no hard circle on screen)
+      const pf = R * 0.55;
+      const pm = z >= 1 ? "none" : `radial-gradient(circle at calc(50% + ${hx.toFixed(3)}vmin) calc(50% + ${hy.toFixed(3)}vmin), #000 ${(R - pf).toFixed(3)}vmin, rgb(0 0 0 / 0.45) ${(R - pf * 0.4).toFixed(3)}vmin, transparent ${R.toFixed(3)}vmin)`;
+      el.panel.style.maskImage = pm; el.panel.style.webkitMaskImage = pm;
+      el.panel.style.opacity = panelOn(p) ? 1 : 0;
+      // the strip sits over the panel and is cut by the same hub, so the dive lands on the panels with no gap
+      el.portfolio.style.maskImage = pm; el.portfolio.style.webkitMaskImage = pm;
+      el.panel.style.clipPath = "none"; // the stylesheet starts it at circle(0); the mask now does the opening
       el.panel.style.transform = blackScreenTransform(p, vmin, geo);
       el.sphereScene.style.transform = `translate(-50%,-50%) scale(${sphereSceneScale(p, vmin, geo)})`;
       // portrait screens stack the copy under the sphere, so the sphere and its mark rise as the copy arrives
-      const rise = geo === GEO.desktop ? 0 : 15 * smooth(clamp01((gp(p) - 0.6) / 0.12));
+      const rise = geo === GEO.desktop ? 0 : 15 * smooth(clamp01((vScroll(p) - NET) / 240));
       el.sphereWrap.style.transform = `translate(-50%, calc(-50% - ${rise.toFixed(3)}vh)) scale(${sphereScale(p)})`;
-      const cm = coreMarkIn(p);
-      el.core.style.opacity = cm;
-      el.core.style.transform = `translate(-50%, calc(-50% - ${rise.toFixed(3)}vh)) scale(${0.72 + 0.28 * cm - 0.16 * sphereCollapse(p)})`;
       let idx = 0;
       blockLines.forEach((line) => line.forEach((s) => applyLetter(s, blockLetterStyle(p, idx++, blockTotal))));
       const br = sphereBodyReveal(p);
@@ -1081,20 +1117,26 @@ export function initShowreel(section) {
       // flight grid + target
       // closing scene: opens through a feathered circle, settles from a slight zoom
       const ca = closeActive(p);
-      el.target.style.visibility = ca ? "visible" : "hidden";
+      el.target.style.visibility = ca && liftP(p) < 1 ? "visible" : "hidden";
       if (ca) {
         const m = closeMask(p);
         el.target.style.maskImage = m; el.target.style.webkitMaskImage = m;
-        el.target.style.transform = `translate(-50%, -50%) scale(${closeScale(p).toFixed(4)})`;
+        el.target.style.transform = `translate(-50%, calc(-50% - ${(liftP(p) * 112).toFixed(2)}vh)) scale(${closeScale(p).toFixed(4)})`;
       }
-      ctaParts.forEach((part, i) => {
-        const r = finalBeat(p, i);
-        part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
-        part.style.transform = `translateY(${((1 - r) * 2.6).toFixed(3)}vh)`;
-        part.style.filter = r < 0.999 ? `blur(${((1 - r) * 8).toFixed(2)}px)` : "none";
-        part.style.visibility = r > 0.005 ? "visible" : "hidden";
-      });
     }
+
+    // closing copy: starts with the 3D mark (same trigger) and runs on the same clock, not on scroll
+    const cp = closeP(p);
+    if (cp > CLOSE_ON && ctaBorn == null) ctaBorn = vt;
+    else if (cp <= CLOSE_OFF) ctaBorn = null;
+    const ctaAge = ctaBorn == null ? 0 : (vt - ctaBorn) / 1000;
+    ctaParts.forEach((part, i) => {
+      const r = ctaBorn == null ? 0 : smooth(clamp01((ctaAge - i * 0.06) / 0.5));
+      part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
+      part.style.transform = `translateY(${((1 - r) * 2.6).toFixed(3)}vh)`;
+      part.style.filter = r < 0.999 ? `blur(${((1 - r) * 8).toFixed(2)}px)` : "none";
+      part.style.visibility = r > 0.005 ? "visible" : "hidden";
+    });
 
     const onScreen = y + vh > trackTop && y < trackTop + trackH;
     if (gfx && onScreen && (!isPaused() || p !== scenesP || scenesDirty)) {
@@ -1102,8 +1144,8 @@ export function initShowreel(section) {
       const vis = sceneVisibility(p);
       if (vis.hero) gfx.hero.render(vt);
       if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(vt);
-      if (vis.sphere) gfx.sphere.render(vt, sphereDisperse(p));
-      if (vis.target && closeActive(p)) { gfx.targetBg.render(vt); gfx.target.render(vt, markReveal(p)); } else gfx.target.pause();
+      if (vis.sphere) gfx.sphere.render(vt, brainExit(p), vScroll(p));
+      if (vis.target && closeActive(p) && liftP(p) < 1) { gfx.targetBg.render(vt); gfx.target.render(vt, closeP(p)); } else gfx.target.pause();
       if (!isPaused()) govern(dtf, t);
     }
   }
@@ -1125,10 +1167,10 @@ export function initShowreel(section) {
     const tiles = [...el.pfTrack.children];
     const x0 = tiles[0]?.offsetLeft ?? 0;
     const slides = [...new Set(tiles.map((t) => Math.min(1, (t.offsetLeft - x0) / maxPan)).concat(1).map((x) => Math.round(x * 1000) / 1000))];
-    const pf = slides.filter((x, i, a) => i === 0 || x - a[i - 1] > 0.02).map((x) => PS + PF_DUR * (0.267 + 0.453 * x));
+    const pf = slides.filter((x, i, a) => i === 0 || x - a[i - 1] > 0.02).map((x) => PS + PF_DUR * 0.62 * x);
     return [
       { from: 0.1 * OLD_MAX, to: 0.415 * OLD_MAX, stops: car },
-      { from: PS + PF_DUR * 0.2, to: PS + PF_DUR * 0.76, stops: pf },
+      { from: PS - 50, to: PS + PF_DUR * 0.66, stops: pf },
     ];
   };
   const zoneAt = (y) => { const v = yToV(y); return zones().find((z) => v >= z.from && v <= z.to) || null; };
@@ -1152,10 +1194,10 @@ export function initShowreel(section) {
      three "What we staff" panels, and the closing frame. Holding the key past the
      keyboard's repeat delay scrolls freely and smoothly instead, and the wheel is untouched.
      Outside the reel the arrow keys keep the browser's own behaviour. */
-  const SPHERE_REST = 0.735 * OLD_MAX; // the sphere's "profiles on file" text has finished arriving
+  const SPHERE_REST = NET + 350; // the "profiles on file" text has finished arriving
   const vstops = () => {
     const [car, pf] = zones();
-    const v = [0, ...car.stops, SPHERE_REST, ...pf.stops, VSCROLL_MAX].sort((a, b) => a - b);
+    const v = [0, ...car.stops, ...pf.stops, SPHERE_REST, VSCROLL_MAX].sort((a, b) => a - b);
     return v.filter((x, i) => i === 0 || x - v[i - 1] > 10).map((x) => ({ v: x, y: vToY(x) }));
   };
   const inTrack = (y) => y >= trackTop - 4 && y <= trackTop + trackH - innerHeight + 4;

@@ -10,7 +10,7 @@ import {
 import { ph, esc } from "./ph.js?v=3";
 import { initShowreel } from "./showreel.js?v=3";
 import {
-  registerReveals, releaseReveals, initParallax, runPreloader, initHeader,
+  registerReveals, releaseReveals, initParallax, initHeader,
 } from "./motion.js?v=3";
 import { initChat } from "./chat.js?v=3";
 import { currentUser } from "./auth.js?v=3";
@@ -26,23 +26,34 @@ document.querySelectorAll(".grain-tex").forEach((g) => (g.style.backgroundImage 
 
 /* ---------- 02 certifications + customers ---------- */
 $("#certs-title").innerHTML = `${esc(CERT_LINE.text)}: <span class="hi">${esc(CERT_LINE.id)}</span>`;
+const CERT_IMG = {
+  MBE: { src: "assets/img/cert-mbe.webp", alt: "Minority Business Enterprise (MBE) certification badge" },
+  DBE: { src: "assets/img/cert-dbe.webp", alt: "Disadvantaged Business Enterprise (DBE) certification badge" },
+  SBE: { src: "assets/img/cert-sbe.webp", alt: "Small Business Enterprise (SBE) certification badge" },
+};
 $("#certs-badges").innerHTML = CERTS.map((c, i) => `
   <li class="badge" data-m="sticker" data-i="${i}">
-    <span class="badge-seal" role="img" aria-label="${esc(c.name)} badge placeholder"><span class="code">${esc(c.code)}</span><span class="art">official badge</span></span>
+    ${CERT_IMG[c.code]
+      ? `<img class="badge-img" src="${CERT_IMG[c.code].src}" alt="${esc(CERT_IMG[c.code].alt)}" loading="lazy" decoding="async" draggable="false">`
+      : `<span class="badge-seal" role="img" aria-label="${esc(c.name)} badge placeholder"><span class="code">${esc(c.code)}</span><span class="art">official badge</span></span>`}
     <span class="badge-name">${esc(c.name)}</span>
   </li>`).join(""); // contract vehicles: not shown until the client confirms them
 // only logos the client has approved (Q20) are shown; every other customer is shown as a name tile
 const CUST_LOGO = {
-  "Raytheon Technologies": { src: "assets/img/logo-raytheon.png", alt: "Raytheon Technologies logo", plate: true }, // dark artwork: light plate
-  "Pearson": { src: "assets/img/logo-pearson.svg", alt: "Pearson logo" }, // white symbol on the dark tile
-  "Indeed": { src: "assets/img/logo-indeed.svg", alt: "Indeed logo" },
+  "Montgomery County Government": { src: "assets/img/logo-montgomery.webp", alt: "Montgomery County, Maryland seal" },
+  "Prince George's County Government (OIT)": { src: "assets/img/logo-pg-county.webp", alt: "Prince George's County, Maryland seal" },
+  "Raytheon Technologies": { src: "assets/img/logo-raytheon.webp", alt: "Raytheon Technologies logo" },
+  "Pearson": { src: "assets/img/logo-pearson.webp", alt: "Pearson logo" },
+  "Indeed": { src: "assets/img/logo-indeed.webp", alt: "Indeed logo" },
+  "NGA": { src: "assets/img/logo-nga.webp", alt: "National Geospatial-Intelligence Agency seal" },
 };
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
   <li class="cust" data-m="chip" data-i="${i % 6}">
     ${CUST_LOGO[c.name]
-      ? `<div class="cust-logo ${CUST_LOGO[c.name].plate ? "cust-logo--plate" : "cust-logo--mark"}"><img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" loading="lazy" decoding="async" draggable="false"></div>
+      ? `<div class="cust-logo cust-logo--mark"><img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" decoding="async" draggable="false"></div>
     <span class="cust-name">${esc(c.name)}</span>`
-      : `<div class="cust-logo cust-logo--name"><span>${esc(c.name)}</span></div>`}
+      : `<div class="cust-logo cust-logo--name"><span>${esc(c.name)}</span></div>
+    <span class="cust-name" aria-hidden="true"></span>`}
     ${c.status ? `<span class="cust-tag">${c.status === "current" ? "Current" : "Past"}</span>` : ""}
   </li>`).join("");
 
@@ -203,17 +214,5 @@ initHeader($(".hx-hero"));
 if (currentUser()) document.querySelectorAll("[data-account]").forEach((a) => { a.textContent = "My account"; a.href = "account.html"; });
 initChat({ lenis });
 
-const pileCards = [
-  ph({ kind: "photo", what: "Nurse portrait", src: "assets/img/hc-admin.webp", alt: "A clinician in a white coat smiling", pos: "40% 35%" }),
-  ph({ kind: "photo", what: "Case manager", src: "assets/img/hc-long-term.webp", alt: "A nurse caring for an older patient", pos: "50% 40%" }),
-  ph({ kind: "photo", what: "EHR administrator", src: "assets/img/spec-it.webp", alt: "Two IT colleagues at a laptop", pos: "78% 40%" }),
-  ph({ kind: "photo", what: "Budget analyst", src: "assets/img/spec-analytics.webp", alt: "An analytics dashboard", pos: "40% 50%" }),
-];
-
-fontsReady.then(() => registerReveals());
-runPreloader({
-  lenis,
-  cardsHTML: pileCards,
-  ready: fontsReady,
-  onRelease: () => { sr.measure(); releaseReveals(); },
-});
+// no loading screen: the page is shown as soon as the fonts are ready
+fontsReady.then(() => { registerReveals(); sr.measure(); releaseReveals(); });
