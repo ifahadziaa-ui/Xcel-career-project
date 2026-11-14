@@ -300,7 +300,7 @@ export const JOBS_NOTE: string =
 /* ---------- 06 Capability statement (replaces Transition Into Tech, on hold [CONFIRM]) ---------- */
 export const CAPABILITY: Capability = {
   points: [
-    "Maryland MBE · DBE · SBE No. 19-286. Minority veteran-owned. CAGE 89AK6.",
+    "Maryland MBE · DBE · SBE No. 19-286. CAGE 89AK6.",
     "NAICS 561311, 561320, 541330, 541511, 541512. Ready to contract, local to federal.",
   ],
   meta: ["Certs", "codes · past performance"],

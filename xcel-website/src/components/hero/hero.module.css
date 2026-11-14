@@ -127,7 +127,6 @@
 
 /* ---------- shared type ---------- */
 
-.header,
 .meta,
 .specimen,
 .placard {
@@ -136,7 +135,6 @@
   line-height: 1;
 }
 
-.header,
 .meta,
 .specimen {
   font-size: var(--mono-size);
@@ -144,57 +142,9 @@
   text-transform: uppercase;
 }
 
-.header p,
 .meta,
 .specimen {
   margin: 0;
-}
-
-.logo {
-  color: var(--logo);
-  font-weight: 500;
-  letter-spacing: var(--wide-track);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.reg {
-  color: var(--red);
-  opacity: 0.7;
-  font-size: 0.9em;
-  letter-spacing: 0;
-}
-
-.nav ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.nav a {
-  color: var(--nav);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.nav a:hover,
-.nav a:focus-visible,
-.logo:hover,
-.logo:focus-visible {
-  color: #ffffff;
-}
-
-.nav a:focus-visible,
-.logo:focus-visible {
-  outline: 1px solid var(--red);
-  outline-offset: 4px;
-}
-
-.status {
-  color: var(--red);
-  letter-spacing: var(--wide-track);
-  white-space: nowrap;
 }
 
 .meta {
@@ -359,27 +309,13 @@
     max(24px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
 }
 
+/* The site header is the fixed bar from the root layout (SiteHeader). This spacer keeps the room the
+   hero's own bar used to take in the stacked layout (two rows on phones, one from 640px), so the
+   hero keeps its proportions. It is empty and hidden from assistive technology. */
 .header {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  row-gap: 16px;
-}
-
-.nav {
-  grid-column: 1 / -1;
-  grid-row: 2;
-}
-
-.nav ul {
-  justify-content: space-between;
-}
-
-.status {
-  grid-column: 2;
-  grid-row: 1;
+  height: calc(var(--mono-size) * 2 + 16px);
 }
 
 .metaTop {
@@ -437,21 +373,7 @@
   }
 
   .header {
-    grid-template-columns: auto 1fr auto;
-  }
-
-  .nav {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-  }
-
-  .nav ul {
-    gap: 22px;
-  }
-
-  .status {
-    grid-column: 3;
+    height: var(--mono-size);
   }
 
   .centrepiece {
@@ -516,29 +438,7 @@
   }
 
   .header {
-    position: absolute;
-    top: calc(var(--u) * 21.4);
-    left: var(--pl);
-    right: var(--pr);
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-  }
-
-  .nav,
-  .status {
-    grid-column: auto;
-    grid-row: auto;
-    justify-self: auto;
-  }
-
-  .nav {
-    margin-left: calc(var(--u) * 2);
-  }
-
-  .nav ul {
-    justify-content: flex-start;
-    gap: calc(var(--u) * 22);
+    display: none; /* the fixed bar floats over the hero here; the old bar took no room in flow */
   }
 
   .metaTop {

@@ -1,0 +1,8 @@
+/* The isolated stand-in for photos and clips that arrive in the media stage: graphite (or paper)
+   with the brand mark, no label. Same look as the prototype's quiet placeholder (.ph--quiet). */
+.slot {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  color: #fff; background: linear-gradient(160deg, #1d1d20, #101012);
+}
+.light { color: #131314; background: linear-gradient(160deg, #e9e9eb, #d2d2d5); }
+.mark { height: 34%; width: auto; aspect-ratio: 1.1 / 1.95; color: inherit; --mk-fig: var(--accent); opacity: 0.5; }

@@ -118,7 +118,7 @@ function PartView({ p }: { p: Part }) {
             ))}
           </div>
           <div className={cx("xc-in")}>
-            <Placard rows={[["Cert. No.", CRED.certNo], ["Since", CRED.since], ["Status", "Minority veteran-owned", "xc-red"]]} />
+            <Placard rows={[["Cert. No.", CRED.certNo], ["Since", CRED.since], ["Status", "Certified", "xc-red"]]} />
           </div>
         </>
       );

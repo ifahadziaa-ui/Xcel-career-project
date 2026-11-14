@@ -163,7 +163,7 @@ function reply(id: string, t = " ", arg = ""): Reply | null {
       return { say, parts: [{ type: "jobs", list }], chips: key === "health" ? [CHIP.tech, CHIP.contact] : [CHIP.health, CHIP.contact] };
     }
     case "certs":
-      return { say: `XcelCareers is a **minority veteran-owned small business**, certified in Maryland as an MBE, DBE and SBE (No. ${CRED.certNo}).`, parts: [{ type: "certs" }], chips: [CHIP.capability, CHIP.customers] };
+      return { say: `XcelCareers is certified in Maryland as an MBE, DBE and SBE (No. ${CRED.certNo}).`, parts: [{ type: "certs" }], chips: [CHIP.capability, CHIP.customers] };
     case "capability":
       return { say: "Here's what contracting officers usually ask for. We're ready to contract at the local, state and federal level.", parts: [{ type: "capability" }], chips: [CHIP.customers, CHIP.request] };
     case "licensing":

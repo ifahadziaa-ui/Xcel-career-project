@@ -1,65 +1,41 @@
+/* =====================================================================
+   Homepage hero: the cleaned prototype's hero (landing-prototype-clean/index.html, "01 HERO").
+   The layout is the original Next hero design (hero.module.css); the copy is XcelCareers'.
+   The navigation bar is the shared SiteHeader in the root layout, so there is none here.
+   data-chat-hero keeps the chat launcher out of the placard's corner while the hero is on screen
+   (contract in docs/SHELL.md). Server component.
+   ===================================================================== */
 import Image from "next/image";
-import Link from "next/link";
+import { CREDENTIALS } from "@/content/content";
 import styles from "./hero.module.css";
 
-/**
- * Hero copy lives here so it can be swapped without touching layout.
- * Everything below mirrors the reference design ("Actual hero page design").
- */
+// Hero wording from the cleaned prototype's index.html. Facts (CAGE, certificate) come from content.ts.
 const content = {
-  brand: "VESSEL",
-  nav: [
-    { label: "The Piece", href: "#the-piece" },
-    { label: "Label", href: "#label" },
-    { label: "Manifesto", href: "#manifesto" },
-    { label: "Enquire", href: "#enquire" },
-  ],
-  status: "Not for sale",
-  specIndex: "Spec. 001",
-  vitals: "72 BPM",
-  sealed: "Sealed / 2026",
-  specimen: { prefix: "Specimen", number: "001", suffix: "· Held, not listed" },
-  headline: { lines: ["Kept", "Never"], last: "For", accent: "Sale" },
+  meta: { left: "Dayton, MD", right: "MD · DC · VA" },
+  sealed: `CAGE / ${CREDENTIALS.cage}`,
+  specimen: { prefix: "Cert.", number: CREDENTIALS.certNo, suffix: "· MBE · DBE · SBE" },
+  headline: { lines: ["People", "Behind"], last: "The", accent: "Care" },
   placard: [
-    { term: "Medium", value: "Human heart, glass, light" },
-    { term: "Dimensions", value: "24 × 34 × 60 cm" },
-    { term: "Edition", value: "1 of 1" },
-    { term: "Status", value: "Held, not listed", accent: true },
+    { term: "Focus", value: "Healthcare staffing" },
+    { term: "Contracts", value: "Local · State · Federal" },
+    { term: "Specialty", value: "IT · Finance · Cyber" },
+    { term: "Status", value: "Accepting requests", accent: true },
   ],
-  // Placeholder centrepiece. Replace this file (or swap this block for the
-  // 3D scene) without changing anything else in the hero.
   centrepiece: {
     src: "/hero/specimen-placeholder.png",
-    alt: "Anatomical heart suspended inside a glass vitrine",
+    alt: "A human heart held in a glass case",
   },
 };
 
 export default function Hero() {
   return (
-    <section className={styles.hero} aria-labelledby="hero-title">
+    <section className={styles.hero} aria-labelledby="hero-title" id="top" data-chat-hero>
       <div className={styles.stage}>
-        <header className={styles.header}>
-          <Link href="/" className={styles.logo} aria-label={`${content.brand} home`}>
-            {content.brand}
-            <span className={styles.reg} aria-hidden="true">
-              ®
-            </span>
-          </Link>
-          <nav className={styles.nav} aria-label="Primary">
-            <ul>
-              {content.nav.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href}>{item.label}</a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <p className={styles.status}>{content.status}</p>
-        </header>
+        <div className={styles.header} aria-hidden="true" />
 
         <div className={styles.metaTop}>
-          <p className={`${styles.meta} ${styles.specIndex}`}>{content.specIndex}</p>
-          <p className={`${styles.meta} ${styles.vitals}`}>{content.vitals}</p>
+          <p className={`${styles.meta} ${styles.specIndex}`}>{content.meta.left}</p>
+          <p className={`${styles.meta} ${styles.vitals}`}>{content.meta.right}</p>
         </div>
 
         <div className={styles.centrepiece}>
@@ -79,8 +55,7 @@ export default function Hero() {
           <p className={styles.specimen}>
             <span className={styles.dot} aria-hidden="true" />
             <span>
-              {content.specimen.prefix}{" "}
-              <span className={styles.red}>{content.specimen.number}</span>{" "}
+              {content.specimen.prefix} <span className={styles.red}>{content.specimen.number}</span>{" "}
               {content.specimen.suffix}
             </span>
           </p>
@@ -91,8 +66,7 @@ export default function Hero() {
               </span>
             ))}
             <span className={styles.line}>
-              {content.headline.last}{" "}
-              <span className={styles.accent}>{content.headline.accent}</span>
+              {content.headline.last} <span className={styles.accent}>{content.headline.accent}</span>
             </span>
           </h1>
         </div>

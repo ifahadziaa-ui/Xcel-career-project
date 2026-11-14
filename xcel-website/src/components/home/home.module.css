@@ -1,0 +1,329 @@
+/* =====================================================================
+   HOMEPAGE SECTIONS (Stage 3): certifications and customers, process, example roles (card fan),
+   capability poster, on the record, FAQ, contact.
+   Ported from landing-prototype-clean/css/sections.css; same values and breakpoints. Class names are
+   camelCased for the CSS Module. Left out on purpose: scroll reveals, parallax and tilt wrappers
+   (motion stages), the preloader, the footer (SiteFooter) and placeholder styling (MediaSlot).
+   rem is the viewport-scaled root from src/styles/tokens.css.
+   ===================================================================== */
+
+/* ---------- generic section frame ---------- */
+.p2sec { position: relative; overflow: clip; background: var(--background); padding: 6rem 5.25rem 5.5rem; }
+.col { position: relative; z-index: 1; }
+@media (width < 1200px) { .p2sec { padding: 3rem 2rem 3.5rem; } }
+@media (width < 896px)  { .p2sec { padding: 2.5rem 2.5rem 3rem; } }
+@media (width < 700px)  {
+  .p2sec { padding: 2rem 1.25rem 2.5rem; }
+  .col { max-width: 24.375rem; margin-inline: auto; }
+}
+
+/* ---------- shared pieces from the hero ---------- */
+/* the glowing red dot of the hero's "● Cert. 19-286" line */
+.dot {
+  display: inline-block; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 5px rgb(255 42 69 / 0.9), 0 0 12px rgb(255 42 69 / 0.4);
+}
+/* the hero's glass placard */
+.placard {
+  border: 1px solid rgb(255 255 255 / 0.1); border-radius: 3px;
+  background: rgb(255 255 255 / 0.03);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+
+/* ---------- eyebrow: red dot + mono label ---------- */
+.eyebrow {
+  display: flex; align-items: center; gap: 0.75em;
+  font-size: var(--type-eyebrow); color: rgb(255 255 255 / 0.45);
+}
+
+/* ---------- headline: condensed black caps, the last word in red (like CARE) ---------- */
+.hl { display: flex; flex-direction: column; margin-top: 1rem; font-size: var(--type-display); color: var(--foreground); }
+.hl .l { display: block; }
+.hlRow { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.2em; }
+.mark {
+  display: block; color: var(--accent); white-space: nowrap;
+  font-family: var(--font-display); font-weight: 500;
+  line-height: 0.95; letter-spacing: -0.03em;
+  padding-bottom: 0.18em; margin-bottom: -0.18em; /* room for descenders inside the reveal mask */
+  text-shadow: 0.06em 0 0.03em rgb(255 42 69 / 0.05), -0.06em 0 0.03em rgb(255 42 69 / 0.05), 0.14em 0 0.04em rgb(255 42 69 / 0.035), -0.14em 0 0.04em rgb(255 42 69 / 0.035);
+}
+.center .hl { align-items: center; text-align: center; }
+.center .hlRow { justify-content: center; }
+.center .eyebrow { justify-content: center; }
+
+/* note under a headline */
+.note p { font-size: var(--type-caption); line-height: var(--line-copy); color: var(--foreground-soft); }
+
+/* ---------- button ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.875rem; width: fit-content;
+  height: 3.25rem; padding: 0 1.5rem 0.2em; border-radius: 3px; /* flex container: text-box trim does not apply, so lift the Zen Kaku caps by hand */
+  background: var(--accent); color: var(--background); /* graphite on red: 5.1:1 (white was 3.7:1) */
+  font-family: var(--font-mono); font-size: var(--type-button); letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap;
+  transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance);
+}
+.btn svg { flex: none; width: 1.25rem; height: 0.75rem; }
+.btn:hover, .btn:focus-visible { background: var(--foreground); color: var(--background); }
+.btn:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+
+/* =====================================================================
+   02 CERTIFICATIONS + CUSTOMERS
+   ===================================================================== */
+.certs { padding-top: 5.5rem; padding-bottom: 5rem; text-align: center; }
+.certsLine { text-wrap: balance; font-size: var(--type-heading); white-space: normal; color: var(--foreground); line-height: 0.95; }
+.certsLine .hi { color: var(--accent); }
+.certsBadges { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem 3rem; margin-top: 2.5rem; }
+.badge { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; width: 9.5rem; }
+.badgeSeal {
+  position: relative; display: grid; place-items: center; width: 7.5rem; height: 7.5rem; border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #2e2e30, #131314 70%); /* hero spotlight in miniature */
+  border: 1px solid rgb(255 255 255 / 0.18);
+}
+.badgeSeal .code { text-box: trim-both cap alphabetic; font-family: var(--font-display); font-weight: 500; font-size: var(--type-badge); line-height: 1; color: var(--foreground); }
+.badgeName { font-family: var(--font-mono); text-transform: uppercase; font-size: var(--type-label); letter-spacing: 0.12em; line-height: 1.5; color: var(--foreground-muted); }
+
+.certsSub { display: flex; align-items: center; gap: 1.25rem; margin: 4rem auto 2rem; max-width: 46rem; font-size: var(--type-meta); color: var(--accent); }
+.certsSub::before, .certsSub::after { content: ""; flex: 1; height: 1px; background: rgb(243 243 245 / 0.14); }
+.customers { --cols: 6; --cg: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.25rem var(--cg); } /* any count, last row centred */
+.customers > .cust { width: calc((100% - (var(--cols) - 1) * var(--cg)) / var(--cols)); }
+.cust { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.custLogo { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 3px; overflow: hidden; }
+/* no approved logo yet: the customer's name set as a tile (Q20: names confirmed, logo permission still open) */
+.custLogoName { container-type: size; display: grid; place-items: center; padding: 8%; text-align: center; background: #161618; border: 1px solid rgb(243 243 245 / 0.14); }
+.custLogoName > span { font-family: var(--font-display); font-weight: 500; font-size: clamp(var(--type-min), 10cqw, 20px); line-height: 1.15; letter-spacing: -0.005em; color: var(--foreground); text-wrap: balance; }
+.custName { font-family: var(--font-mono); text-transform: uppercase; font-size: var(--type-micro); letter-spacing: 0.1em; line-height: 1.5; color: var(--foreground-muted); }
+.custTag { font-family: var(--font-mono); text-transform: uppercase; font-size: var(--type-micro); letter-spacing: 0.14em; color: var(--accent); border: 1px solid rgb(255 42 69 / 0.6); border-radius: 3px; padding: 0.6em 0.7em; text-box: trim-both cap alphabetic; }
+.certsNote { margin-top: 2rem; font-size: var(--type-body-sm); color: var(--foreground-subtle); }
+.certsIds { margin-top: 0.5rem; font-size: var(--type-body-sm); color: var(--foreground-subtle); }
+/* the veteran-owned self-description: its own ruled line, apart from the Maryland certification and the CAGE code */
+.ownership { width: fit-content; max-width: 100%; margin: 3rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgb(243 243 245 / 0.14); font-size: var(--type-meta); color: var(--foreground-muted); white-space: normal; }
+@media (width < 1200px) { .customers { --cols: 3; } }
+@media (width < 896px)  { .customers { --cols: 3; } .certsBadges { column-gap: 1.25rem; } } /* keeps the four badges on one row at tablet width */
+@media (width < 700px)  {
+  .certsBadges { gap: 1.75rem 1.25rem; }
+  .badge { width: 9.5rem; }
+  .badgeSeal { width: 6.5rem; height: 6.5rem; }
+  .customers { --cols: 2; --cg: 1rem; row-gap: 1.5rem; }
+}
+
+/* =====================================================================
+   PROCESS
+   ===================================================================== */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+.step {
+  position: relative; display: flex; flex-direction: column; overflow: clip;
+  border: 1px solid rgb(255 255 255 / 0.1); border-radius: 3px; background: rgb(255 255 255 / 0.03);
+  min-height: 19rem; padding: 1.125rem 1.25rem 1.125rem;
+}
+.stepTop { display: flex; align-items: flex-start; justify-content: space-between; }
+.stepNum { font-size: var(--type-step-number); color: var(--accent); }
+.step h3 { margin-top: 0.75rem; font-size: var(--type-card-title); line-height: 0.95; white-space: normal; }
+.step p.txt { margin-top: 0.75rem; font-size: var(--type-body-sm); line-height: var(--line-copy); color: var(--foreground-subtle); }
+.step .stats {
+  margin-top: auto; border-top: 1px solid rgb(243 243 245 / 0.12);
+  font-size: var(--type-micro); white-space: pre-wrap; line-height: 1.6;
+  color: var(--foreground-muted); padding-top: 0.875rem;
+}
+.stats .v, .plateStats .v { color: var(--accent); }
+.processSplit { max-width: 40rem; margin: 2.5rem auto 0; text-align: center; }
+@media (width < 1200px) {
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .step { min-height: 0; padding: 1.5rem; gap: 0.75rem; }
+  .step h3 { margin-top: 0; }
+  .step .stats { margin-top: 0.5rem; }
+}
+@media (width < 700px) { .steps { grid-template-columns: 1fr; gap: 0.75rem; margin-top: 2.5rem; } .process .hl, .process .eyebrow { align-items: center; justify-content: center; text-align: center; } .process .hlRow { justify-content: center; } }
+
+/* =====================================================================
+   OPEN ROLES: card fan ("currently hiring")
+   ===================================================================== */
+.jobsHead { display: grid; grid-template-columns: 1fr; justify-items: center; }
+.jobsHead .note { max-width: 32rem; margin-top: 1rem; text-align: center; }
+.fan { position: relative; container-type: inline-size; aspect-ratio: 100 / 38; margin-top: 3.5rem; }
+@media (width < 1200px) { .fan { margin-top: 3rem; } }
+.fanCard { position: absolute; left: calc(var(--l) * 1cqw); top: calc(var(--t) * 1cqw); width: calc(var(--w) * 1cqw); aspect-ratio: 236 / 316; }
+.fanCard .cardRot { width: 100%; height: 100%; rotate: var(--r); will-change: transform; } /* own layer, as the prototype's .px wrapper gave it */
+.fanCardFar { opacity: 0.5; }
+.fanCardSide { opacity: 0.82; }
+.plateStats {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem 1.6rem;
+  width: fit-content; max-width: 100%; margin: 2rem auto 0; padding: 0.75rem 1.5rem;
+  border: 1px solid rgb(255 255 255 / 0.1); border-radius: 3px; background: rgb(255 255 255 / 0.03);
+  font-size: var(--type-label); color: var(--foreground-muted);
+}
+.plateStats .pair { white-space: nowrap; }
+.jobsCta { display: flex; justify-content: center; margin-top: 2rem; }
+@media (width < 700px) {
+  .fan { aspect-ratio: 100 / 65; margin-top: 2.5rem; }
+  .fanCardFar { display: none; }
+  .fanCard { left: calc(var(--ml) * 1cqw); top: calc(var(--mt) * 1cqw); width: calc(var(--mw) * 1cqw); }
+  .fanCardSide { opacity: 0.75; }
+  .plateStats { width: 100%; padding: 0.875rem 1.125rem; gap: 0.375rem 0.875rem; white-space: normal; }
+}
+
+/* job card */
+.jobcard {
+  position: relative; width: 100%; height: 100%; overflow: hidden; container-type: size;
+  border-radius: 4px; box-shadow: var(--elevation-card);
+  background: linear-gradient(165deg, #2e2e30 0%, #19191b 55%, #111112 100%);
+  border: 1px solid rgb(243 243 245 / 0.18);
+}
+.jcIn { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 6cqw 6cqw 5cqw; }
+.jcTop { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+.jcFn { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: max(var(--type-min), 4.4cqw); color: var(--accent); }
+.jcX { display: block; flex: none; width: 5.6cqw; height: 10cqw; color: var(--foreground); --mk-fig: var(--accent); overflow: visible; }
+.jcArt { position: relative; flex: 1; margin: 4cqw 0 4cqw; border-radius: 2cqw; overflow: hidden; }
+.jcTitle { position: relative; font-family: var(--font-display); font-weight: 500; font-size: max(var(--type-min), 11cqw); line-height: 0.9; color: var(--foreground); }
+.jcMeta { margin-top: 2.5cqw; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; font-size: max(var(--type-min), 3.8cqw); color: var(--foreground-subtle); }
+.jcStats { margin-top: 3cqw; padding-top: 2.5cqw; border-top: 1px solid rgb(243 243 245 / 0.14); display: flex; justify-content: space-between; gap: 2cqw; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; font-size: max(var(--type-min), 3.4cqw); color: var(--foreground-muted); }
+.jcStats b { color: var(--accent); font-weight: 400; }
+
+/* =====================================================================
+   CAPABILITY STATEMENT: the light paper poster
+   ===================================================================== */
+.tit { padding-top: 6rem; padding-bottom: 6rem; }
+.poster { position: relative; z-index: 2; margin-inline: auto; background: var(--surface-poster); color: var(--on-poster); overflow: clip; border-radius: 3px; }
+.poster .eyebrow { color: rgb(13 13 14 / 0.72); }
+.poster .pTitle, .poster .pHead .mark { font-size: var(--type-poster-title); }
+.poster .pTitle { color: var(--on-poster); }
+.poster .pHead .mark { color: var(--accent); text-shadow: none; }
+.poster .pCard .cardRot { width: 100%; height: 100%; rotate: 4.54deg; }
+.poster .pCard .cardArt { position: relative; width: 100%; height: 100%; border-radius: 4px; overflow: hidden; box-shadow: var(--elevation-card); }
+.poster .points { display: flex; flex-direction: column; gap: 1.5rem; }
+.poster .points li { display: flex; align-items: flex-start; gap: 1rem; }
+.poster .points .bul { flex: none; width: 6px; height: 6px; margin-top: 0.5rem; border-radius: 50%; background: var(--accent); }
+.poster .points p { font-size: var(--type-poster-copy); line-height: var(--line-poster); color: rgb(13 13 14 / 0.85); }
+.poster .pMeta { font-size: var(--type-poster-meta); color: rgb(13 13 14 / 0.7); white-space: pre; }
+.poster .pMeta .v { color: var(--on-poster); } /* dark, not red: small red text cannot reach 4.5:1 on a light surface */
+
+/* desktop: absolute composition on the 860-wide poster */
+@media (width >= 1200px) {
+  .poster { width: 53.75rem; height: 50rem; }
+  .poster .pHead { display: contents; }
+  .poster .pTitle, .poster .pHead .mark { font-size: var(--type-poster-title); }
+  .poster .eyebrow { position: absolute; top: 3.5rem; left: 3.625rem; }
+  .poster .pTitle { position: absolute; top: 5.75rem; left: 3.625rem; }
+  .poster .pHead .mark { position: absolute; top: 9.75rem; left: 3.625rem; }
+  .poster .pCard { position: absolute; top: 14rem; left: 27rem; width: 22rem; height: 29.75rem; }
+  .poster .points { position: absolute; top: 15rem; left: 3.625rem; width: 20rem; }
+  .poster .pCta { position: absolute; top: 37.5rem; left: 3.625rem; }
+  .poster .pMeta { position: absolute; top: 44.5rem; left: 3.625rem; }
+}
+/* compact: auto-layout column */
+@media (width < 1200px) {
+  .tit { padding-top: 4rem; padding-bottom: 4rem; }
+  .poster { width: 100%; max-width: 48.8rem; display: flex; flex-direction: column; gap: 1.5rem; padding: 2.25rem; }
+  .poster .pHead { display: flex; flex-direction: column; gap: 0.75rem; }
+  .poster .pCard { width: 70%; max-width: 24rem; aspect-ratio: 396 / 536; margin-inline: auto; }
+  .poster .points { gap: 1.25rem; }
+}
+@media (width < 700px) { .poster { padding: 1.375rem; } .poster .pCard { width: 15.6rem; } .poster .pHead { align-items: center; text-align: center; } }
+
+/* =====================================================================
+   ON THE RECORD: stat placards + ledger with stamps
+   ===================================================================== */
+.stickers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.stkIn {
+  position: relative; display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 0.875rem;
+  height: 100%; padding: 1.125rem 1.25rem 1.125rem;
+  border: 1px solid rgb(255 255 255 / 0.1); border-radius: 3px; background: rgb(255 255 255 / 0.03);
+}
+.stkLbl { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; font-size: var(--type-micro); line-height: 1.5; color: var(--foreground-subtle); white-space: normal; }
+.stkVal { font-family: var(--font-display); font-weight: 500; font-size: var(--type-stat); line-height: 0.85; color: var(--foreground); white-space: nowrap; }
+.stkAccent .stkVal { color: var(--accent); }
+/* ring sticker markup has the value before the label: same order as the rest */
+.stkRing .stkIn { flex-direction: column; }
+@media (width < 1200px) { .stickers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (width < 700px) { .stickers { gap: 0.75rem; margin-top: 2rem; } .stkIn { padding: 1.125rem; } }
+
+.ledger { width: 100%; margin-top: 3rem; border-top: 1px solid rgb(243 243 245 / 0.14); }
+.ledger li { position: relative; display: grid; grid-template-columns: 9.75rem 1fr auto 9rem; align-items: center; column-gap: 1.25rem; min-height: 3.75rem; border-bottom: 1px solid rgb(243 243 245 / 0.14); }
+.lgDate { font-size: var(--type-row-date); color: var(--accent); }
+.lgTitle { font-family: var(--font-sans); text-transform: none; letter-spacing: 0; font-size: var(--type-body); font-weight: 500; color: var(--foreground); white-space: normal; line-height: 1.35; }
+.lgRef { font-size: var(--type-label); color: var(--foreground-subtle); }
+.lgStampBox { justify-self: center; rotate: none !important; }
+.lgStamp {
+  display: block; border-radius: 3px; border: 1px solid rgb(255 42 69 / 0.7); padding: 0.575em 0.8em; text-box: trim-both cap alphabetic;
+  font-family: var(--font-mono); font-weight: 500;
+  letter-spacing: 0.14em; font-size: var(--type-stamp); line-height: 1; color: var(--accent);
+}
+@media (width < 1200px) {
+  .ledger li { grid-template-columns: 7.5rem 1fr auto auto; padding-block: 1.25rem; }
+}
+@media (width < 896px) { .ledger li { grid-template-columns: 6.25rem 1fr auto; } .lgRef { display: none; } }
+@media (width < 700px) {
+  .ledger { margin-top: 2.5rem; }
+  .ledger li { grid-template-columns: 1fr auto; row-gap: 0.625rem; padding-block: 1.125rem; }
+  .lgTitle { grid-column: 1 / -1; grid-row: 2; }
+  .lgStampBox { grid-column: 2; grid-row: 1; justify-self: end; }
+}
+
+/* =====================================================================
+   FAQ
+   ===================================================================== */
+.faq { display: grid; grid-template-columns: minmax(0, 1fr) 27rem; gap: 3rem; align-items: start; }
+.faqLeft { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1.5rem; }
+.faqLeft .hl { font-size: var(--type-display-sm); }
+.faqLeft .note { width: 20rem; margin-top: 0.5rem; }
+.faqLeft .note p { font-size: var(--type-body-sm); color: var(--foreground-muted); }
+.acc { position: relative; z-index: 1; border-top: 1px solid rgb(243 243 245 / 0.14); }
+.acc details { border-bottom: 1px solid rgb(243 243 245 / 0.14); }
+.acc summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; list-style: none; padding: 1.125rem 0.125rem 1.125rem 0; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc details[open] summary { padding-bottom: 0.625rem; }
+.acc summary { cursor: pointer; }
+.acc summary:hover .q, .acc summary:focus-visible .q { color: var(--accent); }
+.acc .q { flex: 1; font-family: var(--font-sans); text-transform: none; letter-spacing: 0; font-size: var(--type-body); font-weight: 500; color: var(--foreground); white-space: normal; line-height: 1.35; }
+.acc .ico { flex: none; width: 0.875rem; height: 0.875rem; color: var(--accent); }
+.acc .ico .minus { display: none; }
+.acc details[open] .ico .plus { display: none; }
+.acc details[open] .ico .minus { display: block; }
+.acc .a:has(+ .aTags) { padding-bottom: 0.75rem; }
+.aTags { display: flex; flex-wrap: wrap; gap: 0.4rem; max-width: 25rem; padding-bottom: 1.25rem; list-style: none; }
+.aTags li { padding: 0.35rem 0.7rem 0.4rem; border-radius: 999px; border: 1px solid rgb(243 243 245 / 0.22); font-size: var(--type-fine); line-height: 1.2; color: var(--foreground-soft); }
+.acc .a { width: 25rem; max-width: 100%; padding-bottom: 1.25rem; font-size: var(--type-body-sm); line-height: var(--line-copy); color: var(--foreground-subtle); }
+@media (width < 1200px) { .faq { grid-template-columns: 25rem minmax(0, 1fr); gap: 3rem; } }
+@media (width < 896px)  { .faq { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } .faqLeft { align-items: center; text-align: center; } .faqLeft .hl { align-items: center; } .faqLeft .hlRow { justify-content: center; } .faqLeft .eyebrow { justify-content: center; } }
+@media (width < 700px)  { .faqLeft .note { width: 100%; } }
+
+/* =====================================================================
+   CONTACT (Join) + FOOTER
+   ===================================================================== */
+.joinWrap { position: relative; overflow: clip; background: var(--background); }
+.join { padding-bottom: 4rem; }
+.joinCard { position: absolute; top: 11rem; right: 3rem; width: 15rem; height: 20rem; z-index: 2; }
+.joinCard .cardRot { width: 100%; height: 100%; rotate: 6deg; }
+.joinCard .cardArt { position: relative; width: 100%; height: 100%; border-radius: 4px; overflow: hidden; box-shadow: var(--elevation-card); }
+.joinForm { display: flex; align-items: center; gap: 0.75rem; margin-top: 2.5rem; }
+.joinForm input {
+  width: 32.5rem; height: 3.25rem; padding: 0 1.25rem; border-radius: 3px;
+  border: 1px solid rgb(255 255 255 / 0.4); background: rgb(255 255 255 / 0.03); /* 3:1 against the page (WCAG 1.4.11) */
+  font-family: var(--font-sans); font-size: var(--type-body); color: var(--foreground);
+}
+.joinFormReq { display: grid; grid-template-columns: 1fr 1fr; max-width: 46rem; }
+.joinForm.joinFormReq input { width: 100%; min-width: 0; }
+@media (width < 896px) { .joinFormReq { grid-template-columns: 1fr; max-width: calc(100% - 17rem); } } /* leaves the photo card its room */
+@media (width < 700px) { .joinFormReq { max-width: none; } }
+.joinForm input:hover:not(:focus) { border-color: rgb(255 255 255 / 0.65); }
+.joinForm input::placeholder { color: var(--foreground-subtle); }
+.joinForm input[aria-invalid="true"] { border-color: var(--accent); }
+.joinForm button.btn { border: 0; cursor: pointer; }
+.joinMsg { margin-top: 0.75rem; font-size: var(--type-body-sm); line-height: 1.5; color: var(--foreground-muted); }
+.joinMsg[data-state="error"] { color: var(--accent); }
+.joinMsg[hidden] { display: none; }
+.joinForm input:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.joinFine { margin-top: 1.5rem; font-size: var(--type-fine); color: var(--foreground-subtle); white-space: pre-wrap; line-height: 1.7; }
+@media (width < 1200px) {
+  .joinCard { top: 13rem; right: 1.5rem; width: 18.75rem; height: 25rem; }
+  .joinForm input { width: 22.5rem; }
+  .joinFine { max-width: calc(100% - 21rem); } /* keep the contact lines clear of the photo card */
+}
+@media (width < 896px)  { .joinForm { flex-direction: column; align-items: flex-start; gap: 1rem; } .joinCard { width: 15rem; height: 20rem; top: 14rem; } .joinFine { max-width: calc(100% - 17rem); } }
+@media (width < 700px)  { .joinCard { display: none; } .joinFine { max-width: none; } .joinForm { align-items: stretch; } .joinForm input { width: 100%; } .join .btn { width: 100%; justify-content: space-between; } .join .hl { align-items: center; text-align: center; } .join .hlRow { justify-content: center; } .join .eyebrow { justify-content: center; } }
+
+/* the job cards are examples, not openings: say so on every card; on the small cards of tablet and phone the label stands alone */
+.jcEx::before { content: " · "; }
+@media (width < 896px) { .jcFnName { display: none; } .jcEx::before { content: ""; } }
+
+/* the poster's one-line meta can be wider than the poster on phones */
+@media (width < 700px) { .poster .pMeta { white-space: normal; } }

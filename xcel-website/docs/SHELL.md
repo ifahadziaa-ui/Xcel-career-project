@@ -66,5 +66,5 @@ Page contract (optional attributes on a page's elements): `data-chat-hero` keeps
 
 ## Known interim state
 
-- `/` still renders the old VESSEL placeholder hero, which has its own header; the new fixed bar overlaps it, and the chat launcher overlaps the hero's placard because the hero does not set `data-chat-hero`. Both go away when the hero is migrated.
 - The `<Link href="/">` in the header prefetches the home route, so on other routes the browser logs a "preloaded but not used" notice for the hero's stylesheet. Harmless.
+- (Resolved in Stage 3: the old VESSEL hero and its own header are gone, and the hero sets `data-chat-hero`.)
