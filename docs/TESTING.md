@@ -107,6 +107,18 @@ Use `Input.dispatchMouseEvent` (`mouseMoved`, `mousePressed`, `mouseReleased`) f
 
 **Form and launcher.** Click `#join-form .btn` with an empty, a malformed and a valid email: `aria-invalid`, `#join-msg` text and `role`, and no network request. For the launcher read `getComputedStyle(.xc-launch).opacity`: 1 when idle past the hero, 0 while scrolling, 1 again about 1 s after the last scroll.
 
+## 4a. Pitfalls found in practice
+
+- **Unrevealed elements** measure as contrast 1.00 and as overflow. Add `is-in` to every `[data-r]`, scroll the whole page in steps, and wait for the rotated record stamps (up to ~8 s) before measuring; their entrance animation scales them 2.1x.
+- **A stale viewport.** After a navigation the DevTools metrics override can reset; if `documentElement.scrollWidth` equals the default window width (1440), re-apply `Emulation.setDeviceMetricsOverride` and re-measure.
+- **Never `pkill -f <pattern>`** or `pgrep -f` with a pattern that also appears in your own command: it kills the shell (exit 144). Use a bracket trick (`[j]g2.py`) or kill by PID.
+- **Enter on a button** needs `text: "\r"` in `Input.dispatchKeyEvent`, or the click never fires.
+- **`:focus` does not match a `type=date` host** in Chromium; use `:focus-within`.
+- **MP4 and WebM** both report playable in the bundled Chromium 1254 (`canPlayType`), so the main reel (MP4 only) plays there; this says nothing about Safari.
+- **Justified text:** to check gaps, lay the paragraph out in a hidden copy with the same font, width and `text-align: justify`, then measure each space with a `Range`; compare with the left-aligned space width (see `js/justify.js`).
+- **The helper scripts (`cdp.py`, `mn.py`) live in the session scratchpad** and are lost between sessions; recreate them from §2 and §3.
+- Two servers can run side by side: `landing-prototype/serve.py` on 3200 and `landing-prototype-clean/serve.py` on 3201. Both clients use port 9333 (Chromium) or 2828 (Firefox), so run one test at a time.
+
 ## 5. What these tests cannot tell you
 
 Real-GPU smoothness, trackpad and touch gestures, Safari, screen readers, and the user's reported black closing-frame background in Chrome (it does not reproduce in either headless browser; see the status doc §4).

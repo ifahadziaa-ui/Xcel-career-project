@@ -4,7 +4,7 @@
 >
 > Related: [docs/LANDING-PROTOTYPE-GUIDE.md](docs/LANDING-PROTOTYPE-GUIDE.md), [docs/TESTING.md](docs/TESTING.md), [docs/ACCESSIBILITY.md](docs/ACCESSIBILITY.md), [docs/BACKEND-HANDOFF.md](docs/BACKEND-HANDOFF.md).
 >
-> **Last updated:** 14 Nov 2026 (media pass added: stock photos, looping videos, customer tiles; see §5). **Branch:** `landing-prototype-merged` = `main` (second pass: shorter showreel ending, nine inner pages, candidate sign-in) merged with `landing-prototype-completion` (this plan's work). `main`'s functional content wins; the completion decisions below are applied on top of it, including on the inner pages.
+> **Last updated:** 14 Nov 2026 (media pass; copy diet and justified-text rule; chat-launcher and FAQ-tag fixes; content-cleaned copy `landing-prototype-clean/`; see §2, §5 and [docs/CLEAN-COPY.md](docs/CLEAN-COPY.md)). Claim status is in [docs/CLAIMS-REGISTER.md](docs/CLAIMS-REGISTER.md). **Branch:** `landing-prototype-merged` = `main` (second pass: shorter showreel ending, nine inner pages, candidate sign-in) merged with `landing-prototype-completion` (this plan's work). `main`'s functional content wins; the completion decisions below are applied on top of it, including on the inner pages.
 
 Tags used below: **[C]** confirmed requirement (a document or the user states it) · **[I]** reasonably implied · **[R]** a recommendation made during the work · **[D]** a decision the user made.
 
@@ -39,6 +39,9 @@ Tags used below: **[C]** confirmed requirement (a document or the user states it
 | White line during the hero transition | Dropped (judged to come from the user's setup). |
 | Black closing-frame background in the user's Chrome | Left alone for now (see §4). The closing scene was redesigned on `main` (no 3D flight); its gradient keeps its own canvas and a CSS fallback. Needs a re-check on a real GPU. |
 | Merge (14 Nov 2026) | Pause toggle, reduced motion, 11 px floor, one red, graphite on red, scroll padding and arrow-key vertical snap also apply to the inner pages' shared bar (`js/site.js`) and the new closing scene. The "Now staffing" status hides below 896 px to make room for the toggle and Sign in. Inner-page forms got 3:1 field borders, hover and a visible focus ring (also on the date field), the "optional" label reaches 4.5:1, and the job chips, save buttons, links and login tabs got hover states. Checked: no overflow or sub-11 px text on all ten pages at 1400, 768 and 390 px; contrast clean apart from the footer logotype; keyboard walk finds no focus hidden under the bar or launcher on jobs, contact and healthcare. |
+| Copy length and alignment (14 Nov 2026) | Copy cut about 42 % (one idea per block); body text is left-aligned by default and justified only where `js/justify.js` measures every word gap at 1.35x or less. Applies to inner pages and the chat too. |
+| Content cleanup (14 Nov 2026) | Done in a separate copy, `landing-prototype-clean/`, not in the original: unsupported or misleading content removed, claims reworded to the client's own words, honest form and chat states. See [docs/CLEAN-COPY.md](docs/CLEAN-COPY.md) and [docs/CLAIMS-REGISTER.md](docs/CLAIMS-REGISTER.md). |
+| Customers | Names as text per brief §1.9; logos and NGA withheld in the clean copy (the original still shows three logos and NGA). Naming approval for the agencies and companies is still a client question. |
 
 ## 3. Plan and progress
 
@@ -50,18 +53,23 @@ Tags used below: **[C]** confirmed requirement (a document or the user states it
 | 3 | Type scale and 11 px floor, one red | Done |
 | 4 | WCAG 2.1 AA + 2.4.11 + 2.5.8, pause toggle, reduced motion | Done |
 | 5 | Adaptive resolution, browser review (Chrome, Safari) | Done; Chrome closing-frame fixes added |
-| 6 | Placeholder register; decisions on sample jobs, "(to confirm)" badge, NGA, testimonial and leadership slots | **Open** |
-| 7 | Documentation | This update; refresh after phase 6 |
+| 6 | Placeholder register; decisions on sample jobs, "(to confirm)" badge, NGA, testimonial and leadership slots | Left open by the user (14 Nov 2026). The content decisions were then applied in `landing-prototype-clean/` (sample jobs labelled "Example", NGA and logos withheld, no testimonial slot, leadership as initials). The original prototype is unchanged. |
+| 7 | Documentation | Refreshed 14 Nov 2026 (new: CLEAN-COPY, CLAIMS-REGISTER, MIGRATION-ASSESSMENT) |
 | 8 | Final check against §6 | **Open** |
 
 ## 4. Known issues and limits
 
 - **Closing-frame background is flat black in the user's Chrome**, from the first frame. It was already present on `main`, and does not reproduce in headless Firefox or headless Chromium (software GL). Undiagnosed; likely GPU, driver or extension. The gradient now has its own canvas and a CSS fallback in case WebGL cannot draw it.
 - Smoothness of the card parallax, the sphere dive and the showreel on a real GPU has not been confirmed.
+- The 14 Nov FAQ-tag and launcher fixes are uncommitted in `landing-prototype/`; the clean copy contains them.
+- The main reel is now an abstract particle clip (MP4 only). It plays in headless Chromium; whether to keep it or use real footage is undecided.
+- Inner pages: see [site-research/INNER-PAGES-AUDIT.md](site-research/INNER-PAGES-AUDIT.md) (no media on any page, Government H1 clipped on phones in the clean copy, example roles that reintroduce withheld clinical titles, heading skips, contact tabs without arrow keys).
 - Not verified: a real trackpad and touch screen, Safari, screen readers, and the contrast of showreel text over its gradients.
 - The pinned stage uses `100vh`, which can jump on iOS Safari as the address bar shows and hides.
 
 ## 5. Placeholder register (to be finalized in phase 6)
+
+> **Superseded for the clean copy.** The register below describes the original `landing-prototype/` as of 13 Nov. In `landing-prototype-clean/` the stock photos, clips and customer name tiles are in; logos, NGA, the capability PDF and the visible internal labels are gone; the remaining slots (recruiter slide, capability cover, contact photo, leadership headshots) are quiet mark panels. Current status of each claim: [docs/CLAIMS-REGISTER.md](docs/CLAIMS-REGISTER.md). Outstanding assets and client questions: `landing-prototype-clean/VERIFICATION-REPORT.md` §G.
 
 | Placeholder | Shown now | Replace with | Depends on |
 |---|---|---|---|

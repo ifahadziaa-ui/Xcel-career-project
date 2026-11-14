@@ -1,0 +1,396 @@
+/* =====================================================================
+   XcelCareers landing prototype: shared base
+   - Hero fonts (same as the Next app)
+   - Prompt 2 ("HELD-MINT") tokens, used by every section below the showreel
+   - Placeholder style for images and videos the client will supply
+   ===================================================================== */
+
+/* ---------- reset (Tailwind v4 preflight equivalent, as both prompts use) ---------- */
+*, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; }
+h1, h2, h3, h4, p { font-size: inherit; font-weight: inherit; }
+ol, ul { list-style: none; }
+a { color: inherit; text-decoration: inherit; }
+img, svg, picture, video, canvas { display: block; max-width: 100%; }
+button, input { background: none; font: inherit; color: inherit; }
+button, summary { cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: clip; }
+
+/* ---------- hero font variables (Next exposed these via next/font) ---------- */
+:root {
+  --font-geist-mono: "Geist Mono";
+  --font-mona-sans: "Mona Sans";
+}
+
+/* ---------- XcelCareers palette: taken from the hero (hero.css) ----------
+   graphite room #101012, silver spotlight #c6c6c6, ink #f3f3f5, signal red #ff2a45.
+   Prompt 2's token names are kept; only the values changed. */
+:root {
+  --raw-color-ink-1000: #0a0a0b;
+  --raw-color-ink-975: #0d0d0e;
+  --raw-color-ink-950: #101012;   /* hero background */
+  --raw-color-ink-900: #131314;
+  --raw-color-ink-850: #1d1d1e;   /* hero spotlight, outer ring */
+  --raw-color-paper-50: #f3f3f5;  /* hero headline ink */
+  --raw-color-paper-200: #d0d0d2; /* hero logo silver */
+  --raw-color-slate-200: #c2c2c5; /* hero placard value */
+  --raw-color-slate-250: #b7b7b9;
+  --raw-color-slate-400: #919194; /* hero nav */
+  --raw-color-red-500: #ff2a45;   /* hero signal red */
+  --raw-color-white: #ffffff;
+
+  --background: var(--raw-color-ink-950);
+  --foreground: var(--raw-color-paper-50);
+  --foreground-muted: var(--raw-color-slate-200);
+  --foreground-soft: var(--raw-color-slate-250);
+  --foreground-subtle: var(--raw-color-slate-400);
+  --surface: var(--raw-color-ink-850);
+  --surface-inverse: var(--raw-color-paper-50);
+  --surface-poster: var(--raw-color-paper-50); /* lighter paper so the red accent reads better (WCAG) */
+  --on-inverse: var(--raw-color-ink-1000);
+  --on-poster: var(--raw-color-ink-975);
+  --accent: var(--raw-color-red-500);
+  --border-strong: var(--raw-color-white);
+
+  --header-scrim: radial-gradient(110.46% 100% at 50% 0%, rgb(16 16 18 / 1) 0%, rgb(16 16 18 / 0) 100%);
+  --elevation-card: 0.5rem 0.875rem 1.5rem 0 rgb(0 0 0 / 0.35);
+  --elevation-wire: 0.5rem 0.75rem 0.625rem rgb(0 0 0 / 0.4);
+
+  /* One type system for the whole site, taken from the hero:
+     Mona Sans condensed black for headlines, Geist Mono for labels and nav,
+     Mona Sans for running text. */
+  --font-sans: "Zen Kaku Gothic New", sans-serif;
+  --font-display: "Zen Kaku Gothic New", sans-serif;
+  --font-mono: "Zen Kaku Gothic New", sans-serif;
+  --font-bar: "Geist Mono", ui-monospace, monospace; /* the hero's top bar keeps its own mono */
+
+  /* type scale (design px / 16), desktop frame 1400 */
+  --type-ghost-xl: 23.75rem;
+  --type-ghost-lg: 22.5rem;
+  --type-ghost-md: 20.625rem;
+  --type-ghost-sm: 18.75rem;
+  --type-wordmark: 21.0625rem;
+  --type-script-xl: 10.625rem;
+  --type-script-lg: 9.5625rem;
+  --type-script-md: 9.375rem;
+  --type-script-sm: 8rem;
+  --type-script-xs: 7.625rem;
+  --type-display: 9.375rem;
+  --type-display-sm: 7.5rem;
+  --type-step-number: 7.5rem;
+  --type-stat-lg: 8.75rem;
+  --type-stat: 8.125rem;
+  --type-stat-ring: 9.375rem;
+  --type-poster-title: 8.25rem;
+  --type-statement: 3.625rem;
+  --type-card-title: 2.625rem;
+  --type-footer-logo: 2.5rem;
+  --type-eyebrow: 2.125rem;
+  --type-eyebrow-sm: 1.875rem;
+  --type-bracket: 1.875rem;
+  --type-button: 1.625rem;
+  --type-row-title: 1.625rem;
+  --type-stamp: 1.625rem;
+  --type-logo: 1.625rem;
+  --type-row-date: 1.375rem;
+  --type-poster-meta: 1.375rem;
+  --type-footer-link: 1.375rem;
+  --type-button-sm: 1.25rem;
+  --type-plate: 1.25rem;
+  --type-meta: 1.125rem;
+  --type-nav: 1.125rem;
+  --type-fine: 1.0625rem;
+  --type-column: 1rem;
+  --type-legal: 0.9375rem;
+  --type-body: 1rem;
+  --type-caption: 0.9375rem;
+  --type-body-sm: 0.875rem;
+  --type-poster-copy: 0.875rem;
+
+  --line-copy: 1.5;
+  --line-statement: 0.94;
+  --line-row: 1.12;
+  --line-meta: 1.3;
+  --line-poster: 1.55;
+
+  --letter-row: 0.03em;
+  --letter-nav: 0.06em;
+  --letter-address: 0.08em;
+  --letter-caps: 0.1em;
+  --letter-caps-wide: 0.12em;
+  --letter-column: 0.16em;
+
+  --corner-plate: 0.625rem;
+  --corner-sticker: 0.875rem;
+  --corner-card: 1.25rem;
+  --corner-art-tilt: 0.875rem;
+
+  --duration-hover: 250ms;
+  --ease-entrance: cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (width < 1200px) {
+  :root {
+    --type-ghost-lg: 17.5rem; --type-ghost-md: 16.25rem; --type-ghost-sm: 15rem;
+    --type-wordmark: 15.5rem;
+    --type-script-xl: 6.625rem; --type-script-lg: 6.125rem; --type-script-md: 6rem;
+    --type-script-sm: 6rem; --type-script-xs: 5.125rem;
+    --type-display: 6rem; --type-display-sm: 5rem;
+    --type-step-number: 5.5rem;
+    --type-stat-lg: 5.75rem; --type-stat: 5.75rem; --type-stat-ring: 6.3125rem;
+    --type-poster-title: 6rem;
+    --type-statement: 2.75rem;
+    --type-card-title: 2.125rem;
+    --type-footer-logo: 2.25rem;
+    --type-eyebrow: 1.75rem; --type-eyebrow-sm: 1.75rem;
+    --type-button: 1.5rem; --type-row-title: 1.5rem;
+    --type-stamp: 1.375rem; --type-row-date: 1.3125rem;
+    --type-poster-meta: 1.25rem; --type-footer-link: 1.25rem;
+    --type-button-sm: 1.125rem; --type-nav: 1.0625rem;
+    --type-fine: 1.125rem; --type-column: 1.125rem; --type-legal: 1.125rem;
+    --type-body: 0.9375rem; --type-body-sm: 0.9375rem;
+    --type-poster-copy: 1.125rem;
+    --line-statement: 0.96;
+    --line-poster: 1.5;
+    --elevation-wire: 0.375rem 0.625rem 0.625rem rgb(0 0 0 / 0.4);
+  }
+}
+@media (width < 896px) {
+  :root {
+    --corner-art-tilt: 0.6875rem;
+    --type-ghost-lg: 13.75rem; --type-ghost-md: 12.5rem; --type-ghost-sm: 11.875rem;
+    --type-wordmark: 11.625rem;
+    --type-script-xl: 4.9375rem; --type-script-lg: 4.5625rem; --type-script-md: 4.5rem;
+    --type-script-sm: 4.5rem; --type-script-xs: 4.5625rem;
+    --type-display: 4.5rem; --type-display-sm: 4.5rem;
+    --type-step-number: 5rem;
+    --type-stat-lg: 4rem; --type-stat: 4rem; --type-stat-ring: 4.375rem;
+    --type-poster-title: 4.5rem;
+    --type-statement: 2.375rem;
+    --type-card-title: 2rem;
+    --type-eyebrow: 1.625rem; --type-eyebrow-sm: 1.625rem;
+    --type-button: 1.375rem; --type-row-title: 1.375rem;
+    --type-row-date: 1.25rem; --type-poster-meta: 1.1875rem;
+    --type-plate: 1.1875rem; --type-meta: 1.0625rem;
+    --type-fine: 1.0625rem; --type-column: 1.0625rem; --type-legal: 1.0625rem;
+    --type-poster-copy: 1rem;
+  }
+}
+@media (width < 700px) {
+  :root {
+    --corner-art-tilt: 0.375rem;
+    --type-wordmark: 5.875rem;
+    --type-script-xl: 3.3125rem; --type-script-lg: 3.0625rem; --type-script-md: 3rem;
+    --type-script-sm: 3rem; --type-script-xs: 3.0625rem;
+    --type-display: 3rem; --type-display-sm: 3rem;
+    --type-step-number: 4.5rem;
+    --type-stat-lg: 3.375rem; --type-stat: 3.375rem; --type-stat-ring: 3.6875rem;
+    --type-poster-title: 3rem;
+    --type-statement: 1.875rem;
+    --type-card-title: 1.875rem;
+    --type-footer-logo: 2rem;
+    --type-eyebrow: 1.375rem; --type-eyebrow-sm: 1.375rem;
+    --type-button: 1.25rem; --type-row-title: 1.25rem;
+    --type-stamp: 1.25rem; --type-row-date: 1.125rem;
+    --type-poster-meta: 1.0625rem; --type-footer-link: 1.125rem;
+    --type-plate: 1.0625rem; --type-meta: 0.9375rem;
+    --type-fine: 0.9375rem; --type-column: 0.9375rem; --type-legal: 0.9375rem;
+    --type-poster-copy: 0.9375rem;
+  }
+}
+
+/* Type scale for everything below the hero (the hero and showreel size themselves).
+   One set of tokens, set after the breakpoint blocks above so it wins at every width. */
+:root {
+  --type-display: 4.5rem;
+  --type-display-sm: 3.5rem;
+  --type-step-number: 3.5rem;
+  --type-stat-lg: 3.5rem;
+  --type-stat: 3.5rem;
+  --type-poster-title: 4.25rem;
+  --type-card-title: 1.75rem;
+  --type-wordmark: 13rem;
+  --type-meta: max(0.8125rem, var(--type-min));
+  --type-nav: max(0.8125rem, var(--type-min));
+  --type-plate: max(0.8125rem, var(--type-min));
+  --type-fine: max(0.8125rem, var(--type-min));
+  --type-column: max(0.75rem, var(--type-min));
+  --type-legal: max(0.75rem, var(--type-min));
+  --type-row-date: max(0.8125rem, var(--type-min));
+  --type-poster-meta: max(0.8125rem, var(--type-min));
+  --type-button: max(0.8125rem, var(--type-min));
+  --type-button-sm: max(0.75rem, var(--type-min));
+  --type-stamp: max(0.75rem, var(--type-min));
+  --type-eyebrow: max(0.8125rem, var(--type-min));
+  --type-eyebrow-sm: max(0.8125rem, var(--type-min));
+  --type-body: 1rem;
+  --type-body-sm: 0.9375rem;
+  --type-caption: 0.9375rem;
+  --type-poster-copy: 0.9375rem;
+  /* text floor: nothing below the hero is set smaller than this, at any viewport
+     (rem tracks the viewport width, so a bare rem value can fall below it on small phones) */
+  --type-min: 11px;
+  --type-micro: max(0.6875rem, var(--type-min));
+  --type-label: max(0.75rem, var(--type-min));
+  --type-heading: 2.5rem;
+  --type-badge: 2.5rem;
+}
+@media (width < 1200px) {
+  :root {
+    --type-heading: 2.125rem;
+    --type-display: 3.75rem; --type-display-sm: 3rem; --type-step-number: 3rem;
+    --type-stat: 3rem; --type-poster-title: 3.5rem; --type-card-title: 1.625rem; --type-wordmark: 9rem;
+    --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.9375rem;
+  }
+}
+@media (width < 896px) {
+  :root { --type-display: 3.25rem; --type-display-sm: 2.75rem; --type-poster-title: 3rem; --type-stat: 2.75rem; --type-wordmark: 7rem; }
+}
+@media (width < 700px) {
+  :root {
+    --type-heading: 1.625rem;
+    --type-display: 2.5rem; --type-display-sm: 2.25rem; --type-step-number: 2.75rem;
+    --type-stat: 2.5rem; --type-poster-title: 2.25rem; --type-card-title: 1.5rem; --type-wordmark: 4rem;
+    --type-body: 0.9375rem; --type-body-sm: 0.875rem; --type-caption: 0.875rem; --type-poster-copy: 0.875rem;
+  }
+}
+
+/* Root font-size tracks the viewport, so each Prompt 2 frame renders 1:1 at its
+   reference width (1400 / 1024 / 768 / 390). The hero and the showreel do not use rem. */
+html { font-size: 1.142857vw; }
+@media (width < 1200px) { html { font-size: 1.5625vw; } }
+@media (width < 896px)  { html { font-size: 2.083333vw; } }
+@media (width < 700px)  { html { font-size: min(4.102564vw, 19.2px); } }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+main { position: relative; overflow-x: clip; }
+
+.type-display {
+  font-family: var(--font-display); font-weight: 500;
+  white-space: nowrap; line-height: 0.95; letter-spacing: -0.03em;
+}
+.type-caps {
+  font-family: var(--font-mono); font-weight: 500; text-transform: uppercase;
+  white-space: nowrap; line-height: 1.3; letter-spacing: 0.1em;
+}
+
+/* =====================================================================
+   PLACEHOLDERS: every image / video slot the client will supply.
+   The big label says exactly what goes there.
+   ===================================================================== */
+.ph {
+  --ph-a: rgb(255 255 255 / 0.05);
+  --ph-b: rgb(255 255 255 / 0.015);
+  --ph-line: rgb(255 255 255 / 0.35);
+  --ph-ink: #ffffff;
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 8%;
+  overflow: hidden;
+  text-align: center;
+  color: var(--ph-ink);
+  background:
+    repeating-linear-gradient(135deg, var(--ph-a) 0 14px, var(--ph-b) 14px 28px),
+    var(--ph-bg, #161618);
+}
+.ph::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px dashed var(--ph-line);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.ph > * { position: relative; z-index: 1; }
+.ph .ph-tag {
+  font: 400 clamp(var(--type-min), 3.6cqmin, 12px)/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-box: trim-both cap alphabetic;
+  padding: 0.55em 0.9em;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.85;
+}
+.ph .ph-what {
+  font: 500 clamp(13px, 9cqmin, 64px)/0.95 var(--font-display);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.ph .ph-note {
+  font: 400 clamp(var(--type-min), 3.6cqmin, 14px)/1.35 var(--font-sans);
+  opacity: 0.7;
+  max-width: 30ch;
+}
+/* video slots get a slow moving sheen so they read as motion, not a still */
+.ph--video { --ph-bg: #111112; }
+.ph--video::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(closest-side, rgb(255 255 255 / 0.10), transparent 70%);
+  animation: ph-drift 7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes ph-drift {
+  from { transform: translate(-22%, -12%); }
+  to   { transform: translate(22%, 14%); }
+}
+.ph--light { --ph-bg: #dcdcde; --ph-a: rgb(0 0 0 / 0.05); --ph-b: rgb(0 0 0 / 0.015); --ph-line: rgb(0 0 0 / 0.35); --ph-ink: #131314; }
+.ph--steel { --ph-bg: #2a2a2c; --ph-line: rgb(255 255 255 / 0.4); }
+.ph--red { --ph-bg: #3a0a12; --ph-line: rgb(255 42 69 / 0.6); }
+.ph--top { justify-content: flex-start; padding-top: 18%; }
+/* a real photo in a slot: no hatching, no dashed frame */
+.ph--img { padding: 0; background: #161618; }
+.ph--img::after { display: none; }
+.ph--img > img, .ph--img > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ph--video::before { animation: none; }
+}
+
+/* ---------- body copy: one measure, justified only where it fits ----------
+   Short paragraphs justify badly: with two or three lines the one full line is stretched
+   (word gaps of 2x to 7x in cards, steps and showreel text). So body copy is left-aligned
+   with balanced line ends, and js/justify.js adds .just-fit to a paragraph only when, at
+   its current width, no gap grows past 1.35x the normal space. Flush on both edges,
+   hyphenated (needs <html lang="en">), last line left. Codes, IDs and phone numbers can sit
+   in <span class="nb"> so a hyphen never splits them. Do not put data-m="copy" on a
+   candidate: the line-splitting reveal would break justification and hyphenation. */
+:root { --measure: 56ch; }
+.pg-intro, .pg-lead, .acc .a { text-wrap: pretty; overflow-wrap: break-word; }
+.just-fit {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+}
+.nb { white-space: nowrap; hyphens: none; }
+
+/* a slot still waiting for its photo: graphite (or paper) with the brand mark, no label or internal note */
+.ph--quiet { background: linear-gradient(160deg, #1d1d20, #101012); }
+.ph--quiet.ph--light { background: linear-gradient(160deg, #e9e9eb, #d2d2d5); --ph-ink: #131314; }
+.ph--quiet::after { display: none; }
+.ph--quiet .ph-mark { height: 34%; width: auto; aspect-ratio: 1.1 / 1.95; color: var(--ph-ink); --mk-fig: var(--accent); opacity: 0.5; }

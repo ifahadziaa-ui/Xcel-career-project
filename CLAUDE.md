@@ -59,7 +59,7 @@ A complete static one-page website implementation.
 
 Do not use it as a scratchpad, testing area, or place to make temporary changes.
 
-History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Later the same day it also covered a floating dock top bar, button text alignment and a scroll-linked card parallax. All of it is committed on branch `landing-unify-and-new-briefs` (since merged to `main`) and documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user authorized a second pass: the showreel's closing beat (the tile flight removed, a feathered reveal and a scroll-assembled 3D mark), home page content and links, nine inner pages (`*.html` + `js/pages.js`, `js/site.js`, `js/auth.js`, `js/sprite.js`, `css/pages.css`) and a design-only candidate sign-in. Also documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user also authorized phases 0 to 5 of the homepage prototype completion plan (layout fixes, the contact form checks and chat launcher, type scale and one red, WCAG 2.1 AA work with a pause toggle, adaptive resolution, arrow-key vertical snap); that work was merged with the second pass on branch `landing-prototype-merged`. Documented in `FRONTEND-PROTOTYPE-STATUS.md` and `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user also authorized a media pass: real photos, looping videos and customer logos or name tiles in the placeholder slots (files: `js/ph.js`, `js/main.js`, `js/showreel.js`, new `js/video.js`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `assets/img/`, `assets/video/`); documented in `FRONTEND-PROTOTYPE-STATUS.md` §5 and `PROJECT-BRIEF.md` §5. The protection applies again for any new work. In particular:
+History: on 12 Nov 2026 the user explicitly authorized edits here for the design pass that unified the top bar, fonts, type scale, spacing and reveal motion, and refined the "One nurse" closing frame (files: `index.html`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `js/main.js`, `js/motion.js`, `js/showreel.js`). Later the same day it also covered a floating dock top bar, button text alignment and a scroll-linked card parallax. All of it is committed on branch `landing-unify-and-new-briefs` (since merged to `main`) and documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user authorized a second pass: the showreel's closing beat (the tile flight removed, a feathered reveal and a scroll-assembled 3D mark), home page content and links, nine inner pages (`*.html` + `js/pages.js`, `js/site.js`, `js/auth.js`, `js/sprite.js`, `css/pages.css`) and a design-only candidate sign-in. Also documented in `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user also authorized phases 0 to 5 of the homepage prototype completion plan (layout fixes, the contact form checks and chat launcher, type scale and one red, WCAG 2.1 AA work with a pause toggle, adaptive resolution, arrow-key vertical snap); that work was merged with the second pass on branch `landing-prototype-merged`. Documented in `FRONTEND-PROTOTYPE-STATUS.md` and `PROJECT-BRIEF.md` §5. On 13 Nov 2026 the user also authorized a media pass: real photos, looping videos and customer logos or name tiles in the placeholder slots (files: `js/ph.js`, `js/main.js`, `js/showreel.js`, new `js/video.js`, `css/base.css`, `css/sections.css`, `css/showreel.css`, `assets/img/`, `assets/video/`); documented in `FRONTEND-PROTOTYPE-STATUS.md` §5 and `PROJECT-BRIEF.md` §5. On 14 Nov 2026 the user also authorized, for those tasks: shortening the copy and the justified-text rule (`js/content.js`, `js/justify.js`, `css/base.css`, `js/main.js`, `js/site.js`, `js/pages.js`, `js/chat.js`, `css/sections.css`; committed), the FAQ tags and chat-launcher overlap fixes (uncommitted), and the creation of a separate content-cleaned copy, `landing-prototype-clean/`, with its own corrections (see below and `docs/CLEAN-COPY.md`). The protection applies again for any new work. In particular:
 
 - The hero and the fixed top bar use Mona Sans and Geist Mono. Everything after the hero uses Zen Kaku Gothic New. Keep that split.
 - The type scale lives in `css/base.css`; do not add per-section font sizes.
@@ -71,6 +71,16 @@ History: on 12 Nov 2026 the user explicitly authorized edits here for the design
 - Accessibility target is WCAG 2.1 AA plus 2.4.11 and 2.5.8. Anything that moves on its own must respect `html[data-motion="paused"]` (`js/pause.js`, the toggle in the top bar); scroll-linked motion is not covered by it.
 - Keep the closing scene free of opposing 3D offsets (a `translateZ` pair made Chrome hit-test the wrong layer); it is flat 2D with a mask, and hidden (`visibility`) until it opens.
 - Card parallax is scroll-linked, not spring-based; do not reintroduce a spring there.
+
+### `landing-prototype-clean/`
+
+A separate, content-cleaned copy of the prototype made on 14 Nov 2026 (NGA, logos, sample vacancies, the PDF button, the clinical role list, prime wording and fake submission states removed; see `docs/CLEAN-COPY.md`).
+
+- It is the **verified reference** for the homepage and the intended source for the Next.js migration (`docs/MIGRATION-ASSESSMENT.md`).
+- The original `landing-prototype/` is unchanged by it. The two differ in content, so never assume a change applies to both.
+- Same protection as `landing-prototype/`: edit only with the user's authorization for a stated task.
+- Served by `python3 landing-prototype-clean/serve.py` on port 3201.
+- Its reports are `landing-prototype-clean/CONTENT-CLEANUP.md` and `VERIFICATION-REPORT.md`. Reports are **not evidence** for a business claim: use `docs/CLAIMS-REGISTER.md` and the source order in §5.
 
 ### `superconscious/`
 
@@ -141,6 +151,8 @@ Use the following source-of-truth hierarchy for business information and website
 3. `PROJECT-BRIEF.md`.
 
 The live, older XcelCareers website is outdated and is not an authoritative source for current business information or website claims.
+
+The status of each significant claim (verified, partial, unconfirmed, withheld) is kept in `docs/CLAIMS-REGISTER.md`. Wording already on a page, a code comment or an earlier report does not make a claim true.
 
 For existing implementation behaviour, inspect the actual code. Do not assume that written descriptions accurately represent what the code currently does.
 
@@ -292,7 +304,7 @@ For code changes, run the relevant checks where applicable.
 
 For the Next.js application, existing project scripts and dependencies should be inspected before deciding which commands to run.
 
-For visual changes, inspect the actual rendered result when the necessary environment is available. Headless Firefox works for this: start `firefox --headless --marionette --no-remote --profile <fresh dir>` and drive it over Marionette (port 2828); never target the user's own Firefox profile. A real Chromium is in `~/.cache/ms-playwright/` (no Playwright library): launch it headless with `--remote-debugging-port` and a fresh `--user-data-dir`, and drive it over the DevTools protocol (Python `websockets` works). Use it for Chrome-only behaviour such as 3D hit-testing; it renders with software GL, so it says nothing about a real GPU. Background servers (3000, 3200, 3300) stop when a session ends, so check them before testing. A successful build does not prove that the interface looks or behaves correctly.
+For visual changes, inspect the actual rendered result when the necessary environment is available. Headless Firefox works for this: start `firefox --headless --marionette --no-remote --profile <fresh dir>` and drive it over Marionette (port 2828); never target the user's own Firefox profile. A real Chromium is in `~/.cache/ms-playwright/` (no Playwright library): launch it headless with `--remote-debugging-port` and a fresh `--user-data-dir`, and drive it over the DevTools protocol (Python `websockets` works). Use it for Chrome-only behaviour such as 3D hit-testing; it renders with software GL, so it says nothing about a real GPU. Background servers (3000, 3200, 3201, 3300) stop when a session ends, so check them before testing. A successful build does not prove that the interface looks or behaves correctly.
 
 If a check cannot be performed, state that explicitly.
 

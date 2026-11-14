@@ -1,6 +1,6 @@
 # Landing prototype: developer guide
 
-How `landing-prototype/` is built, so a new contributor (or an LLM) can change it without rediscovering things. **The directory is protected** (CLAUDE.md §3): edit only with the user's authorization for a stated task. For status and decisions see [../FRONTEND-PROTOTYPE-STATUS.md](../FRONTEND-PROTOTYPE-STATUS.md); for every change made to it see [../PROJECT-BRIEF.md](../PROJECT-BRIEF.md) §5.
+How `landing-prototype/` is built (the same structure applies to the content-cleaned copy `landing-prototype-clean/`, see [CLEAN-COPY.md](CLEAN-COPY.md); its server uses port 3201), so a new contributor (or an LLM) can change it without rediscovering things. **The directory is protected** (CLAUDE.md §3): edit only with the user's authorization for a stated task. For status and decisions see [../FRONTEND-PROTOTYPE-STATUS.md](../FRONTEND-PROTOTYPE-STATUS.md); for every change made to it see [../PROJECT-BRIEF.md](../PROJECT-BRIEF.md) §5.
 
 ## 1. Stack and running it
 
@@ -22,6 +22,7 @@ How `landing-prototype/` is built, so a new contributor (or an LLM) can change i
 | `js/chat.js` | The XC Concierge chat widget (guided mode from `content.js`, optional live AI). |
 | `js/mark.js`, `js/ph.js` | Reads the mark polygons from the `#i-mark` symbol; the placeholder component (`ph()`) used for every "your asset" slot. It also renders a real image (`src`) or looping clip (`video`) in the same slot. |
 | `js/video.js` | `watchVideos()`: plays each `video[data-vid]` only while on screen and not paused; the poster shows otherwise. |
+| `js/justify.js` | Adds `.just-fit` to a paragraph only when it can be justified without gaps over 1.35x (see the last section). |
 | `css/base.css` | Tokens (palette, type scale, spacing), reset, placeholder styles. The root `font-size` tracks the viewport. |
 | `css/hero.css` | The hero and the top bar's `.hx-*` layout. |
 | `css/sections.css` | Everything after the hero except the showreel, plus the fixed bar's dock styles and the pause toggle. |
@@ -68,6 +69,8 @@ Cache-busting: the module imports carry `?v=3` (for example `./pause.js?v=3`). U
 | Add or change a section | Markup in `index.html`, content in `content.js`, rendering in `main.js`, styles in `css/sections.css`; add `data-m` for reveals. |
 | Change a size | Use or add a token in `css/base.css`, floored with `--type-min`. |
 | Swap a placeholder for a real asset | Replace the `ph()` call (or the `<img>`) and note it in the placeholder register in [../FRONTEND-PROTOTYPE-STATUS.md](../FRONTEND-PROTOTYPE-STATUS.md). |
+| Show a slot that is waiting for its photo | `ph({ quiet: true })` (clean copy): a graphite or paper panel with the mark and no label. Never put production notes in visitor-facing text. |
+| Add or change a claim | Check [CLAIMS-REGISTER.md](CLAIMS-REGISTER.md) first; cite the source. |
 | Pause a new animation | Add a selector to the `html[data-motion="paused"]` rule in `css/sections.css`, or check `isPaused()` in JS. |
 | Turn adaptive resolution off | Set `ADAPTIVE = false` in `js/showreel.js`. |
 

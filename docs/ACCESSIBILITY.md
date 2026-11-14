@@ -24,6 +24,13 @@
 | 4.1.2 Name, role, value | Partial | The toggle uses `aria-pressed` with a fixed label; the launcher has `aria-expanded` and `aria-controls`; the chat panel is a labelled dialog. Not audited with a screen reader. |
 | Reduced motion (not an AA item; CLAUDE.md §7) | Met for self-moving parts | The toggle starts paused under `prefers-reduced-motion`; springs resolve instantly; wheel smoothing and anchor animation are off. Scroll-linked 3D motion is **deliberately unchanged** (user decision). |
 
+## 1a. Additions of 14 Nov 2026 (clean copy and inner pages)
+
+- **Chat focus.** After Escape or close, focus returns to the launcher (it did not in the original, because the launcher was still hidden when `focus()` ran; fixed in `landing-prototype-clean/js/chat.js`). `aria-modal` is set only on phones, where the chat takes over the screen.
+- **Inner pages (tested in headless Chromium):** 25 to 60 tab stops each, all visible, none hidden under the bar or launcher; no overflow at 360 to 1920 px; no solid-background contrast failures. Open items: **Jobs and Contact skip from H1 to H3**; **contact tabs do not respond to arrow keys** (ARIA tab pattern); required fields are marked by the browser only; the Government H1 is clipped on phones in the clean copy. Details: [../site-research/INNER-PAGES-AUDIT.md](../site-research/INNER-PAGES-AUDIT.md).
+- **Closing-frame buttons** are `visibility: hidden` until that frame is on screen, so Tab reaches them only then (nine ArrowDown taps get there); the same actions exist in the footer and contact section.
+- **Justified text** is applied only where word gaps stay at or under 1.35x (`js/justify.js`); on phones nowhere.
+
 ## 2. Known gaps and decisions
 
 - Showreel text contrast over gradients: needs a visual or tool-assisted check.
