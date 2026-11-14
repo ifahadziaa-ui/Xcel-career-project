@@ -1,22 +1,58 @@
+/* =====================================================================
+   Global styles. Order matters:
+   1. Tailwind 4 (theme, preflight = THE reset, utilities). There is no second reset.
+   2. XcelCareers tokens (src/styles/tokens.css): custom properties and the root font size.
+   3. A small base layer: what the prototype's reset did that preflight does not.
+
+   Page and component styling lives in CSS Modules, not here. See docs/FOUNDATIONS.md.
+   ===================================================================== */
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
-@theme inline {
-  --font-sans: var(--font-mona-sans);
-  --font-mono: var(--font-geist-mono);
+/* No `@theme` font keys on purpose. Tailwind's `font-sans`, `font-mono` utilities and its
+   preflight default font read the --font-sans / --font-mono tokens from tokens.css (unlayered,
+   so they win over Tailwind's defaults). The prototype's mono and display are Zen Kaku Gothic
+   New too; Geist Mono is --font-bar. */
+
+@layer base {
+  /* Tailwind 4 preflight sets buttons to cursor: default; the prototype kept the pointer. */
+  button,
+  summary {
+    cursor: pointer;
+  }
+
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    /* Guards every route against horizontal scroll from decorative overflow.
+       `clip` (not `hidden`) so position: sticky and the pinned showreel keep working. */
+    overflow-x: clip;
+  }
+
+  main {
+    position: relative;
+    overflow-x: clip;
+  }
 }
 
-:root {
-  --page-bg: #0c0c0d;
-  --page-fg: #f0f0f2;
-}
+/* Shared type primitives from the prototype (used by the bar, preloader and tags). */
+@layer components {
+  .type-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
 
-html,
-body {
-  background: var(--page-bg);
-  color: var(--page-fg);
-}
-
-body {
-  margin: 0;
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  .type-caps {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1.3;
+    letter-spacing: 0.1em;
+  }
 }
