@@ -1,0 +1,441 @@
+/* =====================================================================
+   SHOWREEL (migration Stage 5B-1): static stage.
+   Ported from landing-prototype-clean/css/showreel.css, class names camel-cased for CSS Modules.
+
+   What is different from the prototype, and why:
+   1. Geometry buckets. The prototype's JS (applyGeo/pickBucket) wrote the track height and eleven
+      custom properties on the section at load. They are media queries here, so the server HTML
+      already has the right page height (scroll restoration, no layout shift). Same rule:
+      landscape = desktop; portrait narrower than 640 = mobile; portrait up to 1024 = tablet;
+      wider portrait = desktop.
+   2. Frame 0. Every value the prototype's engine writes inline each frame is, at scroll
+      progress 0, a known constant. Those constants are CSS here ("FRAME 0" below), so the
+      server-rendered stage is the correct opening frame with no script. The engine (5B-2)
+      overwrites them with inline styles.
+   3. Placeholders instead of media. Slots that held stock photographs or clips show the quiet
+      placeholder (graphite or paper with the mark), as on the example-role cards. See
+      docs/MEDIA.md.
+   4. No canvases are drawn yet (5B-4, 5B-5, 5B-6): the canvases are present and empty.
+   ===================================================================== */
+
+.sr {
+  --sr-ink: #101012;
+  --sr-red: #ff2a45;
+  --pf-card: #161618;
+  --cc-search: #1d1d1e;
+  --paper: #f3f3f5;
+  --cc-dark-ink: #f3f3f5;
+  --cc-light-ink: #131314;
+  --glass-dark: rgba(39, 39, 40, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  /* the accent card: signal red lit like the hero spotlight */
+  --card-accent: radial-gradient(95% 80% at 50% 28%, #ff8a99 0%, #ff2a45 38%, #b0102a 68%, #3e0610 100%);
+  /* the carousel stage: the hero's silver spotlight, lit from above */
+  --stage: radial-gradient(ellipse 75% 95% at 50% 30%, #d6d6d8 0%, #c6c6c6 30%, #a7a7a7 65%, #8a8a8c 100%);
+  --radius-btn: 8px;
+  --radius-card: 3vmin;
+  --radius-pf: 2.5vmin;
+  --radius-slider: 1.6vmin;
+
+  /* geometry: desktop (GEO.desktop). Track height = round(100 + 3700 x 0.34) vh */
+  --sr-track-vh: 1358vh;
+  --sr-card-w: 42vmin;
+  --sr-card-h: 62vmin;
+  --sr-carousel-r: 27vmin;
+  --sr-flyback: 40vmin;
+  --sr-hero-pad: calc(8vmin + var(--bar-h, 0px)); /* the opening card sits below the fixed top bar */
+  --sr-heading-1: 18vmin;
+  --sr-heading-2: 24vmin;
+  --sr-sphere-body-w: 52vmin;
+  --sr-sphere-body-text: 2.4vmin;
+  --sr-cu: 1vmin; /* card unit: card width / 42 */
+  --sr-slider-h: 62vh;
+
+  position: relative;
+  z-index: 31; /* above the page's film grain: the showreel keeps its own shader grain */
+  background: var(--sr-ink);
+  color: var(--paper);
+  font-family: var(--font-sans);
+}
+
+/* tablet: portrait, 640 to 1024 wide (GEO.tablet, density 0.34 x 0.84 -> 1157vh) */
+@media (orientation: portrait) and (width <= 1024px) {
+  .sr {
+    --sr-track-vh: 1157vh;
+    --sr-card-w: 54vmin; --sr-card-h: 80vmin; --sr-carousel-r: 35vmin; --sr-flyback: 52vmin;
+    --sr-heading-1: 13vmin; --sr-heading-2: 16vmin;
+    --sr-sphere-body-w: 64vmin; --sr-sphere-body-text: 3vmin;
+    --sr-cu: 1.285714vmin; --sr-slider-h: 40vh;
+  }
+}
+/* mobile: portrait, under 640 wide (GEO.mobile, density 0.34 x 0.63 -> 893vh) */
+@media (orientation: portrait) and (width < 640px) {
+  .sr {
+    --sr-track-vh: 893vh;
+    --sr-card-w: 64vmin; --sr-card-h: 94vmin; --sr-carousel-r: 41vmin; --sr-flyback: 60vmin;
+    --sr-heading-1: 10vmin; --sr-heading-2: 12vmin;
+    --sr-sphere-body-w: 82vmin; --sr-sphere-body-text: 4.2vmin;
+    --sr-cu: 1.523809vmin; --sr-slider-h: 42vh;
+  }
+}
+
+.track { position: relative; height: var(--sr-track-vh); }
+.sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: 4vmin; padding-top: calc(4vmin + var(--bar-h, 0px)); }
+
+.backdrop { position: absolute; inset: 0; z-index: 0; background: var(--stage); }
+
+/* ---------- placeholder slot (stands in for photographs and clips that are not approved) ---------- */
+.ph {
+  position: absolute; inset: 0; z-index: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  color: #fff; background: linear-gradient(160deg, #1d1d20, #101012);
+}
+.phLight { color: #131314; background: linear-gradient(160deg, #e9e9eb, #d2d2d5); }
+.phSteel { background: linear-gradient(160deg, #343437, #212123); }
+.phMark { height: 34%; width: auto; aspect-ratio: 1.1 / 1.95; color: inherit; --mk-fig: var(--accent); opacity: 0.5; }
+
+/* ---------- marquee ---------- */
+.marquee {
+  position: absolute; left: 0; top: 50%; z-index: 1;
+  width: 100vw; transform: translateY(-50%);
+  pointer-events: none; overflow: hidden;
+  opacity: 0; filter: blur(20px); /* FRAME 0: marqueeOpacity(0) = 0, marqueeBlur(0) = 20px */
+}
+.marqueeRow { display: flex; width: max-content; animation: marquee 25s linear infinite; }
+.marqueeItem {
+  display: flex; align-items: center; flex: none;
+  padding: 0 3vw; font-size: 7vw; letter-spacing: -0.03em; line-height: 1.15;
+  color: var(--sr-ink); white-space: nowrap;
+}
+.marqueeGap { padding: 0; }
+.ring {
+  flex: none; display: block; width: 1.5vw; height: 1.5vw;
+  transform: translateY(0.8vw); border-radius: 9999px; border: 2px solid var(--sr-red);
+}
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
+
+/* ---------- 3D scene ---------- */
+.scene {
+  position: relative; z-index: 2; display: flex; width: 100%; height: 100%;
+  align-items: center; justify-content: center; perspective: 1500px;
+}
+.rig { position: absolute; inset: 0; transform-style: preserve-3d; }
+.carousel {
+  position: relative; display: flex; width: 100%; height: 100%;
+  align-items: center; justify-content: center; transform-style: preserve-3d;
+}
+.card1 {
+  position: absolute; overflow: hidden; border-radius: var(--radius-card);
+  /* FRAME 0: card1Width/Height/Transform(0), cardZIndex(0, 0) */
+  width: calc(100vw - var(--sr-hero-pad)); height: calc(100vh - var(--sr-hero-pad));
+  transform: rotateZ(0deg) translateZ(1px); z-index: 1100;
+}
+.side { position: absolute; height: var(--sr-card-h); width: var(--sr-card-w); }
+/* FRAME 0: sideCardTransform(0, base) = rotateY(base) translateZ(0) scaleX(0.0001); cardZIndex(0, slot) */
+.card2 { transform: rotateY(90deg) translateZ(0) scaleX(0.0001); z-index: 1000; }
+.card3 { transform: rotateY(180deg) translateZ(0) scaleX(0.0001); z-index: 900; }
+.card4 { transform: rotateY(270deg) translateZ(0) scaleX(0.0001); z-index: 1000; display: flex; align-items: center; justify-content: center; overflow: visible; }
+
+/* scroll letters */
+.slLine { display: inline-block; vertical-align: bottom; }
+.sl { display: inline-block; will-change: transform, filter, opacity; }
+
+/* ---------- opening card (slot 1) ---------- */
+.hero { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--sr-ink); }
+/* the gradient canvas (5B-4) fades in once drawn; until then the card shows its ink background */
+.hero canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
+.hero canvas:global(.is-live) { opacity: 1; }
+.heroHead { position: absolute; inset: 0; z-index: 3; display: flex; padding: 40px; pointer-events: none; }
+.heroHead h2 {
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #fff;
+}
+.dim { opacity: 0.4; }
+.heroRot { position: absolute; inset: 0; z-index: 7; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.rotText {
+  text-align: center; font-size: 3.6vmin; font-weight: 400; color: #fff; line-height: 1.2;
+  transform: rotate(-90deg); filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+/* FRAME 0: templatesLetterStyle(0) = translateY(150%), blur 1.5vmin, opacity 0 */
+.rotText .sl { transform: translateY(150%); filter: blur(1.5vmin); opacity: 0; }
+.heroImg { position: absolute; inset: 0; z-index: 6; perspective: 1400px; pointer-events: none; }
+.slider {
+  position: absolute; left: 50%; top: 50%; overflow: hidden;
+  border-radius: var(--radius-slider); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  /* FRAME 0: heroSliderWidth/Height(0) */
+  width: min(90vw, 46vh); height: var(--sr-slider-h); transform: translate(-50%, -50%);
+}
+.slide { position: absolute; inset: 0; }
+.slideB { left: 100%; }
+.rotated { position: absolute; inset: 0; transform: rotate(-90deg) scale(1.65); }
+.heroBottom {
+  position: absolute; bottom: 0; left: 0; z-index: 6; width: 100%;
+  display: flex; flex-direction: column; gap: 24px; padding: 40px;
+  color: #fff; font-weight: 300;
+}
+.lead { max-width: 416px; opacity: 0.9; font-size: 16px; line-height: 1.625; text-shadow: 0 1px 12px rgb(16 16 18 / 0.7); }
+.btns { display: flex; align-items: center; gap: 16px; }
+.btn {
+  padding: 18px 32px; text-box: trim-both cap alphabetic; border-radius: 8px; font-size: 17px; line-height: 1.2; white-space: nowrap;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.25);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); color: #fff;
+}
+.btnSolid { background: var(--sr-red); color: var(--sr-ink); font-weight: 500; border-color: var(--sr-red); }
+/* hover and keyboard focus for the stage buttons (same invert as the page's .btn) */
+.btn, .ctaBtn, .cta a { transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance); }
+.btn:hover, .btn:focus-visible { background: rgb(255 255 255 / 0.18); border-color: rgb(255 255 255 / 0.5); }
+.btnSolid:hover, .btnSolid:focus-visible, .ctaBtn:hover, .ctaBtn:focus-visible { background: var(--foreground); color: var(--background); border-color: var(--foreground); }
+.cta a:hover, .cta a:focus-visible { background: var(--sr-red); color: var(--sr-ink); }
+.divider { width: 100%; height: 1px; background: rgb(255 255 255 / 0.3); margin: 8px 0; }
+.heroRow { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.avatars {
+  display: flex; align-items: center; gap: 12px; flex: none;
+  padding: 6px 16px 6px 8px; border-radius: 9999px;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.22);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.faces { display: flex; }
+.avatar {
+  width: 32px; height: 32px; border-radius: 9999px; margin-left: -8px;
+  border: 2px solid rgb(255 255 255 / 0.6);
+  display: grid; place-items: center; font: 500 var(--type-min)/1 var(--font-mono); letter-spacing: 0.06em; color: #fff; text-box: trim-both cap alphabetic;
+  background: linear-gradient(135deg, #767678, #1d1d1e);
+}
+.avatar:first-child { margin-left: 0; background: var(--sr-red); color: var(--sr-ink); }
+.avatarsLabel { font-size: 14px; font-weight: 500; opacity: 0.9; white-space: nowrap; }
+/* sits on the bright floor of the gradient, so it gets the same dark glass as the team pill */
+.heroRight {
+  max-width: 512px; padding: 9px 16px; border-radius: 14px; text-align: right; font-size: 15px; line-height: 1.5;
+  background: rgb(16 16 18 / 0.45); border: 1px solid rgb(255 255 255 / 0.22);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+
+/* ---------- carousel cards 01 · 02 (dark and light) ----------
+   One order on every card: numbered chip, photo, headline, the action. Sizes use --sr-cu, a card
+   unit, so the cards keep their proportions and stay readable on phones. */
+.cc { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card); }
+.ccDark { color: var(--cc-dark-ink); }
+.ccLight { color: var(--cc-light-ink); }
+.ccUi { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; padding: calc(3.2 * var(--sr-cu)); }
+/* scrim under the text, so it stays readable once a real photo is in */
+.ccUi::before {
+  content: ""; position: absolute; inset: 42% 0 0; z-index: -1; pointer-events: none; border-radius: inherit;
+  background: linear-gradient(to top, rgb(16 16 18 / 0.88) 8%, rgb(16 16 18 / 0.5) 52%, transparent);
+}
+.ccLight .ccUi::before { background: linear-gradient(to top, rgb(236 236 238 / 0.94) 8%, rgb(236 236 238 / 0.55) 52%, transparent); }
+.ccTop { display: flex; align-items: center; justify-content: space-between; gap: calc(1.2 * var(--sr-cu)); }
+.ccMark { display: block; flex: none; width: calc(2.1 * var(--sr-cu)); height: calc(3.75 * var(--sr-cu)); overflow: visible; color: #f3f3f5; --mk-fig: var(--sr-red); }
+.ccLight .ccMark { color: #131314; --mk-fig: var(--sr-red); }
+
+/* numbered chip: the order of the story, on every card */
+.chip {
+  display: inline-flex; align-items: center; gap: calc(1.1 * var(--sr-cu)); white-space: nowrap;
+  padding: calc(0.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(0.6 * var(--sr-cu)) calc(0.6 * var(--sr-cu)); border-radius: 9999px;
+  border: 1px solid var(--glass-border); background: var(--glass-dark);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  font: 500 max(var(--type-min), calc(1.3 * var(--sr-cu)))/1 var(--font-bar); letter-spacing: 0.14em; text-transform: uppercase; color: #f3f3f5;
+}
+.chip b {
+  display: grid; place-items: center; min-width: 2.2em; height: 2.2em; padding: 0 0.55em; border-radius: 9999px;
+  background: var(--sr-red); color: var(--sr-ink); font-weight: 600; letter-spacing: 0.04em;
+}
+.ccLight .chip { background: rgb(255 255 255 / 0.6); border-color: rgb(16 16 18 / 0.1); color: #131314; }
+.ccLight .chip b { background: var(--sr-red); }
+
+.ccBottom { margin-top: auto; position: relative; }
+.ccBottom h3 { font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
+.ccBottom strong { font-weight: 700; color: #fff; }
+.ccLight .ccBottom strong { color: #0a0a0b; }
+
+.glassPill {
+  margin-top: calc(2.2 * var(--sr-cu)); display: flex; align-items: center; justify-content: space-between; gap: calc(1.5 * var(--sr-cu));
+  border-radius: calc(4 * var(--sr-cu)); border: 1px solid var(--glass-border); background: var(--glass-dark);
+  padding: calc(1.5 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.5 * var(--sr-cu)) calc(2.2 * var(--sr-cu));
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.pillK { display: block; font-size: max(var(--type-min), calc(1.35 * var(--sr-cu))); opacity: 0.62; letter-spacing: 0.02em; }
+.pillV { display: block; margin-top: calc(0.4 * var(--sr-cu)); font-size: max(11px, calc(2.2 * var(--sr-cu))); }
+.badge {
+  display: grid; place-items: center; flex: none; width: max(16px, calc(3 * var(--sr-cu))); height: max(16px, calc(3 * var(--sr-cu)));
+  border-radius: 9999px; background: var(--glass-border); font-size: max(var(--type-min), calc(1.8 * var(--sr-cu)));
+}
+.glassPill .badge { background: var(--sr-red); color: var(--sr-ink); }
+.search {
+  margin-top: calc(2.2 * var(--sr-cu)); display: flex; align-items: center; gap: calc(1.4 * var(--sr-cu));
+  border-radius: calc(5 * var(--sr-cu)); background: var(--cc-search);
+  padding: calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.6 * var(--sr-cu)) calc(1.8 * var(--sr-cu)); color: var(--paper);
+}
+.search .badge { background: rgb(255 255 255 / 0.14); }
+.search .badgeGo { background: var(--sr-red); color: var(--sr-ink); font-size: max(var(--type-min), calc(1.5 * var(--sr-cu))); }
+.searchQ { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: max(var(--type-min), calc(1.8 * var(--sr-cu))); opacity: 0.85; }
+
+/* ---------- card 03: the network ---------- */
+.sphereCard { width: 100%; height: 100%; }
+.cardFace { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius-card); background: var(--card-accent); }
+.faceIn { display: flex; width: 100%; height: 100%; flex-direction: column; padding: calc(3.2 * var(--sr-cu)); color: var(--paper); }
+.faceTop { display: flex; align-items: center; justify-content: space-between; }
+.cardFace .chip { background: rgb(16 16 18 / 0.28); border-color: rgb(255 255 255 / 0.22); }
+.cardFace .chip b { background: #fff; color: var(--sr-ink); }
+.cardFace h3 { margin-top: auto; max-width: 92%; font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
+.cardFace h3 strong { font-weight: 700; }
+
+/* the dark network scene, revealed through the mark's hub (clip-path set per frame) */
+.blackPanel {
+  position: absolute; left: 50%; top: 50%; width: 300vw; height: 300vh; background: var(--sr-ink);
+  clip-path: circle(0px at 50% 50%); transform: translate(-50%, -50%); /* FRAME 0: blackScreenTransform(0) */
+}
+/* the mark on card 03, drawn at screen resolution: the dive changes its viewBox, never its raster scale */
+.zoom {
+  position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh;
+  overflow: visible; pointer-events: none; visibility: hidden; transform: translate(-50%, -50%);
+}
+.zmRay, .zmFig { fill: #f3f3f5; }
+.zmRay[data-g="2"] { fill-opacity: 0.74; }
+.zmRay[data-g="3"] { fill-opacity: 0.52; }
+.sphereScene { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); }
+.sphereCanvasWrap { position: absolute; left: 50%; top: 50%; z-index: 2; width: 100%; height: 100%; transform: translate(-50%, -50%); }
+.sphereCanvasWrap canvas { width: 100%; height: 100%; }
+/* the mark at the heart of the sphere, in brand colour */
+.core { position: absolute; left: 50%; top: 50%; z-index: 3; width: 7.3vh; height: 13vh; opacity: 0; transform: translate(-50%, -50%) scale(0.72); }
+.coreMark { display: block; width: 100%; height: 100%; overflow: visible; color: #d0d0d2; --mk-fig: var(--sr-red); filter: drop-shadow(0 0 2.2vh rgb(255 42 69 / 0.35)); }
+.hTop {
+  position: absolute; left: 4vmin; top: 4vmin; z-index: 4;
+  font-size: var(--sr-heading-1); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+}
+.hBottom {
+  position: absolute; right: 4vmin; bottom: 4vmin; z-index: 4;
+  display: flex; flex-direction: column; align-items: flex-end; text-align: right;
+  font-size: var(--sr-heading-2); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+}
+/* FRAME 0: blockLetterStyle(0) = translateY(70%), blur 2vmin, opacity 0 */
+.hTop .sl, .hBottom .sl { transform: translateY(70%); filter: blur(2vmin); opacity: 0; }
+.sphereBody {
+  position: absolute; left: 4vmin; bottom: 5vmin; z-index: 4;
+  display: flex; max-width: var(--sr-sphere-body-w); flex-direction: column; gap: 1.8vmin;
+  font-size: var(--sr-sphere-body-text); font-weight: 300; line-height: 1.45; color: #fff;
+  opacity: 0; transform: translateY(2.5vmin); /* FRAME 0: sphereBodyReveal(0) = 0 */
+}
+
+/* ---------- closing scene ----------
+   Opens through a feathered radial mask (set per frame), so it never shows a hard edge; a soft
+   vignette blends its borders into the dark stage. */
+.target {
+  position: absolute; left: 50%; top: 50%; z-index: -1; visibility: hidden;
+  width: 100vw; height: 100vh; overflow: hidden;
+  transform: translate(-50%, -50%);
+  /* only visible if WebGL cannot draw the gradient: a still version of the same palette instead of flat black */
+  background:
+    radial-gradient(70% 55% at 44% 102%, #d2d2d5 0%, #5c5c5f 28%, transparent 70%),
+    radial-gradient(45% 45% at 14% 46%, #4b101c 0%, transparent 72%),
+    radial-gradient(45% 45% at 86% 46%, #4b101c 0%, transparent 72%),
+    var(--sr-ink);
+}
+.target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(130% 110% at 50% 45%, transparent 55%, rgb(16 16 18 / 0.55) 82%, var(--sr-ink) 100%);
+}
+.ctaBlock {
+  position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column;
+  align-items: flex-start; justify-content: center; gap: 2.5vmin; padding: 9vmin; pointer-events: none;
+}
+.ctaBlock h2 {
+  max-width: 60vw; display: flex; flex-direction: column; align-items: flex-start;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: var(--paper);
+}
+.ctaBlock h2 .dim { opacity: 0.4; }
+.ctaEyebrow { display: flex; align-items: center; gap: 1.2vmin; font: 500 max(11px, 1.45vmin)/1 var(--font-bar); letter-spacing: 0.16em; text-transform: uppercase; color: rgb(243 243 245 / 0.62); }
+.dot {
+  display: inline-block; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+  box-shadow: 0 0 5px rgb(255 42 69 / 0.9), 0 0 12px rgb(255 42 69 / 0.4);
+}
+.ctaLead { max-width: 30vw; font-size: max(var(--type-min), 2.2vmin); line-height: 1.45; color: rgb(243 243 245 / 0.74); }
+.ctaRow { margin-top: 1vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin; pointer-events: auto; }
+.ctaBtn, .ctaGhost { display: inline-flex; border-radius: 8px; padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: max(var(--type-min), 2.5vmin); }
+.ctaBtn { background: var(--sr-red); color: var(--sr-ink); }
+.ctaGhost { color: #f3f3f5; border: 1px solid rgb(255 255 255 / 0.28); background: rgb(16 16 18 / 0.35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.ctaBtn:hover, .ctaBtn:focus-visible, .ctaGhost:hover, .ctaGhost:focus-visible { background: #f3f3f5; color: #101012; }
+.ctaTrust { pointer-events: auto; font: 500 max(var(--type-min), 1.35vmin)/1.5 var(--font-bar); letter-spacing: 0.1em; text-transform: uppercase; color: rgb(243 243 245 / 0.5); }
+.ctaTel { color: inherit; white-space: nowrap; }
+.ctaTel b { font-weight: 500; color: #f3f3f5; }
+.ctaTel:hover b, .ctaTel:focus-visible b { color: var(--sr-red); }
+
+/* ---------- carousel CTA ---------- */
+.cta {
+  position: absolute; left: 0; right: 0; bottom: 2vmin; z-index: 3;
+  display: flex; justify-content: center; padding: 0 4vmin; pointer-events: none;
+  opacity: 0; visibility: hidden; transform: translateY(2.5vh); /* FRAME 0: carouselCtaReveal(0) = 0 */
+}
+.cta a {
+  pointer-events: auto; border-radius: var(--radius-btn); background: var(--sr-ink);
+  padding: 2vmin 4.2vmin; font-size: max(var(--type-min), 2.1vmin); color: var(--paper);
+}
+
+/* ---------- fixed layers: aurora + service panels ---------- */
+.aurora { position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden; }
+.aurora canvas { width: 100%; height: 100%; }
+.pfSection {
+  position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
+  overflow: hidden; padding: 9vmin 0 8vmin; transform: translateY(100%); visibility: hidden;
+}
+.pfTrack { display: flex; height: 100%; gap: 3vmin; padding-left: 3vmin; }
+.pf {
+  position: relative; display: flex; height: 100%; width: 62vw; flex-shrink: 0;
+  flex-direction: column; justify-content: space-between; overflow: hidden;
+  border-radius: var(--radius-pf); background: var(--pf-card); padding: 3.5vmin; color: #fff;
+}
+/* a dark gradient keeps the white copy readable once a clip is behind it */
+.pf::after {
+  display: block; content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgb(10 10 12 / 0.55) 0%, rgb(10 10 12 / 0.25) 45%, rgb(10 10 12 / 0.12) 70%, rgb(10 10 12 / 0.3) 100%);
+}
+.pfTags {
+  position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 1.4vmin;
+  font-size: max(var(--type-min), 1.7vmin); opacity: 0.9;
+}
+.sep { opacity: 0.5; }
+.pf h3 {
+  position: relative; z-index: 2; max-width: 85%;
+  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; text-transform: capitalize;
+}
+.pfFoot { position: relative; z-index: 2; }
+.pfKicker {
+  display: flex; align-items: center; gap: 1.2vmin; margin-bottom: 2vmin;
+  font: 500 max(11px, 1.45vmin)/1 var(--font-bar); letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgb(243 243 245 / 0.82);
+}
+.pfKicker b {
+  display: grid; place-items: center; min-width: 3.2vmin; height: 3.2vmin; padding: 0 0.8vmin; border-radius: 9999px;
+  background: var(--sr-red); color: var(--sr-ink); font-weight: 600; letter-spacing: 0.04em;
+}
+.pfLine {
+  margin-top: 2.2vmin; max-width: 46ch;
+  font-size: max(13px, 1.9vmin); line-height: 1.45; font-weight: 300; opacity: 0.88;
+  text-shadow: 0 1px 14px rgb(16 16 18 / 0.75);
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 639px) {
+  .heroHead, .heroBottom { padding: 20px; }
+  .heroBottom { gap: 16px; }
+  .lead { font-size: 14px; opacity: 1; text-shadow: 0 1px 3px rgb(16 16 18 / 0.55), 0 0 18px rgb(16 16 18 / 0.75); }
+  .btns { flex-direction: column; align-items: stretch; gap: 12px; }
+  .btn { padding: 16px 20px; font-size: 15px; text-align: center; }
+  .divider, .heroRow { display: none; }
+  .ctaBlock h2 { max-width: 88vw; }
+  .ctaLead { max-width: 84vw; font-size: max(var(--type-min), 3.6vmin); }
+  .ctaBtn, .ctaGhost { font-size: max(var(--type-min), 3.6vmin); padding: 4.2vmin 5vmin; }
+  .ctaTrust { max-width: 84vw; }
+  .pfKicker { font-size: var(--type-min); letter-spacing: 0.08em; gap: 1.8vmin; }
+}
+
+/* portrait screens: in the network scene the big type sits above the chat button and the copy above the big type */
+@media (max-aspect-ratio: 1/1) {
+  .hBottom { bottom: 78px; }
+  .sphereBody { bottom: calc(78px + 2 * 0.85 * var(--sr-heading-2) + 5vmin); text-shadow: 0 1px 10px rgb(16 16 18 / 0.9); }
+}
+
+/* ---------- type: the showreel's headlines use the display face ---------- */
+.marqueeItem, .heroHead h2, .hTop, .hBottom, .ctaBlock h2, .pf h3 {
+  font-family: var(--font-display); font-weight: 400; letter-spacing: -0.03em;
+}

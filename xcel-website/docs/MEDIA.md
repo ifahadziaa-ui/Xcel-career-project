@@ -20,11 +20,11 @@ What media the website uses, what was approved, and what is deliberately still a
 | `img/hc-long-term.webp`, `img/hc-nurse-care.webp`, `img/spec-it.webp` | Example job cards | Stock photographs of identifiable people. The licence record (`images_web/LICENSE-IMAGES.md`) names Unsplash but no per-photo source, photographer or model release; the client asked for real staff and no stock look (Q23, Q25); the care photographs could read as a healthcare track record, which the claims register withholds |
 | `img/hc-admin.webp`, `img/hc-clinic.webp` | Showreel portrait cards | Same reasons; also showreel (later stage) |
 | `video/panel-*.mp4/.webm` and posters (Pixabay) | Showreel panels | Showreel stage. Licence file notes model releases are not guaranteed for clips with clear faces |
-| `video/reel-main.mp4` and poster | Showreel opening card | Showreel stage. Generated render, no stock |
+| `video/reel-main.mp4` and poster | Showreel opening card | **Pixabay stock** (clips 229069, 49813, 143376, 143378, see `video/LICENSES.md`), not a generated render (this row said so before 5B-1; that was wrong). Model releases not guaranteed |
 
 **3. Referenced by the design but missing:** the capability statement cover (no PDF exists, Q25), the Barry Klasson / client-services photo, team headshots, real staff photography, customer logos (permission unconfirmed, Q20), a social-share image.
 
-**4. Intentionally retained as placeholders:** the three withheld job-card photos (quiet placeholder), the capability poster cover, the contact card photo, and the showreel section (`ShowreelPlaceholder`, Stage 5).
+**4. Intentionally retained as placeholders:** the three withheld job-card photos (quiet placeholder), the capability poster cover, the contact card photo, and, in the showreel (Stage 5B-1), the opening card's video, the two carousel portraits and the three service-panel clips: all quiet placeholders until approved.
 
 ## How media is wired
 

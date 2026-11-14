@@ -5,27 +5,21 @@
 
    #i-mark is the XcelCareers mark (head, body and nine blades in spiral order around
    the hub). Recolour per use with --mk-fig (figure), --mk-ray (blades, defaults to
-   currentColor) and --mk-o1..3 (blade tones). The mark animation code reads the geometry
-   from this symbol (.mk-ray, .mk-head, .mk-body and data-hub), so this file is the
-   single source of the mark's geometry.
+   currentColor) and --mk-o1..3 (blade tones). The geometry itself lives in lib/mark/geometry.ts
+   (the single source, also used by the showreel); this file only draws it into the symbol.
    Server component: no browser APIs.
    ===================================================================== */
 
+import {
+  MARK_BODY_POINTS,
+  MARK_HEAD,
+  MARK_HUB_ATTR,
+  MARK_RAYS,
+  MARK_VIEWBOX,
+} from "@/lib/mark/geometry";
+
 export const ICON_IDS = ["i-arrow", "i-plus", "i-close", "i-spark", "i-mark"] as const;
 export type IconId = (typeof ICON_IDS)[number];
-
-// blade groups: [group, default opacity, polygon points]
-const RAYS: ReadonlyArray<readonly [1 | 2 | 3, string, string]> = [
-  [1, "1", "10.93,187.17 62.1,232.65 42.88,166.96"],
-  [1, "1", "5,228.45 59.52,237.63 18.23,200.94"],
-  [1, "1", "18.96,260.85 60.12,243.59 16.11,236.38"],
-  [2, ".74", "42.1,277.18 62.68,247.62 29.55,261.71"],
-  [2, ".74", "65,277.99 66.51,249.16 49.94,272.86"],
-  [2, ".74", "82.49,268.53 71.19,248.77 70.02,271.65"],
-  [3, ".52", "90.58,255.13 74.3,246.41 83.47,262.43"],
-  [3, ".52", "90.61,241.74 76.03,243.21 89.02,249.88"],
-  [3, ".52", "85.32,232.77 75.77,239.88 87.55,238.8"],
-];
 
 export default function IconSprite() {
   return (
@@ -51,21 +45,21 @@ export default function IconSprite() {
           d="M12 2 L13.9 10.1 L22 12 L13.9 13.9 L12 22 L10.1 13.9 L2 12 L10.1 10.1 Z"
         />
       </symbol>
-      <symbol id="i-mark" viewBox="4 120.04 89.03 158.95" data-hub="69.08 242.24">
+      <symbol id="i-mark" viewBox={MARK_VIEWBOX} data-hub={MARK_HUB_ATTR}>
         <g style={{ fill: "var(--mk-ray,currentColor)" }}>
-          {RAYS.map(([g, dflt, points]) => (
+          {MARK_RAYS.map(({ g, o, points }) => (
             <polygon
               key={points}
               className="mk-ray"
               data-g={g}
               points={points}
-              style={{ fillOpacity: `var(--mk-o${g},${dflt})` }}
+              style={{ fillOpacity: `var(--mk-o${g},${o})` }}
             />
           ))}
         </g>
         <g style={{ fill: "var(--mk-fig,#ff2a45)" }}>
-          <circle className="mk-head" cx="68.6" cy="130.91" r="9.87" />
-          <polygon className="mk-body" points="45.15,148.96 92.03,148.96 68.62,230.36" />
+          <circle className="mk-head" cx={MARK_HEAD.cx} cy={MARK_HEAD.cy} r={MARK_HEAD.r} />
+          <polygon className="mk-body" points={MARK_BODY_POINTS} />
         </g>
       </symbol>
     </svg>

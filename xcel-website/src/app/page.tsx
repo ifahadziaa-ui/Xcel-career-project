@@ -1,6 +1,6 @@
 import Hero from "@/components/hero/Hero";
 import Certifications from "@/components/home/Certifications";
-import ShowreelPlaceholder from "@/components/home/ShowreelPlaceholder";
+import Showreel from "@/components/showreel/Showreel";
 import Process from "@/components/home/Process";
 import Jobs from "@/components/home/Jobs";
 import Capability from "@/components/home/Capability";
@@ -15,7 +15,7 @@ export default function Home() {
     <main>
       <Hero />
       <Certifications />
-      <ShowreelPlaceholder />
+      <Showreel />
       <Process />
       <Jobs />
       <Capability />
