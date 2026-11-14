@@ -22,3 +22,6 @@ Raw sources are in `video-sources/` (outside the web project). Footage was trimm
 | panel-specialists | 32767 | https://pixabay.com/videos/id-32767/ | it-pixabay-32767.mp4 |
 
 Model releases: Pixabay does not guarantee model releases for identifiable people. Review before using clips with clear faces (49809, 69952, 215751, 32767 is code only).
+
+## vesper-sequence (generated)
+`vesper-sequence.mp4` (36 s loop: orb -> galaxy -> brain -> burst -> orb) is rendered from the shader spec in `vesper_prompt.md` by `vesper-render/full.py`. The brain point cloud is sampled from the template's `brain-mesh.bin` (api.getlayers.ai asset); no stock footage.

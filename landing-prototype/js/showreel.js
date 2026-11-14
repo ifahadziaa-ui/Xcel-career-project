@@ -231,7 +231,7 @@ function build(section) {
     <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
-      <div class="sr-slide" id="sr-slide-a">${ph({ kind: "video", what: "Healthcare montage: nurses, care staff, county teams at work", video: "reel-main" })}</div>
+      <div class="sr-slide" id="sr-slide-a">${ph({ kind: "video", what: "Healthcare montage: nurses, care staff, county teams at work", video: "reel-main", webm: false })}</div>
       <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${ph({ kind: "photo", what: "Recruiter with a candidate", tone: "steel" })}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
