@@ -429,6 +429,9 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 .acc .ico .minus { display: none; }
 .acc details[open] .ico .plus { display: none; }
 .acc details[open] .ico .minus { display: block; }
+.acc .a:has(+ .a-tags) { padding-bottom: 0.75rem; }
+.a-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; max-width: 25rem; padding-bottom: 1.25rem; list-style: none; }
+.a-tags li { padding: 0.35rem 0.7rem 0.4rem; border-radius: 999px; border: 1px solid rgb(243 243 245 / 0.22); font-size: var(--type-fine); line-height: 1.2; color: var(--foreground-soft); }
 .acc .a { width: 25rem; max-width: 100%; padding-bottom: 1.25rem; font-size: var(--type-body-sm); line-height: var(--line-copy); color: var(--foreground-subtle); }
 @media (width < 1200px) { .faq { grid-template-columns: 25rem minmax(0, 1fr); gap: 3rem; } }
 @media (width < 896px)  { .faq { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; } .faq-left { align-items: center; text-align: center; } .faq-left .hl { align-items: center; } .faq-left .hl-row { justify-content: center; } .faq-left .eyebrow { justify-content: center; } }
@@ -469,7 +472,7 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 @media (width < 896px)  { .join-form { flex-direction: column; align-items: flex-start; gap: 1rem; } .join-card { width: 15rem; height: 20rem; top: 14rem; } .join-fine { max-width: calc(100% - 17rem); } }
 @media (width < 700px)  { .join-card { display: none; } .join-fine { max-width: none; } .join-form { align-items: stretch; } .join-form input { width: 100%; } .join .btn { width: 100%; justify-content: space-between; } .join .hl { align-items: center; text-align: center; } .join .hl-row { justify-content: center; } .join .eyebrow { justify-content: center; } }
 
-.footer { position: relative; padding: 0 5.25rem; height: 21rem; }
+.footer { position: relative; padding: 0 5.25rem; height: 26rem; } /* the extra 5rem keeps the legal row clear of the chat launcher at the end of the page */
 .footer-rule { height: 1px; background: rgb(243 243 245 / 0.12); }
 .footer-main { display: flex; justify-content: space-between; align-items: flex-start; padding-top: 1.5rem; }
 /* the hero's logo: mono wordmark, red ® */

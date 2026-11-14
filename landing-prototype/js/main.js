@@ -135,6 +135,7 @@ $("#faq-list").innerHTML = FAQ.map((f, i) => `
   <details name="faq"${i === 0 ? " open" : ""}>
     <summary><span class="type-caps q">${esc(f.q)}</span><svg class="ico" aria-hidden="true"><use class="plus" href="#i-plus"/><use class="minus" href="#i-close"/></svg></summary>
     <p class="a" data-m="faq">${esc(f.a)}</p>
+    ${f.tags ? `<ul class="a-tags" aria-label="Examples">${f.tags.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>` : ""}
   </details>`).join("");
 
 $("#faq-note").textContent = FAQ_NOTE;

@@ -239,7 +239,7 @@ function guided(text) {
     const n = norm(f.q).trim().split(/\s+/).filter((w) => toks.has(w)).length;
     if (n > hit) { hit = n; best = f; }
   }
-  if (best && hit >= 2) return { say: clean(best.a), chips: [CHIP.request, CHIP.jobs] };
+  if (best && hit >= 2) return { say: clean(best.a) + (best.tags ? `\n\n${best.tags.join(" · ")}` : ""), chips: [CHIP.request, CHIP.jobs] };
   return {
     say: `I don't have that one on file. A recruiter can answer it directly: call **${CONTACT.phone}** or email **${CONTACT.email}**.`,
     chips: [CHIP.request, CHIP.jobs, CHIP.contact],
@@ -434,7 +434,9 @@ export function initChat({ lenis } = {}) {
     const heroGone = hero ? hero.getBoundingClientRect().bottom < innerHeight * 0.4 : true;
     const tr = track?.getBoundingClientRect();
     const inReel = tr ? tr.top <= 1 && tr.bottom >= innerHeight - 1 : false;
-    root.classList.toggle("is-compact", inReel && !open);
+    // the orb alone whenever the showreel is on screen: the full capsule would sit on its bottom-right pills
+    const reelOn = tr ? tr.top < innerHeight && tr.bottom > 0 : false;
+    root.classList.toggle("is-compact", (inReel || reelOn) && !open);
     const s = open || launch.matches(":focus-visible") || (heroGone && !scrolling);
     if (s !== shown) { shown = s; showS.set(s ? 1 : 0); }
   };
