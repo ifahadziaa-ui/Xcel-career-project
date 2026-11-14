@@ -58,11 +58,15 @@ Server component, structure and wording from the prototype. Contact block: addre
 
 ## Chat
 
-Guided mode only. Same launcher, panel, welcome, cards, chips and request flow as the prototype; answers come from `content.ts`. Nothing is sent: the flow ends in "Request summary · Not sent yet" with a link to `/contact?role=...&email=...`. Not ported: the live AI mode (`/api/chat`, tool calls), generated ticket ids, "Online", reply-time promises. A transcript of 19 steps (greeting, nine questions, the full request flow, a bad email) is identical to the prototype's.
+Guided mode only. Same launcher, panel, welcome, cards, chips and request flow as the prototype; answers come from `content.ts`. Nothing is sent: the flow ends in "Request summary · Not sent yet" with a link to `/contact?role=...&email=...`. Not ported: the live AI mode (`/api/chat`, tool calls), generated ticket ids, "Online", reply-time promises. Answers and the request flow match the prototype's wording; the panel itself was simplified after Stage 3 (see "Minimal panel" below).
 
 Behaviour: Escape closes; focus goes into the field on open (not on phones) and back to the launcher on close; `aria-modal` and the page scroll lock apply only to the phone sheet while it is open; a route change closes the panel and keeps the conversation.
 
 Page contract (optional attributes on a page's elements): `data-chat-hero` keeps the launcher hidden while that element is on screen; `data-chat-reel` shrinks the launcher to its orb while it is on screen. The Stage 3 hero and Stage 5 showreel should set them.
+
+## Minimal panel (after Stage 4)
+
+The panel was thinned out: header is the brand and the close and start-over icons (start-over only once a conversation exists); the meta row, specimen line, info card, numbered subtitled start buttons and per-reply byline are gone; the welcome is "How can we help?" with three plain buttons (Request staff, Example roles, Certifications & CAGE); non-flow replies show at most two option chips (the request flow keeps all its options); the contact card shows phone and email only; labels and buttons are sentence case; typing and thinking delays are about half; the launcher is the orb plus "Ask XcelCareers"; fine print is "Automated answers · Call <phone>". Wording rules, the request flow, focus return, Escape and the phone sheet are unchanged.
 
 ## Known interim state
 

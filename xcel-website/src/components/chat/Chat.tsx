@@ -66,7 +66,6 @@ const IReset = () => (<svg viewBox="0 0 16 16" aria-hidden="true" {...stroke} st
 const ISend = () => (<svg viewBox="0 0 16 16" aria-hidden="true" {...stroke} strokeWidth="1.8"><path d="M8 13V3.2M3.6 7.4L8 3l4.4 4.4" /></svg>);
 const IArrow = () => (<svg viewBox="0 0 16 16" aria-hidden="true" {...stroke} strokeWidth="1.5"><path d="M4 12L12 4M5.6 4H12v6.4" /></svg>);
 const IPhone = () => (<svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><path d="M5.6 2.2l1.3 3-1.4 1.1a8 8 0 0 0 4.2 4.2l1.1-1.4 3 1.3-.4 2.4c-.1.5-.5.8-1 .8C7 13.3 2.7 9 2.4 3.6c0-.5.3-.9.8-1z" /></svg>);
-const IMail = () => (<svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"><rect x="2" y="3.5" width="12" height="9" rx="1.5" /><path d="M2.5 4.5L8 9l5.5-4.5" /></svg>);
 
 /* ---------- cards ---------- */
 type Row = [string, ReactNode, string?];
@@ -151,22 +150,10 @@ function PartView({ p }: { p: Part }) {
         <div className={cx("xc-in")}>
           <Placard
             rows={[
-              ["Contact", CONTACT.name],
               ["Phone", tel(CONTACT.phone)],
               ["Email", <a href={`mailto:${CONTACT.email}`} key="m">{CONTACT.email}</a>],
-              ["Office", CONTACT.address, "wrap"],
             ]}
           />
-          <div className={cx("xc-actions")}>
-            <a className={cx("xc-btn", "xc-btn--red")} href={`tel:${TEL}`}>
-              <IPhone />
-              Call
-            </a>
-            <a className={cx("xc-btn")} href={`mailto:${CONTACT.email}`}>
-              <IMail />
-              Email
-            </a>
-          </div>
         </div>
       );
     case "steps":
@@ -238,12 +225,6 @@ type Item =
   | { id: number; kind: "me"; text: string }
   | { id: number; kind: "bot"; time: string; text: string; typing: boolean; streaming: boolean; parts: Part[]; chips: Chip[]; spent: boolean };
 
-const WELCOME_ROWS: Row[] = [
-  ["Focus", "Healthcare staffing"],
-  ["Contracts", "Local · State · Federal"],
-  ["Database", "300,000+ candidates"],
-  ["Mode", "Guided answers"],
-];
 const DEFAULT_PLACEHOLDER = "Ask about staffing, jobs, licensing…";
 
 /* initial inline styles (hidden until the springs run); constants so React never rewrites them */
@@ -449,7 +430,7 @@ export default function Chat() {
     for (let i = 0; i < bits.length; i++) {
       if (!aliveRef.current) return;
       acc += bits[i];
-      if (i % 2 === 0) { patch(id, { text: closeBold(acc) }); await sleep(12 + Math.random() * 20); }
+      if (i % 2 === 0) { patch(id, { text: closeBold(acc) }); await sleep(5 + Math.random() * 9); }
     }
     patch(id, { text, streaming: false });
   }, [patch]);
@@ -458,11 +439,11 @@ export default function Chat() {
     const id = ++idRef.current;
     scrollIntent.current = { force: true };
     setItems((prev) => [...prev, { id, kind: "bot", time: clock(), text: "", typing: true, streaming: false, parts: [], chips: [], spent: false }]);
-    await sleep(reduced() ? 0 : 380 + Math.random() * 380);
+    await sleep(reduced() ? 0 : 220 + Math.random() * 220);
     if (!aliveRef.current) return;
     await typeOut(id, r.say);
     scrollIntent.current = { reveal: id };
-    patch(id, { text: r.say, streaming: false, parts: r.parts ?? [], chips: r.chips ?? [] });
+    patch(id, { text: r.say, streaming: false, parts: r.parts ?? [], chips: r.flowOpts ? (r.chips ?? []) : (r.chips ?? []).slice(0, 2) });
     if (r.flow !== undefined) await startFlowRef.current(r.flow);
   }, [patch, typeOut]);
 
@@ -472,7 +453,7 @@ export default function Chat() {
     if (!f) return;
     const st = FLOW[f.i];
     if (st.email) { setPlaceholder("you@company.com"); setInputMode("email"); }
-    await say({ say: prefix + st.ask, chips: (st.opts || []).map((o) => ({ label: o })) });
+    await say({ say: prefix + st.ask, chips: (st.opts || []).map((o) => ({ label: o })), flowOpts: true });
     if (st.email && !isPhoneNow()) inputRef.current?.focus({ preventScroll: true });
   }, [say]);
   const startFlow = useCallback(async (fn: string): Promise<void> => {
@@ -564,7 +545,6 @@ export default function Chat() {
             <span className={cx("xc-dot", "xc-dot--pulse")} />
             Ask XcelCareers
           </span>
-          <span className={cx("xc-launch-sub", "xc-mono")}>Staffing · jobs · certifications</span>
         </span>
         <span className={cx("xc-orb")}>
           <Mark />
@@ -586,43 +566,26 @@ export default function Chat() {
             <span>
               XcelCareers<span className={cx("xc-reg")}>®</span>
             </span>
-            <span className={cx("xc-slash")}>/</span>
-            <span id={s["xc-title"]}>Concierge</span>
           </p>
-          <span className={cx("xc-status", "xc-mono")}>
-            <span className={cx("xc-dot")} />
-            Automated
-          </span>
+          {items.length > 0 && (
           <button className={cx("xc-icon")} type="button" aria-label="Start over" title="Start over" onClick={() => { if (!busyRef.current) reset(); }}>
             <IReset />
           </button>
+          )}
           <button className={cx("xc-icon")} type="button" aria-label="Close chat" title="Close" onClick={() => setOpen(false)}>
             <IClose />
           </button>
         </header>
-        <div className={cx("xc-meta-row", "xc-mono")}>
-          <span>Client services · Dayton, MD</span>
-          <span className={cx("xc-mode")}>Guided</span>
-        </div>
-
         <div className={cx("xc-log")} ref={logRef} aria-live="polite">
           <div className={cx("xc-hello")}>
-            <p className={cx("xc-specimen", "xc-mono")}>
-              <span className={cx("xc-dot")} />
-              Concierge · Healthcare &amp; government staffing
-            </p>
             <h2 className={cx("xc-title")}>
-              <span>Ask us</span>
-              <span className={cx("xc-accent")}>anything.</span>
+              How can we <span className={cx("xc-accent")}>help?</span>
             </h2>
-            <p className={cx("xc-lede")}>Staffing requests, example roles, licensing questions, or our certifications and CAGE code.</p>
-            <Placard rows={WELCOME_ROWS} />
+            <p className={cx("xc-lede")}>Ask about staffing, example roles or certifications.</p>
             <div className={cx("xc-starts")}>
-              {START.map((x, i) => (
+              {START.map((x) => (
                 <button type="button" className={cx("xc-start")} key={x.act} onClick={() => { if (!busyRef.current) void handleUser(x.say, x.act); }}>
-                  <span className={cx("n", "xc-mono")}>{String(i + 1).padStart(2, "0")}</span>
                   <b>{x.b}</b>
-                  <small className={cx("xc-mono")}>{x.s}</small>
                   <IArrow />
                 </button>
               ))}
@@ -636,10 +599,6 @@ export default function Chat() {
               </div>
             ) : (
               <div className={cx("xc-msg", "xc-msg--bot", "xc-in")} key={it.id} data-mid={it.id}>
-                <div className={cx("xc-by", "xc-mono")}>
-                  <span className={cx("xc-dot")} />
-                  XC · {it.time}
-                </div>
                 {it.typing ? (
                   <div className={cx("xc-text")}>
                     <span className={cx("xc-typing")} role="status" aria-label="XC is typing">
@@ -700,7 +659,7 @@ export default function Chat() {
           </button>
         </form>
         <p className={cx("xc-fine", "xc-mono")}>
-          Guided answers from xcelcareers.com · {tel(CONTACT.phone)}
+          Automated answers · Call {tel(CONTACT.phone)}
         </p>
       </section>
     </div>

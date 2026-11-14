@@ -1,5 +1,5 @@
 /* 09 Contact: headline, the request form and the contact line (CONTACT in content.ts).
-   The photo card is a MediaSlot until the media stage. Server component around a client form. */
+   The photo card is a MediaSlot until the real client-services photo is supplied. Server component around a client form. */
 import { CONTACT } from "@/content/content";
 import { routeFor } from "@/content/routes";
 import ContactForm from "./ContactForm";

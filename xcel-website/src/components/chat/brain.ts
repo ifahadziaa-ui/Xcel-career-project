@@ -18,7 +18,7 @@ export type Part =
   | { type: "customers" }
   | { type: "stats" }
   | { type: "summary"; d: SummaryData };
-export interface Reply { say: string; parts?: Part[]; chips?: Chip[]; flow?: string }
+export interface Reply { say: string; parts?: Part[]; chips?: Chip[]; flow?: string; /** request-flow options: all are shown */ flowOpts?: boolean }
 
 export const esc = (s: unknown): string =>
   String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
@@ -231,8 +231,7 @@ export const FLOW_FN: Record<string, string> = {
 export const START = [
   { act: "request", say: "I need to request staff", b: "Request staff", s: "For employers" },
   { act: "jobs", say: "Show me example roles", b: "Example roles", s: "For candidates" },
-  { act: "capability", say: "Show me your capability statement", b: "Capability", s: "CAGE · UEI · NAICS" },
-  { act: "certs", say: "What certifications do you hold?", b: "Certifications", s: "MBE · DBE · SBE" },
+  { act: "certs", say: "What certifications do you hold?", b: "Certifications & CAGE", s: "MBE · DBE · SBE" },
 ] as const;
 
 export { CERTS };

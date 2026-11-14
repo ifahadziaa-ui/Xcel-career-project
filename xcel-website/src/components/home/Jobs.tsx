@@ -1,10 +1,11 @@
 /* 05 Example roles: the five-card fan. Content: JOBS, FEATURED_JOB, JOBS_NOTE. The roles are examples
-   (each card says so), not openings. Card photos arrive in the media stage: MediaSlot stands in.
+   (each card says so), not openings. Photos: only those approved in media.ts; the others keep the placeholder.
    Server component. */
 import type { CSSProperties } from "react";
 import { FEATURED_JOB, JOBS, JOBS_NOTE, type Job } from "@/content/content";
 import { routeFor } from "@/content/routes";
 import MediaSlot from "./MediaSlot";
+import { JOB_PHOTOS } from "./media";
 import { ButtonLink, Eyebrow } from "./parts";
 import s from "./home.module.css";
 
@@ -32,7 +33,7 @@ function JobCard({ j }: { j: Job }) {
           </svg>
         </div>
         <div className={s.jcArt}>
-          <MediaSlot />
+          <MediaSlot image={JOB_PHOTOS[j.id]} sizes="(max-width: 699px) 36vw, 22vw" />
         </div>
         <h3 className={s.jcTitle}>{j.title}</h3>
         <p className={s.jcMeta}>{j.where}</p>

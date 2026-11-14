@@ -1,5 +1,5 @@
 /* 06 Capability statement: the light paper poster. Content: CAPABILITY, CREDENTIALS.pdf (the capability
-   page: there is no PDF yet). The cover image is a MediaSlot until the media stage. Server component. */
+   page: there is no PDF yet). The cover image is a MediaSlot until the capability statement exists. Server component. */
 import { CAPABILITY, CREDENTIALS } from "@/content/content";
 import { routeFor } from "@/content/routes";
 import MediaSlot from "./MediaSlot";
