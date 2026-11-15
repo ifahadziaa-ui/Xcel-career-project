@@ -8,7 +8,7 @@ Built from `landing-prototype-clean/index.html`, `css/sections.css`, `css/hero.c
 |---|---|---|
 | Hero (`#top`) | `components/hero/Hero.tsx` + `hero.module.css` | XcelCareers copy; no header of its own (an empty, hidden spacer keeps the stacked-layout room); `data-chat-hero` keeps the chat launcher out of its corner |
 | 02 Certifications and customers (`#certifications`) | `home/Certifications.tsx` | Customers as name tiles only (no logos: permission unconfirmed) |
-| 03 Showreel (`#services`) | `showreel/Showreel.tsx` | Static stage (Stage 5B-1): the opening frame with the real page height, no motion yet. See `docs/SHOWREEL.md` |
+| 03 Showreel (`#services`) | `showreel/Showreel.tsx` | Scroll-driven stage (Stages 5B-1, 5B-2): server markup, DOM engine on the shared Lenis tick, CSS stand-ins for the WebGL scenes. See `docs/SHOWREEL.md` |
 | 04 Process (`#process`) | `home/Process.tsx` | Four steps and the split line |
 | 05 Example roles (`#jobs`) | `home/Jobs.tsx` | Five-card fan; every card says "Example"; card photos are `MediaSlot` placeholders |
 | 06 Capability (`#capability`) | `home/Capability.tsx` | Paper poster; the cover image is a `MediaSlot`; button goes to `/capability` (no PDF exists) |
@@ -32,7 +32,7 @@ Scroll reveals, parallax, tilt, line-split copy animation (the prototype's `data
 
 - No reveal or parallax transforms; job-card positions are the static design coordinates.
 - Job cards, poster cover and contact card show the quiet placeholder (mark on graphite or paper) instead of photos.
-- The showreel stage stands where the showreel will be (static until Stage 5B-2; `docs/SHOWREEL.md`).
+- The showreel's DOM choreography runs (Stage 5B-2); its WebGL scenes, snap and static reduced-motion layout are later stages (`docs/SHOWREEL.md`).
 - The hero's original header is replaced by the shared fixed bar; its hidden spacer is empty.
 
 ## Content points

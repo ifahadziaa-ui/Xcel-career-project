@@ -24,7 +24,7 @@ import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 import { isPaused, onPauseChange } from "@/lib/motion/motion";
 import { ticker } from "@/lib/motion/spring";
-import { getLenis, scrollLocked, setLenis } from "@/lib/scroll/lenis";
+import { getLenis, notifyScrollFrame, scrollLocked, setLenis } from "@/lib/scroll/lenis";
 
 export default function LenisController() {
   const pathname = usePathname();
@@ -36,6 +36,7 @@ export default function LenisController() {
 
     const stopRaf = ticker.add((t) => {
       lenis.raf(t);
+      notifyScrollFrame(t); // post-frame subscribers (the showreel), always after this frame's scroll is written
     });
     const offPause = onPauseChange((p) => {
       lenis.options.smoothWheel = !p;

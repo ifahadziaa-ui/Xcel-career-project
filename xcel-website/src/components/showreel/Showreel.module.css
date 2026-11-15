@@ -15,7 +15,10 @@
    3. Placeholders instead of media. Slots that held stock photographs or clips show the quiet
       placeholder (graphite or paper with the mark), as on the example-role cards. See
       docs/MEDIA.md.
-   4. No canvases are drawn yet (5B-4, 5B-5, 5B-6): the canvases are present and empty.
+   4. No canvases are drawn yet (5B-4, 5B-5, 5B-6): the canvases are present and empty. The four
+      visuals that will be WebGL have a deliberate, temporary CSS stand-in (marked FALLBACK below):
+      the opening card's gradient, the aurora, the network sphere and the closing mark. Each is
+      hidden by `.sr[data-gl="ready"]`, the flag the renderer stage will set once its canvas draws.
    ===================================================================== */
 
 .sr {
@@ -80,6 +83,14 @@
 }
 
 .track { position: relative; height: var(--sr-track-vh); }
+/* Set by the inline script (lib/showreel/preScript.ts) only for a reload, Back/Forward or #hash load, until the engine's
+   first frame: the wrong (opening) frame is never painted at a restored position. The section keeps its size and background. */
+/* !important because the engine writes visibility: visible inline on the cards, which would otherwise show through a hidden parent;
+   the two fixed layers sit outside .sticky and the engine can show them when pinned. */
+.sr[data-sr-pre] .sticky,
+.sr[data-sr-pre] .sticky *,
+.sr[data-sr-pre] .aurora,
+.sr[data-sr-pre] .pfSection { visibility: hidden !important; }
 .sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: 4vmin; padding-top: calc(4vmin + var(--bar-h, 0px)); }
 
 .backdrop { position: absolute; inset: 0; z-index: 0; background: var(--stage); }
@@ -141,7 +152,15 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 .sl { display: inline-block; will-change: transform, filter, opacity; }
 
 /* ---------- opening card (slot 1) ---------- */
-.hero { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card); background: var(--sr-ink); }
+/* FALLBACK for the opening card's WebGL gradient (graphite room, silver spotlight from below, a low red ember at the sides) */
+.hero {
+  position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: var(--radius-card);
+  background:
+    radial-gradient(70% 55% at 44% 102%, #b9b9bc 0%, #5c5c5f 30%, transparent 72%),
+    radial-gradient(45% 45% at 14% 46%, #4b101c 0%, transparent 72%),
+    radial-gradient(45% 45% at 86% 46%, #4b101c 0%, transparent 72%),
+    var(--sr-ink);
+}
 /* the gradient canvas (5B-4) fades in once drawn; until then the card shows its ink background */
 .hero canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
 .hero canvas:global(.is-live) { opacity: 1; }
@@ -295,6 +314,18 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 .sphereScene { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); }
 .sphereCanvasWrap { position: absolute; left: 50%; top: 50%; z-index: 2; width: 100%; height: 100%; transform: translate(-50%, -50%); }
 .sphereCanvasWrap canvas { width: 100%; height: 100%; }
+/* FALLBACK for the 34,000-point sphere: a soft dotted globe with a red underside and an open centre for the mark.
+   The real sphere is about 58vh across at rest (camera z 3.8, fov 50, radius 1). */
+.sphereCanvasWrap::before {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 58vh; aspect-ratio: 1; transform: translate(-50%, -50%);
+  border-radius: 50%; pointer-events: none;
+  background:
+    radial-gradient(circle, rgb(255 255 255 / 0.55) 0 1.2px, transparent 1.8px) 0 0 / 11px 11px,
+    radial-gradient(circle at 50% 38%, rgb(205 205 212 / 0.2), rgb(150 150 158 / 0.1) 55%, rgb(255 42 69 / 0.22) 100%);
+  -webkit-mask-image: radial-gradient(circle, transparent 0 9%, #000 15%, #000 62%, transparent 71%);
+  mask-image: radial-gradient(circle, transparent 0 9%, #000 15%, #000 62%, transparent 71%);
+  box-shadow: 0 0 9vh rgb(255 42 69 / 0.14);
+}
 /* the mark at the heart of the sphere, in brand colour */
 .core { position: absolute; left: 50%; top: 50%; z-index: 3; width: 7.3vh; height: 13vh; opacity: 0; transform: translate(-50%, -50%) scale(0.72); }
 .coreMark { display: block; width: 100%; height: 100%; overflow: visible; color: #d0d0d2; --mk-fig: var(--sr-red); filter: drop-shadow(0 0 2.2vh rgb(255 42 69 / 0.35)); }
@@ -331,6 +362,12 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
     var(--sr-ink);
 }
 .target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* FALLBACK for the 3D chrome mark: the brand mark (silver blades, red figure), right of the copy; smaller, top right on portrait screens */
+.targetMark {
+  position: absolute; z-index: 1; right: 14vw; top: 50%; height: 46vh; margin-top: -23vh; width: auto; aspect-ratio: 1.1 / 1.95;
+  overflow: visible; pointer-events: none; opacity: 0; visibility: hidden;
+  color: #dedee2; --mk-fig: var(--sr-red); filter: drop-shadow(0 0 3vh rgb(255 42 69 / 0.3));
+}
 .vignette {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: radial-gradient(130% 110% at 50% 45%, transparent 55%, rgb(16 16 18 / 0.55) 82%, var(--sr-ink) 100%);
@@ -372,7 +409,13 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 }
 
 /* ---------- fixed layers: aurora + service panels ---------- */
-.aurora { position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden; }
+/* FALLBACK for the aurora: a signal-red glow along the top and bottom edges, faded by the engine like the shader would be */
+.aurora {
+  position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden;
+  background:
+    radial-gradient(70% 38% at 50% 0%, rgb(255 42 69 / 0.32), transparent 72%),
+    radial-gradient(70% 38% at 50% 100%, rgb(255 42 69 / 0.26), transparent 72%);
+}
 .aurora canvas { width: 100%; height: 100%; }
 .pfSection {
   position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
@@ -431,6 +474,7 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 
 /* portrait screens: in the network scene the big type sits above the chat button and the copy above the big type */
 @media (max-aspect-ratio: 1/1) {
+  .targetMark { right: 8vw; top: 12vh; height: 22vh; margin-top: 0; }
   .hBottom { bottom: 78px; }
   .sphereBody { bottom: calc(78px + 2 * 0.85 * var(--sr-heading-2) + 5vmin); text-shadow: 0 1px 10px rgb(16 16 18 / 0.9); }
 }
@@ -438,4 +482,75 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 /* ---------- type: the showreel's headlines use the display face ---------- */
 .marqueeItem, .heroHead h2, .hTop, .hBottom, .ctaBlock h2, .pf h3 {
   font-family: var(--font-display); font-weight: 400; letter-spacing: -0.03em;
+}
+
+/* ---------- the renderer stages (5B-4 onward) set data-gl="ready" on the section once their canvases draw; the stand-ins then step aside ---------- */
+.sr[data-gl="ready"] .sphereCanvasWrap::before,
+.sr[data-gl="ready"] .targetMark { display: none; }
+.sr[data-gl="ready"] .aurora { background: none; }
+
+/* =====================================================================
+   OS REDUCED MOTION: interim static, vertically stacked presentation (decided in docs/SHOWREEL.md).
+   Same server markup, re-laid out by CSS alone, so it is chosen before first layout (no flash, no
+   layout shift, nothing waits for JavaScript). The engine does not start under this query, so there is
+   no pinned track, no scroll-linked motion and no control that starts it; a saved manual "playing"
+   choice cannot change it because only the OS setting is consulted. It follows the setting live.
+   Every piece of copy and every link of the pinned reel is on the page, in DOM order (which is the
+   reading and Tab order): opening promise and its buttons, the three cards, the network text, the
+   closing ask and its links, "See how we staff", then the three service panels.
+   Interim: spacing and styling are functional, not final (Stage 5B-7 refines them).
+   Must stay LAST in this file so it overrides the frame-0 rules above at equal specificity.
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .sr[data-sr-pre] .sticky, .sr[data-sr-pre] .sticky *, .sr[data-sr-pre] .pfSection { visibility: visible !important; } /* the guard never applies here (preScript skips it); this covers the setting changing mid-load */
+
+  /* no pin, no stage dressing */
+  .track { height: auto; }
+  .sticky { position: static; height: auto; overflow: visible; padding: 6vmin 4vmin; display: flex; flex-direction: column; gap: 6vmin; }
+  .backdrop, .marquee, .aurora, .heroImg, .zoom, .sphereCanvasWrap, .core, .vignette, .targetMark, .hero canvas, .target canvas { display: none; }
+  .scene, .rig, .carousel { position: static; display: flex; flex-direction: column; gap: 6vmin; width: 100%; height: auto; perspective: none; transform-style: flat; }
+
+  /* cards: full width in a readable column, no transforms, nothing hidden */
+  .card1, .side { position: relative; width: 100%; max-width: 44rem; margin-inline: auto; height: auto; transform: none; z-index: auto; opacity: 1; visibility: visible; }
+  .card4 { display: block; overflow: visible; }
+
+  /* 1 · the opening promise */
+  .hero { height: auto; display: flex; flex-direction: column; }
+  .heroHead { position: static; padding: 6vmin 4vmin 2vmin; pointer-events: auto; }
+  /* sized to fit its card: the letters are inline-blocks joined by non-breaking spaces, so a line that is too wide would wrap mid-word */
+  .heroHead h2 { font-size: min(7vw, 3.4rem); }
+  .slLine { white-space: nowrap; }
+  .heroRot { position: static; padding: 0 4vmin 2vmin; justify-content: flex-start; }
+  .rotText { transform: none; filter: none; text-align: left; font-size: max(var(--type-min), 3vmin); }
+  .rotText .sl, .hTop .sl, .hBottom .sl { transform: none; filter: none; opacity: 1; }
+  .heroBottom { position: static; padding: 2vmin 4vmin 5vmin; opacity: 1; }
+  /* the prototype hides these two lines on phones in the pinned card; here they are plain content */
+  .divider { display: block; }
+  .heroRow { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3vmin; }
+  .heroRight { text-align: left; max-width: none; }
+
+  /* 2 · the two numbered cards */
+  .cc { height: auto; min-height: 30rem; }
+
+  /* 3 · the network card, then its text as a block */
+  .sphereCard { display: flex; flex-direction: column; gap: 3vmin; height: auto; }
+  .cardFace { position: relative; min-height: 26rem; }
+  .blackPanel { position: static; width: auto; height: auto; clip-path: none; transform: none; border-radius: var(--radius-card); }
+  .sphereScene { position: static; width: auto; height: auto; transform: none; display: flex; flex-direction: column; gap: 3vmin; padding: 6vmin 4vmin; }
+  .hTop, .hBottom { position: static; align-items: flex-start; text-align: left; font-size: min(var(--sr-heading-2), 14vw); white-space: normal; }
+  .sphereBody { position: static; opacity: 1; transform: none; max-width: none; font-size: max(var(--type-min), 2.4vmin); text-shadow: none; }
+
+  /* closing ask */
+  .target { position: relative; left: auto; top: auto; width: 100%; height: auto; transform: none; visibility: visible; mask-image: none; -webkit-mask-image: none; z-index: auto; overflow: visible; border-radius: var(--radius-card); }
+  .ctaBlock { position: static; padding: 8vmin 4vmin; pointer-events: auto; }
+  .ctaBlock h2 { max-width: none; font-size: min(7vw, 14vmin); }
+  .ctaLead { max-width: 60ch; }
+  .ctaTrust { max-width: none; }
+
+  /* carousel link, then the service panels, in normal flow */
+  .cta { position: static; opacity: 1; visibility: visible; transform: none; padding: 0; justify-content: flex-start; pointer-events: auto; }
+  .pfSection { position: static; transform: none; visibility: visible; padding: 0 4vmin 6vmin; overflow: visible; }
+  .pfTrack { flex-direction: column; height: auto; padding-left: 0; gap: 3vmin; }
+  .pf { width: 100%; height: auto; min-height: 28rem; gap: 6vmin; }
+  .pf h3 { max-width: none; font-size: min(7vw, 14vmin); }
 }

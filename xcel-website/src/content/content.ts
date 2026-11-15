@@ -190,10 +190,12 @@ export const SHOWREEL: Showreel = {
   },
 
   // 4 · inside the network, reached by diving through the hub of the XcelCareers mark
-  sphereTop: "300,000+",
-  sphereBottom: ["profiles", "on file"],
+  // The "300,000+ profiles on file" figure is withheld from the showreel until its source, meaning and
+  // scope are verified (docs/SHOWREEL.md). The heading states the process instead.
+  sphereTop: "Search.",
+  sphereBottom: ["Then", "verify."],
   sphereBody: [
-    "Every request is searched across it, plus job boards and referrals.",
+    "Every request starts with a search, including job boards and referrals.",
     "Then we interview and verify licenses, certifications, references and backgrounds.",
   ],
 

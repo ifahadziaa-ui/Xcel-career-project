@@ -35,11 +35,12 @@ src/app/layout.tsx            html / body, fonts, metadata, inline motion script
 
 ## Lenis lifecycle
 
-- Created in a `LenisController` effect, destroyed in its cleanup (removes its listeners and the `lenis` classes), published through `lib/scroll/lenis.ts`. The showreel's sideways snap (Stage 5) must call `getLenis()` / `onLenisChange()` and attach and detach in its own effect; it must not create another scroll engine.
+- Created in a `LenisController` effect, destroyed in its cleanup (removes its listeners and the `lenis` classes), published through `lib/scroll/lenis.ts`. The showreel's engine uses `onScrollFrame()` (below), and its sideways snap (5B-3) must call `getLenis()` / `onLenisChange()` and attach and detach in its own effect; nothing may create another scroll engine.
 - Driven by the shared ticker, so there is a single `requestAnimationFrame` loop for the site (measured: about 58 calls per second when idle).
 - `smoothWheel` is off whenever animations are paused (the OS setting unless the visitor chose) and follows later changes. The prototype followed the OS media query only; the pause toggle now also turns eased wheel scrolling off.
 - Anchors: one capturing click handler on `document`. Links to the current page scroll with Lenis: `#id` lands below the fixed bar, `#top`, or a link to the current path with no hash, scrolls to the top. Everything else goes to `next/link`. Because Lenis also honours `html { scroll-padding-top }`, a section lands `--bar-h + 32px` from the top, as on the prototype's home page.
 - `history.scrollRestoration` is not forced to `"manual"` (the prototype did). Next.js and the browser restore position on back and forward; forward navigation starts at the top. Lenis re-measures after each route change.
+- **Post-frame subscription:** `onScrollFrame(fn)` (`lib/scroll/lenis.ts`) runs `fn` every shared tick straight after `lenis.raf(t)`, so subscribers see the scroll Lenis has just written; returns an unsubscribe; same function held once; safe to unsubscribe during a notification; the frame object is reused. Full contract in `docs/SHOWREEL.md`.
 - Scroll lock (`lockScroll`/`unlockScroll`) is counted, so the phone chat sheet and the later preloader cannot release each other's lock. Created while locked, Lenis starts stopped.
 
 ## Hidden routes (Cache Components / Activity)

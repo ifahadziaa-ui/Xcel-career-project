@@ -1,12 +1,13 @@
 /* =====================================================================
-   SHOWREEL, Stage 5B-1: the static stage. Server component, no state, no effects.
+   SHOWREEL markup (Stages 5B-1 and 5B-2). Server component, no state, no effects.
 
    Markup follows build() in landing-prototype-clean/js/showreel.js, from content.ts. The page
-   is the opening frame (scroll progress 0): the CSS module carries that frame, the track has
-   its real height, and nothing moves yet. The scroll engine (5B-2), snap (5B-3) and the five
-   WebGL scenes (5B-4 to 5B-6) attach to this DOM later and own only inline styles, SVG
-   attributes and canvases; React never re-renders this subtree, so there is nothing for it to
-   reconcile. Engine hooks are data-sr="..." attributes (scoped to the section, never ids: a
+   is the opening frame (scroll progress 0): the CSS module carries that frame and the track has
+   its real height, so it is correct before any script runs. The scroll engine (lib/showreel/engine.ts,
+   mounted by ShowreelStage) then drives it from scroll progress; it owns only inline styles and a few
+   SVG attributes on elements it finds by data-sr. Snap (5B-3) and the five WebGL scenes (5B-4 to
+   5B-6) attach later and own only their canvases. React never re-renders this subtree, so there is
+   nothing for it to reconcile. Engine hooks are data-sr="..." attributes (scoped to the section, never ids: a
    hidden route's DOM stays in the document under Cache Components).
 
    Differences from the prototype, markup only:
@@ -22,6 +23,8 @@ import Link from "next/link";
 import { CONTACT, FUNCTIONS, SHOWREEL as S } from "@/content/content";
 import { ROUTES } from "@/content/routes";
 import { MARK_BODY_POINTS, MARK_BOX, MARK_HEAD, MARK_RAYS } from "@/lib/mark/geometry";
+import { SHOWREEL_PRE_SCRIPT } from "@/lib/showreel/preScript";
+import ShowreelStage from "./ShowreelStage";
 import s from "./Showreel.module.css";
 
 /** the text, one span per letter, for the scroll-driven letter animation */
@@ -73,7 +76,9 @@ const C = S.cards;
 
 export default function Showreel() {
   return (
-    <section className={s.sr} id="services" aria-label="What we do" data-chat-reel="" data-showreel="">
+    <ShowreelStage>
+      {/* marks the section while a restored or #hash position could be painted before hydration; see preScript.ts */}
+      <script dangerouslySetInnerHTML={{ __html: SHOWREEL_PRE_SCRIPT }} />
       <div className={s.aurora} data-sr="aurora" aria-hidden="true">
         <canvas data-sr="aurora-canvas" />
       </div>
@@ -278,6 +283,10 @@ export default function Showreel() {
                 <canvas data-sr="target-bg" />
                 <canvas data-sr="target-canvas" />
                 <div className={s.vignette} aria-hidden="true" />
+                {/* stand-in for the 3D chrome mark until its renderer exists (5B-6): the brand mark, faded and scaled in by the engine */}
+                <svg className={s.targetMark} data-sr="target-mark" aria-hidden="true" focusable="false">
+                  <use href="#i-mark" />
+                </svg>
                 <div className={s.ctaBlock} data-sr="cta-block">
                   <p className={s.ctaEyebrow} data-sr="cta-part">
                     <span className={s.dot} aria-hidden="true" />
@@ -285,7 +294,7 @@ export default function Showreel() {
                   </p>
                   <h2>
                     <span data-sr="cta-part">{S.finalLines[0]}</span>
-                    <span className={s.dim} data-sr="cta-part">{S.finalLines[1]}</span>
+                    <span className={s.dim} data-sr="cta-part" data-dim="">{S.finalLines[1]}</span>
                   </h2>
                   <p className={s.ctaLead} data-sr="cta-part">{S.finalLead}</p>
                   <div className={s.ctaRow} data-sr="cta-part">
@@ -333,6 +342,6 @@ export default function Showreel() {
           ))}
         </div>
       </section>
-    </section>
+    </ShowreelStage>
   );
 }
