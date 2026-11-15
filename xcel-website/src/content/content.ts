@@ -100,6 +100,13 @@ export const SHOWREEL = {
     "Every staffing request starts with a search of it. We interview the best matches, then verify each license, certification, reference and background check before you see a résumé.",
   ],
 
+  // 5 · the general title over the three lines of business (the first slide of the strip)
+  pfIntro: {
+    k: "What we staff",
+    t: "Three lines of work, one workforce partner",
+    d: "Healthcare staffing comes first. Government contracting and IT, finance and cybersecurity specialists sit beside it. Each has its own page with the roles, how we work and who it is for.",
+  },
+
   // 6 · the ask (the phone number comes from CONTACT)
   finalEyebrow: "Request staff",
   finalLines: ["One nurse.", "Or 120+ staff."],
@@ -114,7 +121,7 @@ export const SHOWREEL = {
    background videos with text over them (client: moving people, healthcare first) */
 export const FUNCTIONS = [
   {
-    n: "01", kicker: "Main focus",
+    n: "01", kicker: "Main focus", href: "/healthcare", cta: "Healthcare staffing",
     title: "Healthcare",
     tags: ["Hospitals", "Clinics", "Long-term care", "Behavioral health", "County & state HHS"],
     line: "We place registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff with hospitals, clinics, long-term care and county and state health departments, on contract, contract-to-hire or direct hire.",
@@ -122,7 +129,7 @@ export const FUNCTIONS = [
     note: "Your clip · 10–15 s loop · muted · 16:9 · real staff, no stock look",
   },
   {
-    n: "02", kicker: "Local · State · Federal",
+    n: "02", kicker: "Local · State · Federal", href: "/government", cta: "Government contracting",
     title: "Government",
     tags: ["Staff augmentation", "Contract staffing", "Task orders / IDIQ", "Consulting"],
     line: "A Maryland MBE, DBE and SBE certified small business. We prime or subcontract on local, state and federal work: staff augmentation, contract staffing, task orders and IDIQ, plus business analysis and program management consulting.",
@@ -130,7 +137,7 @@ export const FUNCTIONS = [
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },
   {
-    n: "03", kicker: "Across both",
+    n: "03", kicker: "Across both", href: "/specialists", cta: "IT, finance and cyber",
     title: "IT · Finance · Cyber",
     tags: ["EHR & systems", "Revenue cycle", "Budget analysis", "Cleared to TS/SCI"],
     line: "The people behind the systems: EHR and network administrators, service desk staff, revenue cycle and budget analysts, and cybersecurity engineers cleared up to TS/SCI with Full Scope Poly, for healthcare providers and government programs.",

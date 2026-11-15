@@ -1,4 +1,5 @@
 import { CREDENTIALS, LEDGER, SERVICE_PAGES } from "@/content/content";
+import NewEraBackdrop from "@/components/NewEraBackdrop";
 import { AskBand, Btn, CallLink, CredStrip, PageHero, SectionHead } from "@/components/pg";
 
 type Key = keyof typeof SERVICE_PAGES;
@@ -6,9 +7,12 @@ type Key = keyof typeof SERVICE_PAGES;
 /* The three service pages share one layout: hero, blocks, list, checks, terms, proof, ask. */
 export default function ServicePage({ pageKey }: { pageKey: Key }) {
   const P = SERVICE_PAGES[pageKey] as (typeof SERVICE_PAGES)["healthcare"] & { terms?: { t: string; d: string }[] };
+  const era = pageKey === "healthcare"; // only the Healthcare page has the DNA backdrop
   return (
-    <main className="pg" id="main">
+    <main className={era ? "pg pg--era" : "pg"} id="main">
+      {era ? <NewEraBackdrop /> : null}
       <PageHero
+        cascade={era}
         eyebrow={P.eyebrow}
         title={P.title}
         intro={P.intro}

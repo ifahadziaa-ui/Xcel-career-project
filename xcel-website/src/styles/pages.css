@@ -245,3 +245,29 @@
 
 /* the job page: space between the summary and "What it needs" */
 .pg-lead + .pg-h3 { margin-top: 2rem; }
+
+/* ---------- Healthcare page: the DNA particle backdrop (user, 15 Nov 2026) ---------- */
+.era-canvas { position: fixed; inset: 0; z-index: -1; width: 100vw; height: 100vh; height: 100lvh; display: block; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+.era-canvas[data-on="1"] { opacity: 1; }
+.pg--era .pg-sec { border-top-color: rgb(243 243 245 / 0.06); }
+/* glass: the cards and panels let the field show through and keep their text readable */
+.pg--era .pg-card, .pg--era .pg-panel, .pg--era .pg-proof li, .pg--era .pg-creds li {
+  background: rgb(16 16 18 / 0.46); border-color: rgb(255 255 255 / 0.12);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+.pg--era .pg-list li, .pg--era .pg-lead, .pg--era .pg-intro { text-shadow: 0 1px 14px rgb(16 16 18 / 0.7); }
+/* the eyebrow becomes a pill */
+.pg--era .pg-hero .eyebrow {
+  display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1.05rem 0.6rem; border-radius: 999px;
+  border: 1px solid rgb(255 255 255 / 0.18); background: rgb(255 255 255 / 0.05);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+/* glass buttons */
+.pg--era .btn--ghost { background: rgb(255 255 255 / 0.06); border: 1px solid rgb(255 255 255 / 0.32); color: var(--foreground); }
+/* letter cascade */
+.pg-cascade .w { display: inline-block; white-space: pre; }
+.pg-cascade .ch { display: inline-block; opacity: 0; transform: translate3d(0, 0.55em, 0); animation: ch-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(0.25s + var(--i) * 0.035s); }
+@keyframes ch-rise { from { opacity: 0; transform: translate3d(0, 0.55em, 0); } to { opacity: 1; transform: none; } }
+html[data-motion="paused"] .pg-cascade .ch, :root:has(.pg--era)[data-motion="paused"] .pg-cascade .ch { animation: none; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .pg-cascade .ch { animation: none; opacity: 1; transform: none; } .era-canvas { transition: none; } }
+@media (width < 700px) { .era-canvas[data-on="1"] { opacity: 0.6; } }

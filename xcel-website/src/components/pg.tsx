@@ -1,7 +1,7 @@
 /* Shared pieces for the inner pages (server components). Class names are the prototype's
    (styles/pages.css), so the pages look the same. */
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { CERTS, CONTACT, CREDENTIALS } from "@/content/content";
 
 export const tel = "tel:+1" + CONTACT.phone.replace(/\D/g, "");
@@ -15,13 +15,33 @@ export const Eyebrow = ({ children }: { children: ReactNode }) => (
 );
 
 /* headline lines; the last one is the red accent, like CARE in the hero */
-export const Headline = ({ lines, as: Tag = "h1" }: { lines: readonly string[]; as?: "h1" | "h2" }) => (
-  <Tag className="hl type-display pg-hl" data-r="1">
-    {lines.map((l, i) =>
-      i === lines.length - 1 ? <span key={l} className="mark">{l}</span> : <span key={l} className="l">{l}</span>,
-    )}
-  </Tag>
-);
+export const Headline = ({ lines, as: Tag = "h1", cascade = false }: { lines: readonly string[]; as?: "h1" | "h2"; cascade?: boolean }) => {
+  if (cascade) {
+    // letters rise one after another (the Healthcare page); the heading keeps its plain text for screen readers
+    let n = 0;
+    return (
+      <Tag className="hl type-display pg-hl pg-cascade" aria-label={lines.join(" ")}>
+        {lines.map((l, i) => (
+          <span key={l} className={i === lines.length - 1 ? "mark" : "l"} aria-hidden="true">
+            {l.split(" ").map((w, wi) => (
+              <span className="w" key={wi}>
+                {[...w].map((c, ci) => <span className="ch" style={{ "--i": n++ } as CSSProperties} key={ci}>{c}</span>)}
+                {" "}
+              </span>
+            ))}
+          </span>
+        ))}
+      </Tag>
+    );
+  }
+  return (
+    <Tag className="hl type-display pg-hl" data-r="1">
+      {lines.map((l, i) =>
+        i === lines.length - 1 ? <span key={l} className="mark">{l}</span> : <span key={l} className="l">{l}</span>,
+      )}
+    </Tag>
+  );
+};
 
 export const Btn = ({ href, children, ghost = false }: { href: string; children: ReactNode; ghost?: boolean }) => (
   <Link className={`btn${ghost ? " btn--ghost" : ""}`} href={href}>{children}<Arrow /></Link>
@@ -43,12 +63,12 @@ export const Notice = ({ tag = "Sample", children }: { tag?: string; children: R
   <p className="pg-notice" data-r="0"><span className="tag">{tag}</span>{children}</p>
 );
 
-export function PageHero({ eyebrow, title, intro, actions }: { eyebrow: string; title: readonly string[]; intro?: string; actions?: ReactNode }) {
+export function PageHero({ eyebrow, title, intro, actions, cascade = false }: { eyebrow: string; title: readonly string[]; intro?: string; actions?: ReactNode; cascade?: boolean }) {
   return (
     <section className="pg-hero">
       <div className="pg-wrap">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <Headline lines={title} />
+        <Headline lines={title} cascade={cascade} />
         {intro ? <p className="pg-intro" data-r="2">{intro}</p> : null}
         {actions ? <div className="pg-actions" data-r="3">{actions}</div> : null}
       </div>
