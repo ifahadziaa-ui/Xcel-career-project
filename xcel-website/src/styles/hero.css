@@ -517,11 +517,11 @@
     --dot: calc(var(--u) * 6);
     --scan: calc(var(--u) * 3.16);
     --scan-half: calc(var(--u) * 1.58);
-    --title-size: calc(var(--u) * 66);
-    --title-leading: calc(var(--u) * 56);
-    --title-track: calc(var(--u) * -1.55);
-    --title-word: calc(var(--u) * -2.4);
-    --title-stroke: calc(var(--u) * 0.28);
+    --title-size: calc(var(--u) * 88);
+    --title-leading: calc(var(--u) * 74);
+    --title-track: calc(var(--u) * -2.1);
+    --title-word: calc(var(--u) * -3.1);
+    --title-stroke: calc(var(--u) * 0.36);
     --term-col: calc(var(--u) * 92);
     --term-size: calc(var(--u) * 9);
     --term-track: calc(var(--u) * 1.6);
@@ -605,8 +605,7 @@
     bottom: 6.069%; /* low on the page, on the same baseline as the info panel on the right (as in the reference) */
     left: var(--pl);
     margin: 0;
-    /* a compact column at the left margin, never wider than the gap before the case; its text is centred in it */
-    width: min(calc(var(--u) * 330), calc(50cqw - var(--u) * 211.66 - var(--u) * 24 - var(--pl)));
+    width: max-content;
   }
 
   .hx-specimen .hx-dot {
@@ -643,9 +642,6 @@
   .hx-lead { margin-top: calc(var(--u) * 20); font-size: calc(var(--u) * 13.5); max-width: 50ch; }
 }
 
-/* the headline block: text centred in its column (user, 15 Nov 2026) */
-.hx-titleBlock { text-align: center; }
-.hx-specimen { justify-content: center; }
-.hx-title { margin-left: 0; }
-.hx-lead { margin-inline: auto; }
-@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) { .hx-lead { max-width: 100%; } }
+/* the headline block: left aligned, as in the reference; the intro never runs wider than the headline (user, 15 Nov 2026) */
+.hx-titleBlock { width: max-content; max-width: 100%; text-align: left; }
+.hx-lead { width: 0; min-width: 100%; } /* it takes the headline's width and does not widen the block */

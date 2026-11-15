@@ -54,3 +54,35 @@
 .faq { gap: var(--sp-12); }
 .acc summary { padding-block: var(--sp-4); }
 .acc .q { font-size: var(--pg-body); }
+
+/* =====================================================================
+   SMOOTH SECTION BOUNDARIES (user, 15 Nov 2026): a dispersed cloud instead of a hard edge
+   ===================================================================== */
+/* the hero ends in soft puffs of the page colour */
+.hx-hero::after {
+  content: ""; position: absolute; left: -2%; right: -2%; bottom: -24px; height: calc(14% + 24px); z-index: 0; pointer-events: none; /* under the hero's text, over its background */
+  background:
+    radial-gradient(34% 95% at 8% 112%, #101012 52%, transparent 100%),
+    radial-gradient(38% 110% at 30% 118%, #101012 52%, transparent 100%),
+    radial-gradient(34% 100% at 55% 112%, #101012 52%, transparent 100%),
+    radial-gradient(40% 112% at 80% 118%, #101012 52%, transparent 100%),
+    radial-gradient(30% 95% at 100% 110%, #101012 52%, transparent 100%),
+    linear-gradient(to bottom, transparent 35%, rgb(16 16 18 / 0.88) 100%);
+  filter: blur(6px);
+}
+/* the dark sections below fade in and out at their top and bottom edges, so their fog is never cut off by a line */
+.p2sec.certs, .p2sec.process, .p2sec.record, .p2sec.faq-sec, .p2sec.join {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 4.5rem, #000 calc(100% - 4.5rem), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 4.5rem, #000 calc(100% - 4.5rem), transparent 100%);
+}
+/* the light showreel stage comes up out of a dark cloud rather than starting at a straight edge */
+.sr::before {
+  content: ""; position: absolute; left: -2%; right: -2%; top: -24px; height: calc(20rem + 24px); z-index: 4; pointer-events: none;
+  background:
+    radial-gradient(36% 70% at 12% -8%, #101012 55%, transparent 100%),
+    radial-gradient(40% 80% at 38% -12%, #101012 55%, transparent 100%),
+    radial-gradient(36% 74% at 64% -8%, #101012 55%, transparent 100%),
+    radial-gradient(40% 82% at 90% -12%, #101012 55%, transparent 100%),
+    linear-gradient(to bottom, #101012 0%, rgb(16 16 18 / 0.55) 40%, transparent 100%);
+  filter: blur(14px);
+}
