@@ -272,3 +272,11 @@ html[data-motion="paused"] .pg-cascade .ch, :root:has(.pg--era)[data-motion="pau
 @media (prefers-reduced-motion: reduce) { .pg-cascade .ch { animation: none; opacity: 1; transform: none; } .era-canvas { transition: none; } }
 @media (width < 700px) { .era-canvas[data-on="1"] { opacity: 0.6; } }
 .pg-hero .eyebrow { white-space: normal; text-align: center; max-width: 100%; } /* long labels wrap on a phone instead of being cut off */
+
+/* ---------- smaller, tighter hero headings on every inner page (user, 15 Nov 2026) ---------- */
+.pg-hero .hl { font-size: max(2.25rem, calc(var(--type-display) * 0.52)); margin-top: 0.75rem; }
+.pg-hero .pg-hl { line-height: 1.02; }
+.pg-hero .pg-intro { margin-top: 1.1rem; font-size: calc(var(--type-body) * 1.1); }
+.pg-hero .pg-actions { margin-top: 1.5rem; }
+.pg-hero { padding-bottom: 3rem; }
+@media (width < 700px) { .pg-hero { padding-bottom: 2.25rem; } .pg-hero .pg-intro { font-size: var(--type-body); } }

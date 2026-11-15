@@ -11,7 +11,7 @@ attribute float aT; attribute float aSel; attribute vec3 aR;
 varying vec3 vColor; varying float vAlpha;
 void main() {
   float y = (aT - 0.5) * uLen;
-  float thick = 0.62;
+  float thick = 0.5;
   vec3 p;
   vec3 silver = vec3(0.82, 0.82, 0.88);
   vec3 red = vec3(1.0, 0.16, 0.27);
@@ -35,7 +35,7 @@ void main() {
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
   float depth = smoothstep(-uRadius * 1.1, uRadius * 1.1, p.z);   // the near side is brighter and larger
   vAlpha = mix(0.35, 1.0, depth) * (aSel < 0.8 ? 1.0 : 0.7);
-  gl_PointSize = mix(2.4, 5.2, depth) * uPx;
+  gl_PointSize = mix(1.7, 3.6, depth) * uPx;
   gl_Position = projectionMatrix * mv;
 }`;
 
@@ -54,10 +54,11 @@ export function createDna(canvas, read) {
   renderer.setClearColor(0x101012, 1);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-  camera.position.z = 10;
-  const VIS_H = 2 * 10 * Math.tan((50 * Math.PI) / 360); // visible height at the helix, about 9.3 units
+  const CAM_Z = 17; // further back than before: a smaller, calmer helix
+  camera.position.z = CAM_Z;
+  const VIS_H = 2 * CAM_Z * Math.tan((50 * Math.PI) / 360); // visible height at the helix, about 9.3 units
 
-  const LEN = 70;
+  const LEN = 110;
   const n = window.innerWidth <= 640 ? 22000 : 40000;
   const aT = new Float32Array(n), aSel = new Float32Array(n), aR = new Float32Array(n * 3);
   for (let i = 0; i < n; i++) {
@@ -71,7 +72,7 @@ export function createDna(canvas, read) {
   geo.setAttribute("aR", new THREE.BufferAttribute(aR, 3));
   const material = new THREE.ShaderMaterial({
     uniforms: {
-      uTime: { value: 0 }, uRot: { value: 0 }, uLen: { value: LEN }, uTwist: { value: 0.7 }, uRadius: { value: 3.2 }, uPx: { value: 1 },
+      uTime: { value: 0 }, uRot: { value: 0 }, uLen: { value: LEN }, uTwist: { value: 0.55 }, uRadius: { value: 3.2 }, uPx: { value: 1 },
     },
     vertexShader: VERT, fragmentShader: FRAG, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
   });
@@ -86,7 +87,7 @@ export function createDna(canvas, read) {
     camera.aspect = w / h; camera.updateProjectionMatrix();
     material.uniforms.uPx.value = renderer.getPixelRatio();
     // wide screens get a big helix; on a phone it is kept inside the width
-    material.uniforms.uRadius.value = Math.min(4.8, VIS_H * (w / h) * 0.36);
+    material.uniforms.uRadius.value = Math.min(3.6, VIS_H * (w / h) * 0.24);
     pxPerUnit = h / VIS_H;
   };
   resize();
