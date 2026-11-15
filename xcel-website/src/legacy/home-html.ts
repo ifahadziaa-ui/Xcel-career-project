@@ -26,8 +26,8 @@ export const HOME_HTML = `
     </div>
     <p class="hx-meta hx-sealed">CAGE / 89AK6</p>
     <div class="hx-titleBlock">
-      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Workforce provider · <span class="hx-red">Veteran-owned</span></span></p>
-      <h1 id="hero-title" class="hx-title"><span class="hx-line">People</span><span class="hx-line">Behind</span><span class="hx-line">The <span class="hx-accent">Care</span></span></h1>
+      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Minority <span class="hx-red">veteran-owned</span></span></p>
+      <h1 id="hero-title" class="hx-title"><span class="hx-line">Workforce</span><span class="hx-line"><span class="hx-accent">Provider</span></span></h1>
       <p class="hx-lead">An employment workforce provider: nurses and care staff for hospitals and clinics, staff augmentation for local, state and federal agencies, and the IT, finance and cybersecurity specialists behind both.</p>
     </div>
     <dl class="hx-placard">

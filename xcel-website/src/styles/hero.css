@@ -357,7 +357,7 @@
   --dot: 5px;
   --scan: 4px;
   --scan-half: 2px;
-  --title-size: clamp(64px, min(22.5vw, 13svh), 150px);
+  --title-size: clamp(56px, min(calc((100vw - 40px) / 4.3), 13svh), 150px); /* WORKFORCE has to fit the screen width */
   --title-leading: 0.8445;
   --title-track: -0.028em;
   --title-word: -0.01em;
@@ -517,11 +517,11 @@
     --dot: calc(var(--u) * 6);
     --scan: calc(var(--u) * 3.16);
     --scan-half: calc(var(--u) * 1.58);
-    --title-size: calc(var(--u) * 98.3);
-    --title-leading: calc(var(--u) * 83);
-    --title-track: calc(var(--u) * -2.35);
-    --title-word: calc(var(--u) * -3.5);
-    --title-stroke: calc(var(--u) * 0.4);
+    --title-size: calc(var(--u) * 66);
+    --title-leading: calc(var(--u) * 56);
+    --title-track: calc(var(--u) * -1.55);
+    --title-word: calc(var(--u) * -2.4);
+    --title-stroke: calc(var(--u) * 0.28);
     --term-col: calc(var(--u) * 92);
     --term-size: calc(var(--u) * 9);
     --term-track: calc(var(--u) * 1.6);
@@ -604,6 +604,8 @@
     top: calc(42.052% - var(--u) * 0.6);
     left: var(--pl);
     margin: 0;
+    /* the block fills the gap between the left margin and the glass case, and its text is centred in it (user, 15 Nov 2026) */
+    width: calc(50cqw - var(--u) * 211.66 - var(--u) * 24 - var(--pl));
   }
 
   .hx-specimen .hx-dot {
@@ -639,3 +641,10 @@
 @media (min-width: 1024px) {
   .hx-lead { margin-top: calc(var(--u) * 20); font-size: calc(var(--u) * 13.5); max-width: 50ch; }
 }
+
+/* the headline block: text centred in its column (user, 15 Nov 2026) */
+.hx-titleBlock { text-align: center; }
+.hx-specimen { justify-content: center; }
+.hx-title { margin-left: 0; }
+.hx-lead { margin-inline: auto; }
+@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) { .hx-lead { max-width: 100%; } }
