@@ -292,15 +292,7 @@ function build(section) {
   </div>`;
 
   // 5 · the three lines of business, numbered in the client's order of priority
-  const I = S.pfIntro;
-  const introSlide = `
-    <article class="sr-pf sr-pf--intro">
-      <p class="sr-pf-kicker">${esc(I.k)}</p>
-      <h3>${esc(I.t)}</h3>
-      <p class="sr-pf-line">${esc(I.d)}</p>
-      <ul class="sr-pf-links">${FUNCTIONS.map((f) => `<li><a href="${f.href}">${esc(f.cta)}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>`).join("")}</ul>
-    </article>`;
-  const pf = introSlide + FUNCTIONS.map((f) => `
+  const pf = FUNCTIONS.map((f) => `
     <article class="sr-pf">
       ${ph({ kind: "video", what: f.video, note: f.note, video: PANEL_VIDEO[f.n] })}
       <div class="sr-pf-tags">${f.tags.map((t) => `<span>${esc(t)}</span>`).join('<span class="sep">·</span>')}</div>

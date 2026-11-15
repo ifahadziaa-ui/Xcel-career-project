@@ -439,27 +439,11 @@
     var(--sr-ink);
 }
 
-/* ---------- the strip's general title slide, and a button on each panel (user, 15 Nov 2026) ---------- */
-.sr-pf--intro {
-  width: 34vw; justify-content: center; gap: 2.2vmin; padding: 5vmin;
-  background:
-    radial-gradient(90% 60% at 20% 0%, rgb(255 42 69 / 0.26), transparent 70%),
-    radial-gradient(80% 60% at 100% 100%, rgb(198 198 198 / 0.1), transparent 70%),
-    linear-gradient(165deg, #232326, #131315);
-}
-.sr-pf--intro h3 { font-size: 4.6vw; max-width: none; text-transform: none; }
-.sr-pf--intro .sr-pf-kicker { margin-bottom: 0; }
-.sr-pf-links { margin: 1.4vmin 0 0; padding: 0; list-style: none; display: grid; gap: 1.2vmin; }
-.sr-pf-links a {
-  display: flex; align-items: center; justify-content: space-between; gap: 2vmin; padding: 1.7vmin 0;
-  border-top: 1px solid rgb(255 255 255 / 0.16); font-size: max(14px, 2.1vmin); color: #f3f3f5;
-}
-.sr-pf-links a:hover, .sr-pf-links a:focus-visible { color: var(--sr-red); }
-.sr-pf-links svg, .sr-pf-btn svg { width: 1.4em; height: 0.9em; flex: none; }
+/* ---------- a button on each panel of the staffing strip (user, 15 Nov 2026) ---------- */
+.sr-pf-btn svg { width: 1.4em; height: 0.9em; flex: none; }
 .sr-pf-btn {
   display: inline-flex; align-items: center; gap: 1.6vmin; margin-top: 2.6vmin; padding: 1.6vmin 2.8vmin; border-radius: 8px;
   border: 1px solid rgb(255 255 255 / 0.42); background: rgb(16 16 18 / 0.5); color: #fff;
   font-size: max(14px, 2vmin); line-height: 1.2; text-box: trim-both cap alphabetic;
 }
 .sr-pf-btn:hover, .sr-pf-btn:focus-visible { background: var(--sr-red); border-color: var(--sr-red); color: var(--sr-ink); }
-@media (max-aspect-ratio: 1/1) { .sr-pf--intro { width: 84vw; } .sr-pf--intro h3 { font-size: 9vw; } }

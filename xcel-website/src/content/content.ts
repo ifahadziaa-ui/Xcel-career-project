@@ -100,13 +100,6 @@ export const SHOWREEL = {
     "Every staffing request starts with a search of it. We interview the best matches, then verify each license, certification, reference and background check before you see a résumé.",
   ],
 
-  // 5 · the general title over the three lines of business (the first slide of the strip)
-  pfIntro: {
-    k: "What we staff",
-    t: "Three lines of work, one workforce partner",
-    d: "Healthcare staffing comes first. Government contracting and IT, finance and cybersecurity specialists sit beside it. Each has its own page with the roles, how we work and who it is for.",
-  },
-
   // 6 · the ask (the phone number comes from CONTACT)
   finalEyebrow: "Request staff",
   finalLines: ["One nurse.", "Or 120+ staff."],
