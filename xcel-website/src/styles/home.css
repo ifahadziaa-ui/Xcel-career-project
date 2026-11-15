@@ -1,0 +1,56 @@
+/* =====================================================================
+   HOME PAGE REFINEMENT (user, 15 Nov 2026)
+   The sections below the hero move onto the same grid, type scale and surfaces as the inner pages
+   (tokens in pages.css): controlled width, smaller cards, tighter rows. Loaded last, so these win
+   over the prototype's section rules in sections.css without editing them.
+   ===================================================================== */
+
+/* the root size follows the viewport up to 1440px and stops there (it used to keep growing, which stretched every
+   section across wide screens); with the content capped at 1280px, a 1920px screen shows the 1440px design centred */
+@media (min-width: 1200px) { html { font-size: clamp(15px, 1.142857vw, 16.457px); } }
+@media (width < 700px) { html { font-size: max(15px, min(4.102564vw, 19.2px)); } }
+
+/* section frame: the shared side margin (--gx), less vertical air */
+.p2sec { padding: var(--sp-16) var(--gx) var(--sp-16); }
+@media (width < 700px) { .p2sec { padding: var(--sp-10) var(--gx) var(--sp-12); } }
+
+/* section headings: one size, on the inner pages' scale */
+.p2sec .hl, .certs-line, .faq-left .hl { font-size: var(--pg-h2); line-height: 1.1; letter-spacing: -0.02em; }
+
+/* ---------- process: four compact cards in a controlled grid ---------- */
+.steps { max-width: 72rem; margin: var(--sp-8) auto 0; gap: var(--sp-4); }
+.step { min-height: 0; padding: var(--sp-6) var(--sp-4) var(--sp-4); gap: var(--sp-2); border-radius: var(--pg-r-card); border-color: var(--pg-line); background: var(--pg-surface); }
+.step-num { font-size: 1.75rem; line-height: 1; }
+.step h3 { margin-top: var(--sp-1); font-size: var(--pg-card-title); line-height: 1.2; letter-spacing: -0.01em; }
+.step p.txt { margin-top: var(--sp-1); font-size: var(--pg-small); line-height: 1.55; }
+.step .stats { margin-top: var(--sp-4); padding-top: var(--sp-3); font-size: var(--pg-label); line-height: 1.5; }
+@media (width < 1200px) { .step { padding: var(--sp-6) var(--sp-4) var(--sp-4); } }
+.process-split { max-width: 36rem; margin-top: var(--sp-6); font-size: var(--pg-small); }
+
+/* ---------- on the record: compact statistics and a tighter ledger ---------- */
+.stickers { max-width: 72rem; margin: var(--sp-8) auto 0; gap: var(--sp-4); }
+.stk-in { gap: var(--sp-2); padding: var(--sp-4); border-radius: var(--pg-r-card); border-color: var(--pg-line); background: transparent; }
+.stk-val { font-size: clamp(2rem, 1.3rem + 1.4vw, 2.75rem); line-height: 1; }
+.stk-lbl { font-size: var(--pg-label); letter-spacing: 0.08em; }
+.ledger { max-width: 72rem; margin: var(--sp-8) auto 0; border-top-color: var(--pg-line); }
+.ledger li { min-height: 0; padding-block: var(--sp-3); border-bottom-color: var(--pg-line); }
+.lg-date, .lg-ref { font-size: var(--pg-label); letter-spacing: 0.06em; }
+.lg-title { font-size: 0.9375rem; line-height: 1.4; }
+.lg-stamp { padding: 0.45em 0.7em; font-size: 0.6875rem; letter-spacing: 0.1em; }
+@media (min-width: 1200px) { .ledger li { grid-template-columns: 7.5rem minmax(0, 1fr) minmax(0, 11rem) 6.5rem; column-gap: var(--sp-4); } }
+@media (width < 1200px) { .ledger li { padding-block: var(--sp-3); } }
+@media (width < 700px)  { .ledger li { padding-block: var(--sp-3); } .stk-in { padding: var(--sp-4); } }
+
+/* ---------- contact ---------- */
+.join-form input { height: var(--pg-input-h); border-radius: var(--pg-r-ctl); }
+.join-fine { margin-top: var(--sp-4); }
+
+/* ---------- certifications and customers: tighter rhythm ---------- */
+.certs-badges { margin-top: var(--sp-8); }
+.certs-sub { margin: var(--sp-12) auto var(--sp-6); }
+.certs-note { margin-top: var(--sp-6); }
+
+/* ---------- faq ---------- */
+.faq { gap: var(--sp-12); }
+.acc summary { padding-block: var(--sp-4); }
+.acc .q { font-size: var(--pg-body); }
