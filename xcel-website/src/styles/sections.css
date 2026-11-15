@@ -135,21 +135,9 @@
 .hx-account { color: var(--nav, #919194); letter-spacing: var(--mono-track); }
 .hx-account:hover, .hx-account:focus-visible { color: #fff; }
 .hx-nav a[aria-current="page"] { color: #fff; }
-@media (width < 896px) { .hx-live { display: none; } } /* the tablet bar is full: logo, five links, toggle and sign-in */
-/* pause / play toggle for the animations that move on their own (WCAG 2.2.2) */
+@media (width < 896px) { .hx-live { display: none; } } /* the tablet bar is full: logo, five links and sign-in */
 .site-header .hx-end { display: flex; align-items: center; gap: 0.9rem; justify-self: end; }
-.mo-toggle {
-  display: grid; place-items: center; flex: none; width: 28px; height: 28px; padding: 0; cursor: pointer;
-  margin-block: -8px; /* the 28px target overlaps the bar's padding instead of making the row (and the bar) taller */
-  border: 1px solid rgb(243 243 245 / 0.45); border-radius: 3px; color: var(--ink);
-  transition: color var(--duration-hover) var(--ease-entrance), border-color var(--duration-hover) var(--ease-entrance);
-}
-.mo-toggle svg { width: 12px; height: 12px; fill: currentColor; }
-.mo-toggle .ic-play { display: none; }
-.mo-toggle[aria-pressed="true"] .ic-pause { display: none; }
-.mo-toggle[aria-pressed="true"] .ic-play { display: block; }
-.mo-toggle:hover, .mo-toggle:focus-visible { color: var(--red); border-color: var(--red); }
-.mo-toggle:focus-visible { outline: 1px solid var(--red); outline-offset: 3px; }
+/* animations that move on their own stand still when the visitor's system asks for reduced motion (js/pause.js sets data-motion) */
 html[data-motion="paused"] .sr-marquee-row,
 html[data-motion="paused"] .ph--video::before,
 html[data-motion="paused"] .xc-orb::before,

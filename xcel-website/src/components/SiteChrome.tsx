@@ -12,11 +12,6 @@ export function SiteHeader() {
   const path = usePathname();
 
   useEffect(() => {
-    const toggle = document.getElementById("mo-toggle");
-    if (toggle) import("@/legacy/pause").then((m) => m.initPauseToggle(toggle));
-  }, []);
-
-  useEffect(() => {
     const header = document.getElementById("site-header");
     const backdrop = document.getElementById("header-backdrop");
     if (!header || !backdrop) return;
@@ -70,10 +65,6 @@ export function SiteHeader() {
           </ul>
         </nav>
         <div className="hx-end">
-          <button type="button" className="mo-toggle" id="mo-toggle" aria-pressed="false" aria-label="Pause animations">
-            <svg className="ic-pause" aria-hidden="true" viewBox="0 0 12 12"><rect x="2" y="1.5" width="2.8" height="9" rx="0.6" /><rect x="7.2" y="1.5" width="2.8" height="9" rx="0.6" /></svg>
-            <svg className="ic-play" aria-hidden="true" viewBox="0 0 12 12"><path d="M3 1.6v8.8L10.4 6z" /></svg>
-          </button>
           <p className="hx-status"><AccountLink /><span className="hx-live">Now staffing</span></p>
         </div>
       </div>
