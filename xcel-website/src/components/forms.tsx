@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { CONTACT, REQUEST_FORM as R } from "@/content/content";
+import { SaveButton } from "@/components/auth/SaveButton";
+import { useCandidate } from "@/components/auth/useAccounts";
 import { Arrow, Btn } from "@/components/pg";
 
 /* No form is delivered anywhere yet: there is no mail service or database connected.
@@ -119,22 +121,82 @@ export function ResumeForm() {
   );
 }
 
-export function ApplyForm({ title }: { title: string }) {
-  const s = useStatus();
+export function ApplyForm({ jobId, title }: { jobId: string; title: string }) {
+  const path = usePathname();
+  const { status, user, pending } = useCandidate();
+  const legacy = useStatus();
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [err, setErr] = useState("");
+
+  // accounts are switched off: the form behaves as before and says nothing is sent
+  if (status && !status.configured) {
+    return (
+      <form className="pg-form" id="apply-form" onSubmit={(e) => legacy.done(e, `Your application for ${title}`)}>
+        <div className="f2">
+          <label>First name<input name="first" required /></label>
+          <label>Last name<input name="last" required /></label>
+        </div>
+        <div className="f2">
+          <label>Email<input name="email" type="email" required /></label>
+          <label>Phone<input name="phone" type="tel" /></label>
+        </div>
+        <label className="file">Résumé<input name="resume" type="file" accept=".pdf,.doc,.docx" required /></label>
+        <button className="btn" type="submit">Submit application<Arrow /></button>
+        <p className="pg-small">Free for candidates, always.</p>
+        <Status msg={legacy.msg} />
+      </form>
+    );
+  }
+  if (pending) return <div aria-hidden="true" style={{ minHeight: "14rem" }} />;
+  if (!user) {
+    const next = encodeURIComponent(path);
+    return (
+      <div>
+        <p className="pg-lead">Sign in to apply. Your applications are kept in your account, so you can see what you applied for.</p>
+        <div className="pg-actions">
+          <Link className="btn" href={`/login?next=${next}`}>Sign in<Arrow /></Link>
+          <Link className="btn btn--ghost" href={`/login?mode=up&next=${next}`}>Create account<Arrow /></Link>
+        </div>
+        <p className="pg-small">Free for candidates, always.</p>
+      </div>
+    );
+  }
+
+  const [first, ...rest] = user.name.split(" ");
+  async function submit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.set("jobId", jobId);
+    setBusy(true); setMsg(""); setErr("");
+    const r = await fetch("/api/applications", { method: "POST", body: data });
+    const j = (await r.json().catch(() => ({}))) as { error?: string; result?: string };
+    setBusy(false);
+    if (!r.ok) return setErr(j.error || "The application could not be saved. Please try again.");
+    setMsg(
+      j.result === "exists"
+        ? `You already applied for ${title}.`
+        : `Your application for ${title} is saved to your account. Automatic delivery to our team is not connected yet, so please also call ${CONTACT.name} on ${CONTACT.phone}.`,
+    );
+    if (j.result !== "exists") form.reset();
+  }
+
   return (
-    <form className="pg-form" id="apply-form" onSubmit={(e) => s.done(e, `Your application for ${title}`)}>
+    <form className="pg-form" id="apply-form" onSubmit={submit} aria-busy={busy}>
       <div className="f2">
-        <label>First name<input name="first" required /></label>
-        <label>Last name<input name="last" required /></label>
+        <label>First name<input name="first" required defaultValue={first} autoComplete="given-name" /></label>
+        <label>Last name<input name="last" required defaultValue={rest.join(" ")} autoComplete="family-name" /></label>
       </div>
       <div className="f2">
-        <label>Email<input name="email" type="email" required /></label>
-        <label>Phone<input name="phone" type="tel" /></label>
+        <label>Email<input name="email" type="email" required defaultValue={user.email} autoComplete="email" /></label>
+        <label>Phone<input name="phone" type="tel" autoComplete="tel" /></label>
       </div>
-      <label className="file">Résumé<input name="resume" type="file" accept=".pdf,.doc,.docx" required /></label>
-      <button className="btn" type="submit">Submit application<Arrow /></button>
+      <label className="file">Résumé (PDF or Word, up to 4 MB)<input name="resume" type="file" accept=".pdf,.doc,.docx" required /></label>
+      <p className="err" role="alert">{err}</p>
+      <button className="btn" type="submit" disabled={busy}>Submit application<Arrow /></button>
       <p className="pg-small">Free for candidates, always.</p>
-      <Status msg={s.msg} />
+      {msg ? <p className="pg-small" role="status">{msg} <Link href="/account">See your applications</Link></p> : null}
     </form>
   );
 }
@@ -194,6 +256,7 @@ export function JobBoard({ jobs }: { jobs: Job[] }) {
               <p>{j.where} · {j.type} · {j.need[0]}: <b>{j.need[1]}</b></p>
             </div>
             <div className="jb-acts">
+              <SaveButton jobId={j.id} />
               <button type="button" className="btn" onClick={() => router.push(`/jobs/${j.id}`)}>View &amp; apply<Arrow /></button>
             </div>
           </li>

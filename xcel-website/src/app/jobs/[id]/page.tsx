@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { JOBS } from "@/content/content";
+import { SaveButton } from "@/components/auth/SaveButton";
 import { ApplyForm } from "@/components/forms";
 import { Btn, Notice } from "@/components/pg";
 
@@ -44,11 +45,11 @@ export default async function Page({ params }: PageProps<"/jobs/[id]">) {
             <p className="pg-lead">{job.desc}</p>
             <h3 className="pg-h3">What it needs</h3>
             <ul className="pg-list">{job.reqs.map((r) => <li key={r}>{r}</li>)}</ul>
-            <p className="pg-actions"><Btn href="/jobs" ghost>All roles</Btn></p>
+            <p className="pg-actions"><Btn href="/jobs" ghost>All roles</Btn><SaveButton jobId={job.id} /></p>
           </div>
           <div className="pg-panel" data-r="2">
             <h3 className="pg-h3">Apply</h3>
-            <ApplyForm title={job.title} />
+            <ApplyForm jobId={job.id} title={job.title} />
           </div>
         </div>
       </section>

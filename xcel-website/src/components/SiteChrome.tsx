@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { NAV } from "@/content/content";
+import { useCandidate } from "@/components/auth/useAccounts";
 
 /* The top bar: flat at the top, a floating glass dock once scrolled (--dock 0 to 1).
    Same markup and classes as the prototype's bar (styles/sections.css, hero.css). */
@@ -73,11 +74,18 @@ export function SiteHeader() {
             <svg className="ic-pause" aria-hidden="true" viewBox="0 0 12 12"><rect x="2" y="1.5" width="2.8" height="9" rx="0.6" /><rect x="7.2" y="1.5" width="2.8" height="9" rx="0.6" /></svg>
             <svg className="ic-play" aria-hidden="true" viewBox="0 0 12 12"><path d="M3 1.6v8.8L10.4 6z" /></svg>
           </button>
-          <p className="hx-status"><span className="hx-live">Now staffing</span></p>
+          <p className="hx-status"><AccountLink /><span className="hx-live">Now staffing</span></p>
         </div>
       </div>
     </header>
   );
+}
+
+/* "Sign in" before sign-in, "Account" after (only when accounts are switched on). */
+function AccountLink() {
+  const { status, user } = useCandidate();
+  if (!status?.configured) return null;
+  return <Link className="hx-account" href={user ? "/account" : "/login"}>{user ? "Account" : "Sign in"}</Link>;
 }
 
 /* One shared entrance for every [data-r] element: it plays once, when the element enters the view. */
