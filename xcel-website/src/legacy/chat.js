@@ -69,8 +69,8 @@ const INTENTS = {
     kw: ["hire", "hiring", "staffing", " staff ", "candidates", "recruit", "headcount", "employer", "contractor", "talent", "our team", "my team", "shift"],
   },
   jobs: {
-    strong: ["find a job", "job openings", "open roles", "open positions", "are you hiring", "looking for a job", "looking for work", "apply", "job board", "current openings", "any jobs", "any openings", "need a job", "want a job", "get a job", "im looking for work", "upload my resume", "send my resume"],
-    kw: [" job", "jobs", "opening", "position", "vacanc", "career", " roles", " work "],
+    strong: ["find a job", "job openings", "open roles", "open positions", "are you hiring", "looking for a job", "looking for work", "apply", "job board", "current openings", "any jobs", "any openings", "need a job", "want a job", "get a job", "im looking for work", "upload my resume", "send my resume", "opportunit", "what jobs", "which jobs", "jobs available", "available jobs", "available roles", "available positions", "positions available", "any positions", "what roles do you have", "what positions", "job search", "nursing jobs", "nurse jobs", "who is hiring", "whos hiring", "do you have any work", "work for me", "get placed", "placement for me", "job listings", "current jobs", "current roles", "current positions"],
+    kw: [" job", "jobs", "opening", "position", "vacanc", "career", " roles", " work ", "employment", " for me "],
   },
   certs: {
     strong: ["certif", " mbe", " dbe", " sbe", "veteran owned", "minority owned", "small business"],
@@ -124,6 +124,21 @@ const INTENTS = {
   thanks: { strong: [" thanks", " thank you", " thx", " cheers", " appreciate"], kw: [] },
 };
 
+/* small typo tolerance for the words that matter most ("oportunities", "openning") */
+const lev = (a, b) => {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return d[a.length][b.length];
+};
+const fuzzy = (t, words) => {
+  const toks = t.trim().split(/\s+/);
+  return words.some((w) => toks.some((x) => x.length >= 5 && Math.abs(x.length - w.length) <= 2 && lev(x, w) <= (w.length >= 8 ? 2 : 1)));
+};
+const JOB_WORDS = ["opportunities", "opportunity", "openings", "vacancies", "positions", "employment"];
+/* "I'm a nurse" / "I am an RN": a candidate describing themselves is asking about work */
+const SELF_ID = /\b(im|i am|ive been|i work as|my background is) (an? |the )?([a-z]+ ){0,2}(nurse|rn|lpn|cna|nursing assistant|medical assistant|case manager|social worker|clinician|therapist|technician|analyst|engineer|developer|accountant|administrator|specialist)\b/;
+
 function classify(text) {
   const t = norm(text);
   const words = t.trim().split(/\s+/).length;
@@ -134,6 +149,8 @@ function classify(text) {
     for (const w of spec.kw) if (t.includes(w)) n += 1;
     s[id] = n;
   }
+  if (fuzzy(t, JOB_WORDS)) s.jobs += 3;
+  if (SELF_ID.test(t)) s.jobs += 5;
   if (words > 3) s.greet = 0;
   if (words > 6) s.thanks = 0;
   // "we need 5 cleared engineers" is a hiring request; "I need a job" is not
@@ -174,6 +191,7 @@ const CHIP = {
   customers: { label: "Who you've worked with", act: "customers" },
   hiring: { label: "I'm hiring", act: "request" },
   seeking: { label: "I'm looking for work", act: "jobs" },
+  resume: { label: "Upload résumé", act: "resume" },
 };
 const clean = (s) => s.replace(/\s*\([^)]*\bclient\b[^)]*\)/gi, "");
 const faqA = (id) => (FAQ.find((f) => f.id === id) || { a: "" }).a;
@@ -190,12 +208,16 @@ function reply(id, t = " ", arg = "") {
     case "jobs": {
       const key = arg || (/(clear|secret|ts\/sci| ts sci|polygraph)/.test(t) ? "cleared" : fnOf(t));
       let list = jobsFor(key), say;
-      if (key && list.length) say = `Here are our open ${FN_LABEL[key]} roles.`;
-      else if (key) { list = JOBS.slice(); say = `Nothing open in ${FN_LABEL[key]} right now, so here's everything on the board.`; }
-      else say = "Here's what's open right now.";
-      say += " Applying is always free.";
-      return { say, parts: [{ type: "jobs", list }], chips: key === "health" ? [CHIP.tech, CHIP.contact] : [CHIP.health, CHIP.contact] };
+      if (key === "health" && list.length) {
+        say = `We place nurses (RN, LPN, CNA), medical assistants, behavioral health staff and case managers in hospitals, clinics, long-term care and county and state health departments, on contract, contract-to-hire or direct hire. Here are the healthcare roles on our board.`;
+      } else if (key && list.length) say = `Here are the ${FN_LABEL[key]} roles on our board.`;
+      else if (key) { list = JOBS.slice(); say = `Nothing listed in ${FN_LABEL[key]} right now, so here's everything on the board.`; }
+      else say = "Here are the roles on our board.";
+      say += " Applying is always free. If nothing fits yet, upload your résumé and we'll call you when a match opens.";
+      return { say, parts: [{ type: "jobs", list }], chips: key === "health" ? [CHIP.resume, CHIP.tech, CHIP.contact] : [CHIP.resume, CHIP.health, CHIP.contact] };
     }
+    case "resume":
+      return { say: "Applying is always free. Upload your résumé and a recruiter will call you when a matching role opens.", parts: [{ type: "resume" }], chips: [CHIP.jobs, CHIP.contact] };
     case "certs":
       return { say: `XcelCareers is a **minority veteran-owned small business**, certified in Maryland as an MBE, DBE and SBE (No. ${CRED.certNo}).`, parts: [{ type: "certs" }], chips: [CHIP.capability, CHIP.customers] };
     case "capability":
@@ -264,6 +286,8 @@ function renderPart(p) {
           ${placard([["Location", esc(j.where)], [j.need[0], esc(j.need[1]), j.need[0] === "Clearance" ? "xc-red" : ""], ["Type", esc(j.type)]])}
           <a class="go xc-mono" href="/jobs/${j.id}">View role ${ICON.arrow}</a>
         </article>`).join("")}</div>`;
+    case "resume":
+      return `<div class="xc-in xc-actions"><a class="xc-btn xc-btn--red" href="/jobs#resume">${ICON.arrow}Upload résumé</a><a class="xc-btn" href="tel:${TEL}">${ICON.phone}Call</a></div>`;
     case "certs":
       return `<div class="xc-seals xc-in">${CERTS.map((c) => `<div class="xc-seal"><span class="ring">${esc(c.code)}</span><small class="xc-mono">${esc(c.name)}</small></div>`).join("")}</div>
       <div class="xc-in">${placard([["Cert. No.", esc(CRED.certNo)], ["Since", esc(CRED.since)], ["Status", "Minority veteran-owned", "xc-red"]])}</div>`;

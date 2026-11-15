@@ -45,16 +45,12 @@ const CUST_LOGO = {
   "Indeed": { src: "assets/img/logo-indeed.webp", alt: "Indeed logo" },
   "NGA": { src: "assets/img/logo-nga.webp", alt: "National Geospatial-Intelligence Agency seal" },
 };
-// names are shown only under the seals; the wordmark logos name themselves (their alt text keeps the full name)
-const CUST_SHORT = { "Montgomery County Government": "Montgomery County", "Prince George's County Government (OIT)": "Prince George's County", "NGA": "NGA" };
+// every logo is a plain, equal tile; the names live in the alt text (the Capstone name tile carries its own name)
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
   <li class="cust" data-m="chip" data-i="${i % 6}">
     ${CUST_LOGO[c.name]
-      ? `<div class="cust-logo cust-logo--mark"><img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" decoding="async" draggable="false"></div>
-    <span class="cust-name">${CUST_SHORT[c.name] ? esc(CUST_SHORT[c.name]) : ""}</span>`
-      : `<div class="cust-logo cust-logo--name"><span>${esc(c.name)}</span></div>
-    <span class="cust-name" aria-hidden="true"></span>`}
-    ${c.status === "current" ? `<span class="cust-tag">Current</span>` : ""}
+      ? `<div class="cust-logo cust-logo--mark"><img src="${CUST_LOGO[c.name].src}" alt="${esc(CUST_LOGO[c.name].alt)}" decoding="async" draggable="false"></div>`
+      : `<div class="cust-logo cust-logo--name"><span>${esc(c.name)}</span></div>`}
   </li>`).join("");
 
 const C = CREDENTIALS;
