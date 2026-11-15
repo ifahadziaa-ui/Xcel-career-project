@@ -18,7 +18,7 @@
 
 /* ---------- hero ---------- */
 .pg-hero {
-  position: relative; padding: 11rem 0 5rem;
+  position: relative; padding: 6rem 0 3.5rem; /* the heading sits just under the top bar (user, 15 Nov 2026) */
   background:
     radial-gradient(60% 70% at 78% 0%, rgb(255 42 69 / 0.13), transparent 70%),
     radial-gradient(70% 90% at 50% 0%, rgb(198 198 198 / 0.09), transparent 70%);
@@ -32,8 +32,8 @@
 .pg-call b { font-weight: 500; color: var(--foreground); }
 .pg-call:hover b, .pg-call:focus-visible b { color: var(--accent); }
 .btn--ghost { background: transparent; color: var(--foreground); box-shadow: inset 0 0 0 1px rgb(243 243 245 / 0.3); }
-@media (width < 1200px) { .pg-hero { padding-top: 9rem; } }
-@media (width < 700px)  { .pg-hero { padding: 8.5rem 0 3rem; } .pg-intro { font-size: var(--type-body); } }
+@media (width < 1200px) { .pg-hero { padding-top: 6.25rem; } }
+@media (width < 700px)  { .pg-hero { padding: 6.75rem 0 2.5rem; } .pg-intro { font-size: var(--type-body); } }
 
 /* ---------- sections ---------- */
 .pg-sec { position: relative; padding: 4.5rem 0; border-top: 1px solid rgb(243 243 245 / 0.07); }
@@ -271,3 +271,4 @@
 html[data-motion="paused"] .pg-cascade .ch, :root:has(.pg--era)[data-motion="paused"] .pg-cascade .ch { animation: none; opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .pg-cascade .ch { animation: none; opacity: 1; transform: none; } .era-canvas { transition: none; } }
 @media (width < 700px) { .era-canvas[data-on="1"] { opacity: 0.6; } }
+.pg-hero .eyebrow { white-space: normal; text-align: center; max-width: 100%; } /* long labels wrap on a phone instead of being cut off */
