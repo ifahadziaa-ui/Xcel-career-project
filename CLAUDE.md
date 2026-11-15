@@ -47,6 +47,8 @@ The production Next.js application.
 
 This is the intended production application, but do not assume that every design or implementation decision has already been finalized.
 
+**Showreel architecture (to review).** The home page's scroll showreel is built as three layers with one owner each: server-rendered React markup (never re-rendered); a pure timeline plus an imperative DOM engine (`src/lib/showreel/`); and one GL manager for five WebGL scenes (opening gradient, network sphere, aurora, closing gradient, closing 3D chrome mark). A single shared Lenis ticker drives everything; scenes are created ahead of their scroll range and disposed after; each has a CSS fallback underneath its canvas; OS reduced motion gets a static layout and no WebGL. It costs more code than wrapping the prototype and has only been tested on software GL (no real GPU or other browsers). Read `xcel-website/docs/SHOWREEL-ARCHITECTURE.md` (overview, benefits, trade-offs) before changing it, and `xcel-website/docs/SHOWREEL.md` for stage detail and test results. Do not replace it with a copy of the prototype's scripts without the user's decision.
+
 ### `landing-prototype/`
 
 A complete static one-page website implementation.
