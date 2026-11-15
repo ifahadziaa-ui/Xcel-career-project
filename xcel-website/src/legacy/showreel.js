@@ -235,7 +235,7 @@ function build(section) {
   const heroCard = `
   <div class="sr-hero">
     <canvas id="sr-hero-canvas"></canvas>
-    <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2></div>
+    <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h">${S.heroLines.map((l, i) => `<span class="sl-line${i === S.heroLines.length - 1 ? " dim" : ""}">${letters(l)}</span>`).join("")}</h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
       <div class="sr-slide" id="sr-slide-a">${gradCard(S.openCards[0])}</div>

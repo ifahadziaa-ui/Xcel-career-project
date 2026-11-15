@@ -61,15 +61,15 @@ export const CUSTOMERS = [
    02 candidates, 03 the network) → 4 how big is the network (zoom through the
    mark's hub) → 5 what exactly do you staff → 6 what do I do now. */
 export const SHOWREEL = {
-  // 1 · opening card: the promise and the two doors. Line 2 stays short: it runs
-  // beside the video slot, so a longer word would slide behind it.
-  heroLines: ["Employment workforce", "provider."],
+  // 1 · opening card: the promise and the two doors. Three short lines, so none runs
+  // behind the card that slides in from the right.
+  heroLines: ["Employment", "workforce", "provider."],
   heroLead:
-    "XcelCareers places nurses, care staff and IT, finance and cybersecurity specialists with hospitals, clinics and local, state and federal agencies. We run the search, the screening and the credential checks, so you can focus on your mission.",
+    "We place nurses, care staff and IT, finance and cybersecurity specialists with hospitals, clinics and government agencies.",
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
-    { k: "What we do", t: "Healthcare staffing and government contracting", d: "Nurses and care staff for hospitals, clinics and health agencies. Staff augmentation, contract staffing and task orders for local, state and federal government. IT, finance and cybersecurity specialists across both." },
-    { k: "For job seekers", t: "Open roles in healthcare, IT, finance and cyber", d: "We match you to open roles, prepare you for the interview and guide you through credentialing, licensing or clearance steps. Our service is always free for job seekers." },
+    { k: "What we do", t: "Healthcare staffing and government contracting", d: "Nurses and care staff for hospitals and clinics. Staff augmentation and task orders for government agencies." },
+    { k: "For job seekers", t: "Open roles in healthcare, IT, finance and cyber", d: "We match you to open roles and prepare you for the interview. Always free for job seekers." },
   ],
   heroButtons: [
     { label: "Request staff", href: "#contact", primary: true }, // audience #1 gets the primary button
@@ -77,7 +77,7 @@ export const SHOWREEL = {
   ],
   team: ["MC", "PG"], // the two current customers, as initials: Montgomery County and Prince George's County
   avatarsLabel: "Trusted by Montgomery and Prince George's Counties",
-  heroRight: "Minority veteran-owned small business. Maryland MBE, DBE and SBE certified. CAGE 89AK6.",
+  heroRight: "Veteran-owned small business · CAGE 89AK6",
   // the opening card becomes the first carousel card (photo: a recruiter with a candidate)
   heroRotated: "Healthcare, government\nand the specialists\nbehind both",
 

@@ -98,7 +98,7 @@
 .sr-hero-head { position: absolute; inset: 0; z-index: 3; display: flex; padding: 40px; pointer-events: none; }
 .sr-hero-head h2 {
   display: flex; flex-direction: column; align-items: flex-start; text-align: left;
-  font-size: 7vw; font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #fff;
+  font-size: min(7vw, 9vh, calc((50vw - 22.9vh - 110px) / 4.7)); font-weight: 400; line-height: 0.95; letter-spacing: -0.03em; color: #fff; /* the limits keep the three lines clear of the card (width) and of the text at the bottom (height) */
 }
 .sr-hero-head .dim { opacity: 0.4; }
 .sr-hero-rot { position: absolute; inset: 0; z-index: 7; display: flex; align-items: center; justify-content: center; pointer-events: none; }
@@ -150,7 +150,7 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
   display: flex; flex-direction: column; gap: 24px; padding: 40px;
   color: #fff; font-weight: 300;
 }
-.sr-hero-bottom .lead { max-width: 26rem; max-width: 416px; opacity: 0.9; font-size: 16px; line-height: 1.625; text-shadow: 0 1px 12px rgb(16 16 18 / 0.7); }
+.sr-hero-bottom .lead { max-width: 26rem; max-width: 340px; opacity: 0.9; font-size: 16px; line-height: 1.625; text-shadow: 0 1px 12px rgb(16 16 18 / 0.7); }
 .sr-btns { display: flex; align-items: center; gap: 16px; }
 .sr-btn {
   padding: 18px 32px; text-box: trim-both cap alphabetic; border-radius: 8px; font-size: 17px; line-height: 1.2; white-space: nowrap;
@@ -436,10 +436,10 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
   .sr-ctablock { justify-content: flex-end; padding: 9vmin 7vmin 16vmin; }
 }
 /* opening card: a wider intro under the headline, and the credentials line in two lines like the reference */
-.sr-hero-bottom .lead { max-width: 25rem; font-size: 15px; line-height: 1.6; }
+.sr-hero-bottom .lead { max-width: 340px; font-size: 15px; line-height: 1.6; }
 .sr-hero-row .right { max-width: 34rem; }
 
-@media (min-width: 640px) { .sr-hero-head h2 { font-size: 5.8vw; } }
+@media (min-width: 640px) { .sr-hero-head h2 { font-size: min(5.8vw, 9vh, calc((50vw - 22.9vh - 110px) / 4.7)); } } /* limits: height (text at the bottom) and the card's left edge (it sits 22.9vh left of the centre) */
 /* portrait screens: the card fills the middle, so the long intro leaves (the card says the same) */
 @media (max-aspect-ratio: 1/1) { .sr-hero-bottom .lead { display: none; } }
 @media (max-width: 639px) { .sr-hero-head h2 { font-size: 6.1vw; } }
@@ -467,3 +467,8 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
   font-size: max(14px, 2vmin); line-height: 1.2; text-box: trim-both cap alphabetic;
 }
 .sr-pf-btn:hover, .sr-pf-btn:focus-visible { background: var(--sr-red); border-color: var(--sr-red); color: var(--sr-ink); }
+
+/* opening card: on short or narrow desktop screens the intro paragraph is dropped and the buttons stack, so nothing runs
+   under the card that slides in over the middle (user, 15 Nov 2026: too much text, text overlapping) */
+@media (max-width: 1180px), (max-height: 760px) { .sr-hero-bottom .lead { display: none; } }
+@media (max-width: 1180px) { .sr-btns { flex-direction: column; align-items: flex-start; gap: 10px; } }

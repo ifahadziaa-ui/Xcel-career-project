@@ -46,7 +46,7 @@ export const HOME_HTML = `
   <div class="col">
     <h2 class="certs-line type-display" id="certs-title" data-m="headline"></h2>
     <ul class="certs-badges" id="certs-badges"></ul>
-    <p class="certs-sub type-caps" data-m="chip">Past &amp; current customers</p>
+    <p class="certs-sub type-caps" data-m="chip">Customers</p>
     <ul class="customers" id="customers"></ul>
     <p class="certs-note" id="certs-note" data-m="copy"></p>
   </div>
