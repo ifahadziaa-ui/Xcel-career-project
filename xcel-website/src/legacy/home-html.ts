@@ -26,15 +26,15 @@ export const HOME_HTML = `
     </div>
     <p class="hx-meta hx-sealed">CAGE / 89AK6</p>
     <div class="hx-titleBlock">
-      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Staffing · <span class="hx-red">Maryland</span> · Veteran-owned</span></p>
+      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Workforce provider · <span class="hx-red">Veteran-owned</span></span></p>
       <h1 id="hero-title" class="hx-title"><span class="hx-line">People</span><span class="hx-line">Behind</span><span class="hx-line">The <span class="hx-accent">Care</span></span></h1>
-      <p class="hx-lead">Nurses, care staff and the IT, finance and cybersecurity specialists behind them, placed with hospitals, clinics and government agencies. Every license and background is checked first.</p>
+      <p class="hx-lead">An employment workforce provider: nurses and care staff for hospitals and clinics, staff augmentation for local, state and federal agencies, and the IT, finance and cybersecurity specialists behind both.</p>
     </div>
     <dl class="hx-placard">
-      <div class="hx-row"><dt>We place</dt><dd>Nurses · care staff</dd></div>
-      <div class="hx-row"><dt>With</dt><dd>Hospitals · clinics · agencies</dd></div>
-      <div class="hx-row"><dt>Also</dt><dd>IT · Finance · Cyber</dd></div>
-      <div class="hx-row"><dt>Status</dt><dd class="hx-red">Taking staffing requests</dd></div>
+      <div class="hx-row"><dt>Healthcare</dt><dd>Clinical · care · billing</dd></div>
+      <div class="hx-row"><dt>Government</dt><dd>Local · State · Federal</dd></div>
+      <div class="hx-row"><dt>Specialist</dt><dd>IT · Finance · Cyber</dd></div>
+      <div class="hx-row"><dt>Status</dt><dd class="hx-red">Taking requests</dd></div>
     </dl>
   </div>
 </section>

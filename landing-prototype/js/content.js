@@ -63,26 +63,26 @@ export const CUSTOMERS = [
 export const SHOWREEL = {
   // 1 · opening card: the promise and the two doors. Line 2 stays short: it runs
   // beside the video slot, so a longer word would slide behind it.
-  heroLines: ["Nurses, care staff,", "specialists."],
+  heroLines: ["Employment workforce", "provider."],
   heroLead:
-    "Tell us the role, the shifts and the credential it needs. We search our database, interview the best matches, verify every license, reference and background check, and send you a short list.",
+    "XcelCareers places nurses, care staff and IT, finance and cybersecurity specialists with hospitals, clinics and local, state and federal agencies. We run the search, the screening and the credential checks, so you can focus on your mission.",
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
-    { k: "What we do", t: "Nurses, care staff and the people behind them", d: "Registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff, plus the IT, billing and cybersecurity specialists who keep care running." },
-    { k: "For job seekers", t: "Open roles, never a fee", d: "Healthcare roles first, then IT, finance and cybersecurity roles with hospitals, clinics and government programs. We prepare you for the interview and never charge candidates." },
+    { k: "What we do", t: "Healthcare staffing and government contracting", d: "Nurses and care staff for hospitals, clinics and health agencies. Staff augmentation, contract staffing and task orders for local, state and federal government. IT, finance and cybersecurity specialists across both." },
+    { k: "For job seekers", t: "Open roles in healthcare, IT, finance and cyber", d: "We match you to open roles, prepare you for the interview and guide you through credentialing, licensing or clearance steps. Our service is always free for job seekers." },
   ],
   heroButtons: [
     { label: "Request staff", href: "#contact", primary: true }, // audience #1 gets the primary button
     { label: "Find a job", href: "#jobs" },
   ],
-  team: ["QN", "EF", "BK"], // leadership initials until headshots arrive: Quan Nguyen, Erika Finley, Barry Klasson
-  avatarsLabel: "125+ years of combined experience",
-  heroRight: "Maryland MBE, DBE and SBE certified. We prime or subcontract on local, state and federal contracts.",
+  team: ["MC", "PG"], // the two current customers, as initials: Montgomery County and Prince George's County
+  avatarsLabel: "Trusted by Montgomery and Prince George's Counties",
+  heroRight: "Minority veteran-owned small business. Maryland MBE, DBE and SBE certified. CAGE 89AK6.",
   // the opening card becomes the first carousel card (photo: a recruiter with a candidate)
-  heroRotated: "We staff the bedside\nand everything behind it",
+  heroRotated: "Healthcare, government\nand the specialists\nbehind both",
 
   // 2 · marquee behind the carousel: the people we place
-  marquee: ["Registered nurses", "LPNs & CNAs", "Case managers", "Behavioral health", "EHR & billing", "Cybersecurity"],
+  marquee: ["Healthcare staffing", "Staff augmentation", "Task orders & IDIQ", "Healthcare IT", "Revenue cycle & finance", "Cybersecurity", "Cleared to TS/SCI", "Consulting"],
   cta: "See how we staff",
 
   // 3 · carousel cards, numbered so they read in order: chip → headline → action

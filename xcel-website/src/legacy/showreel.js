@@ -51,7 +51,7 @@ const phase4 = (p) => clamp01((gp(p) - 0.4) / 0.35);
    sh: height of the opening card's video slot (vh); shorter on portrait screens
    so the lead and buttons below it never run over the video. */
 const GEO = {
-  desktop: { track: trackVh(VH_PER_UNIT), cw: 42, ch: 62, r: 27, fly: 40, pad: 8, h1: 18, h2: 24, bw: 52, bt: 2.4, sh: 40 },
+  desktop: { track: trackVh(VH_PER_UNIT), cw: 42, ch: 62, r: 27, fly: 40, pad: 8, h1: 18, h2: 24, bw: 52, bt: 2.4, sh: 58 },
   tablet:  { track: trackVh(VH_PER_UNIT * 0.84), cw: 54, ch: 80, r: 35, fly: 52, pad: 8, h1: 13, h2: 16, bw: 64, bt: 3.0, sh: 40 },
   mobile:  { track: trackVh(VH_PER_UNIT * 0.63), cw: 64, ch: 94, r: 41, fly: 60, pad: 8, h1: 10, h2: 12, bw: 82, bt: 4.2, sh: 42 },
 };
@@ -235,14 +235,14 @@ function build(section) {
   const heroCard = `
   <div class="sr-hero">
     <canvas id="sr-hero-canvas"></canvas>
-    <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2><p class="lead">${esc(S.heroLead)}</p></div>
+    <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h"><span class="sl-line">${letters(S.heroLines[0])}</span><span class="sl-line dim">${letters(S.heroLines[1])}</span></h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
       <div class="sr-slide" id="sr-slide-a">${gradCard(S.openCards[0])}</div>
       <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${gradCard(S.openCards[1])}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
-      <p class="lead lead--b">${esc(S.heroLead)}</p>
+      <p class="lead">${esc(S.heroLead)}</p>
       <div class="sr-btns">${btns}</div>
       <div class="sr-divider"></div>
       <div class="sr-hero-row"><div class="sr-avatars"><span class="faces">${faces}</span><span class="lbl">${esc(S.avatarsLabel)}</span></div><p class="right">${esc(S.heroRight)}</p></div>
