@@ -9,7 +9,8 @@ Source of truth for behaviour: `landing-prototype-clean/js/showreel.js` and `css
 | 5B-1 Static stage | **Done.** This file |
 | 5B-2 Timeline, DOM engine, Lenis post-frame subscription | **Done**, plus a corrective pass (restoration guard, interim reduced-motion layout, lifecycle checks). See "Stage 5B-2" |
 | 5B-3 Snap, navigation and focus | **Done.** See "Stage 5B-3" |
-| 5B-4 to 5B-6 WebGL scenes | Not started |
+| 5B-4 WebGL infrastructure and the two gradients | **Done.** See "Stage 5B-4" |
+| 5B-5, 5B-6 aurora, sphere, closing mark | Not started |
 | 5B-7 Video, final reduced-motion styling, screen-reader access in the pinned reel | Not started (an interim reduced-motion layout exists, see "Reduced motion") |
 | 5B-8 Final validation | Not started |
 
@@ -137,14 +138,14 @@ Known gaps (for 5B-7): spacing and card proportions are functional; the opening 
 
 ### CSS stand-ins for the WebGL visuals (temporary, deliberate)
 
-Each is hidden by `.sr[data-gl="ready"]`, a flag the renderer stages are expected to set once their canvas draws.
+Each stand-in that remains (the aurora, the sphere and the closing mark) is hidden by `.sr[data-gl="ready"]`, a flag the renderer stages are expected to set once their canvas draws.
 
 | WebGL visual (stage) | Stand-in now |
 |---|---|
-| Opening card gradient (5B-4) | `.hero` background: radial silver glow from below, red ember at the sides, on graphite (the card's palette) |
+| Opening card gradient (5B-4, **now WebGL**; this stays as its fallback) | `.hero` background: radial silver glow from below, red ember at the sides, on graphite (the card's palette) |
 | Aurora (5B-5) | `.aurora` background: red glow along the top and bottom edges, faded by `auroraOpacity` like the shader would be |
 | 34,000-point network sphere (5B-5) | `.sphereCanvasWrap::before`: a soft dotted globe with a red underside and an open centre, about 58vh across (the sphere's rest size), scaled by the engine's `sphereScale` |
-| Closing gradient (5B-4) | `.target` CSS gradient (already in the prototype as its no-WebGL fallback) |
+| Closing gradient (5B-4, **now WebGL**; this stays as its fallback) | `.target` CSS gradient (already in the prototype as its no-WebGL fallback) |
 | Closing 3D chrome mark (5B-6) | `.targetMark`: the brand mark (silver blades, red figure) at the right of the copy (top right on portrait), faded and scaled in by `markReveal` |
 
 They keep the reel coherent; they do not reproduce the shaders' motion, particles, depth or the mark's extrusion and assembly.
@@ -156,7 +157,7 @@ Timeline module; DOM engine for scenes 1 to 9 (marquee, carousel formation, rota
 ### Remaining
 
 - **5B-3:** done (see "Stage 5B-3").
-- **5B-4 to 5B-6:** the five WebGL renderers and `data-gl="ready"`.
+- **5B-5 and 5B-6:** the aurora, the network sphere and the closing chrome mark, and then `data-gl="ready"` on the section (5B-4 is done).
 - **5B-7:** video; final styling of the reduced-motion layout; keyboard and screen-reader access to the panels, sphere text and closing frame **in the pinned reel** (they are hidden by `visibility` until the engine reveals them, as in the prototype; reduced-motion visitors now have them in the stacked layout, normal-motion assistive-technology users still do not).
 - **5B-8:** final validation, GPU and device checks.
 
@@ -312,6 +313,93 @@ Real page, production build: the focus jump goes to the stage start in both the 
 - The freeze nudges the scroll by a hundredth of a pixel, which can move the page by one pixel.
 - The chat's focus return to its launcher means arrow keys scroll natively after the chat closes until focus moves (above).
 - Sideways wheel and touch inside the reel that are not in an isolated element are taken even over ordinary page content (as in the prototype).
+
+## Stage 5B-4: WebGL infrastructure and the two gradients
+
+Source: `landing-prototype-clean/js/showreel.js` (`GRADIENT_FRAG`, `CLIP_VERT`, `makeHeroGradient`, and how `initShowreel` creates, gates and draws them), read from the code.
+
+### What is WebGL now, and what is still a stand-in
+
+| Scene | Now |
+|---|---|
+| Opening card gradient (`hero-canvas`) | **WebGL** (the pointer pulls it, as in the prototype). The CSS gradient on `.hero` stays underneath as the fallback |
+| Closing frame gradient (`target-bg`) | **WebGL** (no pointer pull). The CSS gradient on `.target` stays underneath as the fallback |
+| Aurora (`aurora-canvas`) | CSS stand-in (5B-5) |
+| Network sphere (`sphere-canvas`) | CSS stand-in (5B-5) |
+| Closing 3D mark (`target-canvas`) | CSS stand-in `targetMark` (5B-6) |
+
+`data-gl="ready"` on the section (which hides the three remaining stand-ins) is **not** set: they are still the only picture. The gradients use a different flag, `data-gl` on each canvas.
+
+### Files
+
+| File | Role |
+|---|---|
+| `src/lib/showreel/gl/shaders.ts` | `GRADIENT_FRAG` and `CLIP_VERT`, extracted mechanically from the prototype (lines 333 to 434) and checked byte-identical to its output |
+| `src/lib/showreel/gl/three.ts` | `loadThree()`: a cached dynamic `import("three")` (a failed import is not cached) |
+| `src/lib/showreel/gl/scene.ts` | The contract of one scene (`render`, `redraw`, `resize`, `lost`, `dispose`) and its hooks |
+| `src/lib/showreel/gl/gradient.ts` | `createGradientScene`: the port of `makeHeroGradient`, used twice |
+| `src/lib/showreel/gl/manager.ts` | `createGlManager(root)`: the scene table, lazy creation, the virtual clock, drawing gates, context-loss state, fallback attributes, canvas replacement |
+| `src/lib/showreel/engine.ts` | Creates the manager in `attach()`, destroys it in `detach()`, ticks it from `onFrame`, forwards resize and tab-visible |
+| `src/components/showreel/Showreel.module.css` | Canvas visibility by `data-gl`; a note that the section flag is still unset |
+
+Three.js is a dynamic import, so it is a separate chunk (about 724 KB) that is not in the initial HTML, and it is requested only when a scene is first needed.
+
+### Ownership, scheduling and lifecycle
+
+- **One manager per active engine.** It exists exactly while the engine holds its subscription to the shared tick, so reduced motion (engine `off`), a hidden route and a stage far from the viewport have no manager, no Three.js, no renderer and no context. It has no loop, timer or listener of its own; `frame(t, p)` runs from the engine's `onScrollFrame` callback, after the DOM frame, with the same scroll progress, only while the stage is near.
+- **A scene exists only where the timeline needs it.** The opening gradient is created at v below 1600 and drawn while `sceneVisibility(p).hero`; it is disposed past v 1900. The closing gradient is created from v 2600 and drawn once the closing beat is active (v above 2799); it is disposed below v 2400. The ranges leave gaps, so at most one gradient exists at a time and sitting on a boundary does not create and destroy it repeatedly. Scenes are created when first needed, not at load (the prototype created all five at load).
+- **Drawing:** the prototype's gates are kept: a scene draws while its range is active; while animations are paused the virtual clock stands still and a scene redraws only when the scroll position changed or it was invalidated (resize, restore, tab visible). The gradient keeps its ~36 fps cap and its pointer easing.
+- **One renderer per canvas, and the canvas is replaced after dispose.** A disposed renderer's context is lost for good (the same canvas would hand back the dead context), so dispose swaps in an empty clone of the server-rendered canvas. Canvases are looked up by `data-sr` in the engine's root each time. The canvas count stays at 5.
+- **Dispose** marks the scene disposed and removes its listeners first, then frees geometry, material and renderer and forces the context loss (skipped when it is already lost), so nothing that happens during or after teardown can bring the scene back.
+- **Creation is asynchronous** (Three.js loads on demand). It re-checks that the manager is still alive and that the timeline still wants the scene after the import resolves; a destroy that races it creates nothing.
+- **Destroy** (deactivation, Activity hide, unmount, reduced motion switching on) is idempotent and disposes every scene.
+
+### Fallback and context loss
+
+The CSS gradients underneath are always present; the canvas is opacity 0 unless `canvas[data-gl="live"]`.
+
+| `data-gl` | Meaning | Shown |
+|---|---|---|
+| absent | no scene | CSS fallback |
+| `pending` | created and drawn once, not yet shown | CSS fallback |
+| `live` | drawing | the canvas, faded in over 0.9 s |
+| `lost` | context lost | CSS fallback at once (no transition) |
+| `failed` | could not be created | CSS fallback; not retried until the next activation |
+
+- **Context loss:** the default is prevented (the scene can recover), drawing stops, the canvas hides. On restoration Three.js re-initialises and recompiles, the scene redraws at once and is shown again on the next frame, if it still exists. If the scene was disposed meanwhile, nothing happens.
+- **Creation failure** (no WebGL, a context that is lost at creation, or the Three.js chunk failing to load) is caught, logs one `console.warn`, leaves the CSS fallback and is not retried every frame; a later activation retries.
+- **No blank frame:** the scene draws once before it is shown, and a canvas is shown only after a drawn frame.
+
+### Deviations from the prototype
+
+1. Scenes are created on demand and disposed (the prototype created all five renderers at load and never freed them).
+2. The renderer no longer owns window listeners or a loop: resize comes from the engine's debounced re-measure (120 ms) instead of an immediate `resize` listener; the pointer listener exists only while the opening gradient does.
+3. Context loss is handled (the prototype did not); a disposed scene's canvas is replaced.
+4. The fade-in is driven by `data-gl="live"` set on the frame after the first drawn frame (the prototype used a one-shot `requestAnimationFrame`); the fade is the same 0.9 s.
+5. The prototype drew the closing gradient only after `closeActive`; creation here starts 200 units earlier (v 2600), the prototype's own `sceneVisibility` margin.
+
+### Verification (5B-4)
+
+`tsc --noEmit`, ESLint and `next build` pass.
+
+- **Shaders:** `GRADIENT_FRAG(true)`, `GRADIENT_FRAG(false)` and `CLIP_VERT` are byte-identical to the prototype's.
+- **Visual comparison with the prototype** (Chromium with software GL; the gradients are animated, so positions of the glow differ with the animation phase and a pixel comparison is not meaningful): at 1440x900, 1024x768 and 390x844 the canvas buffer is the viewport size in both pages (pixel ratio 1, CSS-stretched over the card) at four timeline positions (v 0, 300, 3000, 3700). Mean colour agrees closely (opening gradient at v 0, 1440: 108,96,99 in both; average per-cell difference 1.5 to 4.7 at 1440 and 1024, up to 13.6 at 390 where the glow's phase matters more; the closing gradient 8 to 23). I looked at the 1440 screenshots: same palette, same structure (graphite room, red embers at the sides, silver spotlight from below). At v 3000 the pink glow on the Next side is the aurora CSS stand-in above the page, still intentionally in place. Not compared pixel-for-pixel: 390 and 1024 screenshots were compared numerically only.
+- **Lifecycle (production build):** the hero scene appears at v 0, is released at v 1900; the closing gradient is created at 2650, shown at 2850, released at 2300; at most one scene exists. 8 enter/leave cycles and 5 route round trips: canvases always 5, contexts created equal contexts lost (13 and 13), listeners constant, subscribers 1 and 0, Shader, Buffer, Program and VertexArray creates equal deletes. Hidden route: 0 draw calls in 3 s. Tab backgrounded (second tab activated): 0 draw calls while hidden, the scene is kept, drawing resumes on return.
+- **Failure and loss (page and real manager code with Three.js loaded from a local server):** creation failure (`getContext` returning null): `data-gl="failed"`, CSS fallback shown, one warning, no retry in 30 frames or 3 s, retried and live after leaving and re-entering the stage. `WEBGL_lose_context.loseContext()`: `lost`, canvas hidden at once, 0 draw calls while lost, 0 console output; `restoreContext()`: live again and drawing, program recompiled. Loss followed by navigation, by leaving the stage, or by destroy: restoring the old context afterwards draws nothing and brings nothing back. `destroy()` three times, a destroy racing creation (0 contexts created), a destroy while lost, 10 create and destroy cycles on one root (10 contexts created, 10 lost), and the Three.js chunk failing to load: all safe.
+- **Reduced motion:** from load, 0 `getContext` attempts, 0 draw calls, canvases `display: none`; switching the OS setting off creates the scene when the stage is near, switching it back on disposes it (context lost) and stops all drawing.
+- **Layout shift:** over a full walk through the reel the total is the same with WebGL (0.3185) and with it unavailable (0.3189), and no canvas is a shift source (the total is the reel's own choreography).
+- **Hand-off:** at 4x CPU throttle the canvas goes `data-gl` absent, then `live` and fades in; brightness over the card's glow never dips below the fallback's own level (no blank frame).
+- **Regression:** carousel keys, wheel and all ArrowDown beats unchanged (300, 467, 633, 800, 1470, 2000, 2465, 2680, 3700); listener delta while active is +13 (4 engine, 8 snap, 1 pointer-follow); the aurora, sphere and closing-mark stand-ins and the CSS they depend on are unchanged.
+
+### Not tested, and limitations
+
+- **Software GL only** (SwiftShader in headless Chromium). No real GPU, no frame-rate or GPU-memory measurement, no Safari, Firefox or mobile browser, so context limits, real context-loss behaviour under memory pressure and mobile GPU behaviour are untested. No claim is made about a safe number of contexts: the design keeps at most one WebGL scene alive at a time (two more arrive in 5B-5 and 5B-6, which the manager's table is designed for), and that is what was measured.
+- **Context loss was simulated** with `WEBGL_lose_context`, not caused by the browser or driver; a loss that happens while a scene is being created was not provoked.
+- **Three.js internals:** each renderer creates 4 textures and 3 framebuffers at construction that `renderer.dispose()` does not delete (Three.js behaviour); they are freed by the forced context loss. Programs, shaders, buffers and vertex arrays are deleted explicitly and balance.
+- **Resize** goes through the engine's 120 ms debounce, so for a moment after a window resize the buffer keeps the old size (stretched by CSS), as the prototype's own debounced layout did.
+- The gradients are animated and not deterministic in time, so fidelity is judged by colour statistics and by eye, not pixel equality.
+- The first appearance of a scene waits for the Three.js chunk (about 724 KB, requested when the stage first needs a scene): on a slow connection the CSS fallback shows until it arrives.
+- A test-only artefact: Three.js itself logs a `console.error` when the context cannot be created (the failure test), and Chromium warns when a test calls `restoreContext()` on an already-dead context; neither appears in normal operation.
 
 ## What was not done in 5B-1, on purpose (historical)
 

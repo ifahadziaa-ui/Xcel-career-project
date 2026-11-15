@@ -15,10 +15,11 @@
    3. Placeholders instead of media. Slots that held stock photographs or clips show the quiet
       placeholder (graphite or paper with the mark), as on the example-role cards. See
       docs/MEDIA.md.
-   4. No canvases are drawn yet (5B-4, 5B-5, 5B-6): the canvases are present and empty. The four
-      visuals that will be WebGL have a deliberate, temporary CSS stand-in (marked FALLBACK below):
-      the opening card's gradient, the aurora, the network sphere and the closing mark. Each is
-      hidden by `.sr[data-gl="ready"]`, the flag the renderer stage will set once its canvas draws.
+   4. WebGL (Stage 5B-4 onward): the opening card's gradient and the closing frame's gradient are drawn into their
+      canvases by lib/showreel/gl (they fade in over their CSS fallback, which stays underneath and shows whenever a
+      scene is absent, failed or lost). The aurora, the network sphere and the closing mark are still CSS stand-ins
+      (marked FALLBACK below). Each of those three is hidden by `.sr[data-gl="ready"]`, a flag their renderer
+      stages will set; it is NOT set yet, because those stand-ins are still the only picture.
    ===================================================================== */
 
 .sr {
@@ -165,8 +166,11 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
     var(--sr-ink);
 }
 /* the gradient canvas (5B-4) fades in once drawn; until then the card shows its ink background */
+/* GL canvases (lib/showreel/gl/manager.ts): invisible unless a scene is drawing, so the CSS fallback underneath is what shows
+   before the first frame, after a failure and during a context loss (data-gl "lost" hides it at once, no fade). */
 .hero canvas { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
-.hero canvas:global(.is-live) { opacity: 1; }
+.hero canvas[data-gl="live"] { opacity: 1; }
+.hero canvas[data-gl="lost"], .hero canvas[data-gl="failed"] { transition: none; }
 .heroHead { position: absolute; inset: 0; z-index: 3; display: flex; padding: 40px; pointer-events: none; }
 .heroHead h2 {
   display: flex; flex-direction: column; align-items: flex-start; text-align: left;
@@ -364,7 +368,9 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
     radial-gradient(45% 45% at 86% 46%, #4b101c 0%, transparent 72%),
     var(--sr-ink);
 }
-.target canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.target canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
+.target canvas[data-gl="live"] { opacity: 1; }
+.target canvas[data-gl="lost"], .target canvas[data-gl="failed"] { transition: none; }
 /* FALLBACK for the 3D chrome mark: the brand mark (silver blades, red figure), right of the copy; smaller, top right on portrait screens */
 .targetMark {
   position: absolute; z-index: 1; right: 14vw; top: 50%; height: 46vh; margin-top: -23vh; width: auto; aspect-ratio: 1.1 / 1.95;

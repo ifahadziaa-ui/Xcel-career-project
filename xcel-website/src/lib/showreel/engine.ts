@@ -24,6 +24,9 @@
    attach() and destroyed in detach(), so it exists exactly as long as the subscription. The keyboard focus jump
    (snap.ts attachFocusJump) lives for the engine's whole non-reduced lifetime, because focus can arrive before the
    stage is near enough to activate. Under OS reduced motion neither exists.
+   Also while active: the GL manager (gl/manager.ts), created in attach() and destroyed in detach() with everything
+   else, so the WebGL scenes (the opening and closing gradients so far) exist only for an active, non-reduced stage.
+   It is ticked from onFrame, on the shared tick, with the scroll progress the DOM frame just used.
    The engine owns no requestAnimationFrame loop: it is called by the shared Lenis ticker through
    onScrollFrame (lib/scroll/lenis.ts), after lenis.raf for that frame. React Activity can hide the
    page without unmounting it: the component's effect cleanup calls destroy(), and showing it again
@@ -34,6 +37,7 @@ import { isPaused, onPauseChange } from "@/lib/motion/motion";
 import { MARK_BOX, MARK_HOLE, MARK_HUB } from "@/lib/mark/geometry";
 import * as T from "./timeline";
 import { attachFocusJump, createSnap, type Snap } from "./snap";
+import { createGlManager, type GlManager } from "./gl/manager";
 
 export type EngineState = "idle" | "active" | "off" | "destroyed";
 export interface ShowreelEngine {
@@ -137,6 +141,7 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
   };
   const undo: Array<() => void> = []; // everything attach() set up, undone by detach()
   let snap: Snap | null = null;
+  let gl: GlManager | null = null;
   let focusOff: (() => void) | null = null;
   const reducedMQ = window.matchMedia(REDUCED);
   const mqMobile = window.matchMedia(T.BUCKET_QUERY.mobile);
@@ -278,14 +283,14 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
   };
 
   /** One frame at scroll position y. `park` renders the clamped end state even when the stage is out of range. */
-  const renderAt = (y: number, park: boolean) => {
-    if (trackH <= 0) return; // the page is hidden (display: none) or collapsed
+  const renderAt = (y: number, park: boolean): number => {
+    if (trackH <= 0) return -1; // the page is hidden (display: none) or collapsed
     const vh = window.innerHeight;
     const near = y + vh > trackTop - NEAR_MARGIN && y < trackTop + trackH + NEAR_MARGIN;
     const pinned = !park && y >= trackTop - 2 && y <= trackTop + trackH - vh + 2;
     N.aurora?.css("visibility", pinned ? "visible" : "hidden");
     N.portfolio?.css("visibility", pinned ? "visible" : "hidden");
-    if (!near && !park) return;
+    if (!near && !park) return -1;
 
     const p = T.clamp01((y - trackTop) / Math.max(1, trackH - vh));
     const vmin = Math.min(window.innerWidth, vh) / 100;
@@ -301,15 +306,18 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
       lastP = p;
       applyScroll(p, vmin);
     }
+    return p;
   };
 
   const onFrame = (f: ScrollFrame) => {
-    if (state === "active") renderAt(f.scroll, false);
+    if (state !== "active") return;
+    const p = renderAt(f.scroll, false);
+    if (p >= 0) gl?.frame(f.time, p); // WebGL scenes: same tick, same progress
   };
 
   /* ---------- listeners that exist only while active ---------- */
   let resizeTimer = 0;
-  const relayout = () => { measure(); snap?.refresh(); invalidate(); renderAt(window.scrollY, false); };
+  const relayout = () => { measure(); snap?.refresh(); gl?.resize(); invalidate(); renderAt(window.scrollY, false); };
   const onResize = () => { clearTimeout(resizeTimer); resizeTimer = window.setTimeout(relayout, 120); };
   const onOrientation = () => { clearTimeout(resizeTimer); resizeTimer = window.setTimeout(relayout, 200); };
   const onPointer = (e: PointerEvent) => {
@@ -317,7 +325,7 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     tilt.tx = -((e.clientY / window.innerHeight) * 2 - 1) * 9;
     tilt.ty = ((e.clientX / window.innerWidth) * 2 - 1) * 12;
   };
-  const onVisibility = () => { if (!document.hidden) { invalidate(); renderAt(window.scrollY, false); } };
+  const onVisibility = () => { if (!document.hidden) { invalidate(); gl?.invalidate(); renderAt(window.scrollY, false); } };
 
   const attach = () => {
     window.addEventListener("resize", onResize);
@@ -343,6 +351,8 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     snap = createSnap({ geometry: () => ({ trackTop, trackH }), pfTrack: N.pfTrack ? (N.pfTrack.el as HTMLElement) : null, portfolio: N.portfolio ? (N.portfolio.el as HTMLElement) : null });
     const sn = snap;
     undo.push(() => { sn.destroy(); if (snap === sn) snap = null; });
+    const g = (gl = createGlManager(root));
+    undo.push(() => { g.destroy(); if (gl === g) gl = null; });
   };
   const detach = () => { for (const fn of undo.splice(0).reverse()) fn(); };
 
