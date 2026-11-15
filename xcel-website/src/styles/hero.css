@@ -601,11 +601,12 @@
 
   .hx-titleBlock {
     position: absolute;
-    top: calc(42.052% - var(--u) * 0.6);
+    top: auto;
+    bottom: 6.069%; /* low on the page, on the same baseline as the info panel on the right (as in the reference) */
     left: var(--pl);
     margin: 0;
-    /* the block fills the gap between the left margin and the glass case, and its text is centred in it (user, 15 Nov 2026) */
-    width: calc(50cqw - var(--u) * 211.66 - var(--u) * 24 - var(--pl));
+    /* a compact column at the left margin, never wider than the gap before the case; its text is centred in it */
+    width: min(calc(var(--u) * 330), calc(50cqw - var(--u) * 211.66 - var(--u) * 24 - var(--pl)));
   }
 
   .hx-specimen .hx-dot {
