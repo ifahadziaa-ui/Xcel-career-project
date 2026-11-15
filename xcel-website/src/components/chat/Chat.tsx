@@ -29,7 +29,7 @@ import { usePathname } from "next/navigation";
 import { CERTS, CONTACT, CREDENTIALS, CUSTOMERS, STEPS, STICKERS } from "@/content/content";
 import { routeFor } from "@/content/routes";
 import { reduced, spring, type Spring } from "@/lib/motion/spring";
-import { lockScroll, unlockScroll } from "@/lib/scroll/lenis";
+import { interruptScroll, lockScroll, unlockScroll } from "@/lib/scroll/lenis";
 import { CHIP, FLOW, FLOW_FN, START, TEL, guided, replyAct, type Chip, type Part, type Reply, type SummaryData } from "./brain";
 import { closeBold, md } from "./md";
 import s from "./Chat.module.css";
@@ -262,6 +262,7 @@ export default function Chat() {
   const setOpen = useCallback((o: boolean) => {
     if (openRef.current === o) return;
     openRef.current = o;
+    if (o) interruptScroll(); // a snap or hold in progress stops where it is, desktop and phone alike
     setOpenState(o);
   }, []);
   const setBusy = (b: boolean) => {

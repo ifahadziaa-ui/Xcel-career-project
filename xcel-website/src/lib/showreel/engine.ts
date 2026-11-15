@@ -20,6 +20,10 @@
        any     --destroy--->  destroyed  idempotent; also releases the inline styles
        OS prefers-reduced-motion: reduce  =>  state "off": the choreography never starts (the static
                                        stacked presentation belongs to 5B-7). Follows later changes.
+   While active it also owns the snap (snap.ts: sideways steps, Down/Up beats, hold-to-scroll, touch swipes), created in
+   attach() and destroyed in detach(), so it exists exactly as long as the subscription. The keyboard focus jump
+   (snap.ts attachFocusJump) lives for the engine's whole non-reduced lifetime, because focus can arrive before the
+   stage is near enough to activate. Under OS reduced motion neither exists.
    The engine owns no requestAnimationFrame loop: it is called by the shared Lenis ticker through
    onScrollFrame (lib/scroll/lenis.ts), after lenis.raf for that frame. React Activity can hide the
    page without unmounting it: the component's effect cleanup calls destroy(), and showing it again
@@ -29,6 +33,7 @@ import { onScrollFrame, type ScrollFrame } from "@/lib/scroll/lenis";
 import { isPaused, onPauseChange } from "@/lib/motion/motion";
 import { MARK_BOX, MARK_HOLE, MARK_HUB } from "@/lib/mark/geometry";
 import * as T from "./timeline";
+import { attachFocusJump, createSnap, type Snap } from "./snap";
 
 export type EngineState = "idle" | "active" | "off" | "destroyed";
 export interface ShowreelEngine {
@@ -131,6 +136,8 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     else root.dataset.srState = s;
   };
   const undo: Array<() => void> = []; // everything attach() set up, undone by detach()
+  let snap: Snap | null = null;
+  let focusOff: (() => void) | null = null;
   const reducedMQ = window.matchMedia(REDUCED);
   const mqMobile = window.matchMedia(T.BUCKET_QUERY.mobile);
   const mqTablet = window.matchMedia(T.BUCKET_QUERY.tablet);
@@ -302,7 +309,7 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
 
   /* ---------- listeners that exist only while active ---------- */
   let resizeTimer = 0;
-  const relayout = () => { measure(); invalidate(); renderAt(window.scrollY, false); };
+  const relayout = () => { measure(); snap?.refresh(); invalidate(); renderAt(window.scrollY, false); };
   const onResize = () => { clearTimeout(resizeTimer); resizeTimer = window.setTimeout(relayout, 120); };
   const onOrientation = () => { clearTimeout(resizeTimer); resizeTimer = window.setTimeout(relayout, 200); };
   const onPointer = (e: PointerEvent) => {
@@ -327,12 +334,15 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     // content above or below the stage can change its position (fonts, accordions): re-measure, not every frame
     const host = root.parentElement;
     if (host) {
-      const ro = new ResizeObserver(() => { measure(); invalidate(); });
+      const ro = new ResizeObserver(() => { measure(); snap?.refresh(); invalidate(); });
       ro.observe(host);
       undo.push(() => ro.disconnect());
     }
     undo.push(onPauseChange(() => { tilt.tx = 0; tilt.ty = 0; }));
     undo.push(onScrollFrame(onFrame)); // the shared tick; no rAF loop of our own
+    snap = createSnap({ geometry: () => ({ trackTop, trackH }), pfTrack: N.pfTrack ? (N.pfTrack.el as HTMLElement) : null, portfolio: N.portfolio ? (N.portfolio.el as HTMLElement) : null });
+    const sn = snap;
+    undo.push(() => { sn.destroy(); if (snap === sn) snap = null; });
   };
   const detach = () => { for (const fn of undo.splice(0).reverse()) fn(); };
 
@@ -353,6 +363,12 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     renderAt(window.scrollY, true); // park: the clamped end state, fixed layers hidden
     tilt.tx = tilt.ty = tilt.rx = tilt.ry = 0;
   };
+  const startFocusJump = () => {
+    if (focusOff) return;
+    // measure first when idle: the stage may be far from where it was last measured
+    focusOff = attachFocusJump(root, () => { if (state !== "active") measure(); return trackTop; });
+  };
+  const stopFocusJump = () => { focusOff?.(); focusOff = null; };
   const release = () => {
     for (const n of nodes) n.release();
     invalidate();
@@ -373,10 +389,12 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     if (state === "destroyed") return;
     if (reducedMQ.matches) {
       detach();
+      stopFocusJump();
       release();
       setState("off");
     } else if (state === "off") {
       setState("idle");
+      startFocusJump();
       measure();
       if (nearNow()) activate();
     }
@@ -386,6 +404,7 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
   if (reducedMQ.matches) setState("off");
   else {
     setState("idle");
+    startFocusJump();
     measure();
     if (nearNow()) activate();
   }
@@ -395,6 +414,7 @@ export function createShowreelEngine(root: HTMLElement): ShowreelEngine | null {
     destroy() {
       if (state === "destroyed") return;
       detach();
+      stopFocusJump();
       io.disconnect();
       reducedMQ.removeEventListener("change", onReducedChange);
       release();

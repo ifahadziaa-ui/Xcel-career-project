@@ -92,6 +92,9 @@
 .sr[data-sr-pre] .aurora,
 .sr[data-sr-pre] .pfSection { visibility: hidden !important; }
 .sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; padding: 4vmin; padding-top: calc(4vmin + var(--bar-h, 0px)); }
+/* Sideways swipes step the carousel and the panels (snap.ts). Without this the browser can also take the same drag as its
+   history-navigation gesture (seen in touch emulation, in the prototype too). Vertical scrolling and pinch-zoom stay native. */
+.sticky, .pfSection { touch-action: pan-y pinch-zoom; }
 
 .backdrop { position: absolute; inset: 0; z-index: 0; background: var(--stage); }
 
@@ -506,6 +509,7 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 
   /* no pin, no stage dressing */
   .track { height: auto; }
+  .sticky, .pfSection { touch-action: auto; }
   .sticky { position: static; height: auto; overflow: visible; padding: 6vmin 4vmin; display: flex; flex-direction: column; gap: 6vmin; }
   .backdrop, .marquee, .aurora, .heroImg, .zoom, .sphereCanvasWrap, .core, .vignette, .targetMark, .hero canvas, .target canvas { display: none; }
   .scene, .rig, .carousel { position: static; display: flex; flex-direction: column; gap: 6vmin; width: 100%; height: auto; perspective: none; transform-style: flat; }

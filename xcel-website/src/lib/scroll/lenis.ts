@@ -84,6 +84,15 @@ export function notifyScrollFrame(time: number): void {
 /** number of post-frame subscribers (tests and leak checks) */
 export const scrollFrameSubscribers = (): number => frameSubs.size;
 
+/* ---------- scroll interruption ----------
+   Something that takes over the page's attention (the chat opening) tells scroll-owning features to stop
+   what they are animating and forget where they were heading. Features listen for the event; nothing here
+   scrolls, locks or exposes Lenis. */
+export const SCROLL_INTERRUPT_EVENT = "xc:interrupt-scroll";
+export const interruptScroll = (): void => {
+  if (typeof window !== "undefined") window.dispatchEvent(new Event(SCROLL_INTERRUPT_EVENT));
+};
+
 /* ---------- scroll lock (Lenis stop + html lock), counted so two owners can't unlock each other ----------
    Same effect as the prototype's lockScroll/unlockScroll (phone chat sheet; later the preloader). */
 let locks = 0;

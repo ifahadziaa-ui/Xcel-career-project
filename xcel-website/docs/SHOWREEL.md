@@ -8,7 +8,7 @@ Source of truth for behaviour: `landing-prototype-clean/js/showreel.js` and `css
 |---|---|
 | 5B-1 Static stage | **Done.** This file |
 | 5B-2 Timeline, DOM engine, Lenis post-frame subscription | **Done**, plus a corrective pass (restoration guard, interim reduced-motion layout, lifecycle checks). See "Stage 5B-2" |
-| 5B-3 Snap and focus | Not started |
+| 5B-3 Snap, navigation and focus | **Done.** See "Stage 5B-3" |
 | 5B-4 to 5B-6 WebGL scenes | Not started |
 | 5B-7 Video, final reduced-motion styling, screen-reader access in the pinned reel | Not started (an interim reduced-motion layout exists, see "Reduced motion") |
 | 5B-8 Final validation | Not started |
@@ -155,7 +155,7 @@ Timeline module; DOM engine for scenes 1 to 9 (marquee, carousel formation, rota
 
 ### Remaining
 
-- **5B-3:** snap (sideways wheel, keys, touch; vertical arrow steps; hold-to-scroll), keyboard-focus handling (the prototype's `focusin` jump), the chat check for dialogs. None of it exists yet; arrow keys and wheel behave as ordinary scrolling.
+- **5B-3:** done (see "Stage 5B-3").
 - **5B-4 to 5B-6:** the five WebGL renderers and `data-gl="ready"`.
 - **5B-7:** video; final styling of the reduced-motion layout; keyboard and screen-reader access to the panels, sphere text and closing frame **in the pinned reel** (they are hidden by `visibility` until the engine reveals them, as in the prototype; reduced-motion visitors now have them in the stacked layout, normal-motion assistive-technology users still do not).
 - **5B-8:** final validation, GPU and device checks.
@@ -205,6 +205,113 @@ Not done, or only approximated:
 - Tab backgrounding was done on a headless browser with a second tab; background throttling on a phone or a minimised window may differ.
 - The reduced-motion layout was checked at 1440 and 390 px only; 768 and 1024 were not looked at.
 - The 1920 and 640/639 px widths were checked for track height in 5B-1 but not re-compared frame by frame in 5B-2.
+
+## Stage 5B-3: snap, navigation and focus
+
+Source: `landing-prototype-clean/js/showreel.js` lines 1112 to 1244 ("horizontal snap", "vertical snap", the `focusin` handler), read from the code (not from the audit summary). The thresholds, stops and timings are unchanged; the deviations are listed below.
+
+### Files
+
+| File | Role |
+|---|---|
+| `src/lib/showreel/snap.ts` (new) | `createSnap(host)`: wheel, keyboard, hold and touch handling; `attachFocusJump(root, trackTop)`; the pure plan (`computeZones`, `computeVStops`, `SPHERE_REST`, `ease`) |
+| `src/lib/showreel/engine.ts` | Creates the snap in `attach()` and destroys it in `detach()` (so it exists exactly while the engine is active); attaches the focus jump for the engine's whole non-reduced lifetime; refreshes the snap's panel layout whenever the engine re-measures |
+| `src/components/showreel/Showreel.module.css` | `touch-action: pan-y pinch-zoom` on the pinned stage and the panel layer (`auto` in the reduced-motion layout) |
+| `src/lib/scroll/lenis.ts` | (corrective pass) `SCROLL_INTERRUPT_EVENT` and `interruptScroll()`: a one-line signal, nothing scrolls or locks |
+| `src/components/chat/Chat.tsx` | (corrective pass) one line in `setOpen`: calls `interruptScroll()` when the chat opens. Nothing else in the chat changed |
+
+`timeline.ts` is untouched. There is no new loop, timer owner, Lenis instance or navigation system.
+
+### What it does
+
+Vertical scrolling stays continuous. Inside the pinned reel:
+
+- **Sideways input steps the strip that is moving sideways** to its next or previous resting position: the carousel (four stops, one per card) or the "What we staff" panels (one stop per panel, plus the strip's end). At the first or last stop the input is swallowed and the page stays put.
+- **A tap on Down/Up steps to the next or previous resting beat of the whole reel:** the opening card, the four carousel stops, the sphere once its text has settled, the panel stops and the closing frame (10 beats, so 9 taps from the opening card to the closing frame at all three sizes tested). Taps in quick succession chain from where the last one is heading. At the first or last beat the key is left to the browser, so the page carries on.
+- **Holding Down/Up past the keyboard's repeat delay scrolls freely and smoothly** instead.
+- Plain wheel, touch drag, and everything outside the reel are untouched.
+
+### Input mappings and thresholds (all from the prototype)
+
+| Input | Rule |
+|---|---|
+| Horizontal wheel (trackpad swipe) or shift + wheel | A gesture ends after 220 ms with no wheel event (trackpad momentum is swallowed until then). Deltas accumulate within a gesture (line-mode deltas count 16 px per line); at an accumulated magnitude over 30 it steps once and ignores the rest of the gesture. Needs the scroll position to be inside a sideways zone |
+| Left / Right arrow | Steps the carousel or the panels, only inside a sideways zone |
+| Down / Up arrow, tap | Steps to the next or previous beat, only while the scroll is inside the pinned track |
+| Down / Up arrow, held | First press is a tap; repeats after it start a hold at 2.2 viewport heights per second with a 0.12 s ease-in and ease-out; it stops when the key is released, when the window loses focus, or when the reel is left |
+| Touch | A single-finger swipe whose horizontal distance exceeds 50 px and 1.5 times its vertical distance steps; evaluated on touch end; only inside a sideways zone |
+| Zones (timeline units) | Carousel 200 to 830 (stops at 300, 467, 633, 800); panels 1900 to 2740 (stops at the panels' own positions, measured from the DOM, plus the end at 2680) |
+| Beats | 0, the four carousel stops, 1470, the panel stops, 3700 (stops closer than 10 units are merged) |
+| Step timing | Sideways 0.9 s; vertical `0.5 + distance / 1400`, clamped to 0.9 to 2.4 s; cubic in-out easing |
+
+### Scroll ownership and cancellation
+
+- **There is no scroll engine in the snap.** Every scroll is a command to the one shared Lenis instance, followed through `onLenisChange` (it can appear after the snap and can be replaced). The hold loop runs on the shared post-frame tick (`onScrollFrame`), not on a requestAnimationFrame loop of its own, and subscribes only while holding.
+- **A new snap supersedes the one in flight** (Lenis replaces its animation).
+- **A tap's remembered destination is valid only while that tap's own Lenis command is still current** (corrective pass). Each vertical snap is tagged through `scrollTo`'s `userData`; Lenis replaces `userData` on every other `scrollTo` (an anchor click from `LenisController`, any programmatic scroll, the wheel), resets it when an animation completes, and sets `isScrolling` to `"native"` on a native scroll. Any of those ends the memory, so the next tap measures from where the page really is. The snap's own animation frames change none of it, so consecutive taps still chain. (Before, the memory was a bare timer.)
+- **`cancelAll`** (the chat opening, a scroll lock, deactivation, destroy, the tab being hidden, a window blur, the Lenis instance going away) stops the hold, forgets the destination and, if any snap step (vertical or sideways) is still running, freezes it where it is. The freeze scrolls immediately to the current position plus a hundredth of a pixel: Lenis's `scrollTo` returns early, without stopping anything, when the target equals its `targetScroll`, which a running animation keeps equal to its position (found in the corrective pass: before it, the freeze was a no-op on desktop; on a phone the scroll lock's `stop()` happened to kill the animation). The nudge can move the page by up to one pixel when it fires.
+- **The chat opening interrupts** (`interruptScroll()` from `Chat.tsx`'s `setOpen`): a snap or hold in progress stops where it is on desktop and phone alike, nothing resumes, and nothing snaps on close.
+- **Locks:** when the page scroll is locked (`lenis.isStopped`, i.e. the phone chat sheet) the snap takes no input, and a lock that starts mid-snap or mid-hold stops it (Lenis's own `stop()` resets its animation); it does not resume on unlock.
+- Listeners (`wheel` in the capture phase and non-passive, `keydown`, `keyup`, `blur`, `touchstart`, `touchend` on `window`, `visibilitychange` on `document`) exist only while the engine is active. `preventDefault` is called only when a step was taken or deliberately swallowed.
+- **Under OS reduced motion nothing is attached** (the engine is `off`): no snap listeners and no focus listener.
+
+### When the snap does not take the input
+
+The event started inside a dialog, an element marked `data-lenis-prevent` (the chat panel and its rail) or the chat root `data-xc-chat` (its launcher and panel), or in an input, textarea, select or editable element; modifier keys (ctrl, alt, meta; shift on keys), ctrl + wheel (zoom), text composition, an event already handled; the page scroll is locked; the scroll position is outside the interaction's zone (the sideways inputs need a sideways zone, the arrows need the pinned track).
+
+### Focus-into-view jump
+
+The stage is pinned, so the browser's own scroll-into-view can leave a keyboard-focused control below the fold. When keyboard focus (`:focus-visible`) lands on something inside the showreel that is off screen (not within 8 px of the viewport), the page scrolls immediately to the stage's start once the browser's own scroll has settled (150 ms). It is attached for the engine's whole non-reduced lifetime (focus can arrive before the stage is near enough to activate; an idle engine re-measures first) and its timer is cleared on detach.
+
+### Chat dialog
+
+The chat root carries `data-xc-chat`, the panel is `role="dialog"` with `data-lenis-prevent`, and so is its horizontal rail; the snap steps back for wheel, key and touch events from any of them (the launcher included). The chat is otherwise unchanged apart from the one-line interruption signal.
+
+- **Opening the chat interrupts the showreel's motion, consistently:** a vertical snap, a sideways step or a hold in progress freezes where it is, whether on desktop (where the page is not locked) or on a phone (where the sheet also locks the page). Nothing resumes, closing the chat leaves the scroll exactly where it was, and nothing snaps on close. The desktop chat is not modal and was not changed.
+- **Keyboard:** with focus in the chat input, on a button in the dialog or on the launcher, arrow keys are not default-prevented by the showreel and the carousel does not move; typing works. The chat returns focus to its launcher when it closes, so after using the chat the arrow keys scroll natively (the browser's 40 px) until focus moves to the page; click the page or Tab away and the reel's own stepping returns (checked).
+- **Wheel and touch:** a horizontal wheel over the dialog does not step; a wheel over an overflowing chat log scrolls the log (910 to 760) while the page and the reel stay put; on a phone the sheet locks the page, so keys, wheel and swipes do nothing, and closing restores the exact scroll position.
+- Arrow keys with focus on the page (not in the chat) step the reel even while the desktop chat is open, since that dialog is not modal.
+
+### Deviations from the prototype (deliberate)
+
+1. **Attached only while the engine is active** (the prototype's listeners lived forever); the focus jump is the exception (above).
+2. **The hold runs on the shared tick**, not on its own `requestAnimationFrame` loop; its first frame has dt 0.
+3. **Input isolation is wider.** The prototype ignored arrow keys in inputs and inside `.xc-panel` only; a sideways trackpad swipe or touch inside the chat panel's rail was hijacked. Now wheel, key and touch all step back inside any dialog or `data-lenis-prevent`, and keys also check the focused element.
+4. **A scroll lock is respected** (wheel, keys, touch and the focus jump), and cancels a hold or snap in progress.
+5. **Step timing follows the site's motion preference** (`isPaused()`: 0.01 s when animations are paused or the OS asks, a saved "playing" choice wins) instead of the OS media query only (checked: 0.9 s playing, 0.01 s paused).
+6. **No Lenis instance means no snap** (the prototype fell back to a native smooth scroll). The app always has one.
+7. **`touch-action: pan-y pinch-zoom` on the pinned stage.** Without it Chrome also took the sideways drag as its history-navigation gesture (in touch emulation the page navigated back; the prototype does the same there). Vertical scrolling and pinch-zoom stay native. Not checked on a physical phone.
+8. **Touch is single-finger only**; a vertical wheel or a touch start clears the remembered snap destination; a hidden tab or a blur ends a hold; destroy freezes a running snap (so it cannot carry on into the next page).
+9. Modifier-key, composition and already-handled checks were added to the key handler; the focus jump skips while locked.
+10. **Superseded destinations are detected** (the prototype kept a bare 2.4 s timer), **the chat opening interrupts** and **the freeze works**, as described under "Scroll ownership" (corrective pass).
+
+### Verification (5B-3)
+
+`tsc --noEmit`, ESLint and `next build` pass.
+
+Against the prototype, same input sequences on both pages (CDP mouse wheel, key and touch events; where each lands in timeline units; tolerance 12 units): at 1440x900 12 scenarios, 1024x768 12 and 390x844 13 (including touch). The identical results include: wheel steps through all four carousel stops and back, the end swallowed; a 20 px wheel does nothing; shift + wheel; Left/Right; the ArrowDown beats from the top to the end and the ArrowUp beats back (9 steps each way); chained taps; the panel strip; a horizontal wheel between zones and ArrowDown or a wheel above the stage not default-prevented; and at 390 the touch swipes (a 150 px left swipe steps, right steps back, 40 px does nothing, a mostly vertical drag scrolls natively). 8 of 12 matched at 1440, 8 of 12 at 1024 and 11 of 13 at 390. The scenarios that differed are timing-dependent and not logic differences: the prototype's second wheel event 50 ms later was handled more than 220 ms later (its slower frames), so its gesture reset; mid-snap gestures and quick tap chains depend on where the animation is at that frame; once the prototype acted on a stale scroll position after a scripted `scrollTo`; and the hold covers far less distance than real life for both (frames run at a few per second in software GL, and the per-frame step is capped).
+
+Deterministic checks of the real `snap.ts` and `engine.ts` (the actual files transpiled and run in the page against a fake Lenis, with synthetic events and frames): a tap targets the right stop at 0.9 s; the hold covers 2716 px in 1.5 s at 60 fps (analytic 2732) and coasts 220 px after release (expected about 238) then unsubscribes; a hold ends at the reel's end and coasts on past it as the prototype does; wheel thresholds (29 no, 31 yes, two lines, 20 + 20 in one gesture, later events ignored, a new gesture after 260 ms steps, ctrl + wheel and vertical wheel not taken, shift + wheel taken); key modifiers; isolation in an input, a dialog, a `data-lenis-prevent` element and an editable element, with a control on the body that does step; touch rules (50 px, the 1.5 ratio and its boundary, inside a dialog, while locked, between zones); `destroy()` three times mid-snap (the scroll is frozen), twice mid-hold, after 20 create and destroy cycles, with nothing handled afterwards and listeners and subscribers back to baseline.
+
+Real page, production build: the focus jump goes to the stage start in both the near and the far-above case (prototype the same), does not move when the control is in view; reduced motion at load has 0 snap listeners, no focus listener, nothing default-prevented, and flips both ways live; 6 enter and leave cycles and 6 route round trips (+11 listeners and 1 subscriber while active: 4 engine, 7 snap; 0 idle; one focus listener); a route change 0.3 s after an ArrowDown tap, or while holding, leaves the next page still (scroll constant for 3 s, 0 subscribers); backgrounding the tab (a second tab activated) while holding cancels the hold (the scroll is frozen while hidden and does not drift on return) and a snap interrupted that way settles on a stop; clicking "Find a job" in the opening card while the snap is active scrolls to `#jobs`; plain vertical wheel above the stage scrolls; ArrowDown above the stage and ArrowUp or a horizontal wheel below it are not default-prevented.
+
+### Corrective pass (stale destinations, chat interruption, keyboard)
+
+- **Harness with a fake Lenis that mimics the real semantics** (`userData` replaced by every `scrollTo`, reset on immediate and on completion, `targetScroll` lagging, and the early return when the target equals `targetScroll`): consecutive taps chain (and many animation frames plus `scroll` events do not break it); an anchor-style smooth scroll, an immediate jump and a native scroll each make the next tap measure from the real position instead of the old destination; completion is harmless. The chat signal freezes a running vertical step and a running sideways step, stops a hold, clears the memory (the next tap measures from the frozen position) and causes no later scrolls; with nothing running it does nothing. The launcher inside `data-xc-chat` is not showreel input. The listener for the signal is added and removed with the snap.
+- **Real page** (production build): the chat opened 250 to 800 ms into a vertical snap freezes it mid-flight on desktop (for example at 2379 and 2291, the destination being 2701) and holds there for 2 s and through closing; before the freeze fix the same test let the snap finish. On a phone the same test froze or never moved, with no resume. A sideways step in flight and a hold in progress also stop when the chat opens, and nothing moves on close. Navigating away 0.3 s after an ArrowDown tap now leaves the next page at scroll 0 (before: 429, the snap carrying on).
+- **Keyboard:** arrow keys with focus on the chat launcher, in the chat input and on a dialog button are not default-prevented and do not step the reel (typing works); with focus on the page, ArrowRight is a real step. The stepping scenarios against the prototype were re-run at 1440 after the changes (10 of 12 identical; the other two are the slow-frame hold and the prototype's stale-state artefact, as before). The lifecycle counts (6 cycles, 6 route round trips) are unchanged apart from the extra listener (12 while active, 0 idle).
+- **Focus jump:** unchanged and re-verified earlier (keyboard focus off screen jumps to the stage start, matching the prototype; in view does not move). The pointer-focus branch is still untested (below).
+
+### Not tested, and limitations
+
+- **No physical touch hardware**: touch is Chrome's touch emulation through the DevTools protocol. No real trackpad (momentum streams), no macOS back-swipe, no Safari, no Firefox, no real keyboard-only or screen-reader session (key events were dispatched through the protocol).
+- **Software-GL Chromium renders a few frames per second**, so the real-time feel of snap timing and the hold speed was not assessed in the page; the hold's speed is verified only with synthetic 60 fps frames.
+- The pointer-modality branch of the focus jump (a click that focuses a control must not jump) could not be exercised: Chrome reports a scripted `focus()` as `:focus-visible` even after a mouse click. The branch is the prototype's, read but not run.
+- The tablet geometry bucket (portrait 640 to 1024 wide) was not run for snap (1440, 1024 landscape and 390 were).
+- Interrupting a snap (the chat opening, or any `cancelAll`) leaves the page where it is, which is usually between two stops; the next tap steps to the next beat from there. By design, on desktop and phone alike.
+- The freeze nudges the scroll by a hundredth of a pixel, which can move the page by one pixel.
+- The chat's focus return to its launcher means arrow keys scroll natively after the chat closes until focus moves (above).
+- Sideways wheel and touch inside the reel that are not in an isolated element are taken even over ordinary page content (as in the prototype).
 
 ## What was not done in 5B-1, on purpose (historical)
 
