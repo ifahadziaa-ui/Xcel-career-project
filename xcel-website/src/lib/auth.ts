@@ -1,13 +1,15 @@
 import "server-only";
 import { betterAuth } from "better-auth";
 import { getMigrations } from "better-auth/db/migration";
+import { createHmac } from "node:crypto";
 import { nextCookies } from "better-auth/next-js";
-import { dbConfigured, getPool } from "./db";
+import { dbConfigured, getPool, connectionString } from "./db";
 
-/* Accounts need two settings: DATABASE_URL (where profiles, applications and saved roles live) and
-   BETTER_AUTH_SECRET (signs the session cookie). Google sign-in also needs GOOGLE_CLIENT_ID and
-   GOOGLE_CLIENT_SECRET. Without the first two the site works as before and the account pages say so. */
-export const accountsConfigured = dbConfigured && Boolean(process.env.BETTER_AUTH_SECRET);
+/* Accounts need one setting: DATABASE_URL (where profiles, applications and saved roles live). Google sign-in
+   also needs GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET. Without a database the site works as before and the
+   account pages say so. The key that signs the session cookie is BETTER_AUTH_SECRET when it is set; otherwise
+   it is derived from the database connection string, which is just as secret, so no extra step is needed. */
+export const accountsConfigured = dbConfigured;
 export const googleConfigured = Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 
 const siteUrl =
@@ -18,7 +20,7 @@ const siteUrl =
 function create() {
   return betterAuth({
     database: getPool(),
-    secret: process.env.BETTER_AUTH_SECRET,
+    secret: process.env.BETTER_AUTH_SECRET ?? createHmac("sha256", "xcelcareers-session-key").update(connectionString() ?? "").digest("hex"),
     baseURL: siteUrl,
     trustedOrigins: process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : [],
     emailAndPassword: { enabled: true, minPasswordLength: 8, maxPasswordLength: 128 },
@@ -34,7 +36,7 @@ type Auth = ReturnType<typeof create>;
 const g = globalThis as unknown as { __xcAuth?: Auth; __xcReady?: Promise<void> | null };
 
 export function getAuth(): Auth {
-  if (!accountsConfigured) throw new Error("Accounts are not set up (DATABASE_URL and BETTER_AUTH_SECRET).");
+  if (!accountsConfigured) throw new Error("Accounts are not set up (DATABASE_URL).");
   return (g.__xcAuth ??= create());
 }
 

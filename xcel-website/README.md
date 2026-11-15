@@ -22,10 +22,10 @@ npm run build && npm start   # production build
 ## Candidate accounts (sign-in, applications, saved roles)
 
 Built with Better Auth and Postgres. Pages: `/login`, `/account`; the apply form and Save buttons on `/jobs` use them.
-The tables are created automatically the first time the site runs with a database. Switched off (the default) until these are set in Vercel, and the site works as before:
+The tables are created automatically the first time the site runs with a database. Switched off (the default) until the database is connected in Vercel, and the site works as before:
 
 1. **Database**: in Vercel, Storage > Create Database > Neon Postgres, connect it to the project (it adds `DATABASE_URL`/`POSTGRES_URL`).
-2. **`BETTER_AUTH_SECRET`**: any long random string (`openssl rand -base64 32`).
+2. Nothing else is required. The key that signs sign-in cookies is derived from the database connection string; set `BETTER_AUTH_SECRET` (any long random string) only if you want to control it.
 3. **Google** (optional): Google Cloud Console > APIs and Services > Credentials > Create credentials > OAuth client ID > Web application.
    Authorised redirect URI: `https://<the live domain>/api/auth/callback/google` (add `http://localhost:3000/api/auth/callback/google` for local work).
    Fill in the consent screen (app name XcelCareers, a support email) and publish it. Then set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
