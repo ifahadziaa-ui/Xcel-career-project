@@ -554,3 +554,24 @@ html[data-motion="paused"] .certs::before, html[data-motion="paused"] .certs::af
 .capdoc-badges { display: flex; gap: 3cqw; align-items: center; margin-top: auto; }
 .capdoc-badges img { width: 14cqw; height: 14cqw; object-fit: contain; }
 .capdoc footer { font: 400 2.5cqw/1.4 var(--font-bar); letter-spacing: 0.06em; text-transform: uppercase; color: #6b6b70; }
+
+/* ---------- a slow fog in the other dark sections too (same recipe as .certs) ---------- */
+.process, .jobs, .record, .faq-sec, .join-wrap { position: relative; isolation: isolate; }
+.process::before, .process::after, .jobs::before, .jobs::after, .record::before, .record::after,
+.faq-sec::before, .faq-sec::after, .join-wrap::before, .join-wrap::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; inset: -25% -15%; filter: blur(40px); will-change: transform;
+}
+.process::before, .jobs::before, .record::before, .faq-sec::before, .join-wrap::before { background: var(--fog-a); animation: fog-a 32s ease-in-out infinite alternate; }
+.process::after, .jobs::after, .record::after, .faq-sec::after, .join-wrap::after { background: var(--fog-b); animation: fog-b 41s ease-in-out infinite alternate; }
+.process  { --fog-a: radial-gradient(40% 50% at 86% 18%, rgb(255 42 69 / 0.17), transparent 70%);  --fog-b: radial-gradient(46% 54% at 8% 88%, rgb(198 198 198 / 0.1), transparent 72%); }
+.jobs     { --fog-a: radial-gradient(42% 50% at 10% 30%, rgb(255 42 69 / 0.15), transparent 70%);  --fog-b: radial-gradient(48% 56% at 90% 85%, rgb(140 22 44 / 0.22), transparent 72%); }
+.record   { --fog-a: radial-gradient(44% 52% at 50% 6%, rgb(140 22 44 / 0.24), transparent 72%);   --fog-b: radial-gradient(40% 48% at 92% 80%, rgb(198 198 198 / 0.1), transparent 70%); }
+.faq-sec  { --fog-a: radial-gradient(40% 50% at 92% 22%, rgb(255 42 69 / 0.14), transparent 70%);  --fog-b: radial-gradient(46% 54% at 6% 78%, rgb(198 198 198 / 0.09), transparent 72%); }
+.join-wrap{ --fog-a: radial-gradient(44% 52% at 14% 16%, rgb(255 42 69 / 0.17), transparent 70%);  --fog-b: radial-gradient(46% 56% at 88% 92%, rgb(140 22 44 / 0.24), transparent 72%); }
+html[data-motion="paused"] .process::before, html[data-motion="paused"] .process::after, html[data-motion="paused"] .jobs::before, html[data-motion="paused"] .jobs::after,
+html[data-motion="paused"] .record::before, html[data-motion="paused"] .record::after, html[data-motion="paused"] .faq-sec::before, html[data-motion="paused"] .faq-sec::after,
+html[data-motion="paused"] .join-wrap::before, html[data-motion="paused"] .join-wrap::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .process::before, .process::after, .jobs::before, .jobs::after, .record::before, .record::after,
+  .faq-sec::before, .faq-sec::after, .join-wrap::before, .join-wrap::after { animation: none; }
+}

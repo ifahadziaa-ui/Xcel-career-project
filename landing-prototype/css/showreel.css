@@ -423,3 +423,18 @@
 /* portrait screens: the card fills the middle, so the long intro leaves (the card says the same) */
 @media (max-aspect-ratio: 1/1) { .sr-hero-bottom .lead { display: none; } }
 @media (max-width: 639px) { .sr-hero-head h2 { font-size: 6.1vw; } }
+
+/* ---------- gradients instead of flat black (user, 15 Nov 2026) ---------- */
+.sr-sticky {
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 82%, rgb(255 42 69 / 0.17), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 84% 16%, rgb(198 198 198 / 0.09), transparent 70%);
+}
+/* the network scene behind the brain: a red glow under it and a silver one above */
+.sr-blackpanel {
+  background:
+    radial-gradient(38vmin 30vmin at 50% 56%, rgb(255 42 69 / 0.14), transparent 72%),
+    radial-gradient(55vmin 40vmin at calc(50% - 26vw) calc(50% - 26vh), rgb(198 198 198 / 0.08), transparent 72%),
+    radial-gradient(50vmin 36vmin at calc(50% + 28vw) calc(50% + 24vh), rgb(140 22 44 / 0.2), transparent 72%),
+    var(--sr-ink);
+}

@@ -1087,16 +1087,14 @@ export function initShowreel(section) {
       }
       el.faceIn.style.opacity = faceFade(p);
       el.face.style.opacity = cardFade(p);
-      // the portal: the dark network scene, seen through the hub and widening until it fills the view
-      const R = M.hole * dive.S * k * portalOpen(z) * portalWiden(z);
-      // a soft edge: solid inside, fading over the outer 55% of the radius (no hard circle on screen)
-      const pf = R * 0.55;
-      const pm = z >= 1 ? "none" : `radial-gradient(circle at calc(50% + ${hx.toFixed(3)}vmin) calc(50% + ${hy.toFixed(3)}vmin), #000 ${(R - pf).toFixed(3)}vmin, rgb(0 0 0 / 0.45) ${(R - pf * 0.4).toFixed(3)}vmin, transparent ${R.toFixed(3)}vmin)`;
-      el.panel.style.maskImage = pm; el.panel.style.webkitMaskImage = pm;
+      // no growing circle: once the zoom has passed the camera the panels appear all at once (a short fade)
+      el.panel.style.maskImage = "none"; el.panel.style.webkitMaskImage = "none";
       el.panel.style.opacity = panelOn(p) ? 1 : 0;
-      // the strip sits over the panel and is cut by the same hub, so the dive lands on the panels with no gap
-      el.portfolio.style.maskImage = pm; el.portfolio.style.webkitMaskImage = pm;
-      el.panel.style.clipPath = "none"; // the stylesheet starts it at circle(0); the mask now does the opening
+      const pfIn = smooth(clamp01((z - 0.86) / 0.1));
+      el.portfolio.style.maskImage = "none"; el.portfolio.style.webkitMaskImage = "none";
+      el.portfolio.style.opacity = pfIn.toFixed(3);
+      el.portfolio.style.pointerEvents = pfIn > 0.6 ? "auto" : "none";
+      el.panel.style.clipPath = "none"; // the stylesheet starts it at circle(0)
       el.panel.style.transform = blackScreenTransform(p, vmin, geo);
       el.sphereScene.style.transform = `translate(-50%,-50%) scale(${sphereSceneScale(p, vmin, geo)})`;
       // portrait screens stack the copy under the sphere, so the sphere and its mark rise as the copy arrives
