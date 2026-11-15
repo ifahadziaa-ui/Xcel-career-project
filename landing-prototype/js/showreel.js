@@ -472,7 +472,7 @@ uniform float iTime; uniform float iResolutionY; uniform float uSize; uniform fl
 uniform float uCenterRadius; uniform float uFlowSpeed; uniform float uFlowAmount;
 uniform float uExplode; uniform float uExplodeDist;
 varying float vSeed; varying float vSynapse; varying float vDepth; varying float vFrontness;
-varying float vCenterness; varying float vY;
+varying float vCenterness; varying float vY; varying float vRim;
 void main() {
   vSeed = aSeed;
   vec3 p = position; vY = p.y;
@@ -492,6 +492,7 @@ void main() {
   if (aSeed > uSynapseRate) fire = 0.0;
   vSynapse = fire;
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
+  vRim = pow(1.0 - abs(dot(normalize(normalMatrix * aNormal), normalize(-mv.xyz))), 1.5);
   vec4 centerMv = modelViewMatrix * vec4(0.0, 0.0, 0.0, 1.0);
   vFrontness = clamp((centerMv.z - mv.z) * 0.6 + 0.5, 0.0, 1.0);
   gl_Position = projectionMatrix * mv;
@@ -507,18 +508,19 @@ uniform vec3 uCool; uniform vec3 uWarm; uniform vec3 uEdgeColor; uniform vec3 uC
 uniform float uCenterFalloff; uniform vec3 uSynapse; uniform float iAlpha; uniform float uGlow;
 uniform float uDepthDarkness; uniform float uExplode;
 varying float vSeed; varying float vSynapse; varying float vDepth; varying float vFrontness;
-varying float vCenterness; varying float vY;
+varying float vCenterness; varying float vY; varying float vRim;
 void main() {
   vec2 p = gl_PointCoord - 0.5;
   float r = length(p);
   if (r > 0.5) discard;
-  float core = pow(smoothstep(0.5, 0.0, r), 2.2);
+  float core = smoothstep(0.5, 0.18, r); // a crisp round dot with a soft edge
   float t = pow(vCenterness, max(0.05, uCenterFalloff));
   float vt = clamp(smoothstep(-0.7, 0.9, vY) + vSeed * 0.12, 0.0, 1.0);
   vec3 base = mix(mix(uCool, uWarm, vt), uCenterColor, t);
   base = mix(base, uEdgeColor, (1.0 - t) * 0.18);
   vec3 col = base + uSynapse * vSynapse * 2.0;
   col *= mix(1.0 - uDepthDarkness, 1.0, vFrontness);
+  col *= 0.58 + 1.05 * vRim;
   float alphaOut = core * iAlpha * mix(1.0 - uDepthDarkness * 0.7, 1.0, vFrontness);
   alphaOut *= 1.0 - smoothstep(0.0, 1.0, uExplode) * 0.8;
   gl_FragColor = vec4(col * uGlow, alphaOut);
@@ -624,7 +626,7 @@ function makeAurora(canvas) {
 
 /* Point counts by screen width (the brain prompt's adaptive tiers); the render loop's
    own quality governor lowers the pixel ratio further if frames run long. */
-const brainCount = () => { const w = innerWidth; return w <= 640 ? 60000 : w <= 1024 ? 120000 : w <= 1440 ? 200000 : 280000; };
+const brainCount = () => { const w = innerWidth; return w <= 640 ? 20000 : w <= 1024 ? 36000 : w <= 1440 ? 52000 : 64000; };
 
 /* brain-mesh.bin, VBRN container (little endian): u32 magic, u32 version, u32 vertexCount,
    u32 indexCount, Int16 xyz (/32767 of a unit radius), Uint16 indices. */
@@ -675,6 +677,7 @@ function vnoise(x, y, z) {
 }
 const ridged = (x, y, z) => 1 - Math.abs(vnoise(x, y, z) * 2 - 1);
 
+const halton = (i, b) => { let f = 1, r = 0; while (i > 0) { f /= b; r += f * (i % b); i = Math.floor(i / b); } return r; };
 function sampleBrain({ positions: v, indices: ix }, n, radius = 1.15) {
   const vn = vertexNormals(v, ix);
   const tris = ix.length / 3, cdf = new Float64Array(tris);
@@ -689,11 +692,11 @@ function sampleBrain({ positions: v, indices: ix }, n, radius = 1.15) {
   const pos = new Float32Array(n * 3), nor = new Float32Array(n * 3), seed = new Float32Array(n);
   const ALPHA = 0.85, RELIEF = 0.022;
   for (let k = 0; k < n; k++) {
-    const target = Math.random() * total;
+    const target = halton(k + 1, 2) * total;
     let lo = 0, hi = tris - 1;
     while (lo < hi) { const mid = (lo + hi) >> 1; if (cdf[mid] < target) lo = mid + 1; else hi = mid; }
     const I = [ix[lo * 3] * 3, ix[lo * 3 + 1] * 3, ix[lo * 3 + 2] * 3];
-    let u = Math.random(), w = Math.random();
+    let u = halton(k + 1, 3), w = halton(k + 1, 5);
     if (u + w > 1) { u = 1 - u; w = 1 - w; }
     const bary = [1 - u - w, u, w];
     // linear point and smooth normal
@@ -735,7 +738,7 @@ function makeSphere(canvas) {
   const v3 = (r, g, b) => ({ value: new THREE.Vector3(r, g, b) });
   const uniforms = {
     iTime: { value: 0 }, iResolutionY: { value: gl.h * gl.dpr }, iAlpha: { value: 0 }, uExplode: { value: 1 },
-    uSize: { value: 0.067 * 1.12 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
+    uSize: { value: 0.067 * 1.5 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
     uFlowSpeed: { value: 2.3 }, uFlowAmount: { value: 0.025 }, uGlow: { value: 1.1 }, uDepthDarkness: { value: 1 }, uExplodeDist: { value: 5 },
     // hero palette: silver on top, signal red underneath, a graphite heart, white synapse flashes
     uWarm: v3(0.84, 0.84, 0.87), uCool: v3(1.0, 0.16, 0.27), uEdgeColor: v3(1.0, 0.16, 0.27),
