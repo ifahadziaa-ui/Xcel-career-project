@@ -280,3 +280,37 @@ html[data-motion="paused"] .pg-cascade .ch, :root:has(.pg--era)[data-motion="pau
 .pg-hero .pg-actions { margin-top: 1.5rem; }
 .pg-hero { padding-bottom: 3rem; }
 @media (width < 700px) { .pg-hero { padding-bottom: 2.25rem; } .pg-hero .pg-intro { font-size: var(--type-body); } }
+
+/* ---------- inner pages, one size down: buttons, copy, headings, cards, spacing (user, 15 Nov 2026) ---------- */
+.pg .btn { height: 2.75rem; padding: 0 1.15rem 0.15em; gap: 0.7rem; font-size: 0.8125rem; letter-spacing: 0.12em; border-radius: 3px; }
+.pg .btn svg { width: 1rem; height: 0.625rem; }
+.pg .pg-call { font-size: 0.8125rem; }
+.pg-hero .pg-intro { font-size: 1rem; line-height: 1.5; max-width: 34rem; margin-inline: auto; }
+.pg-hero .pg-actions { gap: 0.75rem 1.1rem; }
+.pg-hero .eyebrow { font-size: 0.75rem; }
+.pg--era .pg-hero .eyebrow { padding: 0.4rem 0.85rem 0.45rem; }
+.pg-sec { padding: 3.25rem 0; }
+.pg-head { margin-bottom: 1.5rem; }
+.pg-h2 { font-size: clamp(1.75rem, 3.1vw, 2.75rem); margin-top: 0.5rem; }
+.pg-ask .hl { font-size: clamp(1.75rem, 3.1vw, 2.75rem); }
+.pg-h3 { font-size: clamp(1.125rem, 1.5vw, 1.35rem); margin-bottom: 0.75rem; }
+.pg-lead { font-size: 0.9375rem; margin-top: 0.75rem; }
+.pg-grid { gap: 0.9rem; }
+.pg-card { padding: 1.25rem; }
+.pg-card .n { margin-bottom: 1.25rem; font-size: 0.75rem; }
+.pg-card h3 { font-size: clamp(1.05rem, 1.35vw, 1.25rem); }
+.pg-card p { font-size: 0.875rem; margin-top: 0.5rem; }
+.pg-panel { padding: 1.4rem; }
+.pg-list { gap: 0.55rem; }
+.pg-list li { font-size: 0.9375rem; }
+.pg-checks li { font-size: 0.8125rem; padding: 0.35rem 0.7rem 0.4rem; }
+.pg-proof { gap: 0.9rem; }
+.pg-proof li { padding: 1.25rem; }
+.pg-proof b { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.pg-proof span { font-size: 0.875rem; margin-top: 0.5rem; }
+.pg-creds { margin-top: 1.25rem; gap: 0.6rem; }
+.pg-creds li { padding: 0.6rem 0.85rem; }
+.pg-table li, .pg-ledger li { padding: 0.7rem 0; }
+.pg-dl > div { padding: 0.75rem 0; }
+.pg-split { gap: 2rem; }
+@media (width < 700px) { .pg-sec { padding: 2.5rem 0; } .pg-hero .pg-intro { font-size: 0.9375rem; } }
