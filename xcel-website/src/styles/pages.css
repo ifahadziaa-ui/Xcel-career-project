@@ -16,7 +16,6 @@
      (the hero's composition may use up to 1408px) */
   --gx-base: clamp(1.25rem, 4.5vw, 6rem);
   --gx: max(var(--gx-base), calc((100vw - 1280px) / 2));
-  --gx-hero: max(var(--gx-base), calc((100vw - 1408px) / 2));
 
   /* type scale (desktop): h1 48, h2 36, h3 24, card title 19, lead 17, body 16, small 14, label 12 */
   --pg-h1: clamp(2.25rem, 1.2rem + 2.6vw, 3rem);
@@ -288,7 +287,11 @@
 .toast { position: fixed; left: 50%; bottom: var(--sp-6); z-index: 150; max-width: min(34rem, calc(100% - 2rem)); padding: var(--sp-3) var(--sp-4); border-radius: 8px; background: #f3f3f5; color: #101012; font-size: var(--pg-small); box-shadow: 0 16px 40px -12px rgb(0 0 0 / 0.6); transform: translate(-50%, 160%); transition: transform 0.45s var(--ease-entrance); }
 .toast.is-on { transform: translate(-50%, 0); }
 
-/* ---------- shared chrome: footer on every page, chat launcher on the inner pages ---------- */
+/* ---------- shared chrome: footer on every page, top bar text and chat launcher on the inner pages ---------- */
+/* top bar on the inner pages: a readable floor for the nav and status text (the home hero keeps its own sizes) */
+body:has(.pg) .site-header { --mono-size: 12px; }
+@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) { body:has(.pg) .site-header { --mono-size: max(12px, calc(var(--u) * 11)); } }
+
 .footer-logo:hover { opacity: 0.8; }
 /* footer: same container as the pages, readable sizes, wordmark under the text instead of over it */
 .footer { width: auto; height: auto; margin: var(--sp-8) var(--gx) 0; padding: 0 0 var(--sp-8); overflow: hidden; }
