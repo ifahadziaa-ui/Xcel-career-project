@@ -624,7 +624,7 @@ function makeAurora(canvas) {
 
 /* Point counts by screen width (the brain prompt's adaptive tiers); the render loop's
    own quality governor lowers the pixel ratio further if frames run long. */
-const brainCount = () => { const w = innerWidth; return w <= 640 ? 26000 : w <= 1024 ? 50000 : w <= 1440 ? 90000 : 130000; };
+const brainCount = () => { const w = innerWidth; return w <= 640 ? 60000 : w <= 1024 ? 120000 : w <= 1440 ? 200000 : 280000; };
 
 /* brain-mesh.bin, VBRN container (little endian): u32 magic, u32 version, u32 vertexCount,
    u32 indexCount, Int16 xyz (/32767 of a unit radius), Uint16 indices. */
@@ -642,36 +642,82 @@ async function loadBrainMesh() {
 
 /* Area-weighted surface sampling: a triangle is picked in proportion to its area (so dense
    clusters of tiny triangles do not clump), then a uniform barycentric point on it. */
+/* The baked mesh is coarse (about 4,850 triangles), so points sampled on its flat faces gave a faceted,
+   grainy brain. Quality pass (user, 15 Nov 2026):
+   1. Phong tessellation: each sample is pulled toward the tangent planes of its three corners, which
+      rounds the facets into a smooth surface, and takes a smoothly interpolated normal;
+   2. a fine ridged-noise relief along the normal draws the folds (gyri) the coarse mesh lacks;
+   3. many more points, drawn smaller. */
+function vertexNormals(v, ix) {
+  const n = new Float32Array(v.length);
+  for (let t = 0; t < ix.length; t += 3) {
+    const a = ix[t] * 3, b = ix[t + 1] * 3, c = ix[t + 2] * 3;
+    const e1x = v[b] - v[a], e1y = v[b + 1] - v[a + 1], e1z = v[b + 2] - v[a + 2];
+    const e2x = v[c] - v[a], e2y = v[c + 1] - v[a + 1], e2z = v[c + 2] - v[a + 2];
+    const nx = e1y * e2z - e1z * e2y, ny = e1z * e2x - e1x * e2z, nz = e1x * e2y - e1y * e2x; // area-weighted
+    for (const i of [a, b, c]) { n[i] += nx; n[i + 1] += ny; n[i + 2] += nz; }
+  }
+  for (let i = 0; i < n.length; i += 3) {
+    const m = Math.hypot(n[i], n[i + 1], n[i + 2]) || 1;
+    n[i] /= m; n[i + 1] /= m; n[i + 2] /= m;
+  }
+  return n;
+}
+const hash3 = (x, y, z) => { const h = Math.sin(x * 127.1 + y * 311.7 + z * 74.7) * 43758.5453; return h - Math.floor(h); };
+function vnoise(x, y, z) {
+  const xi = Math.floor(x), yi = Math.floor(y), zi = Math.floor(z);
+  const xf = x - xi, yf = y - yi, zf = z - zi;
+  const u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf), w = zf * zf * (3 - 2 * zf);
+  const l = (a, b, t) => a + (b - a) * t;
+  return l(
+    l(l(hash3(xi, yi, zi), hash3(xi + 1, yi, zi), u), l(hash3(xi, yi + 1, zi), hash3(xi + 1, yi + 1, zi), u), v),
+    l(l(hash3(xi, yi, zi + 1), hash3(xi + 1, yi, zi + 1), u), l(hash3(xi, yi + 1, zi + 1), hash3(xi + 1, yi + 1, zi + 1), u), v), w);
+}
+const ridged = (x, y, z) => 1 - Math.abs(vnoise(x, y, z) * 2 - 1);
+
 function sampleBrain({ positions: v, indices: ix }, n, radius = 1.15) {
+  const vn = vertexNormals(v, ix);
   const tris = ix.length / 3, cdf = new Float64Array(tris);
   let total = 0;
-  const vert = (i, k) => v[ix[i] * 3 + k];
   for (let t = 0; t < tris; t++) {
-    const i = t * 3;
-    const ax = vert(i + 1, 0) - vert(i, 0), ay = vert(i + 1, 1) - vert(i, 1), az = vert(i + 1, 2) - vert(i, 2);
-    const bx = vert(i + 2, 0) - vert(i, 0), by = vert(i + 2, 1) - vert(i, 1), bz = vert(i + 2, 2) - vert(i, 2);
+    const a = ix[t * 3] * 3, b = ix[t * 3 + 1] * 3, c = ix[t * 3 + 2] * 3;
+    const ax = v[b] - v[a], ay = v[b + 1] - v[a + 1], az = v[b + 2] - v[a + 2];
+    const bx = v[c] - v[a], by = v[c + 1] - v[a + 1], bz = v[c + 2] - v[a + 2];
     total += 0.5 * Math.hypot(ay * bz - az * by, az * bx - ax * bz, ax * by - ay * bx);
     cdf[t] = total;
   }
   const pos = new Float32Array(n * 3), nor = new Float32Array(n * 3), seed = new Float32Array(n);
+  const ALPHA = 0.85, RELIEF = 0.022;
   for (let k = 0; k < n; k++) {
     const target = Math.random() * total;
     let lo = 0, hi = tris - 1;
     while (lo < hi) { const mid = (lo + hi) >> 1; if (cdf[mid] < target) lo = mid + 1; else hi = mid; }
-    const i = lo * 3;
+    const I = [ix[lo * 3] * 3, ix[lo * 3 + 1] * 3, ix[lo * 3 + 2] * 3];
     let u = Math.random(), w = Math.random();
     if (u + w > 1) { u = 1 - u; w = 1 - w; }
-    const o = 1 - u - w;
-    const ax = vert(i, 0), ay = vert(i, 1), az = vert(i, 2);
-    const bx = vert(i + 1, 0), by = vert(i + 1, 1), bz = vert(i + 1, 2);
-    const cx = vert(i + 2, 0), cy = vert(i + 2, 1), cz = vert(i + 2, 2);
-    pos[k * 3] = (ax * o + bx * u + cx * w) * radius;
-    pos[k * 3 + 1] = (ay * o + by * u + cy * w) * radius;
-    pos[k * 3 + 2] = (az * o + bz * u + cz * w) * radius;
-    const e1x = bx - ax, e1y = by - ay, e1z = bz - az, e2x = cx - ax, e2y = cy - ay, e2z = cz - az;
-    let nx = e1y * e2z - e1z * e2y, ny = e1z * e2x - e1x * e2z, nz = e1x * e2y - e1y * e2x;
+    const bary = [1 - u - w, u, w];
+    // linear point and smooth normal
+    let px = 0, py = 0, pz = 0, nx = 0, ny = 0, nz = 0;
+    for (let q = 0; q < 3; q++) {
+      px += v[I[q]] * bary[q]; py += v[I[q] + 1] * bary[q]; pz += v[I[q] + 2] * bary[q];
+      nx += vn[I[q]] * bary[q]; ny += vn[I[q] + 1] * bary[q]; nz += vn[I[q] + 2] * bary[q];
+    }
+    // Phong tessellation: blend toward the corners' tangent planes
+    let qx = 0, qy = 0, qz = 0;
+    for (let q = 0; q < 3; q++) {
+      const d = (px - v[I[q]]) * vn[I[q]] + (py - v[I[q] + 1]) * vn[I[q] + 1] + (pz - v[I[q] + 2]) * vn[I[q] + 2];
+      qx += (px - d * vn[I[q]]) * bary[q]; qy += (py - d * vn[I[q] + 1]) * bary[q]; qz += (pz - d * vn[I[q] + 2]) * bary[q];
+    }
+    px += (qx - px) * ALPHA; py += (qy - py) * ALPHA; pz += (qz - pz) * ALPHA;
     const m = Math.hypot(nx, ny, nz) || 1;
-    nor[k * 3] = nx / m; nor[k * 3 + 1] = ny / m; nor[k * 3 + 2] = nz / m;
+    nx /= m; ny /= m; nz /= m;
+    // relief: ridges and grooves along the normal
+    const f = ridged(px * 7, py * 7, pz * 7) * 0.6 + ridged(px * 16 + 3.1, py * 16 + 1.7, pz * 16 + 5.3) * 0.4;
+    const disp = (f - 0.5) * RELIEF;
+    pos[k * 3] = (px + nx * disp) * radius;
+    pos[k * 3 + 1] = (py + ny * disp) * radius;
+    pos[k * 3 + 2] = (pz + nz * disp) * radius;
+    nor[k * 3] = nx; nor[k * 3 + 1] = ny; nor[k * 3 + 2] = nz;
     seed[k] = Math.random();
   }
   return { pos, nor, seed };
@@ -689,7 +735,7 @@ function makeSphere(canvas) {
   const v3 = (r, g, b) => ({ value: new THREE.Vector3(r, g, b) });
   const uniforms = {
     iTime: { value: 0 }, iResolutionY: { value: gl.h * gl.dpr }, iAlpha: { value: 0 }, uExplode: { value: 1 },
-    uSize: { value: 0.067 * 1.5 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
+    uSize: { value: 0.067 * 1.12 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
     uFlowSpeed: { value: 2.3 }, uFlowAmount: { value: 0.025 }, uGlow: { value: 1.1 }, uDepthDarkness: { value: 1 }, uExplodeDist: { value: 5 },
     // hero palette: silver on top, signal red underneath, a graphite heart, white synapse flashes
     uWarm: v3(0.84, 0.84, 0.87), uCool: v3(1.0, 0.16, 0.27), uEdgeColor: v3(1.0, 0.16, 0.27),
