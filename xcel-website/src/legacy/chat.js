@@ -441,8 +441,8 @@ export function initChat({ lenis } = {}) {
     const heroGone = hero ? hero.getBoundingClientRect().bottom < innerHeight * 0.4 : true;
     const tr = track?.getBoundingClientRect();
     const inReel = tr ? tr.top <= 1 && tr.bottom >= innerHeight - 1 : false;
-    root.classList.toggle("is-compact", inReel && !open);
-    const s = open || launch.matches(":focus-visible") || heroGone; // always there once the hero is past (it used to hide while scrolling)
+    root.classList.toggle("is-compact", (inReel || !heroGone) && !open); // just the orb over the hero and the reel
+    const s = true; // always there, over the hero too (user, 15 Nov 2026: the chat was missing at the top)
     if (s !== shown) { shown = s; showS.set(s ? 1 : 0); }
   };
   addEventListener("scroll", () => {
