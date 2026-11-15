@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Mona_Sans, Zen_Kaku_Gothic_New } from "next/font/google";
+import ChatMount from "@/components/ChatMount";
 import Footer from "@/components/Footer";
 import Sprite from "@/components/Sprite";
 import { Reveals, SiteHeader } from "@/components/SiteChrome";
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Footer />
         <div className="grain grain-tex is-on" aria-hidden="true" />
         <Reveals />
+        <ChatMount />
       </body>
     </html>
   );

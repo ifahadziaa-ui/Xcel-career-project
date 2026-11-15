@@ -21,7 +21,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: clip; }
 
-/* font variables (--font-geist-mono, --font-mona-sans, --font-zen) come from next/font in app/layout.tsx */
+/* font variables come from next/font in app/layout.tsx */
 
 /* ---------- XcelCareers palette: taken from the hero (hero.css) ----------
    graphite room #101012, silver spotlight #c6c6c6, ink #f3f3f5, signal red #ff2a45.

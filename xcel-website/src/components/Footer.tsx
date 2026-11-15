@@ -8,10 +8,10 @@ export default function Footer() {
       <div className="footer-rule" />
       <div className="footer-main">
         <div className="footer-brand">
-          <Link href="/" className="footer-logo">
+          <a href="/" className="footer-logo">
             <svg className="footer-mark" aria-hidden="true"><use href="#i-mark" /></svg>
             XcelCareers<span className="reg" aria-hidden="true">®</span>
-          </Link>
+          </a>
           <address className="type-caps">
             {CONTACT.address}<br />
             <a href={tel}>{CONTACT.phone}</a> · <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>

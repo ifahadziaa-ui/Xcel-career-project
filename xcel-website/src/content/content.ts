@@ -65,7 +65,7 @@ export const SHOWREEL = {
   // beside the video slot, so a longer word would slide behind it.
   heroLines: ["Nurses, care staff,", "specialists."],
   heroLead:
-    "XcelCareers is a Maryland staffing company. Tell us the role, the shifts and the credential it needs; we search our database, interview the best matches, verify every license, reference and background check, and send you a short list. For contract staff we are the employer of record.",
+    "Tell us the role, the shifts and the credential it needs. We search our database, interview the best matches, verify every license, reference and background check, and send you a short list.",
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
     { k: "What we do", t: "Nurses, care staff and the people behind them", d: "Registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff, plus the IT, billing and cybersecurity specialists who keep care running." },

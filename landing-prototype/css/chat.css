@@ -106,7 +106,6 @@
   overflow: visible;
   --mk-fig: var(--xc-red);
 }
- }
 /* compact while the showreel plays full-screen: just the orb */
 .xc.is-compact .xc-launch { padding: 0 7px; gap: 0; }
 .xc.is-compact .xc-launch-copy { max-width: 0; opacity: 0; }

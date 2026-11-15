@@ -511,3 +511,9 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
   .footer-legal p { white-space: normal; }
   .footer-word { left: 0.7rem; bottom: -1rem; }
 }
+
+/* ---------- centred cards (user, 15 Nov 2026): process steps and the record's stat tiles ---------- */
+.step { text-align: center; align-items: center; }
+.step-top { justify-content: center; }
+.step .stats { width: 100%; text-align: center; }
+.stk-in { align-items: center; text-align: center; }
