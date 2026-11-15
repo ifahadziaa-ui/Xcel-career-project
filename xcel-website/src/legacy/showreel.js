@@ -120,8 +120,8 @@ const MARK_H = 0.38;    // mark height as a share of the card height
 const markIn = (p) => clamp01((gp(p) - MARK_IN[0]) / (MARK_IN[1] - MARK_IN[0]));
 const diveZ = (p) => clamp01((gp(p) - DIVE[0]) / (DIVE[1] - DIVE[0]));
 const diveK = (z) => Math.exp(Math.log(DIVE_K) * Math.pow(z, 1.7));
-const portalOpen = (z) => smooth(clamp01(z / 0.12));                  // the hub "pupil" opens
-const portalWiden = (z) => 1 + 2 * smooth(clamp01((z - 0.08) / 0.5)); // then slides under the blades
+const portalOpen = (z) => smooth(clamp01((z - 0.55) / 0.1));          // the hub opens only at the very end of the dive
+const portalWiden = (z) => 1 + 2 * smooth(clamp01((z - 0.55) / 0.45)); // then widens under the blades
 // blades thin to light streaks as they pass the camera (by zoom, not by time)
 const markFade = (k) => 1 - smooth(clamp01((Math.log(k) - Math.log(3)) / (Math.log(16) - Math.log(3))));
 const diveRotate = (z) => -16 * smooth(z);                            // a slight turn along the spiral
@@ -870,15 +870,13 @@ function makeTargetStar(canvas) {
   gl.redraw = draw;
   draw(); // warm up: compile the physical materials at load, not when the closing frame arrives
   return {
-    // r is the scroll position of the closing beat (0..1). The mark starts assembling once the beat
-    // begins and then finishes on its own clock; scrolling up and down no longer folds it back.
+    // r: seconds since the closing beat began, the same clock that times the copy, so the mark and the
+    // words arrive together.
     render(t, r = 1) {
       const delta = lastT == null ? 0 : Math.min(0.1, (t - lastT) / 1000);
       lastT = t;
       clock += delta;
-      if (r > CLOSE_ON && born == null) born = clock;
-      else if (r <= CLOSE_OFF) born = null;
-      reveal = born == null ? 0 : clamp01((clock - born) / 0.9);
+      reveal = clamp01(r / 0.9); // r is the shared closing clock in seconds (see closeAge in the frame loop)
       draw();
     },
     pause() { lastT = null; },
@@ -1013,7 +1011,7 @@ export function initShowreel(section) {
     console.warn("WebGL unavailable, showreel runs without shaders", err);
   }
 
-  let lastP = -1, ctaBorn = null;
+  let lastP = -1, ctaBorn = null, closeAge = 0;
   function frame(t) {
     requestAnimationFrame(frame);
     const dtf = lastFrameT == null ? 0 : Math.min(100, t - lastFrameT);
@@ -1131,8 +1129,9 @@ export function initShowreel(section) {
     if (cp > CLOSE_ON && ctaBorn == null) ctaBorn = vt;
     else if (cp <= CLOSE_OFF) ctaBorn = null;
     const ctaAge = ctaBorn == null ? 0 : (vt - ctaBorn) / 1000;
+    closeAge = ctaAge;
     ctaParts.forEach((part, i) => {
-      const r = ctaBorn == null ? 0 : smooth(clamp01((ctaAge - i * 0.06) / 0.5));
+      const r = ctaBorn == null ? 0 : smooth(clamp01((ctaAge - i * 0.05) / 0.6));
       part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
       part.style.transform = `translateY(${((1 - r) * 2.6).toFixed(3)}vh)`;
       part.style.filter = r < 0.999 ? `blur(${((1 - r) * 8).toFixed(2)}px)` : "none";
@@ -1146,7 +1145,7 @@ export function initShowreel(section) {
       if (vis.hero) gfx.hero.render(vt);
       if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(vt);
       if (vis.sphere) gfx.sphere.render(vt, brainExit(p), vScroll(p));
-      if (vis.target && closeActive(p) && liftP(p) < 1) { gfx.targetBg.render(vt); gfx.target.render(vt, closeP(p)); } else gfx.target.pause();
+      if (vis.target && closeActive(p) && liftP(p) < 1) { gfx.targetBg.render(vt); gfx.target.render(vt, closeAge); } else gfx.target.pause();
       if (!isPaused()) govern(dtf, t);
     }
   }

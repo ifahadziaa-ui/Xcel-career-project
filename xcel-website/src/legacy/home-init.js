@@ -110,7 +110,20 @@ $("#fan-stats").innerHTML = [["Role", fj.title], fj.need, ["Location", fj.where]
   .map(([k, v]) => `<span class="pair">${esc(k)} <span class="v">${esc(v)}</span></span>`).join("");
 
 /* ---------- 06 capability statement poster ---------- */
-$("#cap-art").innerHTML = ph({ kind: "photo", what: CAPABILITY.art, note: "From the client's PDF · portrait 3:4", tone: "light" });
+$("#cap-art").innerHTML = `<div class="capdoc"><div class="capdoc-in">
+  <div class="capdoc-head"><svg class="capdoc-mark" aria-hidden="true"><use href="#i-mark"/></svg><span>XcelCareers</span><span class="capdoc-tag">Capability statement</span></div>
+  <h4>Healthcare staffing and government contracting</h4>
+  <p>Minority veteran-owned small business. Maryland MBE, DBE and SBE certified.</p>
+  <dl>
+    <div><dt>CAGE</dt><dd>${esc(CREDENTIALS.cage)}</dd></div>
+    <div><dt>UEI</dt><dd>${esc(CREDENTIALS.uei)}</dd></div>
+    <div><dt>Certified</dt><dd>No. ${esc(CREDENTIALS.certNo)}, since ${esc(CREDENTIALS.since)}</dd></div>
+    <div><dt>NAICS</dt><dd>${CREDENTIALS.naics.map((n) => esc(n.code)).join(" · ")}</dd></div>
+    <div><dt>Where</dt><dd>Maryland, DC, Virginia and remote</dd></div>
+  </dl>
+  <div class="capdoc-badges">${CERTS.map((c) => (CERT_IMG[c.code] ? `<img src="${CERT_IMG[c.code].src}" alt="${esc(CERT_IMG[c.code].alt)}" loading="lazy" decoding="async" draggable="false">` : "")).join("")}</div>
+  <footer>${esc(CONTACT.address)} · ${esc(CONTACT.phone)}</footer>
+</div></div>`;
 $("#cap-points").innerHTML = CAPABILITY.points.map((p, i) => `<li><span class="bul" aria-hidden="true"></span><p data-m="copy" data-i="${i}">${esc(p)}</p></li>`).join("");
 $("#cap-meta").innerHTML = `${esc(CAPABILITY.meta[0])}  ·  <span class="v">${esc(CAPABILITY.meta[1])}</span>`;
 $("#cap-pdf").setAttribute("href", CREDENTIALS.pdf);

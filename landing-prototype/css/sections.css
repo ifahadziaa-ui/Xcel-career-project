@@ -517,3 +517,40 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 .step-top { justify-content: center; }
 .step .stats { width: 100%; text-align: center; }
 .stk-in { align-items: center; text-align: center; }
+
+/* ---------- certifications and customers: a slow fog behind the badges (user, 15 Nov 2026) ---------- */
+.certs { isolation: isolate; }
+.certs::before, .certs::after { content: ""; position: absolute; z-index: -1; pointer-events: none; inset: -25% -15%; filter: blur(34px); will-change: transform; }
+.certs::before {
+  background:
+    radial-gradient(38% 46% at 16% 32%, rgb(255 42 69 / 0.22), transparent 70%),
+    radial-gradient(44% 52% at 84% 66%, rgb(198 198 198 / 0.14), transparent 70%);
+  animation: fog-a 28s ease-in-out infinite alternate;
+}
+.certs::after {
+  background:
+    radial-gradient(46% 54% at 52% 8%, rgb(140 22 44 / 0.26), transparent 72%),
+    radial-gradient(36% 42% at 70% 92%, rgb(255 42 69 / 0.12), transparent 70%);
+  animation: fog-b 36s ease-in-out infinite alternate;
+}
+@keyframes fog-a { from { transform: translate3d(-4%, -2%, 0) scale(1); } to { transform: translate3d(5%, 4%, 0) scale(1.14); } }
+@keyframes fog-b { from { transform: translate3d(5%, 3%, 0) scale(1.1); } to { transform: translate3d(-4%, -4%, 0) scale(1); } }
+html[data-motion="paused"] .certs::before, html[data-motion="paused"] .certs::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .certs::before, .certs::after { animation: none; } }
+
+/* ---------- capability poster: a summary page built from the proof bank, until the client's PDF arrives ---------- */
+.capdoc { container-type: size; position: absolute; inset: 0; background: linear-gradient(180deg, #fbfbfc, #eeeef0); color: #161618; overflow: hidden; }
+.capdoc-in { display: flex; flex-direction: column; gap: 2.6cqw; height: 100%; padding: 7cqw 7.5cqw; }
+.capdoc::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 1.8cqw; background: var(--accent); }
+.capdoc-head { display: flex; align-items: center; gap: 2cqw; font: 500 3.6cqw/1 var(--font-bar); letter-spacing: 0.08em; text-transform: uppercase; }
+.capdoc-mark { width: 4.2cqw; height: 7.4cqw; color: #161618; --mk-fig: var(--accent); overflow: visible; }
+.capdoc-tag { margin-left: auto; color: #6b6b70; font-size: 2.7cqw; }
+.capdoc h4 { margin-top: 3cqw; font: 500 8.2cqw/1.02 var(--font-display); letter-spacing: -0.03em; }
+.capdoc p { font: 400 3.6cqw/1.4 var(--font-sans); color: #4a4a50; }
+.capdoc dl { margin: 1cqw 0 0; display: grid; gap: 0; border-top: 1px solid rgb(22 22 24 / 0.16); }
+.capdoc dl > div { display: grid; grid-template-columns: 17cqw 1fr; gap: 2cqw; padding: 2.1cqw 0; border-bottom: 1px solid rgb(22 22 24 / 0.1); }
+.capdoc dt { font: 500 2.6cqw/1.5 var(--font-bar); letter-spacing: 0.1em; text-transform: uppercase; color: #6b6b70; }
+.capdoc dd { margin: 0; font: 500 3.3cqw/1.4 var(--font-sans); }
+.capdoc-badges { display: flex; gap: 3cqw; align-items: center; margin-top: auto; }
+.capdoc-badges img { width: 14cqw; height: 14cqw; object-fit: contain; }
+.capdoc footer { font: 400 2.5cqw/1.4 var(--font-bar); letter-spacing: 0.06em; text-transform: uppercase; color: #6b6b70; }
