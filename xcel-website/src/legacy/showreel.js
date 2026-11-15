@@ -500,7 +500,7 @@ void main() {
   vec4 centerClip = projectionMatrix * centerMv;
   float screenDist = length(gl_Position.xy / max(0.0001, gl_Position.w) - centerClip.xy / max(0.0001, centerClip.w));
   vCenterness = 1.0 - clamp(screenDist / max(0.05, uCenterRadius), 0.0, 1.0);
-  gl_PointSize = uSize * (iResolutionY / 720.0) * (200.0 / -mv.z) * (1.0 + fire * 0.8);
+  gl_PointSize = uSize * (iResolutionY / 720.0) * (200.0 / -mv.z) * (1.0 + fire * 1.8);
   vDepth = -mv.z;
 }`;
 const BRAIN_FRAG = `
@@ -625,6 +625,46 @@ function makeAurora(canvas) {
   return { render(t) { uniforms.u_time.value = t / 1000; gl.renderer.render(scene, camera); }, setQuality: gl.setQuality };
 }
 
+/* The brain's ambient cloud (Neural Monitor brain brief): a few thousand faint motes drifting outward from a shell
+   around it, fading in and out over their life. Shaders as in the brief. */
+const AMBIENT_VERT = `
+attribute vec3 aDir;
+attribute float aSeed;
+uniform float iTime;
+uniform float iResolutionY;
+uniform float uSize;
+uniform float uSpeed;
+uniform float uRange;
+varying float vSeed;
+varying float vPhase;
+void main() {
+  vSeed = aSeed;
+  float speed = 0.35 + aSeed * 0.9;
+  float phase = fract(iTime * uSpeed * speed + aSeed);
+  vPhase = phase;
+  vec3 dir = normalize(aDir + vec3(1e-5));
+  vec3 p = position + dir * phase * uRange;
+  vec4 mv = modelViewMatrix * vec4(p, 1.0);
+  gl_Position = projectionMatrix * mv;
+  float lifeSize = mix(1.0, 0.6, phase);
+  gl_PointSize = uSize * lifeSize * (iResolutionY / 720.0) * (200.0 / -mv.z);
+}`;
+const AMBIENT_FRAG = `
+precision highp float;
+uniform vec3 uColor;
+uniform float iAlpha;
+varying float vSeed;
+varying float vPhase;
+void main() {
+  vec2 p = gl_PointCoord - 0.5;
+  float r = length(p);
+  if (r > 0.5) discard;
+  float k = smoothstep(0.5, 0.0, r);
+  float life = smoothstep(0.0, 0.1, vPhase) * smoothstep(1.0, 0.7, vPhase);
+  float twinkle = 0.5 + 0.5 * sin(vSeed * 40.0 + vPhase * 30.0);
+  gl_FragColor = vec4(uColor * k * life * (0.4 + 0.6 * twinkle), k * life * iAlpha * 0.6);
+}`;
+
 /* Point counts by screen width (the brain prompt's adaptive tiers); the render loop's
    own quality governor lowers the pixel ratio further if frames run long. */
 const brainCount = () => { const w = innerWidth; return w <= 640 ? 20000 : w <= 1024 ? 36000 : w <= 1440 ? 52000 : 64000; };
@@ -739,7 +779,7 @@ function makeSphere(canvas) {
   const v3 = (r, g, b) => ({ value: new THREE.Vector3(r, g, b) });
   const uniforms = {
     iTime: { value: 0 }, iResolutionY: { value: gl.h * gl.dpr }, iAlpha: { value: 0 }, uExplode: { value: 1 },
-    uSize: { value: 0.067 * 1.5 }, uSynapseRate: { value: 0.1 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
+    uSize: { value: 0.067 * 1.5 }, uSynapseRate: { value: 0.06 }, uCenterRadius: { value: 0.37 }, uCenterFalloff: { value: 4 },
     uFlowSpeed: { value: 2.3 }, uFlowAmount: { value: 0.025 }, uGlow: { value: 1.1 }, uDepthDarkness: { value: 1 }, uExplodeDist: { value: 5 },
     // hero palette: silver on top, signal red underneath, a graphite heart, white synapse flashes
     uWarm: v3(0.84, 0.84, 0.87), uCool: v3(1.0, 0.16, 0.27), uEdgeColor: v3(1.0, 0.16, 0.27),
@@ -751,6 +791,23 @@ function makeSphere(canvas) {
   });
   const group = new THREE.Group();
   scene.add(group);
+  // ambient cloud: 4,500 motes on a shell of radius 1.2 to 1.6, drifting outward
+  const AN = 4500, apos = new Float32Array(AN * 3), adir = new Float32Array(AN * 3), aseed = new Float32Array(AN);
+  for (let i = 0; i < AN; i++) {
+    const r = (1.5 + Math.random() * 0.5) * 0.8, th = Math.PI * 2 * Math.random(), ph = Math.acos(2 * Math.random() - 1);
+    apos[i * 3] = r * Math.sin(ph) * Math.cos(th); apos[i * 3 + 1] = r * Math.sin(ph) * Math.sin(th); apos[i * 3 + 2] = r * Math.cos(ph);
+    const t2 = Math.PI * 2 * Math.random(), p2 = Math.acos(2 * Math.random() - 1);
+    adir[i * 3] = Math.sin(p2) * Math.cos(t2); adir[i * 3 + 1] = Math.sin(p2) * Math.sin(t2); adir[i * 3 + 2] = Math.cos(p2);
+    aseed[i] = Math.random();
+  }
+  const ageo = new THREE.BufferGeometry();
+  ageo.setAttribute("position", new THREE.BufferAttribute(apos, 3));
+  ageo.setAttribute("aDir", new THREE.BufferAttribute(adir, 3));
+  ageo.setAttribute("aSeed", new THREE.BufferAttribute(aseed, 1));
+  const auniforms = { iTime: { value: 0 }, iResolutionY: { value: gl.h * gl.dpr }, iAlpha: { value: 0 }, uColor: v3(0.4, 0.4, 0.44), uSize: { value: 0.069 }, uSpeed: { value: 0.03 }, uRange: { value: 15.5 } };
+  const ambient = new THREE.Points(ageo, new THREE.ShaderMaterial({ vertexShader: AMBIENT_VERT, fragmentShader: AMBIENT_FRAG, uniforms: auniforms, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending }));
+  ambient.frustumCulled = false;
+  group.add(ambient);
   let born = null;
   gl.redraw = () => gl.renderer.render(scene, camera);
   // fetched at load, never blocking: the scene is dark until the third card, so it has time
@@ -773,15 +830,16 @@ function makeSphere(canvas) {
       if (g > NET + 20 && born == null) born = s;   // once the strip is leaving and the scene shows
       else if (g < NET - 150) born = null;
       const age = born == null ? 0 : s - born;
-      const gather = born == null ? 0 : smooth(clamp01(age / 1.2));
-      uniforms.iTime.value = s;
-      uniforms.iResolutionY.value = gl.h * gl.renderer.getPixelRatio();
-      uniforms.iAlpha.value = gather * (1 - 0.9 * disperse);
-      uniforms.uExplode.value = Math.max(1 - gather, disperse * 0.5); // 1 -> 0 gathering; a gentle spread as the scene leaves
-      group.position.set(0, 0.15, disperse * 1.2);              // raised a little to clear the copy; it drifts toward the camera on the way out
-      // a full 360 turn about 5.5 s, starting from the side profile and never stopping
-      group.rotation.y = -2.05 + age * 1.15;
-      group.rotation.x = Math.sin(s * 0.5) * 0.08;
+      // entrance (Neural Monitor brief): the fully formed brain flies in from near the camera while unwinding one
+      // full 360 turn, 3 s easeOutQuart in the brief (2.6 s here); then a slow idle turn
+      const p = clamp01(age / 2.6), eased = 1 - Math.pow(1 - p, 4);
+      uniforms.iTime.value = s; auniforms.iTime.value = s;
+      uniforms.iResolutionY.value = auniforms.iResolutionY.value = gl.h * gl.renderer.getPixelRatio();
+      uniforms.iAlpha.value = auniforms.iAlpha.value = born == null ? 0 : eased * (1 - 0.9 * disperse);
+      uniforms.uExplode.value = disperse * 0.5; // assembled from the first frame; only a gentle spread if the scene leaves
+      group.position.set(0, 0.15, 2.6 * (1 - eased) + disperse * 1.2);
+      group.rotation.y = -2.05 - age * 0.22 + (1 - eased) * Math.PI * 2;
+      group.rotation.x = Math.sin(s * 0.5) * 0.06;
       gl.renderer.render(scene, camera);
     },
     setQuality: gl.setQuality,
