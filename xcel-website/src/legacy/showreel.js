@@ -238,11 +238,11 @@ function build(section) {
     <div class="sr-hero-head" id="sr-hero-head"><h2 id="sr-hero-h">${S.heroLines.map((l, i) => `<span class="sl-line${i === S.heroLines.length - 1 ? " dim" : ""}">${letters(l)}</span>`).join("")}</h2></div>
     <div class="sr-hero-rot"><h3 id="sr-hero-rot">${letters(S.heroRotated)}</h3></div>
     <div class="sr-hero-img"><div class="sr-slider" id="sr-slider">
-      <div class="sr-slide" id="sr-slide-a">${gradCard(S.openCards[0])}</div>
-      <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${gradCard(S.openCards[1])}</div></div>
+      <div class="sr-slide" id="sr-slide-a" aria-hidden="true"></div>
+      <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${gradCard(S.openCards[0])}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
-      <p class="lead">${esc(S.heroLead)}</p>
+      <div class="lead"><p class="k">${esc(S.heroWhat.k)}</p><p class="t">${esc(S.heroWhat.t)}</p><p class="d">${esc(S.heroWhat.d)}</p></div>
       <div class="sr-btns">${btns}</div>
       <div class="sr-divider"></div>
       <div class="sr-hero-row"><div class="sr-avatars"><span class="faces">${faces}</span><span class="lbl">${esc(S.avatarsLabel)}</span></div><p class="right">${esc(S.heroRight)}</p></div>

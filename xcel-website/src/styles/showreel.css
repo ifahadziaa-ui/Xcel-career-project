@@ -439,9 +439,7 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 .sr-hero-bottom .lead { max-width: 340px; font-size: 15px; line-height: 1.6; }
 .sr-hero-row .right { max-width: 34rem; }
 
-@media (min-width: 640px) { .sr-hero-head h2 { font-size: min(5.8vw, 9vh, calc((50vw - 22.9vh - 110px) / 4.7)); } } /* limits: height (text at the bottom) and the card's left edge (it sits 22.9vh left of the centre) */
-/* portrait screens: the card fills the middle, so the long intro leaves (the card says the same) */
-@media (max-aspect-ratio: 1/1) { .sr-hero-bottom .lead { display: none; } }
+@media (min-width: 640px) { .sr-hero-head h2 { font-size: min(5.8vw, 10vh); } } /* limits: height (text at the bottom) and the card's left edge (it sits 22.9vh left of the centre) */
 @media (max-width: 639px) { .sr-hero-head h2 { font-size: 6.1vw; } }
 
 /* ---------- gradients instead of flat black (user, 15 Nov 2026) ---------- */
@@ -468,7 +466,14 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 }
 .sr-pf-btn:hover, .sr-pf-btn:focus-visible { background: var(--sr-red); border-color: var(--sr-red); color: var(--sr-ink); }
 
-/* opening card: on short or narrow desktop screens the intro paragraph is dropped and the buttons stack, so nothing runs
-   under the card that slides in over the middle (user, 15 Nov 2026: too much text, text overlapping) */
-@media (max-width: 1180px), (max-height: 760px) { .sr-hero-bottom .lead { display: none; } }
-@media (max-width: 1180px) { .sr-btns { flex-direction: column; align-items: flex-start; gap: 10px; } }
+/* opening card: the "What we do" text sits under the headline (the card that carried it is gone) (user, 15 Nov 2026) */
+.sr-hero-bottom .lead { display: flex; flex-direction: column; gap: 8px; max-width: 360px; opacity: 1; }
+.sr-hero-bottom .lead .k { font: 400 max(var(--type-min), 12px)/1.3 var(--font-bar); letter-spacing: 0.14em; text-transform: uppercase; color: rgb(243 243 245 / 0.6); }
+.sr-hero-bottom .lead .t { font: 500 clamp(18px, 1.7vw, 24px)/1.15 var(--font-display); letter-spacing: -0.015em; color: #fff; text-wrap: balance; }
+.sr-hero-bottom .lead .d { font-size: 15px; line-height: 1.55; color: rgb(243 243 245 / 0.78); }
+/* the empty first face of the slider: no card, no shadow */
+.sr-slide { background: transparent; }
+.sr-slider { box-shadow: none; }
+/* short screens: the title only, so the block never reaches the headline */
+@media (max-height: 760px) { .sr-hero-bottom .lead .k, .sr-hero-bottom .lead .d { display: none; } }
+@media (max-width: 639px) { .sr-hero-bottom .lead .k { display: none; } }

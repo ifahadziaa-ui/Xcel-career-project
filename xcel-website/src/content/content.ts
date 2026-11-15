@@ -64,11 +64,14 @@ export const SHOWREEL = {
   // 1 · opening card: the promise and the two doors. Three short lines, so none runs
   // behind the card that slides in from the right.
   heroLines: ["Employment", "workforce", "provider."],
-  heroLead:
-    "We place nurses, care staff and IT, finance and cybersecurity specialists with hospitals, clinics and government agencies.",
+  // under the headline (it used to sit on a card in the middle, which is gone)
+  heroWhat: {
+    k: "What we do",
+    t: "Healthcare staffing and government contracting",
+    d: "Nurses and care staff for hospitals and clinics. Staff augmentation and task orders for government agencies.",
+  },
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
-    { k: "What we do", t: "Healthcare staffing and government contracting", d: "Nurses and care staff for hospitals and clinics. Staff augmentation and task orders for government agencies." },
     { k: "For job seekers", t: "Open roles in healthcare, IT, finance and cyber", d: "We match you to open roles and prepare you for the interview. Always free for job seekers." },
   ],
   heroButtons: [
