@@ -314,3 +314,20 @@ html[data-motion="paused"] .pg-cascade .ch, :root:has(.pg--era)[data-motion="pau
 .pg-dl > div { padding: 0.75rem 0; }
 .pg-split { gap: 2rem; }
 @media (width < 700px) { .pg-sec { padding: 2.5rem 0; } .pg-hero .pg-intro { font-size: 0.9375rem; } }
+
+/* ---------- slow fog of red and silver behind the inner pages (user, 15 Nov 2026; 40% stronger than the home page's fog) ---------- */
+.pg:not(.pg--era)::before, .pg:not(.pg--era)::after { content: ""; position: fixed; z-index: -1; pointer-events: none; inset: -25% -15%; will-change: transform; }
+.pg:not(.pg--era)::before {
+  background:
+    radial-gradient(38% 46% at 16% 32%, rgb(255 42 69 / 0.31), transparent 70%),
+    radial-gradient(44% 52% at 84% 66%, rgb(198 198 198 / 0.2), transparent 70%);
+  animation: fog-a 28s ease-in-out infinite alternate;
+}
+.pg:not(.pg--era)::after {
+  background:
+    radial-gradient(46% 54% at 52% 8%, rgb(140 22 44 / 0.36), transparent 72%),
+    radial-gradient(36% 42% at 70% 92%, rgb(255 42 69 / 0.17), transparent 70%);
+  animation: fog-b 36s ease-in-out infinite alternate;
+}
+html[data-motion="paused"] .pg::before, html[data-motion="paused"] .pg::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .pg::before, .pg::after { animation: none; } }
