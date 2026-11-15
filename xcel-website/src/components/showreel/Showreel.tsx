@@ -283,7 +283,7 @@ export default function Showreel() {
                 <canvas data-sr="target-bg" />
                 <canvas data-sr="target-canvas" />
                 <div className={s.vignette} aria-hidden="true" />
-                {/* stand-in for the 3D chrome mark until its renderer exists (5B-6): the brand mark, faded and scaled in by the engine */}
+                {/* fallback for the 3D chrome mark (it shows until the WebGL mark is drawing, and whenever that is absent, failed or lost): the brand mark, faded and scaled in by the engine */}
                 <svg className={s.targetMark} data-sr="target-mark" aria-hidden="true" focusable="false">
                   <use href="#i-mark" />
                 </svg>

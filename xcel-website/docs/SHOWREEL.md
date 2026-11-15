@@ -10,7 +10,8 @@ Source of truth for behaviour: `landing-prototype-clean/js/showreel.js` and `css
 | 5B-2 Timeline, DOM engine, Lenis post-frame subscription | **Done**, plus a corrective pass (restoration guard, interim reduced-motion layout, lifecycle checks). See "Stage 5B-2" |
 | 5B-3 Snap, navigation and focus | **Done.** See "Stage 5B-3" |
 | 5B-4 WebGL infrastructure and the two gradients | **Done.** See "Stage 5B-4" |
-| 5B-5, 5B-6 aurora, sphere, closing mark | Not started |
+| 5B-5 Aurora and network sphere | **Done.** See "Stage 5B-5" |
+| 5B-6 Closing 3D mark | **Done.** See "Stage 5B-6". All five WebGL effects now exist |
 | 5B-7 Video, final reduced-motion styling, screen-reader access in the pinned reel | Not started (an interim reduced-motion layout exists, see "Reduced motion") |
 | 5B-8 Final validation | Not started |
 
@@ -138,15 +139,15 @@ Known gaps (for 5B-7): spacing and card proportions are functional; the opening 
 
 ### CSS stand-ins for the WebGL visuals (temporary, deliberate)
 
-Each stand-in that remains (the aurora, the sphere and the closing mark) is hidden by `.sr[data-gl="ready"]`, a flag the renderer stages are expected to set once their canvas draws.
+Each stand-in is hidden by its own renderer once that renderer draws: all five (the opening and closing gradients, the aurora, the sphere and the closing mark; 5B-4 to 5B-6) step aside per canvas (`canvas[data-gl="live"]`) and come back at once on loss or failure. The section flag `.sr[data-gl="ready"]` that earlier notes anticipated is **not used and not set**: the per-canvas state replaced it.
 
 | WebGL visual (stage) | Stand-in now |
 |---|---|
 | Opening card gradient (5B-4, **now WebGL**; this stays as its fallback) | `.hero` background: radial silver glow from below, red ember at the sides, on graphite (the card's palette) |
-| Aurora (5B-5) | `.aurora` background: red glow along the top and bottom edges, faded by `auroraOpacity` like the shader would be |
-| 34,000-point network sphere (5B-5) | `.sphereCanvasWrap::before`: a soft dotted globe with a red underside and an open centre, about 58vh across (the sphere's rest size), scaled by the engine's `sphereScale` |
+| Aurora (5B-5, **now WebGL**; this stays as its fallback) | `.aurora::before`: red glow along the top and bottom edges, faded by `auroraOpacity` like the shader would be |
+| 34,000-point network sphere (5B-5, **now WebGL**; this stays as its fallback) | `.sphereCanvasWrap::before`: a soft dotted globe with a red underside and an open centre, about 58vh across (the sphere's rest size), scaled by the engine's `sphereScale` |
 | Closing gradient (5B-4, **now WebGL**; this stays as its fallback) | `.target` CSS gradient (already in the prototype as its no-WebGL fallback) |
-| Closing 3D chrome mark (5B-6) | `.targetMark`: the brand mark (silver blades, red figure) at the right of the copy (top right on portrait), faded and scaled in by `markReveal` |
+| Closing 3D chrome mark (5B-6, **now WebGL**; this stays as its fallback) | `.targetMark`: the brand mark (silver blades, red figure) at the right of the copy (top right on portrait), faded and scaled in by `markReveal` |
 
 They keep the reel coherent; they do not reproduce the shaders' motion, particles, depth or the mark's extrusion and assembly.
 
@@ -157,7 +158,8 @@ Timeline module; DOM engine for scenes 1 to 9 (marquee, carousel formation, rota
 ### Remaining
 
 - **5B-3:** done (see "Stage 5B-3").
-- **5B-5 and 5B-6:** the aurora, the network sphere and the closing chrome mark, and then `data-gl="ready"` on the section (5B-4 is done).
+- **5B-5:** done (see "Stage 5B-5").
+- **5B-6:** done (see "Stage 5B-6"). The section flag `data-gl="ready"` was dropped in favour of per-canvas states.
 - **5B-7:** video; final styling of the reduced-motion layout; keyboard and screen-reader access to the panels, sphere text and closing frame **in the pinned reel** (they are hidden by `visibility` until the engine reveals them, as in the prototype; reduced-motion visitors now have them in the stacked layout, normal-motion assistive-technology users still do not).
 - **5B-8:** final validation, GPU and device checks.
 
@@ -393,13 +395,201 @@ The CSS gradients underneath are always present; the canvas is opacity 0 unless 
 
 ### Not tested, and limitations
 
-- **Software GL only** (SwiftShader in headless Chromium). No real GPU, no frame-rate or GPU-memory measurement, no Safari, Firefox or mobile browser, so context limits, real context-loss behaviour under memory pressure and mobile GPU behaviour are untested. No claim is made about a safe number of contexts: the design keeps at most one WebGL scene alive at a time (two more arrive in 5B-5 and 5B-6, which the manager's table is designed for), and that is what was measured.
+- **Software GL only** (SwiftShader in headless Chromium). No real GPU, no frame-rate or GPU-memory measurement, no Safari, Firefox or mobile browser, so context limits, real context-loss behaviour under memory pressure and mobile GPU behaviour are untested. No claim is made about a safe number of contexts: the 5B-4 design kept at most one WebGL scene alive at a time; 5B-5 raises that to three (see "Stage 5B-5").
 - **Context loss was simulated** with `WEBGL_lose_context`, not caused by the browser or driver; a loss that happens while a scene is being created was not provoked.
 - **Three.js internals:** each renderer creates 4 textures and 3 framebuffers at construction that `renderer.dispose()` does not delete (Three.js behaviour); they are freed by the forced context loss. Programs, shaders, buffers and vertex arrays are deleted explicitly and balance.
 - **Resize** goes through the engine's 120 ms debounce, so for a moment after a window resize the buffer keeps the old size (stretched by CSS), as the prototype's own debounced layout did.
 - The gradients are animated and not deterministic in time, so fidelity is judged by colour statistics and by eye, not pixel equality.
 - The first appearance of a scene waits for the Three.js chunk (about 724 KB, requested when the stage first needs a scene): on a slow connection the CSS fallback shows until it arrives.
 - A test-only artefact: Three.js itself logs a `console.error` when the context cannot be created (the failure test), and Chromium warns when a test calls `restoreContext()` on an already-dead context; neither appears in normal operation.
+
+## Stage 5B-5: the aurora and the network sphere
+
+Source: `landing-prototype-clean/js/showreel.js`, read from the code: `AURORA_VERT/FRAG`, `SIMPLEX3`, `SPHERE_VERT/FRAG` (lines 436 to 571), `glCanvas`, `clipPlane`, `makeAurora`, `makeSphere` (577 to 711), `auroraOpacity`, `sphereDisperse`, `sceneVisibility`, the adaptive-resolution governor (941 to 967) and how `initShowreel` draws them (1099 to 1108).
+
+### What is WebGL now
+
+| Scene | Now |
+|---|---|
+| Opening card gradient (`hero-canvas`) | WebGL (5B-4) |
+| Aurora (`aurora-canvas`) | **WebGL (5B-5)**. The CSS glow `.aurora::before` stays underneath as the fallback |
+| Network sphere (`sphere-canvas`) | **WebGL (5B-5)**. The CSS dotted globe `.sphereCanvasWrap::before` stays underneath as the fallback |
+| Closing frame gradient (`target-bg`) | WebGL (5B-4) |
+| Closing 3D mark (`target-canvas`) | CSS stand-in `targetMark` (5B-6); `data-gl="ready"` on the section is still not set |
+
+### What each scene is, and who owns what
+
+- **Aurora.** A full-screen clip-space quad with `AURORA_FRAG`: a domain-warped (`warp3d`) signal-red band, shaped by `smoothstep`s so it hugs the top-left and bottom-right edges, written with a computed alpha (premultiplied over the stage). It is a **fixed layer**: the engine owns its container's `opacity` (`auroraOpacity`: in over v 1200 to 1550, out over v 2900 to 3250) and `visibility` (only while the stage is pinned); the renderer owns the canvas. `u_time` is the showreel's virtual clock in seconds (the shader multiplies it by 1.5). Pixel ratio `min(devicePixelRatio, 2)`, transparent, no antialiasing, a draw on every tick the manager asks for (no frame cap, as in the prototype).
+- **Sphere.** 34,000 points (`N = 34000`, unchanged) on a Fibonacci sphere of radius 1, one `Points` object with `ShaderMaterial` (additive blending, no depth test or write), a 50 degree perspective camera at z 3.8. `SPHERE_VERT` displaces each point with two octaves of 3D simplex noise, opens a small hole at the centre for the mark (an HTML element, `core`), and blows the points outwards by the uniform `uDisperse` (`sphereDisperse`: 0 at v 1200, 1 at v 1800, as the service panels arrive); `SPHERE_FRAG` draws soft round sprites: silver globe, signal-red underside, near-white rim, bloom at the caps. The group turns slowly (y 0.12 rad/s, x `sin(0.1 s) * 0.12`). Its position, scale and fade are DOM (the engine's `sphereScene`, `sphereWrap` transforms and the black panel's portal clip); the canvas fills a 100vw by 100vh box. Pixel ratio `min(max(devicePixelRatio, 2), 3)`: **never below 2 at full quality** (as in the prototype), and a draw on every tick.
+- **Shaders** are in `gl/shaders.ts`, extracted mechanically from the prototype and checked **byte-identical** (`CLIP_VERT`, `AURORA_VERT`, `AURORA_FRAG`, `SIMPLEX3`, `SPHERE_VERT`, `SPHERE_FRAG`, `GRADIENT_FRAG` both variants).
+- **Ownership** is as in 5B-4: one renderer per canvas, created, drawn and disposed by the one manager from the engine's `onScrollFrame`; no new manager, loop, timer or scroll engine.
+
+### Files
+
+| File | Change |
+|---|---|
+| `src/lib/showreel/gl/shaders.ts` | The aurora and sphere shaders and `SIMPLEX3` appended (prototype lines 436 to 571) |
+| `src/lib/showreel/gl/host.ts` | **New.** The renderer plumbing both scenes share: transparent renderer, buffer from the canvas's layout box, adaptive pixel ratio, context-loss handling, teardown, and `assertProgramLinked` |
+| `src/lib/showreel/gl/aurora.ts`, `sphere.ts` | **New.** `createAuroraScene`, `createSphereScene` (`SPHERE_POINTS = 34000`) |
+| `src/lib/showreel/gl/scene.ts` | `render(t, v)` and `redraw(v?)` take the scene's timeline value; optional `setQuality`; `hooks.quality()` |
+| `src/lib/showreel/gl/manager.ts` | Two more scene specs (`sphere`, `aurora`), `drive` (the sphere's dispersal), the adaptive-resolution governor, `root[data-quality]` |
+| `src/lib/showreel/gl/gradient.ts` | One addition: the shader-link check below (a latent gap in 5B-4, fixed with the same helper) |
+| `src/components/showreel/Showreel.module.css` | The aurora and sphere canvases (hidden unless `data-gl="live"`), the two stand-ins fading out per canvas; the aurora glow moved from `.aurora`'s background to `.aurora::before` so it can fade independently |
+
+`engine.ts`, `timeline.ts`, `snap.ts`, the Lenis files and the markup are **unchanged**.
+
+### Timeline ranges (v = p x 3700, from the prototype's `sceneVisibility`)
+
+| Scene | Created | Drawn | Disposed |
+|---|---|---|---|
+| Opening gradient | v < 1600 | v < 1600 (`gp < 0.8`) | v > 1900 |
+| Sphere | 590 < v < 3300 | **790 < v < 3100** (`gp > 0.395`, up to the end of the service panels) | v < 390 or v > 3400 |
+| Aurora | 800 < v < 3450 | **1000 < v < 3450 and `auroraOpacity > 0`, i.e. 1200 < v < 3250** | v < 600 or v > 3550 |
+| Closing gradient | v > 2600 | v > 2799 | v < 2400 |
+
+The drawn ranges are the prototype's exactly. Creation starts about 200 v (roughly one screen of scrolling) ahead and disposal 100 to 200 v after, so a reader hovering at a boundary does not create and destroy a scene repeatedly (scrubbing back and forth across v 500 to 700 and 3300 to 3600 created 6 contexts in all: the 4 scenes of the walk, plus the sphere and the aurora once more on the way back, and none repeatedly at a threshold). **At most three scenes exist at once** (hero, sphere, aurora between v 800 and 1900; sphere, aurora, closing gradient between v 2600 and 3300), against all five the prototype kept for the page's whole life; 5B-6 adds the closing mark's. No assumption is made about a safe context count; see the limitations.
+
+### Adaptive resolution (ported, scoped to these two scenes)
+
+The prototype lowers the pixel ratio of the aurora and the sphere (never the gradients or the closing frame) when frames stay slow: levels 1, 0.75, 0.6, 0.5 of the base ratio, never below 0.6 absolute; an exponential average of the frame time above 28 ms for 1.5 s steps down, below 14 ms for 8 s steps back up (once, and not again if going up made it slow). It is in the manager now (`governed: true` on the two specs), fed by the frame times of the shared tick, **only while a governed scene draws and animations are not paused** (the prototype also measured during the gradient-only stretch of the reel, so it could lower the quality of a scene that did not exist yet). A scene created after the level was lowered starts at that level (`hooks.quality()`). The level is `root[data-quality]` (0 = full). It starts at 0 each time the engine activates. At full quality a 1440x900 viewport at devicePixelRatio 1 gives a **2880x1800 sphere buffer** and a 1440x900 aurora buffer (measured; 2048x1536 / 1024x768 at 1024x768, 780x1688 / 390x844 at 390x844).
+
+### Fallback, context loss, failure
+
+Same states as 5B-4 (`data-gl` absent, `pending`, `live`, `lost`, `failed`). The CSS stand-in of the aurora and the sphere fades out over 0.9 s while the canvas fades in (selector `:has(canvas[data-gl="live"])`), and is back **at once** when the state leaves `live` (loss or failure), because only the way out has a transition. The stand-ins are therefore never visible together with a live canvas for longer than the crossfade.
+
+- **Shader failure:** Three.js does not throw when a shader fails to compile or link; it logs and draws nothing, which would have hidden the fallback behind an empty canvas. `assertProgramLinked` (host.ts) checks the program's `LINK_STATUS` after the warm-up draw; a broken program makes creation fail, the scene is disposed, its context released, the canvas replaced, `data-gl="failed"` set, one `console.warn` logged and the CSS fallback stays. The same check was added to the 5B-4 gradient, which had the same gap.
+- **Failure in one scene does not touch the others** (tested: each of hero, aurora and sphere broken in turn).
+
+### Deviations from the prototype
+
+1. Scenes are created on demand and disposed (the prototype created all five at load and never freed them); at most three exist at once.
+2. No `ResizeObserver` per canvas: the two canvases fill the viewport (or a viewport-sized box), so their layout size changes only with the window; the engine's one debounced resize (120 ms) calls `resize()`. The drawing buffer therefore keeps its old size for up to 120 ms after a window resize, stretched by CSS (the prototype resized at the next ResizeObserver callback).
+3. Context loss is handled, a disposed scene's canvas is replaced and the shader link is verified (none of this was in the prototype).
+4. Adaptive resolution measures only while a governed scene draws (see above) and is not carried across engine activations.
+5. The fade-in uses `data-gl="live"` and CSS (the same 0.9 s) instead of the prototype's one-shot `requestAnimationFrame`; the aurora was always visible in the prototype's canvas (its container's opacity did all the work), here the canvas is also faded in from the first drawn frame, over the container's own timeline fade.
+6. The sphere is drawn on every tick of its range as in the prototype, **including v 2000 to 3100, where the black panel that carries it has left the screen** (its transform lifts it by 100vh between v 1600 and 2000). That is the prototype's range and is kept; see "Measurements" for why it matters. A possible, not applied, saving is to stop drawing (and release) the sphere once the panel is gone.
+
+### Measurements (production build, Chromium 1254, **software GL (SwiftShader)**, 1440x900)
+
+- **Geometry and buffers:** sphere: 34,000 points, `position` 408,000 B (Float32 x 3) + `aRand` 136,000 B = 544,000 B (531 KiB), uploaded once at creation. Aurora: the 2 x 2 plane (48 + 48 + 32 + 12 B).
+- **Draw calls per rendered frame:** sphere 1 (`drawArrays(POINTS, 0, 34000)`: all 34,000 points are drawn, none culled or reduced); aurora 1 (`drawElements(TRIANGLES, 6)`). The two gradients 1 each.
+- **Render frequency:** one draw per shared-tick frame for each scene in its range (the sphere and aurora have no frame cap, as in the prototype; the gradients keep ~36 fps). In software GL the tick runs at about 4 to 5 frames per second with three scenes, so the numbers are 1 draw per tick, not frames per second.
+- **Only while active:** v 0 draws only the hero (other canvases 300x150, no context); at v 3700 only the closing gradient exists (aurora and sphere disposed); animations paused and the scroll position still: **0 draw calls** in 5 s; tab backgrounded: 0 draws in 3 s, scenes kept, drawing resumes on return, no new contexts.
+- **Adaptive resolution under software GL:** frames are slow, so the governor steps the level down to 3 within a few seconds of the sphere and aurora drawing (sphere buffer 2880x1800 to 1440x900, aurora 1440x900 to 864x540), as designed; it is not a measure of real hardware. With animations paused the level stays 0.
+- **CPU:** main-thread script time while the three scenes draw is about 3.6 ms per tick (68 ms per second at 19 ticks per second), but in software GL the GL calls run in the same flow, so this is not a measure of a real GPU's cost either.
+- **No claim is made about real-hardware frame time, GPU memory or battery.** The sphere at full quality is a 5.2 megapixel additive buffer over the viewport at devicePixelRatio 1 (more at 2 or 3), drawn up to v 3100; it is the scene to measure first on real devices.
+
+### Verification (5B-5)
+
+`tsc --noEmit`, ESLint and `next build` pass; the server on port 3000 serves this build.
+
+- **Shaders:** all seven sources byte-identical to the prototype's (a script compares the module's exports with the prototype's text).
+- **Visual comparison with the prototype** (both pages paused so the virtual clock is 0 and the scenes are deterministic; the DOM text, SVG, images and the service-panel strip hidden in both so only canvases and backgrounds compare; 1440x900, 1024x768, 390x844; v 850, 1000, 1150, 1400, 1700, 2200, 3000, 3200): mean absolute difference per pixel (of 255) is 0.01 to 0.33 at v 1000, 1150, 1400 (the sphere's entrance and rest, the aurora fading in) and 0.08 to 0.33 at v 3000 (the aurora at full strength) at all three sizes; 0.9 to 1.2 at v 1700 (the sphere dispersing: a 3 px scroll offset between two runs of this very build gives the same 0.9, so that is scroll sensitivity of the dispersal, not an implementation difference); about 2.4 to 3.3 at v 2200 and 2.2 to 3.2 at v 3200. The remaining differences are outside this stage: the unapproved photos and the closing 3D mark (5B-6) that the prototype shows and this build replaces with placeholders and a CSS stand-in, and DOM text the hide list did not cover at v 850. Viewed side by side (v 1400 at all three sizes, v 2200 and 3000 at 1440 and 390), the sphere's silhouette, size, point density, red underside, hole for the mark and the aurora's shape and colour are the same. (A first run without hiding the DOM showed larger differences only from the withheld "300,000+" wording and the prototype's photographs.)
+- **Not compared pixel for pixel while playing:** the rotation, noise and the aurora's warp depend on the clock, so animation and transition timing were not compared frame by frame; the code paths (virtual clock, `u_time`, rotation, disperse) are the prototype's.
+- **Lifecycle (production build):** a pass through the reel: v 0 hero only; v 700 sphere created (not yet shown); v 850 hero, sphere, aurora live; v 2100 hero gone; v 2700 closing gradient created; v 3600 only the closing gradient. Reversing recreates them. 8 enter/leave cycles of the stage: always 3 contexts created per entry and all released on leaving (Program, Shader, Buffer, VertexArray creates equal deletes; every context force-lost), listeners constant, subscribers 1 then 0. 5 route round trips: canvases always 5, subscribers 0 on the other route and 1 on return, 0 draw calls on a hidden route over 3 s. Totals after all of it: 43 contexts created, 43 lost, 43 programs created and 43 deleted.
+- **Context loss (simulated with `WEBGL_lose_context`):** losing the aurora's or the sphere's context sets `data-gl="lost"`, hides its canvas at once and shows its stand-in (computed opacity 0 and 1), the lost canvas draws 0 times in 3 s while the other scenes keep drawing, 0 console output; restoring brings it back to `live` and the stand-in out; both lost, then a route change, then restoring the old contexts: 0 draws, nothing alive, subscribers 0, and the scenes are recreated on return.
+- **Creation failure:** `getContext` returning null: all three scenes `failed`, stand-ins at opacity 1, 3 warnings, no retry in 3 s, recreated after leaving and re-entering. A shader whose link fails (injected for one scene at a time): that scene `failed` with its stand-in visible and one warning, the other scenes live; Three.js itself logs its own `console.error` for the broken program (expected in this test).
+- **Reduced motion:** from load: 0 `getContext` attempts, 0 contexts, 0 draw calls, the Three.js chunk never requested, canvases `display: none`. Switching the OS setting to no-preference at v 1400 creates the scenes; switching back disposes them within a second (`data-sr-state="off"`, no scenes, no draws).
+- **Regression:** `engine.ts`, `timeline.ts`, `snap.ts` and the Lenis files are unchanged (the diff is confined to `gl/*` and the stage's CSS). Carousel keys (300, 467, 633, 800, back 633), a horizontal wheel back a stop (467), all ArrowDown beats (300, 467, 633, 800, 1470, 2000, 2465, 2680, 3700) and listeners while active (+13) are as in 5B-4; a vertical wheel tick outside a zone scrolls continuously, a horizontal wheel in the carousel zone steps to the next stop; at 390 px a horizontal touch swipe in the carousel zone steps to the next stop and a vertical swipe scrolls freely; opening the chat 0.25 s into a keyboard snap stops it where it was (2048, target 2465), and an ArrowDown with focus inside the chat only scrolls natively (about 40 px), it does not snap. Console: no errors or WebGL warnings in any run (the CSS-preload notice Chromium prints for the page's stylesheet appears on `/about`, which has no showreel, as well).
+- **Layout shift:** the shifts in a walk come from the reel's own opening card (identical with and without WebGL in the same run) and none has a canvas as its source; the total varied between runs of the same build (0.008 once, 0.318 twice, in the CSS-only case too), which was not diagnosed in this stage.
+- **Media:** no photo, video or other asset was added; the stage changes no content.
+
+### Not tested, and limitations
+
+- **Software GL only.** No real GPU, so no frame time, GPU memory, thermal or battery measurement, no Safari, Firefox or phone, and no statement about context limits on any device: up to three contexts are alive at once now (the prototype held five for the whole visit), and the closing mark adds a fourth in 5B-6.
+- **Adaptive resolution** was observed stepping down under software GL; stepping back up, and the "stay down if it was slow again" rule, were not exercised.
+- **Creation cost** (shader compile, uploading 34,000 points, a 5.2 megapixel buffer) happens about one screen before the sphere is needed; on a slow device it may still land during scrolling. It was not measured on hardware.
+- **Context loss was simulated**, as in 5B-4; a loss during creation was not provoked.
+- **The sphere keeps drawing between v 2000 and 3100 while its panel is off-screen** (prototype behaviour, see deviation 6).
+- The aurora and the sphere are animated by the clock, so fidelity while playing is judged by the code being the prototype's and by paused comparisons, not by pixel equality over time.
+- Not changed, still open from earlier stages: panels, sphere text and the closing frame are hidden from assistive technology in the pinned reel until 5B-7.
+
+## Stage 5B-6: the closing 3D mark
+
+Source: `landing-prototype-clean/js/showreel.js`, read from the code: `chromeEnvironment`, `markObject`, `assembleMark`, `makeTargetStar` (lines 713 to 854), `markReveal`, `closeActive`, `sceneVisibility`, how `initShowreel` draws it (lines 1099 to 1108), and `js/mark.js` `readMark()`; the numbers `readMark()` reads out of the sprite's DOM are `src/lib/mark/geometry.ts`.
+
+### The scene, and how it relates to the closing frame
+
+The closing frame (`.target`, scene 9) holds two stacked canvases and the DOM copy: `target-bg` (the 5B-4 gradient), `target-canvas` (the mark, **transparent**, drawn over the gradient), then the vignette, the CSS fallback `targetMark`, and the copy. The mark's own drawing range is the prototype's: it is created with the closing gradient and drawn on the same condition (`closeActive`), with `markReveal(p)` as its only timeline input.
+
+| | v (= p x 3700) |
+|---|---|
+| Created | v > 2600 (`sceneVisibility(p).target`, 200 v before the closing beat opens) |
+| Drawn | v > 2799 (`closeActive`) |
+| Reveal (`markReveal`, assembly) | 0 until v 2890, 1 from v 3340; then the hold to 3700 |
+| Disposed | v < 2400 |
+
+### Ported, and kept on purpose
+
+- **Geometry:** the nine blades and the figure are `ExtrudeGeometry` from the traced polygons, mark height normalised to 2 units; depth 0.1 (figure 0.125), a four-segment bevel (thickness 0.022, size 0.01), the head a 48-segment extruded disc; blade i at z = -0.03 i, the figure at z 0.03, the stack centred in depth. 11 meshes, no merged or simplified geometry.
+- **Materials:** two `MeshPhysicalMaterial`s. Satin silver: colour 0xdedee2, metalness 0.82, roughness 0.24, envMapIntensity 1.6, clearcoat 1, clearcoat roughness 0.08. Glossy signal red: 0xff2a45, metalness 0.4, roughness 0.26, envMapIntensity 1, clearcoat 1, clearcoat roughness 0.06. There are no custom shaders: this scene's "shader" is Three.js's physical shader, as in the prototype.
+- **Environment:** a 1024 x 512 equirect painted on a 2D canvas (graphite room gradient, a bright shelf band, two white softboxes, a red bounce) turned into an environment map with `PMREMGenerator` (the filtered map is 768 x 1024 texels).
+- **Lights and camera:** ambient 0.25, white key 2.0 at (2.5, 3, 4), signal-red rim 0.9 at (-3, -1.5, 2); ACES filmic tone mapping at exposure 1.1; a 45 degree camera at z 4. Placement: landscape, to the right of the copy (x = min(1.45, 0.55 half-width)); portrait, scale 0.62, top right.
+- **Animation:** `assemble(r)` (blades smallest first, each scaled about the hub and sliding forward in z, then the body and head from above), the entrance turn, then the slow sway (position, scale, three rotation axes). The scene keeps its own clock exactly as the prototype did: seconds, advanced by the time between drawn frames capped at 0.1 s, not advanced while animations are paused, and its frame gap forgotten whenever the scene is not drawn (`pause()`).
+- **Renderer:** antialiased, transparent, pixel ratio `min(devicePixelRatio, 2)`, **left out of adaptive resolution** (the prototype left the closing canvas alone because resizing it had shown a black gradient), buffer from the canvas's layout box (the 100vw by 100vh closing frame), a draw on every tick the manager asks for.
+
+### Deviations from the prototype
+
+1. **The warm-up draws the assembled mark.** The prototype's warm-up drew it at reveal 0, when every piece is hidden, so its two physical programs were compiled at the first visible frame, mid-scroll. Here both programs are compiled and the geometry uploaded at creation, and their link status is checked (`assertProgramLinked`, host.ts).
+2. **The environment map is rebuilt when the context is restored.** A PMREM render target's pixels live only in GPU memory and Three.js does not regenerate them. Measured: with the rebuild a restored mark is pixel-identical to the one before the loss (mean difference 0.00 of 255 when paused); with the rebuild removed (a temporary experiment) the restored mark differed (mean 3.37, 6.4% of pixels by more than 24). `host.ts` got an `onRestored` option for this, called before the buffer is redrawn.
+3. The old environment target is **dropped, not disposed**, after a restore: its GPU objects died with the old context, and disposing it asked the new context to delete them (Chromium warned "object does not belong to this context"; verified gone).
+4. Lifecycle, loss handling, fallback states, disposal and the shader-link check are the manager's, as for the other scenes (none was in the prototype); the scene exists only while the closing frame is near.
+5. `host.ts` gained `antialias` and `fixedPixelRatio` options and `scene.ts` an optional `pause()`; the manager calls it for a live scene outside its drawn range. Nothing else in the shared code changed.
+6. The canvas fades in over 0.9 s (like the other scenes) where the prototype's was always visible. Because the canvas is created ahead of the reveal and only becomes live after a drawn frame, in a normal scroll it is long since visible (and empty) before the first blade appears.
+
+### Resource ownership and disposal
+
+Owned by the scene: one `WebGLRenderer` and its context, 11 `ExtrudeGeometry`s, 2 materials, the environment render target, the lights (no GPU resources). `dispose()` marks the scene disposed and removes the loss listeners first, then disposes the geometries, both materials and the environment target, then the renderer, and forces the context loss (skipped if already lost); the canvas is replaced by an empty twin. The temporary `CanvasTexture` and the `PMREMGenerator` are disposed as soon as the map exists. Three.js's own default textures and framebuffers (4 textures and 3 framebuffers per renderer) are not deleted by `renderer.dispose()`; the forced context loss frees them, as in 5B-4. Context loss: the mark's canvas hides at once and the CSS mark returns; on restoration the environment is rebuilt, the buffer is redrawn and only then is the canvas shown.
+
+### Fallback
+
+The CSS mark (`.targetMark`, an SVG of the brand mark driven by the engine's `markReveal` opacity and scale) stays underneath. While the canvas is `pending`, `failed`, `lost` or absent it is what shows. When the canvas is `live` it fades out over 0.9 s (`.target:has(canvas[data-sr="target-canvas"][data-gl="live"]) .targetMark { opacity: 0 !important; transition: ... }`; `!important` because the engine writes its opacity inline every frame, and the transition exists only while the rule matches so the way back is instant).
+
+### All five WebGL effects, and what is not WebGL
+
+| Effect | Canvas | Created | Drawn | Disposed |
+|---|---|---|---|---|
+| Opening gradient | `hero-canvas` | v < 1600 | v < 1600 | v > 1900 |
+| Network sphere | `sphere-canvas` | 590 < v < 3300 | 790 < v < 3100 | v < 390 or v > 3400 |
+| Aurora | `aurora-canvas` | 800 < v < 3450 | 1200 < v < 3250 | v < 600 or v > 3550 |
+| Closing gradient | `target-bg` | v > 2600 | v > 2799 | v < 2400 |
+| Closing 3D mark | `target-canvas` | v > 2600 | v > 2799 | v < 2400 |
+
+Up to **four contexts at once** (v 2600 to 3300: sphere, aurora, closing gradient, mark; all four are *drawn* between v 2800 and 3100). Not WebGL, by design: the marquee, backdrop, the card carousel and its 3D transforms, the mark-building SVG of card 03 and its dive and portal, the sphere's central mark (`core`, an SVG), the service panels, the vignette, the closing copy.
+
+### Measurements (production build, Chromium 1254, **software GL**, 1440x900)
+
+- **Geometry:** 7,428 vertices, non-indexed: ten extruded shapes at 168 vertices each (nine blades and the body) and the head disc at 5,748; position + normal + uv buffers = 33 buffers, **237,696 bytes (232 KiB)**, uploaded once at creation.
+- **Draw calls:** 11 per frame (one per mesh), `drawArrays`; measured 264 draws over 24 frames. The creation-time PMREM work adds a few dozen draws once.
+- **Textures and render targets:** the painted 1024 x 512 equirect (immutable storage, deleted after PMREM), the PMREM cube-UV target, 768 x 1024 texels (kept while the mark lives; its texel format was not checked), one equal-size ping-pong target (deleted with the generator), plus Three.js's defaults.
+- **Canvas:** 1440 x 900 at devicePixelRatio 1 (2880 x 1800 at 2), antialiased. Not governed by adaptive resolution.
+- **Render frequency:** one draw per shared-tick frame while drawn; nothing is drawn outside v > 2799, when animations are paused and the scroll position is still (0 draws), or in a hidden tab.
+- **Time:** about 6 ms of main-thread script per second at 4 frames per second in software GL, which says nothing about a real GPU. No hardware figure is claimed.
+
+### Verification (5B-6)
+
+`tsc --noEmit`, ESLint and `next build` pass; the server on port 3000 serves this build.
+
+- **Fidelity to the prototype** (both pages paused, so the scene clock is 0 and everything is deterministic; DOM text and SVG hidden in both; the closing gradient is in the picture, as it is behind the mark): at 1440x900, 1024x768 and 390x844 and at v 2900, 3000, 3100, 3200, 3340, 3550 and 3700 (the first blade, mid assembly, fully formed, the hold) the mean absolute difference is 0.00 to 0.22 of 255 per pixel and below 0.02% of pixels differ by more than 24, except 0.72 and 0.30% at 390 px, v 2900 (the first moments of the entrance). Viewed side by side (1440 at v 3100, 390 at v 3200, 1024 at v 2900) the two are not distinguishable.
+- **Animation:** a paused comparison cannot show motion, so the clock was compared. A hook on `Math.sin` recorded the mark's clock at each drawn frame: here it starts at the first drawn frame, advances by exactly 0.1 s per frame (software frames are slower than that) and stops when animations are paused, as the prototype's does (it also records 0.016 s steps where its frames were faster than 100 ms). Both pages were paused at clock 2.017 s (this build) and 2.033 s (prototype): the pose is the same and the only difference is a thin edge of sway from that 16 ms and a different phase of the animated gradient behind it (mean difference 5.9, but all of it gradient grain and edge). The sway formulas are the prototype's text; a frame-by-frame comparison of motion while playing was not made.
+- **Hand-off:** with the canvas `pending` the CSS mark shows; at `live` it fades out as the canvas fades in. Sampled in the page on every frame: a jump from v 2300 to 3500 (scene not yet created), a walk from v 2700 to 3500 (created, empty) and the same jump at 4x CPU throttle showed no frame where the CSS mark was removed before the canvas existed. Frames are seconds long in software GL, so the 0.9 s crossfade itself was not resolved frame by frame; in the walk case the stand-in is never shown (the first WebGL frame was already drawn) and the canvas simply fades in.
+- **Failure:** `getContext` null for every scene: the aurora, sphere, closing gradient and mark all `failed`, stand-ins visible (the CSS mark at its reveal opacity), 0 draws, no retry in 3 s, everything recreated after leaving and re-entering. A shader link failure injected into the mark alone, and into `target-bg` alone: that scene `failed` with its fallback visible, the others live, one warning each.
+- **Context loss and restoration** (`WEBGL_lose_context`, animations paused, v 3000, all four scenes drawing): each of the mark, the closing gradient, the sphere and the aurora lost in turn: its canvas hides and its fallback returns at once, the other three keep drawing, 0 console output on loss or restoration; after restoration the scene is live again and the whole picture is pixel-identical to before the loss (mean difference 0.00 to 0.07, apart from the frames where the lost scene's fallback was showing). Restoring the contexts of scenes whose page had been left: 0 draws, nothing alive.
+- **Lifecycle:** a pass through the reel (v 0 to 3700 and back): hero only; v 700 sphere created; v 850 hero, sphere and aurora; v 2100 sphere and aurora; v 2700 the closing gradient and the mark created; v 3600 only the closing gradient and the mark; the way back recreates them. 8 enter/leave cycles at v 3200: four scenes each time, 4 contexts created and released per entry, listeners constant at 164, subscribers 1 then 0, Programs, Shaders, Buffers and VertexArrays created equal deleted; 5 route round trips: canvases 5, subscribers 0 on the other route and 1 on return, 0 draws on a hidden route over 3 s; totals 55 contexts created, 55 lost, programs 81 and 81, buffers 998 and 998; scrubbing the create and release thresholds created 7 contexts in all (the hero, sphere, aurora, closing gradient and mark once each, then the sphere and the aurora again on the way back), none repeatedly at a boundary. A tab sent to the background: 0 draws in 3 s, all four scenes kept, 4 contexts, drawing resumes on return.
+- **Reduced motion:** from load 0 contexts, 0 `getContext` calls, 0 draws, the Three.js chunk never requested; switching the OS setting to no-preference at v 3200 creates the scenes, back to reduce disposes all of them (`data-sr-state="off"`, no draws, subscribers 0).
+- **Regression (5B-2, 5B-3):** `engine.ts`, `timeline.ts`, `snap.ts` and the Lenis files are unchanged. Carousel keys 300, 467, 633, 800, back 633; the horizontal wheel back a stop (467); all ArrowDown beats (300, 467, 633, 800, 1470, 2000, 2465, 2680, 3700); listeners while active +13; a vertical wheel tick scrolls continuously and a horizontal one in the carousel zone steps; at 390 px a horizontal swipe steps and a vertical one scrolls freely; opening the chat 0.25 s into a keyboard snap stops it where it was (2126, target 2465) and an ArrowDown with focus in the chat only scrolls natively; Layout shift over a full walk is the same with and without WebGL (0.318), no canvas is a source. Console: no errors or WebGL warnings in any run except the Chromium CSS-preload notice (also on `/about`) and the Three.js `console.error` that the injected link failures cause on purpose.
+- **A harness lesson:** with four scenes the software-GL frames can last more than a second, so a test that decides a snap has finished because the scroll position was still for 1.2 s can stop early (two ArrowDown checks seemed to fail and then passed with a 3 s quiet period). The snap code is unchanged and its destinations are as before.
+- **Media:** none added.
+
+### Not tested, and limitations
+
+- **Software GL only.** No real GPU, so no frame time, GPU memory, thermal or battery figure, no Safari, Firefox or phone, and no claim about context limits: four contexts can now be alive at once (the prototype held five for the whole visit), the heaviest being the sphere (2880 x 1800 at full quality) and the mark (antialiased, physical materials, a 768 x 1024 half-float environment).
+- **Creation cost** (two physical programs, 7,428 vertices, the PMREM pass) happens about one screen before the frame is needed; on a slow device it may still land during scrolling. Not measured on hardware.
+- **Animation while playing** was checked through the clock and the pose at equal clocks, not frame by frame.
+- **The crossfade** was reasoned and sampled, not resolved frame by frame (multi-second frames in software GL).
+- **Context loss was simulated**; a loss during the mark's creation was not provoked. If the environment cannot be rebuilt after a restore, the scene stays lost (CSS mark) until it is disposed.
+- **The mark keeps the prototype's frame-time dependence:** its clock advances at most 0.1 s per drawn frame, so on a slow device the sway runs slower than real time.
+- Still open from earlier stages: the panels, the sphere's text and the closing frame are hidden from assistive technology in the pinned reel until 5B-7; video (5B-7) and the final validation on real devices (5B-8).
 
 ## What was not done in 5B-1, on purpose (historical)
 

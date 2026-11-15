@@ -15,6 +15,7 @@
    ===================================================================== */
 import type { Three } from "./three";
 import type { GlScene, SceneHooks } from "./scene";
+import { assertProgramLinked } from "./host";
 import { CLIP_VERT, GRADIENT_FRAG } from "./shaders";
 
 const MIN_FRAME_MS = 1000 / 36;
@@ -88,6 +89,21 @@ export function createGradientScene(T: Three, canvas: HTMLCanvasElement, hooks: 
   canvas.addEventListener("webglcontextrestored", onRestored);
 
   draw(); // warm-up: compile the shader now, not mid-scroll
+  try {
+    assertProgramLinked(renderer, material); // (5B-5) three.js logs, not throws, when a program fails: make it a creation failure
+  } catch (e) {
+    disposed = true;
+    canvas.removeEventListener("webglcontextlost", onLost);
+    canvas.removeEventListener("webglcontextrestored", onRestored);
+    window.removeEventListener("pointermove", onPointer);
+    geometry.dispose();
+    material.dispose();
+    renderer.dispose();
+    try {
+      renderer.forceContextLoss();
+    } catch {}
+    throw e;
+  }
 
   return {
     get lost() { return lost; },

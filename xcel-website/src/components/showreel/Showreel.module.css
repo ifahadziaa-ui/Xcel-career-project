@@ -15,11 +15,10 @@
    3. Placeholders instead of media. Slots that held stock photographs or clips show the quiet
       placeholder (graphite or paper with the mark), as on the example-role cards. See
       docs/MEDIA.md.
-   4. WebGL (Stage 5B-4 onward): the opening card's gradient and the closing frame's gradient are drawn into their
-      canvases by lib/showreel/gl (they fade in over their CSS fallback, which stays underneath and shows whenever a
-      scene is absent, failed or lost). The aurora, the network sphere and the closing mark are still CSS stand-ins
-      (marked FALLBACK below). Each of those three is hidden by `.sr[data-gl="ready"]`, a flag their renderer
-      stages will set; it is NOT set yet, because those stand-ins are still the only picture.
+   4. WebGL (Stage 5B-4 to 5B-6): the opening card's gradient, the aurora, the network sphere, the closing frame's
+      gradient and the closing 3D mark are drawn into their canvases by lib/showreel/gl (each fades in over its CSS
+      fallback, which stays underneath and shows whenever a scene is absent, failed or lost; the stand-ins of the
+      aurora, the sphere and the mark fade out per canvas, via :has(canvas[data-gl="live"])).
    ===================================================================== */
 
 .sr {
@@ -320,7 +319,10 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 .zmRay[data-g="3"] { fill-opacity: 0.52; }
 .sphereScene { position: absolute; left: 50%; top: 50%; width: 100vw; height: 100vh; transform: translate(-50%, -50%); }
 .sphereCanvasWrap { position: absolute; left: 50%; top: 50%; z-index: 2; width: 100%; height: 100%; transform: translate(-50%, -50%); }
-.sphereCanvasWrap canvas { width: 100%; height: 100%; }
+/* the sphere canvas (5B-5): invisible unless the renderer is drawing; the stand-in below steps aside only while it is live */
+.sphereCanvasWrap canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
+.sphereCanvasWrap canvas[data-gl="live"] { opacity: 1; }
+.sphereCanvasWrap canvas[data-gl="lost"], .sphereCanvasWrap canvas[data-gl="failed"] { transition: none; }
 /* FALLBACK for the 34,000-point sphere: a soft dotted globe with a red underside and an open centre for the mark.
    The real sphere is about 58vh across at rest (camera z 3.8, fov 50, radius 1). */
 .sphereCanvasWrap::before {
@@ -333,6 +335,8 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
   mask-image: radial-gradient(circle, transparent 0 9%, #000 15%, #000 62%, transparent 71%);
   box-shadow: 0 0 9vh rgb(255 42 69 / 0.14);
 }
+/* live: the stand-in fades out as the canvas fades in; on loss or failure it is back at once (no transition on the way back) */
+.sphereCanvasWrap:has(canvas[data-gl="live"])::before { opacity: 0; transition: opacity 0.9s ease; }
 /* the mark at the heart of the sphere, in brand colour */
 .core { position: absolute; left: 50%; top: 50%; z-index: 3; width: 7.3vh; height: 13vh; opacity: 0; transform: translate(-50%, -50%) scale(0.72); }
 .coreMark { display: block; width: 100%; height: 100%; overflow: visible; color: #d0d0d2; --mk-fig: var(--sr-red); filter: drop-shadow(0 0 2.2vh rgb(255 42 69 / 0.35)); }
@@ -418,14 +422,19 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
 }
 
 /* ---------- fixed layers: aurora + service panels ---------- */
-/* FALLBACK for the aurora: a signal-red glow along the top and bottom edges, faded by the engine like the shader would be */
-.aurora {
-  position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden;
+/* FALLBACK for the aurora: a signal-red glow along the top and bottom edges, faded by the engine like the shader would be.
+   It is the ::before, so it can step aside (fade out) while the canvas (5B-5) is live and return at once on loss or failure. */
+.aurora { position: fixed; inset: 0; z-index: 30; pointer-events: none; opacity: 0; visibility: hidden; }
+.aurora::before {
+  content: ""; position: absolute; inset: 0;
   background:
     radial-gradient(70% 38% at 50% 0%, rgb(255 42 69 / 0.32), transparent 72%),
     radial-gradient(70% 38% at 50% 100%, rgb(255 42 69 / 0.26), transparent 72%);
 }
-.aurora canvas { width: 100%; height: 100%; }
+.aurora:has(canvas[data-gl="live"])::before { opacity: 0; transition: opacity 0.9s ease; }
+.aurora canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 0.9s ease; }
+.aurora canvas[data-gl="live"] { opacity: 1; }
+.aurora canvas[data-gl="lost"], .aurora canvas[data-gl="failed"] { transition: none; }
 .pfSection {
   position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column;
   overflow: hidden; padding: 9vmin 0 8vmin; transform: translateY(100%); visibility: hidden;
@@ -493,10 +502,10 @@ html[data-motion="paused"] .marqueeRow { animation-play-state: paused; }
   font-family: var(--font-display); font-weight: 400; letter-spacing: -0.03em;
 }
 
-/* ---------- the renderer stages (5B-4 onward) set data-gl="ready" on the section once their canvases draw; the stand-ins then step aside ---------- */
-.sr[data-gl="ready"] .sphereCanvasWrap::before,
-.sr[data-gl="ready"] .targetMark { display: none; }
-.sr[data-gl="ready"] .aurora { background: none; }
+/* ---------- the closing mark (5B-6): its stand-in steps aside per canvas, like the others. !important because the engine drives
+   the stand-in's opacity inline every frame; the transition exists only while the rule matches, so on loss or failure the
+   stand-in is back at once ---------- */
+.target:has(canvas[data-sr="target-canvas"][data-gl="live"]) .targetMark { opacity: 0 !important; transition: opacity 0.9s ease; }
 
 /* =====================================================================
    OS REDUCED MOTION: interim static, vertically stacked presentation (decided in docs/SHOWREEL.md).
