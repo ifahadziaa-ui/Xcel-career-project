@@ -119,7 +119,7 @@
 @media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
   .site-header {
     --u: min(calc(100vw / 1136), calc(100vh / 692));
-    --dock-x: max(24px, 8.5428vw); --dock-y: 14px; /* the docked bar sits 30% further in than before (6.5714vw) */
+    --dock-x: max(24px, 11.96vw); --dock-y: 14px; /* the docked bar sits further in: 6.5714vw originally, then +30% (8.5428vw), then +40% (11.96vw) */
     --pl: calc(var(--u) * (56 - 22 * var(--dock))); /* and its text sits a little further in from the bar's ends */
     --pr: calc(var(--u) * (58 - 24 * var(--dock)));
     --mono-size: calc(var(--u) * 11);
