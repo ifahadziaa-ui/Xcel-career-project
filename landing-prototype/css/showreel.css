@@ -308,7 +308,7 @@
 .sr-ctarow { margin-top: 1vmin; display: flex; flex-wrap: wrap; align-items: center; gap: 1.6vmin; pointer-events: auto; }
 .sr-ctabtn, .sr-ctaghost { display: inline-flex; border-radius: 8px; padding: 3.2vmin 4.6vmin; text-box: trim-both cap alphabetic; font-size: max(var(--type-min), 2.5vmin); }
 .sr-ctabtn { background: var(--sr-red); color: var(--sr-ink); }
-.sr-ctaghost { color: #f3f3f5; border: 1px solid rgb(255 255 255 / 0.28); background: rgb(16 16 18 / 0.35); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.sr-ctaghost { color: #f3f3f5; border: 1px solid rgb(255 255 255 / 0.28); background: rgb(30 30 33 / 0.55); } /* no backdrop-filter: it does not draw inside a parent that is fading with a blur, so this button appeared late */
 .sr-ctabtn:hover, .sr-ctabtn:focus-visible, .sr-ctaghost:hover, .sr-ctaghost:focus-visible { background: #f3f3f5; color: #101012; }
 .sr-ctatrust { pointer-events: auto; font: 500 max(var(--type-min), 1.35vmin)/1.5 "Geist Mono", ui-monospace, monospace; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(243 243 245 / 0.5); }
 .sr-ctatel { color: inherit; white-space: nowrap; }

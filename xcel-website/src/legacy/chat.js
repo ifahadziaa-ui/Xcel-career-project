@@ -418,7 +418,7 @@ export function initChat({ lenis } = {}) {
     const tr = track?.getBoundingClientRect();
     const inReel = tr ? tr.top <= 1 && tr.bottom >= innerHeight - 1 : false;
     root.classList.toggle("is-compact", inReel && !open);
-    const s = open || launch.matches(":focus-visible") || (heroGone && !scrolling);
+    const s = open || launch.matches(":focus-visible") || heroGone; // always there once the hero is past (it used to hide while scrolling)
     if (s !== shown) { shown = s; showS.set(s ? 1 : 0); }
   };
   addEventListener("scroll", () => {

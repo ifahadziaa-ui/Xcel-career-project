@@ -19,20 +19,20 @@ const PANEL_VIDEO = { "01": "panel-healthcare", "02": "panel-government", "03": 
 const SCROLL_COMPRESS = 0.4;
 const OLD_MAX = 2000;
 const PS = 1300;                       // the hub dive (gp 0.405 to 0.65) opens straight onto the "What we staff" strip; it pans from here
-const PF_DUR = 1300;
+const PF_DUR = 1450;                   // includes a hold on the Healthcare panel before the strip pans (about 2 s of video)
 const PF_END = PS + PF_DUR;            // 2800
 /* the network scene (the brain, "300,000+ profiles on file") now comes AFTER the strip: it is revealed
    as the strip leaves, and holds until the closing beat opens over it (user, 15 Nov 2026) */
-const NET = 3500;                      // the brain is the last beat: it shows once the closing frame has lifted away
+const NET = 3270;                      // the brain is the last beat: it shows as the closing frame lifts away
 /* The prompt's ending (a camera flight through 14 placeholder tiles into a box that
    zooms up, 1900 units long) is replaced by one short closing beat: as the "What we
    staff" strip leaves, the closing scene opens through a wide, feathered circle, the
    3D mark assembles and the copy rises. 750 units, overlapping the strip's exit. */
-const CLOSE_START = PS + PF_DUR * 0.8; // 2340: opens as the strip leaves
-const CLOSE_END = CLOSE_START + 750;   // 3090
-const LIFT = 3400;                     // the closing frame lifts away over 400 units, revealing the network scene
+const CLOSE_START = PS + PF_DUR * 0.82; // 2489: opens as the strip leaves
+const CLOSE_END = CLOSE_START + 600;   // 3089
+const LIFT = 3150;                     // the closing frame lifts away right after its copy has arrived, revealing the network scene
 const PERSP = 1500;
-const VSCROLL_MAX = NET + 800;         // 4300: the brain holds, then the page scrolls on
+const VSCROLL_MAX = NET + 500;         // 3770: a short hold on the brain, then the page scrolls on
 /* scroll length per unit of vScroll (vh); the prompt used 0.4, a little faster here */
 const VH_PER_UNIT = 0.22;
 const trackVh = (density) => Math.round(100 + VSCROLL_MAX * density);
@@ -79,7 +79,7 @@ const sideCardTransform = (p, baseRotateY) => {
 };
 const card4Opacity = () => 1; // card 03 holds the network scene (its dark panel is shown only at the end, see panelOn)
 const panelOn = (p) => vScroll(p) > LIFT - 60; // the dark network panel exists only once the closing frame starts to lift
-const liftP = (p) => smooth(clamp01((vScroll(p) - LIFT) / 400));
+const liftP = (p) => smooth(clamp01((vScroll(p) - LIFT) / 350));
 const cardZIndex = (p, slot) => {
   const rotY = phase3(p) * -270;
   return Math.round(Math.cos(((rotY + slot * 90) * Math.PI) / 180) * 100) + 1000;
@@ -126,7 +126,7 @@ const markFade = (k) => 1 - smooth(clamp01((Math.log(k) - Math.log(3)) / (Math.l
 const diveRotate = (z) => -16 * smooth(z);                            // a slight turn along the spiral
 const hubDrift = (z) => 1 - smooth(clamp01(z / 0.55));                // hub glides to the centre of view
 const faceFade = (p) => 1 - smooth(clamp01((gp(p) - 0.405) / 0.035)); // card text clears first
-const cardFade = (p) => 1 - smooth(clamp01((gp(p) - 0.47) / 0.08));  // then the red card dissolves
+const cardFade = (p) => 1 - smooth(clamp01((gp(p) - 0.415) / 0.085)); // the red card dissolves with the first zoom, not after it
 const sideFade = (p) => 1 - smooth(clamp01((gp(p) - 0.405) / 0.045)); // the other cards leave the stage
 
 const marqueeOpacity = (p) => phase1(p) * (1 - smooth(clamp01((gp(p) - 0.4) / 0.07)));
@@ -143,7 +143,7 @@ const auroraOpacity = (p) => {
 
 const pfProgress = (p) => clamp01((vScroll(p) - PS) / PF_DUR);
 // the strip is in place before the dive (revealed through the hub, see the frame loop), so there is no rise
-const pfSlide = (p) => clamp01(pfProgress(p) / 0.62);
+const pfSlide = (p) => clamp01((pfProgress(p) - 0.18) / 0.5); // holds on the first panel for the first 18%
 const pfExit = (p) => smooth(clamp01((pfProgress(p) - 0.72) / 0.28));
 const portfolioActive = (p) => vScroll(p) > 700;
 const portfolioTransform = (p) => {
@@ -168,7 +168,7 @@ const closeMask = (p) => {
 };
 const closeScale = (p) => 1.08 - 0.08 * smooth(clamp01(closeP(p) / 0.7));
 // the 3D mark and the copy start together once the scene is mostly open (closeP > CLOSE_ON), each on a clock
-const CLOSE_ON = 0.14, CLOSE_OFF = 0.1;
+const CLOSE_ON = 0.14, CLOSE_OFF = 0.01;
 
 const heroLetterStyle = (p, index, total) => {
   const reversed = total - 1 - index;
@@ -1010,6 +1010,7 @@ export function initShowreel(section) {
     console.warn("WebGL unavailable, showreel runs without shaders", err);
   }
 
+  const tCanvas = section.querySelector("#sr-target-canvas");
   let lastP = -1, ctaBorn = null, closeAge = 0;
   function frame(t) {
     requestAnimationFrame(frame);
@@ -1129,9 +1130,12 @@ export function initShowreel(section) {
     else if (cp <= CLOSE_OFF) ctaBorn = null;
     const ctaAge = ctaBorn == null ? 0 : (vt - ctaBorn) / 1000;
     closeAge = ctaAge;
+    // one scroll-linked fade for the whole frame (mark and every line of copy), so they leave together
+    const closeIn = smooth(clamp01(cp / 0.1));
+    tCanvas.style.opacity = closeIn.toFixed(3);
     ctaParts.forEach((part, i) => {
       const r = ctaBorn == null ? 0 : smooth(clamp01((ctaAge - i * 0.05) / 0.6));
-      part.style.opacity = r * (part.classList.contains("dim") ? 0.4 : 1);
+      part.style.opacity = r * closeIn * (part.classList.contains("dim") ? 0.4 : 1);
       part.style.transform = `translateY(${((1 - r) * 2.6).toFixed(3)}vh)`;
       part.style.filter = r < 0.999 ? `blur(${((1 - r) * 8).toFixed(2)}px)` : "none";
       part.style.visibility = r > 0.005 ? "visible" : "hidden";
@@ -1166,10 +1170,10 @@ export function initShowreel(section) {
     const tiles = [...el.pfTrack.children];
     const x0 = tiles[0]?.offsetLeft ?? 0;
     const slides = [...new Set(tiles.map((t) => Math.min(1, (t.offsetLeft - x0) / maxPan)).concat(1).map((x) => Math.round(x * 1000) / 1000))];
-    const pf = slides.filter((x, i, a) => i === 0 || x - a[i - 1] > 0.02).map((x) => PS + PF_DUR * 0.62 * x);
+    const pf = slides.filter((x, i, a) => i === 0 || x - a[i - 1] > 0.02).map((x) => PS + PF_DUR * (0.18 + 0.5 * x));
     return [
       { from: 0.1 * OLD_MAX, to: 0.415 * OLD_MAX, stops: car },
-      { from: PS - 50, to: PS + PF_DUR * 0.66, stops: pf },
+      { from: PS - 50, to: PS + PF_DUR * 0.7, stops: pf },
     ];
   };
   const zoneAt = (y) => { const v = yToV(y); return zones().find((z) => v >= z.from && v <= z.to) || null; };
