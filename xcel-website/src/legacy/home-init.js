@@ -43,6 +43,7 @@ const CUST_LOGO = {
   "Raytheon Technologies": { src: "assets/img/logo-raytheon.webp", alt: "Raytheon Technologies logo" },
   "Pearson": { src: "assets/img/logo-pearson.webp", alt: "Pearson logo" },
   "Indeed": { src: "assets/img/logo-indeed.webp", alt: "Indeed logo" },
+  "Smile Brands": { src: "assets/img/logo-smilebrands.webp", alt: "Smile Brands logo" },
   "NGA": { src: "assets/img/logo-nga.webp", alt: "National Geospatial-Intelligence Agency seal" },
 };
 // every logo is a plain, equal tile; the names live in the alt text (the Capstone name tile carries its own name)

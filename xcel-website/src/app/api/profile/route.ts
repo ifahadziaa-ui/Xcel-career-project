@@ -4,7 +4,7 @@ import { saveProfile } from "@/lib/accounts";
 import { getAuth } from "@/lib/auth";
 import { getSessionUser } from "@/lib/session";
 
-const FIELDS = ["", "Healthcare", "IT", "Finance", "Cybersecurity", "Other"];
+const FIELDS = ["", "Healthcare", "IT & Software Development", "Cybersecurity", "Finance", "Project & Program Management", "Other", "IT", "Finance"]; // the last two are kept so details saved earlier stay valid
 const clip = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 /* The candidate's own details: name (kept by Better Auth), phone, field and location. */

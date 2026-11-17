@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
 import { JOBS } from "@/content/content";
 import { JobBoard, ResumeForm } from "@/components/forms";
-import { Notice, PageHero, SectionHead } from "@/components/pg";
+import { Btn, Eyebrow, Headline, Notice, SectionHead } from "@/components/pg";
 
 export const metadata: Metadata = {
-  title: "Open jobs",
-  description: "Healthcare roles first, then IT, finance and cyber roles in healthcare and government. Applying is always free.",
+  title: "Careers at Xcel",
+  description: "Current openings across healthcare, IT, software development, cybersecurity, finance, and project and program management.",
 };
 
+/* Wording supplied by the client (17 Nov 2026). */
 export default function Page() {
   return (
     <main className="pg" id="main">
-      <PageHero
-        eyebrow="Open roles"
-        title={["Find your", "next role"]}
-        intro="Healthcare roles first, then IT, finance and cyber roles in healthcare and government. Applying is always free, and we prepare you for the interview."
-      />
-      <section className="pg-sec pg-sec--tight">
+      <section className="pg-hero">
+        <div className="pg-wrap">
+          <Eyebrow>Careers at Xcel</Eyebrow>
+          <Headline lines={["Current", "Openings"]} />
+          <p className="pg-sub" data-r="2">Your next role. Your next step forward.</p>
+          <p className="pg-intro" data-r="2">
+            Explore opportunities across healthcare, IT, software development, cybersecurity, finance, and technical project and program management. Bring your expertise to work that supports healthcare organizations, government programs, and commercial businesses.
+          </p>
+          <div className="pg-actions" data-r="3">
+            <Btn href="#openings">Browse current openings</Btn>
+            <Btn href="#resume" ghost>Submit your résumé</Btn>
+          </div>
+        </div>
+      </section>
+      <section className="pg-sec pg-sec--tight" id="openings">
         <div className="pg-wrap">
           <Notice>
             Sample listings. The live list will come from the applicant tracking system or a jobs admin, once the client confirms which.
@@ -28,10 +38,11 @@ export default function Page() {
         <div className="pg-wrap pg-split">
           <div>
             <SectionHead
-              eyebrow="No match yet?"
-              title="Send us your résumé"
-              note="We search our network for every request. With your résumé on file, we can call you when the right role opens."
+              eyebrow="Submit your résumé"
+              title="Let’s find where you Xcel."
+              note="Don’t see a position that matches your background? Submit your résumé and tell us about your experience, preferred location, and career interests. Our team will consider you for opportunities that align with your qualifications."
             />
+            <p className="pg-small" data-r="2">Healthcare · IT &amp; Software Development · Cybersecurity · Finance · Project &amp; Program Management</p>
           </div>
           <ResumeForm />
         </div>

@@ -60,7 +60,7 @@ export default function Page() {
         <div>
           <SectionHead eyebrow="Customers" title="Current and past" />
           <ul className="pg-table" data-r="2">
-            {CUSTOMERS.map((c) => <li key={c.name}><b>{c.status === "current" ? "Current" : ("years" in c && c.years) || "Past"}</b><span>{c.name}</span></li>)}
+            {CUSTOMERS.map((c) => <li key={c.name}><b>{c.status === "current" ? "Current" : ("years" in c && c.years) || (c.status === "past" ? "Past" : "Client")}</b><span>{c.name}</span></li>)}
           </ul>
         </div>
       </div></section>

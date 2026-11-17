@@ -284,9 +284,9 @@ function build(section) {
     <div class="sr-blackpanel" id="sr-blackpanel">
       <div class="sr-sphere-scene" id="sr-sphere-scene">
         <div class="sr-sphere-canvas" id="sr-sphere-wrap"><canvas id="sr-sphere-canvas"></canvas></div>
-        <h2 class="sr-h-top" id="sr-h-top"><span class="sl-line">${letters(S.sphereTop)}</span></h2>
+        <h2 class="sr-h-top" id="sr-h-top">${S.sphereTop.map((l) => `<span class="sl-line">${letters(l)}</span>`).join("")}</h2>
         <h2 class="sr-h-bottom" id="sr-h-bottom">${S.sphereBottom.map((l) => `<span class="sl-line">${letters(l)}</span>`).join("")}</h2>
-        <div class="sr-sphere-body" id="sr-sphere-body">${S.sphereBody.map((t) => `<p>${esc(t)}</p>`).join("")}</div>
+        <div class="sr-sphere-body" id="sr-sphere-body">${S.sphereBody.map((t) => `<p>${esc(t)}</p>`).join("")}<a class="sr-sphere-cta" href="/contact">${esc(S.sphereCta)}</a></div>
       </div>
     </div>
     ${markSVG(M, { id: "sr-zoom", cls: "sr-zoom" })}

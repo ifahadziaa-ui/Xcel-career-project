@@ -53,6 +53,7 @@ export const CUSTOMERS = [
   { name: "Capstone Corporation", status: "past", years: "2019–2021" },
   { name: "Indeed", status: "past", years: "2022" },
   { name: "NGA", status: "past", years: "2018" },
+  { name: "Smile Brands" }, // [CONFIRM] relationship, status and logo permission: added from the user's message of 17 Nov 2026
 ];
 
 /* ---------- 03 Showreel (Prompt 1) ----------
@@ -92,16 +93,17 @@ export const SHOWREEL = {
   cards: {
     employer: { n: "01", label: "For employers", title: "Send us the role.", strong: "We send a checked short list.", pillK: "Hospitals · clinics · county agencies", pillV: "Request staff", href: "#contact" },
     seeker: { n: "02", label: "For job seekers", title: "Your next role.", strong: "Explore opportunities", q: "Registered Nurse · Maryland", href: "#jobs" },
-    network: { n: "03", label: "Our database", title: "300,000+ candidates,", strong: "checked one at a time." },
+    network: { n: "03", label: "Our network", title: "Healthcare. IT. Financial services. And more.", strong: "Where we Xcel, your teams thrive and your business succeeds." },
   },
 
   // 4 · inside the network, reached by diving through the hub of the XcelCareers mark
-  sphereTop: "300,000+",
-  sphereBottom: ["profiles", "on file"],
+  sphereTop: ["Exceptional", "talent."],
+  sphereBottom: ["Staffing", "augmentation."],
   sphereBody: [
-    "Our database holds more than 300,000 healthcare, human services, IT, finance and cybersecurity professionals, including people cleared up to TS/SCI.",
-    "Every staffing request starts with a search of it. We interview the best matches, then verify each license, certification, reference and background check before you see a résumé.",
+    "Xcel Careers provides staffing augmentation solutions for healthcare organizations, government agencies, and businesses. Our database includes more than 300,000 professionals across healthcare, human services, IT, finance, and cybersecurity, including talent with security clearances up to TS/SCI.",
+    "We help you fill workforce gaps, support projects, and expand your team. Each engagement begins with understanding your needs, followed by targeted candidate selection, focused interviews, and applicable license, certification, reference, and background checks.",
   ],
+  sphereCta: "Strengthen your workforce",
 
   // 6 · the ask (the phone number comes from CONTACT)
   // the client's wording (15 Nov 2026), kept with the certification and CAGE line below it
@@ -286,7 +288,7 @@ export const LEADERSHIP = [
 export const NAV = [
   { href: "/healthcare", label: "Healthcare" },
   { href: "/government", label: "Government" },
-  { href: "/jobs", label: "Jobs" },
+  { href: "/jobs", label: "Careers at Xcel", short: "Careers" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

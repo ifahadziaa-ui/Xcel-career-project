@@ -10,7 +10,7 @@ export const HOME_HTML = `
         <ul>
           <li><a tabindex="-1" href="/healthcare">Healthcare</a></li>
           <li><a tabindex="-1" href="/government">Government</a></li>
-          <li><a tabindex="-1" href="/jobs">Jobs</a></li>
+          <li><a tabindex="-1" href="/jobs"><span class="nv-long">Careers at Xcel</span><span class="nv-short">Careers</span></a></li>
           <li><a tabindex="-1" href="/about">About</a></li>
           <li><a tabindex="-1" href="/contact">Contact</a></li>
         </ul>

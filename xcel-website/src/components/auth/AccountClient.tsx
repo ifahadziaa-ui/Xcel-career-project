@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 import { Arrow } from "@/components/pg";
 import { authClient } from "@/lib/auth-client";
 
-const FIELDS = ["", "Healthcare", "IT", "Finance", "Cybersecurity", "Other"];
+const FIELDS = ["", "Healthcare", "IT & Software Development", "Cybersecurity", "Finance", "Project & Program Management", "Other"];
 
 export function ProfileForm({ name, email, phone, field, location }: { name: string; email: string; phone: string; field: string; location: string }) {
   const router = useRouter();

@@ -113,7 +113,7 @@ export function ResumeForm() {
         <label>Last name<input name="last" required autoComplete="family-name" /></label>
       </div>
       <label>Email<input name="email" type="email" required autoComplete="email" /></label>
-      <label>Field<select name="field">{["Healthcare", "IT", "Finance", "Cybersecurity", "Other"].map((v) => <Opt key={v} v={v} />)}</select></label>
+      <label>Field<select name="field">{["Healthcare", "IT & Software Development", "Cybersecurity", "Finance", "Project & Program Management", "Other"].map((v) => <Opt key={v} v={v} />)}</select></label>
       <label className="file">Résumé (PDF or Word)<input name="resume" type="file" accept=".pdf,.doc,.docx" required /></label>
       <button className="btn" type="submit">Send résumé<Arrow /></button>
       <Status msg={s.msg} />

@@ -215,7 +215,7 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 
 .certs-sub { display: flex; align-items: center; gap: 1.25rem; margin: 4rem auto 2rem; max-width: 46rem; font-size: var(--type-meta); color: var(--accent); }
 .certs-sub::before, .certs-sub::after { content: ""; flex: 1; height: 1px; background: rgb(243 243 245 / 0.14); }
-.customers { --cols: 7; --cg: 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.25rem var(--cg); } /* any count, last row centred */
+.customers { --cols: 8; --cg: 1.25rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.25rem var(--cg); } /* any count, last row centred */
 .customers > .cust { width: calc((100% - (var(--cols) - 1) * var(--cg)) / var(--cols)); }
 .cust { display: grid; grid-template-rows: auto 3.3em auto; justify-items: center; align-content: start; row-gap: 0.6rem; text-align: center; }
 .cust > .cust-name { align-self: start; }

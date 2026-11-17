@@ -37,7 +37,7 @@
   --sr-hero-pad: 8vmin;
   --sr-heading-1: 18vmin;
   --sr-heading-2: 24vmin;
-  --sr-sphere-body-w: 52vmin;
+  --sr-sphere-body-w: 46vmin;
   --sr-sphere-body-text: 2.4vmin;
   --sr-cu: 1vmin;          /* card unit: card width / 42 (JS sets it per bucket) */
   --sr-slider-h: 62vh;     /* opening card's video slot; shorter on tall screens so the copy clears it */
@@ -260,7 +260,7 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 .sr-face-top { display: flex; align-items: center; justify-content: space-between; }
 .sr-face .sr-chip { background: rgb(16 16 18 / 0.28); border-color: rgb(255 255 255 / 0.22); }
 .sr-face .sr-chip b { background: #fff; color: var(--sr-ink); }
-.sr-face h4 { margin-top: auto; max-width: 92%; font-size: calc(4.2 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
+.sr-face h4 { margin-top: auto; max-width: 92%; font-size: calc(2.9 * var(--sr-cu)); font-weight: 300; line-height: 1.06; letter-spacing: -0.02em; }
 .sr-face h4 strong { font-weight: 700; }
 
 /* the dark network scene, revealed through the mark's hub (clip-path set per frame) */
@@ -282,17 +282,23 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 /* the mark at the heart of the sphere, in brand colour */
 .sr-h-top {
   position: absolute; left: 4vmin; top: 4vmin; z-index: 4;
-  font-size: var(--sr-heading-1); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+  display: flex; flex-direction: column; align-items: flex-start;
+  font-size: calc(var(--sr-heading-1) * 0.55); line-height: 0.9; font-weight: 400; color: #fff; white-space: nowrap; /* the client's heading is longer than "300,000+" */
 }
+.sr-sphere-cta {
+  align-self: flex-start; margin-top: 0.6vmin; pointer-events: auto; border-radius: 8px; padding: 1.8vmin 3vmin; font-size: max(14px, 2vmin); line-height: 1.2;
+  background: var(--sr-red); color: var(--sr-ink); text-box: trim-both cap alphabetic; font-weight: 500;
+}
+.sr-sphere-cta:hover, .sr-sphere-cta:focus-visible { background: #f3f3f5; }
 .sr-h-bottom {
   position: absolute; right: 4vmin; bottom: 4vmin; z-index: 4;
   display: flex; flex-direction: column; align-items: flex-end; text-align: right;
-  font-size: var(--sr-heading-2); line-height: 0.85; font-weight: 400; color: #fff; white-space: nowrap;
+  font-size: calc(var(--sr-heading-2) * 0.3); line-height: 0.9; font-weight: 400; color: #fff; white-space: nowrap;
 }
 .sr-sphere-body {
   position: absolute; left: 4vmin; bottom: 5vmin; z-index: 4;
   display: flex; max-width: var(--sr-sphere-body-w); flex-direction: column; gap: 1.8vmin;
-  font-size: var(--sr-sphere-body-text); font-weight: 300; line-height: 1.45; color: #fff;
+  font-size: calc(var(--sr-sphere-body-text) * 0.88); font-weight: 300; line-height: 1.45; color: #fff;
 }
 
 /* ---------- closing scene ----------
@@ -411,7 +417,7 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
    and the copy above the big type, so the two never cross */
 @media (max-aspect-ratio: 1/1) {
   .sr-h-bottom { bottom: 78px; }
-  .sr-sphere-body { bottom: calc(78px + 2 * 0.85 * var(--sr-heading-2) + 5vmin); text-shadow: 0 1px 10px rgb(16 16 18 / 0.9); }
+  .sr-sphere-body { bottom: calc(78px + 2 * 0.9 * 0.3 * var(--sr-heading-2) + 5vmin); text-shadow: 0 1px 10px rgb(16 16 18 / 0.9); }
 }
 
 /* ---------- type: the hero's system across the showreel ----------

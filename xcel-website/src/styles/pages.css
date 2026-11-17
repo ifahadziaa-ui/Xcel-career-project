@@ -360,3 +360,13 @@ html[data-motion="paused"] .pg::before, html[data-motion="paused"] .pg::after { 
 .pg-hero .eyebrow { display: block; }
 .pg-hero .eyebrow .dot { display: inline-block; vertical-align: middle; margin-right: 0.6em; }
 .pg--era .pg-hero .eyebrow { display: inline-flex; }
+
+/* nav label "Careers at Xcel" shortens to "Careers" on phones so the five links still fit one row */
+.nv-short { display: none; }
+@media (width < 700px) { .nv-long { display: none; } .nv-short { display: inline; } }
+/* the jobs page headline has a one-line promise under it */
+.pg-sub { margin: var(--sp-3) auto 0; font-family: var(--font-display); font-weight: 500; font-size: var(--pg-h3); line-height: 1.2; letter-spacing: -0.015em; color: var(--foreground); }
+.pg-hero .pg-sub { text-align: center; }
+
+/* very narrow phones: the five nav links must still fit one row now that one label is longer */
+@media (width < 400px) { .site-header { --mono-size: 11px; --mono-track: 0.02em; } .hx-nav ul { gap: 4px; } }

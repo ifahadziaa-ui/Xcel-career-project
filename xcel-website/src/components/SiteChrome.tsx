@@ -58,7 +58,7 @@ export function SiteHeader() {
             {NAV.map((n) => (
               <li key={n.href}>
                 <Link href={n.href} aria-current={path === n.href || path.startsWith(n.href + "/") ? "page" : undefined}>
-                  {n.label}
+                  {"short" in n ? <><span className="nv-long">{n.label}</span><span className="nv-short">{n.short}</span></> : n.label}
                 </Link>
               </li>
             ))}
