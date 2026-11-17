@@ -64,30 +64,28 @@ export const CUSTOMERS = [
 export const SHOWREEL = {
   // 1 · opening card: the promise and the two doors. Three short lines, so none runs
   // behind the card that slides in from the right.
-  heroLines: ["Employment", "workforce", "provider."],
+  heroLines: ["Your mission.", "Our commitment."],
   // under the headline (it used to sit on a card in the middle, which is gone)
   heroWhat: {
-    k: "What we do",
-    t: "Healthcare staffing and government contracting",
-    d: "Nurses and care staff for hospitals and clinics. Staff augmentation and task orders for government agencies.",
+    d: "Xcel Careers provides government contracting solutions across healthcare, IT, cybersecurity, and finance. We support government agencies and prime contractors with specialized expertise, program support, and staff augmentation tailored to contract requirements and mission objectives.",
   },
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
     { k: "For job seekers", t: "Open roles in healthcare, IT, finance and cyber", d: "We match you to open roles and prepare you for the interview. Always free for job seekers." },
   ],
   heroButtons: [
-    { label: "Request staff", href: "#contact", primary: true }, // audience #1 gets the primary button
-    { label: "Find a job", href: "#jobs" },
+    { label: "Discuss your contract needs", href: "#contact", primary: true },
+    { label: "Explore careers", href: "#jobs" },
   ],
   team: ["MC", "PG"], // the two current customers, as initials: Montgomery County and Prince George's County
   avatarsLabel: "Trusted by Montgomery and Prince George's Counties",
   heroRight: "Veteran-owned small business · CAGE 89AK6",
   // the opening card becomes the first carousel card (photo: a recruiter with a candidate)
-  heroRotated: "Healthcare, government\nand the specialists\nbehind both",
+  heroRotated: "Your goals.\nOur expertise.\nShared success.",
 
   // 2 · marquee behind the carousel: the people we place
   marquee: ["Healthcare staffing", "Staff augmentation", "Task orders & IDIQ", "Healthcare IT", "Revenue cycle & finance", "Cybersecurity", "Cleared to TS/SCI", "Consulting"],
-  cta: "See how we staff",
+  cta: "Explore our best solutions",
 
   // 3 · carousel cards, numbered so they read in order: chip → headline → action
   cards: {
@@ -121,17 +119,17 @@ export const SHOWREEL = {
 export const FUNCTIONS = [
   {
     n: "01", kicker: "Main focus", href: "/healthcare", cta: "Healthcare staffing",
-    title: "Healthcare",
-    tags: ["Hospitals", "Clinics", "Long-term care", "Behavioral health", "County & state HHS"],
-    line: "We place registered nurses, LPNs, CNAs, medical assistants, case managers and behavioral health staff with hospitals, clinics, long-term care and county and state health departments, on contract, contract-to-hire or direct hire.",
+    title: "Healthcare Solutions",
+    tags: ["Clinical Support", "Healthcare Technology", "Cybersecurity", "Program Operations"],
+    line: "We support healthcare organizations, prime contractors, subcontractors, and private and commercial businesses with clinical and administrative expertise, healthcare IT, cybersecurity support, and program services. Our solutions help strengthen operations and meet business and contract requirements.",
     video: "Nurses and care staff at work: a hospital ward, a clinic, a home visit",
     note: "Your clip · 10–15 s loop · muted · 16:9 · real staff, no stock look",
   },
   {
-    n: "02", kicker: "Local · State · Federal", href: "/government", cta: "Government contracting",
-    title: "Government",
-    tags: ["Staff augmentation", "Contract staffing", "Task orders / IDIQ", "Consulting"],
-    line: "A Maryland MBE, DBE and SBE certified small business. We prime or subcontract on local, state and federal work: staff augmentation, contract staffing, task orders and IDIQ, plus business analysis and program management consulting.",
+    n: "02", kicker: "Federal · State · Local", href: "/government", cta: "Government contracting",
+    title: "Government Contracting",
+    tags: ["Technology & Security", "Program Operations", "Proposal Support", "Contract Solutions"],
+    line: "Our team brings over 15 years of expertise across industries, with roots in healthcare and IT. We support government agencies, prime contractors, subcontractors, and commercial partners with technology, cybersecurity, healthcare, financial, and program services. From proposal assistance to operational support and staff augmentation, we help organizations meet contract requirements and program objectives.",
     video: "County health and human services staff with residents; a public-sector team at work",
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },

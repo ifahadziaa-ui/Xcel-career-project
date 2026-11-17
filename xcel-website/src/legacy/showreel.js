@@ -242,7 +242,7 @@ function build(section) {
       <div class="sr-slide sr-slide--b" id="sr-slide-b"><div class="sr-rotated">${gradCard(S.openCards[0])}</div></div>
     </div></div>
     <div class="sr-hero-bottom" id="sr-hero-bottom">
-      <div class="lead"><p class="k">${esc(S.heroWhat.k)}</p><p class="t">${esc(S.heroWhat.t)}</p><p class="d">${esc(S.heroWhat.d)}</p></div>
+      <div class="lead"><p class="d">${esc(S.heroWhat.d)}</p></div>
       <div class="sr-btns">${btns}</div>
       <div class="sr-divider"></div>
       <div class="sr-hero-row"><div class="sr-avatars"><span class="faces">${faces}</span><span class="lbl">${esc(S.avatarsLabel)}</span></div><p class="right">${esc(S.heroRight)}</p></div>

@@ -1,28 +1,64 @@
 import type { Metadata } from "next";
-import { ABOUT, CONTACT, LEADERSHIP, STEPS } from "@/content/content";
-import { AskBand, Btn, CredStrip, PageHero, Ph, SectionHead } from "@/components/pg";
+import { CONTACT, LEADERSHIP } from "@/content/content";
+import { ABOUT_PAGE as A } from "@/content/pages-copy";
+import { Btn, CredStrip, PageHero, Ph, SectionHead } from "@/components/pg";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "The people behind XcelCareers: a Maryland minority veteran-owned staffing company that understands both sides of care.",
+    "Xcel Careers is a Maryland-based, minority- and veteran-owned business bringing together healthcare, technology, cybersecurity, financial, and program expertise.",
 };
 
+const Paras = ({ items }: { items: readonly string[] }) => (
+  <>{items.map((t) => <p className="pg-lead" data-r="1" key={t}>{t}</p>)}</>
+);
+
+/* Wording supplied by the client (16 Nov 2026); the leadership block and the certification strip stay as they were. */
 export default function Page() {
   return (
     <main className="pg" id="main">
       <PageHero
-        eyebrow={ABOUT.eyebrow}
-        title={ABOUT.title}
-        intro={ABOUT.intro}
-        actions={<><Btn href="/contact">Request staff</Btn><Btn href="/jobs" ghost>Find a job</Btn></>}
+        eyebrow={A.eyebrow}
+        title={A.title}
+        intro={A.intro}
+        actions={<><Btn href="/capability">Explore our capabilities</Btn><Btn href="/contact" ghost>Connect with our team</Btn></>}
       />
+
       <section className="pg-sec"><div className="pg-wrap">
-        <SectionHead eyebrow="Why XcelCareers" title="Four reasons clients choose us" />
-        <ol className="pg-grid pg-grid--4">
-          {ABOUT.why.map((w, i) => <li className="pg-card" data-r={i} key={w.t}><span className="n">0{i + 1}</span><h3>{w.t}</h3><p>{w.d}</p></li>)}
-        </ol>
+        <SectionHead eyebrow={A.foundation.eyebrow} title={A.foundation.title} />
+        <Paras items={A.foundation.paras} />
+        <CredStrip />
+        <p className="pg-small" data-r="2" style={{ textAlign: "center" }}>Based at {CONTACT.address}.</p>
       </div></section>
+
+      <section className="pg-sec"><div className="pg-wrap">
+        <SectionHead eyebrow={A.what.eyebrow} title={A.what.title} note={A.what.intro} />
+        <ul className="pg-grid pg-grid--3">
+          {A.what.items.map((c, i) => <li className="pg-card" data-r={i % 3} key={c.t}><h3>{c.t}</h3><p>{c.d}</p></li>)}
+        </ul>
+        <p className="pg-actions" data-r="3" style={{ justifyContent: "center" }}><Btn href="/capability">{A.what.cta}</Btn></p>
+      </div></section>
+
+      <section className="pg-sec"><div className="pg-wrap pg-split">
+        <div>
+          <SectionHead eyebrow={A.who.eyebrow} title={A.who.title} note={A.who.lead} />
+          <ul className="pg-list" data-r="2">{A.who.list.map((l) => <li key={l}>{l}</li>)}</ul>
+        </div>
+        <div className="pg-panel" data-r="2"><p className="pg-lead" style={{ marginTop: 0 }}>{A.who.closing}</p></div>
+      </div></section>
+
+      <section className="pg-sec"><div className="pg-wrap">
+        <SectionHead eyebrow={A.how.eyebrow} title={A.how.title} />
+        <ul className="pg-grid pg-grid--4">
+          {A.how.items.map((c, i) => <li className="pg-card" data-r={i} key={c.t}><h3>{c.t}</h3><p>{c.d}</p></li>)}
+        </ul>
+      </div></section>
+
+      <section className="pg-sec"><div className="pg-wrap">
+        <SectionHead eyebrow={A.commitment.eyebrow} title={A.commitment.title} />
+        <Paras items={A.commitment.paras} />
+      </div></section>
+
       <section className="pg-sec"><div className="pg-wrap">
         <SectionHead eyebrow="Leadership" title="125+ years of combined experience" />
         <ul className="pg-team">
@@ -34,25 +70,25 @@ export default function Page() {
           ))}
         </ul>
       </div></section>
-      <section className="pg-sec"><div className="pg-wrap pg-split">
-        <div>
-          <SectionHead eyebrow="How we hire" title="From open role to day one" note="Our process for employers, step by step." />
-          <ol className="pg-steps" data-r="2">
-            {STEPS.map((s, i) => <li key={s.title}><b>0{i + 1}</b><div><h3>{s.title}</h3><p>{s.text}</p></div></li>)}
-          </ol>
-        </div>
-        <div className="pg-panel" data-r="2">
-          <h3 className="pg-h3">For candidates</h3>
-          <ul className="pg-list">{ABOUT.candidates.map((c) => <li key={c}>{c}</li>)}</ul>
-          <Btn href="/jobs">See open roles</Btn>
-        </div>
-      </div></section>
+
       <section className="pg-sec"><div className="pg-wrap">
-        <SectionHead eyebrow="Certified" title="Minority veteran-owned small business" />
-        <CredStrip />
-        <p className="pg-small" data-r="2">Based at {CONTACT.address}. Placing people across Maryland, DC and Virginia, and in remote roles.</p>
+        <SectionHead eyebrow={A.careers.eyebrow} title={A.careers.title} />
+        <Paras items={A.careers.paras} />
+        <p className="pg-actions" data-r="3" style={{ justifyContent: "center" }}>
+          <Btn href="/jobs">{A.careers.ctas[0]}</Btn>
+          <Btn href="/jobs#resume" ghost>{A.careers.ctas[1]}</Btn>
+        </p>
       </div></section>
-      <AskBand title={["Tell us who", "you need"]} lead="One nurse or a full staff augmentation: start with a short request." cta="Request staff" href="/contact" />
+
+      <section className="pg-sec pg-ask"><div className="pg-wrap">
+        <SectionHead eyebrow={A.connect.eyebrow} title={A.connect.title} />
+        <Paras items={A.connect.paras} />
+        <p className="pg-actions" data-r="3" style={{ justifyContent: "center" }}>
+          <Btn href="/contact">{A.connect.ctas[0]}</Btn>
+          <Btn href="/capability" ghost>{A.connect.ctas[1]}</Btn>
+        </p>
+        <p className="pg-small" data-r="3" style={{ textAlign: "center", marginTop: "var(--sp-6)" }}>{A.connect.closing}</p>
+      </div></section>
     </main>
   );
 }

@@ -63,13 +63,15 @@ export const Notice = ({ tag = "Sample", children }: { tag?: string; children: R
   <p className="pg-notice" data-r="0"><span className="tag">{tag}</span>{children}</p>
 );
 
-export function PageHero({ eyebrow, title, intro, actions, cascade = false }: { eyebrow: string; title: readonly string[]; intro?: string; actions?: ReactNode; cascade?: boolean }) {
+export function PageHero({ eyebrow, title, sub, intro, actions, cascade = false }: { eyebrow: string; title: readonly string[]; sub?: string; intro?: string | readonly string[]; actions?: ReactNode; cascade?: boolean }) {
+  const paras = typeof intro === "string" ? [intro] : intro ?? [];
   return (
     <section className="pg-hero">
       <div className="pg-wrap">
         <Eyebrow>{eyebrow}</Eyebrow>
         <Headline lines={title} cascade={cascade} />
-        {intro ? <p className="pg-intro" data-r="2">{intro}</p> : null}
+        {sub ? <p className="pg-sub" data-r="2">{sub}</p> : null}
+        {paras.map((t) => <p className="pg-intro" data-r="2" key={t}>{t}</p>)}
         {actions ? <div className="pg-actions" data-r="3">{actions}</div> : null}
       </div>
     </section>
