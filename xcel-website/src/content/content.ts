@@ -89,7 +89,7 @@ export const SHOWREEL = {
 
   // 3 · carousel cards, numbered so they read in order: chip → headline → action
   cards: {
-    employer: { n: "01", label: "For employers", title: "Send us the role.", strong: "We send a checked short list.", pillK: "Hospitals · clinics · county agencies", pillV: "Request staff", href: "#contact" },
+    employer: { n: "01", label: "For employers", title: "Qualified talent.", strong: "Matched to your hiring needs.", pillK: "Healthcare • IT • Cybersecurity • Finance", pillV: "More info", href: "#contact" },
     seeker: { n: "02", label: "For job seekers", title: "Your next role.", strong: "Explore opportunities", q: "Registered Nurse · Maryland", href: "#jobs" },
     network: { n: "03", label: "Our network", title: "Healthcare. IT. Financial services. And more.", strong: "Where we Xcel, your teams thrive and your business succeeds." },
   },
@@ -134,10 +134,10 @@ export const FUNCTIONS = [
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },
   {
-    n: "03", kicker: "Across both", href: "/specialists", cta: "IT, finance and cyber",
-    title: "IT · Finance · Cyber",
-    tags: ["EHR & systems", "Revenue cycle", "Budget analysis", "Cleared to TS/SCI"],
-    line: "The people behind the systems: EHR and network administrators, service desk staff, revenue cycle and budget analysts, and cybersecurity engineers cleared up to TS/SCI with Full Scope Poly, for healthcare providers and government programs.",
+    n: "03", kicker: "Technology & Business Solutions", href: "/specialists", cta: "IT, finance and cyber",
+    title: "IT, Cybersecurity, Finance & Program Management",
+    tags: ["Software Development", "IT Systems", "Cybersecurity", "Financial Services", "Technical Program Management", "Agile & Scrum"],
+    line: "We support healthcare organizations, government agencies, prime contractors, subcontractors, and private and commercial businesses with software development, IT systems, cybersecurity, and financial solutions. Our expertise includes technical project and program management, consultants with PMP or PgMP certifications, and Agile and Scrum delivery practices to help teams plan, execute, and meet project and contract objectives.",
     video: "Specialists at work: EHR systems, a billing team, a security operations floor",
     note: "Your clip · 10–15 s loop · muted · 16:9",
   },

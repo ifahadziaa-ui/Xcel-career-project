@@ -483,3 +483,8 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 /* short screens: the title only, so the block never reaches the headline */
 @media (max-height: 760px) { .sr-hero-bottom .lead .k, .sr-hero-bottom .lead .d { display: none; } }
 @media (max-width: 639px) { .sr-hero-bottom .lead .k { display: none; } }
+
+/* a long panel title (the client's technology and business heading) is set smaller so title, tags and text fit the panel */
+.sr-pf--long h3 { max-width: 100%; font-size: min(3.7vw, 7vh); line-height: 1; letter-spacing: -0.02em; }
+.sr-pf--long .sr-pf-line { font-size: max(13px, 1.7vmin); }
+@media (max-aspect-ratio: 1/1) { .sr-pf--long h3 { font-size: 6.2vw; } }

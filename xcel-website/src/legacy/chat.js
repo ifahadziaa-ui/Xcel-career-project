@@ -354,15 +354,16 @@ const FLOW_FN = {
    UI
    ===================================================================== */
 const START = [
-  { act: "request", say: "I need to request staff", b: "Request staff", s: "For employers" },
-  { act: "jobs", say: "Show me open roles", b: "Open roles", s: "For candidates" },
-  { act: "capability", say: "Show me your capability statement", b: "Capability", s: "CAGE · UEI · NAICS" },
-  { act: "certs", say: "What certifications do you hold?", b: "Certifications", s: "MBE · DBE · SBE" },
+  { act: "jobs", say: "Show me current openings", b: "Current openings", s: "For candidates" },
+  { act: "request", say: "I need proposal and staff augmentation support", b: "Proposal & staff augmentation support", s: "For employers" },
+  { act: "capability", say: "Show me your certifications and CAGE code", b: "Certifications & CAGE", s: "CAGE · UEI · NAICS" },
 ];
 
+/* Welcome wording supplied by the client (17 Nov 2026). */
 const WELCOME = `
   <div class="xc-hello">
-    <p class="xc-lede">Hi, I'm the XcelCareers assistant. Ask about staffing, open roles, licensing or our certifications.</p>
+    <h3 class="xc-hi">How can we <em>help?</em></h3>
+    <p class="xc-lede">Don\u2019t have the resources? We have the solutions and data to support your proposal, staff augmentation, and contract needs.</p>
     <div class="xc-starts">${START.map((x) => `<button type="button" class="xc-start" data-act="${x.act}" data-say="${esc(x.say)}">${esc(x.b)}</button>`).join("")}</div>
   </div>`;
 

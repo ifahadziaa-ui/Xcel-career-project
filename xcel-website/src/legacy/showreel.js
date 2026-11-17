@@ -294,7 +294,7 @@ function build(section) {
 
   // 5 · the three lines of business, numbered in the client's order of priority
   const pf = FUNCTIONS.map((f) => `
-    <article class="sr-pf">
+    <article class="sr-pf${f.title.length > 24 ? " sr-pf--long" : ""}">
       ${ph({ kind: "video", what: f.video, note: f.note, video: PANEL_VIDEO[f.n] })}
       <div class="sr-pf-tags">${f.tags.map((t) => `<span>${esc(t)}</span>`).join('<span class="sep">·</span>')}</div>
       <div class="sr-pf-foot"><p class="sr-pf-kicker"><b>${esc(f.n)}</b>${esc(f.kicker)}</p><h3>${esc(f.title)}</h3><p class="sr-pf-line">${esc(f.line)}</p><a class="sr-pf-btn" href="${f.href}">${esc(f.cta)}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>

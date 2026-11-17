@@ -178,7 +178,9 @@
 
 /* welcome: one sentence and four plain buttons */
 .xc-hello { padding-bottom: 4px; }
-.xc-lede { max-width: 34ch; color: var(--xc-body); font-size: 15px; line-height: 1.5; }
+.xc-hi { margin: 0 0 8px; font-size: 22px; font-weight: 500; line-height: 1.15; letter-spacing: -0.015em; color: var(--xc-ink); }
+.xc-hi em { font-style: normal; color: var(--xc-red); }
+.xc-lede { max-width: 40ch; color: var(--xc-body); font-size: 15px; line-height: 1.5; }
 .xc-starts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .xc-start {
   padding: 9px 14px;
