@@ -91,7 +91,7 @@ export const SHOWREEL = {
   // 3 · carousel cards, numbered so they read in order: chip → headline → action
   cards: {
     employer: { n: "01", label: "For employers", title: "Send us the role.", strong: "We send a checked short list.", pillK: "Hospitals · clinics · county agencies", pillV: "Request staff", href: "#contact" },
-    seeker: { n: "02", label: "For job seekers", title: "Apply for free.", strong: "We prepare you for the interview.", q: "Registered Nurse · Maryland", href: "#jobs" },
+    seeker: { n: "02", label: "For job seekers", title: "Your next role.", strong: "Explore opportunities", q: "Registered Nurse · Maryland", href: "#jobs" },
     network: { n: "03", label: "Our database", title: "300,000+ candidates,", strong: "checked one at a time." },
   },
 
@@ -104,11 +104,12 @@ export const SHOWREEL = {
   ],
 
   // 6 · the ask (the phone number comes from CONTACT)
-  finalEyebrow: "Request staff",
-  finalLines: ["One nurse.", "Or 120+ staff."],
-  finalLead: "Tell us the role, the shifts, the pay range and the license or clearance it needs. We search, interview and verify, then send a short list of people ready to start. One role or a whole contract team: we staffed 120+ people for a single task order in 45 days.",
-  finalButton: "Request staff",
-  finalSecondary: "Capability statement",
+  // the client's wording (15 Nov 2026), kept with the certification and CAGE line below it
+  finalEyebrow: "Mission support & contract solutions",
+  finalLines: ["Expertise aligned to your mission.", "Resources built around your requirements."],
+  finalLead: "Share your scope of work, performance objectives, and delivery timeline to discuss how Xcel Careers can support your next engagement.",
+  finalButton: "Discuss contract requirements",
+  finalSecondary: "View capability statement",
   finalTrust: "Maryland MBE · DBE · SBE No. 19-286 · CAGE 89AK6",
   finalAlt: "or call",
 };

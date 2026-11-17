@@ -26,15 +26,15 @@ export const HOME_HTML = `
     </div>
     <p class="hx-meta hx-sealed">CAGE / 89AK6</p>
     <div class="hx-titleBlock">
-      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Minority <span class="hx-red">veteran-owned</span></span></p>
-      <h1 id="hero-title" class="hx-title"><span class="hx-line">Workforce</span><span class="hx-line"><span class="hx-accent">Provider</span></span></h1>
-      <p class="hx-lead">An employment workforce provider: nurses and care staff for hospitals and clinics, staff augmentation for local, state and federal agencies, and the IT, finance and cybersecurity specialists behind both.</p>
+      <p class="hx-specimen"><span class="hx-dot" aria-hidden="true"></span><span>Woman-owned business<br><span class="hx-red">Maryland certification application pending.</span></span></p>
+      <h1 id="hero-title" class="hx-title"><span class="hx-line">Mission-focused</span><span class="hx-line">workforce &amp;</span><span class="hx-line">technology</span><span class="hx-line"><span class="hx-accent">solutions</span></span></h1>
+      <div class="hx-lead"><p>Xcel Careers delivers staff augmentation and professional services across healthcare, information technology, cybersecurity, and business operations. We support federal, state, and local agencies, prime contractors, subcontractors, and commercial organizations with expertise aligned to their operational needs and contract requirements.</p><p>Our capabilities include clinical and allied health support, software development, technical program management, finance, and administrative services. From proposal staffing support to contract execution, we help partners identify qualified personnel, address workforce gaps, and meet mission objectives.</p></div>
+      <p class="hx-actions"><a class="hx-cta hx-cta--solid" href="/capability">Explore our capabilities</a><a class="hx-cta" href="/contact">Partner with Xcel Careers</a></p>
     </div>
     <dl class="hx-placard">
       <div class="hx-row"><dt>Healthcare</dt><dd>Clinical · care · billing</dd></div>
       <div class="hx-row"><dt>Government</dt><dd>Local · State · Federal</dd></div>
       <div class="hx-row"><dt>Specialist</dt><dd>IT · Finance · Cyber</dd></div>
-      <div class="hx-row"><dt>Status</dt><dd class="hx-red">Taking requests</dd></div>
     </dl>
   </div>
 </section>

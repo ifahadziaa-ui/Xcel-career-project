@@ -357,7 +357,7 @@
   --dot: 5px;
   --scan: 4px;
   --scan-half: 2px;
-  --title-size: clamp(56px, min(calc((100vw - 40px) / 4.3), 13svh), 150px); /* WORKFORCE has to fit the screen width */
+  --title-size: clamp(40px, min(calc((100vw - 40px) / 7), 10svh), 120px); /* MISSION-FOCUSED has to fit the screen width */
   --title-leading: 0.8445;
   --title-track: -0.028em;
   --title-word: -0.01em;
@@ -517,11 +517,11 @@
     --dot: calc(var(--u) * 6);
     --scan: calc(var(--u) * 3.16);
     --scan-half: calc(var(--u) * 1.58);
-    --title-size: calc(var(--u) * 112); /* 88, then +50% (132), then 15% smaller (user, 15 Nov 2026) */
-    --title-leading: calc(var(--u) * 94.4);
-    --title-track: calc(var(--u) * -2.68);
-    --title-word: calc(var(--u) * -3.95);
-    --title-stroke: calc(var(--u) * 0.46);
+    --title-size: calc(var(--u) * 58); /* four lines of the client's heading; MISSION-FOCUSED sets the width */
+    --title-leading: calc(var(--u) * 50);
+    --title-track: calc(var(--u) * -1.4);
+    --title-word: calc(var(--u) * -2);
+    --title-stroke: calc(var(--u) * 0.24);
     --term-col: calc(var(--u) * 92);
     --term-size: calc(var(--u) * 9);
     --term-track: calc(var(--u) * 1.6);
@@ -646,13 +646,31 @@
 .hx-titleBlock { width: max-content; max-width: 100%; text-align: left; }
 .hx-lead { width: 0; min-width: 100%; } /* it takes the headline's width and does not widen the block */
 
-/* desktop composition: the eyebrow and the intro scale with the headline */
+/* desktop composition: eyebrow, two intro paragraphs and two buttons under the four-line headline */
 @media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
-  .hx-titleBlock .hx-specimen { font-size: calc(var(--mono-size) * 1.275); letter-spacing: calc(var(--mono-track) * 1.275); }
-  .hx-titleBlock .hx-specimen .hx-dot { width: calc(var(--dot) * 1.275); height: calc(var(--dot) * 1.275); margin-right: calc(var(--u) * 10.7); }
-  .hx-titleBlock .hx-title { margin-top: calc(var(--u) * 20.4); }
-  .hx-titleBlock .hx-lead { margin-top: calc(var(--u) * 22); font-size: calc(var(--u) * 17.2); line-height: 1.5; }
+  .hx-titleBlock .hx-specimen { font-size: calc(var(--mono-size) * 1.1); letter-spacing: calc(var(--mono-track) * 1.1); line-height: 1.5; }
+  .hx-titleBlock .hx-specimen .hx-dot { margin-top: 0.45em; }
+  .hx-titleBlock .hx-title { margin-top: calc(var(--u) * 14); }
+  .hx-titleBlock .hx-lead { margin-top: calc(var(--u) * 16); font-size: max(14px, calc(var(--u) * 11.2)); line-height: 1.5; }
+  .hx-titleBlock .hx-actions { margin-top: calc(var(--u) * 16); }
 }
+.hx-lead p + p { margin-top: 0.7em; }
+.hx-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; }
+.hx-cta {
+  display: inline-flex; align-items: center; padding: 0.95em 1.5em 1em; border-radius: 6px; white-space: nowrap;
+  font-family: var(--font-zen), system-ui, sans-serif; font-size: max(14px, calc(var(--u, 1px) * 11.5)); line-height: 1.1; color: #fff;
+  border: 1px solid rgb(255 255 255 / 0.3); background: rgb(16 16 18 / 0.5); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  transition: background-color var(--duration-hover) var(--ease-entrance), color var(--duration-hover) var(--ease-entrance);
+}
+.hx-cta--solid { background: var(--red); border-color: var(--red); color: #101012; font-weight: 500; }
+.hx-cta:hover, .hx-cta:focus-visible { background: #f3f3f5; border-color: #f3f3f5; color: #101012; }
+@media (max-width: 1023px), (max-aspect-ratio: 6 / 5) { .hx-lead p:nth-child(2) { display: none; } } /* phones and tablets: the first paragraph only */
+@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) and (max-height: 960px) { .hx-lead p:nth-child(2) { display: none; } }
 @media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
-  .hx-titleBlock .hx-specimen { text-shadow: 0 0 6px rgb(0 0 0 / 0.9), 0 0 14px rgb(0 0 0 / 0.7); } /* readable where it crosses the heart */
+  .hx-titleBlock .hx-specimen { text-shadow: 0 0 6px rgb(0 0 0 / 0.9), 0 0 14px rgb(0 0 0 / 0.7); }
 }
+
+/* the two-line eyebrow never makes the block wider than the headline: it wraps inside it */
+.hx-titleBlock .hx-specimen { width: 0; min-width: 100%; white-space: normal; align-items: flex-start; }
+.hx-titleBlock .hx-specimen .hx-dot { margin-top: 0.4em; }
+.hx-titleBlock .hx-specimen { line-height: 1.5; }

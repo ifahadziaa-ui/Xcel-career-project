@@ -428,7 +428,7 @@ html[data-motion="paused"] .sr-gcard::before, html[data-motion="paused"] .sr-gca
 .sr-cta-lead { margin-inline: auto; }
 @media (min-aspect-ratio: 1/1) and (min-width: 900px) {
   .sr-ctablock { padding: 9vmin 41vw 9vmin 5vmin; }
-  .sr-ctablock h2 { max-width: 100%; font-size: min(6.2vw, 12vh); }
+  .sr-ctablock h2 { max-width: 100%; font-size: min(3.6vw, 7vh); }
   .sr-cta-lead { max-width: 34rem; font-size: max(var(--type-min), 2vmin); text-wrap: balance; }
   .sr-ctatrust { text-align: center; }
 }
