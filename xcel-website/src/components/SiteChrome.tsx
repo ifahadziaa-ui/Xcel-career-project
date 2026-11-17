@@ -4,7 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { NAV } from "@/content/content";
-import { useCandidate } from "@/components/auth/useAccounts";
+import dynamic from "next/dynamic";
+import { useAccountsStatus } from "@/components/auth/accountsStatus";
+
+// the sign-in client (better-auth) loads only when accounts are switched on, not with every page
+const HeaderAccount = dynamic(() => import("@/components/auth/HeaderAccount"), { ssr: false });
 
 /* The top bar: flat at the top, a floating glass dock once scrolled (--dock 0 to 1).
    Same markup and classes as the prototype's bar (styles/sections.css, hero.css). */
@@ -74,9 +78,9 @@ export function SiteHeader() {
 
 /* "Sign in" before sign-in, "Account" after (only when accounts are switched on). */
 function AccountLink() {
-  const { status, user } = useCandidate();
+  const status = useAccountsStatus();
   if (!status?.configured) return null;
-  return <Link className="hx-account" href={user ? "/account" : "/login"}>{user ? "Account" : "Sign in"}</Link>;
+  return <HeaderAccount />;
 }
 
 /* One shared entrance for every [data-r] element: it plays once, when the element enters the view. */

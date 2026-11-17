@@ -11,6 +11,9 @@ export async function GET(req: Request) {
   const isSession = new URL(req.url).pathname.endsWith("/get-session");
   // the page chrome asks "who is signed in?" on every page; with accounts off, or the database unreachable, the answer is "nobody"
   if (!accountsConfigured) return isSession ? Response.json(null) : off();
+  // no session cookie (better-auth.session_token, or __Secure-… on https): nobody is signed in, so answer at once
+  // instead of starting the database (and its migration check) for every anonymous page view
+  if (isSession && !(req.headers.get("cookie") ?? "").includes("better-auth.session_token")) return Response.json(null);
   try {
     await ensureSchema();
     return await toNextJsHandler(getAuth()).GET(req);
