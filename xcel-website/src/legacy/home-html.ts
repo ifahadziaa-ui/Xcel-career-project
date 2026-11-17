@@ -3,6 +3,10 @@ export const HOME_HTML = `
 
 <!-- ============ 01 HERO: the Next.js hero design, unchanged; XcelCareers copy ============ -->
 <section class="hx-hero" aria-labelledby="hero-title" id="top">
+  <div class="hx-bgvideo" aria-hidden="true">
+    <img class="hx-poster" src="assets/hero/poster-1-1280.webp" srcset="assets/hero/poster-1-640.webp 640w, assets/hero/poster-1-1280.webp 1280w" sizes="100vw" alt="" decoding="async" fetchpriority="high" width="1280" height="720">
+    <video class="hx-clip" muted playsinline loop preload="none" disablepictureinpicture tabindex="-1" data-lg="assets/hero/clip-1-lg.mp4" data-sm="assets/hero/clip-1-sm.mp4"></video><video class="hx-clip" muted playsinline loop preload="none" disablepictureinpicture tabindex="-1" data-lg="assets/hero/clip-2-lg.mp4" data-sm="assets/hero/clip-2-sm.mp4"></video><video class="hx-clip" muted playsinline loop preload="none" disablepictureinpicture tabindex="-1" data-lg="assets/hero/clip-3-lg.mp4" data-sm="assets/hero/clip-3-sm.mp4"></video><video class="hx-clip" muted playsinline loop preload="none" disablepictureinpicture tabindex="-1" data-lg="assets/hero/clip-4-lg.mp4" data-sm="assets/hero/clip-4-sm.mp4"></video>
+  </div>
   <div class="hx-stage">
     <header class="hx-header" aria-hidden="true">
       <a tabindex="-1" href="#top" class="hx-logo" aria-label="XcelCareers home"><svg class="hx-mark" aria-hidden="true"><use href="#i-mark"/></svg>XcelCareers<span class="hx-reg" aria-hidden="true">®</span></a>
@@ -20,9 +24,6 @@ export const HOME_HTML = `
     <div class="hx-metaTop">
       <p class="hx-meta hx-specIndex">Dayton, MD</p>
       <p class="hx-meta hx-vitals">MD · DC · VA</p>
-    </div>
-    <div class="hx-centrepiece">
-      <img src="assets/specimen-placeholder.png" alt="A human heart held in a glass case" decoding="async" fetchpriority="high" style="position:absolute;height:100%;width:100%;inset:0;color:transparent;object-fit:fill">
     </div>
     <p class="hx-meta hx-sealed">CAGE / 89AK6</p>
     <div class="hx-titleBlock">

@@ -8,10 +8,16 @@ const off = () => Response.json({ error: "Accounts are not set up yet." }, { sta
 
 export async function GET(req: Request) {
   await connection();
-  // the page chrome asks "who is signed in?" on every page; with accounts off the answer is simply "nobody"
-  if (!accountsConfigured) return new URL(req.url).pathname.endsWith("/get-session") ? Response.json(null) : off();
-  await ensureSchema();
-  return toNextJsHandler(getAuth()).GET(req);
+  const isSession = new URL(req.url).pathname.endsWith("/get-session");
+  // the page chrome asks "who is signed in?" on every page; with accounts off, or the database unreachable, the answer is "nobody"
+  if (!accountsConfigured) return isSession ? Response.json(null) : off();
+  try {
+    await ensureSchema();
+    return await toNextJsHandler(getAuth()).GET(req);
+  } catch (e) {
+    console.error("auth GET failed:", e);
+    return isSession ? Response.json(null) : Response.json({ error: "Accounts are temporarily unavailable." }, { status: 503 });
+  }
 }
 
 export async function POST(req: Request) {

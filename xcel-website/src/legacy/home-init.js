@@ -12,6 +12,7 @@ import {
   registerReveals, releaseReveals, initParallax,
 } from "./motion.js";
 import { initChat } from "./chat";
+import { initHeroReel } from "./heroreel.js";
 import { watchVideos } from "./video.js";
 import { initJustify } from "./justify.js";
 
@@ -210,6 +211,7 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("cli
 const fontsReady = document.fonts.ready;
 initParallax();
 initChat({ lenis });
+initHeroReel();
 fontsReady.then(() => { registerReveals(); sr.measure(); releaseReveals(); });
 
 }
