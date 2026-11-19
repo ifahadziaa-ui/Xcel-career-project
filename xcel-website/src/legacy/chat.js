@@ -303,7 +303,7 @@ function renderPart(p) {
     case "contact":
       return `<div class="xc-in">${placard([
         ["Contact", `${esc(CONTACT.name)}`],
-        ["Phone", `<a href="tel:${TEL}">${esc(CONTACT.phone)}</a>`],
+        ["Cell", `<a href="tel:${TEL}">${esc(CONTACT.phone)}</a>`],
         ["Email", `<a href="mailto:${esc(CONTACT.email)}">${esc(CONTACT.email)}</a>`],
         ["Office", esc(CONTACT.address), "wrap"],
       ])}

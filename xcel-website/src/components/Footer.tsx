@@ -14,7 +14,7 @@ export default function Footer() {
           </a>
           <address className="type-caps">
             {CONTACT.address}<br />
-            <a href={tel}>{CONTACT.phone}</a> · <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+            <a href={tel}>Cell {CONTACT.phone}</a> ·<a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           </address>
         </div>
         <div className="footer-cols">

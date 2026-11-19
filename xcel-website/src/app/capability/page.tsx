@@ -17,7 +17,7 @@ const rows: [string, string][] = [
   ["Contracting", "Prime or subcontractor at the local, state and federal level, including task orders and IDIQ"],
   ["Cleared talent", "Up to TS/SCI with Full Scope Poly"],
   ["Where", "Maryland, DC, Virginia and remote"],
-  ["Point of contact", `${CONTACT.name}, ${CONTACT.title} · ${CONTACT.phone} · ${CONTACT.email}`],
+  ["Point of contact", `${CONTACT.name}, ${CONTACT.title} · Cell ${CONTACT.phone} · ${CONTACT.email}`],
 ];
 
 const capabilities: [string, string][] = [

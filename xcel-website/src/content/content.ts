@@ -259,11 +259,11 @@ export const FAQ = [
   { id: "candidates", q: "Do candidates pay anything?", a: "Never. Our services are free for job seekers, including interview preparation and credentialing guidance." },
   { id: "location", q: "Where do you work?", a: "Based in Dayton, Maryland. We place across Maryland, DC, Virginia and remote." },
 ];
-export const FAQ_NOTE = "Call 240.579.0466 and we'll walk you through it.";
+export const FAQ_NOTE = "Call 443-859-0034 and we'll walk you through it.";
 
 /* ---------- 09 Contact + footer (all website enquiries go to Barry) ---------- */
 export const CONTACT = {
-  phone: "240.579.0466",
+  phone: "443-859-0034", // Barry's cell (client, 19 Nov 2026); replaces the earlier 240.579.0466
   email: "bklasson@xcelcareers.com",
   name: "Barry Klasson",
   title: "Director of Business Development and Client Services",
@@ -273,7 +273,7 @@ export const CONTACT = {
 };
 
 export const LEADERSHIP = [
-  { name: "Catherine Lee", role: "CEO/Founder", photo: { src: "/assets/img/team-catherine-lee.webp", w: 480, h: 600 } },
+  { name: "Catherine Lee", role: "CEO", photo: { src: "/assets/img/team-catherine-lee.webp", w: 480, h: 600 } },
   { name: "Sylvia Finley", role: "Director of Healthcare and Clinical Services", photo: { src: "/assets/img/team-sylvia-finley.webp", w: 800, h: 1000 } },
   { name: "Barry Klasson", role: "Director of Business Development and Client Services", photo: { src: "/assets/img/team-barry-klasson.webp", w: 800, h: 1000 } },
 ];

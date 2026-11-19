@@ -7,7 +7,7 @@ import { PageHero, SectionHead, tel } from "@/components/pg";
 export const metadata: Metadata = {
   title: "Contact and staffing requests",
   description:
-    "Request healthcare, IT, finance or cybersecurity staff, book a call with client services, or find a job. Call 240.579.0466.",
+    "Request healthcare, IT, finance or cybersecurity staff, book a call with client services, or find a job. Call 443-859-0034.",
 };
 
 export default function Page() {
@@ -27,7 +27,7 @@ export default function Page() {
             <p className="eyebrow type-caps"><span className="dot" aria-hidden="true" />Client services</p>
             <h3>{CONTACT.name}</h3>
             <p className="pg-small">{CONTACT.title}</p>
-            <a className="pg-big" href={tel}>{CONTACT.phone}</a>
+            <a className="pg-big" href={tel}>Cell {CONTACT.phone}</a>
             <a className="pg-mail" href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
             <address>{CONTACT.address}</address>
             <p className="pg-small">{CONTACT.ids}</p>
