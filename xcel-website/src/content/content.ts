@@ -273,9 +273,9 @@ export const CONTACT = {
 };
 
 export const LEADERSHIP = [
-  { name: "Catherine Lee", role: "CEO/Founder" },
-  { name: "Sylvia Finley", role: "Director of Healthcare and Clinical Services" },
-  { name: "Barry Klasson", role: "Director of Business Development and Client Services" },
+  { name: "Catherine Lee", role: "CEO/Founder", photo: { src: "/assets/img/team-catherine-lee.webp", w: 480, h: 600 } },
+  { name: "Sylvia Finley", role: "Director of Healthcare and Clinical Services", photo: { src: "/assets/img/team-sylvia-finley.webp", w: 800, h: 1000 } },
+  { name: "Barry Klasson", role: "Director of Business Development and Client Services", photo: { src: "/assets/img/team-barry-klasson.webp", w: 800, h: 1000 } },
 ];
 
 /* =====================================================================

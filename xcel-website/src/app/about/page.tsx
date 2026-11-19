@@ -64,7 +64,14 @@ export default function Page() {
         <ul className="pg-team">
           {LEADERSHIP.map((p, i) => (
             <li data-r={i} key={p.name}>
-              <div className="pg-photo"><Ph what={p.name} note="Headshot to come" /></div>
+              <div className="pg-photo">
+                {p.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.photo.src} width={p.photo.w} height={p.photo.h} alt={p.name} loading="lazy" decoding="async" />
+                ) : (
+                  <Ph what={p.name} note="Headshot to come" />
+                )}
+              </div>
               <h3>{p.name}</h3><p>{p.role}</p>
             </li>
           ))}
