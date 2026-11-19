@@ -1223,6 +1223,10 @@ export function initShowreel(section) {
       // closing scene: opens through a feathered circle, settles from a slight zoom
       const ca = closeActive(p);
       el.target.style.visibility = ca && liftP(p) < 1 ? "visible" : "hidden";
+      // one fade for the whole frame (glow, mark and copy are all inside it) on the same curve as the lift, so nothing
+      // is left behind as it goes: before, the glow and the mark's lower blades stayed at the top of the screen as a
+      // hard-edged slab long after the copy had left (user, 19 Nov 2026)
+      el.target.style.opacity = (1 - smooth(clamp01(liftP(p) / 0.65))).toFixed(3); // finished by two thirds of the lift, so no edge of it reaches the top
       if (ca) {
         const m = closeMask(p);
         el.target.style.maskImage = m; el.target.style.webkitMaskImage = m;

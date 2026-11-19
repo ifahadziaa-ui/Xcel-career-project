@@ -480,16 +480,9 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
 .footer-cols a { display: block; font-family: var(--font-sans); font-weight: 500; white-space: nowrap; font-size: var(--type-body); color: var(--foreground); line-height: 1.4; transition: color var(--duration-hover) var(--ease-entrance); }
 .footer-cols a:hover, .footer-cols a:focus-visible { color: var(--accent); }
 .footer-legal { display: flex; justify-content: space-between; margin-top: 1.75rem; font-size: var(--type-legal); color: var(--foreground-subtle); }
-.footer-word {
-  position: absolute; left: 2.5rem; top: 10.5rem; pointer-events: none;
-  font-size: var(--type-wordmark); color: transparent; opacity: 0.5;
-  -webkit-text-stroke: 1px var(--foreground);
-}
-.footer-word .wl { display: inline-block; will-change: transform, opacity; }
 @media (width < 1200px) {
   .footer { padding: 0 2rem; height: auto; padding-bottom: 8rem; }
   .footer-cols { gap: 3rem; }
-  .footer-word { left: 1.9rem; top: auto; bottom: -1.5rem; }
 }
 @media (width < 896px)  { .footer { padding: 0 2.5rem 6rem; } .footer-main { flex-direction: column; gap: 2rem; } }
 @media (width < 700px)  {
@@ -497,7 +490,6 @@ html { scroll-padding-top: calc(var(--bar-h, 0px) + 32px); scroll-padding-bottom
   .footer-cols { gap: 1.75rem; flex-wrap: wrap; }
   .footer-legal { flex-direction: column; gap: 0.625rem; }
   .footer-legal p { white-space: normal; }
-  .footer-word { left: 0.7rem; bottom: -1rem; }
 }
 
 /* ---------- centred cards (user, 15 Nov 2026): process steps and the record's stat tiles ---------- */

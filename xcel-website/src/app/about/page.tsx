@@ -6,7 +6,7 @@ import { Btn, CredStrip, PageHero, Ph, SectionHead } from "@/components/pg";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Xcel Careers is a Maryland-based, minority- and veteran-owned business bringing together healthcare, technology, cybersecurity, financial, and program expertise.",
+    "XcelCareers is a Maryland-based, minority- and veteran-owned business bringing together healthcare, technology, cybersecurity, financial, and program expertise.",
 };
 
 const Paras = ({ items }: { items: readonly string[] }) => (

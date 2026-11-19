@@ -304,7 +304,6 @@ body:has(.pg) .site-header { --mono-size: 12px; }
 .footer-cols a { font-weight: 400; font-size: var(--pg-small); color: var(--foreground-muted); }
 .footer-legal { margin-top: var(--sp-8); gap: var(--sp-4); font-family: var(--font-sans); font-size: var(--pg-label); letter-spacing: 0; text-transform: none; white-space: normal; }
 .footer-legal p { white-space: normal; }
-.footer-word { position: static; margin-top: var(--sp-6); font-size: clamp(3rem, 11vw, 8.5rem); line-height: 0.85; opacity: 0.3; }
 @media (width < 1200px) { .footer-cols { gap: var(--sp-8); } }
 @media (width < 896px)  { .footer-main { flex-direction: column; } }
 @media (width < 700px)  { .footer-cols { flex-wrap: wrap; gap: var(--sp-6) var(--sp-8); } .footer-legal { flex-direction: column; } }

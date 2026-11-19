@@ -67,7 +67,7 @@ export const SHOWREEL = {
   heroLines: ["Your mission.", "Our commitment."],
   // under the headline (it used to sit on a card in the middle, which is gone)
   heroWhat: {
-    d: "Xcel Careers provides government contracting solutions across healthcare, IT, cybersecurity, and finance. We support government agencies and prime contractors with specialized expertise, program support, and staff augmentation tailored to contract requirements and mission objectives.",
+    d: "XcelCareers provides government contracting solutions across healthcare, IT, cybersecurity, and finance. We support government agencies and prime contractors with specialized expertise, program support, and staff augmentation tailored to contract requirements and mission objectives.",
   },
   // the two faces of the opening card: plain gradient cards, no photo or video
   openCards: [
@@ -98,7 +98,7 @@ export const SHOWREEL = {
   sphereTop: ["Exceptional", "talent."],
   sphereBottom: ["Staffing", "augmentation."],
   sphereBody: [
-    "Xcel Careers provides staffing augmentation solutions for healthcare organizations, government agencies, and businesses. Our database includes more than 300,000 professionals across healthcare, human services, IT, finance, and cybersecurity, including talent with security clearances up to TS/SCI.",
+    "XcelCareers provides staffing augmentation solutions for healthcare organizations, government agencies, and businesses. Our database includes more than 300,000 professionals across healthcare, human services, IT, finance, and cybersecurity, including talent with security clearances up to TS/SCI.",
     "We help you fill workforce gaps, support projects, and expand your team. Each engagement begins with understanding your needs, followed by targeted candidate selection, focused interviews, and applicable license, certification, reference, and background checks.",
   ],
   sphereCta: "Strengthen your workforce",
@@ -107,7 +107,7 @@ export const SHOWREEL = {
   // the client's wording (15 Nov 2026), kept with the certification and CAGE line below it
   finalEyebrow: "Mission support & contract solutions",
   finalLines: ["Expertise aligned to your mission.", "Resources built around your requirements."],
-  finalLead: "Share your scope of work, performance objectives, and delivery timeline to discuss how Xcel Careers can support your next engagement.",
+  finalLead: "Share your scope of work, performance objectives, and delivery timeline to discuss how XcelCareers can support your next engagement.",
   finalButton: "Discuss contract requirements",
   finalSecondary: "View capability statement",
   finalTrust: "Maryland MBE · DBE · SBE No. 19-286 · CAGE 89AK6",
@@ -273,9 +273,9 @@ export const CONTACT = {
 };
 
 export const LEADERSHIP = [
-  { name: "Quan Nguyen", role: "CEO" },
-  { name: "Erika Finley", role: "Director of Operations and Contracts" },
-  { name: "Barry Klasson", role: "Director of Business Development and Director of Client Services" },
+  { name: "Catherine Lee", role: "CEO/Founder" },
+  { name: "Sylvia Finley", role: "Director of Healthcare and Clinical Services" },
+  { name: "Barry Klasson", role: "Director of Business Development and Client Services" },
 ];
 
 /* =====================================================================

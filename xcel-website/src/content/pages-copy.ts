@@ -9,7 +9,7 @@ export const GOV_PAGE = {
   title: ["Government Contracting", "Solutions"],
   sub: "Your mission. Our expertise. Shared success.",
   intro: [
-    "Xcel Careers supports government agencies, prime contractors, subcontractors, and private and commercial businesses with healthcare, technology, cybersecurity, financial, and program services.",
+    "XcelCareers supports government agencies, prime contractors, subcontractors, and private and commercial businesses with healthcare, technology, cybersecurity, financial, and program services.",
     "Our team brings over 15 years of expertise across industries, with roots in healthcare and IT. We combine specialized knowledge, technical capabilities, and operational support to help organizations meet contract requirements and program objectives.",
   ],
   capabilities: {
@@ -47,7 +47,7 @@ export const GOV_PAGE = {
     title: "Solutions, data, and expertise for your next opportunity.",
     paras: [
       "Preparing a proposal or launching a new contract requires research, planning, and a practical approach to delivery.",
-      "Xcel Careers supports your team with workforce research, staffing insights, qualification alignment, and access to specialized expertise. We help connect proposed requirements with the people and support needed to carry out the work.",
+      "XcelCareers supports your team with workforce research, staffing insights, qualification alignment, and access to specialized expertise. We help connect proposed requirements with the people and support needed to carry out the work.",
     ],
     items: [
       { t: "Proposal Planning", d: "Support for role requirements, staffing approaches, candidate sourcing, and personnel availability." },
@@ -88,7 +88,7 @@ export const GOV_PAGE = {
     eyebrow: "Let’s connect",
     title: "Let’s discuss your next contract opportunity.",
     paras: [
-      "Whether you are preparing a proposal, assembling a team, or seeking additional technical and operational support, Xcel Careers is ready to discuss your requirements.",
+      "Whether you are preparing a proposal, assembling a team, or seeking additional technical and operational support, XcelCareers is ready to discuss your requirements.",
       "Tell us about your organization, scope of work, services needed, and anticipated timeline.",
     ],
     ctas: ["Discuss your contract needs", "Explore teaming opportunities"],
@@ -97,26 +97,27 @@ export const GOV_PAGE = {
 };
 
 export const ABOUT_PAGE = {
-  eyebrow: "About Xcel Careers",
+  eyebrow: "About XcelCareers",
   title: ["Your goals.", "Our expertise.", "Shared success."],
   intro: [
-    "Xcel Careers is a Maryland-based, minority- and veteran-owned business bringing together healthcare, technology, cybersecurity, financial, and program expertise.",
+    "XcelCareers is a Maryland-based, minority- and veteran-owned business bringing together healthcare, technology, cybersecurity, financial, and program expertise.",
     "We support government agencies, prime contractors, subcontractors, and private and commercial businesses with services aligned to their operational needs and contract requirements.",
     "Our work connects people, technical capabilities, and program support to help organizations move forward.",
   ],
   foundation: {
     eyebrow: "Our foundation",
-    title: "Over 15 years of expertise. Roots in healthcare and IT.",
+    title: "Over 15 Years of Expertise. Supporting Your People, Technology, and Mission.",
     paras: [
-      "Our team brings over 15 years of experience across industries, with a foundation in healthcare and information technology.",
-      "That background shapes our understanding of how organizations operate. Healthcare programs depend on capable clinical teams, reliable systems, secure information, and coordinated administration. Technology initiatives require technical expertise, clear direction, and effective project management.",
-      "We bring these perspectives together to support the people, systems, and operations behind each engagement.",
+      "XcelCareers brings together a team with more than 15 years of experience spanning healthcare, information technology, cybersecurity, finance, and administration. Our foundation in healthcare and IT gives us a practical understanding of the people, systems, and expertise organizations need to succeed.",
+      "We support government agencies, prime contractors, subcontractors, and commercial businesses through staffing augmentation, workforce planning, and specialized consulting. Our capabilities span clinical and nonclinical operations, software development, cybersecurity, and technical program and project management.",
+      "From helping partners build proposal teams to supporting contract execution and daily operations, we align qualified professionals and practical solutions with each client\u2019s requirements. Every engagement begins with understanding your objectives and delivering the expertise to move them forward.",
+      "The expertise you need. The partnership to move forward.",
     ],
   },
   what: {
     eyebrow: "What we do",
     title: "Expertise across your organization.",
-    intro: "Xcel Careers provides technical, clinical, administrative, and program support through consulting, project engagements, proposal assistance, and staff augmentation.",
+    intro: "XcelCareers provides technical, clinical, administrative, and program support through consulting, project engagements, proposal assistance, and staff augmentation.",
     items: [
       { t: "Healthcare & Human Services", d: "Clinical and administrative expertise, care coordination, health information management, and program support for healthcare organizations and community services." },
       { t: "IT & Software Development", d: "Software development, application support, systems administration, service desk operations, and healthcare technology expertise." },
@@ -172,7 +173,7 @@ export const ABOUT_PAGE = {
     eyebrow: "Let’s connect",
     title: "Tell us what you want to accomplish.",
     paras: [
-      "Whether you are exploring a partnership, preparing a proposal, planning a project, or expanding your team, we welcome the opportunity to discuss how Xcel Careers can support your goals.",
+      "Whether you are exploring a partnership, preparing a proposal, planning a project, or expanding your team, we welcome the opportunity to discuss how XcelCareers can support your goals.",
     ],
     ctas: ["Discuss a partnership", "View our capability statement"],
     closing: "Where we Xcel, your teams thrive and your business succeeds.",

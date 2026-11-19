@@ -45,7 +45,6 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-legal type-caps"><p>{CONTACT.legal}</p><p>{CONTACT.ids}</p></div>
-      <p className="type-display footer-word" aria-hidden="true">XcelCareers</p>
     </footer>
   );
 }
