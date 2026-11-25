@@ -205,12 +205,13 @@ const CRED = CREDENTIALS;
 function reply(id, t = " ", arg = "") {
   switch (id) {
     case "greet":
-      return { say: "Hi, I'm the XcelCareers concierge. I can start a staffing request, show open healthcare and government roles, or answer questions about licensing, certifications and our CAGE code.", chips: [CHIP.request, CHIP.jobs, CHIP.capability] };
+      return { say: "Hi, I'm the XcelCareers concierge. I can start a staffing request, take your résumé for future openings, or answer questions about licensing, certifications and our CAGE code.", chips: [CHIP.request, CHIP.jobs, CHIP.capability] };
     case "thanks":
       return { say: `Anytime. If you'd rather talk to a person, call **${CONTACT.phone}**.`, chips: [CHIP.request, CHIP.jobs] };
     case "request":
       return { say: "Let's get your request to our client services team. Four quick taps and an email, then we take it from there.", flow: fnOf(t) };
     case "jobs": {
+      if (!JOBS.length) return { say: "New jobs will be updated soon. Upload your résumé and a recruiter will call you when a matching role opens. Applying is always free.", parts: [{ type: "resume" }], chips: [CHIP.contact] };
       const key = arg || (/(clear|secret|ts\/sci| ts sci|polygraph)/.test(t) ? "cleared" : fnOf(t));
       let list = jobsFor(key), say;
       if (key === "health" && list.length) {
@@ -283,6 +284,7 @@ const placard = (rows, cls = "") => `<dl class="xc-placard ${cls}">${rows.map(([
 function renderPart(p) {
   switch (p.type) {
     case "jobs":
+      if (!p.list.length) return `<p class="xc-card-label xc-mono xc-in">New jobs will be updated soon</p>`;
       return `<p class="xc-card-label xc-mono xc-in">Open roles · ${p.list.length}</p>
       <div class="xc-rail xc-in" data-lenis-prevent>${p.list.map((j) => `
         <article class="xc-job">
@@ -619,6 +621,7 @@ export function initChat({ lenis } = {}) {
       if (a.name === "show_jobs") {
         const key = AI_JOBS[inp.function] ?? "";
         parts.push({ type: "jobs", list: jobsFor(key).length ? jobsFor(key) : JOBS.slice() });
+        if (!JOBS.length) acc = acc.trim() ? acc : "New jobs will be updated soon.";
       } else if (a.name === "show_contact") parts.push({ type: "contact" });
       else if (a.name === "show_certifications") parts.push({ type: "certs" }, { type: "capability" });
       else if (a.name === "start_talent_request") flowFn = AI_FLOW[inp.function] || "";

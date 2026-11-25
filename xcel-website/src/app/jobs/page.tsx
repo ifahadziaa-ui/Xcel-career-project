@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JOBS } from "@/content/content";
 import { JobBoard, ResumeForm } from "@/components/forms";
-import { Btn, Eyebrow, Headline, Notice, SectionHead } from "@/components/pg";
+import { Btn, Eyebrow, Headline, SectionHead } from "@/components/pg";
 
 export const metadata: Metadata = {
   title: "Careers at Xcel",
@@ -28,10 +28,14 @@ export default function Page() {
       </section>
       <section className="pg-sec pg-sec--tight" id="openings">
         <div className="pg-wrap">
-          <Notice>
-            Sample listings. The live list will come from the applicant tracking system or a jobs admin, once the client confirms which.
-          </Notice>
-          <JobBoard jobs={JOBS} />
+          {JOBS.length > 0 ? (
+            <JobBoard jobs={JOBS} />
+          ) : (
+            <div className="pg-panel" data-r="1">
+              <h3 className="pg-h3">New jobs will be updated soon.</h3>
+              <p className="pg-small">There are no openings listed right now. Submit your résumé below and we will contact you when a role that matches your background opens.</p>
+            </div>
+          )}
         </div>
       </section>
       <section className="pg-sec" id="resume">

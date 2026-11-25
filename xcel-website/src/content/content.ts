@@ -187,40 +187,15 @@ export const STEPS = [
 export const PROCESS_SPLIT =
   "You keep the final interview, the hiring decision and day-to-day supervision. We handle the search, the checks, the paperwork and, for contract staff, the employment itself.";
 
-/* ---------- 05 Open roles (SAMPLE until the ATS feed is connected [CONFIRM which ATS]) ----------
-   The landing page shows the first five as a card fan; jobs.html lists them all.
+/* ---------- 05 Open roles ----------
+   Empty on purpose: the sample listings were removed on 25 Nov 2026 and new jobs will be added
+   when the client confirms the source (applicant tracking system or a jobs admin [CONFIRM]).
+   Every page that lists jobs shows "New jobs will be updated soon" while this is empty.
    need: the one requirement that matters most for the role [label, value].
    Descriptions describe the role only: no pay, no client names, nothing invented. */
-export const JOBS = [
-  { id: "case-manager-hhs", fn: "Healthcare", title: "Case Manager · Health & Human Services", where: "Maryland", need: ["Setting", "County HHS"], type: "Contract", art: "Case manager with a resident",
-    desc: "Coordinate services for residents in a county health and human services program: assessments, care plans and referrals.", reqs: ["Case management experience in health or human services", "Background check and references"] },
-  { id: "ehr-admin", fn: "IT", title: "EHR Systems Administrator", where: "Washington, DC", need: ["Setting", "Hospital system"], type: "Contract-to-hire", art: "EHR administrator at work",
-    desc: "Administer and support the electronic health record platform: access, configuration, upgrades and issue resolution.", reqs: ["EHR administration experience", "Background check and references"] },
-  { id: "rn-behavioral", fn: "Healthcare", title: "Registered Nurse · Behavioral Health", where: "Maryland", need: ["License", "Active RN"], type: "Contract", art: "RN with a patient",
-    desc: "Nursing care in a behavioral health setting. Shifts and pay confirmed on the first call.", reqs: ["Active RN license valid in Maryland", "Health screening, background check and references"] },
-  { id: "revenue-cycle", fn: "Finance", title: "Revenue Cycle Specialist", where: "Remote", need: ["Setting", "Health system"], type: "Direct hire", art: "Billing team at work",
-    desc: "Work claims from charge to payment: billing, follow-up, denials and reporting.", reqs: ["Healthcare revenue cycle or billing experience"] },
-  { id: "cyber-engineer", fn: "Cyber", title: "Cybersecurity Engineer", where: "Virginia", need: ["Clearance", "TS/SCI + FSP"], type: "Contract", art: "Security operations floor",
-    desc: "Engineer and monitor security controls for a cleared government program.", reqs: ["Active TS/SCI with Full Scope Poly", "Cybersecurity engineering experience"] },
-  { id: "lpn-ltc", fn: "Healthcare", title: "Licensed Practical Nurse · Long-Term Care", where: "Maryland", need: ["License", "Active LPN"], type: "Contract", art: "LPN in long-term care",
-    desc: "Provide nursing care to long-term care residents under the direction of the RN team.", reqs: ["Active LPN license valid in Maryland", "Health screening, background check and references"] },
-  { id: "cna", fn: "Healthcare", title: "Certified Nursing Assistant", where: "Maryland", need: ["Certification", "Active CNA"], type: "Contract", art: "CNA with a resident",
-    desc: "Support residents and patients with daily care, mobility and observation.", reqs: ["Active CNA certification", "Health screening, background check and references"] },
-  { id: "medical-assistant", fn: "Healthcare", title: "Medical Assistant · Outpatient Clinic", where: "Washington, DC", need: ["Setting", "Clinic"], type: "Contract-to-hire", art: "Medical assistant in a clinic",
-    desc: "Room patients, take vitals, update records and support providers in an outpatient clinic.", reqs: ["Medical assistant certification or equivalent experience", "Background check and references"] },
-  { id: "billing-coding", fn: "Finance", title: "Medical Billing & Coding Specialist", where: "Remote", need: ["Certification", "Coding credential"], type: "Contract", art: "Billing and coding team",
-    desc: "Code encounters and prepare clean claims for a healthcare provider.", reqs: ["Medical coding credential", "Billing experience"] },
-  { id: "budget-analyst", fn: "Finance", title: "Budget Analyst · County Government", where: "Maryland", need: ["Setting", "County agency"], type: "Contract", art: "Budget analyst in a county office",
-    desc: "Prepare, track and report on program budgets for a county agency.", reqs: ["Public-sector budget or financial analysis experience", "Background check"] },
-  { id: "network-admin", fn: "IT", title: "Network Administrator", where: "Maryland", need: ["Setting", "County IT"], type: "Contract", art: "Network administrator at work",
-    desc: "Maintain and secure network infrastructure for a public-sector IT department.", reqs: ["Network administration experience", "Background check"] },
-  { id: "business-analyst", fn: "IT", title: "Business Analyst · Health and Human Services", where: "Remote", need: ["Setting", "Government program"], type: "Contract", art: "Business analyst in a workshop",
-    desc: "Gather requirements, map processes and support delivery for a government health program.", reqs: ["Business analysis experience on public-sector programs"] },
-];
-/* which job the stats plate under the fan describes (the centre card) */
-export const FEATURED_JOB = 2;
-export const JOBS_NOTE =
-  "Openings from the agencies and prime contractors we staff. Applying is always free.";
+export type Job = { id: string; fn: string; title: string; where: string; need: string[]; type: string; art: string; desc: string; reqs: string[] };
+export const JOBS: Job[] = [];
+export const JOBS_NOTE = "New jobs will be updated soon.";
 
 /* ---------- 06 Capability statement (replaces Transition Into Tech, on hold [CONFIRM]) ---------- */
 export const CAPABILITY = {

@@ -9,7 +9,8 @@ import { Btn, Notice } from "@/components/pg";
    JobPosting structured data: publishing invented jobs to Google would be false. When real jobs
    come from the ATS or the admin, add the JobPosting JSON-LD here for those only. */
 export function generateStaticParams() {
-  return JOBS.map((j) => ({ id: j.id }));
+  // Cache Components needs at least one result; with no listings the placeholder id renders the 404 page
+  return JOBS.length ? JOBS.map((j) => ({ id: j.id })) : [{ id: "none" }];
 }
 
 export async function generateMetadata({ params }: PageProps<"/jobs/[id]">): Promise<Metadata> {

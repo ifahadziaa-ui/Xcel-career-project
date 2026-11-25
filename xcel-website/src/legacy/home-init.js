@@ -3,7 +3,7 @@
    ENTRY: render content → build showreel → start motion → preloader.
    ===================================================================== */
 import {
-  CERT_LINE, CERTS, CREDENTIALS, CUSTOMERS, STEPS, PROCESS_SPLIT, JOBS, FEATURED_JOB, JOBS_NOTE,
+  CERT_LINE, CERTS, CREDENTIALS, CUSTOMERS, STEPS, PROCESS_SPLIT, JOBS, JOBS_NOTE,
   CAPABILITY, STICKERS, LEDGER, FAQ, FAQ_NOTE, CONTACT,
 } from "@/content/content";
 import { ph, esc } from "./ph.js";
@@ -84,6 +84,7 @@ const FAN = [
   { cls: "side", l: 58.2, t: 3.57, w: 21.92, r: 8, px: -7, tilt: 2.5, ml: 61.3, mt: 10.3, mw: 36.6 },
   { cls: "centre", l: 37.62, t: 0, w: 24.84, r: 1.5, px: -12, tilt: 1, ml: 31.7, mt: 2.1, mw: 36.6 },
 ];
+const FEATURED_JOB = 2;
 const FAN_JOB = [0, 4, 1, 3, FEATURED_JOB]; // which job sits in which slot; centre = featured
 // real photos for the jobs that have one; the rest keep their placeholder
 const JOB_IMG = {
@@ -101,15 +102,21 @@ const jobCard = (j) => `
     <p class="jc-meta">${esc(j.where)}</p>
     <p class="jc-stats"><span>${esc(j.need[0])} <b>${esc(j.need[1])}</b></span><span><b>${esc(j.type)}</b></span></p>
   </div></div>`;
-$("#fan").innerHTML = FAN.map((f, i) => `
-  <div class="fan-card fan-card--${f.cls}" style="--l:${f.l};--t:${f.t};--w:${f.w};--r:${f.r}deg;--ml:${f.ml};--mt:${f.mt};--mw:${f.mw}">
-    <div class="tilt" data-px="${f.px}" data-tilt="${f.tilt}" style="width:100%;height:100%"><div class="px">
-      <div class="card-reveal" data-m="card" data-i="${i}"><div class="card-rot">${jobCard(JOBS[FAN_JOB[i]])}</div></div>
-    </div></div>
-  </div>`).join("");
-const fj = JOBS[FEATURED_JOB];
-$("#fan-stats").innerHTML = [["Role", fj.title], fj.need, ["Location", fj.where], ["Type", fj.type]]
-  .map(([k, v]) => `<span class="pair">${esc(k)} <span class="v">${esc(v)}</span></span>`).join("");
+if (JOBS.length >= 5) {
+  $("#fan").innerHTML = FAN.map((f, i) => `
+    <div class="fan-card fan-card--${f.cls}" style="--l:${f.l};--t:${f.t};--w:${f.w};--r:${f.r}deg;--ml:${f.ml};--mt:${f.mt};--mw:${f.mw}">
+      <div class="tilt" data-px="${f.px}" data-tilt="${f.tilt}" style="width:100%;height:100%"><div class="px">
+        <div class="card-reveal" data-m="card" data-i="${i}"><div class="card-rot">${jobCard(JOBS[FAN_JOB[i]])}</div></div>
+      </div></div>
+    </div>`).join("");
+  const fj = JOBS[FEATURED_JOB];
+  $("#fan-stats").innerHTML = [["Role", fj.title], fj.need, ["Location", fj.where], ["Type", fj.type]]
+    .map(([k, v]) => `<span class="pair">${esc(k)} <span class="v">${esc(v)}</span></span>`).join("");
+} else {
+  // no listings yet: the fan and its stats plate are not shown, only the note above them
+  $("#fan").remove();
+  $("#fan-stats").remove();
+}
 
 /* ---------- 06 capability statement poster ---------- */
 $("#cap-art").innerHTML = `<div class="capdoc"><div class="capdoc-in">
