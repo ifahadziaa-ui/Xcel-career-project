@@ -194,7 +194,12 @@ const CHIP = {
   resume: { label: "Upload résumé", act: "resume" },
 };
 const clean = (s) => s.replace(/\s*\([^)]*\bclient\b[^)]*\)/gi, "");
-const faqA = (id) => (FAQ.find((f) => f.id === id) || { a: "" }).a;
+// the chatbot's own answers for speed and location (they used to live in the home-page FAQ, which now covers government work)
+const ANSWER = {
+  scale: "We staffed a 120+ person task order in 45 days, and scale from one nurse to a full team.",
+  location: "Based in Dayton, Maryland. We place across Maryland, DC, Virginia and remote.",
+};
+const faqA = (id) => ANSWER[id] || "";
 const CRED = CREDENTIALS;
 
 function reply(id, t = " ", arg = "") {

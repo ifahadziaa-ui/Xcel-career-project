@@ -585,7 +585,7 @@
   }
 
   .hx-sealed {
-    top: calc(58.382% - var(--u) * 1.4);
+    top: calc(58.382% - var(--u) * 34); /* sits above the taller capability panel */
     right: var(--pr);
     align-self: auto;
   }
@@ -694,3 +694,17 @@
   .hx-bgvideo::after { background: linear-gradient(to bottom, rgb(14 14 16 / 0.82), rgb(14 14 16 / 0.7) 45%, rgb(14 14 16 / 0.86)); }
 }
 @media (prefers-reduced-motion: reduce) { .hx-bgvideo .hx-clip { transition: none; } }
+
+/* Capability panel: three stacked rows, label above its wrapped services (the old one-line rows could not hold the longer text) */
+.hx-placard--cap { grid-template-columns: minmax(0, 1fr); align-items: start; }
+.hx-placard--cap .hx-row { display: block; padding: 0.85em 0; border-top: 1px solid rgb(255 255 255 / 0.08); }
+.hx-placard--cap .hx-row--head { display: flex; justify-content: space-between; gap: 1em; padding-top: 0; border-top: 0; }
+.hx-placard--cap .hx-row:last-child { padding-bottom: 0; }
+.hx-placard--cap dt, .hx-placard--cap dd { white-space: normal; line-height: 1.5; top: 0; }
+.hx-placard--cap dt { font-size: max(var(--term-size), 10px); margin-bottom: 0.35em; }
+.hx-placard--cap dd { font-size: max(var(--value-size), 11px); }
+.hx-placard--cap .hx-row--head dt { margin: 0; color: var(--value); }
+.hx-placard--cap .hx-row--head dd { text-transform: uppercase; letter-spacing: var(--term-track); color: var(--label); font-size: max(var(--term-size), 10px); }
+@media (min-width: 1024px) and (min-aspect-ratio: 6 / 5) {
+  .hx-placard--cap { width: calc(var(--u) * 410); }
+}

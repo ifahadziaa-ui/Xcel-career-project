@@ -54,6 +54,10 @@ export const CUSTOMERS = [
   { name: "Indeed", status: "past", years: "2022" },
   { name: "NGA", status: "past", years: "2018" },
   { name: "Smile Brands" }, // [CONFIRM] relationship, status and logo permission: added from the user's message of 17 Nov 2026
+  // [CONFIRM] relationship, status, years and logo permission for the next three: logos supplied by the user on 25 Nov 2026
+  { name: "Navy Federal Credit Union" },
+  { name: "GD Mission Systems" },
+  { name: "U.S. House of Representatives" }, // [CONFIRM] the House seal is a restricted government mark; confirm it may be shown
 ];
 
 /* ---------- 03 Showreel (Prompt 1) ----------
@@ -250,14 +254,14 @@ export const LEDGER = [
 
 /* ---------- 08 FAQ (ids are used by the chatbot) ---------- */
 export const FAQ = [
-  { id: "roles", q: "Which healthcare roles do you fill?", a: "Nurses, care and human services staff, case managers, and billing and coding specialists.", tags: ["RN", "LPN", "CNA", "Medical assistants", "Behavioral health", "Case managers", "Billing & coding"] }, // [CONFIRM] list
-  { id: "specialties", q: "Do you staff IT, finance and cybersecurity roles?", a: "Yes, for healthcare and government, including cleared roles up to TS/SCI with Full Scope Poly.", tags: ["EHR & systems", "Network", "Service desk", "Cyber & cloud", "Financial analysts", "Revenue cycle", "Business analysts", "Project managers"] },
-  { id: "vetting", q: "How do you vet candidates?", a: "We interview every candidate and verify licenses, credentials, references and background checks before you see a name." },
-  { id: "scale", q: "How quickly can you staff a large contract?", a: "We staffed a 120+ person task order in 45 days, and scale from one nurse to a full team." },
-  { id: "contracting", q: "Can you prime or subcontract on government work?", a: "Both. Maryland MBE, DBE and SBE certified, supporting local, state and federal contracts, including task orders and IDIQ." },
-  { id: "employer", q: "Who employs contract staff?", a: "We do: payroll, timesheets and credential renewals. You manage the work site and supervision." },
-  { id: "candidates", q: "Do candidates pay anything?", a: "Never. Our services are free for job seekers, including interview preparation and credentialing guidance." },
-  { id: "location", q: "Where do you work?", a: "Based in Dayton, Maryland. We place across Maryland, DC, Virginia and remote." },
+  { id: "support", q: "How does XcelCareers support government agencies and prime contractors?", a: "We help agencies and prime contractors plan for contract requirements, assemble project teams, and manage day-to-day program operations. Our role can range from providing specialized expertise to coordinating a team responsible for a defined scope of work." },
+  { id: "capabilities", q: "What capabilities does XcelCareers bring to a contract?", a: "Our capabilities span healthcare and human services, information technology, cybersecurity, finance, administration, and program management. We bring these disciplines together when a contract calls for both subject matter expertise and operational support." },
+  { id: "proposal", q: "How can XcelCareers support our team during the proposal process?", a: "We help partners assess workforce requirements, identify key personnel, and develop staffing and transition plans. We can also flag gaps in coverage so the proposal team can address them before submission." },
+  { id: "prime", q: "Can XcelCareers participate as a prime contractor or teaming partner?", a: "Yes. We evaluate each opportunity based on its requirements and our ability to deliver the work. As a prime contractor, we coordinate contract delivery and serve as the agency’s point of contact. As a subcontractor, we take responsibility for an agreed scope of work within the prime contractor’s delivery plan." },
+  { id: "startup", q: "How do you prepare for contract startup or transition?", a: "We work with the client to identify what must be in place on the first day of performance. We plan around critical roles, onboarding, site access, and handoffs so the team can meet startup milestones and maintain continuity of service." },
+  { id: "personnel", q: "How do you align personnel with contract requirements?", a: "We use the statement of work and labor categories to guide selection. We review relevant experience, qualifications, and any credential or clearance requirements for the assignment before presenting personnel for consideration." },
+  { id: "performance", q: "How do you manage performance once work begins?", a: "We agree on responsibilities, deliverables, reporting expectations, and a point of contact at the outset. During performance, we track progress against those commitments, address issues with the client, and adjust coverage as authorized needs change." },
+  { id: "locations", q: "Can XcelCareers support programs across multiple locations?", a: "We work with clients to plan coverage across program offices, field sites, and distributed teams. The delivery approach depends on where the work must be performed, what each location requires, and which functions the contract permits teams to handle remotely." },
 ];
 export const FAQ_NOTE = "Call 443-859-0034 and we'll walk you through it.";
 
@@ -275,7 +279,7 @@ export const CONTACT = {
 export const LEADERSHIP = [
   { name: "Catherine Lee", role: "CEO", photo: { src: "/assets/img/team-catherine-lee.webp", w: 480, h: 600 } },
   { name: "Sylvia Finley", role: "Director of Healthcare and Clinical Services", photo: { src: "/assets/img/team-sylvia-finley.webp", w: 800, h: 1000 } },
-  { name: "Barry Klasson", role: "Director of Business Development and Client Services", photo: { src: "/assets/img/team-barry-klasson.webp", w: 800, h: 1000 } },
+  { name: "Barry Klasson", role: "Director of Business Development and Client Services", photo: { src: "/assets/img/team-barry-klasson-2.webp", w: 800, h: 1000 } },
 ];
 
 /* =====================================================================

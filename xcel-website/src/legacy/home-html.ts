@@ -32,10 +32,11 @@ export const HOME_HTML = `
       <div class="hx-lead"><p>XcelCareers delivers staff augmentation and professional services across healthcare, information technology, cybersecurity, and business operations. We support federal, state, and local agencies, prime contractors, subcontractors, and commercial organizations with expertise aligned to their operational needs and contract requirements.</p><p>Our capabilities include clinical and allied health support, software development, technical program management, finance, and administrative services. From proposal staffing support to contract execution, we help partners identify qualified personnel, address workforce gaps, and meet mission objectives.</p></div>
       <p class="hx-actions"><a class="hx-cta hx-cta--solid" href="/capability">Explore our capabilities</a><a class="hx-cta" href="/contact">Partner with XcelCareers</a></p>
     </div>
-    <dl class="hx-placard">
-      <div class="hx-row"><dt>Healthcare</dt><dd>Clinical · care · billing</dd></div>
-      <div class="hx-row"><dt>Government</dt><dd>Local · State · Federal</dd></div>
-      <div class="hx-row"><dt>Specialist</dt><dd>IT · Finance · Cyber</dd></div>
+    <dl class="hx-placard hx-placard--cap">
+      <div class="hx-row hx-row--head"><dt>Capability</dt><dd>Services</dd></div>
+      <div class="hx-row"><dt>Healthcare &amp; Human Services</dt><dd>Clinical Services · Health Information Management · Program Operations</dd></div>
+      <div class="hx-row"><dt>Government Program Support</dt><dd>Proposal Support · Contract Transition · Program Management</dd></div>
+      <div class="hx-row"><dt>Technology &amp; Business Services</dt><dd>IT &amp; Cybersecurity · Finance &amp; Administration · Workforce Planning</dd></div>
     </dl>
   </div>
 </section>

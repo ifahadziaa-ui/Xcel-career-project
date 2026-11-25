@@ -46,6 +46,9 @@ const CUST_LOGO = {
   "Indeed": { src: "assets/img/logo-indeed.webp", alt: "Indeed logo" },
   "Smile Brands": { src: "assets/img/logo-smilebrands.webp", alt: "Smile Brands logo" },
   "NGA": { src: "assets/img/logo-nga.webp", alt: "National Geospatial-Intelligence Agency seal" },
+  "Navy Federal Credit Union": { src: "assets/img/logo-navyfederal.webp", alt: "Navy Federal Credit Union logo" },
+  "GD Mission Systems": { src: "assets/img/logo-gdms.webp", alt: "GD Mission Systems logo" },
+  "U.S. House of Representatives": { src: "assets/img/logo-house.webp", alt: "Seal of the U.S. House of Representatives" },
 };
 // every logo is a plain, equal tile; the names live in the alt text (the Capstone name tile carries its own name)
 $("#customers").innerHTML = CUSTOMERS.map((c, i) => `
