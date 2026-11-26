@@ -20,7 +20,7 @@ export default function Page() {
       />
       <section className="pg-sec pg-sec--tight">
         <div className="pg-wrap pg-contact">
-          <Suspense fallback={<div className="pg-panel" aria-busy="true">Loading the form…</div>}>
+          <Suspense fallback={<div className="pg-panel pg-form-hold" aria-busy="true">Loading the form…</div>}>
             <ContactForms />
           </Suspense>
           <aside className="pg-panel pg-card-contact" data-r="2">

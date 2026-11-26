@@ -51,7 +51,19 @@
 /* entrances: one shared rise (matches the home page reveals) */
 [data-r] { opacity: 0; transform: translateY(1.25rem); filter: blur(6px); transition: opacity 0.7s var(--ease-entrance) var(--d, 0ms), transform 0.8s var(--ease-entrance) var(--d, 0ms), filter 0.7s var(--ease-entrance) var(--d, 0ms); }
 [data-r].is-in { opacity: 1; transform: none; filter: none; }
-@media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1; transform: none; filter: none; transition: none; } }
+/* Blocks in view on arrival rise from the first paint in CSS instead of waiting for the page's scripts to start the
+   observer (same curve, durations and 70 ms steps): the page header always, and any block an inline script in the
+   layout marks data-in because it is already on screen. The rest keep their entrance on scroll. */
+.pg-hero [data-r], [data-r][data-in] { transition: none; animation: pg-rise-fade 0.7s var(--ease-entrance) both, pg-rise-move 0.8s var(--ease-entrance) both; }
+.pg-hero [data-r="1"], [data-r="1"][data-in] { animation-delay: 70ms; }
+.pg-hero [data-r="2"], [data-r="2"][data-in] { animation-delay: 140ms; }
+.pg-hero [data-r="3"], [data-r="3"][data-in] { animation-delay: 210ms; }
+[data-r="4"][data-in] { animation-delay: 280ms; }
+[data-r="5"][data-in] { animation-delay: 350ms; }
+@keyframes pg-rise-fade { from { opacity: 0; filter: blur(6px); } to { opacity: 1; filter: none; } }
+@keyframes pg-rise-move { from { transform: translateY(1.25rem); } to { transform: none; } }
+html[data-motion="paused"] .pg-hero [data-r], html[data-motion="paused"] [data-r][data-in] { animation: none; opacity: 1; transform: none; filter: none; }
+@media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1; transform: none; filter: none; transition: none; } .pg-hero [data-r], [data-r][data-in] { animation: none; } }
 
 /* ---------- hero (page header): sits just under the top bar ---------- */
 .pg-hero {
@@ -226,6 +238,11 @@
 .pg-big:hover, .pg-mail:hover { color: var(--accent); }
 .pg-card-contact address { margin: var(--sp-4) 0 var(--sp-2); font-style: normal; color: var(--foreground-soft); font-size: var(--pg-small); line-height: 1.55; }
 @media (width < 896px) { .pg-contact { grid-template-columns: 1fr; } }
+/* space held for Contact's form, which renders in the browser (it reads the address bar), measured from the
+   rendered tabs and request form so the footer does not jump when it arrives */
+.pg-form-hold { min-height: 47rem; }
+@media (width < 700px) { .pg-form-hold { min-height: 84rem; } }
+
 
 /* ---------- jobs ---------- */
 .jb-bar { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; margin-top: var(--sp-4); }

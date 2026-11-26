@@ -1,14 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Mona_Sans } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import ChatMount from "@/components/ChatMount";
 import Footer from "@/components/Footer";
 import Sprite from "@/components/Sprite";
 import { Reveals, SiteHeader } from "@/components/SiteChrome";
+import { InlineScript } from "@/components/InlineScript";
 import "./globals.css";
 
-// Hero and top bar: Mona Sans (width axis) and Geist Mono. Everything after the hero: Zen Kaku Gothic New.
-const monaSans = Mona_Sans({ variable: "--font-mona-sans", subsets: ["latin"], axes: ["wdth"], display: "swap" });
+// Hero and top bar: Mona Sans (width axis, declared in app/page.tsx: only the home hero uses it) and Geist Mono.
+// Everything after the hero: Zen Kaku Gothic New.
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
 /* Zen Kaku Gothic New is a Japanese family: through next/font/google it shipped ~120 unicode slices per weight,
    484 @font-face rules (357 KB of render-blocking CSS) and 312 preloaded files (3.6 MB) on every page, though the
@@ -38,14 +39,21 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#101012", colorScheme: "dark" };
 
+/* Reveal blocks already on screen when the page opens start their rise at once (styles/pages.css, [data-in]),
+   instead of waiting for the page's scripts to start the observer; blocks further down keep their entrance on
+   scroll. The whole screen counts, including the bottom strip the scroll observer leaves out, so nothing that is
+   visible on arrival waits for a scroll to appear. */
+const REVEAL_IN_VIEW = `(function(){try{var h=innerHeight,e=document.querySelectorAll("main [data-r]");for(var i=0;i<e.length;i++){var r=e[i].getBoundingClientRect();if(r.top<h&&r.bottom>0)e[i].setAttribute("data-in","")}}catch(x){}})()`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${monaSans.variable} ${geistMono.variable} ${zen.variable}`}>
+    <html lang="en" className={`${geistMono.variable} ${zen.variable}`}>
       <body className="pg-body">
         <Sprite />
         <SiteHeader />
         {children}
         <Footer />
+        <InlineScript html={REVEAL_IN_VIEW} />
         <div className="grain grain-tex is-on" aria-hidden="true" />
         <Reveals />
         <ChatMount />

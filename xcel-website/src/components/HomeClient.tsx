@@ -7,7 +7,7 @@ import { HOME_HTML } from "@/legacy/home-html";
    prototype's own modules (legacy/home-init.js: showreel, carousel, brain scene, jobs fan, chat).
    The page is a single long WebGL scene that is built once and not torn down, so leaving it is a
    full page load (clicks on internal links, and Back), which also frees the GPU and the listeners. */
-export default function HomeClient() {
+export default function HomeClient({ className }: { className?: string }) {
   useEffect(() => {
     let dead = false;
     let lenis: { destroy: () => void } | null = null;
@@ -44,5 +44,5 @@ export default function HomeClient() {
     };
   }, []);
 
-  return <main dangerouslySetInnerHTML={{ __html: HOME_HTML }} />;
+  return <main className={className} dangerouslySetInnerHTML={{ __html: HOME_HTML }} />;
 }

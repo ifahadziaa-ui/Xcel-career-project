@@ -83,31 +83,47 @@ function AccountLink() {
   return <HeaderAccount />;
 }
 
-/* One shared entrance for every [data-r] element: it plays once, when the element enters the view. */
+/* One shared entrance for every [data-r] element: it plays once, when the element enters the view.
+   Content that renders after this first pass (a form drawn in the browser because it reads the address bar,
+   such as Contact's tabs) is picked up by a MutationObserver and gets the same entrance; before, it was never
+   observed and stayed at opacity 0. */
 export function Reveals() {
   const path = usePathname();
   useEffect(() => {
-    const els = [...document.querySelectorAll<HTMLElement>("[data-r]:not(.is-in)")];
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      els.forEach((e) => e.classList.add("is-in"));
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-in");
-            io.unobserve(e.target);
-          }
-        }
-      },
-      { rootMargin: "0px 0px -8% 0px" },
-    );
-    els.forEach((e) => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const io = reduce
+      ? null
+      : new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-in");
+                io?.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px" },
+        );
+    const seen = new WeakSet<Element>();
+    const watch = (e: HTMLElement) => {
+      if (seen.has(e) || e.classList.contains("is-in")) return;
+      seen.add(e);
+      if (!io) { e.classList.add("is-in"); return; }
       e.style.setProperty("--d", `${(Number(e.dataset.r) || 0) * 70}ms`);
       io.observe(e);
+    };
+    document.querySelectorAll<HTMLElement>("[data-r]").forEach(watch);
+    const mo = new MutationObserver((records) => {
+      for (const r of records) {
+        r.addedNodes.forEach((n) => {
+          if (!(n instanceof HTMLElement)) return;
+          if (n.matches("[data-r]")) watch(n);
+          n.querySelectorAll<HTMLElement>("[data-r]").forEach(watch);
+        });
+      }
     });
-    return () => io.disconnect();
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { mo.disconnect(); io?.disconnect(); };
   }, [path]);
   return null;
 }

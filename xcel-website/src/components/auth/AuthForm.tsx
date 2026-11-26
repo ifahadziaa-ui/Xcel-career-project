@@ -6,6 +6,7 @@ import { CONTACT } from "@/content/content";
 import { Arrow } from "@/components/pg";
 import { authClient } from "@/lib/auth-client";
 import { safeNext, useAccountsStatus } from "./useAccounts";
+import type { Status } from "./accountsStatus";
 
 const GoogleMark = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -17,16 +18,14 @@ const GoogleMark = () => (
 );
 
 /* Sign in or create an account: Google (when it is set up) or email and password. */
-export function AuthForm() {
+export function AuthForm({ initialStatus }: { initialStatus?: Status }) {
   const router = useRouter();
   const q = useSearchParams();
   const next = safeNext(q.get("next"));
-  const status = useAccountsStatus();
+  const status = useAccountsStatus() ?? initialStatus ?? null;
   const [mode, setMode] = useState<"in" | "up">(q.get("mode") === "up" ? "up" : "in");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
-
-  const off = status !== null && !status.configured;
 
   async function google() {
     setErr("");
@@ -56,10 +55,30 @@ export function AuthForm() {
   }
 
   return (
-    <div className="auth pg-panel">
+    <AuthPanel
+      mode={mode}
+      status={status}
+      busy={busy}
+      err={err}
+      live={{ setMode: (m) => { setMode(m); setErr(""); }, google, submit }}
+    />
+  );
+}
+
+/* The panel itself. With `live` it is the working form. Without it, it is the copy drawn in the page's HTML so
+   the panel shows at once, before the scripts run: inert (no focus, typing or clicks), its fields carry no names
+   (a forced submit would send nothing) and the form posts, so nothing can reach the address bar. The working
+   form replaces it, at the same size, once the page's scripts have started. */
+type Live = { setMode: (m: "in" | "up") => void; google: () => void; submit: (e: FormEvent<HTMLFormElement>) => void };
+export function AuthPanel({ mode, status, busy = false, err = "", live }: { mode: "in" | "up"; status: Status | null; busy?: boolean; err?: string; live?: Live }) {
+  const off = status !== null && !status.configured;
+  const still = !live;
+  const name = (n: string) => (still ? undefined : n);
+  return (
+    <div className="auth pg-panel" inert={still || undefined} aria-hidden={still || undefined}>
       <div className="tabs" role="tablist" aria-label="Sign in or create an account">
-        <button type="button" role="tab" aria-selected={mode === "in"} onClick={() => { setMode("in"); setErr(""); }}>Sign in</button>
-        <button type="button" role="tab" aria-selected={mode === "up"} onClick={() => { setMode("up"); setErr(""); }}>Create account</button>
+        <button type="button" role="tab" aria-selected={mode === "in"} onClick={live && (() => live.setMode("in"))}>Sign in</button>
+        <button type="button" role="tab" aria-selected={mode === "up"} onClick={live && (() => live.setMode("up"))}>Create account</button>
       </div>
 
       {off ? (
@@ -71,19 +90,19 @@ export function AuthForm() {
 
       {status?.google ? (
         <>
-          <button type="button" className="gbtn" onClick={google} disabled={busy}>
+          <button type="button" className="gbtn" onClick={live?.google} disabled={busy}>
             <GoogleMark />Continue with Google
           </button>
           <p className="or"><span>or use your email</span></p>
         </>
       ) : null}
 
-      <form className="pg-form" onSubmit={submit} aria-busy={busy}>
-        {mode === "up" ? <label>Your name<input name="name" required autoComplete="name" disabled={off} /></label> : null}
-        <label>Email<input name="email" type="email" required autoComplete="email" disabled={off} /></label>
+      <form className="pg-form" method="post" onSubmit={live?.submit} aria-busy={busy}>
+        {mode === "up" ? <label>Your name<input name={name("name")} required autoComplete="name" disabled={off} /></label> : null}
+        <label>Email<input name={name("email")} type="email" required autoComplete="email" disabled={off} /></label>
         <label>
           Password{mode === "up" ? <span className="opt">at least 8 characters</span> : null}
-          <input name="password" type="password" required minLength={8} autoComplete={mode === "up" ? "new-password" : "current-password"} disabled={off} />
+          <input name={name("password")} type="password" required minLength={8} autoComplete={mode === "up" ? "new-password" : "current-password"} disabled={off} />
         </label>
         <p className="err" role="alert">{err}</p>
         <button className="btn" type="submit" disabled={busy || off}>

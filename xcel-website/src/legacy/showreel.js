@@ -846,7 +846,7 @@ function makeSphere(canvas) {
   };
 }
 
-function chromeEnvironment(renderer) {
+function envSource() {
   const c = document.createElement("canvas");
   c.width = 1024; c.height = 512;
   const g = c.getContext("2d");
@@ -864,10 +864,49 @@ function chromeEnvironment(renderer) {
   const tex = new THREE.CanvasTexture(c);
   tex.mapping = THREE.EquirectangularReflectionMapping;
   tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+function chromeEnvironment(renderer) {
+  const tex = envSource();
   const pmrem = new THREE.PMREMGenerator(renderer);
   const env = pmrem.fromEquirectangular(tex).texture;
   tex.dispose(); pmrem.dispose();
   return env;
+}
+/* The same environment, but its two filter shaders are compiled in the background first (compileAsync,
+   KHR_parallel_shader_compile), so the build no longer stalls the page for the compile: on a laptop GPU that
+   was about 0.65 s of 0.74 s. It uses PMREMGenerator's own private steps (three 0.185) to compile exactly the
+   shaders fromEquirectangular will run; if those steps are missing or fail, it builds the plain way. */
+async function chromeEnvironmentAsync(renderer) {
+  const tex = envSource();
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  try {
+    if (typeof pmrem._setSize !== "function" || typeof pmrem._allocateTargets !== "function") throw new Error("PMREM internals changed");
+    pmrem._setSize(tex.image.width / 4); // what fromEquirectangular sets for this texture
+    const target = pmrem._allocateTargets();
+    const prev = renderer.getRenderTarget();
+    renderer.setRenderTarget(target); // programs are keyed on their output, so compile them for this target
+    let ready;
+    try {
+      // creates the equirect material; its own compile step (empty geometry, a key that would never be used) is skipped
+      pmrem._compileMaterial = () => {};
+      try { pmrem.compileEquirectangularShader(); } finally { delete pmrem._compileMaterial; }
+      // the generator's own plane geometry: programs are also keyed on the attributes they will be fed
+      const geo = pmrem._lodMeshes?.[0]?.geometry ?? new THREE.BufferGeometry();
+      const holder = new THREE.Group();
+      for (const m of [pmrem._equirectMaterial, pmrem._ggxMaterial]) if (m) holder.add(new THREE.Mesh(geo, m));
+      ready = renderer.compileAsync(holder, new THREE.PerspectiveCamera());
+    } finally {
+      renderer.setRenderTarget(prev);
+    }
+    await ready;
+    const env = pmrem.fromEquirectangular(tex, target).texture;
+    tex.dispose(); pmrem.dispose();
+    return env;
+  } catch {
+    tex.dispose(); pmrem.dispose();
+    return chromeEnvironment(renderer);
+  }
 }
 
 /* The prompt loads a chrome star GLB. In its place: the client's mark, built in
@@ -945,7 +984,6 @@ function makeTargetStar(canvas) {
   scene.add(new THREE.AmbientLight(0xffffff, 0.25));
   const d1 = new THREE.DirectionalLight(0xffffff, 2.0); d1.position.set(2.5, 3.0, 4.0); scene.add(d1);
   const d2 = new THREE.DirectionalLight(0xff2a45, 0.9); /* signal-red rim light */ d2.position.set(-3.0, -1.5, 2.0); scene.add(d2);
-  scene.environment = chromeEnvironment(r);
 
   // the gradient behind the mark is its own canvas (makeHeroGradient, the path that works everywhere);
   // this canvas only draws the mark and stays transparent
@@ -953,6 +991,13 @@ function makeTargetStar(canvas) {
   const group = markObject(readMark());
   scene.add(group);
   let clock = 0, lastT = null;
+  // the environment and the physical materials compile in the background (the mark's pieces are hidden until
+  // the closing beat, so an ordinary draw at load would not compile them); the mark draws once they are ready
+  let ready = false;
+  chromeEnvironmentAsync(r)
+    .then((env) => { scene.environment = env; return r.compileAsync(scene, camera); })
+    .catch((err) => console.warn("closing mark: background compile failed", err))
+    .then(() => { ready = true; gl.redraw?.(); });
 
   // landscape: the mark stands to the right of the text; portrait: smaller, top right
   const place = () => {
@@ -964,6 +1009,7 @@ function makeTargetStar(canvas) {
   gl.onResize(gl.w, gl.h);
   let reveal = 0, born = null;
   const draw = () => {
+    if (!ready) return;
     const sc = clock;
     const [bx, by] = group.userData.base;
     const e = smooth(reveal);
@@ -975,7 +1021,6 @@ function makeTargetStar(canvas) {
     r.render(scene, camera);
   };
   gl.redraw = draw;
-  draw(); // warm up: compile the physical materials at load, not when the closing frame arrives
   return {
     // r: seconds since the closing beat began, the same clock that times the copy, so the mark and the
     // words arrive together.
@@ -1086,7 +1131,7 @@ export function initShowreel(section) {
   const setQuality = (level, now) => {
     qLevel = level; qSince = now; qEma = 16.7;
     // the closing frame's canvas (gradient + chrome mark) is left alone: resizing it showed a black gradient in Chrome
-    if (gfx) for (const k of ["aurora", "sphere"]) gfx[k].setQuality?.(QUALITY[level]);
+    for (const k of ["aurora", "sphere"]) gfx[k]?.setQuality?.(QUALITY[level]);
     section.dataset.quality = String(level);
   };
   const govern = (dt, now) => {
@@ -1104,19 +1149,51 @@ export function initShowreel(section) {
     }
   };
 
-  // WebGL scenes (created lazily so a WebGL failure never breaks the page)
-  let gfx = null;
-  try {
-    gfx = {
-      hero: makeHeroGradient(section.querySelector("#sr-hero-canvas")),
-      aurora: makeAurora(section.querySelector("#sr-aurora-canvas")),
-      sphere: makeSphere(section.querySelector("#sr-sphere-canvas")),
-      targetBg: makeHeroGradient(section.querySelector("#sr-target-bg"), { follow: false }),
-      target: makeTargetStar(section.querySelector("#sr-target-canvas")),
-    };
-  } catch (err) {
-    console.warn("WebGL unavailable, showreel runs without shaders", err);
-  }
+  /* WebGL scenes, built one at a time in the order they appear (the opening card's gradient first), each in its
+     own idle moment after the page has loaded, so no two builds share a task and none delays the first paint or
+     the first taps. The reel starts two screens down, so the queue is normally done before anyone reaches it; if
+     a scene is needed before its turn, that one scene is built on the spot. A scene that fails (no WebGL) is
+     skipped and the reel runs without it, as before. */
+  const gfx = { hero: null, aurora: null, sphere: null, targetBg: null, target: null };
+  const sceneJobs = {
+    hero: () => makeHeroGradient(section.querySelector("#sr-hero-canvas")),
+    aurora: () => makeAurora(section.querySelector("#sr-aurora-canvas")),
+    sphere: () => makeSphere(section.querySelector("#sr-sphere-canvas")),
+    targetBg: () => makeHeroGradient(section.querySelector("#sr-target-bg"), { follow: false }),
+    target: () => makeTargetStar(section.querySelector("#sr-target-canvas")),
+  };
+  const sceneQueue = Object.keys(sceneJobs);
+  let glWarned = false;
+  const buildScene = (k) => {
+    const at = sceneQueue.indexOf(k);
+    if (at < 0) return gfx[k];
+    sceneQueue.splice(at, 1);
+    try {
+      gfx[k] = sceneJobs[k]();
+      if (qLevel > 0 && (k === "aurora" || k === "sphere")) gfx[k].setQuality?.(QUALITY[qLevel]);
+    } catch (err) {
+      if (!glWarned) console.warn("WebGL unavailable, showreel runs without shaders", err);
+      glWarned = true;
+    }
+    scenesDirty = true;
+    return gfx[k];
+  };
+  const idle = typeof requestIdleCallback === "function"
+    ? { start: (f) => requestIdleCallback(f, { timeout: 2000 }), stop: (id) => cancelIdleCallback(id) }
+    : { start: (f) => setTimeout(f, 60), stop: (id) => clearTimeout(id) };
+  let idleId = 0;
+  const pump = () => {
+    idleId = 0;
+    if (sceneQueue.length) buildScene(sceneQueue[0]);
+    if (sceneQueue.length) idleId = idle.start(pump);
+  };
+  const startScenes = () => { if (!idleId && sceneQueue.length) idleId = idle.start(pump); };
+  if (document.readyState === "complete") startScenes();
+  else addEventListener("load", startScenes, { once: true });
+  // leaving the page stops the queue; a page restored from the back/forward cache picks it up again
+  addEventListener("pagehide", () => { if (idleId) idle.stop(idleId); idleId = 0; });
+  addEventListener("pageshow", (e) => { if (e.persisted) startScenes(); });
+  const scene = (k) => gfx[k] ?? buildScene(k);
 
   const tCanvas = section.querySelector("#sr-target-canvas");
   let lastP = -1, ctaBorn = null, closeAge = 0;
@@ -1252,13 +1329,13 @@ export function initShowreel(section) {
     });
 
     const onScreen = y + vh > trackTop && y < trackTop + trackH;
-    if (gfx && onScreen && (!isPaused() || p !== scenesP || scenesDirty)) {
+    if (onScreen && (!isPaused() || p !== scenesP || scenesDirty)) {
       scenesP = p; scenesDirty = false;
       const vis = sceneVisibility(p);
-      if (vis.hero) gfx.hero.render(vt);
-      if (vis.aurora && auroraOpacity(p) > 0) gfx.aurora.render(vt);
-      if (vis.sphere) gfx.sphere.render(vt, brainExit(p), vScroll(p));
-      if (vis.target && closeActive(p) && liftP(p) < 1) { gfx.targetBg.render(vt); gfx.target.render(vt, closeAge); } else gfx.target.pause();
+      if (vis.hero) scene("hero")?.render(vt);
+      if (vis.aurora && auroraOpacity(p) > 0) scene("aurora")?.render(vt);
+      if (vis.sphere) scene("sphere")?.render(vt, brainExit(p), vScroll(p));
+      if (vis.target && closeActive(p) && liftP(p) < 1) { scene("targetBg")?.render(vt); scene("target")?.render(vt, closeAge); } else gfx.target?.pause();
       if (!isPaused()) govern(dtf, t);
     }
   }
